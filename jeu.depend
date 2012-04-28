@@ -1,0 +1,2071 @@
+# depslib dependency file v1.0
+1335617297 source:g:\projets\cours\jeu\main.cpp
+	"SFML/Graphics.hpp"
+	"jeu.h"
+	"menu.h"
+
+1335564083 
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PostFX.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/String.hpp>
+	<SFML/Graphics/View.hpp>
+
+1264604042 hics/View.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/OpenGL.hpp>
+
+1264604042 ow/OpenGL.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Randomizer.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1264604042 em/Vector3.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\config.hpp
+	<climits>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\clock.hpp
+	<SFML/Config.hpp>
+
+1264604034 ig.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\lock.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1264604036 em/NonCopyable.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\noncopyable.hpp
+	<SFML/Config.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\mutex.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Mutex.hpp>
+	<SFML/System/Unix/Mutex.hpp>
+
+1264604036 em/Unix/Mutex.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1264604034 >
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\windows.h
+	<winresrc.h>
+	<stdarg.h>
+	<windef.h>
+	<wincon.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<winver.h>
+	<winnetwk.h>
+	<winreg.h>
+	<winsvc.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<imm.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<commdlg.h>
+	<winspool.h>
+	<winsock2.h>
+	<winsock.h>
+	<ole2.h>
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winresrc.h
+	<winuser.h>
+	<winnt.h>
+	<winver.h>
+	<dde.h>
+	<dlgs.h>
+	<commctrl.h>
+
+1228530724 h>
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\winuser.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winnt.h
+	<winerror.h>
+	<string.h>
+	<basetsd.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winerror.h
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1335606061 
+
+1250308674 e:\utilitaires\codeblocks\mingw\include\_mingw.h
+
+1228534312 e:\utilitaires\codeblocks\mingw\include\basetsd.h
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\pshpack4.h
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\poppack.h
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\winver.h
+
+1228534314 e:\utilitaires\codeblocks\mingw\include\dde.h
+
+1228534314 e:\utilitaires\codeblocks\mingw\include\dlgs.h
+
+1228534314 e:\utilitaires\codeblocks\mingw\include\commctrl.h
+	<prsht.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\prsht.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\windef.h
+	<winnt.h>
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\wincon.h
+
+1228534330 e:\utilitaires\codeblocks\mingw\include\winbase.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\wingdi.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winnls.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winnetwk.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winreg.h
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\winsvc.h
+
+1228534312 e:\utilitaires\codeblocks\mingw\include\cderr.h
+
+1228534314 e:\utilitaires\codeblocks\mingw\include\ddeml.h
+
+1228534316 e:\utilitaires\codeblocks\mingw\include\imm.h
+
+1228534320 e:\utilitaires\codeblocks\mingw\include\lzexpand.h
+
+1228534322 e:\utilitaires\codeblocks\mingw\include\mmsystem.h
+
+1228534322 e:\utilitaires\codeblocks\mingw\include\nb30.h
+
+1228534326 e:\utilitaires\codeblocks\mingw\include\rpc.h
+	<windows.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<winerror.h>
+	<excpt.h>
+
+1228534326 e:\utilitaires\codeblocks\mingw\include\rpcdce.h
+	<basetyps.h>
+	<rpcdcep.h>
+
+1228534312 e:\utilitaires\codeblocks\mingw\include\basetyps.h
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\rpcdcep.h
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnsi.h
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnterr.h
+
+1250308676 e:\utilitaires\codeblocks\mingw\include\excpt.h
+	<_mingw.h>
+	<windef.h>
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\shellapi.h
+	<pshpack2.h>
+	<poppack.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\pshpack2.h
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winperf.h
+
+1228534314 e:\utilitaires\codeblocks\mingw\include\commdlg.h
+	<unknwn.h>
+	<prsht.h>
+
+1228534330 e:\utilitaires\codeblocks\mingw\include\unknwn.h
+	<windows.h>
+	<objfwd.h>
+	<wtypes.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\objfwd.h
+	<basetyps.h>
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\wtypes.h
+	<rpc.h>
+	<rpcndr.h>
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\rpcndr.h
+	<rpcnsip.h>
+	<objfwd.h>
+
+1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnsip.h
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\winspool.h
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\winsock2.h
+	<windows.h>
+
+1228534332 e:\utilitaires\codeblocks\mingw\include\winsock.h
+	<windows.h>
+	<mswsock.h>
+
+1228534322 e:\utilitaires\codeblocks\mingw\include\mswsock.h
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\ole2.h
+	<winerror.h>
+	<objbase.h>
+	<olectlid.h>
+	<oleauto.h>
+	<oleidl.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<stdlib.h>
+	<basetyps.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<cguid.h>
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\objidl.h
+	<objfwd.h>
+
+1228534312 e:\utilitaires\codeblocks\mingw\include\cguid.h
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\olectlid.h
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\oleauto.h
+	<oaidl.h>
+
+1228534322 e:\utilitaires\codeblocks\mingw\include\oaidl.h
+	<windows.h>
+	<ole2.h>
+
+1228534324 e:\utilitaires\codeblocks\mingw\include\oleidl.h
+	<objfwd.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+989765248 e:\utilitaires\codeblocks\mingw\include\pthread.h
+	<windows.h>
+	"config.h"
+	<time.h>
+	<signal.h>
+	<setjmp.h>
+	<limits.h>
+	"need_errno.h"
+	<errno.h>
+	<sched.h>
+	<sys/types.h>
+
+989761648 s.h>
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\time.h
+	<_mingw.h>
+	<stddef.h>
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\signal.h
+	<_mingw.h>
+
+1250308678 e:\utilitaires\codeblocks\mingw\include\setjmp.h
+	<_mingw.h>
+
+1250308678 e:\utilitaires\codeblocks\mingw\include\limits.h
+	<_mingw.h>
+
+1250308676 e:\utilitaires\codeblocks\mingw\include\errno.h
+	<_mingw.h>
+
+989765248 e:\utilitaires\codeblocks\mingw\include\sched.h
+	"need_errno.h"
+	<errno.h>
+	<sys/types.h>
+	<time.h>
+
+1250308682 e:\utilitaires\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\randomizer.hpp
+	<SFML/Config.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\sleep.hpp
+	<SFML/Config.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\thread.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Thread.hpp>
+	<SFML/System/Unix/Thread.hpp>
+
+1264604036 em/Unix/Thread.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.hpp
+	<SFML/Config.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<stdlib.h>
+	<SFML/System/Unicode.inl>
+
+1264604036 em/Unicode.inl>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1264604036 em/Vector2.inl>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1264604036 em/Vector3.inl>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\context.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\input.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowListener.hpp>
+
+1264604036 ow/WindowListener.hpp>
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowlistener.hpp
+	<SFML/Config.hpp>
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\videomode.hpp
+	<SFML/Config.hpp>
+	<cstdlib>
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\window.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowSettings.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<queue>
+	<string>
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowsettings.hpp
+
+1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowstyle.hpp
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\opengl.hpp
+	<SFML/Config.hpp>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+
+1264604036 u.h>
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\gl\gl.h
+
+1228534334 e:\utilitaires\codeblocks\mingw\include\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\color.hpp
+	<SFML/Config.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\font.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<map>
+	<string>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.hpp
+	<set>
+	<SFML/System/Resource.inl>
+	<SFML/System/ResourcePtr.inl>
+
+1264604036 em/ResourcePtr.inl>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resourceptr.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\glyph.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1268921652 hics/Rect.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.hpp
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1264604034 hics/Rect.inl>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\image.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\postfx.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Image.hpp>
+	<istream>
+	<map>
+	<string>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\drawable.hpp
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+
+1264604034 hics/Matrix3.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Vector2.hpp>
+	<math.h>
+	<SFML/Graphics/Matrix3.inl>
+
+1264604034 hics/Matrix3.inl>
+
+1250308678 e:\utilitaires\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.inl
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\view.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+	<SFML/System/Vector2.hpp>
+
+1264604034 em/Vector2.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/System/Vector2.hpp>
+	<vector>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\sprite.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\string.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+
+1335609644 g:\projets\cours\jeu\player.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<list>
+	"projectile.h"
+	"unit.h"
+	"timer.h"
+
+1335609661 source:g:\projets\cours\jeu\player.cpp
+	"player.h"
+
+1335542123 g:\projets\cours\jeu\projectile.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335542123 source:g:\projets\cours\jeu\projectile.cpp
+	"projectile.h"
+
+1335538523 e.h"
+
+1335526417 g:\projets\cours\jeu\collision.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"population.h"
+
+1335605410 n.h"
+
+1335607137 source:g:\projets\cours\jeu\collision.cpp
+	"collision.h"
+
+1335603537 .h"
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\unistd.h
+	<io.h>
+	<process.h>
+	<getopt.h>
+	<sys/types.h>
+
+1250308676 .h>
+
+1250308676 e:\utilitaires\codeblocks\mingw\include\io.h
+	<_mingw.h>
+	<sys/types.h>
+
+1250308678 e:\utilitaires\codeblocks\mingw\include\process.h
+	<_mingw.h>
+	<sys/types.h>
+	<stdint.h>
+
+1250308680 e:\utilitaires\codeblocks\mingw\include\stdint.h
+	<stddef.h>
+
+1250308676 e:\utilitaires\codeblocks\mingw\include\getopt.h
+	<_mingw.h>
+
+1335567442 g:\projets\cours\jeu\unit.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+
+1335567683 source:g:\projets\cours\jeu\unit.cpp
+	"unit.h"
+
+1335572409 source:g:\projets\cours\jeu\enemy.cpp
+	"enemy.h"
+
+1335485321 g:\projets\cours\jeu\timer.h
+	<SFML/System.hpp>
+
+1335481721 em.hpp>
+
+1335485961 source:g:\projets\cours\jeu\timer.cpp
+	"timer.h"
+
+1335572411 g:\projets\cours\jeu\enemy.h
+	<list>
+	<SFML/Graphics.hpp>
+	"timer.h"
+	"unit.h"
+	"projectile.h"
+
+1335609010 source:g:\projets\cours\jeu\population.cpp
+	"population.h"
+
+1335572304 g:\projets\cours\jeu\population.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"enemy.h"
+
+1264604042 c:\program files (x86)\codeblocks\mingw\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Randomizer.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1264604042 c:\program files (x86)\codeblocks\mingw\include\sfml\config.hpp
+	<climits>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\clock.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\lock.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\noncopyable.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\mutex.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Mutex.hpp>
+	<SFML/System/Unix/Mutex.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\windows.h
+	<winresrc.h>
+	<stdarg.h>
+	<windef.h>
+	<wincon.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<winver.h>
+	<winnetwk.h>
+	<winreg.h>
+	<winsvc.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<imm.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<commdlg.h>
+	<winspool.h>
+	<winsock2.h>
+	<winsock.h>
+	<ole2.h>
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winresrc.h
+	<winuser.h>
+	<winnt.h>
+	<winver.h>
+	<dde.h>
+	<dlgs.h>
+	<commctrl.h>
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\winuser.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winnt.h
+	<winerror.h>
+	<string.h>
+	<basetsd.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winerror.h
+
+1250308680 c:\program files (x86)\codeblocks\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1250308674 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+
+1228534312 c:\program files (x86)\codeblocks\mingw\include\basetsd.h
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\pshpack4.h
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\poppack.h
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\winver.h
+
+1228534314 c:\program files (x86)\codeblocks\mingw\include\dde.h
+
+1228534314 c:\program files (x86)\codeblocks\mingw\include\dlgs.h
+
+1228534314 c:\program files (x86)\codeblocks\mingw\include\commctrl.h
+	<prsht.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\prsht.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\windef.h
+	<winnt.h>
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\wincon.h
+
+1228534330 c:\program files (x86)\codeblocks\mingw\include\winbase.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\wingdi.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winnls.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winnetwk.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winreg.h
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\winsvc.h
+
+1228534312 c:\program files (x86)\codeblocks\mingw\include\cderr.h
+
+1228534314 c:\program files (x86)\codeblocks\mingw\include\ddeml.h
+
+1228534316 c:\program files (x86)\codeblocks\mingw\include\imm.h
+
+1228534320 c:\program files (x86)\codeblocks\mingw\include\lzexpand.h
+
+1228534322 c:\program files (x86)\codeblocks\mingw\include\mmsystem.h
+
+1228534322 c:\program files (x86)\codeblocks\mingw\include\nb30.h
+
+1228534326 c:\program files (x86)\codeblocks\mingw\include\rpc.h
+	<windows.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<winerror.h>
+	<excpt.h>
+
+1228534326 c:\program files (x86)\codeblocks\mingw\include\rpcdce.h
+	<basetyps.h>
+	<rpcdcep.h>
+
+1228534312 c:\program files (x86)\codeblocks\mingw\include\basetyps.h
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\rpcdcep.h
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\rpcnsi.h
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
+
+1250308676 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+	<_mingw.h>
+	<windef.h>
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\shellapi.h
+	<pshpack2.h>
+	<poppack.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\pshpack2.h
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winperf.h
+
+1228534314 c:\program files (x86)\codeblocks\mingw\include\commdlg.h
+	<unknwn.h>
+	<prsht.h>
+
+1228534330 c:\program files (x86)\codeblocks\mingw\include\unknwn.h
+	<windows.h>
+	<objfwd.h>
+	<wtypes.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\objfwd.h
+	<basetyps.h>
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\wtypes.h
+	<rpc.h>
+	<rpcndr.h>
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\rpcndr.h
+	<rpcnsip.h>
+	<objfwd.h>
+
+1228534328 c:\program files (x86)\codeblocks\mingw\include\rpcnsip.h
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\winspool.h
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\winsock2.h
+	<windows.h>
+
+1228534332 c:\program files (x86)\codeblocks\mingw\include\winsock.h
+	<windows.h>
+	<mswsock.h>
+
+1228534322 c:\program files (x86)\codeblocks\mingw\include\mswsock.h
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\ole2.h
+	<winerror.h>
+	<objbase.h>
+	<olectlid.h>
+	<oleauto.h>
+	<oleidl.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<stdlib.h>
+	<basetyps.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<cguid.h>
+
+1250308680 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\objidl.h
+	<objfwd.h>
+
+1228534312 c:\program files (x86)\codeblocks\mingw\include\cguid.h
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\olectlid.h
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\oleauto.h
+	<oaidl.h>
+
+1228534322 c:\program files (x86)\codeblocks\mingw\include\oaidl.h
+	<windows.h>
+	<ole2.h>
+
+1228534324 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
+	<objfwd.h>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+989765248 c:\program files (x86)\codeblocks\mingw\include\pthread.h
+	<windows.h>
+	"config.h"
+	<time.h>
+	<signal.h>
+	<setjmp.h>
+	<limits.h>
+	"need_errno.h"
+	<errno.h>
+	<sched.h>
+	<sys/types.h>
+
+1250308680 c:\program files (x86)\codeblocks\mingw\include\time.h
+	<_mingw.h>
+	<stddef.h>
+
+1250308680 c:\program files (x86)\codeblocks\mingw\include\signal.h
+	<_mingw.h>
+
+1250308678 c:\program files (x86)\codeblocks\mingw\include\setjmp.h
+	<_mingw.h>
+
+1250308678 c:\program files (x86)\codeblocks\mingw\include\limits.h
+	<_mingw.h>
+
+1250308676 c:\program files (x86)\codeblocks\mingw\include\errno.h
+	<_mingw.h>
+
+989765248 c:\program files (x86)\codeblocks\mingw\include\sched.h
+	"need_errno.h"
+	<errno.h>
+	<sys/types.h>
+	<time.h>
+
+1250308682 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\randomizer.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\sleep.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\thread.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Thread.hpp>
+	<SFML/System/Unix/Thread.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.hpp
+	<SFML/Config.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<stdlib.h>
+	<SFML/System/Unicode.inl>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.inl
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.inl
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.inl
+
+1264604042 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PostFX.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/String.hpp>
+	<SFML/Graphics/View.hpp>
+
+1264604042 c:\program files (x86)\codeblocks\mingw\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/OpenGL.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\context.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\input.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowListener.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowlistener.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\videomode.hpp
+	<SFML/Config.hpp>
+	<cstdlib>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\window.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowSettings.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<queue>
+	<string>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowsettings.hpp
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowstyle.hpp
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\window\opengl.hpp
+	<SFML/Config.hpp>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
+
+1228534334 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\color.hpp
+	<SFML/Config.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\font.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<map>
+	<string>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.hpp
+	<set>
+	<SFML/System/Resource.inl>
+	<SFML/System/ResourcePtr.inl>
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.inl
+
+1264604036 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resourceptr.inl
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\glyph.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.hpp
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.inl
+
+1268921654 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\image.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\postfx.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Image.hpp>
+	<istream>
+	<map>
+	<string>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\drawable.hpp
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Vector2.hpp>
+	<math.h>
+	<SFML/Graphics/Matrix3.inl>
+
+1250308678 c:\program files (x86)\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
+1268921656 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.inl
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\view.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+	<SFML/System/Vector2.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/System/Vector2.hpp>
+	<vector>
+
+1268921652 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\sprite.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\string.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+
+1335609507 source:g:\projets\cours\jeu\pannel.cpp
+	"pannel.h"
+
+1335572875 g:\projets\cours\jeu\pannel.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1335618361 source:g:\projets\cours\jeu\jeu.cpp
+	"jeu.h"
+
+1335618362 g:\projets\cours\jeu\jeu.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"enemy.h"
+	"collision.h"
+	"population.h"
+	"pannel.h"
+	<list>
+
+1335616545 g:\projets\cours\jeu\menu.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335617297 source:g:\projets\cours\jeu\menu.cpp
+	"menu.h"
+
+1335603537 source:f:\projets\cours\jeu\collision.cpp
+	"collision.h"
+
+1335522817 f:\projets\cours\jeu\collision.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"population.h"
+
+1264604042 c:\program files\codeblocks\mingw\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PostFX.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/String.hpp>
+	<SFML/Graphics/View.hpp>
+
+1264604042 c:\program files\codeblocks\mingw\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/OpenGL.hpp>
+
+1264604042 c:\program files\codeblocks\mingw\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Randomizer.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1264604042 c:\program files\codeblocks\mingw\include\sfml\config.hpp
+	<climits>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\clock.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\lock.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\noncopyable.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\mutex.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Mutex.hpp>
+	<SFML/System/Unix/Mutex.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1228530732 c:\program files\codeblocks\mingw\include\windows.h
+	<winresrc.h>
+	<stdarg.h>
+	<windef.h>
+	<wincon.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<winver.h>
+	<winnetwk.h>
+	<winreg.h>
+	<winsvc.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<imm.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<commdlg.h>
+	<winspool.h>
+	<winsock2.h>
+	<winsock.h>
+	<ole2.h>
+
+1228530732 c:\program files\codeblocks\mingw\include\winresrc.h
+	<winuser.h>
+	<winnt.h>
+	<winver.h>
+	<dde.h>
+	<dlgs.h>
+	<commctrl.h>
+
+1228530734 c:\program files\codeblocks\mingw\include\winuser.h
+
+1228530732 c:\program files\codeblocks\mingw\include\winnt.h
+	<winerror.h>
+	<string.h>
+	<basetsd.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1228530732 c:\program files\codeblocks\mingw\include\winerror.h
+
+1250305080 c:\program files\codeblocks\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1250305074 c:\program files\codeblocks\mingw\include\_mingw.h
+
+1228530712 c:\program files\codeblocks\mingw\include\basetsd.h
+
+1228530724 c:\program files\codeblocks\mingw\include\pshpack4.h
+
+1228530724 c:\program files\codeblocks\mingw\include\poppack.h
+
+1228530734 c:\program files\codeblocks\mingw\include\winver.h
+
+1228530714 c:\program files\codeblocks\mingw\include\dde.h
+
+1228530714 c:\program files\codeblocks\mingw\include\dlgs.h
+
+1228530714 c:\program files\codeblocks\mingw\include\commctrl.h
+	<prsht.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\prsht.h
+
+1228530732 c:\program files\codeblocks\mingw\include\windef.h
+	<winnt.h>
+
+1228530732 c:\program files\codeblocks\mingw\include\wincon.h
+
+1228530730 c:\program files\codeblocks\mingw\include\winbase.h
+
+1228530732 c:\program files\codeblocks\mingw\include\wingdi.h
+
+1228530732 c:\program files\codeblocks\mingw\include\winnls.h
+
+1228530732 c:\program files\codeblocks\mingw\include\winnetwk.h
+
+1228530732 c:\program files\codeblocks\mingw\include\winreg.h
+
+1228530734 c:\program files\codeblocks\mingw\include\winsvc.h
+
+1228530712 c:\program files\codeblocks\mingw\include\cderr.h
+
+1228530714 c:\program files\codeblocks\mingw\include\ddeml.h
+
+1228530716 c:\program files\codeblocks\mingw\include\imm.h
+
+1228530720 c:\program files\codeblocks\mingw\include\lzexpand.h
+
+1228530722 c:\program files\codeblocks\mingw\include\mmsystem.h
+
+1228530722 c:\program files\codeblocks\mingw\include\nb30.h
+
+1228530726 c:\program files\codeblocks\mingw\include\rpc.h
+	<windows.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<winerror.h>
+	<excpt.h>
+
+1228530726 c:\program files\codeblocks\mingw\include\rpcdce.h
+	<basetyps.h>
+	<rpcdcep.h>
+
+1228530712 c:\program files\codeblocks\mingw\include\basetyps.h
+
+1228530728 c:\program files\codeblocks\mingw\include\rpcdcep.h
+
+1228530728 c:\program files\codeblocks\mingw\include\rpcnsi.h
+
+1228530728 c:\program files\codeblocks\mingw\include\rpcnterr.h
+
+1250305076 c:\program files\codeblocks\mingw\include\excpt.h
+	<_mingw.h>
+	<windef.h>
+
+1228530728 c:\program files\codeblocks\mingw\include\shellapi.h
+	<pshpack2.h>
+	<poppack.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\pshpack2.h
+
+1228530732 c:\program files\codeblocks\mingw\include\winperf.h
+
+1228530714 c:\program files\codeblocks\mingw\include\commdlg.h
+	<unknwn.h>
+	<prsht.h>
+
+1228530730 c:\program files\codeblocks\mingw\include\unknwn.h
+	<windows.h>
+	<objfwd.h>
+	<wtypes.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\objfwd.h
+	<basetyps.h>
+
+1228530734 c:\program files\codeblocks\mingw\include\wtypes.h
+	<rpc.h>
+	<rpcndr.h>
+
+1228530728 c:\program files\codeblocks\mingw\include\rpcndr.h
+	<rpcnsip.h>
+	<objfwd.h>
+
+1228530728 c:\program files\codeblocks\mingw\include\rpcnsip.h
+
+1228530734 c:\program files\codeblocks\mingw\include\winspool.h
+
+1228530734 c:\program files\codeblocks\mingw\include\winsock2.h
+	<windows.h>
+
+1228530732 c:\program files\codeblocks\mingw\include\winsock.h
+	<windows.h>
+	<mswsock.h>
+
+1228530722 c:\program files\codeblocks\mingw\include\mswsock.h
+
+1228530724 c:\program files\codeblocks\mingw\include\ole2.h
+	<winerror.h>
+	<objbase.h>
+	<olectlid.h>
+	<oleauto.h>
+	<oleidl.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<stdlib.h>
+	<basetyps.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<cguid.h>
+
+1250305080 c:\program files\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\objidl.h
+	<objfwd.h>
+
+1228530712 c:\program files\codeblocks\mingw\include\cguid.h
+
+1228530724 c:\program files\codeblocks\mingw\include\olectlid.h
+
+1228530724 c:\program files\codeblocks\mingw\include\oleauto.h
+	<oaidl.h>
+
+1228530722 c:\program files\codeblocks\mingw\include\oaidl.h
+	<windows.h>
+	<ole2.h>
+
+1228530724 c:\program files\codeblocks\mingw\include\oleidl.h
+	<objfwd.h>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+989761648 c:\program files\codeblocks\mingw\include\pthread.h
+	<windows.h>
+	"config.h"
+	<time.h>
+	<signal.h>
+	<setjmp.h>
+	<limits.h>
+	"need_errno.h"
+	<errno.h>
+	<sched.h>
+	<sys/types.h>
+
+1250305080 c:\program files\codeblocks\mingw\include\time.h
+	<_mingw.h>
+	<stddef.h>
+
+1250305080 c:\program files\codeblocks\mingw\include\signal.h
+	<_mingw.h>
+
+1250305078 c:\program files\codeblocks\mingw\include\setjmp.h
+	<_mingw.h>
+
+1250305078 c:\program files\codeblocks\mingw\include\limits.h
+	<_mingw.h>
+
+1250305076 c:\program files\codeblocks\mingw\include\errno.h
+	<_mingw.h>
+
+989761648 c:\program files\codeblocks\mingw\include\sched.h
+	"need_errno.h"
+	<errno.h>
+	<sys/types.h>
+	<time.h>
+
+1250305082 c:\program files\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\randomizer.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\sleep.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\thread.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Thread.hpp>
+	<SFML/System/Unix/Thread.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\win32\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\system\unix\thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\unicode.hpp
+	<SFML/Config.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<stdlib.h>
+	<SFML/System/Unicode.inl>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\unicode.inl
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\vector2.inl
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\vector3.inl
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\context.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\input.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowListener.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\windowlistener.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\videomode.hpp
+	<SFML/Config.hpp>
+	<cstdlib>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\window.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowSettings.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<queue>
+	<string>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\windowsettings.hpp
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\windowstyle.hpp
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\window\opengl.hpp
+	<SFML/Config.hpp>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+
+1228530734 c:\program files\codeblocks\mingw\include\gl\gl.h
+
+1228530734 c:\program files\codeblocks\mingw\include\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\color.hpp
+	<SFML/Config.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\font.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<map>
+	<string>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\resource.hpp
+	<set>
+	<SFML/System/Resource.inl>
+	<SFML/System/ResourcePtr.inl>
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\resource.inl
+
+1264604036 c:\program files\codeblocks\mingw\include\sfml\system\resourceptr.inl
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\glyph.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\rect.hpp
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\rect.inl
+
+1268921654 c:\program files\codeblocks\mingw\include\sfml\graphics\image.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\postfx.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Image.hpp>
+	<istream>
+	<map>
+	<string>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\drawable.hpp
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Vector2.hpp>
+	<math.h>
+	<SFML/Graphics/Matrix3.inl>
+
+1250305078 c:\program files\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
+1268921656 c:\program files\codeblocks\mingw\include\sfml\graphics\matrix3.inl
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\view.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+	<SFML/System/Vector2.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/System/Vector2.hpp>
+	<vector>
+
+1268921652 c:\program files\codeblocks\mingw\include\sfml\graphics\sprite.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264604034 c:\program files\codeblocks\mingw\include\sfml\graphics\string.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+
+1335606044 f:\projets\cours\jeu\player.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<list>
+	"projectile.h"
+	"unit.h"
+	"timer.h"
+
+1335538523 f:\projets\cours\jeu\projectile.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335563842 f:\projets\cours\jeu\unit.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+
+1335481721 f:\projets\cours\jeu\timer.h
+	<SFML/System.hpp>
+
+1335568704 f:\projets\cours\jeu\population.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"enemy.h"
+
+1335568811 f:\projets\cours\jeu\enemy.h
+	<list>
+	<SFML/Graphics.hpp>
+	"timer.h"
+	"unit.h"
+	"projectile.h"
+
+1335568809 source:f:\projets\cours\jeu\enemy.cpp
+	"enemy.h"
+
+1335614822 source:f:\projets\cours\jeu\main.cpp
+	"SFML/Graphics.hpp"
+	"jeu.h"
+	"menu.h"
+
+1335614762 f:\projets\cours\jeu\jeu.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"enemy.h"
+	"collision.h"
+	"population.h"
+	"pannel.h"
+	<list>
+
+1335569275 f:\projets\cours\jeu\pannel.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1335612945 f:\projets\cours\jeu\menu.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335605907 source:f:\projets\cours\jeu\pannel.cpp
+	"pannel.h"
+
+1335606061 source:f:\projets\cours\jeu\player.cpp
+	"player.h"
+
+1335605410 source:f:\projets\cours\jeu\population.cpp
+	"population.h"
+
+1335538523 source:f:\projets\cours\jeu\projectile.cpp
+	"projectile.h"
+
+1335482361 source:f:\projets\cours\jeu\timer.cpp
+	"timer.h"
+
+1335564083 source:f:\projets\cours\jeu\unit.cpp
+	"unit.h"
+
+1335607137 source:/media/SAGE/projets/cours/jeu/collision.cpp
+	"collision.h"
+
+1335526417 /media/SAGE/projets/cours/jeu/collision.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"population.h"
+
+1264600441 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/PostFX.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/String.hpp>
+	<SFML/Graphics/View.hpp>
+
+1264600441 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/OpenGL.hpp>
+
+1264600441 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Randomizer.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1264600441 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Config.hpp
+	<climits>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Clock.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Lock.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/NonCopyable.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Mutex.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Mutex.hpp>
+	<SFML/System/Unix/Mutex.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Win32/Mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Unix/Mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Randomizer.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Sleep.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Thread.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Thread.hpp>
+	<SFML/System/Unix/Thread.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Win32/Thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Unix/Thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Unicode.hpp
+	<SFML/Config.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<stdlib.h>
+	<SFML/System/Unicode.inl>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Unicode.inl
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Vector2.inl
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Vector3.inl
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/Context.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/Event.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/Input.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowListener.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/WindowListener.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/VideoMode.hpp
+	<SFML/Config.hpp>
+	<cstdlib>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/Window.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Input.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowListener.hpp>
+	<SFML/Window/WindowSettings.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<queue>
+	<string>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/WindowHandle.hpp
+	<SFML/Config.hpp>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/WindowSettings.hpp
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/WindowStyle.hpp
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Window/OpenGL.hpp
+	<SFML/Config.hpp>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Color.hpp
+	<SFML/Config.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Font.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<map>
+	<string>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Resource.hpp
+	<set>
+	<SFML/System/Resource.inl>
+	<SFML/System/ResourcePtr.inl>
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/Resource.inl
+
+1264600434 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/System/ResourcePtr.inl
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Glyph.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Rect.hpp
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Rect.inl
+
+1268918053 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Image.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/PostFX.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Image.hpp>
+	<istream>
+	<map>
+	<string>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Drawable.hpp
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Matrix3.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Vector2.hpp>
+	<math.h>
+	<SFML/Graphics/Matrix3.inl>
+
+1268918055 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Matrix3.inl
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/RenderWindow.hpp
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/RenderTarget.hpp
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/View.hpp
+	<SFML/Config.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Matrix3.hpp>
+	<SFML/System/Vector2.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Shape.hpp
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/System/Vector2.hpp>
+	<vector>
+
+1268918050 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/Sprite.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1264600432 /media/SAGE/projets/cours/jeu/SFML-1.6/include/SFML/Graphics/String.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+
+1335609644 /media/SAGE/projets/cours/jeu/player.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<list>
+	"projectile.h"
+	"unit.h"
+	"timer.h"
+
+1335542123 /media/SAGE/projets/cours/jeu/projectile.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335567442 /media/SAGE/projets/cours/jeu/unit.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+
+1335485321 /media/SAGE/projets/cours/jeu/timer.h
+	<SFML/System.hpp>
+
+1335572304 /media/SAGE/projets/cours/jeu/population.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"enemy.h"
+
+1335572411 /media/SAGE/projets/cours/jeu/enemy.h
+	<list>
+	<SFML/Graphics.hpp>
+	"timer.h"
+	"unit.h"
+	"projectile.h"
+
+1335572409 source:/media/SAGE/projets/cours/jeu/enemy.cpp
+	"enemy.h"
+
+1335618422 source:/media/SAGE/projets/cours/jeu/main.cpp
+	"SFML/Graphics.hpp"
+	"jeu.h"
+	"menu.h"
+
+1335618362 /media/SAGE/projets/cours/jeu/jeu.h
+	<SFML/Graphics.hpp>
+	"player.h"
+	"enemy.h"
+	"collision.h"
+	"population.h"
+	"pannel.h"
+	<list>
+
+1335572875 /media/SAGE/projets/cours/jeu/pannel.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1335616545 /media/SAGE/projets/cours/jeu/menu.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335609507 source:/media/SAGE/projets/cours/jeu/pannel.cpp
+	"pannel.h"
+
+1335609661 source:/media/SAGE/projets/cours/jeu/player.cpp
+	"player.h"
+
+1335609010 source:/media/SAGE/projets/cours/jeu/population.cpp
+	"population.h"
+
+1335542123 source:/media/SAGE/projets/cours/jeu/projectile.cpp
+	"projectile.h"
+
+1335485961 source:/media/SAGE/projets/cours/jeu/timer.cpp
+	"timer.h"
+
+1335567683 source:/media/SAGE/projets/cours/jeu/unit.cpp
+	"unit.h"
+
