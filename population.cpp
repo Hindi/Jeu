@@ -21,9 +21,9 @@ Population::~Population()
     }
 }
 
-void Population::createEnemy(int score,int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, IntRect subRect)
+void Population::createEnemy(int score,int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app)
 {
-    m_enemies.push_back(new Enemy(1, score, xSpeed, ySpeed, filepath, position, app, subRect));
+    m_enemies.push_back(new Enemy(1, score, xSpeed, ySpeed, filepath, position, app));
 }
 
 void Population::drawPopulation()
@@ -33,7 +33,7 @@ void Population::drawPopulation()
         list<Enemy*>::const_iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end(); lit++)
         {
-            m_app.Draw(*(*lit)->getSprite());
+            (*lit)->draw();
         }
     }
 }
@@ -73,4 +73,14 @@ bool Population::haveEnnemyInProgress()
     {
         return false;
     }
+}
+
+void Population::freeze()
+{
+
+}
+
+void Population::unFreeze()
+{
+
 }
