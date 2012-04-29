@@ -10,8 +10,8 @@ public:
     void start();
     void pause();
     void reinitialize();
-
     float getTime();
+    void sleep(unsigned pMilliseconds);
 
 private:
     enum State {started, paused};

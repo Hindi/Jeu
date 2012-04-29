@@ -1,5 +1,20 @@
 #include "timer.h"
 
+#ifdef _WIN32
+    #include <windows.h>
+    void Timer::sleep(unsigned pMilliseconds)
+    {
+        ::Sleep(pMilliseconds);
+    }
+#else
+    #include <unistd.h>
+    void Timer::sleep(unsigned pMilliseconds)
+    {
+        static const unsigned MilliToMicro = 1000;
+        ::usleep(pmilliseconds * MilliToMicro);
+    }
+#endif
+
 Timer::Timer() : m_elapsedTime(0.0f), m_state(paused)
 {}
 
@@ -39,6 +54,6 @@ float Timer::getTime()
     {
         time = m_clock.GetElapsedTime() + m_elapsedTime;
     }
-
     return time;
 }
+
