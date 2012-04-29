@@ -1,24 +1,28 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 #include <SFML/Graphics.hpp>
+#include <list>
 #include "player.h"
 #include "enemy.h"
 #include "collision.h"
 #include "population.h"
 #include "pannel.h"
-#include <list>
+#include "timer.h"
+#include "menu.h"
 
 class Jeu
 {
     public:
-        Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT);
+        Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu);
         ~Jeu();
         void start();
-        void pause();
+        void pause(Population &population, sf::Event event, Pannel &pannel, Player &player);
 
     protected:
         sf::RenderWindow &m_app;
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;
+        Menu &m_menu;
+        bool m_quit;
 };
 
 #endif // JEU_H_INCLUDED

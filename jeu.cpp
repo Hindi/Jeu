@@ -3,13 +3,12 @@
 using namespace std;
 using namespace sf;
 
-Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT): m_app(app),m_SCREEN_HEIGHT(SCREEN_HEIGHT), m_SCREEN_WIDTH(SCREEN_WIDTH)
+Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu): m_app(app),m_SCREEN_HEIGHT(SCREEN_HEIGHT), m_SCREEN_WIDTH(SCREEN_WIDTH), m_menu(menu), m_quit(false)
 {
 }
 
 Jeu::~Jeu()
 {
-
 }
 
 void Jeu::start()
@@ -19,15 +18,15 @@ void Jeu::start()
     Timer timer;
 
     //Variables :
+    const int PANNEL_WIDTH(300), PLAYER_WIDTH(118), PLAYER_HEIGHT(93);
     const Input & input = m_app.GetInput();
-    const int PANNEL_WIDTH(300), PLAYER_WIDTH(118), PLAYER_HEIGHT(93), ENEMY_WIDTH(36), ENEMY_HEIGHT(51);
 
     //Variables player :
     IntRect subRect(0, PLAYER_HEIGHT, PLAYER_WIDTH, 0);
     double playerXSpeed = 10, playerYSpeed = 10;
     const string filepath = "images/player.png";
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
-    Player player(1, playerXSpeed, playerYSpeed, filepath, positionPlayer, m_app, subRect);
+    Player player(1, playerXSpeed, playerYSpeed, filepath, positionPlayer, m_app);
 
     //Variables enemy :
     double enemyXSpeed = 10, enemyYSpeed = 10;
@@ -36,30 +35,29 @@ void Jeu::start()
 
     //Variable population
     Population population(m_app);
-    IntRect subRectEnemy(0, ENEMY_HEIGHT, ENEMY_WIDTH, 0);
 
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x =10;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
 
 
-    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app, subRectEnemy);
+    population.createEnemy(10, enemyXSpeed, enemyYSpeed, filepathEnemy, positionEnemy, m_app);
     positionEnemy.x +=100;
     //pannel
     const string filepathPanel = "images/pannel.png";
@@ -73,8 +71,11 @@ void Jeu::start()
     //Projectiles
     list<Projectile*> projectiles;
 
-    while (m_app.IsOpened())
+    while (m_app.IsOpened() )
     {
+        if(m_quit)
+            break;
+
         m_app.Clear();
         //Entrées touches :
         Event Event;
@@ -92,7 +93,6 @@ void Jeu::start()
                 player.getSprite()->SetSubRect(subRect);
             }
         }
-
         //Déplacements :
         if(input.IsKeyDown(Key::Up))
         {
@@ -108,12 +108,15 @@ void Jeu::start()
         {
             player.moveRight();
             collision.manageCollisionsX();
-
         }
         if(input.IsKeyDown(Key::Left))
         {
             player.moveLeft();
             collision.manageCollisionsX();
+        }
+        if(!(input.IsKeyDown(Key::Down))&&!(input.IsKeyDown(Key::Up))&&!(input.IsKeyDown(Key::Left))&&!(input.IsKeyDown(Key::Right)))
+        {
+            player.dontMove();
         }
         if(input.IsKeyDown(Key::Space))
         {
@@ -121,9 +124,10 @@ void Jeu::start()
         }
         if(input.IsKeyDown(Key::Escape))
         {
-            m_app.Close();
+            population.freeze();
+            this->pause(population, Event, pannel, player);
+            population.unFreeze();
         }
-
         if(player.HaveProjectilesInProgress())
         {
             player.moveProjectile();
@@ -145,17 +149,72 @@ void Jeu::start()
                 invincible = false;
             }
         }
-
+        player.draw();
         m_app.Draw(*pannel.getSprite());
         pannel.checkPannel();
         population.checkPopulation();
         population.drawPopulation();
+        m_app.Display();
+        timer.sleep(1);
+    }
+}
+
+void Jeu::pause(Population &population, Event Event, Pannel &pannel, Player &player)
+{
+    Timer timer;
+    bool resume(false);
+    int select(1);
+    while(m_app.IsOpened() && !resume)
+    {
+        m_app.Clear();
+        while (m_app.GetEvent(Event))
+        {
+            if(resume)
+                break;
+            m_app.Clear();
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
+            {
+                if(select == 2)
+                    select +=0;
+                else
+                    select +=1;
+            }
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up))
+            {
+                if(select == 1)
+                    select -=0;
+                else
+                    select -=1;
+            }
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Escape))
+            {
+                resume = true;
+            }
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
+            {
+                switch(select)
+                {
+                    case 1:
+                    {
+                        resume = true;
+                        break;
+                    }
+                    case 2:
+                    {
+                        resume = true;
+                        m_quit = true;
+                        break;
+                    }
+                }
+            }
+
+        timer.sleep(1);
+        }
+        m_app.Draw(*pannel.getSprite());
+        population.drawPopulation();
         m_app.Draw(*player.getSprite());
+        m_menu.drawPauseMenu(select);
         m_app.Display();
     }
 }
 
-void Jeu::pause()
-{
-
-}
