@@ -3,9 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Player::Player(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, IntRect subRect):Unit(1, xSpeed, ySpeed, filepath, position, app, subRect), max_lives(3), lastShot(0), fireRate(0.1), m_lives(4), m_score(0), lostLife(false)
+Player::Player(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app):Unit(1, xSpeed, ySpeed, filepath, position, app), max_lives(3), lastShot(0), fireRate(0.1), m_lives(4), m_score(0), lostLife(false)
 {
     timer.start();
+    currentFrameX = currentFrameY = 0;
+    animation->initialize(m_position.x, m_position.y, 5, 3);
 }
 
 Player::~Player()
@@ -30,14 +32,14 @@ int Player::getLives()
     return m_lives;
 }
 
-IntRect Player::GetBoundingBox() const
+IntRect Player::GetBoundingBox()
 {
     //Récupère le rectangle de collision pour le joueur
     IntRect boundingBox;
-    boundingBox.Left = (int)sprite.GetPosition().x;
-    boundingBox.Right = boundingBox.Left + sprite.GetSize().x;
-    boundingBox.Top = (int)sprite.GetPosition().y;
-    boundingBox.Bottom = boundingBox.Top + sprite.GetSize().y;
+    boundingBox.Left = (int)m_position.x;
+    boundingBox.Right = boundingBox.Left + animation->getFrameWidth();
+    boundingBox.Top = (int)m_position.y;
+    boundingBox.Bottom = boundingBox.Top + animation->getFrameHeight();
 
     return boundingBox;
 }
@@ -47,10 +49,9 @@ void Player::fire()
     //Créé les projectiles
     if(canFire(lastShot, timer, fireRate))
     {
-        this->refreshPosition();
         Vector2f positionProjectile = m_position;
         positionProjectile.x += 39;
-        positionProjectile.y -= 113;
+        positionProjectile.y -= 30;
         const string filepath = "images/projectile.png";
 
         projectile = new Projectile(filepath, positionProjectile, 20);
@@ -93,7 +94,13 @@ void Player::moveProjectile()
         }
     }
 }
-
+void Player::loadContent()
+{
+    if(image->LoadFromFile("images/player.png"))
+    {
+        animation->setImage(*image);
+    }
+}
 void Player::drawProjectile()
 {
     //Dessine les projectiles pour qu'ils soient affichés à l'écran
@@ -130,7 +137,7 @@ double Player::getScore()
 void Player::loseLive()
 {
     Vector2f position(500, 1000);
-    sprite.SetPosition(position);
+    m_position = position;
     m_lives -= 1;
     lostLife = true;
 }
@@ -145,7 +152,79 @@ void Player::resetLostLife()
     lostLife = false;
 }
 
-void Player::refreshPosition()
+
+void Player::moveUp()
 {
-    m_position = sprite.GetPosition();
+    animation->setActive(true);
+    m_position.y -= m_ySpeed * m_app.GetFrameTime() * coefSpeed;
+    currentFrameY = 0;
+    animation->setPosition(1, m_position.x);
+    animation->setPosition(2, m_position.y);
+    animation->setCurrentFrame(2, currentFrameY);
+    animation->update(m_app);
+}
+
+void Player::moveDown()
+{
+    animation->setActive(true);
+    m_position.y += m_ySpeed * m_app.GetFrameTime() * coefSpeed;
+    currentFrameY = 0;
+    animation->setPosition(1, m_position.x);
+    animation->setPosition(2, m_position.y);
+    animation->setCurrentFrame(2, currentFrameY);
+    animation->update(m_app);
+}
+
+void Player::moveLeft()
+{
+    animation->setActive(true);
+    m_position.x -= m_xSpeed * m_app.GetFrameTime() * coefSpeed;
+    currentFrameY = 1;
+    animation->setPosition(1, m_position.x);
+    animation->setPosition(2, m_position.y);
+    animation->setCurrentFrame(2, currentFrameY);
+    animation->update(m_app);
+}
+
+void Player::moveRight()
+{
+    animation->setActive(true);
+    m_position.x += m_xSpeed * m_app.GetFrameTime() * coefSpeed;
+    currentFrameY = 2;
+    animation->setPosition(1, m_position.x);
+    animation->setPosition(2, m_position.y);
+    animation->setCurrentFrame(2, currentFrameY);
+    animation->update(m_app);
+}
+
+void Player::dontMove()
+{
+    animation->setActive(true);
+    currentFrameY = 0;
+    animation->setPosition(1, m_position.x);
+    animation->setPosition(2, m_position.y);
+    animation->setCurrentFrame(2, currentFrameY);
+    animation->update(m_app);
+}
+
+void Player::draw()
+{
+    animation->draw(m_app);
+}
+
+
+int Player::getPosition(int axis)
+{
+    if(axis == 0)
+        return m_position.x;
+    else
+        return m_position.y;
+}
+
+void Player::setPosition(int axis, int value)
+{
+    if(axis == 1)
+        m_position.x = value;
+    else
+        m_position.y = value;
 }

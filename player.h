@@ -6,6 +6,7 @@
 #include "projectile.h"
 #include "unit.h"
 #include "timer.h"
+#include "animation.h"
 
 
 //Tout ce qui concerne le joueur
@@ -13,11 +14,11 @@
 class Player : public Unit
 {
     public:
-        Player(int life, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, sf::RenderWindow &app, sf::IntRect subRect);
+        Player(int life, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, sf::RenderWindow &app);
         ~Player();
         sf::Sprite* getSprite();
         int getLives();
-        sf::IntRect GetBoundingBox() const;
+        sf::IntRect GetBoundingBox();
         void fire();
         bool HaveProjectilesInProgress();
         std::list<Projectile*>* getProjectiles();
@@ -28,7 +29,15 @@ class Player : public Unit
         void loseLive();
         bool getLostlife();
         void resetLostLife();
-        void refreshPosition();
+        void loadContent();
+        void moveUp();
+        void moveDown();
+        void moveLeft();
+        void moveRight();
+        void dontMove();
+        void draw();
+        int getPosition(int axis);
+        void setPosition(int axis, int value);
 
     protected:
         std::list<Projectile*> m_projectiles;
