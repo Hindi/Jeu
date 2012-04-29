@@ -30,14 +30,13 @@ Collision::~Collision()
 void Collision::manageCollisionsX()
 {
     IntRect playerRect = m_player.GetBoundingBox(), enemyRect;
-
-    if(playerRect.Left < -30)
+    if(playerRect.Left < 0)
     {
-        m_player.moveRight();
+        m_player.setPosition(1, 0);
     }
     else if(playerRect.Right > m_windowSize.x )
     {
-        m_player.moveLeft();
+        m_player.setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
     }
 
     if(!m_player.getLostlife())
@@ -58,13 +57,13 @@ void Collision::manageCollisionsX()
 void Collision::manageCollisionsY()
 {
     IntRect playerRect = m_player.GetBoundingBox(), enemyRect;
-    if(playerRect.Top < 95)
+    if(playerRect.Top < 0)
     {
-        m_player.moveDown();
+        m_player.setPosition(2, 0);
     }
-    else if(playerRect.Bottom > m_windowSize.y -95 )
+    else if(playerRect.Bottom > m_windowSize.y)
     {
-        m_player.moveUp();
+        m_player.setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
     }
 
     if(!m_player.getLostlife())
@@ -93,7 +92,7 @@ void Collision::manageProjectileCollision()
         for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
         {
             projectileRect = (*lit)->getBoundingBox();
-            projectilePosition.y = (*lit)->GetPosition().y+1000;
+            projectilePosition.y = (*lit)->GetPosition().y;
             projectileRect.Top  = projectilePosition.y;
             projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
             enemyRect = (*li)->getBoundingBox();
