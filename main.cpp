@@ -1,50 +1,51 @@
 #include "SFML/Graphics.hpp"
 #include "jeu.h"
 #include "menu.h"
+#include "timer.h"
 
 using namespace std;
 using namespace sf;
 
 void startGame(Jeu jeu);
-void resumeGame(Jeu jeu);
 
 int main()
 {
     const int SCREEN_WIDTH(1280), SCREEN_HEIGHT(1024), MAX_MENU(3);
     sf::RenderWindow app(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Jeu");
 
-    Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT);
     Menu menu(app);
+    Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT, menu);
+    Timer timer;
 
     int select(1);
-    bool saved(false);
     Event Event;
+
     while (app.IsOpened())
     {
         app.Clear();
-        while (app.GetEvent(Event))
+        while(app.GetEvent(Event))
         {
             if (Event.Type == sf::Event::Closed)
                 app.Close();
-             if((Event.Type == sf::Event::KeyReleased) && (Event.Key.Code == sf::Key::Escape))
+             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Escape))
             {
                 app.Close();
             }
-            if((Event.Type == sf::Event::KeyReleased) && (Event.Key.Code == sf::Key::Down))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
             {
                 if(select == MAX_MENU)
                     select +=0;
                 else
                     select +=1;
             }
-            if((Event.Type == sf::Event::KeyReleased) && (Event.Key.Code == sf::Key::Up))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up))
             {
                 if(select == 1)
                     select -=0;
                 else
                     select -=1;
             }
-            if((Event.Type == sf::Event::KeyReleased) && (Event.Key.Code == sf::Key::Return))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
             {
                 switch(select)
                 {
@@ -64,8 +65,10 @@ int main()
                 }
             }
         }
-    menu.draw(select);
+
+    menu.drawMainMenu(select);
     app.Display();
+    timer.sleep(1);
     }
     return 0;
 }

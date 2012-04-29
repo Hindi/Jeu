@@ -8,7 +8,8 @@ class Menu
     public:
         Menu(sf::RenderWindow &app);
         ~Menu();
-        void draw(int select);
+        void drawMainMenu(int select);
+        void drawPauseMenu(int select);
 
     protected:
         sf::RenderWindow &m_app;
@@ -19,10 +20,19 @@ class Menu
         sf::Image *imageFadePlay;
         sf::Image *imageFadeCredit;
         sf::Image *imageFadeHow;
+        sf::Image *imagePause;
+        sf::Image *imageReprendre;
+        sf::Image *imageArreter;
+        sf::Image *imageFadePause;
+        sf::Image *imageFadeReprendre;
+        sf::Image *imageFadeArreter;
 
         sf::Sprite spritePlay;
         sf::Sprite spriteCredit;
         sf::Sprite spriteHow;
+        sf::Sprite spritePause;
+        sf::Sprite spriteReprendre;
+        sf::Sprite spriteArreter;
         sf::Vector2f position;
         sf::Vector2f m_scale;
 };
