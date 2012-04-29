@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1335617297 source:g:\projets\cours\jeu\main.cpp
+1335649919 source:g:\projets\cours\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
+	"timer.h"
 
-1335564083 
+1335606061 
 
 1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -131,8 +132,6 @@
 1250308680 e:\utilitaires\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
-
-1335606061 
 
 1250308674 e:\utilitaires\codeblocks\mingw\include\_mingw.h
 
@@ -545,15 +544,16 @@
 	<SFML/Graphics/Rect.hpp>
 	<string>
 
-1335609644 g:\projets\cours\jeu\player.h
+1335704427 g:\projets\cours\jeu\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<list>
 	"projectile.h"
 	"unit.h"
 	"timer.h"
+	"animation.h"
 
-1335609661 source:g:\projets\cours\jeu\player.cpp
+1335704996 source:g:\projets\cours\jeu\player.cpp
 	"player.h"
 
 1335542123 g:\projets\cours\jeu\projectile.h
@@ -572,7 +572,7 @@
 
 1335605410 n.h"
 
-1335607137 source:g:\projets\cours\jeu\collision.cpp
+1335701487 source:g:\projets\cours\jeu\collision.cpp
 	"collision.h"
 
 1335603537 .h"
@@ -600,36 +600,40 @@
 1250308676 e:\utilitaires\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1335567442 g:\projets\cours\jeu\unit.h
+1335705005 g:\projets\cours\jeu\unit.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
+	"animation.h"
 
-1335567683 source:g:\projets\cours\jeu\unit.cpp
+1335704996 source:g:\projets\cours\jeu\unit.cpp
 	"unit.h"
 
-1335572409 source:g:\projets\cours\jeu\enemy.cpp
+1335704054 source:g:\projets\cours\jeu\enemy.cpp
 	"enemy.h"
 
-1335485321 g:\projets\cours\jeu\timer.h
+1335644197 g:\projets\cours\jeu\timer.h
 	<SFML/System.hpp>
 
 1335481721 em.hpp>
 
-1335485961 source:g:\projets\cours\jeu\timer.cpp
+1335644256 source:g:\projets\cours\jeu\timer.cpp
 	"timer.h"
+	<windows.h>
+	<unistd.h>
 
-1335572411 g:\projets\cours\jeu\enemy.h
+1335704426 g:\projets\cours\jeu\enemy.h
 	<list>
 	<SFML/Graphics.hpp>
 	"timer.h"
 	"unit.h"
 	"projectile.h"
+	"animation.h"
 
-1335609010 source:g:\projets\cours\jeu\population.cpp
+1335701148 source:g:\projets\cours\jeu\population.cpp
 	"population.h"
 
-1335572304 g:\projets\cours\jeu\population.h
+1335697991 g:\projets\cours\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -1139,23 +1143,25 @@
 	<sstream>
 	"player.h"
 
-1335618361 source:g:\projets\cours\jeu\jeu.cpp
+1335702364 source:g:\projets\cours\jeu\jeu.cpp
 	"jeu.h"
 
-1335618362 g:\projets\cours\jeu\jeu.h
+1335653395 g:\projets\cours\jeu\jeu.h
 	<SFML/Graphics.hpp>
+	<list>
 	"player.h"
 	"enemy.h"
 	"collision.h"
 	"population.h"
 	"pannel.h"
-	<list>
+	"timer.h"
+	"menu.h"
 
-1335616545 g:\projets\cours\jeu\menu.h
+1335648924 g:\projets\cours\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1335617297 source:g:\projets\cours\jeu\menu.cpp
+1335651291 source:g:\projets\cours\jeu\menu.cpp
 	"menu.h"
 
 1335603537 source:f:\projets\cours\jeu\collision.cpp
@@ -2068,4 +2074,11 @@
 
 1335567683 source:/media/SAGE/projets/cours/jeu/unit.cpp
 	"unit.h"
+
+1335704680 g:\projets\cours\jeu\animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1335705299 source:g:\projets\cours\jeu\animation.cpp
+	"animation.h"
 
