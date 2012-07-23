@@ -15,27 +15,34 @@ Animation::~Animation()
 
 int Animation::getFrameWidth()
 {
+    //Calcule la largeur des images à afficher
     return sprite.GetImage()->GetWidth() / amountOfFrameX;
 }
 
 int Animation::getFrameHeight()
 {
+    //Calcule la hauteur des images à afficher
     return sprite.GetImage()->GetHeight() / amountOfFrameY;
 }
 
 void Animation::initialize(float x, float y, int frameX, int frameY)
 {
+    //Fait office de constructeur
     frameCounter = 0;
     switchFrame = 3;
     this->x = x;
     this->y = y;
     amountOfFrameY = frameY;
     amountOfFrameX = frameX;
+    sprite.SetPosition(x,y);
+    currentFrameX = currentFrameY = 0;
     active = false;
 }
 
 void Animation::update(RenderWindow &app)
 {
+    //Permet de faire défiler les images
+
     if(active)
         frameCounter += 10*(float)app.GetFrameTime();
     else
@@ -70,6 +77,8 @@ void Animation::setActive(bool value)
 
 int Animation::getCurrentFrame(int axis)
 {
+    //Axe 1 : x, les autre : y
+    //Permet de savoir à quelle image on en est
     if(axis == 1)
         return currentFrameX;
     else

@@ -2,6 +2,7 @@
 #include "jeu.h"
 #include "menu.h"
 #include "timer.h"
+#include <iostream>
 
 using namespace std;
 using namespace sf;
@@ -10,8 +11,12 @@ void startGame(Jeu jeu);
 
 int main()
 {
+
     const int SCREEN_WIDTH(1280), SCREEN_HEIGHT(1024), MAX_MENU(3);
     sf::RenderWindow app(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Jeu");
+    app.UseVerticalSync(true);
+    app.SetFramerateLimit(60);
+
 
     Menu menu(app);
     Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT, menu);
@@ -65,6 +70,7 @@ int main()
                 }
             }
         }
+
 
     menu.drawMainMenu(select);
     app.Display();

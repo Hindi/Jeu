@@ -8,7 +8,7 @@ Menu::Menu(RenderWindow &app): m_app(app), position(250, 200), m_scale(1,1)
     imageFadePlay = new Image;
     if(!(*imageFadePlay).LoadFromFile("images/nouvellePartie_fade.png"))
     {
-        cerr << "Image loading failed : nouvellePArtie_fade.png" << endl;
+        cerr << "Image loading failed : nouvellePartie_fade.png" << endl;
     }
     else
     {

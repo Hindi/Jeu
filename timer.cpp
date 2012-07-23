@@ -1,5 +1,7 @@
 #include "timer.h"
 
+using namespace std;
+
 #ifdef _WIN32
     #include <windows.h>
     void Timer::sleep(unsigned pMilliseconds)
@@ -15,7 +17,7 @@
     }
 #endif
 
-Timer::Timer() : m_elapsedTime(0.0f), m_state(paused)
+Timer::Timer() :m_state(paused), m_elapsedTime(0.0f)
 {}
 
 void Timer::start()

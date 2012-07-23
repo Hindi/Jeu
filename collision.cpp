@@ -17,7 +17,7 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Population &population): m_windowSize(windowSize), m_player(player), m_population(population)
+Collision::Collision(Vector2f windowSize, Player &player, Population &population, Projectile_manager &projectile_manager, Missile_manager &missile_manager): m_player(player), m_population(population),  m_windowSize(windowSize), m_projectile_manager(projectile_manager), m_missile_manager(missile_manager)
 {
 
 }
@@ -45,7 +45,7 @@ void Collision::manageCollisionsX()
         for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
         {
             enemyRect = (*li)->getBoundingBox();
-            if(playerRect.Right > enemyRect.Left+50 && playerRect.Left < enemyRect.Right-50 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom+100)
+            if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
                 m_player.loseLive();
             }
@@ -66,42 +66,81 @@ void Collision::manageCollisionsY()
         m_player.setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
     }
 
+
     if(!m_player.getLostlife())
     {
         list<Enemy*>::iterator li;
-    for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
-    {
-        enemyRect = (*li)->getBoundingBox();
-        if(playerRect.Right > enemyRect.Left+50 && playerRect.Left < enemyRect.Right-50 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom+100)
+        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end();)
         {
-            m_player.loseLive();
+            enemyRect = (*li)->getBoundingBox();
+            if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
+            {
+                m_player.loseLive();
+            }
+            if(enemyRect.Top > 1500)
+            {
+               li = m_population.getPopulation()->erase(li);
+            }
+            else
+            {
+                li++;
+            }
         }
     }
-    }
-
 }
 
 void Collision::manageProjectileCollision()
 {
+    //*****************************
+    // Collisions classe projectile
+    //*****************************
     IntRect projectileRect, enemyRect;
     Vector2f projectilePosition;
-    list<Projectile*>::iterator lit;
+    list<Projectile*>::iterator lit(m_projectile_manager.getPlayerProjectiles()->begin());
     list<Enemy*>::iterator li;
-    for(lit = m_player.getProjectiles()->begin(); lit != m_player.getProjectiles()->end(); lit++)
+    for(; lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
     {
         for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
         {
-            projectileRect = (*lit)->getBoundingBox();
-            projectilePosition.y = (*lit)->GetPosition().y;
-            projectileRect.Top  = projectilePosition.y;
-            projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
-            enemyRect = (*li)->getBoundingBox();
-            if(projectileRect.Right > enemyRect.Left+15 && projectileRect.Left < enemyRect.Right-15 && projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom+225)
+            if(m_projectile_manager.getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
-                (*li)->recieveDamages(5);
-                m_player.addScore((*li)->getScore());
+                projectileRect = (*lit)->getBoundingBox();
+                projectilePosition.y = (*lit)->GetPosition().y;
+                projectileRect.Top  = projectilePosition.y;
+                projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
+                enemyRect = (*li)->getBoundingBox();
+                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
+                {
+                    (*li)->recieveDamages(m_player.getDamages());
+                    m_player.addScore((*li)->getScoreHit());
+                    (lit) = m_projectile_manager.getPlayerProjectiles()->erase(lit);
+                }
             }
         }
     }
-
+    //**************************
+    // Collisions classe missile
+    //**************************
+    list<Missile*>::iterator litt(m_missile_manager.getMissile()->begin());
+    for(; litt != m_missile_manager.getMissile()->end(); litt++)
+    {
+        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
+        {
+            if(m_missile_manager.getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
+            {
+                projectileRect = (*litt)->getBoundingBox();
+                projectilePosition.y = (*litt)->GetPosition().y;
+                projectileRect.Top  = projectilePosition.y;
+                projectileRect.Bottom = projectileRect.Top+(*litt)->getSprite().GetSize().y;
+                enemyRect = (*li)->getBoundingBox();
+                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
+                {
+                    (*li)->recieveDamages((*litt)->getDamage());
+                    m_player.addScore((*li)->getScoreHit());
+                    m_missile_manager.setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
+                    (litt) = m_missile_manager.getMissile()->erase(litt);
+                }
+            }
+        }
+    }
 }

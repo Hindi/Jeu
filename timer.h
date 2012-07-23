@@ -1,6 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 #include <SFML/System.hpp>
+#include <iostream>
 
 class Timer {
 public:

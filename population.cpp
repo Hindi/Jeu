@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Population::Population(RenderWindow &app): m_app(app)
+Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager): m_app(app), m_projectile_manager(projectile_manager), m_drop_manager(drop_manager)
 {
 
 }
@@ -13,17 +13,13 @@ Population::~Population()
 {
     if(this->haveEnnemyInProgress())
     {
-        list<Enemy*>::const_iterator lit(m_enemies.begin());
+        list<Enemy*>::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end(); lit++)
         {
             delete *lit;
         }
     }
-}
-
-void Population::createEnemy(int score,int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app)
-{
-    m_enemies.push_back(new Enemy(1, score, xSpeed, ySpeed, filepath, position, app));
+    m_enemies.clear();
 }
 
 void Population::drawPopulation()
@@ -31,11 +27,13 @@ void Population::drawPopulation()
     if(this->haveEnnemyInProgress())
     {
         list<Enemy*>::const_iterator lit(m_enemies.begin());
-        for(; lit!=m_enemies.end(); lit++)
+        for(; lit!=m_enemies.end(); lit++)//Si des ennemis sont en vie
         {
-            (*lit)->draw();
+            (*lit)->draw();//On les dessine
         }
     }
+    m_projectile_manager.drawProjectile();//On les dessine
+
 }
 
 list<Enemy*>* Population::getPopulation()
@@ -53,14 +51,60 @@ void Population::checkPopulation()
         {
             if((*lit)->isDead())
             {
+                this->explode(*lit);
                 lit = m_enemies.erase(lit);
             }
             else
             {
+                (*lit)->move();
+                if((*lit)->canFire())
+                {
+                    if(strcmp((*lit)->getType(), "ship") == 0)
+                        (*lit)->fireFocus();
+                    else if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
+                        (*lit)->fireCircle();
+                }
                 lit++;
             }
         }
     }
+    m_projectile_manager.moveProjectile();
+}
+
+void Population::explode(Enemy *enemy)
+{
+    m_deadEnemies.push_back(enemy);
+
+    Vector2f position;
+    int score;
+    score = enemy->getScoreExplosion();
+    position.x = enemy->getPositionAxis(0);
+    position.y = enemy->getPositionAxis(1);
+
+    m_drop_manager.createDrop(score, position);
+
+}
+
+void Population::manageExplosion()
+{
+    unsigned int currentFrame;
+    if(m_deadEnemies.size() > 0)
+    {
+        list<Enemy*>::iterator lit(m_deadEnemies.begin());
+        for(; lit!=m_deadEnemies.end();lit++)
+        {
+            if((*lit)->getAnimationExplosion()->IsPaused())//Si l'animation est en pause
+                (*lit)->getAnimationExplosion()->Play();//On relance l'animation
+            currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();//On récupère le numéro de l'image qui est affichée
+            (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);//On positionne l'animation sur l'ennemi qui a explose
+            (*lit)->drawExplosion(); //On dessine l'explosion
+            if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)//Si l'image actuelle correspond à la dernière image de l'animation
+            {
+                lit = m_deadEnemies.erase(lit);//On détruit l'objet ennemi
+            }
+        }
+    }
+
 }
 
 bool Population::haveEnnemyInProgress()
@@ -77,10 +121,37 @@ bool Population::haveEnnemyInProgress()
 
 void Population::freeze()
 {
-
+    list<Enemy*>::iterator lit(m_enemies.begin());
+        for(; lit!=m_enemies.end();lit++)
+        {
+            (*lit)->pauseTimer();
+        }
 }
 
 void Population::unFreeze()
 {
+    list<Enemy*>::iterator lit(m_enemies.begin());
+    for(; lit!=m_enemies.end();lit++)
+            {
+                (*lit)->startTimer();
+            }
+}
 
+void Population::createShip(Vector2f position, Player &player, image_manager &imageManager)
+{
+    //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", "roundTrip", 1, 40, 1, m_app, player, imageManager, m_projectile_manager));
+}
+
+void Population::createFlyingSaucer(Vector2f position, Player &player, image_manager &imageManager)
+{
+    //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", "roundTrip", 1, 20, 2, m_app, player, imageManager, m_projectile_manager));
+}
+
+void Population::manage()
+{
+    this->checkPopulation();
+    this->manageExplosion();
+    this->drawPopulation();
 }

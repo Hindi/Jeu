@@ -9,6 +9,15 @@
 #include "pannel.h"
 #include "timer.h"
 #include "menu.h"
+#include "script.h"
+#include "background.h"
+#include "image_manager.h"
+#include "projectile_manager.h"
+#include "guard.h"
+#include "tirs/missile_manager.h"
+#include "weapon_manager.h"
+#include "drop_manager.h"
+
 
 class Jeu
 {
@@ -17,6 +26,7 @@ class Jeu
         ~Jeu();
         void start();
         void pause(Population &population, sf::Event event, Pannel &pannel, Player &player);
+        void func();
 
     protected:
         sf::RenderWindow &m_app;
@@ -24,5 +34,7 @@ class Jeu
         Menu &m_menu;
         bool m_quit;
 };
+
+void func();
 
 #endif // JEU_H_INCLUDED

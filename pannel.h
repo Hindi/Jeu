@@ -4,11 +4,12 @@
 #include <iostream>
 #include <sstream>
 #include "player.h"
+#include "image_manager.h"
 
 class Pannel
 {
     public:
-        Pannel(sf::RenderWindow &app, const std::string &filepath, sf::Vector2f position, Player &player);
+        Pannel(sf::RenderWindow &app, const std::string &filepath, sf::Vector2f position, Player &player, image_manager &imageManager);
         virtual ~Pannel();
         sf::Sprite* getSprite();
         void checkPannel();
