@@ -2,17 +2,19 @@
 #define MENU_H_INCLUDED
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "image_manager.h"
 
 class Menu
 {
     public:
-        Menu(sf::RenderWindow &app);
+        Menu(sf::RenderWindow &app, image_manager imageManager);
         ~Menu();
         void drawMainMenu(int select);
         void drawPauseMenu(int select);
 
     protected:
         sf::RenderWindow &m_app;
+        image_manager &m_imageManager;
 
         sf::Image *imagePlay;
         sf::Image *imageCredit;

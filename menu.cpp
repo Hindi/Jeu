@@ -3,10 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Menu::Menu(RenderWindow &app):
+Menu::Menu(RenderWindow &app, image_manager imageManager):
             m_app(app),
             position(250, 200),
-            m_scale(1,1)
+            m_scale(1,1),
+            m_imageManager(imageManager)
 {
     imageFadePlay = new Image;
     if(!(*imageFadePlay).LoadFromFile("images/nouvellePartie_fade.png"))
