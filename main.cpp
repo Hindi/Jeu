@@ -18,8 +18,12 @@ int main()
     app.SetFramerateLimit(60);
 
 
-    Menu menu(app);
-    Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT, menu);
+    //Gestionnaire d'images
+    image_manager imageManager;
+	imageManager.addResourceDirectory("images/" );
+
+    Menu menu(app, imageManager);
+    Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT, menu, imageManager);
     Timer timer;
 
     int select(1);
