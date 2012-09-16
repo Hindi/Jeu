@@ -57,13 +57,31 @@
 			<Add library="dxguid" />
 			<Add directory="$(#sfml.lib)" />
 		</Linker>
+		<Unit filename="Anim.cpp" />
+		<Unit filename="Anim.hpp" />
+		<Unit filename="Animated.cpp" />
+		<Unit filename="Animated.hpp" />
+		<Unit filename="Frame.cpp" />
+		<Unit filename="Frame.hpp" />
 		<Unit filename="animation.cpp" />
 		<Unit filename="animation.h" />
+		<Unit filename="background.cpp" />
+		<Unit filename="background.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="collision.cpp" />
 		<Unit filename="collision.h" />
+		<Unit filename="drop.cpp" />
+		<Unit filename="drop.h" />
+		<Unit filename="drop_manager.cpp" />
+		<Unit filename="drop_manager.h" />
+		<Unit filename="enemies\boss.cpp" />
+		<Unit filename="enemies\boss.h" />
 		<Unit filename="enemy.cpp" />
 		<Unit filename="enemy.h" />
+		<Unit filename="guard.cpp" />
+		<Unit filename="guard.h" />
+		<Unit filename="image_manager.cpp" />
+		<Unit filename="image_manager.h" />
 		<Unit filename="jeu.cpp" />
 		<Unit filename="jeu.h" />
 		<Unit filename="main.cpp" />
@@ -77,10 +95,20 @@
 		<Unit filename="population.h" />
 		<Unit filename="projectile.cpp" />
 		<Unit filename="projectile.h" />
+		<Unit filename="projectile_manager.cpp" />
+		<Unit filename="projectile_manager.h" />
+		<Unit filename="script.cpp" />
+		<Unit filename="script.h" />
 		<Unit filename="timer.cpp" />
 		<Unit filename="timer.h" />
+		<Unit filename="tirs\missile.cpp" />
+		<Unit filename="tirs\missile.h" />
+		<Unit filename="tirs\missile_manager.cpp" />
+		<Unit filename="tirs\missile_manager.h" />
 		<Unit filename="unit.cpp" />
 		<Unit filename="unit.h" />
+		<Unit filename="weapon_manager.cpp" />
+		<Unit filename="weapon_manager.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
