@@ -7,10 +7,20 @@ class Animation
 {
     public:
         Animation();
+
+        //Destructeur
         ~Animation();
+
+        //Initialise l'animation
         void initialize(float x, float y, int frameX, int frameY);
+
+        //Actualise les frame
         void update(sf::RenderWindow &app);
+
+        //Dessine les naimations
         void draw(sf::RenderWindow &app);
+
+        //Accesseurs public
         bool getActive();
         void setActive(bool value);
         int getCurrentFrame(int axis);
@@ -22,11 +32,19 @@ class Animation
         int getFrameHeight();
 
     protected:
+        //Sprite qui contient l'image
         sf::Sprite sprite;
-        float frameCounter, switchFrame, amountOfFrameX, amountOfFrameY;
+
+        //Numéro de frame, nombre de frame, ...
+        float frameCounter, switchFrame, amountOfFrameX, amountOfFrameY, x,y;
+
+        //Frame en cours
         int currentFrameX, currentFrameY;
-        float x,y;
+
+        //Animation lancée ou non
         bool active;
+
+        //Comptage temps
         sf::Clock clock;
 
 };

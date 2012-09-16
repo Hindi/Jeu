@@ -23,19 +23,31 @@ class Jeu
 {
     public:
         Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager);
+
+        //Destructeur
         ~Jeu();
+
+        //Démarre la partie
         void start();
+
+        //Met en pause la partie
         void pause(Population &population, sf::Event event, Pannel &pannel, Player &player);
-        void func();
 
     protected:
+        //La fenêtre
         sf::RenderWindow &m_app;
+
+        //Manager d'images
         image_manager &m_imageManager;
+
+        //Taille de la fenêtre
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;
+
+        //Objet menu pour lancer la partie et mettre en pause
         Menu &m_menu;
+
+        //Pour quitter la partie en cours
         bool m_quit;
 };
-
-void func();
 
 #endif // JEU_H_INCLUDED

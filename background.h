@@ -10,17 +10,37 @@ class Background
 {
     public:
         Background(sf::RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, image_manager &imageManager);
+
+        //Destructeur
         virtual ~Background();
+
+        //Met à jour
         void manage();
+
+        //Créé les sprite et les positionne
         void init();
 
     protected:
+
+        //Nombre d'étoiles
         int LIST_SIZE;
+
+        //Images étoiles et planète
         sf::Image *imageStar, *imagePlanet;
+
+        //Sprites étoiles et planètes
         sf::Sprite spriteStar, spritePlanet;
+
+        //Fenêtre
         sf::RenderWindow &m_app;
+
+        //Liste d'étoiles
         std::vector<sf::Sprite> listStar;
+
+        //Vitesse de déplacement des étoiles
         int m_speed;
+
+        //Taille de la fenêtre
         int const m_width, m_height;
 };
 

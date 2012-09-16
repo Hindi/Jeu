@@ -39,7 +39,7 @@ void Background::manage()
         listStar[i].Move(0, m_speed * 2 * m_app.GetFrameTime());
         m_app.Draw(listStar[i]);
         //Si une étoile sors de l'écran on la remet en haut avec une position aléatoire sur l'axe x
-        if(listStar[i].GetPosition().y > 1024)
+        if(listStar[i].GetPosition().y > m_height)
         {
             listStar[i].SetPosition((rand()%980)+1, -40);
         }
@@ -50,7 +50,7 @@ void Background::manage()
     m_app.Draw(spritePlanet);
 
     //Si une planète sort on la replace de manière aléatoire
-    if(spritePlanet.GetPosition().y > 1024)
+    if(spritePlanet.GetPosition().y > m_height)
     {
         spritePlanet.SetPosition((rand()%980)+1, -500);
     }

@@ -8,14 +8,22 @@ class Menu
 {
     public:
         Menu(sf::RenderWindow &app, image_manager imageManager);
+        //Destructeur
         ~Menu();
+
+        //Menu de démarrage
         void drawMainMenu(int select);
+
+        //menu de pause
         void drawPauseMenu(int select);
 
     protected:
+        //La fenêtre
         sf::RenderWindow &m_app;
+        //Manager d'images
         image_manager &m_imageManager;
 
+        //Les imagesde tous les menus
         sf::Image *imagePlay;
         sf::Image *imageCredit;
         sf::Image *imageHow;
@@ -29,6 +37,7 @@ class Menu
         sf::Image *imageFadeReprendre;
         sf::Image *imageFadeArreter;
 
+        //Les sprites de tous les menus
         sf::Sprite spritePlay;
         sf::Sprite spriteCredit;
         sf::Sprite spriteHow;
