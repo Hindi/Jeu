@@ -17,8 +17,14 @@ Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Pla
 
     imageLife = new Image;
     imageLifeFade = new Image;
+
+    //TODO : CHANGER L'INIT DES COEURS
+
+    //Chargment des images de vie
     *imageLife = imageManager.getImage("images/Vie.png");
     *imageLifeFade = imageManager.getImage("images/Vie-fade.png");
+
+    //Placement des sprite de vie
     position.y += 20;
     spriteLife1.SetPosition(position);
     position.x += 50;
@@ -74,6 +80,7 @@ Sprite* Pannel::getSprite()
     return &sprite;
 }
 
+//Met à jour les valeurs
 void Pannel::checkPannel()
 {
     m_app.Draw(sprite);
@@ -81,6 +88,7 @@ void Pannel::checkPannel()
     this->drawScore();
 }
 
+//Gestion des icones de vie (transparent ou non)
 void Pannel::drawLife()
 {
     int lives = m_player.getLives();
@@ -120,6 +128,7 @@ void Pannel::drawLife()
     m_app.Draw(spriteLife3);
 }
 
+//Affichage du score
 void Pannel::drawScore()
 {
     Font font;
