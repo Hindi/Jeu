@@ -4,8 +4,21 @@ using namespace std;
 using namespace sf;
 
 Player::Player(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, image_manager &imageManager, Projectile_manager &projectile_manager):
-Unit(life, xSpeed, ySpeed, filepath, position, app, projectile_manager), max_lives(3), m_frameWidth(118),m_frameHeight(93), fireRate(0.1),lastShot(0), m_score(0), lostLife(false), missiles(false), third(false), secondary(false), m_imageManager(imageManager),
-m_coefSpeed(40), m_damages(5), m_lives(4)
+            Unit(life, xSpeed, ySpeed, filepath, position, app, projectile_manager),
+            max_lives(3),
+            m_frameWidth(118),
+            m_frameHeight(93),
+            fireRate(0.1),
+            lastShot(0),
+            m_score(0),
+            lostLife(false),
+            issiles(false),
+            third(false),
+            secondary(false),
+            m_imageManager(imageManager),
+            m_coefSpeed(40),
+            m_damages(5),
+            m_lives(4)
 {
     timer.start();
     image = new Image;

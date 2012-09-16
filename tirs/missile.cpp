@@ -3,7 +3,12 @@
 using namespace std;
 using namespace sf;
 
-Missile::Missile(const string &filepath, Vector2f position, int speed, const int coefSpeed, image_manager &ImageManager, int listPosition): m_speed(speed), m_coefSpeed(coefSpeed), m_position(position), focusing(false), listPosition(listPosition)
+Missile::Missile(const string &filepath, Vector2f position, int speed, const int coefSpeed, image_manager &ImageManager, int listPosition):
+            m_speed(speed),
+            m_coefSpeed(coefSpeed),
+            m_position(position),
+            focusing(false),
+            listPosition(listPosition)
 {
     image = new Image();
     *image = ImageManager.getImage(filepath);

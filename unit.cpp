@@ -3,8 +3,17 @@
 using namespace std;
 using namespace sf;
 
-Unit::Unit(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, Projectile_manager &projectile_manager): m_scale(1,1), EXPLOS_WIDTH(400), EXPLOS_HEIGHT(400), m_app(app),
- m_position(position), m_life(life), m_xSpeed(xSpeed), m_ySpeed(ySpeed), coefSpeed(50), m_projectile_manager(projectile_manager)
+Unit::Unit(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, Projectile_manager &projectile_manager):
+            m_scale(1,1),
+            EXPLOS_WIDTH(400),
+            EXPLOS_HEIGHT(400),
+            m_app(app),
+            m_position(position),
+            m_life(life),
+            m_xSpeed(xSpeed),
+            m_ySpeed(ySpeed),
+            coefSpeed(50),
+            m_projectile_manager(projectile_manager)
 {
     m_animatedExplosion = new Animated;
     imageExplosion = new Image;

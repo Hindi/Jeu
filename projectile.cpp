@@ -3,7 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed, const int coefSpeed, image_manager &ImageManager): m_speed(speed), scale(1,1), m_coefSpeed(coefSpeed), m_position(position)
+Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed, const int coefSpeed, image_manager &ImageManager):
+            m_speed(speed),
+            scale(1,1),
+            m_coefSpeed(coefSpeed),
+            m_position(position)
 {
     image = new Image();
     *image = ImageManager.getImage(filepath);

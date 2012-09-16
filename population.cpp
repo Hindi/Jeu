@@ -3,7 +3,10 @@
 using namespace std;
 using namespace sf;
 
-Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager): m_app(app), m_projectile_manager(projectile_manager), m_drop_manager(drop_manager)
+Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager):
+            m_app(app),
+            m_projectile_manager(projectile_manager),
+            m_drop_manager(drop_manager)
 {
 
 }

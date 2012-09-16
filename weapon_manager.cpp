@@ -4,7 +4,11 @@ using namespace std;
 using namespace sf;
 
 
-Weapon_manager::Weapon_manager(Player &player): secondaryScore(20), missileScore(50),thirdScore(30), m_player(player)
+Weapon_manager::Weapon_manager(Player &player):
+            secondaryScore(1000),
+            missileScore(10000),
+            thirdScore(500000),
+            m_player(player)
 {
 
 }

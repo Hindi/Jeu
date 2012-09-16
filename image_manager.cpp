@@ -3,7 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include "image_manager.h"
 
-image_manager::image_manager() : m_images(), m_directories()
+image_manager::image_manager() :
+            m_images(),
+            m_directories()
 {
 
 }

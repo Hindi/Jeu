@@ -3,7 +3,10 @@
 using namespace std;
 using namespace sf;
 
-Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Player &player, image_manager &imageManager): m_app(app), m_scale(1,1), m_player(player)
+Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Player &player, image_manager &imageManager):
+            m_app(app),
+            m_scale(1,1),
+            m_player(player)
 {
     imagePannel = new Image;
     *imagePannel = imageManager.getImage(filepath);

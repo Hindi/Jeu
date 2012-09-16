@@ -3,7 +3,13 @@
 using namespace sf;
 using namespace std;
 
-Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position): m_speed(5), m_score(score), m_image_manager(image_manager), m_position(position)
+Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
+            m_speed(200),
+            m_score(score),
+            m_image_manager(image_manager),
+            m_position(position),
+            m_frameWidth(50),
+            m_frameHeight(50)
 {
     m_image = new Image();
     switch(score)
@@ -34,4 +40,38 @@ int Drop::getScore()
 Sprite Drop::getSprite()
 {
     return sprite;
+}
+
+Vector2f Drop::getPosition()
+{
+    return m_position;
+}
+
+void Drop::setPosition(Vector2f position)
+{
+    m_position = position;
+    sprite.Move(0,10);
+}
+
+int Drop::getSpeed()
+{
+    return m_speed;
+}
+
+void Drop::move(Vector2f position, Vector2f speed)
+{
+    m_position = position;
+    sprite.Move(speed);
+}
+
+IntRect Drop::getBoundingBox()
+{
+    //Récupère le rectangle de collision pour le drop
+    IntRect boundingBox;
+    boundingBox.Left = m_position.x;
+    boundingBox.Right = boundingBox.Left + m_frameWidth;
+    boundingBox.Top = m_position.y;
+    boundingBox.Bottom = boundingBox.Top + m_frameHeight;
+
+    return boundingBox;
 }

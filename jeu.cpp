@@ -4,7 +4,11 @@ using namespace std;
 using namespace sf;
 
 
-Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu): m_app(app), m_SCREEN_WIDTH(SCREEN_WIDTH), m_SCREEN_HEIGHT(SCREEN_HEIGHT) ,m_menu(menu), m_quit(false)
+Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu): m_app(app),
+            m_SCREEN_WIDTH(SCREEN_WIDTH),
+            m_SCREEN_HEIGHT(SCREEN_HEIGHT),
+            m_menu(menu),
+            m_quit(false)
 {
 
 }
@@ -80,7 +84,7 @@ void Jeu::start()
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player, population, projectile_manager, missile_manager);
+    Collision collision(windowSize, player, population, projectile_manager, missile_manager, drop_manager);
 
     //Background
     Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, imageManager);

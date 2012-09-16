@@ -3,7 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Background::Background(RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, image_manager &imageManager): m_app(app), m_speed(speed), m_width(SCREEN_WIDTH), m_height(SCREEN_HEIGHT)
+Background::Background(RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, image_manager &imageManager):
+            m_app(app),
+            m_speed(speed),
+            m_width(SCREEN_WIDTH),
+            m_height(SCREEN_HEIGHT)
 {
     imageStar = new Image;
     *imageStar = imageManager.getImage("images/projectile.png");

@@ -3,7 +3,8 @@
 using namespace std;
 using namespace sf;
 
-Projectile_manager::Projectile_manager(RenderWindow &app):m_app(app)
+Projectile_manager::Projectile_manager(RenderWindow &app):
+            m_app(app)
 {
 
 }

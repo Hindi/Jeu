@@ -17,7 +17,13 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Population &population, Projectile_manager &projectile_manager, Missile_manager &missile_manager): m_player(player), m_population(population),  m_windowSize(windowSize), m_projectile_manager(projectile_manager), m_missile_manager(missile_manager)
+Collision::Collision(Vector2f windowSize, Player &player, Population &population, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager):
+            m_player(player),
+            m_population(population),
+            m_windowSize(windowSize),
+            m_projectile_manager(projectile_manager),
+            m_missile_manager(missile_manager),
+            m_drop_manager(drop_manager)
 {
 
 }
@@ -51,6 +57,8 @@ void Collision::manageCollisionsX()
             }
         }
     }
+
+    this->dropCollision();
 
 }
 
@@ -87,6 +95,8 @@ void Collision::manageCollisionsY()
             }
         }
     }
+
+    this->dropCollision();
 }
 
 void Collision::manageProjectileCollision()
@@ -142,5 +152,25 @@ void Collision::manageProjectileCollision()
                 }
             }
         }
+    }
+}
+
+void Collision::dropCollision()
+{
+    IntRect playerRect = m_player.GetBoundingBox(), dropRect;
+    list<Drop*>::iterator lit(m_drop_manager.getDrop()->begin());
+    for(; lit!=m_drop_manager.getDrop()->end();)
+    {
+        dropRect = (*lit)->getBoundingBox();
+        if((playerRect.Right > dropRect.Left && playerRect.Left < dropRect.Right && playerRect.Top > dropRect.Top && playerRect.Top < dropRect.Bottom) || dropRect.Bottom > 2000)
+        {
+            m_player.addScore(100);
+            lit = m_drop_manager.getDrop()->erase(lit);
+        }
+        else
+        {
+            lit++;
+        }
+
     }
 }
