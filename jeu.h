@@ -22,7 +22,7 @@
 class Jeu
 {
     public:
-        Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu);
+        Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager);
         ~Jeu();
         void start();
         void pause(Population &population, sf::Event event, Pannel &pannel, Player &player);
@@ -30,6 +30,7 @@ class Jeu
 
     protected:
         sf::RenderWindow &m_app;
+        image_manager &m_imageManager;
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;
         Menu &m_menu;
         bool m_quit;

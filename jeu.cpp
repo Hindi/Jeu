@@ -4,11 +4,13 @@ using namespace std;
 using namespace sf;
 
 
-Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu): m_app(app),
+Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager):
+            m_app(app),
             m_SCREEN_WIDTH(SCREEN_WIDTH),
             m_SCREEN_HEIGHT(SCREEN_HEIGHT),
             m_menu(menu),
-            m_quit(false)
+            m_quit(false),
+            m_imageManager(imageManager)
 {
 
 }
@@ -24,10 +26,6 @@ void Jeu::start()
     int invincibleStart;
     Timer timer;
 
-    //Gestionnaire d'images
-    image_manager imageManager;
-	imageManager.addResourceDirectory("images/" );
-
     //Variables :
     const int PANNEL_WIDTH(300), PLAYER_WIDTH(118), PLAYER_HEIGHT(93);
     const Input & input = m_app.GetInput();
@@ -40,39 +38,39 @@ void Jeu::start()
     double playerXSpeed = 10, playerYSpeed = 10;
     const string filepath = "images/player.png";
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
-    Player player(1, playerXSpeed, playerYSpeed, filepath, positionPlayer, m_app, imageManager, projectile_manager);
+    Player player(1, playerXSpeed, playerYSpeed, filepath, positionPlayer, m_app, m_imageManager, projectile_manager);
 
     //Variables enemy :
     Vector2f positionEnemy(50, 50);
 
-    Drop_manager drop_manager(m_app, imageManager);
+    Drop_manager drop_manager(m_app, m_imageManager);
 
     //Variable population
     Population population(m_app, projectile_manager, drop_manager);
-    Script s1( 1, "I am standing on the left.", imageManager, player, projectile_manager, population);
+    Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager, population);
 	s1.Launch();
 
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    //population.createFlyingSaucer(positionEnemy, player, imageManager);
+    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
 
-    //population.createFlyingSaucer(positionEnemy, player, imageManager);
+    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    population.createShip(positionEnemy, player, imageManager);
+    population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
-    //population.createFlyingSaucer(positionEnemy, player, imageManager);
+    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
 
     //gestionnaires de missiles
-    Missile_manager missile_manager(m_app, population,player, imageManager);
+    Missile_manager missile_manager(m_app, population,player, m_imageManager);
 
     //Activateur d'armes
     Weapon_manager weapon_manager(player);
@@ -80,14 +78,14 @@ void Jeu::start()
     //pannel
     const string filepathPanel = "images/pannel.png";
     Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
-    Pannel pannel(m_app, filepathPanel, positionPannel, player, imageManager);
+    Pannel pannel(m_app, filepathPanel, positionPannel, player, m_imageManager);
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
     Collision collision(windowSize, player, population, projectile_manager, missile_manager, drop_manager);
 
     //Background
-    Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, imageManager);
+    Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
 
     while (m_app.IsOpened() )
     {
