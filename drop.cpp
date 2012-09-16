@@ -12,6 +12,7 @@ Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
             m_frameHeight(50)
 {
     m_image = new Image();
+    //Choix de l'image en fonction du score
     switch(score)
     {
         case 100:

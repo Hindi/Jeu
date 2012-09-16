@@ -15,6 +15,7 @@ Drop_manager::~Drop_manager()
 
 }
 
+//Créé un objet drop et l'ajoute dansl al iste des drops
 void Drop_manager::createDrop(int score, sf::Vector2f position)
 {
     drop = new Drop(score, m_image_manager, position);
@@ -37,14 +38,16 @@ void Drop_manager::move()
     list<Drop*>::const_iterator lit(m_droplist.begin());
     for(; lit!= m_droplist.end(); lit++)
     {
+        //Calcul de la nouvelle position pour chaque drop
         Vector2f position = (*lit)->getPosition();
         Vector2f speed(0, (*lit)->getSpeed()*m_app.GetFrameTime());
         Vector2f newPosition(position.x + speed.x, position.y + speed.y);
+        //Déplacement de chaque drop
         (*lit)->move(newPosition, speed);
     }
-
-
 }
+
+//Dessine l'objet
 void Drop_manager::draw()
 {
     list<Drop*>::const_iterator lit(m_droplist.begin());

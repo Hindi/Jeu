@@ -29,6 +29,7 @@ int main()
     int select(1);
     Event Event;
 
+    //Gestion du highlight du menu avec un système de points
     while (app.IsOpened())
     {
         app.Clear();
@@ -54,6 +55,7 @@ int main()
                 else
                     select -=1;
             }
+            //Action à effectuer quand on appuie ur entrée : dépend du nombre de points
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
             {
                 switch(select)
