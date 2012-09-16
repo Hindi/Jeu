@@ -50,7 +50,6 @@ void Missile_manager::createMissile()
 {
     if(m_missiles.size() < nombreMissiles && timerCreate.getTime() > fireDelay)//On vérifie le nombre de missile et le délais de respawn
     {
-        cout << "huk" << endl;
         Vector2f adapt;
         int i=0;
         for(i; i < nombreMissiles; i++)
