@@ -7,8 +7,8 @@ Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
             m_speed(200),
             m_score(score),
             m_image_manager(image_manager),
-            m_position(position),
             m_frameWidth(50),
+            m_position(position),
             m_frameHeight(50)
 {
     m_image = new Image();
