@@ -12,7 +12,7 @@ Player::Player(int life, int xSpeed, int ySpeed, const string &filepath, Vector2
             lastShot(0),
             m_score(0),
             lostLife(false),
-            issiles(false),
+            missiles(false),
             third(false),
             secondary(false),
             m_imageManager(imageManager),

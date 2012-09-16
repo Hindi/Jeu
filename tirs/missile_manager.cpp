@@ -3,8 +3,13 @@
 using namespace sf;
 using namespace std;
 
-Missile_manager::Missile_manager(RenderWindow &app, Population &population, Player &player, image_manager &imageManager):m_app(app), m_population(population), m_player(player), m_imageManager(imageManager), nombreMissiles(7),
-fireDelay(1)
+Missile_manager::Missile_manager(RenderWindow &app, Population &population, Player &player, image_manager &imageManager):
+        m_app(app),
+        m_population(population),
+        m_player(player),
+        m_imageManager(imageManager),
+        nombreMissiles(7),
+        fireDelay(1)
 {
     timerCreate.start();
     int i;
