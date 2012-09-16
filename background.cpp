@@ -9,10 +9,12 @@ Background::Background(RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREE
             m_width(SCREEN_WIDTH),
             m_height(SCREEN_HEIGHT)
 {
+    //Sprite des étoiles
     imageStar = new Image;
     *imageStar = imageManager.getImage("images/projectile.png");
     spriteStar.SetImage(*imageStar);
 
+    //Sprite planètes
     imagePlanet = new Image;
     *imagePlanet = imageManager.getImage("images/planete1.png");;
     spritePlanet.SetImage(*imagePlanet);
@@ -33,16 +35,21 @@ void Background::manage()
     int i = 0;
     for(; i < LIST_SIZE; i++)
     {
+        //On déplace les étoiles
         listStar[i].Move(0, m_speed * 2 * m_app.GetFrameTime());
         m_app.Draw(listStar[i]);
-
+        //Si une étoile sors de l'écran on la remet en haut avec une position aléatoire sur l'axe x
         if(listStar[i].GetPosition().y > 1024)
         {
             listStar[i].SetPosition((rand()%980)+1, -40);
         }
     }
+
+    //On déplace les planètes
     spritePlanet.Move(0, m_speed* 10 * m_app.GetFrameTime());
     m_app.Draw(spritePlanet);
+
+    //Si une planète sort on la replace de manière aléatoire
     if(spritePlanet.GetPosition().y > 1024)
     {
         spritePlanet.SetPosition((rand()%980)+1, -500);
@@ -52,6 +59,7 @@ void Background::manage()
 void Background::init()
 {
     Vector2f position;
+    //On recopie l'étoile de base
     Sprite starCopy(spriteStar);
     Sprite starCopy1(spriteStar);
     Sprite starCopy2(spriteStar);
@@ -62,6 +70,8 @@ void Background::init()
     Sprite starCopy7(spriteStar);
     Sprite starCopy8(spriteStar);
     Sprite starCopy9(spriteStar);
+
+    //On ajoute les copie dans la liste
     listStar.push_back(starCopy);
     listStar.push_back(starCopy1);
     listStar.push_back(starCopy2);
@@ -72,6 +82,8 @@ void Background::init()
     listStar.push_back(starCopy7);
     listStar.push_back(starCopy8);
     listStar.push_back(starCopy9);
+
+    //On place aléatoirement les étoiles et les planètes
     LIST_SIZE = listStar.size();
     srand(time(NULL));
     for(int i = 0; i < LIST_SIZE; i++)
