@@ -10,23 +10,43 @@ class Projectile_manager
 {
     public:
         Projectile_manager(sf::RenderWindow &app);
+
+        //Destructeur
         ~Projectile_manager();
-        bool haveEnemyProjectilesInProgress();//Vérifie si il y a des projectiles en cours
+
+        //Vérifie si il y a des projectiles en cours
+        bool haveEnemyProjectilesInProgress();
         bool havePlayerProjectilesInProgress();
 
-        void moveProjectile();//Déplace tous les projectiles
-        void drawProjectile();//Dessine tous les projectiles
+        //Déplace tous les projectiles
+        void moveProjectile();
 
-        void addEnemyProjectile(Projectile* projectile);//Rajoute un projectile dans la liste des projectiles ennemi
-        void addPlayerProjectile(Projectile* projectile);//Rajoute un projectile dans la liste des projectiles joueur
+        //Dessine tous les projectiles
+        void drawProjectile();
 
-        std::list<Projectile*>* getEnemyProjectiles();//Retourne les projectiles ennemi
-        std::list<Projectile*>* getPlayerProjectiles();//Retourne les projectiles joueur
+        //Rajoute un projectile dans la liste des projectiles ennemi
+        void addEnemyProjectile(Projectile* projectile);
+
+        //Rajoute un projectile dans la liste des projectiles joueur
+        void addPlayerProjectile(Projectile* projectile);
+
+        //Retourne les projectiles ennemi
+        std::list<Projectile*>* getEnemyProjectiles();
+
+        //Retourne les projectiles joueur
+        std::list<Projectile*>* getPlayerProjectiles();
 
     private:
+        //La fenêtre
         sf::RenderWindow &m_app;
+
+        //Liste des projectiles ennemis
         std::list<Projectile*> m_enemyProjectiles;
+
+        //Liste des projectiles du joueur
         std::list<Projectile*> m_playerProjectiles;
+
+        //Liste des missiles
         std::list<Missile*> m_missiles;
 };
 

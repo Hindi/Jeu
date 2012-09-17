@@ -14,25 +14,56 @@ class Population
 {
     public:
         Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager);
+
+        //Destructeur
         virtual ~Population();
+
+        //Liste des ennemis
         std::list<Enemy*>* getPopulation();
-        bool haveEnnemyInProgress();//Vérifie si des ennemis sont en vie
-        void drawPopulation();//Permet de dessiner les ennemis et les projectiles
-        void checkPopulation();//Vérifie l'état des ennemis et des projectiles
+
+        //Vérifie si des ennemis sont en vie
+        bool haveEnnemyInProgress();
+
+        //Permet de dessiner les ennemis et les projectiles
+        void drawPopulation();
+
+        //Vérifie l'état des ennemis et des projectiles
+        void checkPopulation();
+
+        //Met le jeu en pause
         void freeze();
+
+        //Sort le jeu de sa pause
         void unFreeze();
-        void createShip(sf::Vector2f position, Player &player, image_manager &imageManager);//Créé un ennemi de type ship
+
+        //Créateurs d'ennemis
+        void createShip(sf::Vector2f position, Player &player, image_manager &imageManager);
         void createFlyingSaucer(sf::Vector2f position, Player &player, image_manager &imageManager);
-        void explode(Enemy *enemy);//Fait exploser un ennemi
-        void manageExplosion();//Fait evoluer l'animaton de l'explosion
+
+        //Fait exploser un ennemi
+        void explode(Enemy *enemy);
+
+        //Fait evoluer l'animaton de l'explosion
+        void manageExplosion();
+
+        //Gère les fonctions de mise à jour
         void manage();
 
 
     protected:
+        //La fenêtre
         sf::RenderWindow &m_app;
+
+        //Liste des ennemis
         std::list<Enemy*> m_enemies;
+
+        //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
+
+        //Manager de projectiles
         Projectile_manager &m_projectile_manager;
+
+        //Manager de drops
         Drop_manager &m_drop_manager;
 };
 

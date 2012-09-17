@@ -2132,7 +2132,7 @@
 	"tirs/missile_manager.h"
 	"drop.h"
 
-1342305127 c:\users\shalafi\documents\github\jeu\player.h
+1347920129 c:\users\shalafi\documents\github\jeu\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<list>
@@ -2144,13 +2144,13 @@
 	"projectile_manager.h"
 	"tirs/missile.h"
 
-1341099108 c:\users\shalafi\documents\github\jeu\projectile.h
+1347920129 c:\users\shalafi\documents\github\jeu\projectile.h
 	<SFML/Graphics.hpp>
 	"animation.h"
 	"image_manager.h"
 	<iostream>
 
-1341523775 c:\users\shalafi\documents\github\jeu\unit.h
+1347920144 c:\users\shalafi\documents\github\jeu\unit.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2158,7 +2158,7 @@
 	"Animated.hpp"
 	"projectile_manager.h"
 
-1341437947 c:\users\shalafi\documents\github\jeu\projectile_manager.h
+1347920129 c:\users\shalafi\documents\github\jeu\projectile_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2170,11 +2170,11 @@
 	<iostream>
 	"../image_manager.h"
 
-1341101763 c:\users\shalafi\documents\github\jeu\timer.h
+1347920129 c:\users\shalafi\documents\github\jeu\timer.h
 	<SFML/System.hpp>
 	<iostream>
 
-1342652822 c:\users\shalafi\documents\github\jeu\population.h
+1347920129 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2259,7 +2259,7 @@
 1347833569 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1347837882 c:\users\shalafi\documents\github\jeu\jeu.h
+1347837995 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
 	<list>
 	"player.h"
@@ -2278,14 +2278,14 @@
 	"weapon_manager.h"
 	"drop_manager.h"
 
-1338594895 c:\users\shalafi\documents\github\jeu\pannel.h
+1347838112 c:\users\shalafi\documents\github\jeu\pannel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
 	"player.h"
 	"image_manager.h"
 
-1347833570 c:\users\shalafi\documents\github\jeu\menu.h
+1347837994 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
