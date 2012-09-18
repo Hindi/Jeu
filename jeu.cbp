@@ -74,6 +74,8 @@
 		<Unit filename="drop.h" />
 		<Unit filename="drop_manager.cpp" />
 		<Unit filename="drop_manager.h" />
+		<Unit filename="enemies\adds.cpp" />
+		<Unit filename="enemies\adds.h" />
 		<Unit filename="enemies\boss.cpp" />
 		<Unit filename="enemies\boss.h" />
 		<Unit filename="enemy.cpp" />

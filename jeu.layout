@@ -31,17 +31,23 @@
 	<File name="drop_manager.h" open="0" top="0" tabpos="6">
 		<Cursor position="821" topLine="3" />
 	</File>
-	<File name="enemies\boss.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="9288" topLine="206" />
+	<File name="enemies\adds.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="216" topLine="0" />
+	</File>
+	<File name="enemies\adds.h" open="1" top="1" tabpos="11">
+		<Cursor position="805" topLine="17" />
+	</File>
+	<File name="enemies\boss.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="96" topLine="0" />
 	</File>
 	<File name="enemies\boss.h" open="1" top="0" tabpos="5">
-		<Cursor position="3272" topLine="87" />
+		<Cursor position="1070" topLine="7" />
 	</File>
 	<File name="enemy.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="1547" topLine="31" />
 	</File>
 	<File name="enemy.h" open="1" top="0" tabpos="7">
-		<Cursor position="1113" topLine="20" />
+		<Cursor position="1113" topLine="0" />
 	</File>
 	<File name="image_manager.h" open="0" top="0" tabpos="8">
 		<Cursor position="811" topLine="0" />
@@ -104,6 +110,6 @@
 		<Cursor position="587" topLine="0" />
 	</File>
 	<File name="unit.h" open="1" top="0" tabpos="9">
-		<Cursor position="1234" topLine="30" />
+		<Cursor position="1234" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
