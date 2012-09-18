@@ -28,6 +28,15 @@ Boss::~Boss()
 
 }
 
+void Boss::recieveDamages(int dmg)
+{
+    m_life -= dmg;
+    if(m_life < 0)
+    {
+        m_life = 0;
+    }
+}
+
 void Boss::fireFocus()
 {
     Vector2f distance;
@@ -137,4 +146,42 @@ void Boss::fireCircle()
 
     //On le rajoute à la liste des projectiles gérée par le projectile manager.
     lastShot = timer.getTime();
+}
+
+Sprite* Boss::getSprite()
+{
+    return &sprite;
+}
+
+IntRect Boss::getBoundingBox()
+{
+    IntRect boundingBox;
+    boundingBox.Left = m_position.x + image->GetWidth()/4;
+    boundingBox.Right = boundingBox.Left + image->GetWidth()-image->GetWidth()/2;
+    boundingBox.Top = m_position.y;
+    boundingBox.Bottom = boundingBox.Top + image->GetHeight();
+
+    return boundingBox;
+}
+
+bool Boss::canFire()
+{
+    //Créé un interval de temps entre chaque tir
+    if(timer.getTime() - lastShot > m_fireRate)
+    {
+        timer.reinitialize();
+        return true;
+    }
+    else
+        return false;
+}
+
+void Boss::startTimer()
+{
+    timer.start();
+}
+
+void Boss::pauseTimer()
+{
+    timer.pause();
 }

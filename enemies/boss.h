@@ -19,12 +19,27 @@ class Boss : public Unit
         //Destruteur
         ~Boss();
 
+        //Accesseur sur le sprite
+        sf::Sprite* getSprite();
+
+        //Accesseur sur le rectangle occupé par le sprite
+        sf::IntRect getBoundingBox();
+
+        //Inflige des dommages à l'ennemi
+        void recieveDamages(int dmg);
+
         //Fonction de tirs avec visée
         void fireCircle();
 
         //fonction de tir en cercle
         void fireFocus();
 
+        //Défini si le boss peut tirer ou non
+        bool canFire();
+
+        //Gestion du timer
+        void startTimer();
+        void pauseTimer();
 
 
     private:
@@ -45,6 +60,9 @@ class Boss : public Unit
 
         //Li'mage du boss
         sf::Image *image;
+
+        //Sprite du boss
+        sf::Sprite sprite;
 
         //Le moment du dernier tir
         float lastShot;

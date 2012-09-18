@@ -2183,7 +2183,7 @@
 	"projectile_manager.h"
 	"drop_manager.h"
 
-1347966873 c:\users\shalafi\documents\github\jeu\enemy.h
+1347968556 c:\users\shalafi\documents\github\jeu\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2224,10 +2224,10 @@
 1347966873 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1347832533 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1347968515 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1347830619 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1347968517 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
