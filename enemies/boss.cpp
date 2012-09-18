@@ -224,4 +224,13 @@ char*  Boss::getType()
     return m_type;
 }
 
+int Boss::getScoreHit()
+{
+    return m_scoreHit;
+}
+
+int Boss::getScoreExplosion()
+{
+    return m_scoreExplosion;
+}
 

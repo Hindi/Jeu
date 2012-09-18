@@ -109,6 +109,11 @@ class Boss : public Unit
         //Accesseur sur le type de tir
         char* getType();
 
+        //Accesseur sur le score donné par l'ennemis au joueur quand il touche
+        int getScoreHit();
+        //Accesseur sur le score donné au joueur quand l'ennemi meurt
+        int getScoreExplosion();
+
 
 
 
