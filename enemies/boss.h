@@ -11,6 +11,10 @@
 #include "../image_manager.h"
 #include "../projectile_manager.h"
 
+/*****************************************
+TODO :
+    - Fonction pour créer les adds
+/******************************************/
 class Boss : public Unit
 {
     public:
