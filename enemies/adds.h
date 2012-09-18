@@ -1,7 +1,17 @@
 #ifndef ADDS_H_INCLUDED
 #define ADDS_H_INCLUDED
+
 #include <SFML/Graphics.hpp>
-#include <list.h>
+#include <list>
+
+#include "../player.h"
+#include "../timer.h"
+#include "../unit.h"
+#include "../projectile.h"
+#include "../animation.h"
+#include "../Animated.hpp"
+#include "../image_manager.h"
+#include "../projectile_manager.h"
 
 /*****************************************
 TODO :
@@ -10,14 +20,14 @@ TODO :
     - Quels déplacement ?
 /******************************************/
 
-class Adds
+class Adds : public Unit
 {
     public:
-    adds();
-    ~adds();
+        Adds();
+        ~Adds();
 
-    //Suivre le boss
-    follow();
+        //Suivre le boss
+        void follow();
 
 
 

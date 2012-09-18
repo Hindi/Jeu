@@ -10,6 +10,7 @@
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "../projectile_manager.h"
+#include "adds.h"
 
 /*****************************************
 TODO :
@@ -55,6 +56,8 @@ class Boss : public Unit
         //Accesseur sur l'animation de l'ennemi
         Animated *getAnimationExplosion();
         Animated *getAnimation();
+
+        void createAdd();
 
 
     private:
