@@ -62,7 +62,7 @@ class Enemy : public Unit
         sf::Vector2f getPosition();
         void setPosition(int axis, int value);
 
-        //Accesseur sur l'animation de l'ennemi
+        //Accesseur sur l'animation de l'ennemi (anim explosion dans Unit)
         Animated *getAnimationExplosion();
         Animated *getAnimation();
 

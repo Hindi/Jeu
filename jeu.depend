@@ -2224,10 +2224,10 @@
 1347966873 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1347968515 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1347969537 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1347968517 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1347969718 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"

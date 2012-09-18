@@ -48,6 +48,10 @@ class Boss : public Unit
         sf::Vector2f getPosition();
         void setPosition(int axis, int value);
 
+        //Accesseur sur l'animation de l'ennemi
+        Animated *getAnimationExplosion();
+        Animated *getAnimation();
+
 
     private:
         //Le joueur

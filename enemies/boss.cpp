@@ -207,3 +207,14 @@ void Boss::setPosition(int axis, int value)
     else
         m_position.y = value;
 }
+
+Animated* Boss::getAnimation()
+{
+    return m_animated;
+}
+
+Animated* Boss::getAnimationExplosion()
+{
+    return m_animatedExplosion;
+}
+
