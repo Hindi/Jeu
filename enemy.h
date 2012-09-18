@@ -73,8 +73,7 @@ class Enemy : public Unit
         //Accesseur sur les projectiles en cours
         std::list<Projectile*>* getProjectiles();
 
-        //True si des projectiles en cours, false sinon
-        bool HaveProjectilesInProgress();
+
 
         //Déplace les projectiles
         void moveProjectile();
