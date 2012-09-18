@@ -4,71 +4,77 @@
 	<File name="animation.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="1997" topLine="63" />
 	</File>
-	<File name="animation.h" open="1" top="0" tabpos="1">
+	<File name="animation.h" open="0" top="0" tabpos="1">
 		<Cursor position="990" topLine="16" />
 	</File>
 	<File name="background.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1487" topLine="24" />
 	</File>
-	<File name="background.h" open="1" top="0" tabpos="2">
+	<File name="background.h" open="0" top="0" tabpos="2">
 		<Cursor position="997" topLine="7" />
 	</File>
-	<File name="collision.cpp" open="1" top="0" tabpos="4">
+	<File name="collision.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="5908" topLine="0" />
 	</File>
-	<File name="collision.h" open="1" top="0" tabpos="3">
+	<File name="collision.h" open="0" top="0" tabpos="3">
 		<Cursor position="1317" topLine="19" />
 	</File>
 	<File name="drop.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="415" topLine="17" />
 	</File>
-	<File name="drop.h" open="1" top="0" tabpos="5">
-		<Cursor position="918" topLine="0" />
+	<File name="drop.h" open="0" top="0" tabpos="5">
+		<Cursor position="8" topLine="0" />
 	</File>
 	<File name="drop_manager.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1149" topLine="17" />
 	</File>
-	<File name="drop_manager.h" open="1" top="0" tabpos="6">
+	<File name="drop_manager.h" open="0" top="0" tabpos="6">
 		<Cursor position="821" topLine="3" />
 	</File>
-	<File name="enemy.cpp" open="0" top="0" tabpos="16">
-		<Cursor position="1167" topLine="359" />
+	<File name="enemies\boss.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="9288" topLine="206" />
+	</File>
+	<File name="enemies\boss.h" open="1" top="0" tabpos="5">
+		<Cursor position="3272" topLine="87" />
+	</File>
+	<File name="enemy.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="1547" topLine="31" />
 	</File>
 	<File name="enemy.h" open="1" top="0" tabpos="7">
-		<Cursor position="1184" topLine="6" />
+		<Cursor position="1113" topLine="20" />
 	</File>
-	<File name="image_manager.h" open="1" top="0" tabpos="8">
+	<File name="image_manager.h" open="0" top="0" tabpos="8">
 		<Cursor position="811" topLine="0" />
 	</File>
-	<File name="jeu.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="2913" topLine="20" />
+	<File name="jeu.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2913" topLine="75" />
 	</File>
-	<File name="jeu.h" open="1" top="0" tabpos="9">
+	<File name="jeu.h" open="0" top="0" tabpos="9">
 		<Cursor position="1210" topLine="16" />
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="1674" topLine="50" />
+	<File name="main.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="906" topLine="21" />
 	</File>
 	<File name="menu.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="3851" topLine="96" />
 	</File>
-	<File name="menu.h" open="1" top="0" tabpos="10">
+	<File name="menu.h" open="0" top="0" tabpos="10">
 		<Cursor position="1281" topLine="13" />
 	</File>
 	<File name="pannel.cpp" open="0" top="0" tabpos="20">
 		<Cursor position="622" topLine="6" />
 	</File>
-	<File name="pannel.h" open="1" top="0" tabpos="11">
+	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="1149" topLine="15" />
 	</File>
 	<File name="player.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="1049" topLine="0" />
 	</File>
-	<File name="player.h" open="1" top="1" tabpos="12">
-		<Cursor position="1492" topLine="32" />
+	<File name="player.h" open="0" top="0" tabpos="12">
+		<Cursor position="1196" topLine="32" />
 	</File>
-	<File name="population.cpp" open="0" top="0" tabpos="18">
-		<Cursor position="803" topLine="84" />
+	<File name="population.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="2407" topLine="84" />
 	</File>
 	<File name="population.h" open="0" top="0" tabpos="19">
 		<Cursor position="437" topLine="0" />
@@ -97,7 +103,7 @@
 	<File name="unit.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="587" topLine="0" />
 	</File>
-	<File name="unit.h" open="0" top="0" tabpos="13">
-		<Cursor position="613" topLine="0" />
+	<File name="unit.h" open="1" top="0" tabpos="9">
+		<Cursor position="1234" topLine="30" />
 	</File>
 </CodeBlocks_layout_file>
