@@ -106,6 +106,11 @@ class Boss : public Unit
         //Etape dans les différents déplacements
         int  m_moveValue;
 
+        //Accesseur sur le type de tir
+        char* getType();
+
+
+
 
 };
 #endif // BOSS_H_INCLUDED

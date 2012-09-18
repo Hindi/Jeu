@@ -218,3 +218,10 @@ Animated* Boss::getAnimationExplosion()
     return m_animatedExplosion;
 }
 
+
+char*  Boss::getType()
+{
+    return m_type;
+}
+
+
