@@ -74,13 +74,6 @@ class Enemy : public Unit
         std::list<Projectile*>* getProjectiles();
 
 
-
-        //Déplace les projectiles
-        void moveProjectile();
-
-        //Dessine les projectiles
-        void drawProjectile();
-
         //Défini si l'ennemi peut tirer ou non
         bool canFire();
 
