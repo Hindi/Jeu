@@ -13,17 +13,20 @@
 #include "../image_manager.h"
 #include "../projectile_manager.h"
 
-/*****************************************
+/*
+****************************************
 TODO :
     - Fonction follow pour suivre le boss
     - Différents mode de tirs
     - Quels déplacement ?
-/******************************************/
+****************************************
+*/
 
 class Adds : public Unit
 {
     public:
-        Adds();
+        Adds(int life, sf::Vector2f speed, const std::string &filepath, sf::Vector2f position, sf::RenderWindow &app,
+             Projectile_manager projectile_manager, Player &player, image_manager &imageManager);
         ~Adds();
 
         //Suivre le boss
@@ -95,6 +98,6 @@ class Adds : public Unit
         int getScoreExplosion();
 
 
-}
+};
 
 #endif // ADDS_H_INCLUDED
