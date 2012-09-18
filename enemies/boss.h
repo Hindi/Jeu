@@ -19,6 +19,14 @@ class Boss : public Unit
         //Destruteur
         ~Boss();
 
+        //Fonction de tirs avec visée
+        void fireCircle();
+
+        //fonction de tir en cercle
+        void fireFocus();
+
+
+
     private:
         //Le joueur
         Player &m_player;

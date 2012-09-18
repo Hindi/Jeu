@@ -27,3 +27,114 @@ Boss::~Boss()
 {
 
 }
+
+void Boss::fireFocus()
+{
+    Vector2f distance;
+    int indistinctness = rand() % 100 + 1;
+    //On récupère les coordonnées du joueur
+    playerPosition.x = m_player.getPosition(0);
+    playerPosition.y = m_player.getPosition(1);
+    distance.x = (playerPosition.x - m_position.x);
+    distance.y = (playerPosition.y - m_position.y);
+    int norm = sqrt(distance.x*distance.x + distance.y*distance.y);
+    //On calcule la vitesse du projectile
+    distance.x = ((distance.x+indistinctness)/norm)*projectileSpeed;
+    distance.y = (distance.y/norm)*projectileSpeed;
+    //La position de départ du projectile
+    Vector2f positionProjectile = m_position;
+    positionProjectile.x += (image->GetWidth()/2)-18;
+    positionProjectile.y += image->GetHeight()-20;
+    const string filepath = "images/projectile2.png";
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    //On le rajoute à la liste des projectiles gérée par le projectile manager.
+    m_projectile_manager.addEnemyProjectile(projectile);
+    lastShot = timer.getTime();
+}
+
+void Boss::fireCircle()
+{
+    //La position de départ du projectile
+    Vector2f positionProjectile = m_position;
+    positionProjectile.x += (image->GetWidth()/2)-20;
+    positionProjectile.y += image->GetHeight()/2-20;
+    const string filepath = "images/projectile2.png";
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(16, 0), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-16, 0), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(0, 16), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(0, -16), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(11, 11), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-11, 11), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(11, -11), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-11, -11), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-7, -14), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-5, -15), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(7, -14), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(5, -15), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(7, 14), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(5, 15), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-7, 14), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-5, 15), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-14, -7), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-15, -5), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(14, -7), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(15, -5), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(14, 7), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(15, 5), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-14, 7), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(-15, 5), m_coefSpeed, m_imageManager);
+    projectile->SetPosition(positionProjectile);
+    m_projectile_manager.addEnemyProjectile(projectile);
+
+    //On le rajoute à la liste des projectiles gérée par le projectile manager.
+    lastShot = timer.getTime();
+}
