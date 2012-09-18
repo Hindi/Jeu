@@ -41,6 +41,13 @@ class Boss : public Unit
         void startTimer();
         void pauseTimer();
 
+        //Accesseur sur la position du boss sur un axe
+        int getPositionAxis(int axis);
+
+        //Accesseur sur la position du boss
+        sf::Vector2f getPosition();
+        void setPosition(int axis, int value);
+
 
     private:
         //Le joueur

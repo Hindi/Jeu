@@ -185,3 +185,25 @@ void Boss::pauseTimer()
 {
     timer.pause();
 }
+
+int Boss::getPositionAxis(int axis)
+{
+    if(axis == 0)
+        return m_position.x;
+    else
+        return m_position.y;
+}
+
+
+Vector2f Boss::getPosition()
+{
+    return m_position;
+}
+
+void Boss::setPosition(int axis, int value)
+{
+    if(axis == 1)
+        m_position.x = value;
+    else
+        m_position.y = value;
+}
