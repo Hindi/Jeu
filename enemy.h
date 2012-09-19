@@ -25,64 +25,64 @@ class Enemy : public Unit
         ~Enemy();
 
         //Accesseur sur le sprite
-        sf::Sprite* getSprite();
+        virtual sf::Sprite* getSprite();
 
         //Accesseur sur le rectangle occupé par le sprite
-        sf::IntRect getBoundingBox();
+        virtual sf::IntRect getBoundingBox();
 
         //Inflige des dommages à l'ennemi
-        void recieveDamages(int dmg);
+        virtual void recieveDamages(int dmg);
 
         //Accesseur sur le score donné par l'ennemis au joueur quand il touche
-        int getScoreHit();
+        virtual int getScoreHit();
         //Accesseur sur le score donné au joueur quand l'ennemi meurt
-        int getScoreExplosion();
+        virtual int getScoreExplosion();
 
         //Défini si l'ennemi est mort ou non
-        bool isDead();
+        virtual bool isDead();
 
         // Aller retour horizontal sur valeur indiqué (commence de gauche à droite)
-        void roundTrip();
+        virtual void roundTrip();
 
         //Déplacements
-        void moveLeft();
-        void moveUp();
-        void moveDown();
-        void moveRight();
-        void dontMove();
-        void move();
+        virtual void moveLeft();
+        virtual void moveUp();
+        virtual void moveDown();
+        virtual void moveRight();
+        virtual void dontMove();
+        virtual void move();
 
         //Dessin de l'ennemi
-        void draw();
+        virtual void draw();
 
         //Accesseur sur la position de l'ennemis sur un axe
-        int getPositionAxis(int axis);
+        virtual int getPositionAxis(int axis);
 
         //Accesseur sur la position de l'ennemi
-        sf::Vector2f getPosition();
-        void setPosition(int axis, int value);
+        virtual sf::Vector2f getPosition();
+        virtual void setPosition(int axis, int value);
 
         //Accesseur sur l'animation de l'ennemi (anim explosion dans Unit)
-        Animated *getAnimationExplosion();
-        Animated *getAnimation();
+        virtual Animated *getAnimationExplosion();
+        virtual Animated *getAnimation();
 
         //Différents types de tirs
-        void fireFocus();//Avec visée
-        void fireCircle();//en cercle
+        virtual void fireFocus();//Avec visée
+        virtual void fireCircle();//en cercle
 
         //Accesseur sur les projectiles en cours
-        std::list<Projectile*>* getProjectiles();
+        virtual std::list<Projectile*>* getProjectiles();
 
 
         //Défini si l'ennemi peut tirer ou non
-        bool canFire();
+        virtual bool canFire();
 
         //Accesseur sur le type de tir
-        char* getType();
+        virtual char* getType();
 
         //Timer pour les tirs
-        void startTimer();
-        void pauseTimer();
+        virtual void startTimer();
+        virtual void pauseTimer();
 
 
     protected:
