@@ -156,3 +156,13 @@ void Adds::fireCircle()
     lastShot = timer.getTime();
 }
 
+Sprite* Adds::getSprite()
+{
+    return &sprite;
+}
+
+
+list<Projectile*> Adds::getProjectiles()
+{
+    return m_projectiles;
+}

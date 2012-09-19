@@ -42,6 +42,11 @@ class Adds : public Unit
         void fireFocus();
         void fireCircle();
 
+        //Accesseur sur le sprite
+        sf::Sprite* getSprite();
+
+        //Accesseur sur la liste de projectiles
+        std::list<Projectile*> getProjectiles();
 
 
     private:
