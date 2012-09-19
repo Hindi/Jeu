@@ -68,6 +68,7 @@ void Jeu::start()
     population.createShip(positionEnemy, player, m_imageManager);
     positionEnemy.x +=100;
     //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
+    population.createBoss(positionEnemy, player, m_imageManager);
 
     //gestionnaires de missiles
     Missile_manager missile_manager(m_app, population,player, m_imageManager);
