@@ -17,7 +17,7 @@
 ****************************************
 TODO :
     - Fonction pour créer les adds
-/*****************************************
+****************************************
 */
 class Boss : public Enemy
 {
@@ -26,49 +26,6 @@ class Boss : public Enemy
              int moveValue, const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager);
         //Destruteur
         ~Boss();
-
-        //Accesseur sur le sprite
-        sf::Sprite* getSprite();
-
-        //Accesseur sur le rectangle occupé par le sprite
-        sf::IntRect getBoundingBox();
-
-        //Inflige des dommages à l'ennemi
-        void recieveDamages(int dmg);
-
-        //Fonction de tirs avec visée
-        void fireCircle();
-
-        //fonction de tir en cercle
-        void fireFocus();
-
-        //Défini si le boss peut tirer ou non
-        bool canFire();
-
-        //Gestion du timer
-        void startTimer();
-        void pauseTimer();
-
-        //Accesseur sur la position du boss sur un axe
-        int getPositionAxis(int axis);
-
-        //Accesseur sur la position du boss
-        sf::Vector2f getPosition();
-        void setPosition(int axis, int value);
-
-        //Accesseur sur l'animation de l'ennemi
-        Animated *getAnimationExplosion();
-        Animated *getAnimation();
-
-        void createAdd();
-
-        //Accesseur sur le type de tir
-        char* getType();
-
-        //Accesseur sur le score donné par l'ennemis au joueur quand il touche
-        int getScoreHit();
-        //Accesseur sur le score donné au joueur quand l'ennemi meurt
-        int getScoreExplosion();
 
 
     private:
