@@ -7,6 +7,7 @@
 #include "projectile.h"
 #include "projectile_manager.h"
 #include "drop_manager.h"
+#include "enemies/boss.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -49,6 +50,9 @@ class Population
         //Gère les fonctions de mise à jour
         void manage();
 
+        //Création d'un boos
+        void createBoss(sf::Vector2f position, Player &player, image_manager &imageManager);
+
 
     protected:
         //La fenêtre
@@ -65,6 +69,7 @@ class Population
 
         //Manager de drops
         Drop_manager &m_drop_manager;
+
 };
 
 #endif // POPULATION_H_INCLUDED

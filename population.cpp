@@ -158,3 +158,8 @@ void Population::manage()
     this->manageExplosion();
     this->drawPopulation();
 }
+
+void Population::createBoss(Vector2f position, Player &player, image_manager &imageManager)
+{
+    //m_enemies.push_back(Boss(500, 10, 10000, 5, 5, "images/enemy2.png", position, "boss", "roundTrip", 1, 20, 2, m_app, player, imageManager, m_projectile_manager));
+}
