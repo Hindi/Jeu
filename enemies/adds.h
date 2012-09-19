@@ -26,13 +26,21 @@ class Adds : public Unit
 {
     public:
         Adds(int life, sf::Vector2f speed, const std::string &filepath, sf::Vector2f position, sf::RenderWindow &app,
-             Projectile_manager projectile_manager, Player &player, image_manager &imageManager);
+             Projectile_manager projectile_manager, Player &player, image_manager &imageManager, int maxLife);
         ~Adds();
 
         //Suivre le boss
         void follow();
 
+        //Inflige des dmgs a l'add
+        void recieveDamages(int dmg);
 
+        //Autorise ou non le tir
+        bool canFire();
+
+        //Fonction de tir
+        void fireFocus();
+        void fireCircle();
 
 
 
@@ -65,7 +73,7 @@ class Adds : public Unit
         Timer timer, timerMove;
 
         //Constantes de score au touché et à la mort, vitesses des projectiles et fréquence de tir
-        int const m_scoreHit, m_scoreExplosion, projectileSpeed, m_coefSpeed, m_fireRate;
+        int const m_scoreHit, m_scoreExplosion, projectileSpeed, m_coefSpeed, m_fireRate, m_maxLife;
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;
@@ -94,6 +102,7 @@ class Adds : public Unit
 
         //Accesseur sur le score donné par l'ennemis au joueur quand il touche
         int getScoreHit();
+
         //Accesseur sur le score donné au joueur quand l'ennemi meurt
         int getScoreExplosion();
 
