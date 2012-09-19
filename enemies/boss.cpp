@@ -14,13 +14,18 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     timer.start();
     timerMove.start();
 
+    m_animated = new Animated;
 
     this->createAdd();
 }
 
 Boss::~Boss()
 {
-
+    delete m_animated;
+    if (image!= NULL )
+    {
+        delete image;
+    }
 }
 
 void Boss::createAdd()
