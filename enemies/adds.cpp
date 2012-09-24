@@ -5,7 +5,7 @@ using namespace sf;
 
 Adds::Adds(int life, Vector2f speed, const string &filepath, Vector2f position, RenderWindow &app, Projectile_manager projectile_manager,
             Player &player, image_manager &imageManager, int maxLife):
-            Unit(life, speed.x,speed.y, filepath, position, app, projectile_manager),
+            Unit(life, speed.x,speed.y, position, app, projectile_manager),
             m_scoreHit(20),
             m_scoreExplosion(500),
             projectileSpeed(10),
