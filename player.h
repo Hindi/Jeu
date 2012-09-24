@@ -14,7 +14,7 @@
 class Player : public Unit
 {
     public:
-        Player(int life, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, sf::RenderWindow &app, image_manager &imagemManager, Projectile_manager &projectile_manager);
+        Player(int life, sf::Vector2f position, sf::RenderWindow &app, image_manager &imagemManager, Projectile_manager &projectile_manager);
         //Destructeur
         ~Player();
 
