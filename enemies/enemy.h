@@ -20,7 +20,7 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner = false);
+              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner);
 
         //Destructeur
         ~Enemy();
@@ -96,6 +96,9 @@ class Enemy : public Unit
         //listes des projectils et de leurs vitesse (en cas de visée)
         std::list<Projectile*> m_projectiles;
         std::list<sf::Vector2f> m_vitesses;
+
+        //Liste des spawn
+        std::list<Spawn*> m_spawn;
 
         //Direction de déplacememnt pour certains mouvements particuliers
         char* direction;

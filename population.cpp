@@ -143,16 +143,16 @@ void Population::unFreeze()
             }
 }
 
-void Population::createShip(Vector2f position, char* move)
+void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, m_app, m_player, m_imageManager, m_projectile_manager));
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, m_app, m_player, m_imageManager, m_projectile_manager, spawner));
 }
 
-void Population::createFlyingSaucer(Vector2f position, char* move)
+void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager));
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, spawner));
 }
 
 void Population::createBoss(Vector2f position, char* move, char* name)

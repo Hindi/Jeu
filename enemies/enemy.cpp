@@ -5,7 +5,7 @@ using namespace sf;
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
               Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner):
-            Unit(life, xSpeed,ySpeed, filepath, position, app, projectile_manager),
+            Unit(life, xSpeed,ySpeed, position, app, projectile_manager),
             m_player(player),
             direction("null"),
             lastShot(0),
@@ -221,6 +221,14 @@ void Enemy::draw()
 {
     //animation->draw(m_app);
     m_app.Draw(*m_animated);
+    if(m_spawner)
+    {
+        list<Spawn*>::iterator lit(m_spawn.begin());
+        for(; lit != m_spawn.end(); lit++)
+        {
+            (*lit)->draw();
+        }
+    }
 }
 
 
@@ -410,6 +418,7 @@ void Enemy::spawn()
 {
     if(m_spawner && ((timerSpawn.getTime() - lastSpawn > m_spawnRate)))
     {
-
+        m_spawn.push_back(new Spawn(m_imageManager, Vector2f(100, 100), m_app, m_projectile_manager));
+        lastSpawn = timerSpawn.getTime();
     }
 }

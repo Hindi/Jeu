@@ -40,8 +40,8 @@ class Population
         void unFreeze();
 
         //Créateurs d'ennemis
-        void createShip(sf::Vector2f position, char* move);
-        void createFlyingSaucer(sf::Vector2f position, char* move);
+        void createShip(sf::Vector2f position, char* move, bool spawner = false);
+        void createFlyingSaucer(sf::Vector2f position, char* move, bool spawner = false);
 
         //Fait exploser un ennemi
         void explode(Enemy *enemy);
