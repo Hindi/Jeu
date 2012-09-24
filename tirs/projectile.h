@@ -1,8 +1,8 @@
 #ifndef PROJECTILE_H_INCLUDED
 #define PROJECTILE_H_INCLUDED
 #include <SFML/Graphics.hpp>
-#include "animation.h"
-#include "image_manager.h"
+#include "../animation.h"
+#include "../image_manager.h"
 #include <iostream>
 
 //Type projectile géré par player et enemy
