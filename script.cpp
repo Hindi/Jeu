@@ -31,9 +31,5 @@ void Script::Run()
     positionEnemy.x +=100;
     m_population.createShip(positionEnemy, m_player, m_imageManager);
     positionEnemy.x +=100;
-
-    //population.createFlyingSaucer(positionEnemy, player, imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;*/
+*/
 }
