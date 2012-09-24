@@ -53,7 +53,7 @@ class Population
         void manage();
 
         //Création d'un boos
-        void createBoss(sf::Vector2f position, char* move);
+        void createBoss(sf::Vector2f position, char* move, char* name);
 
 
     protected:

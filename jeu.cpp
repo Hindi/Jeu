@@ -68,7 +68,7 @@ void Jeu::start()
     population.createShip(positionEnemy, "roundtrip");
     positionEnemy.x +=100;
     //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    population.createBoss(positionEnemy, "roundtrip");
+    population.createBoss(positionEnemy, "roundtrip", "lily");
 
     //gestionnaires de missiles
     Missile_manager missile_manager(m_app, population,player, m_imageManager);

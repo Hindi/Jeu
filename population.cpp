@@ -154,14 +154,14 @@ void Population::createFlyingSaucer(Vector2f position, char* move)
     m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager));
 }
 
+void Population::createBoss(Vector2f position, char* move, char* name)
+{
+    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, name));
+}
+
 void Population::manage()
 {
     this->checkPopulation();
     this->manageExplosion();
     this->drawPopulation();
-}
-
-void Population::createBoss(Vector2f position, char* move)
-{
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, "images/enemy2.png", position, "boss", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, "lily"));
 }
