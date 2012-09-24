@@ -34,14 +34,8 @@ void Jeu::start()
     Projectile_manager projectile_manager(m_app);
 
     //Variables player :
-    IntRect subRect(0, PLAYER_HEIGHT, PLAYER_WIDTH, 0);
-    double playerXSpeed = 10, playerYSpeed = 10;
-    const string filepath = "images/player.png";
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
-    Player player(1, playerXSpeed, playerYSpeed, filepath, positionPlayer, m_app, m_imageManager, projectile_manager);
-
-    //Variables enemy :
-    Vector2f positionEnemy(50, 50);
+    Player player(1, positionPlayer, m_app, m_imageManager, projectile_manager);
 
     Drop_manager drop_manager(m_app, m_imageManager);
 
@@ -49,26 +43,6 @@ void Jeu::start()
     Population population(m_app, projectile_manager, drop_manager, player, m_imageManager);
     Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager, population);
 	s1.Launch();
-
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    population.createFlyingSaucer(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-
-    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    positionEnemy.x +=100;
-    population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    population.createBoss(positionEnemy, "roundtrip", "lily");
 
     //gestionnaires de missiles
     Missile_manager missile_manager(m_app, population,player, m_imageManager);
