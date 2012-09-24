@@ -7,7 +7,7 @@
 #include "image_manager.h"
 #include "player.h"
 #include "population.h"
-#include "projectile_manager.h"
+#include "tirs/projectile_manager.h"
 
 class Script:public sf::Thread
 {

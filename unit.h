@@ -5,7 +5,7 @@
 #include <list>
 #include "animation.h"
 #include "Animated.hpp"
-#include "projectile_manager.h"
+#include "tirs/projectile_manager.h"
 
 //class mère des unités de jeu (player, enemy)
 

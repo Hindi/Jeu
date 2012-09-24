@@ -4,7 +4,7 @@
 #include <iostream>
 #include "player.h"
 #include "population.h"
-#include "projectile_manager.h"
+#include "tirs/projectile_manager.h"
 #include "tirs/missile_manager.h"
 #include "drop.h"
 

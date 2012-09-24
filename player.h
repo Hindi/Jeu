@@ -3,12 +3,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <list>
-#include "projectile.h"
+#include "tirs/projectile.h"
 #include "unit.h"
 #include "timer.h"
 #include "animation.h"
 #include "image_manager.h"
-#include "projectile_manager.h"
+#include "tirs/projectile_manager.h"
 #include "tirs/missile.h"
 
 class Player : public Unit

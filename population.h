@@ -4,8 +4,8 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "enemies/enemy.h"
-#include "projectile.h"
-#include "projectile_manager.h"
+#include "tirs/projectile.h"
+#include "tirs/projectile_manager.h"
 #include "drop_manager.h"
 #include "enemies/boss.h"
 #include "player.h"

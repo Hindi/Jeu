@@ -6,12 +6,12 @@
 #include "../player.h"
 #include "../timer.h"
 #include "../unit.h"
-#include "../projectile.h"
+#include "../tirs/projectile.h"
 #include "../animation.h"
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "math.h"
-#include "../projectile_manager.h"
+#include "../tirs/projectile_manager.h"
 
 //Permet de créer le type enemy : ils sont ensuite créé et stocké dans population.
 

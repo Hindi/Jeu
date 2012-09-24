@@ -12,7 +12,7 @@
 #include "script.h"
 #include "background.h"
 #include "image_manager.h"
-#include "projectile_manager.h"
+#include "tirs/projectile_manager.h"
 #include "guard.h"
 #include "tirs/missile_manager.h"
 #include "weapon_manager.h"
