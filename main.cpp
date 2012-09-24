@@ -9,6 +9,24 @@ using namespace sf;
 
 void startGame(Jeu jeu);
 
+/*
+TODO LIST
+
+- Plusieurs planètes
+- Revoir les trames de sprite
+- Commencer la classe pour la traînée de missiles
+- Outil level design
+- Voir pour un ralentissement du temps
+- Missiles qui n'atteignent jamais les enemy
+- Problèmes de threads : voir missiles
+- test de performance
+- enemy spawner
+- Deux Joueurs
+- Rotation missiles
+- Score qui apparaît sur l'ennemi
+
+*/
+
 int main()
 {
 
