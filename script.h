@@ -13,6 +13,8 @@ class Script:public sf::Thread
 {
     public:
         Script( int id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &m_population);
+        void niveau1();
+        void niveau2();
 
     private:
         // Run() est une fonctione virtuelle de sf::Thread

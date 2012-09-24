@@ -14,6 +14,17 @@ Script::Script(int id, std::string msg, image_manager &imageManager, Player &pla
     timer.start();
 }
 
+/*
+*****************************************************************
+Liste des ennemis disponibles :
+- ship
+- flyingSaucer
+
+Liste des boss :
+-Lily
+*****************************************************************
+*/
+
 void Script::Run()
 {/*
     timer.sleep(10);
@@ -32,4 +43,9 @@ void Script::Run()
     m_population.createShip(positionEnemy, m_player, m_imageManager);
     positionEnemy.x +=100;
 */
+}
+
+void Script::niveau1()
+{
+
 }
