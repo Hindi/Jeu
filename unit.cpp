@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Unit::Unit(int life, int xSpeed, int ySpeed, const string &filepath, Vector2f position, RenderWindow &app, Projectile_manager &projectile_manager):
+Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position, RenderWindow &app, Projectile_manager &projectile_manager):
             m_scale(1,1),
             EXPLOS_WIDTH(400),
             EXPLOS_HEIGHT(400),
