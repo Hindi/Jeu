@@ -14,8 +14,8 @@ int main()
 
     const int SCREEN_WIDTH(1280), SCREEN_HEIGHT(1024), MAX_MENU(3);
     sf::RenderWindow app(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Jeu");
-    app.UseVerticalSync(true);
-    app.SetFramerateLimit(60);
+    //app.UseVerticalSync(true);
+    //app.SetFramerateLimit(60);
 
 
     //Gestionnaire d'images
