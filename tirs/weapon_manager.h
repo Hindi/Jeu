@@ -1,7 +1,7 @@
 #ifndef WEAPON_MANAGER_H_INCLUDED
 #define WEAPON_MANAGER_H_INCLUDED
 #include <SFML/Graphics.hpp>
-#include "player.h"
+#include "../player.h"
 
 class Weapon_manager
 {
