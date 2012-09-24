@@ -3,10 +3,12 @@
 using namespace std;
 using namespace sf;
 
-Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager):
+Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager):
             m_app(app),
             m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager)
+            m_drop_manager(drop_manager),
+            m_player(player),
+            m_imageManager(imageManager)
 {
 
 }
@@ -140,16 +142,16 @@ void Population::unFreeze()
             }
 }
 
-void Population::createShip(Vector2f position, Player &player, image_manager &imageManager)
+void Population::createShip(Vector2f position, char* move)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", "roundTrip", 1, 40, 1, m_app, player, imageManager, m_projectile_manager));
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, m_app, m_player, m_imageManager, m_projectile_manager));
 }
 
-void Population::createFlyingSaucer(Vector2f position, Player &player, image_manager &imageManager)
+void Population::createFlyingSaucer(Vector2f position, char* move)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", "roundTrip", 1, 20, 2, m_app, player, imageManager, m_projectile_manager));
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager));
 }
 
 void Population::manage()
@@ -159,7 +161,7 @@ void Population::manage()
     this->drawPopulation();
 }
 
-void Population::createBoss(Vector2f position, Player &player, image_manager &imageManager)
+void Population::createBoss(Vector2f position, char* move)
 {
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, "images/enemy2.png", position, "boss", "roundTrip", 1, 20, 2, m_app, player, imageManager, m_projectile_manager, "lily"));
+    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, "images/enemy2.png", position, "boss", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, "lily"));
 }

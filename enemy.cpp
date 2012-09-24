@@ -170,7 +170,7 @@ void Enemy::dontMove()
 
 void Enemy::move()
 {
-    if(strcmp(m_moveMethod, "roundTrip") == 0)
+    if(strcmp(m_moveMethod, "roundtrip") == 0)
         this->roundTrip();
     else if(strcmp(m_moveMethod, "left") == 0)
         this->moveLeft();

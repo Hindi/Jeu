@@ -8,13 +8,15 @@
 #include "projectile_manager.h"
 #include "drop_manager.h"
 #include "enemies/boss.h"
+#include "player.h"
+#include "image_manager.h"
 
 //Permet de stocker et gérer les ennemis
 
 class Population
 {
     public:
-        Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager);
+        Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager);
 
         //Destructeur
         virtual ~Population();
@@ -38,8 +40,8 @@ class Population
         void unFreeze();
 
         //Créateurs d'ennemis
-        void createShip(sf::Vector2f position, Player &player, image_manager &imageManager);
-        void createFlyingSaucer(sf::Vector2f position, Player &player, image_manager &imageManager);
+        void createShip(sf::Vector2f position, char* move);
+        void createFlyingSaucer(sf::Vector2f position, char* move);
 
         //Fait exploser un ennemi
         void explode(Enemy *enemy);
@@ -51,12 +53,18 @@ class Population
         void manage();
 
         //Création d'un boos
-        void createBoss(sf::Vector2f position, Player &player, image_manager &imageManager);
+        void createBoss(sf::Vector2f position, char* move);
 
 
     protected:
         //La fenêtre
         sf::RenderWindow &m_app;
+
+        //Le joueur
+        Player &m_player;
+
+        //Manager d'images
+        image_manager &m_imageManager;
 
         //Liste des ennemis
         std::list<Enemy*> m_enemies;
