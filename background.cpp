@@ -16,7 +16,7 @@ Background::Background(RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREE
 
     //Sprite planètes
     imagePlanet = new Image;
-    *imagePlanet = imageManager.getImage("images/planete1.png");;
+    *imagePlanet = imageManager.getImage("images/planete2.png");;
     spritePlanet.SetImage(*imagePlanet);
 
     this->init();
