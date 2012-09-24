@@ -26,26 +26,33 @@ Liste des boss :
 */
 
 void Script::Run()
-{/*
-    timer.sleep(10);
-
-    Vector2f positionEnemy(50, 200);
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;
-    //population.createFlyingSaucer(positionEnemy, player, imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, m_player, m_imageManager);
-    positionEnemy.x +=100;
-*/
+{
+    niveau1();
 }
 
 void Script::niveau1()
 {
+    //Variables enemy :
+    Vector2f positionEnemy(50, 50);
+
+    m_population.createShip(positionEnemy, "roundtrip",true);
+    positionEnemy.x +=100;
+    m_population.createShip(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+    m_population.createShip(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+    m_population.createFlyingSaucer(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+    m_population.createShip(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+    m_population.createShip(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+
+    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
+    positionEnemy.x +=100;
+    m_population.createShip(positionEnemy, "roundtrip");
+    positionEnemy.x +=100;
+    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
+    m_population.createBoss(positionEnemy, "roundtrip", "lily");
 
 }
