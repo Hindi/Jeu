@@ -62,6 +62,7 @@ void Population::checkPopulation()
             else
             {
                 (*lit)->move();
+                (*lit)->spawn();
                 if((*lit)->canFire())
                 {
                     if(strcmp((*lit)->getType(), "ship") == 0)

@@ -12,6 +12,7 @@
 #include "../image_manager.h"
 #include "math.h"
 #include "../tirs/projectile_manager.h"
+#include "spawn.h"
 
 //Permet de créer le type enemy : ils sont ensuite créé et stocké dans population.
 
@@ -19,7 +20,7 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager);
+              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner = false);
 
         //Destructeur
         ~Enemy();
@@ -84,6 +85,9 @@ class Enemy : public Unit
         virtual void startTimer();
         virtual void pauseTimer();
 
+        //Permet de spawner des adds
+        virtual void spawn();
+
 
     protected:
         //Joueur
@@ -103,7 +107,7 @@ class Enemy : public Unit
         float lastShot;
 
         //Timers pour les tirs et les déplacememnts
-        Timer timer, timerMove;
+        Timer timer, timerMove, timerSpawn;
 
         //Constantes de score, vitesse et fréquence de tir
         int const m_scoreHit, m_scoreExplosion, projectileSpeed, m_coefSpeed, m_fireRate;
@@ -129,6 +133,13 @@ class Enemy : public Unit
 
         //Etat du déplacement
         int  m_moveValue;
+
+        //Permet de spawn des ennemis
+        bool m_spawner;
+
+        //Valeur liées au timer pour le spawn
+        int lastSpawn;
+        const int m_spawnRate;
 };
 
 

@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
-              Player &player, image_manager &imageManager, Projectile_manager &projectile_manager):
+              Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner):
             Unit(life, xSpeed,ySpeed, filepath, position, app, projectile_manager),
             m_player(player),
             direction("null"),
@@ -18,11 +18,18 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_imageManager(imageManager),
             m_type(type),
             m_moveMethod(moveMethod),
-            m_moveValue(moveValue)
+            m_moveValue(moveValue),
+            m_spawner(spawner),
+            lastSpawn(0),
+            m_spawnRate(3)
 {
     m_animated = new Animated;
     timer.start();
     timerMove.start();
+    if(m_spawner)
+    {
+        timerSpawn.start();
+    }
     image = new Image();
     *image = imageManager.getImage(filepath);
     m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
@@ -399,3 +406,10 @@ IntRect Enemy::getBoundingBox()
     return boundingBox;
 }
 
+void Enemy::spawn()
+{
+    if(m_spawner && ((timerSpawn.getTime() - lastSpawn > m_spawnRate)))
+    {
+
+    }
+}
