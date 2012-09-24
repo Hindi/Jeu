@@ -4,7 +4,7 @@
 #include <iostream>
 #include <list>
 #include "projectile.h"
-#include "tirs/missile.h"
+#include "missile.h"
 
 class Projectile_manager
 {
