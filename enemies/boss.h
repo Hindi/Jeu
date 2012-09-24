@@ -11,7 +11,7 @@
 #include "../image_manager.h"
 #include "../projectile_manager.h"
 #include "adds.h"
-#include "../enemy.h"
+#include "enemy.h"
 
 /*
 ****************************************

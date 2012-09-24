@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 #include "player.h"
-#include "enemy.h"
+#include "enemies/enemy.h"
 #include "collision.h"
 #include "population.h"
 #include "pannel.h"

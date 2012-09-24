@@ -3,7 +3,7 @@
 #include <list>
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "enemy.h"
+#include "enemies/enemy.h"
 #include "projectile.h"
 #include "projectile_manager.h"
 #include "drop_manager.h"

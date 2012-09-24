@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "population.h"
 #include "timer.h"
-#include "enemy.h"
+#include "enemies/enemy.h"
 #include "image_manager.h"
 #include "player.h"
 #include "population.h"
