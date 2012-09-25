@@ -23,25 +23,15 @@ Player::Player(int life, Vector2f position, RenderWindow &app, image_manager &im
     timer.start();
     image = new Image;
     *image = imageManager.getImage("images/player.png");
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0,m_frameWidth,m_frameHeight) ));
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth, 0, 2*m_frameWidth,m_frameHeight) ));
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2, 0, 3*m_frameWidth,m_frameHeight) ));
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3, 0, 4*m_frameWidth,m_frameHeight) ));
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4, 0, 5*m_frameWidth,m_frameHeight) ));
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0,m_frameWidth,m_frameHeight)));
 
-    goRight.PushFrame(Frame(image, sf::Rect<int>(0,m_frameHeight,m_frameWidth,m_frameHeight*2) ));
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth,m_frameHeight, 2*m_frameWidth,m_frameHeight*2) ));
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2,m_frameHeight, 3*m_frameWidth,m_frameHeight*2) ));
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3,m_frameHeight, 4*m_frameWidth,m_frameHeight*2) ));
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4,m_frameHeight, 5*m_frameWidth,m_frameHeight*2) ));
+    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth,0,m_frameWidth*2,m_frameHeight)));
+    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3,0,m_frameWidth*4,m_frameHeight)));
 
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(0,m_frameHeight*2,m_frameWidth,m_frameHeight*3) ));
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth,m_frameHeight*2, 2*m_frameWidth,m_frameHeight*3) ));
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2,m_frameHeight*2, 3*m_frameWidth,m_frameHeight*3) ));
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3,m_frameHeight*2, 4*m_frameWidth,m_frameHeight*3) ));
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4,m_frameHeight*2, 5*m_frameWidth,m_frameHeight*3) ));
+    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2,0,m_frameWidth*3,m_frameHeight)));
+    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4,0,m_frameWidth*5,m_frameHeight)));
 
-    m_animated = new Animated(&m_anim, false, true, 0.5);
+    m_animated = new Animated(&m_anim, false, false, 0.4);
     m_animated->SetPosition(m_position.x, m_position.y);
 }
 
@@ -188,7 +178,7 @@ void Player::moveUp()
     if (m_animated->GetAnim() != &m_anim)
     {
         m_animated->SetAnim(&m_anim);
-        m_animated->SetLoop(true);
+        m_animated->SetLoop(false);
     }
     m_position.y -= m_ySpeed * m_app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
@@ -215,11 +205,15 @@ void Player::moveLeft()
     {
         m_animated->SetAnim(&goLeft);
         m_animated->SetLoop(false);
+        if(m_animated->IsPaused())
+            m_animated->Play();
+    }
+    else if(m_animated->GetAnim() == &goLeft && m_animated->GetCurrentFrame() == 1)
+    {
+        m_animated->Pause();
     }
     m_position.x -= m_xSpeed * m_app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
-    if(m_animated->IsPaused())
-        m_animated->Play();
 }
 
 void Player::moveRight()
@@ -228,19 +222,23 @@ void Player::moveRight()
     {
         m_animated->SetLoop(false);
         m_animated->SetAnim(&goRight);
+        if(m_animated->IsPaused())
+            m_animated->Play();
+    }
+    else if(m_animated->GetAnim() == &goRight && m_animated->GetCurrentFrame() == 1)
+    {
+        m_animated->Pause();
     }
     m_position.x += m_xSpeed * m_app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
-    if(m_animated->IsPaused())
-        m_animated->Play();
 }
 
 void Player::dontMove()
 {
     if (m_animated->GetAnim() != &m_anim)
     {
-        m_animated->SetAnim(&m_anim)
-;        m_animated->SetLoop(true);
+        m_animated->SetAnim(&m_anim);
+        m_animated->SetLoop(false);
     }
     if(m_animated->IsPaused())
         m_animated->Play();
