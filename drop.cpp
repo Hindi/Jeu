@@ -15,6 +15,9 @@ Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
     //Choix de l'image en fonction du score
     switch(score)
     {
+        case 50:
+            *m_image = m_image_manager.getImage("images/Vie.png");
+            break;
         case 100:
             *m_image = m_image_manager.getImage("images/Vie.png");
             break;
