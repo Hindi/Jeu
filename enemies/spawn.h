@@ -9,8 +9,11 @@
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "../tirs/projectile_manager.h"
+#include "../tirs/projectile.h"
+#include "math.h"
 
 #include "../unit.h"
+#include "../timer.h"
 
 class Spawn : public Unit
 {
@@ -29,6 +32,7 @@ class Spawn : public Unit
         //Pour aficherl 'objet à l'écran
         void draw();
 
+
     private:
         sf::RenderWindow &m_app;
 
@@ -45,6 +49,22 @@ class Spawn : public Unit
         Animated *m_animated;
         Anim m_anim;
 
+        //timer pour déplacemens aléatoires
+        Timer timerMove;
+
+        //Timer pour cadencer les tirs
+        Timer timerFire;
+
+        //Moment du dernier movement et tirs
+        int lastMove, lastShot;
+
+        //Fréquence de changemen de direction et fréquence de tir
+        const int moveRate, fireRate;
+
+        //Angle de déplacement généré aléatoirement
+        int m_angleMove;
+
+        Projectile *projectile;
 };
 
 #endif // SPAWN_H_INCLUDED

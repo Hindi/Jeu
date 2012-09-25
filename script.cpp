@@ -35,7 +35,7 @@ void Script::niveau1()
     //Variables enemy :
     Vector2f positionEnemy(50, 50);
 
-    m_population.createShip(positionEnemy, "roundtrip",true);
+    m_population.createShip(positionEnemy, "roundtrip",true);/*
     positionEnemy.x +=100;
     m_population.createShip(positionEnemy, "roundtrip");
     positionEnemy.x +=100;
@@ -53,6 +53,6 @@ void Script::niveau1()
     m_population.createShip(positionEnemy, "roundtrip");
     positionEnemy.x +=100;
     //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    m_population.createBoss(positionEnemy, "roundtrip", "lily");
+    m_population.createBoss(positionEnemy, "roundtrip", "lily");*/
 
 }
