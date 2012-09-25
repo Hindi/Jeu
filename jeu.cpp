@@ -6,11 +6,11 @@ using namespace sf;
 
 Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager):
             m_app(app),
+            m_imageManager(imageManager),
             m_SCREEN_WIDTH(SCREEN_WIDTH),
             m_SCREEN_HEIGHT(SCREEN_HEIGHT),
             m_menu(menu),
-            m_quit(false),
-            m_imageManager(imageManager)
+            m_quit(false)
 {
 
 }
@@ -27,7 +27,7 @@ void Jeu::start()
     Timer timer;
 
     //Variables :
-    const int PANNEL_WIDTH(300), PLAYER_WIDTH(118), PLAYER_HEIGHT(93);
+    const int PANNEL_WIDTH(300);
     const Input & input = m_app.GetInput();
 
     //gestionnaires de projectiles

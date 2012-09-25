@@ -7,6 +7,7 @@
 #include "tirs/projectile_manager.h"
 #include "tirs/missile_manager.h"
 #include "drop.h"
+#include "enemies/spawn.h"
 
 //Gère les collisions des types unit
 

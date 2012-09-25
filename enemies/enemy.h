@@ -85,8 +85,20 @@ class Enemy : public Unit
         virtual void startTimer();
         virtual void pauseTimer();
 
-        //Permet de spawner des adds
-        virtual void spawn();
+        //Retourne true si l'ennemis est capable de spawn des mobs
+        bool isSpawner();
+
+        //Retourne la valeur du timer spawn
+        float getSpawnTime();
+
+        //Retourne le moment du dernier spawn
+        float getLastSpawnTime();
+
+        //Modifie la valeur du dernier spawn
+        void upDateLastSpawnTime();
+
+        //Retourn le spawn rate
+        int getSpawnRate();
 
 
     protected:

@@ -53,7 +53,7 @@ Enemy::~Enemy()
         list<Spawn*>::iterator lit(m_spawn.begin());
         for(; lit != m_spawn.end(); lit++)
         {
-            delete *lit;
+
         }
     }
 }
@@ -197,13 +197,6 @@ void Enemy::move()
         this->moveUp();
     else
         this->moveDown();
-
-    if(m_spawner)
-    {
-        list<Spawn*>::iterator lit(m_spawn.begin());
-        for(; lit != m_spawn.end(); lit++)
-            (*lit)->move();
-    }
 }
 
 int Enemy::getPositionAxis(int axis)
@@ -236,14 +229,6 @@ void Enemy::draw()
 {
     //animation->draw(m_app);
     m_app.Draw(*m_animated);
-    if(m_spawner)
-    {
-        list<Spawn*>::iterator lit(m_spawn.begin());
-        for(; lit != m_spawn.end(); lit++)
-        {
-            (*lit)->draw();
-        }
-    }
 }
 
 
@@ -429,11 +414,30 @@ IntRect Enemy::getBoundingBox()
     return boundingBox;
 }
 
-void Enemy::spawn()
+bool Enemy::isSpawner()
 {
-    if(m_spawner && ((timerSpawn.getTime() - lastSpawn > m_spawnRate)))
-    {
-        m_spawn.push_back(new Spawn(m_imageManager, Vector2f(500, 500), m_app, m_projectile_manager));
-        lastSpawn = timerSpawn.getTime();
-    }
+    if(m_spawner)
+        return true;
+    else
+        return false;
+}
+
+float Enemy::getSpawnTime()
+{
+    return timerSpawn.getTime();
+}
+
+float Enemy::getLastSpawnTime()
+{
+    return lastSpawn;
+}
+
+void Enemy::upDateLastSpawnTime()
+{
+    lastSpawn = timerSpawn.getTime();
+}
+
+int Enemy::getSpawnRate()
+{
+    return m_spawnRate;
 }

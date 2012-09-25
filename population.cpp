@@ -5,10 +5,10 @@ using namespace sf;
 
 Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager):
             m_app(app),
-            m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager),
             m_player(player),
-            m_imageManager(imageManager)
+            m_imageManager(imageManager),
+            m_projectile_manager(projectile_manager),
+            m_drop_manager(drop_manager)
 {
 
 }
@@ -37,6 +37,14 @@ void Population::drawPopulation()
             (*lit)->draw();//On les dessine
         }
     }
+    if(this->haveSpawnInProgress())
+    {
+        list<Spawn*>::iterator li(m_spawn.begin());
+        for(; li != m_spawn.end(); li++)
+        {
+            (*li)->draw();
+        }
+    }
     m_projectile_manager.drawProjectile();//On les dessine
 
 }
@@ -47,10 +55,17 @@ list<Enemy*>* Population::getPopulation()
     return &m_enemies;
 }
 
+list<Spawn*>* Population::getSpawnPopulation()
+{
+    //Retourne la liste des ennemis
+    return &m_spawn;
+}
+
 void Population::checkPopulation()
 {
     if(this->haveEnnemyInProgress())
     {
+        //On check les ennemis
         list<Enemy*>::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();)
         {
@@ -62,7 +77,7 @@ void Population::checkPopulation()
             else
             {
                 (*lit)->move();
-                (*lit)->spawn();
+                this->spawn((*lit));
                 if((*lit)->canFire())
                 {
                     if(strcmp((*lit)->getType(), "ship") == 0)
@@ -74,7 +89,27 @@ void Population::checkPopulation()
             }
         }
     }
+
     m_projectile_manager.moveProjectile();
+
+    //On check les spawn
+    if(this->haveSpawnInProgress())
+    {
+        list<Spawn*>::iterator li(m_spawn.begin());
+        if((*li)->isDead())
+        {
+            this->explode(*li);
+            li = m_spawn.erase(li);
+        }
+        else
+        {
+            for(; li != m_spawn.end(); li++)
+            {
+                (*li)->move();
+                (*li)->fire();
+            }
+        }
+    }
 }
 
 void Population::explode(Enemy *enemy)
@@ -88,7 +123,11 @@ void Population::explode(Enemy *enemy)
     position.y = enemy->getPositionAxis(1);
 
     m_drop_manager.createDrop(score, position);
+}
 
+void Population::explode(Spawn *spawn)
+{
+    m_deadSpawn.push_back(spawn);
 }
 
 void Population::manageExplosion()
@@ -165,4 +204,21 @@ void Population::manage()
     this->checkPopulation();
     this->manageExplosion();
     this->drawPopulation();
+}
+
+bool Population::haveSpawnInProgress()
+{
+    if(m_spawn.size() >> 0)
+        return true;
+    else
+        return false;
+}
+
+void Population::spawn(Enemy *enemy)
+{
+    if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
+    {
+        m_spawn.push_back(new Spawn(m_imageManager, Vector2f(500, 500), m_app, m_projectile_manager, m_player));
+        enemy->upDateLastSpawnTime();
+    }
 }

@@ -10,6 +10,7 @@
 #include "enemies/boss.h"
 #include "player.h"
 #include "image_manager.h"
+#include "enemies/spawn.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -23,6 +24,7 @@ class Population
 
         //Liste des ennemis
         std::list<Enemy*>* getPopulation();
+        std::list<Spawn*>* getSpawnPopulation();
 
         //Vérifie si des ennemis sont en vie
         bool haveEnnemyInProgress();
@@ -46,6 +48,9 @@ class Population
         //Fait exploser un ennemi
         void explode(Enemy *enemy);
 
+        //Fait exploser un spawn
+        void explode(Spawn *spawn);
+
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();
 
@@ -54,6 +59,11 @@ class Population
 
         //Création d'un boos
         void createBoss(sf::Vector2f position, char* move, char* name);
+
+        //Vérifient qu'il y a des spawn en jeu
+        bool haveSpawnInProgress();
+
+        void spawn(Enemy *enemy);
 
 
     protected:
@@ -72,11 +82,18 @@ class Population
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
 
+        //liste des spawn morts
+        std::list<Spawn*> m_deadSpawn;
+
         //Manager de projectiles
         Projectile_manager &m_projectile_manager;
 
         //Manager de drops
         Drop_manager &m_drop_manager;
+
+        //Liste des spawn
+        std::list<Spawn*> m_spawn;
+
 
 };
 

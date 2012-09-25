@@ -24,7 +24,6 @@ TODO LIST
 - Deux Joueurs
 - Rotation missiles
 - Score qui apparaît sur l'ennemi
-
 */
 
 int main()

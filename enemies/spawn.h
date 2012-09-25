@@ -14,11 +14,12 @@
 
 #include "../unit.h"
 #include "../timer.h"
+#include "../player.h"
 
 class Spawn : public Unit
 {
     public:
-        Spawn(image_manager &imageManager, sf:: Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager);
+        Spawn(image_manager &imageManager, sf:: Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager, Player &player);
 
         //Destructeur
         ~Spawn();
@@ -32,9 +33,12 @@ class Spawn : public Unit
         //Pour aficherl 'objet à l'écran
         void draw();
 
+        sf::IntRect getBoundingBox();
 
     private:
         sf::RenderWindow &m_app;
+
+        Player &m_player;
 
         //L'image du spawn
         sf::Image *image;
@@ -64,7 +68,12 @@ class Spawn : public Unit
         //Angle de déplacement généré aléatoirement
         int m_angleMove;
 
+        //Objet projectile tiré par les spawn
         Projectile *projectile;
+
+        //Vitesse des proejctiles
+        const int projectileSpeed;
+
 };
 
 #endif // SPAWN_H_INCLUDED
