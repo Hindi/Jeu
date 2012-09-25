@@ -78,8 +78,10 @@
 		<Unit filename="enemies\adds.h" />
 		<Unit filename="enemies\boss.cpp" />
 		<Unit filename="enemies\boss.h" />
-		<Unit filename="enemy.cpp" />
-		<Unit filename="enemy.h" />
+		<Unit filename="enemies\enemy.cpp" />
+		<Unit filename="enemies\enemy.h" />
+		<Unit filename="enemies\spawn.cpp" />
+		<Unit filename="enemies\spawn.h" />
 		<Unit filename="guard.cpp" />
 		<Unit filename="guard.h" />
 		<Unit filename="image_manager.cpp" />
@@ -95,10 +97,6 @@
 		<Unit filename="player.h" />
 		<Unit filename="population.cpp" />
 		<Unit filename="population.h" />
-		<Unit filename="projectile.cpp" />
-		<Unit filename="projectile.h" />
-		<Unit filename="projectile_manager.cpp" />
-		<Unit filename="projectile_manager.h" />
 		<Unit filename="script.cpp" />
 		<Unit filename="script.h" />
 		<Unit filename="timer.cpp" />
@@ -107,10 +105,14 @@
 		<Unit filename="tirs\missile.h" />
 		<Unit filename="tirs\missile_manager.cpp" />
 		<Unit filename="tirs\missile_manager.h" />
+		<Unit filename="tirs\projectile.cpp" />
+		<Unit filename="tirs\projectile.h" />
+		<Unit filename="tirs\projectile_manager.cpp" />
+		<Unit filename="tirs\projectile_manager.h" />
+		<Unit filename="tirs\weapon_manager.cpp" />
+		<Unit filename="tirs\weapon_manager.h" />
 		<Unit filename="unit.cpp" />
 		<Unit filename="unit.h" />
-		<Unit filename="weapon_manager.cpp" />
-		<Unit filename="weapon_manager.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
