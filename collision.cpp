@@ -131,7 +131,8 @@ void Collision::manageProjectileCollision()
         }
     }
 
-    for(; lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
+    //On check les spawn
+    for(lit = m_projectile_manager.getPlayerProjectiles()->begin(); lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
     {
         for(spawnLi = m_population.getSpawnPopulation()->begin(); spawnLi!=m_population.getSpawnPopulation()->end(); spawnLi++)
         {
@@ -150,7 +151,6 @@ void Collision::manageProjectileCollision()
             }
         }
     }
-    //On check les spawn
 
     //**************************
     // Collisions classe missile
