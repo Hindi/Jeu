@@ -33,6 +33,17 @@ Player::Player(int life, Vector2f position, RenderWindow &app, image_manager &im
 
     m_animated = new Animated(&m_anim, false, false, 0.4);
     m_animated->SetPosition(m_position.x, m_position.y);
+
+    imageReactor = new Image;
+    *imageReactor = imageManager.getImage("images/reacteur.png");
+    m_animReactor.PushFrame(Frame(imageReactor, sf::Rect<int>(0, 0, 40, 100)));
+    m_animReactor.PushFrame(Frame(imageReactor, sf::Rect<int>(40, 0, 80, 100)));
+    m_animReactor.PushFrame(Frame(imageReactor, sf::Rect<int>(80, 0, 120, 100)));
+    m_animReactor.PushFrame(Frame(imageReactor, sf::Rect<int>(120, 0, 160, 100)));
+    m_animReactor.PushFrame(Frame(imageReactor, sf::Rect<int>(160, 0, 200, 100)));
+
+    m_animatedReactor = new Animated(&m_animReactor, true, true, 0.1);
+    m_animatedReactor->SetPosition(m_position.x, m_position.y);
 }
 
 Player::~Player()
@@ -246,8 +257,13 @@ void Player::dontMove()
 
 void Player::draw()
 {
+    m_animatedReactor->SetPosition(m_animated->GetPosition().x + m_frameWidth/2.8, m_animated->GetPosition().y + m_frameHeight/1.35);
+    m_animatedReactor->anim(m_app.GetFrameTime());
+    m_app.Draw(*m_animatedReactor);
+
     m_animated->anim(m_app.GetFrameTime());
     m_app.Draw(*m_animated);
+
 }
 
 int Player::getPosition(int axis)

@@ -118,10 +118,21 @@ class Player : public Unit
 
         //Variables d'animation
         Animated *m_animated;
+
+        //Contiennent les framesp our les différents déplacements
         Anim m_anim, goRight, goLeft;
 
-        //L'image associée au sprite
+        //Animation réacteur
+        Animated *m_animatedReactor;
+
+        //Contient les frames du réacteur
+        Anim m_animReactor;
+
+        //L'image associée au sprite du vaisseau
         sf::Image *image;
+
+        //Image du réacteur
+        sf::Image *imageReactor;
 
         //Manager d'image
         image_manager &m_imageManager;
