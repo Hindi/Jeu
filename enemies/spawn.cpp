@@ -3,18 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Spawn::Spawn(image_manager &imageManager, Vector2f position, RenderWindow &app, Projectile_manager &projectile_manager, Player &player):
-            Unit(5, 1, 1, position, app, projectile_manager),
-            m_imageManager(imageManager),
-            m_app(app),
-            moveRate(2),
-            fireRate(1),
-            m_position(position),
-            m_angleMove(0),
-            lastMove(0),
-            lastShot(0),
-            m_player(player),
-            projectileSpeed(5)
+Spawn::Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
+              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager):
+            Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, "don't move", moveValue,
+              coefSpeed, firerate, app, player, imageManager, projectile_manager, false),
+            moveRate(1)
 {
     image = new Image();
     *image = m_imageManager.getImage("images/Etoile1.png");
@@ -38,7 +31,7 @@ Spawn::~Spawn()
 
 void Spawn::fire()
 {
-    if(timerFire.getTime() - lastShot > fireRate)
+    if(timerFire.getTime() - lastShot > m_fireRate)
     {
         lastShot = timerFire.getTime();
         Vector2f distance;
@@ -73,8 +66,8 @@ void Spawn::move()
         m_angleMove = rand() % 360 + 1;
         lastMove = timerMove.getTime();
     }
-    speed.x = m_app.GetFrameTime() * m_xSpeed * coefSpeed * cos(m_angleMove);
-    speed.y = m_app.GetFrameTime() * m_ySpeed * coefSpeed * sin(m_angleMove);
+    speed.x = m_app.GetFrameTime() * m_xSpeed * m_coefSpeed * cos(m_angleMove);
+    speed.y = m_app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
     m_position += speed;
     m_animated->SetPosition(m_position);
 }

@@ -12,7 +12,6 @@
 #include "../image_manager.h"
 #include "math.h"
 #include "../tirs/projectile_manager.h"
-#include "spawn.h"
 
 //Permet de créer le type enemy : ils sont ensuite créé et stocké dans population.
 
@@ -108,9 +107,6 @@ class Enemy : public Unit
         //listes des projectils et de leurs vitesse (en cas de visée)
         std::list<Projectile*> m_projectiles;
         std::list<sf::Vector2f> m_vitesses;
-
-        //Liste des spawn
-        std::list<Spawn*> m_spawn;
 
         //Direction de déplacememnt pour certains mouvements particuliers
         char* direction;

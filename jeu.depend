@@ -2120,7 +2120,7 @@
 
 1347837729 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1348592355 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1348593860 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1348592288 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2175,7 +2175,7 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1348592288 c:\users\shalafi\documents\github\jeu\population.h
+1348593872 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2327,7 +2327,7 @@
 1348527239 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1348592288 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1348593877 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2347,7 +2347,7 @@
 1347832548 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
 	"missile.h"
 
-1347835120 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
+1348592875 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
 	"missile_manager.h"
 
 1348527214 source:c:\users\shalafi\documents\github\jeu\unit.cpp
@@ -2392,10 +2392,10 @@
 1348527230 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1348592288 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1348593571 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1348592288 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1348593205 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2408,7 +2408,6 @@
 	"../image_manager.h"
 	"math.h"
 	"../tirs/projectile_manager.h"
-	"spawn.h"
 
 1348523705 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
 	"projectile.h"
@@ -2436,7 +2435,7 @@
 	<SFML/Graphics.hpp>
 	"../player.h"
 
-1348592845 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
+1348593571 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2449,7 +2448,8 @@
 	"../unit.h"
 	"../timer.h"
 	"../player.h"
+	"enemy.h"
 
-1348592846 source:c:\users\shalafi\documents\github\jeu\enemies\spawn.cpp
+1348593717 source:c:\users\shalafi\documents\github\jeu\enemies\spawn.cpp
 	"spawn.h"
 

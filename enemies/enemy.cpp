@@ -48,14 +48,6 @@ Enemy::~Enemy()
     {
         delete image;
     }
-    if(m_spawner)
-    {
-        list<Spawn*>::iterator lit(m_spawn.begin());
-        for(; lit != m_spawn.end(); lit++)
-        {
-
-        }
-    }
 }
 
 Sprite* Enemy::getSprite()
@@ -195,6 +187,8 @@ void Enemy::move()
         this->moveDown();
     else if(strcmp(m_moveMethod, "up") == 0)
         this->moveUp();
+    else if(strcmp(m_moveMethod, "don't move") == 0)
+        this->dontMove();
     else
         this->moveDown();
 }

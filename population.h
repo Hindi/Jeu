@@ -24,7 +24,6 @@ class Population
 
         //Liste des ennemis
         std::list<Enemy*>* getPopulation();
-        std::list<Spawn*>* getSpawnPopulation();
 
         //Vérifie si des ennemis sont en vie
         bool haveEnnemyInProgress();
@@ -81,9 +80,6 @@ class Population
 
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
-
-        //liste des spawn morts
-        std::list<Spawn*> m_deadSpawn;
 
         //Manager de projectiles
         Projectile_manager &m_projectile_manager;

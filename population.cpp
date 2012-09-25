@@ -37,14 +37,6 @@ void Population::drawPopulation()
             (*lit)->draw();//On les dessine
         }
     }
-    if(this->haveSpawnInProgress())
-    {
-        list<Spawn*>::iterator li(m_spawn.begin());
-        for(; li != m_spawn.end(); li++)
-        {
-            (*li)->draw();
-        }
-    }
     m_projectile_manager.drawProjectile();//On les dessine
 
 }
@@ -53,12 +45,6 @@ list<Enemy*>* Population::getPopulation()
 {
     //Retourne la liste des ennemis
     return &m_enemies;
-}
-
-list<Spawn*>* Population::getSpawnPopulation()
-{
-    //Retourne la liste des ennemis
-    return &m_spawn;
 }
 
 void Population::checkPopulation()
@@ -92,24 +78,6 @@ void Population::checkPopulation()
 
     m_projectile_manager.moveProjectile();
 
-    //On check les spawn
-    if(this->haveSpawnInProgress())
-    {
-        list<Spawn*>::iterator li(m_spawn.begin());
-        if((*li)->isDead())
-        {
-            this->explode(*li);
-            li = m_spawn.erase(li);
-        }
-        else
-        {
-            for(; li != m_spawn.end(); li++)
-            {
-                (*li)->move();
-                (*li)->fire();
-            }
-        }
-    }
 }
 
 void Population::explode(Enemy *enemy)
@@ -123,11 +91,6 @@ void Population::explode(Enemy *enemy)
     position.y = enemy->getPositionAxis(1);
 
     m_drop_manager.createDrop(score, position);
-}
-
-void Population::explode(Spawn *spawn)
-{
-    m_deadSpawn.push_back(spawn);
 }
 
 void Population::manageExplosion()
@@ -218,7 +181,8 @@ void Population::spawn(Enemy *enemy)
 {
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
-        m_spawn.push_back(new Spawn(m_imageManager, Vector2f(500, 500), m_app, m_projectile_manager, m_player));
+        Vector2f position = enemy->getPosition();
+        m_enemies.push_back(new Spawn(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", 1, 10, 1, m_app, m_player, m_imageManager, m_projectile_manager));
         enemy->upDateLastSpawnTime();
     }
 }

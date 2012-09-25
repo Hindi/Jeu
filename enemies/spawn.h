@@ -15,11 +15,13 @@
 #include "../unit.h"
 #include "../timer.h"
 #include "../player.h"
+#include "enemy.h"
 
-class Spawn : public Unit
+class Spawn : public Enemy
 {
     public:
-        Spawn(image_manager &imageManager, sf:: Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager, Player &player);
+        Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
+              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager);
 
         //Destructeur
         ~Spawn();
@@ -38,23 +40,6 @@ class Spawn : public Unit
         sf::Vector2f getPosition();
 
     private:
-        sf::RenderWindow &m_app;
-
-        Player &m_player;
-
-        //L'image du spawn
-        sf::Image *image;
-
-        //Le manager d'image
-        image_manager &m_imageManager;
-
-        //Position courante
-        sf:: Vector2f m_position;
-
-        //Variables d'animation
-        Animated *m_animated;
-        Anim m_anim;
-
         //timer pour déplacemens aléatoires
         Timer timerMove;
 
@@ -65,16 +50,10 @@ class Spawn : public Unit
         int lastMove, lastShot;
 
         //Fréquence de changemen de direction et fréquence de tir
-        const int moveRate, fireRate;
+        const int moveRate;
 
         //Angle de déplacement généré aléatoirement
         int m_angleMove;
-
-        //Objet projectile tiré par les spawn
-        Projectile *projectile;
-
-        //Vitesse des proejctiles
-        const int projectileSpeed;
 
 };
 

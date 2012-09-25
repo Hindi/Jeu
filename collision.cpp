@@ -131,27 +131,6 @@ void Collision::manageProjectileCollision()
         }
     }
 
-    //On check les spawn
-    for(lit = m_projectile_manager.getPlayerProjectiles()->begin(); lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
-    {
-        for(spawnLi = m_population.getSpawnPopulation()->begin(); spawnLi!=m_population.getSpawnPopulation()->end(); spawnLi++)
-        {
-            if(m_projectile_manager.getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
-            {
-                projectileRect = (*lit)->getBoundingBox();
-                projectilePosition.y = (*lit)->GetPosition().y;
-                projectileRect.Top  = projectilePosition.y;
-                projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
-                enemyRect = (*spawnLi)->getBoundingBox();
-                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
-                {
-                    (*spawnLi)->recieveDamages(m_player.getDamages());
-                    (lit) = m_projectile_manager.getPlayerProjectiles()->erase(lit);
-                }
-            }
-        }
-    }
-
     //**************************
     // Collisions classe missile
     //**************************
@@ -172,25 +151,6 @@ void Collision::manageProjectileCollision()
                 {
                     (*li)->recieveDamages((*litt)->getDamage());
                     m_player.addScore((*li)->getScoreHit());
-                    m_missile_manager.setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
-                    (litt) = m_missile_manager.getMissile()->erase(litt);
-                }
-            }
-        }
-
-        //On check les spawn
-        for(spawnLi = m_population.getSpawnPopulation()->begin(); spawnLi!=m_population.getSpawnPopulation()->end(); spawnLi++)
-        {
-            if(m_missile_manager.getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
-            {
-                projectileRect = (*litt)->getBoundingBox();
-                projectilePosition.y = (*litt)->GetPosition().y;
-                projectileRect.Top  = projectilePosition.y;
-                projectileRect.Bottom = projectileRect.Top+(*litt)->getSprite().GetSize().y;
-                enemyRect = (*spawnLi)->getBoundingBox();
-                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
-                {
-                    (*spawnLi)->recieveDamages((*litt)->getDamage());
                     m_missile_manager.setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
                     (litt) = m_missile_manager.getMissile()->erase(litt);
                 }
