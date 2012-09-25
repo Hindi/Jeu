@@ -48,6 +48,14 @@ Enemy::~Enemy()
     {
         delete image;
     }
+    if(m_spawner)
+    {
+        list<Spawn*>::iterator lit(m_spawn.begin());
+        for(; lit != m_spawn.end(); lit++)
+        {
+            delete *lit;
+        }
+    }
 }
 
 Sprite* Enemy::getSprite()
