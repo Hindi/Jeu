@@ -79,14 +79,13 @@ void Missile_manager::moveMissile()
     //***********************************************
     //Cette fonction gère le déplacement des missiles
     //***********************************************
-    if(this->haveMissilesInProgress() && m_population.haveEnnemyInProgress()) //Si des ennemis sont en vie
+    if(this->haveMissilesInProgress() && (m_population.haveEnnemyInProgress())) //Si des ennemis sont en vie
     {
-
         for(lit=m_missiles.begin(); lit != m_missiles.end();)
         {
             Vector2f positionMissile = (*lit)->getPosition();//On récupère la position du missile
             Vector2f positionEnnemy, diff;//On créé nos conteneurs pour la position ennemis et la différence entre position ennemy et missile
-            int currentNorm, norm=10000; //On
+            int currentNorm, norm=10000;
 
             //*****************************************************************
             //Dans cette partie on calcule quel ennemi chaque missile va cibler

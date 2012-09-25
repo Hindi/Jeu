@@ -35,6 +35,8 @@ class Spawn : public Unit
 
         sf::IntRect getBoundingBox();
 
+        sf::Vector2f getPosition();
+
     private:
         sf::RenderWindow &m_app;
 

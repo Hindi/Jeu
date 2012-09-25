@@ -94,3 +94,8 @@ IntRect Spawn::getBoundingBox()
 
     return boundingBox;
 }
+
+Vector2f Spawn::getPosition()
+{
+    return m_position;
+}
