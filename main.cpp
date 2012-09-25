@@ -13,7 +13,6 @@ void startGame(Jeu jeu);
 TODO LIST
 
 - Plusieurs planètes
-- Revoir les trames de sprite
 - Commencer la classe pour la traînée de missiles
 - Voir pour un ralentissement du temps
 - Missiles qui n'atteignent jamais les enemy
