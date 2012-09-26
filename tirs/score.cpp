@@ -21,6 +21,8 @@ Score::Score(RenderWindow &app, int score, Vector2f position):
     //On l'ajoute a sf::string
     string.SetText(s);
     string.SetPosition(m_position);
+
+    timer.start();
 }
 
 Score::~Score()
@@ -31,4 +33,17 @@ Score::~Score()
 void Score::draw()
 {
     m_app.Draw(string);
+}
+
+bool Score::isOld()
+{
+    if(timer.getTime() > 2)
+        return true;
+    else
+        return false;
+}
+
+String Score::getString()
+{
+    return string;
 }

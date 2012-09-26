@@ -5,6 +5,8 @@
 #include <iostream>
 #include <sstream>
 
+#include "../timer.h"
+
 class Score
 {
     public:
@@ -15,16 +17,25 @@ class Score
 
         void draw();
 
+        Timer getTime();
+
+        bool isOld();
+
+        sf::String getString();
+
+        sf::String string;
+
     private:
         sf::RenderWindow &m_app;
 
         sf::Font m_fontCubic;
 
-        sf::String string;
 
         int const m_score;
 
         sf::Vector2f m_position;
+
+        Timer timer;
 };
 
 #endif // SCORE_H_INCLUDED

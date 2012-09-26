@@ -28,3 +28,31 @@ void Score_manager::draw()
         (*lit)->draw();
     }
 }
+
+void Score_manager::manage()
+{
+    if(haveScoreInProgress())
+    {
+        list<Score*>::iterator lit(m_scores.begin());
+        for(; lit != m_scores.end(); lit++)
+        {
+            if((*lit)->isOld())
+                lit = m_scores.erase(lit);
+            else
+            {
+                String string = (*lit)->string;
+                string.SetPosition(Vector2f(100,100));
+            }
+        }
+
+        this->draw();
+    }
+}
+
+bool Score_manager::haveScoreInProgress()
+{
+    if(m_scores.size() >= 1)
+        return true;
+    else
+        return false;
+}

@@ -141,7 +141,7 @@ void Jeu::start()
         population.manage();
         missile_manager.manage();
         pannel.checkPannel();
-        scoreManager.draw();
+        scoreManager.manage();
         m_app.Display();
         timer.sleep(1);
     }

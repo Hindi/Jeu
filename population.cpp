@@ -20,7 +20,7 @@ Population::~Population()
     if(this->haveEnnemyInProgress())
     {
         list<Enemy*>::iterator lit(m_enemies.begin());
-        for(; lit!=m_enemies.end(); lit++)
+        for(; lit!=m_enemies.end();)
         {
             delete *lit;
         }

@@ -18,6 +18,10 @@ class Score_manager
 
         void draw();
 
+        void manage();
+
+        bool haveScoreInProgress();
+
     private:
         sf::RenderWindow &m_app;
 
