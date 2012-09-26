@@ -33,6 +33,9 @@ void Jeu::start()
     //gestionnaires de projectiles
     Projectile_manager projectile_manager(m_app);
 
+    //Affichage onscreen des scores
+    Score_manager scoreManager(m_app);
+
     //Variables player :
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
     Player player(1, positionPlayer, m_app, m_imageManager, projectile_manager);
@@ -40,7 +43,7 @@ void Jeu::start()
     Drop_manager drop_manager(m_app, m_imageManager);
 
     //Variable population
-    Population population(m_app, projectile_manager, drop_manager, player, m_imageManager);
+    Population population(m_app, projectile_manager, drop_manager, player, m_imageManager, scoreManager);
     Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager, population);
 	s1.Launch();
 
@@ -138,6 +141,7 @@ void Jeu::start()
         population.manage();
         missile_manager.manage();
         pannel.checkPannel();
+        scoreManager.draw();
         m_app.Display();
         timer.sleep(1);
     }

@@ -3,12 +3,13 @@
 using namespace std;
 using namespace sf;
 
-Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager):
+Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager):
             m_app(app),
             m_player(player),
             m_imageManager(imageManager),
             m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager)
+            m_drop_manager(drop_manager),
+            m_scoreManager(scoreManager)
 {
 
 }
@@ -89,8 +90,12 @@ void Population::explode(Enemy *enemy)
     score = enemy->getScoreExplosion();
     position.x = enemy->getPositionAxis(0);
     position.y = enemy->getPositionAxis(1);
-
     m_drop_manager.createDrop(score, position);
+    int currentFrame = enemy->getAnimation()->GetCurrentFrame();
+    Anim *m_anim = enemy->getAnimation()->GetAnim();
+    Image *currentImage = (*m_anim)[currentFrame].Image;
+    position.x += currentImage->GetWidth();
+    m_scoreManager.addScore(score, position);
 }
 
 void Population::manageExplosion()

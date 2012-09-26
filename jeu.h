@@ -17,7 +17,7 @@
 #include "tirs/missile_manager.h"
 #include "tirs/weapon_manager.h"
 #include "drop_manager.h"
-
+#include "tirs/score_manager.h"
 
 class Jeu
 {

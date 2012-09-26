@@ -111,6 +111,8 @@
 		<Unit filename="tirs\projectile_manager.h" />
 		<Unit filename="tirs\score.cpp" />
 		<Unit filename="tirs\score.h" />
+		<Unit filename="tirs\score_manager.cpp" />
+		<Unit filename="tirs\score_manager.h" />
 		<Unit filename="tirs\weapon_manager.cpp" />
 		<Unit filename="tirs\weapon_manager.h" />
 		<Unit filename="unit.cpp" />

@@ -11,13 +11,15 @@
 #include "player.h"
 #include "image_manager.h"
 #include "enemies/spawn.h"
+#include "tirs/score_manager.h"
+#include "Anim.hpp"
 
 //Permet de stocker et gérer les ennemis
 
 class Population
 {
     public:
-        Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager);
+        Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager,  Score_manager &scoreManager);
 
         //Destructeur
         virtual ~Population();
@@ -89,6 +91,8 @@ class Population
 
         //Liste des spawn
         std::list<Spawn*> m_spawn;
+
+        Score_manager &m_scoreManager;
 
 
 };

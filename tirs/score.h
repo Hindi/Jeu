@@ -3,18 +3,17 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <list>
 #include <sstream>
 
 class Score
 {
     public:
-        Score(sf::RenderWindow &app);
+        Score(sf::RenderWindow &app, int score, sf::Vector2f position);
 
         //Destructeur
         ~Score();
 
-        void addScore(int score);
+        void draw();
 
     private:
         sf::RenderWindow &m_app;
@@ -23,8 +22,9 @@ class Score
 
         sf::String string;
 
-        std::list<sf::String*> m_strings;
+        int const m_score;
 
+        sf::Vector2f m_position;
 };
 
 #endif // SCORE_H_INCLUDED
