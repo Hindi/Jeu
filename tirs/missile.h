@@ -11,24 +11,23 @@ class Missile : public sf::Drawable
         ~Missile();
         sf::Sprite getSprite();
         void Render(sf::RenderTarget& target) const;
-        int getSpeed() const;
-        const int getCoefSpeed() const;
+        short getSpeed() const;
+        short getCoefSpeed() const;
         sf::IntRect getBoundingBox() const;
         void setPosition(sf::Vector2f position);
         sf::Vector2f getPosition();
-        int getDamage();//Définit les dommage occasioné par un missile
+        short getDamage() const;//Définit les dommage occasioné par un missile
         bool isInScreen();//Vérifie si le missile est dans l'écran
         void setFocus(bool choix);
         bool getFocus();
-        int getListPosition();
+        short getListPosition() const;
 
     protected:
         sf::Image *image;
         sf::Sprite sprite;
         const sf::Vector2f scale;
-        int m_speed, listPosition;
-        const int m_coefSpeed;
-        int m_width, m_height;
+        short const m_speed, listPosition;
+        short const m_coefSpeed;
         sf::Vector2f m_position;
         bool focusing;
 };

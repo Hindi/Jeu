@@ -4,10 +4,10 @@
 	<File name="Anim.hpp" open="1" top="0" tabpos="10">
 		<Cursor position="493" topLine="14" />
 	</File>
-	<File name="Animated.cpp" open="1" top="0" tabpos="12">
+	<File name="Animated.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="432" topLine="54" />
 	</File>
-	<File name="Animated.hpp" open="1" top="0" tabpos="11">
+	<File name="Animated.hpp" open="0" top="0" tabpos="11">
 		<Cursor position="841" topLine="20" />
 	</File>
 	<File name="Frame.hpp" open="0" top="0" tabpos="0">
@@ -25,8 +25,8 @@
 	<File name="background.h" open="0" top="0" tabpos="2">
 		<Cursor position="997" topLine="7" />
 	</File>
-	<File name="collision.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="4381" topLine="105" />
+	<File name="collision.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="5589" topLine="135" />
 	</File>
 	<File name="collision.h" open="0" top="0" tabpos="3">
 		<Cursor position="267" topLine="0" />
@@ -43,11 +43,11 @@
 	<File name="drop_manager.h" open="0" top="0" tabpos="6">
 		<Cursor position="821" topLine="3" />
 	</File>
-	<File name="enemies\adds.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="316" topLine="0" />
+	<File name="enemies\adds.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="1254" topLine="41" />
 	</File>
-	<File name="enemies\adds.h" open="0" top="0" tabpos="6">
-		<Cursor position="307" topLine="0" />
+	<File name="enemies\adds.h" open="1" top="1" tabpos="17">
+		<Cursor position="2424" topLine="69" />
 	</File>
 	<File name="enemies\boss.cpp" open="0" top="0" tabpos="18">
 		<Cursor position="622" topLine="0" />
@@ -55,11 +55,11 @@
 	<File name="enemies\boss.h" open="0" top="0" tabpos="5">
 		<Cursor position="303" topLine="0" />
 	</File>
-	<File name="enemies\enemy.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="7007" topLine="260" />
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="1543" topLine="28" />
 	</File>
-	<File name="enemies\enemy.h" open="0" top="0" tabpos="6">
-		<Cursor position="3975" topLine="49" />
+	<File name="enemies\enemy.h" open="1" top="0" tabpos="13">
+		<Cursor position="4144" topLine="123" />
 	</File>
 	<File name="enemies\spawn.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="2818" topLine="45" />
@@ -67,14 +67,14 @@
 	<File name="enemies\spawn.h" open="0" top="0" tabpos="8">
 		<Cursor position="583" topLine="11" />
 	</File>
-	<File name="image_manager.cpp" open="0" top="0" tabpos="19">
-		<Cursor position="660" topLine="18" />
+	<File name="image_manager.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="660" topLine="17" />
 	</File>
 	<File name="image_manager.h" open="0" top="0" tabpos="8">
 		<Cursor position="811" topLine="0" />
 	</File>
 	<File name="jeu.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="4284" topLine="127" />
+		<Cursor position="4103" topLine="129" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="8">
 		<Cursor position="496" topLine="7" />
@@ -94,20 +94,20 @@
 	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="1149" topLine="15" />
 	</File>
-	<File name="player.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="8555" topLine="6" />
+	<File name="player.cpp" open="1" top="0" tabpos="18">
+		<Cursor position="6286" topLine="159" />
 	</File>
-	<File name="player.h" open="0" top="0" tabpos="12">
-		<Cursor position="3661" topLine="19" />
+	<File name="player.h" open="1" top="0" tabpos="19">
+		<Cursor position="3661" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="675" topLine="8" />
+		<Cursor position="1482" topLine="0" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="3">
-		<Cursor position="407" topLine="0" />
+		<Cursor position="407" topLine="45" />
 	</File>
-	<File name="script.cpp" open="0" top="0" tabpos="14">
-		<Cursor position="820" topLine="0" />
+	<File name="script.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="771" topLine="22" />
 	</File>
 	<File name="script.h" open="0" top="0" tabpos="15">
 		<Cursor position="874" topLine="0" />
@@ -115,14 +115,14 @@
 	<File name="timer.cpp" open="0" top="0" tabpos="22">
 		<Cursor position="205" topLine="0" />
 	</File>
-	<File name="timer.h" open="1" top="0" tabpos="13">
+	<File name="timer.h" open="0" top="0" tabpos="13">
 		<Cursor position="98" topLine="0" />
 	</File>
 	<File name="tirs\missile.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1715" topLine="0" />
 	</File>
-	<File name="tirs\missile_manager.cpp" open="0" top="0" tabpos="14">
-		<Cursor position="1212" topLine="26" />
+	<File name="tirs\missile_manager.cpp" open="1" top="0" tabpos="23">
+		<Cursor position="3480" topLine="107" />
 	</File>
 	<File name="tirs\missile_manager.h" open="0" top="0" tabpos="0">
 		<Cursor position="264" topLine="0" />
@@ -142,19 +142,22 @@
 	<File name="tirs\score.h" open="1" top="0" tabpos="5">
 		<Cursor position="410" topLine="13" />
 	</File>
-	<File name="tirs\score_manager.cpp" open="1" top="1" tabpos="6">
+	<File name="tirs\score_manager.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="855" topLine="27" />
 	</File>
 	<File name="tirs\score_manager.h" open="1" top="0" tabpos="7">
 		<Cursor position="401" topLine="0" />
 	</File>
+	<File name="tirs\weapon_manager.cpp" open="1" top="0" tabpos="22">
+		<Cursor position="0" topLine="0" />
+	</File>
 	<File name="tirs\weapon_manager.h" open="0" top="0" tabpos="0">
 		<Cursor position="113" topLine="0" />
 	</File>
-	<File name="unit.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="110" topLine="0" />
+	<File name="unit.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="627" topLine="12" />
 	</File>
-	<File name="unit.h" open="0" top="0" tabpos="10">
-		<Cursor position="334" topLine="3" />
+	<File name="unit.h" open="1" top="0" tabpos="15">
+		<Cursor position="2025" topLine="59" />
 	</File>
 </CodeBlocks_layout_file>

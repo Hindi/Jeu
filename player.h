@@ -22,7 +22,7 @@ class Player : public Unit
         sf::Sprite* getSprite();
 
         //Accesseur sur le nombre de vies
-        int getLives();
+        short getLives();
 
         //accesseur sur le rectangle du sprite
         sf::IntRect GetBoundingBox();
@@ -43,7 +43,7 @@ class Player : public Unit
         void addScore(int score);
 
         //accesseur sur le score
-        double getScore();
+        long double getScore();
 
         //Fait perdre une vie
         void loseLive();
@@ -69,7 +69,7 @@ class Player : public Unit
         void setPosition(int axis, int value);
 
         //accesseur sur le nombre de dommages
-        int getDamages();
+        short getDamages() const;
 
         //accesseur sur les missiles du joueur
         bool getMissile();
@@ -96,10 +96,12 @@ class Player : public Unit
         Missile *missile;
 
         //Dommages infligés et nombre de vies
-        int m_damages, m_lives;
+        short const m_damages;
+        short m_lives;
 
         //Nombre max de vie du joueur, taille du sprite et coef de déplacememnt
-        int const max_lives, m_frameWidth, m_frameHeight, m_coefSpeed;
+        short const max_lives, m_coefSpeed;
+        int const  m_frameWidth, m_frameHeight;
 
         //Temps entre deux tirs en secondes
         float const fireRate;
@@ -111,7 +113,7 @@ class Player : public Unit
         Timer timer;
 
         //Score courant du joueur
-        double m_score;
+        long double m_score;
 
         //Etat invincible ou non du joueur, activations des différentes armes
         bool lostLife, missiles, secondary, third;

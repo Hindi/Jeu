@@ -25,64 +25,64 @@ class Enemy : public Unit
         ~Enemy();
 
         //Accesseur sur le sprite
-        virtual sf::Sprite* getSprite();
+        sf::Sprite* getSprite();
 
         //Accesseur sur le rectangle occupé par le sprite
-        virtual sf::IntRect getBoundingBox();
+         sf::IntRect getBoundingBox();
 
         //Inflige des dommages à l'ennemi
-        virtual void recieveDamages(int dmg);
+         void recieveDamages(int dmg);
 
         //Accesseur sur le score donné par l'ennemis au joueur quand il touche
-        virtual int getScoreHit();
+         short getScoreHit() const;
         //Accesseur sur le score donné au joueur quand l'ennemi meurt
-        virtual int getScoreExplosion();
+         unsigned short getScoreExplosion() const;
 
         //Défini si l'ennemi est mort ou non
-        virtual bool isDead();
+         bool isDead();
 
         // Aller retour horizontal sur valeur indiqué (commence de gauche à droite)
-        virtual void roundTrip();
+         void roundTrip();
 
         //Déplacements
-        virtual void moveLeft();
-        virtual void moveUp();
-        virtual void moveDown();
-        virtual void moveRight();
-        virtual void dontMove();
-        virtual void move();
+         void moveLeft();
+         void moveUp();
+         void moveDown();
+         void moveRight();
+         void dontMove();
+         void move();
 
         //Dessin de l'ennemi
-        virtual void draw();
+         void draw();
 
         //Accesseur sur la position de l'ennemis sur un axe
-        virtual int getPositionAxis(int axis);
+         int getPositionAxis(int axis);
 
         //Accesseur sur la position de l'ennemi
-        virtual sf::Vector2f getPosition();
-        virtual void setPosition(int axis, int value);
+         sf::Vector2f getPosition();
+         void setPosition(int axis, int value);
 
         //Accesseur sur l'animation de l'ennemi (anim explosion dans Unit)
-        virtual Animated *getAnimationExplosion();
-        virtual Animated *getAnimation();
+         Animated *getAnimationExplosion();
+         Animated *getAnimation();
 
         //Différents types de tirs
-        virtual void fireFocus();//Avec visée
-        virtual void fireCircle();//en cercle
+         void fireFocus();//Avec visée
+         void fireCircle();//en cercle
 
         //Accesseur sur les projectiles en cours
-        virtual std::list<Projectile*>* getProjectiles();
+         std::list<Projectile*>* getProjectiles();
 
 
         //Défini si l'ennemi peut tirer ou non
-        virtual bool canFire();
+         bool canFire();
 
         //Accesseur sur le type de tir
-        virtual char* getType();
+         char* getType();
 
         //Timer pour les tirs
-        virtual void startTimer();
-        virtual void pauseTimer();
+         void startTimer();
+         void pauseTimer();
 
         //Retourne true si l'ennemis est capable de spawn des mobs
         bool isSpawner();
@@ -97,7 +97,7 @@ class Enemy : public Unit
         void upDateLastSpawnTime();
 
         //Retourn le spawn rate
-        int getSpawnRate();
+        short getSpawnRate() const;
 
 
     protected:
@@ -121,8 +121,8 @@ class Enemy : public Unit
         Timer timer, timerMove, timerSpawn;
 
         //Constantes de score, vitesse et fréquence de tir
-        int const m_scoreHit, m_scoreExplosion, projectileSpeed, m_coefSpeed, m_fireRate;
-
+        unsigned short const m_scoreExplosion;
+        short const m_scoreHit, projectileSpeed, m_coefSpeed, m_fireRate;
         //Sauvegarde du timer de déplacement
         float savedTimerMove;
 
@@ -143,14 +143,14 @@ class Enemy : public Unit
         char* m_moveMethod;
 
         //Etat du déplacement
-        int  m_moveValue;
+        short  m_moveValue;
 
         //Permet de spawn des ennemis
         bool m_spawner;
 
         //Valeur liées au timer pour le spawn
-        int lastSpawn;
-        const int m_spawnRate;
+        float lastSpawn;
+        short const m_spawnRate;
 };
 
 

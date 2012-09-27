@@ -122,13 +122,13 @@ void Population::manageExplosion()
 
 bool Population::haveEnnemyInProgress()
 {
-    if(m_enemies.size() > 0)
+    if(m_enemies.empty())
     {
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        return true;
     }
 }
 
@@ -176,10 +176,10 @@ void Population::manage()
 
 bool Population::haveSpawnInProgress()
 {
-    if(m_spawn.size() >> 0)
-        return true;
-    else
+    if(m_spawn.empty())
         return false;
+    else
+        return true;
 }
 
 void Population::spawn(Enemy *enemy)

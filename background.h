@@ -23,7 +23,7 @@ class Background
     protected:
 
         //Nombre d'étoiles
-        int LIST_SIZE;
+        short LIST_SIZE;
 
         //Images étoiles et planète
         sf::Image *imageStar, *imagePlanet;
@@ -38,7 +38,7 @@ class Background
         std::vector<sf::Sprite> listStar;
 
         //Vitesse de déplacement des étoiles
-        int m_speed;
+        short m_speed;
 
         //Taille de la fenêtre
         int const m_width, m_height;

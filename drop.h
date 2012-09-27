@@ -12,11 +12,11 @@ class Drop
         ~Drop();
 
         //Accesseurs publics
-        int getScore();
+        unsigned short getScore();
         sf::Sprite getSprite();
         sf::Vector2f getPosition();
         void setPosition(sf::Vector2f position);
-        int getSpeed();
+        short getSpeed() const;
         void move(sf::Vector2f position, sf::Vector2f speed);
         sf::IntRect getBoundingBox();
 
@@ -25,7 +25,9 @@ class Drop
         sf::Image *m_image;
 
         //Vitesse, score donné au joueur, taille du sprite
-        int m_speed, m_score,m_frameWidth, m_frameHeight;
+        int const m_frameWidth, m_frameHeight;
+        short const m_speed;
+        unsigned short const m_score;
 
         //Manager d'image
         image_manager &m_image_manager;

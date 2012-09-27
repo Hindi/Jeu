@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Script::Script(int id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &population):
+Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &population):
             id(id),
             msg(msg),
             m_imageManager(imageManager),
@@ -27,7 +27,11 @@ Liste des boss :
 
 void Script::Run()
 {
-    niveau1();
+    while(1)
+    {
+        niveau1();
+        timer.sleep(1000);
+    }
 }
 
 void Script::niveau1()

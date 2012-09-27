@@ -19,7 +19,6 @@ TODO LIST
 - Problèmes de threads : voir missiles
 - test de performance
 - Deux Joueurs
-- Rotation missiles
 - Score qui apparaît sur l'ennemi
 */
 

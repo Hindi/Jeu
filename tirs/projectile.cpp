@@ -31,7 +31,7 @@ void Projectile::Render(sf::RenderTarget& target) const
    target.Draw(sprite);
 }
 
-int Projectile::getSpeed(int axis) const
+short Projectile::getSpeed(int axis) const
 {
     if(axis==0)
         return m_speed.x;
@@ -39,7 +39,7 @@ int Projectile::getSpeed(int axis) const
         return m_speed.y;
 }
 
-const int Projectile::getCoefSpeed() const
+const short Projectile::getCoefSpeed() const
 {
     return m_coefSpeed;
 }

@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Player::Player(int life, Vector2f position, RenderWindow &app, image_manager &imageManager, Projectile_manager &projectile_manager):
-            Unit(life, 10, 10, position, app, projectile_manager),
+            Unit(life, 10, 10, position, app, projectile_manager,imageManager),
             max_lives(3),
             m_frameWidth(118),
             m_frameHeight(93),
@@ -64,7 +64,7 @@ Sprite* Player::getSprite()
     return m_animated;
 }
 
-int Player::getLives()
+short Player::getLives()
 {
     //Retourne le nombre de vies restantes
     return m_lives;
@@ -160,7 +160,7 @@ void Player::addScore(int score)
     m_score += score;
 }
 
-double Player::getScore()
+long double Player::getScore()
 {
     return m_score;
 }
@@ -282,7 +282,7 @@ void Player::setPosition(int axis, int value)
         m_position.y = value;
 }
 
-int Player::getDamages()
+short Player::getDamages() const
 {
     return m_damages;
 }

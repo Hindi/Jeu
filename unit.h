@@ -6,38 +6,39 @@
 #include "animation.h"
 #include "Animated.hpp"
 #include "tirs/projectile_manager.h"
+#include "image_manager.h"
 
 //class mère des unités de jeu (player, enemy)
 
 class Unit
 {
     public:
-        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager);
+        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager, image_manager &imageManager);
 
         //Destructeur
-        virtual ~Unit();
+         ~Unit();
 
         //Accesseur sur les hp restants
-        virtual int getLife();
+         short getLife();
 
         //Reçoit des dommages
-        virtual void recieveDamages(int dmg);
+         void recieveDamages(int dmg);
 
         //Définit s'i lest mort ou non
-        virtual bool isDead();
+         bool isDead();
 
         //Dessine l'explosion
-        virtual void drawExplosion();
+         void drawExplosion();
 
         //Accsseur sur la taille de l'explosion
-        virtual int getExploWidth() const;
-        virtual int getExploHeight() const;
+         int getExploWidth() const;
+         int getExploHeight() const;
 
         //Accesseur sur la vitesse
-        virtual sf::Vector2f getSpeed();
+         sf::Vector2f getSpeed();
 
         //Accesseur sur le coeficient de vitesse
-        virtual int getCoefSpeed() const;
+         short getCoefSpeed() const;
 
     protected:
         //Variables d'animation
@@ -63,19 +64,21 @@ class Unit
         sf::Image *imageExplosion;
 
         //Les hp qui restent
-        int m_life;
+        short m_life;
 
         // Vitesses sur chaque axe
-        int m_xSpeed, m_ySpeed;
+        short const m_xSpeed, m_ySpeed;
 
         //Le coeficient de vitesse
-        int const coefSpeed;
+        short coefSpeed;
 
         //Le frame courant
-        int currentFrameX, currentFrameY;
+        short currentFrameX, currentFrameY;
 
         //Manager de projectiles
         Projectile_manager &m_projectile_manager;
+
+        image_manager &m_imageManager;
 };
 
 #endif // UNIT_H_INCLUDED

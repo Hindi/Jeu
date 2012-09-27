@@ -10,7 +10,7 @@
 class Score
 {
     public:
-        Score(sf::RenderWindow &app, int score, sf::Vector2f position);
+        Score(sf::RenderWindow &app, unsigned short score, sf::Vector2f position);
 
         //Destructeur
         ~Score();
@@ -31,7 +31,7 @@ class Score
         sf::Font m_fontCubic;
 
 
-        int const m_score;
+        unsigned short const m_score;
 
         sf::Vector2f m_position;
 

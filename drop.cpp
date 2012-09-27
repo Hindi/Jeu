@@ -36,7 +36,7 @@ Drop::~Drop()
 
 }
 
-int Drop::getScore()
+unsigned short Drop::getScore()
 {
     return m_score;
 }
@@ -57,7 +57,7 @@ void Drop::setPosition(Vector2f position)
     sprite.Move(0,10);
 }
 
-int Drop::getSpeed()
+short Drop::getSpeed() const
 {
     return m_speed;
 }

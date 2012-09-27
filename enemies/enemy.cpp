@@ -5,7 +5,7 @@ using namespace sf;
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
               Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner):
-            Unit(life, xSpeed,ySpeed, position, app, projectile_manager),
+            Unit(life, xSpeed,ySpeed, position, app, projectile_manager,imageManager),
             m_player(player),
             direction("null"),
             lastShot(0),
@@ -55,12 +55,12 @@ Sprite* Enemy::getSprite()
     return &sprite;
 }
 
-int Enemy::getScoreHit()
+short Enemy::getScoreHit() const
 {
     return m_scoreHit;
 }
 
-int Enemy::getScoreExplosion()
+unsigned short Enemy::getScoreExplosion() const
 {
     return m_scoreExplosion;
 }
@@ -431,7 +431,7 @@ void Enemy::upDateLastSpawnTime()
     lastSpawn = timerSpawn.getTime();
 }
 
-int Enemy::getSpawnRate()
+short Enemy::getSpawnRate() const
 {
     return m_spawnRate;
 }

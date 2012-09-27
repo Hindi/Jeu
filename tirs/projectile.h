@@ -22,10 +22,10 @@ class Projectile : public sf::Drawable
         void Render(sf::RenderTarget& target) const;
 
         //Accesseur sur la vitesse
-        int getSpeed(int axis) const;
+        short getSpeed(int axis) const;
 
         //Accesseur sur le coeficient de vitesse
-        const int getCoefSpeed() const;
+        const short getCoefSpeed() const;
 
         //Accesseur sur le rectangle du sprite
         sf::IntRect getBoundingBox() const;
@@ -50,10 +50,7 @@ class Projectile : public sf::Drawable
         sf::Vector2f m_speed;
 
         //Coeficient de vitesse
-        const int m_coefSpeed;
-
-        //Taille du sprite
-        int m_width, m_height;
+        const short m_coefSpeed;
 
         //Position courante
         sf::Vector2f m_position;

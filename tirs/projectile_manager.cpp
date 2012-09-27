@@ -26,19 +26,19 @@ Projectile_manager::~Projectile_manager()
 bool Projectile_manager::haveEnemyProjectilesInProgress()
 {
     //Vérifie si des projectiles sont en cours de déplacement
-    if(m_enemyProjectiles.size() > 0)
-        return true;
-    else
+    if(m_enemyProjectiles.empty())
         return false;
+    else
+        return true;
 }
 
 bool Projectile_manager::havePlayerProjectilesInProgress()
 {
     //Vérifie si des projectiles sont en cours de déplacement
-    if(m_playerProjectiles.size() > 0)
-        return true;
-    else
+    if(m_playerProjectiles.empty())
         return false;
+    else
+        return true;
 }
 
 

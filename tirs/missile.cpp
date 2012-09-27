@@ -32,12 +32,12 @@ void Missile::Render(sf::RenderTarget& target) const
    target.Draw(sprite);
 }
 
-int Missile::getSpeed() const
+short Missile::getSpeed() const
 {
         return m_speed;
 }
 
-const int Missile::getCoefSpeed() const
+short Missile::getCoefSpeed() const
 {
     return m_coefSpeed;
 }
@@ -64,7 +64,7 @@ IntRect Missile::getBoundingBox() const
     return boundingBox;
 }
 
-int Missile::getDamage()
+short Missile::getDamage() const
 {
     return 10;
 }
@@ -87,7 +87,7 @@ bool Missile::getFocus()
     return focusing;
 }
 
-int Missile::getListPosition()
+short Missile::getListPosition() const
 {
     return listPosition;
 }

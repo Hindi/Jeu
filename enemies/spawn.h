@@ -47,13 +47,13 @@ class Spawn : public Enemy
         Timer timerFire;
 
         //Moment du dernier movement et tirs
-        int lastMove, lastShot;
+        float lastMove, lastShot;
 
         //Fréquence de changemen de direction et fréquence de tir
-        const int moveRate;
+        short const moveRate;
 
         //Angle de déplacement généré aléatoirement
-        int m_angleMove;
+        unsigned short m_angleMove;
 
 };
 

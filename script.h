@@ -12,7 +12,7 @@
 class Script:public sf::Thread
 {
     public:
-        Script( int id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &m_population);
+        Script( short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &m_population);
         void niveau1();
         void niveau2();
 
@@ -20,7 +20,7 @@ class Script:public sf::Thread
         // Run() est une fonctione virtuelle de sf::Thread
         void Run();
 
-        int id;
+        short const id;
         std::string msg;
         image_manager &m_imageManager;
         Player &m_player;

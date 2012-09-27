@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Score::Score(RenderWindow &app, int score, Vector2f position):
+Score::Score(RenderWindow &app, unsigned short score, Vector2f position):
             m_app(app),
             m_score(score),
             m_position(position)

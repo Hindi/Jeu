@@ -40,10 +40,10 @@ Missile_manager::~Missile_manager()
 bool Missile_manager::haveMissilesInProgress()
 {
     //Vérifie si des projectiles sont en cours de déplacement
-    if(m_missiles.size() > 0)
-        return true;
-    else
+    if(m_missiles.empty())
         return false;
+    else
+        return true;
 }
 
 void Missile_manager::createMissile()
