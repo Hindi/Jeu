@@ -67,9 +67,8 @@ bool Unit::isDead()
 void Unit::drawExplosion()
 {
     m_animatedExplosion->anim(m_app.GetFrameTime());
-   // m_app.Draw(*m_animatedExplosion);
+    m_app.Draw(*m_animatedExplosion);
 }
-
 
 int Unit::getExploWidth() const
 {

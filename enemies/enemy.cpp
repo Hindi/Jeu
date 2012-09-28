@@ -40,6 +40,7 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     m_animated->SetLoop(true);
     m_animated->SetFrameTime(0.2f);
     m_animated->SetPosition(m_position.x, m_position.y);
+
 }
 
 Enemy::~Enemy()
