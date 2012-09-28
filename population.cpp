@@ -101,7 +101,7 @@ void Population::explode(Enemy *enemy)
 void Population::manageExplosion()
 {
     unsigned int currentFrame;
-    if(m_deadEnemies.size() > 0)
+    if(!m_deadEnemies.empty())
     {
         list<Enemy*>::iterator lit(m_deadEnemies.begin());
         for(; lit!=m_deadEnemies.end();lit++)
@@ -176,7 +176,7 @@ void Population::manage()
 
 bool Population::haveSpawnInProgress()
 {
-    if(m_spawn.empty())
+    if(m_spawns.empty())
         return false;
     else
         return true;
@@ -187,7 +187,7 @@ void Population::spawn(Enemy *enemy)
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Spawn(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", 1, 10, 1, m_app, m_player, m_imageManager, m_projectile_manager));
+        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, m_app, m_player, m_imageManager, m_projectile_manager, "false"));
         enemy->upDateLastSpawnTime();
     }
 }

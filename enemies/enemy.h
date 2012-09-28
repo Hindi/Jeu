@@ -18,7 +18,7 @@
 class Enemy : public Unit
 {
     public:
-        Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod, int moveValue,
+        Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
               const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner);
 
         //Destructeur
@@ -51,6 +51,7 @@ class Enemy : public Unit
          void moveRight();
          void dontMove();
          void move();
+         void spawnMove();
 
         //Dessin de l'ennemi
          void draw();
@@ -78,7 +79,7 @@ class Enemy : public Unit
          bool canFire();
 
         //Accesseur sur le type de tir
-         char* getType();
+         const char* const getType();
 
         //Timer pour les tirs
          void startTimer();
@@ -137,10 +138,10 @@ class Enemy : public Unit
         sf::Vector2f playerPosition;
 
         //type de tir
-        char* m_type;
+        const char* const m_type;
 
         //type de déplacement
-        char* m_moveMethod;
+        const char* const m_moveMethod;
 
         //Etat du déplacement
         short  m_moveValue;
@@ -151,6 +152,8 @@ class Enemy : public Unit
         //Valeur liées au timer pour le spawn
         float lastSpawn;
         short const m_spawnRate;
+
+        unsigned short m_angleMove;
 };
 
 

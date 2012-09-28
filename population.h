@@ -79,6 +79,7 @@ class Population
 
         //Liste des ennemis
         std::list<Enemy*> m_enemies;
+        std::list<Enemy*> m_spawns;
 
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
@@ -88,9 +89,6 @@ class Population
 
         //Manager de drops
         Drop_manager &m_drop_manager;
-
-        //Liste des spawn
-        std::list<Spawn*> m_spawn;
 
         Score_manager &m_scoreManager;
 

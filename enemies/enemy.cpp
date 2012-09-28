@@ -3,7 +3,8 @@
 using namespace std;
 using namespace sf;
 
-Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
+
+Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
               Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner):
             Unit(life, xSpeed,ySpeed, position, app, projectile_manager,imageManager),
             m_player(player),
@@ -189,8 +190,24 @@ void Enemy::move()
         this->moveUp();
     else if(strcmp(m_moveMethod, "don't move") == 0)
         this->dontMove();
+    else if(strcmp(m_moveMethod, "spawnMove") == 0)
+        this->spawnMove();
     else
         this->moveDown();
+}
+
+void Enemy::spawnMove()
+{
+    Vector2f speed;
+    if(timerMove.getTime() > m_moveValue)
+    {
+        m_angleMove = rand() % 360 + 1;
+        timerMove.reinitialize();
+    }
+    speed.x = m_app.GetFrameTime() * m_xSpeed * m_coefSpeed * cos(m_angleMove);
+    speed.y = m_app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
+    m_position += speed;
+    m_animated->SetPosition(m_position);
 }
 
 int Enemy::getPositionAxis(int axis)
@@ -381,7 +398,7 @@ bool Enemy::canFire()
 //*********Fin projectiles********
 //********************************
 
-char*  Enemy::getType()
+const char* const  Enemy::getType()
 {
     return m_type;
 }

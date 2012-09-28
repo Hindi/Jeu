@@ -41,7 +41,7 @@ class Background
         short m_speed;
 
         //Taille de la fenêtre
-        int const m_width, m_height;
+        const int m_width, m_height;
 };
 
 #endif // BACKGROUND_H_INCLUDED
