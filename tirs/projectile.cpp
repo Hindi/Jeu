@@ -8,7 +8,8 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             scale(1,1),
             m_coefSpeed(coefSpeed),
             m_position(position),
-            m_followAnim(followAnim)
+            m_followAnim(followAnim),
+            followRate(0.1)
 {
     if(!m_followAnim)
     {
@@ -52,13 +53,15 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
         spriteFifth.SetSubRect(IntRect(4*width/5, 0, width, height));
         spriteFifth.Scale(scale);
 
-        sprites.push_back(&spriteSecond);
-        sprites.push_back(&spriteThird);
-        sprites.push_back(&spriteFourth);
         sprites.push_back(&spriteFifth);
+        sprites.push_back(&spriteFourth);
+        sprites.push_back(&spriteThird);
+        sprites.push_back(&spriteSecond);
+        sprites.push_back(&spriteFirst);
     }
 
-    sprites.push_back(&spriteFirst);
+
+    timerFollow.start();
 }
 
 Projectile::~Projectile()
@@ -73,14 +76,14 @@ Sprite Projectile::getSprite()
 
 void Projectile::Render(sf::RenderTarget& target) const
 {
-   target.Draw(spriteFirst);
    if(m_followAnim)
    {
-       target.Draw(spriteSecond);
-       target.Draw(spriteThird);
-       target.Draw(spriteFourth);
        target.Draw(spriteFifth);
+       target.Draw(spriteFourth);
+       target.Draw(spriteThird);
+       target.Draw(spriteSecond);
    }
+   target.Draw(spriteFirst);
 }
 
 short Projectile::getSpeed(int axis) const
@@ -99,6 +102,12 @@ const short Projectile::getCoefSpeed() const
 void Projectile::setPosition(Vector2f position)
 {
     m_position = position;
+    if(timerFollow.getTime() > followRate && m_positions.size() < 5)
+    {
+        m_positions.push_front(position);
+        timerFollow.reinitialize();
+        this->setProjPosition();
+    }
 }
 
 Vector2f Projectile::getPosition()
@@ -119,16 +128,23 @@ IntRect Projectile::getBoundingBox() const
 }
 
 
-void Projectile::setProjPosition(std::vector<sf::Vector2f> positions)
+void Projectile::setProjPosition()
 {
     if(m_followAnim)
     {
-        for(vector<Vector2f>::size_type i =0; i <= positions.size();  i++)
-        {
-            for(vector<Sprite*>::size_type j = 0; j <= sprites.size(); j++)
-            {
-                sprites[j]->SetPosition(positions[i]);
-            }
-        }
+        vector<Sprite*>::size_type j = m_positions.size()-1;
+        sprites[j]->SetPosition(m_positions[1]);
+        cout << m_positions.back().x << endl;
     }
+}
+
+bool Projectile::hasAnimationFollow()
+{
+    return m_followAnim;
+}
+
+
+deque<Vector2f> Projectile::getPositions()
+{
+    return m_positions;
 }

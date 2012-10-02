@@ -2216,7 +2216,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1348603269 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
+1349181125 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
 	<list>
 	<SFML/Graphics.hpp>
 	"missile.h"
@@ -2266,7 +2266,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1349178127 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1349184995 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1348665425 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2414,24 +2414,26 @@
 	"math.h"
 	"../tirs/projectile_manager.h"
 
-1349179605 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
+1349186485 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
 	"projectile.h"
 
-1349179282 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
+1349182923 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
 	<SFML/Graphics.hpp>
 	"../animation.h"
 	"../image_manager.h"
 	<iostream>
-	<vector>
+	<deque>
+	"../timer.h"
 
-1348603269 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
+1349181708 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
 	"projectile.h"
 	"missile.h"
+	<vector>
 
-1348781583 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1349181956 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
 1348603269 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp

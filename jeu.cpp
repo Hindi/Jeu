@@ -66,7 +66,7 @@ void Jeu::start()
     Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
 
 
-    population.createShip(Vector2f(100, 100), "roundtrip",true);
+    population.createShip(Vector2f(100, 100), "don't move",true);
 
     while (m_app.IsOpened() )
     {

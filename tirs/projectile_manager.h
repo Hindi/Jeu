@@ -5,6 +5,7 @@
 #include <list>
 #include "projectile.h"
 #include "missile.h"
+#include <vector>
 
 class Projectile_manager
 {
@@ -36,6 +37,8 @@ class Projectile_manager
         //Retourne les projectiles joueur
         std::list<Projectile*>* getPlayerProjectiles();
 
+        void animationFollow();
+
     private:
         //La fenêtre
         sf::RenderWindow &m_app;
@@ -48,6 +51,7 @@ class Projectile_manager
 
         //Liste des missiles
         std::list<Missile*> m_missiles;
+
 };
 
 #endif // PROJECTILE_MANAGER_H_INCLUDED

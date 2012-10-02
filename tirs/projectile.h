@@ -4,7 +4,8 @@
 #include "../animation.h"
 #include "../image_manager.h"
 #include <iostream>
-#include <vector>
+#include <deque>
+#include "../timer.h"
 
 //Type projectile géré par player et enemy
 
@@ -37,7 +38,12 @@ class Projectile : public sf::Drawable
         //Accesseur sur la position
         sf::Vector2f getPosition();
 
-        void setProjPosition(std::vector<sf::Vector2f> positions);
+        void setProjPosition();
+
+        bool hasAnimationFollow();
+
+
+        std::deque<sf::Vector2f> getPositions();
 
     protected:
 
@@ -70,6 +76,11 @@ class Projectile : public sf::Drawable
         sf::Image *fifthProj;
 
         std::vector<sf::Sprite*> sprites;
+        //Positions occupées par la suite d'image pour l'animation de suivi
+        std::deque<sf::Vector2f> m_positions;
+
+        Timer timerFollow;
+        float followRate;
 };
 
 #endif // PROJECTILE_H_INCLUDED
