@@ -100,24 +100,29 @@ void Population::explode(Enemy *enemy)
 
 void Population::manageExplosion()
 {
-    unsigned int currentFrame;
     if(!m_deadEnemies.empty())
     {
+        short currentFrame;
         list<Enemy*>::iterator lit(m_deadEnemies.begin());
         for(; lit!=m_deadEnemies.end();lit++)
         {
-            if((*lit)->getAnimationExplosion()->IsPaused())//Si l'animation est en pause
+            //Si l'animation est en pause
+            if((*lit)->getAnimationExplosion()->IsPaused())
                 (*lit)->getAnimationExplosion()->Play();//On relance l'animation
-            currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();//On récupère le numéro de l'image qui est affichée
-            (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);//On positionne l'animation sur l'ennemi qui a explose
-            (*lit)->drawExplosion(); //On dessine l'explosion
-            if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)//Si l'image actuelle correspond à la dernière image de l'animation
+            //On récupère le numéro de l'image qui est affichée
+            currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();
+
+            //On positionne l'animation sur l'ennemi qui a explose
+            (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);
+             //On dessine l'explosion
+            (*lit)->drawExplosion();
+            //Si l'image actuelle correspond à la dernière image de l'animation
+            if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
             {
                 lit = m_deadEnemies.erase(lit);//On détruit l'objet ennemi
             }
         }
     }
-
 }
 
 bool Population::haveEnnemyInProgress()
