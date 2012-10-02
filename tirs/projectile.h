@@ -4,13 +4,14 @@
 #include "../animation.h"
 #include "../image_manager.h"
 #include <iostream>
+#include <vector>
 
 //Type projectile géré par player et enemy
 
 class Projectile : public sf::Drawable
 {
     public:
-        Projectile(const std::string &filepath, sf::Vector2f position, sf::Vector2f speed, const int coefSpeed, image_manager &ImageManager);
+        Projectile(const std::string &filepath, sf::Vector2f position, sf::Vector2f speed, const int coefSpeed, image_manager &ImageManager, bool followAnim = false);
 
         //Destructeur
         ~Projectile();
@@ -36,12 +37,16 @@ class Projectile : public sf::Drawable
         //Accesseur sur la position
         sf::Vector2f getPosition();
 
+        void setProjPosition(std::vector<sf::Vector2f> positions);
+
     protected:
-        //Image associée au sprite
-        sf::Image *image;
 
         //Le sprite
-        sf::Sprite sprite;
+        sf::Sprite spriteFirst;
+        sf::Sprite spriteSecond;
+        sf::Sprite spriteThird;
+        sf::Sprite spriteFourth;
+        sf::Sprite spriteFifth;
 
         //L'échelle d'affichage des projectiles
         const sf::Vector2f scale;
@@ -54,6 +59,17 @@ class Projectile : public sf::Drawable
 
         //Position courante
         sf::Vector2f m_position;
+
+        //Animation de poursuite ou non
+        bool m_followAnim;
+
+        sf::Image *firstProj;
+        sf::Image *secondProj;
+        sf::Image *thirdProj;
+        sf::Image *fourthProj;
+        sf::Image *fifthProj;
+
+        std::vector<sf::Sprite*> sprites;
 };
 
 #endif // PROJECTILE_H_INCLUDED

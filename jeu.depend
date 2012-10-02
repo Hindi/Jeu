@@ -2120,7 +2120,7 @@
 
 1348603269 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1348776443 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1349176688 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1348603269 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2266,7 +2266,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1348765996 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1349178127 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1348665425 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2315,7 +2315,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1348774987 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1349178116 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2331,7 +2331,7 @@
 1348782847 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1348841880 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1348996733 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2340,7 +2340,7 @@
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile_manager.cpp
 	"projectile_manager.h"
 
-1348782918 source:c:\users\shalafi\documents\github\jeu\script.cpp
+1349176891 source:c:\users\shalafi\documents\github\jeu\script.cpp
 	"script.h"
 
 1348603269 source:c:\users\shalafi\documents\github\jeu\timer.cpp
@@ -2397,7 +2397,7 @@
 1348775324 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1348842245 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1349178158 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
 1348842229 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
@@ -2414,14 +2414,15 @@
 	"math.h"
 	"../tirs/projectile_manager.h"
 
-1348781416 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
+1349179605 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
 	"projectile.h"
 
-1348782335 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
+1349179282 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
 	<SFML/Graphics.hpp>
 	"../animation.h"
 	"../image_manager.h"
 	<iostream>
+	<vector>
 
 1348603269 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
 	<SFML/Graphics.hpp>

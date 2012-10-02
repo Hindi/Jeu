@@ -147,7 +147,7 @@ void Collision::manageProjectileCollision()
                 projectileRect.Top  = projectilePosition.y;
                 projectileRect.Bottom = projectileRect.Top+(*litt)->getSprite().GetSize().y;
                 enemyRect = (*li)->getBoundingBox();
-                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
+                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left+5 && projectileRect.Left < enemyRect.Right-5)
                 {
                     (*li)->recieveDamages((*litt)->getDamage());
                     m_player.addScore((*li)->getScoreHit());

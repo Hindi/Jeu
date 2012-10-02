@@ -10,8 +10,8 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_player(player),
             direction("null"),
             lastShot(0),
-            m_scoreHit(scoreHit),
             m_scoreExplosion(scoreExplosion),
+            m_scoreHit(scoreHit),
             projectileSpeed(10),
             m_coefSpeed(coefSpeed),
             m_fireRate(firerate),
@@ -283,8 +283,8 @@ void Enemy::fireFocus()
     Vector2f positionProjectile = m_position;
     positionProjectile.x += (image->GetWidth()/2)-18;
     positionProjectile.y += image->GetHeight()-20;
-    const string filepath = "images/projectile2.png";
-    projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), m_coefSpeed, m_imageManager);
+    const string filepath = "images/projectile3.png";
+    projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), m_coefSpeed, m_imageManager, true);
     projectile->SetPosition(positionProjectile);
     //On le rajoute à la liste des projectiles gérée par le projectile manager.
     m_projectile_manager.addEnemyProjectile(projectile);

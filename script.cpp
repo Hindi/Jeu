@@ -26,12 +26,12 @@ Liste des boss :
 */
 
 void Script::Run()
-{
+{/*
     while(1)
     {
         niveau1();
         timer.sleep(1000);
-    }
+    }*/
 }
 
 void Script::niveau1()

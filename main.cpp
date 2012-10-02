@@ -42,6 +42,7 @@ int main()
     int select(1);
     Event Event;
 
+
     //Gestion du highlight du menu avec un système de points
     while (app.IsOpened())
     {
