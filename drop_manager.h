@@ -5,11 +5,12 @@
 #include <iostream>
 #include "drop.h"
 #include "image_manager.h"
+#include "const.h"
 
 class Drop_manager
 {
     public:
-        Drop_manager(sf::RenderWindow &app, image_manager &image_manager);
+        Drop_manager(image_manager &image_manager);
 
         //Destructeur
         ~Drop_manager();
@@ -26,9 +27,6 @@ class Drop_manager
         void draw();
 
     private:
-        //La fenêtre
-        sf::RenderWindow &m_app;
-
         //Liste des drops
         std::list <Drop*> m_droplist;
 

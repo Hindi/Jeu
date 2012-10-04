@@ -4,9 +4,9 @@ using namespace std;
 using namespace sf;
 
 Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
-                Player &player, image_manager &imageManager,Projectile_manager &projectile_manager, const char* name) :
+                Player &player, image_manager &imageManager, const char* name) :
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, app, player,
-                  imageManager, projectile_manager, false),
+                  imageManager, false),
             m_name(name)
 {
     image = new Image();

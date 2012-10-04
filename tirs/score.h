@@ -6,11 +6,12 @@
 #include <sstream>
 
 #include "../timer.h"
+#include "../const.h"
 
 class Score
 {
     public:
-        Score(sf::RenderWindow &app, unsigned short score, sf::Vector2f position);
+        Score(unsigned short score, sf::Vector2f position);
 
         //Destructeur
         ~Score();

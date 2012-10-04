@@ -3,8 +3,7 @@
 using namespace sf;
 using namespace std;
 
-Missile_manager::Missile_manager(RenderWindow &app, Population &population, Player &player, image_manager &imageManager):
-        m_app(app),
+Missile_manager::Missile_manager(Population &population, Player &player, image_manager &imageManager):
         m_player(player),
         m_imageManager(imageManager),
         nombreMissiles(7),
@@ -71,7 +70,7 @@ void Missile_manager::createMissile()
 
 void Missile_manager::moveMissile()
 {
-    double elapsedTime = m_app.GetFrameTime();
+    double elapsedTime = app.GetFrameTime();
     list<Missile*>::iterator lit(m_missiles.begin());
 
     list<Enemy*>::const_iterator li(Population::getInstance().getPopulation()->begin());
@@ -137,7 +136,7 @@ void Missile_manager::drawMissile()
         list<Missile*>::const_iterator lit(m_missiles.begin());
         for(; lit!=m_missiles.end(); lit++)
         {
-            m_app.Draw(**lit);//Dessine les projectiles ennemi
+            app.Draw(**lit);//Dessine les projectiles ennemi
         }
 
     }
@@ -167,7 +166,7 @@ void Missile_manager::followPlayer()
     list<Missile*>::iterator lit(m_missiles.begin());
     for(; lit != m_missiles.end(); lit++)
     {
-        double elapsedTime = m_app.GetFrameTime();
+        double elapsedTime = app.GetFrameTime();
         if(!(*lit)->getFocus() || (!Population::getInstance().haveEnnemyInProgress()))
         {
             //***************************************

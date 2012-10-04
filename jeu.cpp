@@ -4,8 +4,7 @@ using namespace std;
 using namespace sf;
 
 
-Jeu::Jeu(RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager):
-            m_app(app),
+Jeu::Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager):
             m_imageManager(imageManager),
             m_SCREEN_WIDTH(SCREEN_WIDTH),
             m_SCREEN_HEIGHT(SCREEN_HEIGHT),
@@ -28,28 +27,29 @@ void Jeu::start()
 
     //Variables :
     const int PANNEL_WIDTH(300);
-    const Input & input = m_app.GetInput();
+    const Input & input = app.GetInput();
 
     //gestionnaires de projectiles
-    Projectile_manager projectile_manager(m_app);
+    Projectile_manager *projectile_manager;
+    projectile_manager = Projectile_manager::getInstance();
 
     //Affichage onscreen des scores
-    Score_manager scoreManager(m_app);
+    Score_manager scoreManager();
 
     //Variables player :
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
-    Player player(1, positionPlayer, m_app, m_imageManager, projectile_manager);
+    Player player(1, positionPlayer, m_imageManager);
 
-    Drop_manager drop_manager(m_app, m_imageManager);
+    Drop_manager drop_manager(m_imageManager);
 
     //Variable population
     Population *population;
-    population = Population::getInstance(m_app, projectile_manager, drop_manager, player, m_imageManager, scoreManager);
-    Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager);
+    population = Population::getInstance();
+    Script s1( 1, "I am standing on the left.", m_imageManager, player);
 	s1.Launch();
 
     //gestionnaires de missiles
-    Missile_manager missile_manager(m_app,player, m_imageManager);
+    Missile_manager missile_manager(player, m_imageManager);
 
     //Activateur d'armes
     Weapon_manager weapon_manager(player);
@@ -57,31 +57,31 @@ void Jeu::start()
     //pannel
     const string filepathPanel = "images/pannel.png";
     Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
-    Pannel pannel(m_app, filepathPanel, positionPannel, player, m_imageManager);
+    Pannel pannel(app, filepathPanel, positionPannel, player, m_imageManager);
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player, projectile_manager, missile_manager, drop_manager);
+    Collision collision(windowSize, player, missile_manager, drop_manager);
 
     //Background
-    Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
+    Background background(app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
 
 
     population->createShip(Vector2f(100, 100), "don't move",true);
 
-    while (m_app.IsOpened() )
+    while (app.IsOpened() )
     {
         if(m_quit)
             break;
 
-        m_app.Clear();
+        app.Clear();
         background.manage();
         //Entrées touches :
         Event Event;
-        while (m_app.GetEvent(Event))
+        while (app.GetEvent(Event))
         {
             if (Event.Type == sf::Event::Closed)
-                m_app.Close();
+                app.Close();
         }
         //Déplacements :
         if(input.IsKeyDown(Key::Up))
@@ -120,7 +120,7 @@ void Jeu::start()
             this->pause(Event, pannel, player);
             population->unFreeze();
         }
-        if(projectile_manager.havePlayerProjectilesInProgress() || missile_manager.haveMissilesInProgress())
+        if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || missile_manager.haveMissilesInProgress())
         {
             collision.manageProjectileCollision();
         }
@@ -146,7 +146,7 @@ void Jeu::start()
         missile_manager.manage();
         pannel.checkPannel();
         scoreManager.manage();
-        m_app.Display();
+        app.Display();
         timer.sleep(1);
     }
 }
@@ -156,14 +156,14 @@ void Jeu::pause(Event Event, Pannel &pannel, Player &player)
     Timer timer;
     bool resume(false);
     int select(1);
-    while(m_app.IsOpened() && !resume)
+    while(app.IsOpened() && !resume)
     {
-        m_app.Clear();
-        while (m_app.GetEvent(Event))
+        app.Clear();
+        while (app.GetEvent(Event))
         {
             if(resume)
                 break;
-            m_app.Clear();
+            app.Clear();
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
             {
                 if(select == 2)
@@ -205,10 +205,10 @@ void Jeu::pause(Event Event, Pannel &pannel, Player &player)
         }
         Population::getInstance()->drawPopulation();
         Population::getInstance()->manageExplosion();
-        m_app.Draw(*player.getSprite());
-        m_app.Draw(*pannel.getSprite());
+        app.Draw(*player.getSprite());
+        app.Draw(*pannel.getSprite());
         m_menu.drawPauseMenu(select);
-        m_app.Display();
+        app.Display();
     }
 }
 

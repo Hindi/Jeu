@@ -3,8 +3,8 @@
 using namespace std;
 using namespace sf;
 
-Player::Player(int life, Vector2f position, RenderWindow &app, image_manager &imageManager, Projectile_manager &projectile_manager):
-            Unit(life, 10, 10, position, app, projectile_manager,imageManager),
+Player::Player(int life, Vector2f position,image_manager &imageManager):
+            Unit(life, 10, 10, position, imageManager),
             max_lives(3),
             m_frameWidth(118),
             m_frameHeight(93),

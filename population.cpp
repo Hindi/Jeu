@@ -2,7 +2,7 @@
 
 using namespace std;
 using namespace sf;
-//RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager
+
 Population::Population()
 {
 
@@ -32,7 +32,7 @@ void Population::drawPopulation()
             (*lit)->draw();//On les dessine
         }
     }
-    m_projectile_manager.drawProjectile();//On les dessine
+    Projectile_manager::getInstance()->drawProjectile();//On les dessine
 
 }
 
@@ -71,7 +71,7 @@ void Population::checkPopulation()
         }
     }
 
-    m_projectile_manager.moveProjectile();
+    Projectile_manager::getInstance()->moveProjectile();
 
 }
 
@@ -152,18 +152,18 @@ void Population::unFreeze()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, m_app, m_player, m_imageManager, m_projectile_manager, spawner));
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, app, m_player, m_imageManager, spawner));
 }
 
 void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, spawner));
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, app, m_player, m_imageManager, spawner));
 }
 
 void Population::createBoss(Vector2f position, char* move, char* name)
 {
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, m_app, m_player, m_imageManager, m_projectile_manager, name));
+    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, app, m_player, m_imageManager, name));
 }
 
 void Population::manage()
@@ -186,24 +186,17 @@ void Population::spawn(Enemy *enemy)
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, m_app, m_player, m_imageManager, m_projectile_manager, "false"));
+        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, app, m_player, m_imageManager, "false"));
         enemy->upDateLastSpawnTime();
     }
 }
 
-static Population *getInstance (RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager)
+Population* Population::getInstance()
   {
     if (NULL == _singleton)
       {
         std::cout << "creating singleton." << std::endl;
         _singleton =  new Population;
-
-            m_app(app),
-            m_player(player),
-            m_imageManager(imageManager),
-            m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager),
-            m_scoreManager(scoreManager)
       }
     else
       {
@@ -213,29 +206,7 @@ static Population *getInstance (RenderWindow &app, Projectile_manager &projectil
     return _singleton;
   }
 
-  static Population *getInstance ()
-  {
-    if (NULL == _singleton)
-      {
-        std::cout << "creating singleton." << std::endl;
-        _singleton =  new Population;
-
-            m_app(app),
-            m_player(player),
-            m_imageManager(imageManager),
-            m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager),
-            m_scoreManager(scoreManager)
-      }
-    else
-      {
-        std::cout << "singleton already created!" << std::endl;
-      }
-
-    return _singleton;
-  }
-
-  static void kill ()
+void Population::kill ()
   {
     if (NULL != _singleton)
       {

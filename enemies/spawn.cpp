@@ -4,9 +4,9 @@ using namespace std;
 using namespace sf;
 
 Spawn::Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, Projectile_manager &projectile_manager):
+              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager):
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, "don't move", moveValue,
-              coefSpeed, firerate, app, player, imageManager, projectile_manager, false),
+              coefSpeed, firerate, app, player, imageManager, false),
             moveRate(1)
 {
     image = new Image();

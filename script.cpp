@@ -3,12 +3,11 @@
 using namespace std;
 using namespace sf;
 
-Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager):
+Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player):
             id(id),
             msg(msg),
             m_imageManager(imageManager),
             m_player(player),
-            m_projectileManager(projectile_manager),
             m_population(population)
 {
     timer.start();

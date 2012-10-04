@@ -13,6 +13,7 @@
 #include "enemies/spawn.h"
 #include "tirs/score_manager.h"
 #include "Anim.hpp"
+#include "const.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -62,12 +63,9 @@ class Population
         void spawn(Enemy *enemy);
 
         static void kill();
-        static Population* getInstance(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager,  Score_manager &scoreManager);
         static Population* getInstance();
 
     protected:
-        //La fenêtre
-        sf::RenderWindow &m_app;
 
         //Le joueur
         Player &m_player;
@@ -81,9 +79,6 @@ class Population
 
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
-
-        //Manager de projectiles
-        Projectile_manager &m_projectile_manager;
 
         //Manager de drops
         Drop_manager &m_drop_manager;

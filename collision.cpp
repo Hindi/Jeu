@@ -17,10 +17,9 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager):
+Collision::Collision(Vector2f windowSize, Player &player, Missile_manager &missile_manager, Drop_manager &drop_manager):
             m_player(player),
             m_windowSize(windowSize),
-            m_projectile_manager(projectile_manager),
             m_missile_manager(missile_manager),
             m_drop_manager(drop_manager)
 {
@@ -105,15 +104,15 @@ void Collision::manageProjectileCollision()
     //*****************************
     IntRect projectileRect, enemyRect;
     Vector2f projectilePosition;
-    list<Projectile*>::iterator lit(m_projectile_manager.getPlayerProjectiles()->begin());
+    list<Projectile*>::iterator lit(Projectile_manager::getInstance()->getPlayerProjectiles()->begin());
     list<Enemy*>::iterator li;
     list<Spawn*>::iterator spawnLi;
     //On check les ennemis
-    for(; lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
+    for(; lit != Projectile_manager::getInstance()->getPlayerProjectiles()->end(); lit++)
     {
         for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
         {
-            if(m_projectile_manager.getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
+            if(Projectile_manager::getInstance()->getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
                 projectileRect = (*lit)->getBoundingBox();
                 projectilePosition.y = (*lit)->GetPosition().y;
@@ -124,7 +123,7 @@ void Collision::manageProjectileCollision()
                 {
                     (*li)->recieveDamages(m_player.getDamages());
                     m_player.addScore((*li)->getScoreHit());
-                    (lit) = m_projectile_manager.getPlayerProjectiles()->erase(lit);
+                    (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
                 }
             }
         }

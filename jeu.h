@@ -18,11 +18,12 @@
 #include "tirs/weapon_manager.h"
 #include "drop_manager.h"
 #include "tirs/score_manager.h"
+#include "const.h"
 
 class Jeu
 {
     public:
-        Jeu(sf::RenderWindow &app, int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager);
+        Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager);
 
         //Destructeur
         ~Jeu();
@@ -34,9 +35,6 @@ class Jeu
         void pause(sf::Event event, Pannel &pannel, Player &player);
 
     protected:
-        //La fenêtre
-        sf::RenderWindow &m_app;
-
         //Manager d'images
         image_manager &m_imageManager;
 

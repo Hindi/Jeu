@@ -5,11 +5,12 @@
 #include <iostream>
 #include <list>
 #include "score.h"
+#include "../const.h"
 
 class Score_manager
 {
     public:
-        Score_manager(sf::RenderWindow &app);
+        Score_manager();
 
         //Destructeur
         ~Score_manager();
@@ -23,8 +24,6 @@ class Score_manager
         bool haveScoreInProgress();
 
     private:
-        sf::RenderWindow &m_app;
-
         Score *m_score;
 
         std::list<Score*> m_scores;

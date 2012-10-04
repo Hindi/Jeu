@@ -10,10 +10,6 @@
 class Projectile_manager
 {
     public:
-        Projectile_manager(sf::RenderWindow &app);
-
-        //Destructeur
-        ~Projectile_manager();
 
         //Vérifie si il y a des projectiles en cours
         bool haveEnemyProjectilesInProgress();
@@ -39,6 +35,9 @@ class Projectile_manager
 
         void animationFollow();
 
+        static void kill();
+        static Projectile_manager* getInstance();
+
     private:
         //La fenêtre
         sf::RenderWindow &m_app;
@@ -52,6 +51,16 @@ class Projectile_manager
         //Liste des missiles
         std::list<Missile*> m_missiles;
 
+
+        Projectile_manager(sf::RenderWindow &m_app);
+
+        //Destructeur
+        ~Projectile_manager();
+
+        static Projectile_manager* _singleton;
+
 };
+
+Projectile_manager* Projectile_manager::_singleton=NULL;
 
 #endif // PROJECTILE_MANAGER_H_INCLUDED

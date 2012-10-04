@@ -71,6 +71,7 @@
 		<Unit filename="cb.bmp" />
 		<Unit filename="collision.cpp" />
 		<Unit filename="collision.h" />
+		<Unit filename="const.h" />
 		<Unit filename="drop.cpp" />
 		<Unit filename="drop.h" />
 		<Unit filename="drop_manager.cpp" />

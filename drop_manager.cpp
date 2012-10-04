@@ -3,8 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Drop_manager::Drop_manager(RenderWindow &app, image_manager &image_manager):
-            m_app(app),
+Drop_manager::Drop_manager(image_manager &image_manager):
             m_image_manager(image_manager)
 {
 
@@ -40,7 +39,7 @@ void Drop_manager::move()
     {
         //Calcul de la nouvelle position pour chaque drop
         Vector2f position = (*lit)->getPosition();
-        Vector2f speed(0, (*lit)->getSpeed()*m_app.GetFrameTime());
+        Vector2f speed(0, (*lit)->getSpeed()*app.GetFrameTime());
         Vector2f newPosition(position.x + speed.x, position.y + speed.y);
         //Déplacement de chaque drop
         (*lit)->move(newPosition, speed);
@@ -53,6 +52,6 @@ void Drop_manager::draw()
     list<Drop*>::const_iterator lit(m_droplist.begin());
     for(; lit!= m_droplist.end(); lit++)
     {
-        m_app.Draw((*lit)->getSprite());
+        app.Draw((*lit)->getSprite());
     }
 }

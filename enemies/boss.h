@@ -24,7 +24,7 @@ class Boss : public Enemy
     public:
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
              int moveValue, const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager,
-             Projectile_manager &projectile_manager, const char* name);
+             const char* name);
         //Destruteur
         ~Boss();
 

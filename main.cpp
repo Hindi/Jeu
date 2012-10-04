@@ -3,11 +3,14 @@
 #include "menu.h"
 #include "timer.h"
 #include <iostream>
+#include "const.h"
 
 using namespace std;
 using namespace sf;
 
 void startGame(Jeu jeu);
+
+
 
 /*
 TODO LIST
@@ -26,7 +29,6 @@ int main()
 {
 
     const int SCREEN_WIDTH(1366), SCREEN_HEIGHT(768), MAX_MENU(3);
-    sf::RenderWindow app(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Jeu");
     //app.UseVerticalSync(true);
     //app.SetFramerateLimit(60);
 
@@ -36,7 +38,7 @@ int main()
 	imageManager.addResourceDirectory("images/" );
 
     Menu menu(app, imageManager);
-    Jeu jeu(app, SCREEN_WIDTH, SCREEN_HEIGHT, menu, imageManager);
+    Jeu jeu(SCREEN_WIDTH, SCREEN_HEIGHT, menu, imageManager);
     Timer timer;
 
     int select(1);

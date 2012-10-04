@@ -3,8 +3,8 @@
 using namespace std;
 using namespace sf;
 
-Score::Score(RenderWindow &app, unsigned short score, Vector2f position):
-            m_app(app),
+Score::Score(unsigned short score, Vector2f position):
+            app(app),
             m_score(score),
             m_position(position)
 {
@@ -32,7 +32,7 @@ Score::~Score()
 
 void Score::draw()
 {
-    m_app.Draw(string);
+    app.Draw(string);
 }
 
 bool Score::isOld()

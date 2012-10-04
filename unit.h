@@ -13,7 +13,7 @@
 class Unit
 {
     public:
-        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position, sf::RenderWindow &app, Projectile_manager &projectile_manager, image_manager &imageManager);
+        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position, image_manager &imageManager);
 
         //Destructeur
          ~Unit();

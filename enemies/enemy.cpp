@@ -5,8 +5,8 @@ using namespace sf;
 
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, RenderWindow &app,
-              Player &player, image_manager &imageManager, Projectile_manager &projectile_manager, bool spawner):
-            Unit(life, xSpeed,ySpeed, position, app, projectile_manager,imageManager),
+              Player &player, image_manager &imageManager, bool spawner):
+            Unit(life, xSpeed,ySpeed, position, imageManager),
             m_player(player),
             direction("null"),
             lastShot(0),
