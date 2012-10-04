@@ -12,7 +12,7 @@
 class Script:public sf::Thread
 {
     public:
-        Script( short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &m_population);
+        Script( short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager);
         void niveau1();
         void niveau2();
 
@@ -25,7 +25,6 @@ class Script:public sf::Thread
         image_manager &m_imageManager;
         Player &m_player;
         Projectile_manager &m_projectileManager;
-        Population &m_population;
         Timer timer;
 };
 

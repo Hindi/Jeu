@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager, Population &population):
+Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player, Projectile_manager &projectile_manager):
             id(id),
             msg(msg),
             m_imageManager(imageManager),
@@ -39,7 +39,7 @@ void Script::niveau1()
     //Variables enemy :
     Vector2f positionEnemy(50, 50);
 
-    m_population.createShip(positionEnemy, "roundtrip",true);/*
+    Population::getInstance().createShip(positionEnemy, "roundtrip",true);/*
     positionEnemy.x +=100;
     m_population.createShip(positionEnemy, "roundtrip");
     positionEnemy.x +=100;

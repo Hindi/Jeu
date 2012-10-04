@@ -5,7 +5,6 @@ using namespace std;
 
 Missile_manager::Missile_manager(RenderWindow &app, Population &population, Player &player, image_manager &imageManager):
         m_app(app),
-        m_population(population),
         m_player(player),
         m_imageManager(imageManager),
         nombreMissiles(7),
@@ -75,11 +74,11 @@ void Missile_manager::moveMissile()
     double elapsedTime = m_app.GetFrameTime();
     list<Missile*>::iterator lit(m_missiles.begin());
 
-    list<Enemy*>::const_iterator li(m_population.getPopulation()->begin());
+    list<Enemy*>::const_iterator li(Population::getInstance().getPopulation()->begin());
     //***********************************************
     //Cette fonction gère le déplacement des missiles
     //***********************************************
-    if(this->haveMissilesInProgress() && (m_population.haveEnnemyInProgress())) //Si des ennemis sont en vie
+    if(this->haveMissilesInProgress() && (Population::getInstance().haveEnnemyInProgress())) //Si des ennemis sont en vie
     {
         for(lit=m_missiles.begin(); lit != m_missiles.end();)
         {
@@ -90,7 +89,7 @@ void Missile_manager::moveMissile()
             //*****************************************************************
             //Dans cette partie on calcule quel ennemi chaque missile va cibler
             //*****************************************************************
-            for(;li != m_population.getPopulation()->end(); li++)//On parcours la liste des ennemis
+            for(;li != Population::getInstance().getPopulation()->end(); li++)//On parcours la liste des ennemis
             {
                 diff.x = (*li)->getPositionAxis(0)-positionMissile.x;//on calcul le vecteur différence entre les position ennemis et missile
                 diff.y = (*li)->getPositionAxis(1)-positionMissile.y;
@@ -169,7 +168,7 @@ void Missile_manager::followPlayer()
     for(; lit != m_missiles.end(); lit++)
     {
         double elapsedTime = m_app.GetFrameTime();
-        if(!(*lit)->getFocus() || (!m_population.haveEnnemyInProgress()))
+        if(!(*lit)->getFocus() || (!Population::getInstance().haveEnnemyInProgress()))
         {
             //***************************************
             //On initialise les variables de position

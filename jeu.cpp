@@ -43,12 +43,13 @@ void Jeu::start()
     Drop_manager drop_manager(m_app, m_imageManager);
 
     //Variable population
-    Population population(m_app, projectile_manager, drop_manager, player, m_imageManager, scoreManager);
-    Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager, population);
+    Population *population;
+    population = Population::getInstance(m_app, projectile_manager, drop_manager, player, m_imageManager, scoreManager);
+    Script s1( 1, "I am standing on the left.", m_imageManager, player, projectile_manager);
 	s1.Launch();
 
     //gestionnaires de missiles
-    Missile_manager missile_manager(m_app, population,player, m_imageManager);
+    Missile_manager missile_manager(m_app,player, m_imageManager);
 
     //Activateur d'armes
     Weapon_manager weapon_manager(player);
@@ -60,13 +61,13 @@ void Jeu::start()
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player, population, projectile_manager, missile_manager, drop_manager);
+    Collision collision(windowSize, player, projectile_manager, missile_manager, drop_manager);
 
     //Background
     Background background(m_app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
 
 
-    population.createShip(Vector2f(100, 100), "don't move",true);
+    population->createShip(Vector2f(100, 100), "don't move",true);
 
     while (m_app.IsOpened() )
     {
@@ -115,9 +116,9 @@ void Jeu::start()
         }
         if(input.IsKeyDown(Key::Escape))
         {
-            population.freeze();
-            this->pause(population, Event, pannel, player);
-            population.unFreeze();
+            population->freeze();
+            this->pause(Event, pannel, player);
+            population->unFreeze();
         }
         if(projectile_manager.havePlayerProjectilesInProgress() || missile_manager.haveMissilesInProgress())
         {
@@ -141,7 +142,7 @@ void Jeu::start()
         weapon_manager.manage();
         drop_manager.manage();
         player.draw();
-        population.manage();
+        population->manage();
         missile_manager.manage();
         pannel.checkPannel();
         scoreManager.manage();
@@ -150,7 +151,7 @@ void Jeu::start()
     }
 }
 
-void Jeu::pause(Population &population, Event Event, Pannel &pannel, Player &player)
+void Jeu::pause(Event Event, Pannel &pannel, Player &player)
 {
     Timer timer;
     bool resume(false);
@@ -202,8 +203,8 @@ void Jeu::pause(Population &population, Event Event, Pannel &pannel, Player &pla
 
         timer.sleep(1);
         }
-        population.drawPopulation();
-        population.manageExplosion();
+        Population::getInstance()->drawPopulation();
+        Population::getInstance()->manageExplosion();
         m_app.Draw(*player.getSprite());
         m_app.Draw(*pannel.getSprite());
         m_menu.drawPauseMenu(select);

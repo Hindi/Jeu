@@ -14,7 +14,7 @@
 class Collision
 {
     public:
-        Collision(sf::Vector2f windowSize, Player &player, Population &population, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager);
+        Collision(sf::Vector2f windowSize, Player &player, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager);
 
         //Destructeur
         virtual ~Collision();
@@ -32,9 +32,6 @@ class Collision
     protected:
     //Objet joueur
         Player &m_player;
-
-        //Manager d'ennemis
-        Population &m_population;
 
         //Taille de la fenêtre
         const sf::Vector2f m_windowSize;

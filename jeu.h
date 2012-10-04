@@ -31,7 +31,7 @@ class Jeu
         void start();
 
         //Met en pause la partie
-        void pause(Population &population, sf::Event event, Pannel &pannel, Player &player);
+        void pause(sf::Event event, Pannel &pannel, Player &player);
 
     protected:
         //La fenêtre
@@ -48,6 +48,7 @@ class Jeu
 
         //Pour quitter la partie en cours
         bool m_quit;
+
 };
 
 #endif // JEU_H_INCLUDED

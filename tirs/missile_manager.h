@@ -12,7 +12,7 @@
 class Missile_manager
 {
     public:
-        Missile_manager(sf::RenderWindow &app, Population &population, Player &player, image_manager &imageManager);
+        Missile_manager(sf::RenderWindow &app, Player &player, image_manager &imageManager);
         ~Missile_manager();
 
         bool haveMissilesInProgress();
@@ -31,7 +31,6 @@ class Missile_manager
     private:
         sf::RenderWindow &m_app;
         std::list<Missile*> m_missiles;
-        Population &m_population;
         Timer timerCreate;
         Player &m_player;
         Missile *missile;

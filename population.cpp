@@ -2,14 +2,8 @@
 
 using namespace std;
 using namespace sf;
-
-Population::Population(RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager):
-            m_app(app),
-            m_player(player),
-            m_imageManager(imageManager),
-            m_projectile_manager(projectile_manager),
-            m_drop_manager(drop_manager),
-            m_scoreManager(scoreManager)
+//RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager
+Population::Population()
 {
 
 }
@@ -196,3 +190,56 @@ void Population::spawn(Enemy *enemy)
         enemy->upDateLastSpawnTime();
     }
 }
+
+static Population *getInstance (RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager, Score_manager &scoreManager)
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "creating singleton." << std::endl;
+        _singleton =  new Population;
+
+            m_app(app),
+            m_player(player),
+            m_imageManager(imageManager),
+            m_projectile_manager(projectile_manager),
+            m_drop_manager(drop_manager),
+            m_scoreManager(scoreManager)
+      }
+    else
+      {
+        std::cout << "singleton already created!" << std::endl;
+      }
+
+    return _singleton;
+  }
+
+  static Population *getInstance ()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "creating singleton." << std::endl;
+        _singleton =  new Population;
+
+            m_app(app),
+            m_player(player),
+            m_imageManager(imageManager),
+            m_projectile_manager(projectile_manager),
+            m_drop_manager(drop_manager),
+            m_scoreManager(scoreManager)
+      }
+    else
+      {
+        std::cout << "singleton already created!" << std::endl;
+      }
+
+    return _singleton;
+  }
+
+  static void kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }

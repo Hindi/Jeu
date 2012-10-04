@@ -17,9 +17,8 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Population &population, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager):
+Collision::Collision(Vector2f windowSize, Player &player, Projectile_manager &projectile_manager, Missile_manager &missile_manager, Drop_manager &drop_manager):
             m_player(player),
-            m_population(population),
             m_windowSize(windowSize),
             m_projectile_manager(projectile_manager),
             m_missile_manager(missile_manager),
@@ -47,8 +46,8 @@ void Collision::manageCollisionsX()
 
     if(!m_player.getLostlife())
     {
-        list<Enemy*>::iterator li;
-        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
+        list<Enemy*>::iterator li(Population::getInstance()->getPopulation()->begin());
+        for(; li!=Population::getInstance()->getPopulation()->end(); li++)
         {
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
@@ -78,7 +77,7 @@ void Collision::manageCollisionsY()
     if(!m_player.getLostlife())
     {
         list<Enemy*>::iterator li;
-        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end();)
+        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end();)
         {
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
@@ -87,7 +86,7 @@ void Collision::manageCollisionsY()
             }
             if(enemyRect.Top > 1500)
             {
-               li = m_population.getPopulation()->erase(li);
+               li = Population::getInstance()->getPopulation()->erase(li);
             }
             else
             {
@@ -112,7 +111,7 @@ void Collision::manageProjectileCollision()
     //On check les ennemis
     for(; lit != m_projectile_manager.getPlayerProjectiles()->end(); lit++)
     {
-        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
+        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
         {
             if(m_projectile_manager.getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
@@ -138,7 +137,7 @@ void Collision::manageProjectileCollision()
     for(; litt != m_missile_manager.getMissile()->end(); litt++)
     {
         //On check les ennemis
-        for(li = m_population.getPopulation()->begin(); li!=m_population.getPopulation()->end(); li++)
+        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
         {
             if(m_missile_manager.getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {

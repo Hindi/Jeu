@@ -19,11 +19,6 @@
 class Population
 {
     public:
-        Population(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager,  Score_manager &scoreManager);
-
-        //Destructeur
-        virtual ~Population();
-
         //Liste des ennemis
         std::list<Enemy*>* getPopulation();
 
@@ -66,6 +61,9 @@ class Population
 
         void spawn(Enemy *enemy);
 
+        static void kill();
+        static Population* getInstance(sf::RenderWindow &app, Projectile_manager &projectile_manager, Drop_manager &drop_manager, Player &player, image_manager &imageManager,  Score_manager &scoreManager);
+        static Population* getInstance();
 
     protected:
         //La fenêtre
@@ -92,7 +90,17 @@ class Population
 
         Score_manager &m_scoreManager;
 
+    private:
+        //Constructeur privé pour singleton
+        Population();
+
+        //Destructeur
+        virtual ~Population();
+
+        static Population* _singleton;
 
 };
+
+Population *Population::_singleton= NULL;
 
 #endif // POPULATION_H_INCLUDED
