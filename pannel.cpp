@@ -3,13 +3,12 @@
 using namespace std;
 using namespace sf;
 
-Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Player &player, image_manager &imageManager):
-            m_app(app),
+Pannel::Pannel(const string &filepath, Vector2f position, Player &player):
             m_scale(1,1),
             m_player(player)
 {
     imagePannel = new Image;
-    *imagePannel = imageManager.getImage(filepath);
+    *imagePannel = image_manager::getInstance()->getImage(filepath);
     (*imagePannel).CreateMaskFromColor(Color(255, 0, 255));
     sprite.SetImage(*imagePannel);
     sprite.SetPosition(position);
@@ -21,8 +20,8 @@ Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Pla
     //TODO : CHANGER L'INIT DES COEURS
 
     //Chargment des images de vie
-    *imageLife = imageManager.getImage("images/Vie.png");
-    *imageLifeFade = imageManager.getImage("images/Vie-fade.png");
+    *imageLife = image_manager::getInstance()->getImage("images/Vie.png");
+    *imageLifeFade = image_manager::getInstance()->getImage("images/Vie-fade.png");
 
     //Placement des sprite de vie
     position.y += 20;
@@ -63,9 +62,9 @@ Pannel::Pannel(RenderWindow &app, const string &filepath, Vector2f position, Pla
             break;
         }
     }
-    m_app.Draw(spriteLife1);
-    m_app.Draw(spriteLife2);
-    m_app.Draw(spriteLife3);
+    app.Draw(spriteLife1);
+    app.Draw(spriteLife2);
+    app.Draw(spriteLife3);
 }
 
 Pannel::~Pannel()
@@ -83,7 +82,7 @@ Sprite* Pannel::getSprite()
 //Met à jour les valeurs
 void Pannel::checkPannel()
 {
-    m_app.Draw(sprite);
+    app.Draw(sprite);
     this->drawLife();
     this->drawScore();
 }
@@ -123,9 +122,9 @@ void Pannel::drawLife()
             break;
         }
     }
-    m_app.Draw(spriteLife1);
-    m_app.Draw(spriteLife2);
-    m_app.Draw(spriteLife3);
+    app.Draw(spriteLife1);
+    app.Draw(spriteLife2);
+    app.Draw(spriteLife3);
 }
 
 //Affichage du score
@@ -148,6 +147,6 @@ void Pannel::drawScore()
         text.SetSize(20);
         text.SetColor(Color(255, 255, 255));
         text.SetPosition(position);
-        m_app.Draw(text);
+        app.Draw(text);
     }
 }

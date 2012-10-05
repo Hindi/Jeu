@@ -23,7 +23,7 @@
 class Jeu
 {
     public:
-        Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager);
+        Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu);
 
         //Destructeur
         ~Jeu();
@@ -35,9 +35,6 @@ class Jeu
         void pause(sf::Event event, Pannel &pannel, Player &player);
 
     protected:
-        //Manager d'images
-        image_manager &m_imageManager;
-
         //Taille de la fenêtre
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;
 

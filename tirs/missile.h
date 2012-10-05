@@ -7,7 +7,7 @@
 class Missile : public sf::Drawable
 {
     public:
-        Missile(const std::string &filepath, sf::Vector2f position, int speed, const int coefSpeed, image_manager &ImageManager, int listPosition);
+        Missile(const std::string &filepath, sf::Vector2f position, int speed, const int coefSpeed, int listPosition);
         ~Missile();
         sf::Sprite getSprite();
         void Render(sf::RenderTarget& target) const;

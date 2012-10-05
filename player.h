@@ -14,7 +14,7 @@
 class Player : public Unit
 {
     public:
-        Player(int life, sf::Vector2f position, image_manager &imagemManager);
+        Player(int life, sf::Vector2f position);
         //Destructeur
         ~Player();
 
@@ -135,9 +135,6 @@ class Player : public Unit
 
         //Image du réacteur
         sf::Image *imageReactor;
-
-        //Manager d'image
-        image_manager &m_imageManager;
 
 };
 

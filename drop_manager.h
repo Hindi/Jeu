@@ -10,11 +10,6 @@
 class Drop_manager
 {
     public:
-        Drop_manager(image_manager &image_manager);
-
-        //Destructeur
-        ~Drop_manager();
-
         //Créé un drop
         void createDrop(int score, sf::Vector2f position);
 
@@ -26,14 +21,24 @@ class Drop_manager
         void move();
         void draw();
 
+        static void kill();
+        static Drop_manager* getInstance();
+
     private:
         //Liste des drops
         std::list <Drop*> m_droplist;
 
         Drop *drop;
 
-        //Manager d'image
-        image_manager &m_image_manager;
+        Drop_manager();
+
+        //Destructeur
+        ~Drop_manager();
+
+        static Drop_manager* _singleton;
 
 };
+
+Drop_manager* Drop_manager::_singleton = NULL;
+
 #endif // DROP_MANAGER_H_INCLUDED

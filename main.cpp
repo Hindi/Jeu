@@ -34,11 +34,12 @@ int main()
 
 
     //Gestionnaire d'images
-    image_manager imageManager;
-	imageManager.addResourceDirectory("images/" );
+    image_manager *imageManager;
+    imageManager = image_manager::getInstance();
+	imageManager->addResourceDirectory("images/" );
 
-    Menu menu(app, imageManager);
-    Jeu jeu(SCREEN_WIDTH, SCREEN_HEIGHT, menu, imageManager);
+    Menu menu;
+    Jeu jeu(SCREEN_WIDTH, SCREEN_HEIGHT, menu);
     Timer timer;
 
     int select(1);

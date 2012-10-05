@@ -4,12 +4,13 @@
 #include <iostream>
 #include <sstream>
 #include "player.h"
+#import "const.h"
 #include "image_manager.h"
 
 class Pannel
 {
     public:
-        Pannel(sf::RenderWindow &app, const std::string &filepath, sf::Vector2f position, Player &player, image_manager &imageManager);
+        Pannel(const std::string &filepath, sf::Vector2f position, Player &player);
 
         //Destructeur
         virtual ~Pannel();
@@ -23,9 +24,6 @@ class Pannel
         void drawScore();
 
     protected:
-        //La fenêtre
-        sf::RenderWindow &m_app;
-
         //L'image sur le pannel
         sf::Image *imagePannel;
 

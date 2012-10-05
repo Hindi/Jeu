@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed, const int coefSpeed, image_manager &ImageManager, bool followAnim):
+Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed, const int coefSpeed, bool followAnim):
             m_speed(speed),
             scale(1,1),
             m_coefSpeed(coefSpeed),
@@ -15,14 +15,14 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
     {
 
         firstProj = new Image();
-        *firstProj = ImageManager.getImage(filepath);
+        *firstProj = image_manager::getInstance()->getImage(filepath);
         spriteFirst.SetImage(*firstProj);
         spriteFirst.Scale(scale);
     }
     if(m_followAnim)
     {
         firstProj = new Image();
-        *firstProj = ImageManager.getImage(filepath);
+        *firstProj = image_manager::getInstance()->getImage(filepath);
         unsigned short width = firstProj->GetWidth();
         unsigned short height = firstProj->GetHeight();
         spriteFirst.SetImage(*firstProj);
@@ -30,25 +30,25 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
         spriteFirst.Scale(scale);
 
         secondProj = new Image();
-        *secondProj = ImageManager.getImage(filepath);
+        *secondProj = image_manager::getInstance()->getImage(filepath);
         spriteSecond.SetImage(*secondProj);
         spriteSecond.SetSubRect(IntRect(width/5, 0, 2*width/5, height));
         spriteSecond.Scale(scale);
 
         thirdProj = new Image();
-        *thirdProj = ImageManager.getImage(filepath);
+        *thirdProj = image_manager::getInstance()->getImage(filepath);
         spriteThird.SetImage(*thirdProj);
         spriteThird.SetSubRect(IntRect(2*width/5, 0, 3*width/5, height));
         spriteThird.Scale(scale);
 
         fourthProj = new Image();
-        *fourthProj = ImageManager.getImage(filepath);
+        *fourthProj = image_manager::getInstance()->getImage(filepath);
         spriteFourth.SetImage(*fourthProj);
         spriteFourth.SetSubRect(IntRect(3*width/5, 0, 4*width/5, height));
         spriteFourth.Scale(scale);
 
         fifthProj = new Image();
-        *fifthProj = ImageManager.getImage(filepath);
+        *fifthProj = image_manager::getInstance()->getImage(filepath);
         spriteFifth.SetImage(*fifthProj);
         spriteFifth.SetSubRect(IntRect(4*width/5, 0, width, height));
         spriteFifth.Scale(scale);

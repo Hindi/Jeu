@@ -84,12 +84,12 @@ void Population::explode(Enemy *enemy)
     score = enemy->getScoreExplosion();
     position.x = enemy->getPositionAxis(0);
     position.y = enemy->getPositionAxis(1);
-    m_drop_manager.createDrop(score, position);
+    Drop_manager::getInstance()->createDrop(score, position);
     int currentFrame = enemy->getAnimation()->GetCurrentFrame();
     Anim *m_anim = enemy->getAnimation()->GetAnim();
     Image *currentImage = (*m_anim)[currentFrame].Image;
     position.x += currentImage->GetWidth();
-    m_scoreManager.addScore(score, position);
+    Score_manager::getInstance()->addScore(score, position);
 }
 
 void Population::manageExplosion()
@@ -152,18 +152,18 @@ void Population::unFreeze()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, app, m_player, m_imageManager, spawner));
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, spawner));
 }
 
 void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, app, m_player, m_imageManager, spawner));
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, spawner));
 }
 
 void Population::createBoss(Vector2f position, char* move, char* name)
 {
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, app, m_player, m_imageManager, name));
+    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name));
 }
 
 void Population::manage()
@@ -186,7 +186,7 @@ void Population::spawn(Enemy *enemy)
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, app, m_player, m_imageManager, "false"));
+        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, "false"));
         enemy->upDateLastSpawnTime();
     }
 }

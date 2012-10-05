@@ -3,10 +3,9 @@
 using namespace sf;
 using namespace std;
 
-Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
+Drop::Drop(int score, sf::Vector2f position):
             m_speed(200),
             m_score(score),
-            m_image_manager(image_manager),
             m_frameWidth(50),
             m_position(position),
             m_frameHeight(50)
@@ -16,13 +15,13 @@ Drop::Drop(int score, image_manager &image_manager, sf::Vector2f position):
     switch(score)
     {
         case 50:
-            *m_image = m_image_manager.getImage("images/Vie.png");
+            *m_image = image_manager::getInstance()->getImage("images/Vie.png");
             break;
         case 100:
-            *m_image = m_image_manager.getImage("images/Vie.png");
+            *m_image = image_manager::getInstance()->getImage("images/Vie.png");
             break;
         case 500:
-            *m_image = m_image_manager.getImage("images/Vie-fade.png");
+            *m_image = image_manager::getInstance()->getImage("images/Vie-fade.png");
             break;
     }
 

@@ -102,3 +102,27 @@ void image_manager::removeResourceDirectory( const std::string& directory )
 			++it;
 	}
 }*/
+
+image_manager* image_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "creating singleton." << std::endl;
+        _singleton =  new image_manager;
+      }
+    else
+      {
+        std::cout << "singleton already created!" << std::endl;
+      }
+
+    return _singleton;
+  }
+
+void image_manager::kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }

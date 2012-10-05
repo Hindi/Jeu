@@ -6,6 +6,7 @@
 #include "projectile.h"
 #include "missile.h"
 #include <vector>
+#include "../const.h"
 
 class Projectile_manager
 {
@@ -39,9 +40,6 @@ class Projectile_manager
         static Projectile_manager* getInstance();
 
     private:
-        //La fenêtre
-        sf::RenderWindow &m_app;
-
         //Liste des projectiles ennemis
         std::list<Projectile*> m_enemyProjectiles;
 

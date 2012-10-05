@@ -4,11 +4,10 @@ using namespace std;
 using namespace sf;
 
 
-Weapon_manager::Weapon_manager(Player &player):
+Weapon_manager::Weapon_manager():
             secondaryScore(1000),
             missileScore(10000),
-            thirdScore(500000),
-            m_player(player)
+            thirdScore(500000)
 {
 
 }
@@ -20,16 +19,16 @@ Weapon_manager::~Weapon_manager()
 
 void Weapon_manager::manage()
 {
-    if(m_player.getScore() > missileScore)
+    if(player.getScore() > missileScore)
     {
-        m_player.setMissile(true);
+        player.setMissile(true);
     }
-    if(m_player.getScore() > secondaryScore)
+    if(player.getScore() > secondaryScore)
     {
-        m_player.setSecondary(true);
+        player.setSecondary(true);
     }
-    if(m_player.getScore() > thirdScore)
+    if(player.getScore() > thirdScore)
     {
-        m_player.setThird(true);
+        player.setThird(true);
     }
 }

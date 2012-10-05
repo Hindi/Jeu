@@ -3,12 +3,9 @@
 using namespace std;
 using namespace sf;
 
-Script::Script(short const id, std::string msg, image_manager &imageManager, Player &player):
+Script::Script(short const id, std::string msg):
             id(id),
-            msg(msg),
-            m_imageManager(imageManager),
-            m_player(player),
-            m_population(population)
+            msg(msg)
 {
     timer.start();
 }
@@ -38,7 +35,7 @@ void Script::niveau1()
     //Variables enemy :
     Vector2f positionEnemy(50, 50);
 
-    Population::getInstance().createShip(positionEnemy, "roundtrip",true);/*
+    Population::getInstance()->createShip(positionEnemy, "roundtrip",true);/*
     positionEnemy.x +=100;
     m_population.createShip(positionEnemy, "roundtrip");
     positionEnemy.x +=100;

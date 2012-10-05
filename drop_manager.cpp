@@ -3,8 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Drop_manager::Drop_manager(image_manager &image_manager):
-            m_image_manager(image_manager)
+Drop_manager::Drop_manager()
 {
 
 }
@@ -17,7 +16,7 @@ Drop_manager::~Drop_manager()
 //Créé un objet drop et l'ajoute dansl al iste des drops
 void Drop_manager::createDrop(int score, sf::Vector2f position)
 {
-    drop = new Drop(score, m_image_manager, position);
+    drop = new Drop(score, position);
     m_droplist.push_back(drop);
 }
 
@@ -55,3 +54,27 @@ void Drop_manager::draw()
         app.Draw((*lit)->getSprite());
     }
 }
+
+Drop_manager* Drop_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "creating singleton." << std::endl;
+        _singleton =  new Drop_manager;
+      }
+    else
+      {
+        std::cout << "singleton already created!" << std::endl;
+      }
+
+    return _singleton;
+  }
+
+void Drop_manager::kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }

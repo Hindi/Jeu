@@ -13,7 +13,7 @@
 class Unit
 {
     public:
-        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position, image_manager &imageManager);
+        Unit(int life, int xSpeed, int ySpeed, sf::Vector2f position);
 
         //Destructeur
          ~Unit();
@@ -77,8 +77,6 @@ class Unit
 
         //Manager de projectiles
         Projectile_manager &m_projectile_manager;
-
-        image_manager &m_imageManager;
 };
 
 #endif // UNIT_H_INCLUDED

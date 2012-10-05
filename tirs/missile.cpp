@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Missile::Missile(const string &filepath, Vector2f position, int speed, const int coefSpeed, image_manager &ImageManager, int listPosition):
+Missile::Missile(const string &filepath, Vector2f position, int speed, const int coefSpeed,  int listPosition):
             m_speed(speed),
             m_coefSpeed(coefSpeed),
             m_position(position),
@@ -11,7 +11,7 @@ Missile::Missile(const string &filepath, Vector2f position, int speed, const int
             listPosition(listPosition)
 {
     image = new Image();
-    *image = ImageManager.getImage(filepath);
+    *image = image_manager::getInstance()->getImage(filepath);
     image->CreateMaskFromColor(Color(255, 0, 255));
     sprite.SetImage(*image);
     sprite.Scale(scale);

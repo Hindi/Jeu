@@ -4,13 +4,13 @@ using namespace std;
 using namespace sf;
 
 Spawn::Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager):
+              const int coefSpeed, const int firerate):
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, "don't move", moveValue,
-              coefSpeed, firerate, app, player, imageManager, false),
+              coefSpeed, firerate, false),
             moveRate(1)
 {
     image = new Image();
-    *image = m_imageManager.getImage("images/Etoile1.png");
+    *image = image_manager::getInstance()->getImage("images/Etoile1.png");
     m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
     m_animated = new Animated();
     m_animated->SetAnim(&m_anim);
@@ -38,8 +38,8 @@ void Spawn::fire()
         Vector2f playerPosition;
         int indistinctness = rand() % 100 + 1;
         //On récupère les coordonnées du joueur
-        playerPosition.x = m_player.getPosition(0);
-        playerPosition.y = m_player.getPosition(1);
+        playerPosition.x = player.getPosition(0);
+        playerPosition.y = player.getPosition(1);
         distance.x = (playerPosition.x - m_position.x);
         distance.y = (playerPosition.y - m_position.y);
         int norm = sqrt(distance.x*distance.x + distance.y*distance.y);
@@ -51,7 +51,7 @@ void Spawn::fire()
         positionProjectile.x += (image->GetWidth()/2)-18;
         positionProjectile.y += image->GetHeight()-20;
         const string filepath = "images/projectile2.png";
-        projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), coefSpeed, m_imageManager);
+        projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), coefSpeed);
         projectile->SetPosition(positionProjectile);
         //On le rajoute à la liste des projectiles gérée par le projectile manager.
         m_projectile_manager.addEnemyProjectile(projectile);

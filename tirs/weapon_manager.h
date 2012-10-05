@@ -6,7 +6,7 @@
 class Weapon_manager
 {
     public:
-        Weapon_manager(Player &player);
+        Weapon_manager();
 
         //Destructeur
         ~Weapon_manager();
@@ -17,9 +17,6 @@ class Weapon_manager
     private:
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
-
-        //Le joueur
-        Player &m_player;
 };
 
 #endif // WEAPON_MANAGER_H_INCLUDED

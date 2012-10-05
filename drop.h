@@ -6,7 +6,7 @@
 class Drop
 {
     public:
-        Drop(int score, image_manager &image_manager, sf::Vector2f position);
+        Drop(int score, sf::Vector2f position);
 
         //Destrcteur
         ~Drop();
@@ -28,9 +28,6 @@ class Drop
         int const m_frameWidth, m_frameHeight;
         short const m_speed;
         unsigned short const m_score;
-
-        //Manager d'image
-        image_manager &m_image_manager;
 
         //Sprite du drop
         sf::Sprite sprite;

@@ -14,7 +14,7 @@
 class Collision
 {
     public:
-        Collision(sf::Vector2f windowSize, Player &player,Missile_manager &missile_manager, Drop_manager &drop_manager);
+        Collision(sf::Vector2f windowSize, Player &player,Missile_manager &missile_manager);
 
         //Destructeur
         virtual ~Collision();
@@ -39,8 +39,6 @@ class Collision
         //manager de missiles
         Missile_manager &m_missile_manager;
 
-        //Manager de drops
-        Drop_manager &m_drop_manager;
 
 };
 

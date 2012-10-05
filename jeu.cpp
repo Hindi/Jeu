@@ -4,8 +4,7 @@ using namespace std;
 using namespace sf;
 
 
-Jeu::Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu, image_manager imageManager):
-            m_imageManager(imageManager),
+Jeu::Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu):
             m_SCREEN_WIDTH(SCREEN_WIDTH),
             m_SCREEN_HEIGHT(SCREEN_HEIGHT),
             m_menu(menu),
@@ -34,37 +33,38 @@ void Jeu::start()
     projectile_manager = Projectile_manager::getInstance();
 
     //Affichage onscreen des scores
-    Score_manager scoreManager();
+    Score_manager *scoreManager;
+    scoreManager = Score_manager::getInstance();
 
     //Variables player :
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
-    Player player(1, positionPlayer, m_imageManager);
 
-    Drop_manager drop_manager(m_imageManager);
+    Drop_manager *drop_manager;
+    drop_manager = Drop_manager::getInstance();
 
     //Variable population
     Population *population;
     population = Population::getInstance();
-    Script s1( 1, "I am standing on the left.", m_imageManager, player);
+    Script s1( 1, "I am standing on the left.");
 	s1.Launch();
 
     //gestionnaires de missiles
-    Missile_manager missile_manager(player, m_imageManager);
+    Missile_manager missile_manager;
 
     //Activateur d'armes
-    Weapon_manager weapon_manager(player);
+    Weapon_manager weapon_manager;
 
     //pannel
     const string filepathPanel = "images/pannel.png";
     Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
-    Pannel pannel(app, filepathPanel, positionPannel, player, m_imageManager);
+    Pannel pannel(filepathPanel, positionPannel, player);
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player, missile_manager, drop_manager);
+    Collision collision(windowSize, player, missile_manager);
 
     //Background
-    Background background(app, 1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, m_imageManager);
+    Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT);
 
 
     population->createShip(Vector2f(100, 100), "don't move",true);
@@ -140,12 +140,12 @@ void Jeu::start()
             }
         }
         weapon_manager.manage();
-        drop_manager.manage();
+        drop_manager->manage();
         player.draw();
         population->manage();
         missile_manager.manage();
         pannel.checkPannel();
-        scoreManager.manage();
+        scoreManager->manage();
         app.Display();
         timer.sleep(1);
     }

@@ -67,23 +67,12 @@ class Population
 
     protected:
 
-        //Le joueur
-        Player &m_player;
-
-        //Manager d'images
-        image_manager &m_imageManager;
-
         //Liste des ennemis
         std::list<Enemy*> m_enemies;
         std::list<Enemy*> m_spawns;
 
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
-
-        //Manager de drops
-        Drop_manager &m_drop_manager;
-
-        Score_manager &m_scoreManager;
 
     private:
         //Constructeur privé pour singleton

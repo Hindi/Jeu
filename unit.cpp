@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position, image_manager &imageManager):
+Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position):
             m_scale(1,1),
             EXPLOS_WIDTH(400),
             EXPLOS_HEIGHT(400),
@@ -11,12 +11,11 @@ Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position, image_manager &im
             m_life(life),
             m_xSpeed(xSpeed),
             m_ySpeed(ySpeed),
-            coefSpeed(50),
-            m_imageManager(imageManager)
+            coefSpeed(50)
 {
     m_animatedExplosion = new Animated();
     imageExplosion = new Image();
-   *imageExplosion = m_imageManager.getImage("images/explosion1.png");
+   *imageExplosion = image_manager::getInstance()->getImage("images/explosion1.png");
 
     m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(0, 0, EXPLOS_WIDTH, EXPLOS_HEIGHT) ));
     m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(EXPLOS_WIDTH, 0, EXPLOS_WIDTH*2, EXPLOS_HEIGHT) ));

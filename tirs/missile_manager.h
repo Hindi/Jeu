@@ -8,11 +8,12 @@
 #include "../timer.h"
 #include "../player.h"
 #include "../image_manager.h"
+#include "../const.h"
 
 class Missile_manager
 {
     public:
-        Missile_manager(Player &player, image_manager &imageManager);
+        Missile_manager();
         ~Missile_manager();
 
         bool haveMissilesInProgress();
@@ -31,9 +32,7 @@ class Missile_manager
     private:
         std::list<Missile*> m_missiles;
         Timer timerCreate;
-        Player &m_player;
         Missile *missile;
-        image_manager &m_imageManager;
         int nombreMissiles, fireDelay;
         sf::Vector2f positionsLibres[7];
         bool boolPositionLibres[7];

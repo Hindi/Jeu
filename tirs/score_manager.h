@@ -10,10 +10,6 @@
 class Score_manager
 {
     public:
-        Score_manager();
-
-        //Destructeur
-        ~Score_manager();
 
         void addScore(int score, sf::Vector2f position);
 
@@ -23,10 +19,22 @@ class Score_manager
 
         bool haveScoreInProgress();
 
+        static void kill();
+        static Score_manager* getInstance();
+
     private:
         Score *m_score;
 
         std::list<Score*> m_scores;
+
+        Score_manager();
+
+        //Destructeur
+        ~Score_manager();
+
+        static Score_manager* _singleton;
 };
+
+Score_manager *Score_manager::_singleton = NULL;
 
 #endif // SCORE_MANAGER_H_INCLUDED

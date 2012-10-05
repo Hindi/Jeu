@@ -3,8 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Projectile_manager::Projectile_manager():
-            m_app(app)
+Projectile_manager::Projectile_manager()
 {
 
 }
@@ -45,7 +44,7 @@ bool Projectile_manager::havePlayerProjectilesInProgress()
 void Projectile_manager::moveProjectile()
 {
     //Déplace les projectiles et les détruit s'ils sortent de l'écran
-    double elapsedTime = m_app.GetFrameTime();
+    double elapsedTime = app.GetFrameTime();
 
     //****************************************
     //On bouge les projectiles ennemis
@@ -110,7 +109,7 @@ void Projectile_manager::drawProjectile()
         list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
         for(; lit!=m_enemyProjectiles.end(); lit++)
         {
-            m_app.Draw(**lit);//Dessine les projectiles ennemi
+            app.Draw(**lit);//Dessine les projectiles ennemi
         }
     }
     if(this->havePlayerProjectilesInProgress())
@@ -118,7 +117,7 @@ void Projectile_manager::drawProjectile()
         list<Projectile*>::const_iterator li(m_playerProjectiles.begin());
         for(; li!=m_playerProjectiles.end(); li++)
         {
-            m_app.Draw(**li);//Dessine les projectiles du joueur
+            app.Draw(**li);//Dessine les projectiles du joueur
         }
     }
 

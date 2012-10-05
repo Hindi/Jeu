@@ -3,11 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "image_manager.h"
+#include "const.h"
 
 class Menu
 {
     public:
-        Menu(sf::RenderWindow &app, image_manager imageManager);
+        Menu();
         //Destructeur
         ~Menu();
 
@@ -18,11 +19,6 @@ class Menu
         void drawPauseMenu(int select);
 
     protected:
-        //La fenêtre
-        sf::RenderWindow &m_app;
-        //Manager d'images
-        image_manager &m_imageManager;
-
         //Les imagesde tous les menus
         sf::Image *imagePlay;
         sf::Image *imageCredit;

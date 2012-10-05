@@ -8,11 +8,12 @@
 #include "player.h"
 #include "population.h"
 #include "tirs/projectile_manager.h"
+#include "const.h"
 
 class Script:public sf::Thread
 {
     public:
-        Script( short const id, std::string msg, image_manager &imageManager, Player &player);
+        Script( short const id, std::string msg);
         void niveau1();
         void niveau2();
 
@@ -22,8 +23,6 @@ class Script:public sf::Thread
 
         short const id;
         std::string msg;
-        image_manager &m_imageManager;
-        Player &m_player;
         Timer timer;
 };
 

@@ -3,20 +3,19 @@
 using namespace std;
 using namespace sf;
 
-Background::Background(RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, image_manager &imageManager):
-            m_app(app),
+Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT):
             m_speed(speed),
             m_width(SCREEN_WIDTH),
             m_height(SCREEN_HEIGHT)
 {
     //Sprite des étoiles
     imageStar = new Image;
-    *imageStar = imageManager.getImage("images/projectile.png");
+    *imageStar = image_manager::getInstance()->getImage("images/projectile.png");
     spriteStar.SetImage(*imageStar);
 
     //Sprite planètes
     imagePlanet = new Image;
-    *imagePlanet = imageManager.getImage("images/planete2.png");;
+    *imagePlanet = image_manager::getInstance()->getImage("images/planete2.png");;
     spritePlanet.SetImage(*imagePlanet);
 
     this->init();
@@ -36,8 +35,8 @@ void Background::manage()
     for(; i < LIST_SIZE; i++)
     {
         //On déplace les étoiles
-        listStar[i].Move(0, m_speed * 2 * m_app.GetFrameTime());
-        m_app.Draw(listStar[i]);
+        listStar[i].Move(0, m_speed * 2 * app.GetFrameTime());
+        app.Draw(listStar[i]);
         //Si une étoile sors de l'écran on la remet en haut avec une position aléatoire sur l'axe x
         if(listStar[i].GetPosition().y > m_height)
         {
@@ -46,8 +45,8 @@ void Background::manage()
     }
 
     //On déplace les planètes
-    spritePlanet.Move(0, m_speed* 10 * m_app.GetFrameTime());
-    m_app.Draw(spritePlanet);
+    spritePlanet.Move(0, m_speed* 10 * app.GetFrameTime());
+    app.Draw(spritePlanet);
 
     //Si une planète sort on la replace de manière aléatoire
     if(spritePlanet.GetPosition().y > m_height)

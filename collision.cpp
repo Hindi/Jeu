@@ -17,11 +17,10 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Missile_manager &missile_manager, Drop_manager &drop_manager):
+Collision::Collision(Vector2f windowSize, Player &player, Missile_manager &missile_manager):
             m_player(player),
             m_windowSize(windowSize),
-            m_missile_manager(missile_manager),
-            m_drop_manager(drop_manager)
+            m_missile_manager(missile_manager)
 {
 
 }
@@ -160,14 +159,14 @@ void Collision::manageProjectileCollision()
 void Collision::dropCollision()
 {
     IntRect playerRect = m_player.GetBoundingBox(), dropRect;
-    list<Drop*>::iterator lit(m_drop_manager.getDrop()->begin());
-    for(; lit!=m_drop_manager.getDrop()->end();)
+    list<Drop*>::iterator lit(Drop_manager::getInstance()->getDrop()->begin());
+    for(; lit!=Drop_manager::getInstance()->getDrop()->end();)
     {
         dropRect = (*lit)->getBoundingBox();
         if((playerRect.Right > dropRect.Left && playerRect.Left < dropRect.Right && playerRect.Top > dropRect.Top && playerRect.Top < dropRect.Bottom) || dropRect.Bottom > 2000)
         {
             m_player.addScore(100);
-            lit = m_drop_manager.getDrop()->erase(lit);
+            lit = Drop_manager::getInstance()->getDrop()->erase(lit);
         }
         else
         {

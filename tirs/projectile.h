@@ -12,7 +12,7 @@
 class Projectile : public sf::Drawable
 {
     public:
-        Projectile(const std::string &filepath, sf::Vector2f position, sf::Vector2f speed, const int coefSpeed, image_manager &ImageManager, bool followAnim = false);
+        Projectile(const std::string &filepath, sf::Vector2f position, sf::Vector2f speed, const int coefSpeed, bool followAnim = false);
 
         //Destructeur
         ~Projectile();

@@ -4,11 +4,6 @@
 class image_manager
 {
     public:
-        image_manager();
-
-        //Destructeur
-        ~image_manager();
-
         //Va chercher le fichier et stocke l'image dans une liste
         const sf::Image& getImage( const std::string& filename );
 
@@ -22,6 +17,10 @@ class image_manager
         //suprimme un dossier de recherche
         void  removeResourceDirectory( const std::string& directory );
 
+
+        static void kill();
+        static image_manager* getInstance();
+
     private:
         //Image manager
         image_manager& operator =( const image_manager& );
@@ -31,5 +30,15 @@ class image_manager
 
         //Liste des répertoires
         std::vector< std::string > m_directories;
+
+        image_manager();
+
+        //Destructeur
+        ~image_manager();
+
+        static image_manager* _singleton;
 };
+
+image_manager* image_manager::_singleton = NULL;
+
 #endif

@@ -27,7 +27,7 @@ class Adds : public Enemy
 {
     public:
         Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, bool spawner);
+              const int coefSpeed, const int firerate, bool spawner);
         ~Adds();
 
         //Suivre le boss

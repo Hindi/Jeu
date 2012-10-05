@@ -55,3 +55,27 @@ bool Score_manager::haveScoreInProgress()
     else
         return false;
 }
+
+Score_manager* Score_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "creating singleton." << std::endl;
+        _singleton =  new Score_manager;
+      }
+    else
+      {
+        std::cout << "singleton already created!" << std::endl;
+      }
+
+    return _singleton;
+  }
+
+void Score_manager::kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }

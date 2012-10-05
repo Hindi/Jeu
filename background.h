@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include "image_manager.h"
+#include "const.h"
 
 class Background
 {
     public:
-        Background(sf::RenderWindow &app, int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, image_manager &imageManager);
+        Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT);
 
         //Destructeur
         virtual ~Background();
@@ -30,9 +31,6 @@ class Background
 
         //Sprites étoiles et planètes
         sf::Sprite spriteStar, spritePlanet;
-
-        //Fenêtre
-        sf::RenderWindow &m_app;
 
         //Liste d'étoiles
         std::vector<sf::Sprite> listStar;

@@ -12,6 +12,7 @@
 #include "../image_manager.h"
 #include "math.h"
 #include "../tirs/projectile_manager.h"
+#include "../const.h"
 
 //Permet de créer le type enemy : ils sont ensuite créé et stocké dans population.
 
@@ -19,7 +20,7 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, sf::RenderWindow &app, Player &player, image_manager &imageManager, bool spawner);
+              const int coefSpeed, const int firerate,bool spawner);
 
         //Destructeur
         ~Enemy();
@@ -102,9 +103,6 @@ class Enemy : public Unit
 
 
     protected:
-        //Joueur
-        Player &m_player;
-
         //listes des projectils et de leurs vitesse (en cas de visée)
         std::list<Projectile*> m_projectiles;
         std::list<sf::Vector2f> m_vitesses;
@@ -130,9 +128,6 @@ class Enemy : public Unit
         //Variables d'animation
         Animated *m_animated;
         Anim m_anim;
-
-        //Manager d'image
-        image_manager &m_imageManager;
 
         //Position du joueur (en cas de visée)
         sf::Vector2f playerPosition;
