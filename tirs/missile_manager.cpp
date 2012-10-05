@@ -3,9 +3,7 @@
 using namespace sf;
 using namespace std;
 
-Missile_manager::Missile_manager(Population &population, Player &player, image_manager &imageManager):
-        m_player(player),
-        m_imageManager(imageManager),
+Missile_manager::Missile_manager():
         nombreMissiles(7),
         fireDelay(1)
 {
@@ -59,8 +57,8 @@ void Missile_manager::createMissile()
                 break;
             }
         }
-        Vector2f missilePosition(m_player.getPosition(0)+adapt.x, m_player.getPosition(1)+adapt.y);
-        missile = new Missile("images/projectile2.png", missilePosition, 10, 50, m_imageManager, i);
+        Vector2f missilePosition(player.getPosition(0)+adapt.x, player.getPosition(1)+adapt.y);
+        missile = new Missile("images/projectile2.png", missilePosition, 10, 50, i);
         missile->SetPosition(missilePosition);
 
         this->addMissile(missile);
@@ -73,11 +71,11 @@ void Missile_manager::moveMissile()
     double elapsedTime = app.GetFrameTime();
     list<Missile*>::iterator lit(m_missiles.begin());
 
-    list<Enemy*>::const_iterator li(Population::getInstance().getPopulation()->begin());
+    list<Enemy*>::const_iterator li(Population::getInstance()->getPopulation()->begin());
     //***********************************************
     //Cette fonction gère le déplacement des missiles
     //***********************************************
-    if(this->haveMissilesInProgress() && (Population::getInstance().haveEnnemyInProgress())) //Si des ennemis sont en vie
+    if(this->haveMissilesInProgress() && (Population::getInstance()->haveEnnemyInProgress())) //Si des ennemis sont en vie
     {
         for(lit=m_missiles.begin(); lit != m_missiles.end();)
         {
@@ -88,7 +86,7 @@ void Missile_manager::moveMissile()
             //*****************************************************************
             //Dans cette partie on calcule quel ennemi chaque missile va cibler
             //*****************************************************************
-            for(;li != Population::getInstance().getPopulation()->end(); li++)//On parcours la liste des ennemis
+            for(;li != Population::getInstance()->getPopulation()->end(); li++)//On parcours la liste des ennemis
             {
                 diff.x = (*li)->getPositionAxis(0)-positionMissile.x;//on calcul le vecteur différence entre les position ennemis et missile
                 diff.y = (*li)->getPositionAxis(1)-positionMissile.y;
@@ -167,7 +165,7 @@ void Missile_manager::followPlayer()
     for(; lit != m_missiles.end(); lit++)
     {
         double elapsedTime = app.GetFrameTime();
-        if(!(*lit)->getFocus() || (!Population::getInstance().haveEnnemyInProgress()))
+        if(!(*lit)->getFocus() || (!Population::getInstance()->haveEnnemyInProgress()))
         {
             //***************************************
             //On initialise les variables de position
@@ -175,7 +173,7 @@ void Missile_manager::followPlayer()
             Vector2f positionMissile((*lit)->getPosition());//Position actuelle du missile
             int ringPosition((*lit)->getListPosition());//Sa place dans le cercle autour du joueur
             Vector2f positionInitiale(this->positionsLibres[ringPosition]);//Les coordonnées associées à cette place (en relatif par rapport à la position du joueur)
-            Vector2f positionPlayer(m_player.getPosition(0), m_player.getPosition(1));//Position actuelle du joueur
+            Vector2f positionPlayer(player.getPosition(0), player.getPosition(1));//Position actuelle du joueur
             double coefSpeed((*lit)->getCoefSpeed()*elapsedTime*10);
             if(positionMissile.x != positionPlayer.x + positionInitiale.x || positionMissile.y != positionPlayer.y + positionInitiale.y)
             {
