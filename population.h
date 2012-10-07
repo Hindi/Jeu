@@ -64,15 +64,17 @@ class Population
 
         static void kill();
         static Population* getInstance();
+        void setPlayer(Player *externPlayer);
 
     protected:
-
         //Liste des ennemis
         std::list<Enemy*> m_enemies;
         std::list<Enemy*> m_spawns;
 
         //Liste des ennemis morts
         std::list<Enemy*> m_deadEnemies;
+
+        Player *player;
 
     private:
         //Constructeur privé pour singleton

@@ -28,8 +28,10 @@ class Missile_manager
         void followPlayer();
         void revenir(Missile &missile);
         void setPositionLibre(int position, bool mode);
+        void setPlayer(Player *externPlayer);
 
     private:
+        Player *player;
         std::list<Missile*> m_missiles;
         Timer timerCreate;
         Missile *missile;

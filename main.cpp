@@ -3,7 +3,6 @@
 #include "menu.h"
 #include "timer.h"
 #include <iostream>
-#include "const.h"
 
 using namespace std;
 using namespace sf;

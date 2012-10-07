@@ -50,7 +50,7 @@ class Projectile_manager
         std::list<Missile*> m_missiles;
 
 
-        Projectile_manager(sf::RenderWindow &m_app);
+        Projectile_manager();
 
         //Destructeur
         ~Projectile_manager();

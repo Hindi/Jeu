@@ -95,7 +95,7 @@ void Player::fire()
         const string filepath = "images/projectile.png";
         projectile = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
         projectile->SetPosition(positionProjectile);
-        m_projectile_manager.addPlayerProjectile(projectile);
+        Projectile_manager::getInstance()->addPlayerProjectile(projectile);
         if(secondary)//Si les armes secondaires sont activées
         {
             //*******************************
@@ -105,14 +105,14 @@ void Player::fire()
             positionProjectile.y += 25;
             projectileDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
             projectileDroite->SetPosition(positionProjectile);
-            m_projectile_manager.addPlayerProjectile(projectileDroite);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
             //*******************************
             //On créé le projectile de gauche
             //*******************************
             positionProjectile.x -= 38;
             projectileDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
             projectileDroite->SetPosition(positionProjectile);
-            m_projectile_manager.addPlayerProjectile(projectileDroite);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
         }
         if(third)
         {
@@ -123,14 +123,14 @@ void Player::fire()
             positionProjectile.y += 5;
             projectileExtremeGauche = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
             projectileExtremeGauche->SetPosition(positionProjectile);
-            m_projectile_manager.addPlayerProjectile(projectileExtremeGauche);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeGauche);
             //***************************************
             //On créé le projectile de extreme gauche
             //***************************************
             positionProjectile.x -= 90;
             projectileExtremeDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
             projectileExtremeDroite->SetPosition(positionProjectile);
-            m_projectile_manager.addPlayerProjectile(projectileExtremeDroite);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeDroite);
         }
         lastShot = timer.getTime();
     }
@@ -190,7 +190,7 @@ void Player::moveUp()
         m_animated->SetAnim(&m_anim);
         m_animated->SetLoop(false);
     }
-    m_position.y -= m_ySpeed * m_app.GetFrameTime() * coefSpeed;
+    m_position.y -= m_ySpeed * app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
     if(m_animated->IsPaused())
         m_animated->Play();
@@ -203,7 +203,7 @@ void Player::moveDown()
         m_animated->SetAnim(&m_anim);
         m_animated->SetLoop(true);
     }
-    m_position.y += m_ySpeed * m_app.GetFrameTime() * coefSpeed;
+    m_position.y += m_ySpeed * app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
     if(m_animated->IsPaused())
         m_animated->Play();
@@ -222,7 +222,7 @@ void Player::moveLeft()
     {
         m_animated->Pause();
     }
-    m_position.x -= m_xSpeed * m_app.GetFrameTime() * coefSpeed;
+    m_position.x -= m_xSpeed * app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
 }
 
@@ -239,7 +239,7 @@ void Player::moveRight()
     {
         m_animated->Pause();
     }
-    m_position.x += m_xSpeed * m_app.GetFrameTime() * coefSpeed;
+    m_position.x += m_xSpeed * app.GetFrameTime() * coefSpeed;
     m_animated->SetPosition(m_position.x, m_position.y);
 }
 
@@ -257,11 +257,11 @@ void Player::dontMove()
 void Player::draw()
 {
     m_animatedReactor->SetPosition(m_animated->GetPosition().x + m_frameWidth/2.8, m_animated->GetPosition().y + m_frameHeight/1.35);
-    m_animatedReactor->anim(m_app.GetFrameTime());
-    m_app.Draw(*m_animatedReactor);
+    m_animatedReactor->anim(app.GetFrameTime());
+    app.Draw(*m_animatedReactor);
 
-    m_animated->anim(m_app.GetFrameTime());
-    m_app.Draw(*m_animated);
+    m_animated->anim(app.GetFrameTime());
+    app.Draw(*m_animated);
 
 }
 

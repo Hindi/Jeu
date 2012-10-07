@@ -27,7 +27,6 @@ class Score
         sf::String string;
 
     private:
-        sf::RenderWindow &m_app;
 
         sf::Font m_fontCubic;
 

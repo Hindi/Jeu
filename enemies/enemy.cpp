@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 
-Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner):
+Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, Player &externPlayer):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
             lastShot(0),
@@ -19,7 +19,8 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_moveValue(moveValue),
             m_spawner(spawner),
             lastSpawn(0),
-            m_spawnRate(3)
+            m_spawnRate(3),
+            player(externPlayer)
 {
     m_animated = new Animated;
     timer.start();
@@ -284,7 +285,7 @@ void Enemy::fireFocus()
     projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), m_coefSpeed, true);
     projectile->SetPosition(positionProjectile);
     //On le rajoute à la liste des projectiles gérée par le projectile manager.
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     lastShot = timer.getTime();
 }
 
@@ -297,78 +298,78 @@ void Enemy::fireCircle()
     const string filepath = "images/projectile2.png";
     projectile = new Projectile(filepath, positionProjectile, Vector2f(16, 0), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-16, 0), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(0, 16), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(0, -16), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(11, 11), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-11, 11), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(11, -11), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-11, -11), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
 
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-7, -14), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-5, -15), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(7, -14), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(5, -15), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(7, 14), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(5, 15), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-7, 14), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-5, 15), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
 
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-14, -7), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-15, -5), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(14, -7), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(15, -5), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(14, 7), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(15, 5), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-14, 7), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     projectile = new Projectile(filepath, positionProjectile, Vector2f(-15, 5), m_coefSpeed);
     projectile->SetPosition(positionProjectile);
-    m_projectile_manager.addEnemyProjectile(projectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
 
     //On le rajoute à la liste des projectiles gérée par le projectile manager.
     lastShot = timer.getTime();

@@ -57,7 +57,7 @@ void Missile_manager::createMissile()
                 break;
             }
         }
-        Vector2f missilePosition(player.getPosition(0)+adapt.x, player.getPosition(1)+adapt.y);
+        Vector2f missilePosition(player->getPosition(0)+adapt.x, player->getPosition(1)+adapt.y);
         missile = new Missile("images/projectile2.png", missilePosition, 10, 50, i);
         missile->SetPosition(missilePosition);
 
@@ -173,7 +173,7 @@ void Missile_manager::followPlayer()
             Vector2f positionMissile((*lit)->getPosition());//Position actuelle du missile
             int ringPosition((*lit)->getListPosition());//Sa place dans le cercle autour du joueur
             Vector2f positionInitiale(this->positionsLibres[ringPosition]);//Les coordonnées associées à cette place (en relatif par rapport à la position du joueur)
-            Vector2f positionPlayer(player.getPosition(0), player.getPosition(1));//Position actuelle du joueur
+            Vector2f positionPlayer(player->getPosition(0), player->getPosition(1));//Position actuelle du joueur
             double coefSpeed((*lit)->getCoefSpeed()*elapsedTime*10);
             if(positionMissile.x != positionPlayer.x + positionInitiale.x || positionMissile.y != positionPlayer.y + positionInitiale.y)
             {
@@ -190,9 +190,12 @@ void Missile_manager::followPlayer()
 }
 
 
-
-
 void Missile_manager::setPositionLibre(int position, bool mode)
 {
     boolPositionLibres[position] = mode;
+}
+
+void Missile_manager::setPlayer(Player *externPlayer)
+{
+    player = externPlayer;
 }

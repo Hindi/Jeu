@@ -4,7 +4,6 @@ using namespace std;
 using namespace sf;
 
 Score::Score(unsigned short score, Vector2f position):
-            app(app),
             m_score(score),
             m_position(position)
 {

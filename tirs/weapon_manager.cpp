@@ -19,16 +19,22 @@ Weapon_manager::~Weapon_manager()
 
 void Weapon_manager::manage()
 {
-    if(player.getScore() > missileScore)
+    if(player->getScore() > missileScore)
     {
-        player.setMissile(true);
+        player->setMissile(true);
     }
-    if(player.getScore() > secondaryScore)
+    if(player->getScore() > secondaryScore)
     {
-        player.setSecondary(true);
+        player->setSecondary(true);
     }
-    if(player.getScore() > thirdScore)
+    if(player->getScore() > thirdScore)
     {
-        player.setThird(true);
+        player->setThird(true);
     }
+}
+
+
+void Weapon_manager::setParams(Player *externPlayer)
+{
+    player = externPlayer;
 }

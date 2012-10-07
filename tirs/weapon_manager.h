@@ -14,9 +14,13 @@ class Weapon_manager
         //Met à jour l'état des armes
         void manage();
 
+        void setParams(Player *externPlayer);
+
     private:
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
+
+        Player *player;
 };
 
 #endif // WEAPON_MANAGER_H_INCLUDED

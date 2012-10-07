@@ -5,8 +5,8 @@
 #include <list>
 #include "animation.h"
 #include "Animated.hpp"
-#include "tirs/projectile_manager.h"
 #include "image_manager.h"
+#include "const.h"
 
 //class mère des unités de jeu (player, enemy)
 
@@ -51,9 +51,6 @@ class Unit
         //Taille de l'explosion
         int const EXPLOS_WIDTH, EXPLOS_HEIGHT;
 
-        //La fenêtre
-        sf::RenderWindow &m_app;
-
         //La position courante
         sf::Vector2f m_position;
 
@@ -74,9 +71,6 @@ class Unit
 
         //Le frame courant
         short currentFrameX, currentFrameY;
-
-        //Manager de projectiles
-        Projectile_manager &m_projectile_manager;
 };
 
 #endif // UNIT_H_INCLUDED

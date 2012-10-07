@@ -4,9 +4,9 @@ using namespace std;
 using namespace sf;
 
 Spawn::Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
-              const int coefSpeed, const int firerate):
+              const int coefSpeed, const int firerate, Player &player):
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, "don't move", moveValue,
-              coefSpeed, firerate, false),
+              coefSpeed, firerate, false, player),
             moveRate(1)
 {
     image = new Image();
@@ -54,7 +54,7 @@ void Spawn::fire()
         projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), coefSpeed);
         projectile->SetPosition(positionProjectile);
         //On le rajoute à la liste des projectiles gérée par le projectile manager.
-        m_projectile_manager.addEnemyProjectile(projectile);
+        Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     }
 }
 
@@ -66,15 +66,15 @@ void Spawn::move()
         m_angleMove = rand() % 360 + 1;
         lastMove = timerMove.getTime();
     }
-    speed.x = m_app.GetFrameTime() * m_xSpeed * m_coefSpeed * cos(m_angleMove);
-    speed.y = m_app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
+    speed.x = app.GetFrameTime() * m_xSpeed * m_coefSpeed * cos(m_angleMove);
+    speed.y = app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
     m_position += speed;
     m_animated->SetPosition(m_position);
 }
 
 void Spawn::draw()
 {
-    m_app.Draw(*m_animated);
+    app.Draw(*m_animated);
 }
 
 IntRect Spawn::getBoundingBox()

@@ -20,7 +20,7 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
-              const int coefSpeed, const int firerate,bool spawner);
+              const int coefSpeed, const int firerate,bool spawner, Player &externPlayer);
 
         //Destructeur
         ~Enemy();
@@ -103,6 +103,8 @@ class Enemy : public Unit
 
 
     protected:
+        Player &player;
+
         //listes des projectils et de leurs vitesse (en cas de visée)
         std::list<Projectile*> m_projectiles;
         std::list<sf::Vector2f> m_vitesses;

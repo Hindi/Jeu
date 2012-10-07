@@ -5,7 +5,7 @@ using namespace sf;
 
 Population::Population()
 {
-
+    player = NULL;
 }
 
 
@@ -152,18 +152,18 @@ void Population::unFreeze()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, spawner));
+    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, spawner, *player));
 }
 
 void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, spawner));
+    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, spawner, *player));
 }
 
 void Population::createBoss(Vector2f position, char* move, char* name)
 {
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name));
+    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, *player));
 }
 
 void Population::manage()
@@ -186,7 +186,7 @@ void Population::spawn(Enemy *enemy)
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, "false"));
+        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, false, *player));
         enemy->upDateLastSpawnTime();
     }
 }
@@ -214,3 +214,8 @@ void Population::kill ()
         _singleton = NULL;
       }
   }
+
+void Population::setPlayer(Player *externPlayer)
+{
+    player = externPlayer;
+}

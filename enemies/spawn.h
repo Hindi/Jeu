@@ -21,7 +21,7 @@ class Spawn : public Enemy
 {
     public:
         Spawn(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, int moveValue,
-              const int coefSpeed, const int firerate);
+              const int coefSpeed, const int firerate, Player &player);
 
         //Destructeur
         ~Spawn();

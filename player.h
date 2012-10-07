@@ -7,9 +7,9 @@
 #include "unit.h"
 #include "timer.h"
 #include "animation.h"
+#include "tirs/missile.h"
 #include "image_manager.h"
 #include "tirs/projectile_manager.h"
-#include "tirs/missile.h"
 
 class Player : public Unit
 {
