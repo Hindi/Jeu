@@ -3,9 +3,12 @@
 using namespace std;
 using namespace sf;
 
+Population *Population::_singleton= NULL;
+
 Population::Population()
 {
     player = NULL;
+    Population* _singleton= NULL;
 }
 
 
@@ -195,12 +198,8 @@ Population* Population::getInstance()
   {
     if (NULL == _singleton)
       {
-        std::cout << "creating singleton." << std::endl;
+        std::cout << "population : creating singleton." << std::endl;
         _singleton =  new Population;
-      }
-    else
-      {
-        std::cout << "singleton already created!" << std::endl;
       }
 
     return _singleton;

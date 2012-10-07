@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "image_manager.h"
 
+image_manager* image_manager::_singleton = NULL;
+
 image_manager::image_manager() :
             m_images(),
             m_directories()
@@ -107,12 +109,8 @@ image_manager* image_manager::getInstance()
   {
     if (NULL == _singleton)
       {
-        std::cout << "creating singleton." << std::endl;
+        std::cout << "image manager : creating singleton." << std::endl;
         _singleton =  new image_manager;
-      }
-    else
-      {
-        std::cout << "singleton already created!" << std::endl;
       }
 
     return _singleton;

@@ -9,7 +9,6 @@ Weapon_manager::Weapon_manager():
             missileScore(10000),
             thirdScore(500000)
 {
-
 }
 
 Weapon_manager::~Weapon_manager()

@@ -35,6 +35,5 @@ class Score_manager
         static Score_manager* _singleton;
 };
 
-Score_manager *Score_manager::_singleton = NULL;
 
 #endif // SCORE_MANAGER_H_INCLUDED

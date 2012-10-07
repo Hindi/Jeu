@@ -9,8 +9,6 @@ using namespace sf;
 
 void startGame(Jeu jeu);
 
-
-
 /*
 TODO LIST
 

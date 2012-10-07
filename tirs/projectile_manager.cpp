@@ -3,6 +3,8 @@
 using namespace std;
 using namespace sf;
 
+Projectile_manager* Projectile_manager::_singleton=NULL;
+
 Projectile_manager::Projectile_manager()
 {
 
@@ -153,3 +155,23 @@ void Projectile_manager::animationFollow()
 
     }
 }
+
+Projectile_manager* Projectile_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "projectile manager : creating singleton." << std::endl;
+        _singleton =  new Projectile_manager;
+      }
+
+    return _singleton;
+  }
+
+void Projectile_manager::kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }

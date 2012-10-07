@@ -39,6 +39,5 @@ class Drop_manager
 
 };
 
-Drop_manager* Drop_manager::_singleton = NULL;
 
 #endif // DROP_MANAGER_H_INCLUDED

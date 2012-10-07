@@ -39,6 +39,5 @@ class image_manager
         static image_manager* _singleton;
 };
 
-image_manager* image_manager::_singleton = NULL;
 
 #endif

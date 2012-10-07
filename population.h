@@ -87,6 +87,5 @@ class Population
 
 };
 
-Population *Population::_singleton= NULL;
 
 #endif // POPULATION_H_INCLUDED

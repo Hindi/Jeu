@@ -59,6 +59,5 @@ class Projectile_manager
 
 };
 
-Projectile_manager* Projectile_manager::_singleton=NULL;
 
 #endif // PROJECTILE_MANAGER_H_INCLUDED

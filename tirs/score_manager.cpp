@@ -3,6 +3,8 @@
 using namespace std;
 using namespace sf;
 
+Score_manager *Score_manager::_singleton = NULL;
+
 Score_manager::Score_manager()
 {
 
@@ -60,12 +62,8 @@ Score_manager* Score_manager::getInstance()
   {
     if (NULL == _singleton)
       {
-        std::cout << "creating singleton." << std::endl;
+        std::cout << "score manager : creating singleton." << std::endl;
         _singleton =  new Score_manager;
-      }
-    else
-      {
-        std::cout << "singleton already created!" << std::endl;
       }
 
     return _singleton;

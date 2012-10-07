@@ -3,6 +3,8 @@
 using namespace std;
 using namespace sf;
 
+Drop_manager* Drop_manager::_singleton = NULL;
+
 Drop_manager::Drop_manager()
 {
 
@@ -59,12 +61,8 @@ Drop_manager* Drop_manager::getInstance()
   {
     if (NULL == _singleton)
       {
-        std::cout << "creating singleton." << std::endl;
+        std::cout << "drop manager : creating singleton." << std::endl;
         _singleton =  new Drop_manager;
-      }
-    else
-      {
-        std::cout << "singleton already created!" << std::endl;
       }
 
     return _singleton;

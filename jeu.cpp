@@ -40,21 +40,23 @@ void Jeu::start()
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
 
     Player player(1, positionPlayer);
-
     Drop_manager *drop_manager;
     drop_manager = Drop_manager::getInstance();
 
     //Variable population
     Population *population;
     population = Population::getInstance();
+    population->setPlayer(&player);
     Script s1( 1, "I am standing on the left.");
 	s1.Launch();
 
     //gestionnaires de missiles
     Missile_manager missile_manager;
+    missile_manager.setPlayer(&player);
 
     //Activateur d'armes
     Weapon_manager weapon_manager;
+    weapon_manager.setParams(&player);
 
     //pannel
     const string filepathPanel = "images/pannel.png";
