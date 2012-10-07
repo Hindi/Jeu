@@ -41,8 +41,7 @@ void Score_manager::manage()
                 lit = m_scores.erase(lit);
             else
             {
-                String string = (*lit)->string;
-                string.SetPosition(Vector2f(100,100));
+                (*lit)->move();
             }
         }
 

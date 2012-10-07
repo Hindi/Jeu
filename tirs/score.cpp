@@ -20,6 +20,8 @@ Score::Score(unsigned short score, Vector2f position):
     //On l'ajoute a sf::string
     string.SetText(s);
     string.SetPosition(m_position);
+    string.Scale(0.4f, 0.4f);
+    string.SetFont(m_fontCubic);
 
     timer.start();
 }
@@ -36,7 +38,7 @@ void Score::draw()
 
 bool Score::isOld()
 {
-    if(timer.getTime() > 2)
+    if(timer.getTime() > 1)
         return true;
     else
         return false;
@@ -45,4 +47,10 @@ bool Score::isOld()
 String Score::getString()
 {
     return string;
+}
+
+void Score::move()
+{
+    Vector2f position(string.GetPosition());
+    string.SetPosition(position.x, position.y-0.5);
 }

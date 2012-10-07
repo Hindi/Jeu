@@ -24,12 +24,13 @@ class Score
 
         sf::String getString();
 
-        sf::String string;
+        void move();
 
     private:
 
         sf::Font m_fontCubic;
 
+        sf::String string;
 
         unsigned short const m_score;
 
