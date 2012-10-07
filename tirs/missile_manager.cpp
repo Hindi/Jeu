@@ -3,6 +3,8 @@
 using namespace sf;
 using namespace std;
 
+Missile_manager *Missile_manager::_singleton= NULL;
+
 Missile_manager::Missile_manager():
         nombreMissiles(7),
         fireDelay(1)
@@ -194,6 +196,26 @@ void Missile_manager::setPositionLibre(int position, bool mode)
 {
     boolPositionLibres[position] = mode;
 }
+
+Missile_manager* Missile_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "missile manager : creating singleton." << std::endl;
+        _singleton =  new Missile_manager;
+      }
+
+    return _singleton;
+  }
+
+void Missile_manager::kill ()
+  {
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+  }
 
 void Missile_manager::setPlayer(Player *externPlayer)
 {

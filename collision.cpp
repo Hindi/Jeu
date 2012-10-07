@@ -17,10 +17,9 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Missile_manager &missile_manager):
+Collision::Collision(Vector2f windowSize, Player &player):
             m_player(player),
-            m_windowSize(windowSize),
-            m_missile_manager(missile_manager)
+            m_windowSize(windowSize)
 {
 
 }
@@ -131,13 +130,13 @@ void Collision::manageProjectileCollision()
     //**************************
     // Collisions classe missile
     //**************************
-    list<Missile*>::iterator litt(m_missile_manager.getMissile()->begin());
-    for(; litt != m_missile_manager.getMissile()->end(); litt++)
+    list<Missile*>::iterator litt(Missile_manager::getInstance()->getMissile()->begin());
+    for(; litt != Missile_manager::getInstance()->getMissile()->end(); litt++)
     {
         //On check les ennemis
         for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
         {
-            if(m_missile_manager.getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
+            if(Missile_manager::getInstance()->getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
                 projectileRect = (*litt)->getBoundingBox();
                 projectilePosition.y = (*litt)->GetPosition().y;
@@ -148,8 +147,8 @@ void Collision::manageProjectileCollision()
                 {
                     (*li)->recieveDamages((*litt)->getDamage());
                     m_player.addScore((*li)->getScoreHit());
-                    m_missile_manager.setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
-                    (litt) = m_missile_manager.getMissile()->erase(litt);
+                    Missile_manager::getInstance()->setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
+                    (litt) = Missile_manager::getInstance()->getMissile()->erase(litt);
                 }
             }
         }

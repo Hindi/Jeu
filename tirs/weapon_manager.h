@@ -6,21 +6,27 @@
 class Weapon_manager
 {
     public:
-        Weapon_manager();
-
-        //Destructeur
-        ~Weapon_manager();
 
         //Met à jour l'état des armes
         void manage();
 
         void setParams(Player *externPlayer);
 
+        static void kill();
+        static Weapon_manager* getInstance();
+
     private:
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
 
         Player *player;
+
+        Weapon_manager();
+
+        //Destructeur
+        ~Weapon_manager();
+
+        static Weapon_manager* _singleton;
 };
 
 #endif // WEAPON_MANAGER_H_INCLUDED

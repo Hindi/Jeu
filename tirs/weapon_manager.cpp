@@ -3,6 +3,7 @@
 using namespace std;
 using namespace sf;
 
+Weapon_manager* Weapon_manager::_singleton = NULL;
 
 Weapon_manager::Weapon_manager():
             secondaryScore(1000),
@@ -36,4 +37,24 @@ void Weapon_manager::manage()
 void Weapon_manager::setParams(Player *externPlayer)
 {
     player = externPlayer;
+}
+
+void Weapon_manager::kill()
+{
+    if (NULL != _singleton)
+      {
+        delete _singleton;
+        _singleton = NULL;
+      }
+}
+
+Weapon_manager* Weapon_manager::getInstance()
+{
+    if (NULL == _singleton)
+      {
+        std::cout << "weapon manager : creating singleton." << std::endl;
+        _singleton =  new Weapon_manager;
+      }
+
+    return _singleton;
 }

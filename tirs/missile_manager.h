@@ -13,9 +13,6 @@
 class Missile_manager
 {
     public:
-        Missile_manager();
-        ~Missile_manager();
-
         bool haveMissilesInProgress();
 
         void createMissile();//Vérifie s'il faut créer un missile ou non
@@ -30,6 +27,9 @@ class Missile_manager
         void setPositionLibre(int position, bool mode);
         void setPlayer(Player *externPlayer);
 
+        static void kill();
+        static Missile_manager* getInstance();
+
     private:
         Player *player;
         std::list<Missile*> m_missiles;
@@ -38,6 +38,12 @@ class Missile_manager
         int nombreMissiles, fireDelay;
         sf::Vector2f positionsLibres[7];
         bool boolPositionLibres[7];
+
+
+        Missile_manager();
+        ~Missile_manager();
+
+        static Missile_manager* _singleton;
 };
 
 #endif // MISSILE_MANAGER_H_INCLUDED
