@@ -51,12 +51,14 @@ void Jeu::start()
 	s1.Launch();
 
     //gestionnaires de missiles
-    Missile_manager missile_manager;
-    missile_manager.setPlayer(&player);
+    Missile_manager *missile_manager;
+    missile_manager = Missile_manager::getInstance();
+    missile_manager->setPlayer(&player);
 
     //Activateur d'armes
-    Weapon_manager weapon_manager;
-    weapon_manager.setParams(&player);
+    Weapon_manager *weapon_manager;
+    weapon_manager = Weapon_manager::getInstance();
+    weapon_manager->setParams(&player);
 
     //pannel
     const string filepathPanel = "images/pannel.png";
@@ -65,7 +67,7 @@ void Jeu::start()
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player, missile_manager);
+    Collision collision(windowSize, player);
 
     //Background
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT);
@@ -124,7 +126,7 @@ void Jeu::start()
             this->pause(Event, pannel, player);
             population->unFreeze();
         }
-        if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || missile_manager.haveMissilesInProgress())
+        if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
         {
             collision.manageProjectileCollision();
         }
@@ -143,11 +145,11 @@ void Jeu::start()
                 invincible = false;
             }
         }
-        weapon_manager.manage();
+        weapon_manager->manage();
         drop_manager->manage();
         player.draw();
         population->manage();
-        missile_manager.manage();
+        missile_manager->manage();
         pannel.checkPannel();
         scoreManager->manage();
         app.Display();
