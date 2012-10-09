@@ -13,7 +13,7 @@
 class Script:public sf::Thread
 {
     public:
-        Script( short const id, std::string msg);
+        Script( short const id);
         void niveau1();
         void niveau2();
 
@@ -22,7 +22,6 @@ class Script:public sf::Thread
         void Run();
 
         short const id;
-        std::string msg;
         Timer timer;
 };
 

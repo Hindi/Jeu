@@ -47,8 +47,6 @@ void Jeu::start()
     Population *population;
     population = Population::getInstance();
     population->setPlayer(&player);
-    Script s1( 1, "I am standing on the left.");
-	s1.Launch();
 
     //gestionnaires de missiles
     Missile_manager *missile_manager;
@@ -70,7 +68,7 @@ void Jeu::start()
     Collision collision(windowSize, player);
 
     //Background
-    Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT);
+    Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
 
     population->createShip(Vector2f(100, 100), "don't move",true);

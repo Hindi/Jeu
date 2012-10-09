@@ -3,11 +3,14 @@
 #include "menu.h"
 #include "timer.h"
 #include <iostream>
+#include "const.h"
 
 using namespace std;
 using namespace sf;
 
 void startGame(Jeu jeu);
+
+RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
@@ -19,7 +22,6 @@ TODO LIST
 - Problèmes de threads : voir missiles
 - test de performance
 - Deux Joueurs
-- Score qui apparaît sur l'ennemi
 */
 
 int main()

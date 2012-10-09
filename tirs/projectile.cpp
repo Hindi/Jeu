@@ -74,18 +74,6 @@ Sprite Projectile::getSprite()
     return spriteFirst;
 }
 
-void Projectile::Render(sf::RenderTarget& target) const
-{
-   if(m_followAnim)
-   {
-       target.Draw(spriteFifth);
-       target.Draw(spriteFourth);
-       target.Draw(spriteThird);
-       target.Draw(spriteSecond);
-   }
-   target.Draw(spriteFirst);
-}
-
 short Projectile::getSpeed(int axis) const
 {
     if(axis==0)
@@ -99,15 +87,17 @@ const short Projectile::getCoefSpeed() const
     return m_coefSpeed;
 }
 
-void Projectile::setPosition(Vector2f position)
+void Projectile::setPosition(Vector2f speed)
 {
-    m_position = position;
+    m_position.x += speed.x;
+    m_position.y += speed.y;
     if(timerFollow.getTime() > followRate && m_positions.size() < 5)
     {
-        m_positions.push_front(position);
+        m_positions.push_front(speed);
         timerFollow.reinitialize();
-        this->setProjPosition();
     }
+    this->setProjPosition(speed);
+
 }
 
 Vector2f Projectile::getPosition()
@@ -127,16 +117,18 @@ IntRect Projectile::getBoundingBox() const
     return boundingBox;
 }
 
-
-void Projectile::setProjPosition()
+void Projectile::setProjPosition(Vector2f speed)
 {
-    if(m_followAnim)
+    if(m_followAnim && !m_positions.empty())
     {
-        vector<Sprite*>::size_type j = m_positions.size()-1;
-        sprites[j]->SetPosition(m_positions[1]);
-        cout << m_positions.back().x << endl;
+            for(vector<Sprite*>::size_type i=0;i<sprites.size();i++)
+            {
+                Vector2f currentPosition(sprites[i]->GetPosition());
+                sprites[i]->SetPosition(currentPosition.x + speed.x, currentPosition.y + speed.y);
+            }
+        }
     }
-}
+
 
 bool Projectile::hasAnimationFollow()
 {
@@ -147,4 +139,24 @@ bool Projectile::hasAnimationFollow()
 deque<Vector2f> Projectile::getPositions()
 {
     return m_positions;
+}
+
+
+void Projectile::move(Vector2f speed)
+{
+    //spriteFirst.Move(speed);
+    spriteFirst.SetPosition(m_position.x + speed.x, m_position.y + speed.y);
+}
+
+void Projectile::draw()
+{
+    app.Draw(spriteFirst);
+
+    if(m_followAnim)
+    {
+        app.Draw(spriteSecond);
+        app.Draw(spriteThird);
+        app.Draw(spriteFourth);
+        app.Draw(spriteFifth);
+    }
 }

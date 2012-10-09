@@ -6,10 +6,11 @@
 #include <deque>
 #include "../timer.h"
 #include "../image_manager.h"
+#include "../const.h"
 
 //Type projectile géré par player et enemy
 
-class Projectile : public sf::Drawable
+class Projectile
 {
     public:
         Projectile(const std::string &filepath, sf::Vector2f position, sf::Vector2f speed, const int coefSpeed, bool followAnim = false);
@@ -19,9 +20,6 @@ class Projectile : public sf::Drawable
 
         //Sprite des projectiles
         sf::Sprite getSprite();
-
-        //Parce que c'est un drawable, permet de les dessiner directement
-        void Render(sf::RenderTarget& target) const;
 
         //Accesseur sur la vitesse
         short getSpeed(int axis) const;
@@ -33,17 +31,21 @@ class Projectile : public sf::Drawable
         sf::IntRect getBoundingBox() const;
 
         //Setter de position
-        void setPosition(sf::Vector2f position);
+        void setPosition(sf::Vector2f speed);
 
         //Accesseur sur la position
         sf::Vector2f getPosition();
 
-        void setProjPosition();
+        void setProjPosition(sf::Vector2f speed);
 
         bool hasAnimationFollow();
 
 
         std::deque<sf::Vector2f> getPositions();
+
+        void move(sf::Vector2f speed);
+
+        void draw();
 
     protected:
 

@@ -52,7 +52,7 @@ void Spawn::fire()
         positionProjectile.y += image->GetHeight()-20;
         const string filepath = "images/projectile2.png";
         projectile = new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), coefSpeed);
-        projectile->SetPosition(positionProjectile);
+        projectile->setPosition(positionProjectile);
         //On le rajoute à la liste des projectiles gérée par le projectile manager.
         Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     }

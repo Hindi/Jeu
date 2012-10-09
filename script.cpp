@@ -3,9 +3,8 @@
 using namespace std;
 using namespace sf;
 
-Script::Script(short const id, std::string msg):
-            id(id),
-            msg(msg)
+Script::Script(short const id):
+            id(id)
 {
     timer.start();
 }

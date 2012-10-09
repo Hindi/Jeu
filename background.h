@@ -5,12 +5,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include "image_manager.h"
-#include "const.h"
 
 class Background
 {
     public:
-        Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT);
+        Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::RenderWindow &app);
 
         //Destructeur
         virtual ~Background();
@@ -22,6 +21,7 @@ class Background
         void init();
 
     protected:
+        sf::RenderWindow &app;
 
         //Nombre d'étoiles
         short LIST_SIZE;

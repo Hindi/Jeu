@@ -113,7 +113,7 @@ void Collision::manageProjectileCollision()
             if(Projectile_manager::getInstance()->getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
                 projectileRect = (*lit)->getBoundingBox();
-                projectilePosition.y = (*lit)->GetPosition().y;
+                projectilePosition.y = (*lit)->getPosition().y;
                 projectileRect.Top  = projectilePosition.y;
                 projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
                 enemyRect = (*li)->getBoundingBox();

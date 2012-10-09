@@ -57,11 +57,7 @@ void Projectile_manager::moveProjectile()
         for(; lit!=m_enemyProjectiles.end(); )//On parcours la liste des projectiles ennemi
         {
             Vector2f speed((*lit)->getSpeed(0)*elapsedTime*(*lit)->getCoefSpeed(),((*lit)->getSpeed(2))*elapsedTime*(*lit)->getCoefSpeed());//On calcule le vecteur vitesse
-            (*lit)->Move(speed);//On déplace chacun des projectile
-            Vector2f position((*lit)->getPosition());
-            position.x += speed.x;
-            position.y += speed.y;
-            (*lit)->setPosition(position);
+            (*lit)->setPosition(speed);
             if((*lit)->getPosition().y  > 1500 || (*lit)->getPosition().y  < -50 || (*lit)->getPosition().x  < -50 || (*lit)->getPosition().x > 1300)//On vérifie sa position
             {
                 lit = m_enemyProjectiles.erase(lit);//S'il est sorti de l'écran on le supprime
@@ -84,13 +80,8 @@ void Projectile_manager::moveProjectile()
         {
             //cout << (*li)->getSpeed(0) << " " << (*li)->getSpeed(1) << endl;
             Vector2f speed((*li)->getSpeed(0)*elapsedTime*(*li)->getCoefSpeed(),((*li)->getSpeed(2))*elapsedTime*(*li)->getCoefSpeed());//On calcule le vecteur vitesse
-            //(*li)->Move(speed);//On déplace chacun des projectile
-            Vector2f position((*li)->GetPosition());
-            position.x += speed.x;
-            position.y += speed.y;
-            (*li)->SetPosition(position);
-            (*li)->setPosition(position);
-            if((*li)->GetPosition().y  < 0)//On vérifie sa position
+            (*li)->setPosition(speed);
+            if((*li)->getPosition().y  < 0)//On vérifie sa position
             {
                 li = m_playerProjectiles.erase(li);//S'il est sorti de l'écran on le supprime
             }
@@ -111,7 +102,7 @@ void Projectile_manager::drawProjectile()
         list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
         for(; lit!=m_enemyProjectiles.end(); lit++)
         {
-            app.Draw(**lit);//Dessine les projectiles ennemi
+            (*lit)->draw();//Dessine les projectiles ennemi
         }
     }
     if(this->havePlayerProjectilesInProgress())
@@ -119,7 +110,7 @@ void Projectile_manager::drawProjectile()
         list<Projectile*>::const_iterator li(m_playerProjectiles.begin());
         for(; li!=m_playerProjectiles.end(); li++)
         {
-            app.Draw(**li);//Dessine les projectiles du joueur
+            (*li)->draw();//Dessine les projectiles du joueur
         }
     }
 
