@@ -276,7 +276,7 @@ void Enemy::fireFocus()
     int norm = sqrt(distance.x*distance.x + distance.y*distance.y);
     //On calcule la vitesse du projectile
     distance.x = ((distance.x+indistinctness)/norm)*projectileSpeed;
-    distance.y = (distance.y/norm)*projectileSpeed;
+    distance.y = ((distance.y+indistinctness)/norm)*projectileSpeed;
     //La position de départ du projectile
     Vector2f positionProjectile = m_position;
     positionProjectile.x += (image->GetWidth()/2)-18;

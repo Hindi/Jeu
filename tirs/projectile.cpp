@@ -87,17 +87,9 @@ const short Projectile::getCoefSpeed() const
     return m_coefSpeed;
 }
 
-void Projectile::setPosition(Vector2f speed)
+void Projectile::setPosition(Vector2f position)
 {
-    m_position.x += speed.x;
-    m_position.y += speed.y;
-    if(timerFollow.getTime() > followRate && m_positions.size() < 5)
-    {
-        m_positions.push_front(speed);
-        timerFollow.reinitialize();
-    }
-    this->setProjPosition(speed);
-
+    m_position = position;
 }
 
 Vector2f Projectile::getPosition()
@@ -121,13 +113,19 @@ void Projectile::setProjPosition(Vector2f speed)
 {
     if(m_followAnim && !m_positions.empty())
     {
-            for(vector<Sprite*>::size_type i=0;i<sprites.size();i++)
-            {
-                Vector2f currentPosition(sprites[i]->GetPosition());
-                sprites[i]->SetPosition(currentPosition.x + speed.x, currentPosition.y + speed.y);
-            }
+        for(vector<Vector2f*>::size_type j=0;j<m_positions.size();j++)
+        {
+            m_positions[j].x += speed.x;
+            m_positions[j].y += speed.y;
+        }
+
+        for(vector<Sprite*>::size_type i=0;i<sprites.size();i++)
+        {
+            Vector2f currentPosition(sprites[i]->GetPosition());
+            sprites[i]->SetPosition(m_positions[i]);
         }
     }
+}
 
 
 bool Projectile::hasAnimationFollow()
@@ -144,8 +142,14 @@ deque<Vector2f> Projectile::getPositions()
 
 void Projectile::move(Vector2f speed)
 {
-    //spriteFirst.Move(speed);
-    spriteFirst.SetPosition(m_position.x + speed.x, m_position.y + speed.y);
+    m_position.x += speed.x;
+    m_position.y += speed.y;
+    if(timerFollow.getTime() > followRate && m_positions.size() < 5)
+    {
+        m_positions.push_front(speed);
+        timerFollow.reinitialize();
+    }
+    this->setProjPosition(speed);
 }
 
 void Projectile::draw()

@@ -31,7 +31,7 @@ class Projectile
         sf::IntRect getBoundingBox() const;
 
         //Setter de position
-        void setPosition(sf::Vector2f speed);
+        void setPosition(sf::Vector2f position);
 
         //Accesseur sur la position
         sf::Vector2f getPosition();
