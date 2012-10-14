@@ -134,13 +134,13 @@
 		<Cursor position="1015" topLine="0" />
 	</File>
 	<File name="tirs\projectile.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="3928" topLine="82" />
+		<Cursor position="4068" topLine="116" />
 	</File>
 	<File name="tirs\projectile.h" open="1" top="0" tabpos="6">
-		<Cursor position="923" topLine="0" />
+		<Cursor position="1212" topLine="18" />
 	</File>
 	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="4312" topLine="120" />
+		<Cursor position="4312" topLine="33" />
 	</File>
 	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="19">
 		<Cursor position="1474" topLine="0" />
