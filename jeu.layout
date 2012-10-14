@@ -31,7 +31,7 @@
 	<File name="collision.h" open="0" top="0" tabpos="8">
 		<Cursor position="986" topLine="8" />
 	</File>
-	<File name="const.h" open="1" top="0" tabpos="2">
+	<File name="const.h" open="0" top="0" tabpos="2">
 		<Cursor position="80" topLine="0" />
 	</File>
 	<File name="drop.cpp" open="0" top="0" tabpos="16">
@@ -58,11 +58,11 @@
 	<File name="enemies\boss.h" open="0" top="0" tabpos="17">
 		<Cursor position="813" topLine="0" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="7015" topLine="261" />
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="14570" topLine="426" />
 	</File>
-	<File name="enemies\enemy.h" open="1" top="0" tabpos="10">
-		<Cursor position="899" topLine="105" />
+	<File name="enemies\enemy.h" open="1" top="0" tabpos="7">
+		<Cursor position="3167" topLine="93" />
 	</File>
 	<File name="enemies\spawn.cpp" open="0" top="0" tabpos="18">
 		<Cursor position="2579" topLine="48" />
@@ -76,14 +76,14 @@
 	<File name="image_manager.h" open="0" top="0" tabpos="8">
 		<Cursor position="993" topLine="0" />
 	</File>
-	<File name="jeu.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="615" topLine="0" />
+	<File name="jeu.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="3311" topLine="0" />
 	</File>
-	<File name="jeu.h" open="1" top="0" tabpos="4">
+	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="502" topLine="9" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="106" topLine="0" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1022" topLine="12" />
 	</File>
 	<File name="menu.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="2530" topLine="33" />
@@ -97,17 +97,17 @@
 	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="306" topLine="12" />
 	</File>
-	<File name="player.cpp" open="1" top="0" tabpos="9">
+	<File name="player.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="2725" topLine="81" />
 	</File>
 	<File name="player.h" open="0" top="0" tabpos="20">
 		<Cursor position="338" topLine="0" />
 	</File>
-	<File name="population.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="6230" topLine="181" />
+	<File name="population.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="1876" topLine="72" />
 	</File>
-	<File name="population.h" open="0" top="0" tabpos="4">
-		<Cursor position="1829" topLine="51" />
+	<File name="population.h" open="1" top="0" tabpos="10">
+		<Cursor position="1903" topLine="60" />
 	</File>
 	<File name="script.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="647" topLine="17" />
@@ -133,17 +133,17 @@
 	<File name="tirs\missile_manager.h" open="0" top="0" tabpos="29">
 		<Cursor position="1015" topLine="0" />
 	</File>
-	<File name="tirs\projectile.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="4068" topLine="116" />
+	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="4752" topLine="108" />
 	</File>
-	<File name="tirs\projectile.h" open="1" top="0" tabpos="6">
-		<Cursor position="1212" topLine="18" />
+	<File name="tirs\projectile.h" open="1" top="0" tabpos="5">
+		<Cursor position="1264" topLine="24" />
 	</File>
-	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="4312" topLine="33" />
+	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="5154" topLine="137" />
 	</File>
-	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="19">
-		<Cursor position="1474" topLine="0" />
+	<File name="tirs\projectile_manager.h" open="1" top="0" tabpos="14">
+		<Cursor position="1213" topLine="24" />
 	</File>
 	<File name="tirs\score.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="67" topLine="0" />
@@ -163,10 +163,10 @@
 	<File name="tirs\weapon_manager.h" open="0" top="0" tabpos="0">
 		<Cursor position="162" topLine="0" />
 	</File>
-	<File name="unit.cpp" open="0" top="0" tabpos="13">
-		<Cursor position="2297" topLine="41" />
+	<File name="unit.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="2297" topLine="42" />
 	</File>
-	<File name="unit.h" open="0" top="0" tabpos="12">
-		<Cursor position="213" topLine="0" />
+	<File name="unit.h" open="1" top="0" tabpos="12">
+		<Cursor position="977" topLine="6" />
 	</File>
 </CodeBlocks_layout_file>

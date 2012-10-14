@@ -17,10 +17,8 @@ TODO LIST
 
 - Plusieurs planètes
 - Commencer la classe pour la traînée de missiles
-- Voir pour un ralentissement du temps
 - Missiles qui n'atteignent jamais les enemy
 - Problèmes de threads : voir missiles
-- test de performance
 - Deux Joueurs
 */
 
@@ -28,8 +26,8 @@ int main()
 {
 
     const int SCREEN_WIDTH(1366), SCREEN_HEIGHT(768), MAX_MENU(3);
-    //app.UseVerticalSync(true);
-    //app.SetFramerateLimit(60);
+    app.UseVerticalSync(true);
+    app.SetFramerateLimit(60);
 
 
     //Gestionnaire d'images

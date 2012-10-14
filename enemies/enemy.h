@@ -101,6 +101,9 @@ class Enemy : public Unit
         //Retourn le spawn rate
         short getSpawnRate() const;
 
+        void freeze();
+        void unfreeze();
+
 
     protected:
         Player &player;
@@ -123,7 +126,7 @@ class Enemy : public Unit
 
         //Constantes de score, vitesse et fréquence de tir
         unsigned short const m_scoreExplosion;
-        short const m_scoreHit, projectileSpeed, m_coefSpeed, m_fireRate;
+        short const m_scoreHit, projectileSpeed,  m_fireRate;
         //Sauvegarde du timer de déplacement
         float savedTimerMove;
 
@@ -141,7 +144,7 @@ class Enemy : public Unit
         const char* const m_moveMethod;
 
         //Etat du déplacement
-        short  m_moveValue;
+        short  m_moveValue, m_coefSpeed;
 
         //Permet de spawn des ennemis
         bool m_spawner;

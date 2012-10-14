@@ -64,7 +64,7 @@ class Unit
         short m_life;
 
         // Vitesses sur chaque axe
-        short const m_xSpeed, m_ySpeed;
+        short m_xSpeed, m_ySpeed;
 
         //Le coeficient de vitesse
         short coefSpeed;

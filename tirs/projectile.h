@@ -47,6 +47,9 @@ class Projectile
 
         void draw();
 
+        void freeze();
+        void unfreeze();
+
     protected:
 
         //Le sprite

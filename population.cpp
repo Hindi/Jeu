@@ -7,6 +7,7 @@ Population *Population::_singleton= NULL;
 
 Population::Population()
 {
+    m_coefSpeed = 10;
     player = NULL;
     Population* _singleton= NULL;
 }
@@ -76,6 +77,15 @@ void Population::checkPopulation()
 
     Projectile_manager::getInstance()->moveProjectile();
 
+
+    if(freezed == true && timerFreeze.getTime() > 2)
+    {
+        this->unfreeze();
+        timerFreeze.pause();
+        timerFreeze.reinitialize();
+        freezed = false;
+    }
+
 }
 
 void Population::explode(Enemy *enemy)
@@ -134,7 +144,7 @@ bool Population::haveEnnemyInProgress()
     }
 }
 
-void Population::freeze()
+void Population::stop()
 {
     list<Enemy*>::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();lit++)
@@ -143,7 +153,7 @@ void Population::freeze()
         }
 }
 
-void Population::unFreeze()
+void Population::unStop()
 {
     list<Enemy*>::iterator lit(m_enemies.begin());
     for(; lit!=m_enemies.end();lit++)
@@ -189,7 +199,7 @@ void Population::spawn(Enemy *enemy)
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, 10, 1, false, *player));
+        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, *player));
         enemy->upDateLastSpawnTime();
     }
 }
@@ -217,4 +227,44 @@ void Population::kill ()
 void Population::setPlayer(Player *externPlayer)
 {
     player = externPlayer;
+}
+
+void Population::freeze()
+{
+    if(freezed != true)
+    {
+        timerFreeze.start();
+        list<Enemy*>::iterator lit(m_enemies.begin());
+        for(; lit!=m_enemies.end();lit++)
+        {
+            (*lit)->freeze();
+        }
+
+        Projectile_manager::getInstance()->freeze();
+        m_coefSpeed /= 2;
+
+        freezed = true;
+    }
+}
+
+void Population::unfreeze()
+{
+    if(freezed == true)
+    {
+        list<Enemy*>::iterator lit(m_enemies.begin());
+        for(; lit!=m_enemies.end();lit++)
+        {
+            (*lit)->unfreeze();
+        }
+
+        Projectile_manager::getInstance()->unfreeze();
+        m_coefSpeed *= 2;
+
+    }
+    freezed = false;
+}
+
+bool Population::isFreezed()
+{
+    return freezed;
 }

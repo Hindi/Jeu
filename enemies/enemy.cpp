@@ -410,6 +410,8 @@ void Enemy::startTimer()
 void Enemy::pauseTimer()
 {
     timer.pause();
+    timerSpawn.pause();
+    timerMove.pause();
 }
 
 
@@ -450,4 +452,15 @@ void Enemy::upDateLastSpawnTime()
 short Enemy::getSpawnRate() const
 {
     return m_spawnRate;
+}
+
+
+void Enemy::freeze()
+{
+    m_coefSpeed /= 3;
+}
+
+void Enemy::unfreeze()
+{
+    m_coefSpeed *= 3;
 }

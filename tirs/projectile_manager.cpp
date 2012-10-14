@@ -158,3 +158,21 @@ void Projectile_manager::kill ()
         _singleton = NULL;
       }
   }
+
+void Projectile_manager::freeze()
+{
+    list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
+    for(; lit!=m_enemyProjectiles.end(); lit++)
+    {
+        (*lit)->freeze();//Dessine les projectiles ennemi
+    }
+}
+
+void Projectile_manager::unfreeze()
+{
+    list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
+    for(; lit!=m_enemyProjectiles.end(); lit++)
+    {
+        (*lit)->unfreeze();//Dessine les projectiles ennemi
+    }
+}

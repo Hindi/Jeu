@@ -114,15 +114,19 @@ void Jeu::start()
             collision.manageCollisionsX();
             collision.manageCollisionsY();
         }
+        if(input.IsKeyDown(Key::S))
+        {
+            population->freeze();
+        }
         if(input.IsKeyDown(Key::Space))
         {
             player.fire();
         }
         if(input.IsKeyDown(Key::Escape))
         {
-            population->freeze();
+            population->stop();
             this->pause(Event, pannel, player);
-            population->unFreeze();
+            population->unStop();
         }
         if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
         {

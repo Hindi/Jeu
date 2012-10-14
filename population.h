@@ -14,6 +14,7 @@
 #include "tirs/score_manager.h"
 #include "Anim.hpp"
 #include "const.h"
+#include "timer.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -33,10 +34,10 @@ class Population
         void checkPopulation();
 
         //Met le jeu en pause
-        void freeze();
+        void stop();
 
         //Sort le jeu de sa pause
-        void unFreeze();
+        void unStop();
 
         //Créateurs d'ennemis
         void createShip(sf::Vector2f position, char* move, bool spawner = false);
@@ -66,6 +67,10 @@ class Population
         static Population* getInstance();
         void setPlayer(Player *externPlayer);
 
+        void freeze();
+        void unfreeze();
+        bool isFreezed();
+
     protected:
         //Liste des ennemis
         std::list<Enemy*> m_enemies;
@@ -84,6 +89,12 @@ class Population
         virtual ~Population();
 
         static Population* _singleton;
+
+        bool freezed;
+
+        short m_coefSpeed;
+
+        Timer timerFreeze;
 
 };
 

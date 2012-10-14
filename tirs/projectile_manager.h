@@ -39,6 +39,9 @@ class Projectile_manager
         static void kill();
         static Projectile_manager* getInstance();
 
+        void freeze();
+        void unfreeze();
+
     private:
         //Liste des projectiles ennemis
         std::list<Projectile*> m_enemyProjectiles;

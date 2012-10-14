@@ -176,3 +176,15 @@ void Projectile::draw()
         app.Draw(spriteFifth);
     }
 }
+
+void Projectile::freeze()
+{
+    m_speed.x /=3;
+    m_speed.y /=3;
+}
+
+void Projectile::unfreeze()
+{
+    m_speed.x *=3;
+    m_speed.y *=3;
+}
