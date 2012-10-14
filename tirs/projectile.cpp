@@ -11,6 +11,7 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             m_followAnim(followAnim),
             followRate(0.1)
 {
+    this->setPosition(position);
     if(!m_followAnim)
     {
 
@@ -58,6 +59,11 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
         sprites.push_back(&spriteThird);
         sprites.push_back(&spriteSecond);
         sprites.push_back(&spriteFirst);
+        for(vector<Sprite*>::size_type i=0;i<sprites.size();i++)
+        {
+            Vector2f currentPosition(sprites[i]->GetPosition());
+            sprites[i]->SetPosition(m_position);
+        }
     }
 
 
@@ -90,6 +96,7 @@ const short Projectile::getCoefSpeed() const
 void Projectile::setPosition(Vector2f position)
 {
     m_position = position;
+    spriteFirst.SetPosition(position);
 }
 
 Vector2f Projectile::getPosition()
@@ -125,6 +132,13 @@ void Projectile::setProjPosition(Vector2f speed)
             sprites[i]->SetPosition(m_positions[i]);
         }
     }
+    else
+    {
+        m_position.x += speed.x;
+        m_position.y += speed.y;
+
+        spriteFirst.SetPosition(m_position);
+    }
 }
 
 
@@ -142,11 +156,9 @@ deque<Vector2f> Projectile::getPositions()
 
 void Projectile::move(Vector2f speed)
 {
-    m_position.x += speed.x;
-    m_position.y += speed.y;
     if(timerFollow.getTime() > followRate && m_positions.size() < 5)
     {
-        m_positions.push_front(speed);
+        m_positions.push_front(m_position);
         timerFollow.reinitialize();
     }
     this->setProjPosition(speed);

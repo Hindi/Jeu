@@ -138,14 +138,6 @@ list<Projectile*>* Projectile_manager::getPlayerProjectiles()
     return &m_playerProjectiles;
 }
 
-void Projectile_manager::animationFollow()
-{
-    list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
-    for(; lit != m_enemyProjectiles.end(); lit++)
-    {
-
-    }
-}
 
 Projectile_manager* Projectile_manager::getInstance()
   {
