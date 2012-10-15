@@ -15,14 +15,6 @@ Population::Population()
 
 Population::~Population()
 {
-    if(this->haveEnnemyInProgress())
-    {
-        list<Enemy*>::iterator lit(m_enemies.begin());
-        for(; lit!=m_enemies.end();)
-        {
-            delete *lit;
-        }
-    }
     m_enemies.clear();
 }
 
@@ -30,7 +22,7 @@ void Population::drawPopulation()
 {
     if(this->haveEnnemyInProgress())
     {
-        list<Enemy*>::const_iterator lit(m_enemies.begin());
+        list<tr1::shared_ptr<Enemy> >::const_iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end(); lit++)//Si des ennemis sont en vie
         {
             (*lit)->draw();//On les dessine
@@ -40,7 +32,7 @@ void Population::drawPopulation()
 
 }
 
-list<Enemy*>* Population::getPopulation()
+list<tr1::shared_ptr<Enemy> >* Population::getPopulation()
 {
     //Retourne la liste des ennemis
     return &m_enemies;
@@ -51,7 +43,7 @@ void Population::checkPopulation()
     if(this->haveEnnemyInProgress())
     {
         //On check les ennemis
-        list<Enemy*>::iterator lit(m_enemies.begin());
+        list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();)
         {
             if((*lit)->isDead())
@@ -88,7 +80,7 @@ void Population::checkPopulation()
 
 }
 
-void Population::explode(Enemy *enemy)
+void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
 {
     m_deadEnemies.push_back(enemy);
 
@@ -110,7 +102,7 @@ void Population::manageExplosion()
     if(!m_deadEnemies.empty())
     {
         short currentFrame;
-        list<Enemy*>::iterator lit(m_deadEnemies.begin());
+        list<tr1::shared_ptr<Enemy> >::iterator lit(m_deadEnemies.begin());
         for(; lit!=m_deadEnemies.end();lit++)
         {
             //Si l'animation est en pause
@@ -146,7 +138,7 @@ bool Population::haveEnnemyInProgress()
 
 void Population::stop()
 {
-    list<Enemy*>::iterator lit(m_enemies.begin());
+    list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();lit++)
         {
             (*lit)->pauseTimer();
@@ -155,7 +147,7 @@ void Population::stop()
 
 void Population::unStop()
 {
-    list<Enemy*>::iterator lit(m_enemies.begin());
+    list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
     for(; lit!=m_enemies.end();lit++)
             {
                 (*lit)->startTimer();
@@ -165,18 +157,21 @@ void Population::unStop()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, spawner, *player));
+    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, 40, 1, spawner, *player));
+    m_enemies.push_back(a);
 }
 
 void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    m_enemies.push_back(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, spawner, *player));
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, 20, 2, spawner, *player));
+    m_enemies.push_back(a);
 }
 
 void Population::createBoss(Vector2f position, char* move, char* name)
 {
-    m_enemies.push_back(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, *player));
+    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, *player));
+    m_enemies.push_back(a);
 }
 
 void Population::manage()
@@ -194,12 +189,13 @@ bool Population::haveSpawnInProgress()
         return true;
 }
 
-void Population::spawn(Enemy *enemy)
+void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 {
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
-        m_enemies.push_back(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, *player));
+         tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, *player));
+        m_enemies.push_back(a);
         enemy->upDateLastSpawnTime();
     }
 }
@@ -234,7 +230,7 @@ void Population::freeze()
     if(freezed != true)
     {
         timerFreeze.start();
-        list<Enemy*>::iterator lit(m_enemies.begin());
+        list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();lit++)
         {
             (*lit)->freeze();
@@ -251,7 +247,7 @@ void Population::unfreeze()
 {
     if(freezed == true)
     {
-        list<Enemy*>::iterator lit(m_enemies.begin());
+        list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
         for(; lit!=m_enemies.end();lit++)
         {
             (*lit)->unfreeze();

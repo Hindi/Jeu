@@ -73,7 +73,7 @@ void Missile_manager::moveMissile()
     double elapsedTime = app.GetFrameTime();
     list<Missile*>::iterator lit(m_missiles.begin());
 
-    list<Enemy*>::const_iterator li(Population::getInstance()->getPopulation()->begin());
+     list<tr1::shared_ptr<Enemy> >::const_iterator li(Population::getInstance()->getPopulation()->begin());
     //***********************************************
     //Cette fonction gère le déplacement des missiles
     //***********************************************

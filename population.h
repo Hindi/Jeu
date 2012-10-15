@@ -3,6 +3,8 @@
 #include <list>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <tr1/memory>
+
 #include "enemies/enemy.h"
 #include "tirs/projectile.h"
 #include "tirs/projectile_manager.h"
@@ -22,7 +24,7 @@ class Population
 {
     public:
         //Liste des ennemis
-        std::list<Enemy*>* getPopulation();
+        std::list<std::tr1::shared_ptr<Enemy> >* getPopulation();
 
         //Vérifie si des ennemis sont en vie
         bool haveEnnemyInProgress();
@@ -44,7 +46,7 @@ class Population
         void createFlyingSaucer(sf::Vector2f position, char* move, bool spawner = false);
 
         //Fait exploser un ennemi
-        void explode(Enemy *enemy);
+        void explode(std::tr1::shared_ptr<Enemy> enemy);
 
         //Fait exploser un spawn
         void explode(Spawn *spawn);
@@ -61,7 +63,7 @@ class Population
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();
 
-        void spawn(Enemy *enemy);
+        void spawn(std::tr1::shared_ptr<Enemy> enemy);
 
         static void kill();
         static Population* getInstance();
@@ -73,11 +75,11 @@ class Population
 
     protected:
         //Liste des ennemis
-        std::list<Enemy*> m_enemies;
-        std::list<Enemy*> m_spawns;
+        std::list<std::tr1::shared_ptr<Enemy> > m_enemies;
+        std::list<std::tr1::shared_ptr<Enemy> > m_spawns;
 
         //Liste des ennemis morts
-        std::list<Enemy*> m_deadEnemies;
+        std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;
 
         Player *player;
 

@@ -2,6 +2,8 @@
 #define MISSILE_MANAGER_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
+#include <tr1/memory>
+
 #include "missile.h"
 #include "../population.h"
 #include "math.h"

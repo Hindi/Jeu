@@ -2120,12 +2120,13 @@
 
 1349786078 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1349786078 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1350344455 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
-1349786078 c:\users\shalafi\documents\github\jeu\collision.h
+1350344427 c:\users\shalafi\documents\github\jeu\collision.h
 	<SFML/Graphics.hpp>
 	<iostream>
+	<tr1/memory>
 	"player.h"
 	"population.h"
 	"tirs/projectile_manager.h"
@@ -2176,10 +2177,11 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1350251990 c:\users\shalafi\documents\github\jeu\population.h
+1350344718 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
+	<tr1/memory>
 	"enemies/enemy.h"
 	"tirs/projectile.h"
 	"tirs/projectile_manager.h"
@@ -2219,9 +2221,10 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1349786078 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
+1350344736 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
 	<list>
 	<SFML/Graphics.hpp>
+	<tr1/memory>
 	"missile.h"
 	"../population.h"
 	"math.h"
@@ -2322,13 +2325,14 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1349786078 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1350344063 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
 	"timer.h"
 	<iostream>
 	"const.h"
+	<tr1/memory>
 
 1349401369 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
@@ -2339,7 +2343,7 @@
 1349786078 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1350252123 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1350344652 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2359,7 +2363,7 @@
 1349403418 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
 	"missile.h"
 
-1349786078 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
+1350344680 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
 	"missile_manager.h"
 
 1350250726 source:c:\users\shalafi\documents\github\jeu\unit.cpp

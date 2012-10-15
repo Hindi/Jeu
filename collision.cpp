@@ -43,7 +43,7 @@ void Collision::manageCollisionsX()
 
     if(!m_player.getLostlife())
     {
-        list<Enemy*>::iterator li(Population::getInstance()->getPopulation()->begin());
+        list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
         for(; li!=Population::getInstance()->getPopulation()->end(); li++)
         {
             enemyRect = (*li)->getBoundingBox();
@@ -73,7 +73,7 @@ void Collision::manageCollisionsY()
 
     if(!m_player.getLostlife())
     {
-        list<Enemy*>::iterator li;
+        list<tr1::shared_ptr<Enemy> >::iterator li;
         for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end();)
         {
             enemyRect = (*li)->getBoundingBox();
@@ -103,7 +103,7 @@ void Collision::manageProjectileCollision()
     IntRect projectileRect, enemyRect;
     Vector2f projectilePosition;
     list<Projectile*>::iterator lit(Projectile_manager::getInstance()->getPlayerProjectiles()->begin());
-    list<Enemy*>::iterator li;
+    list<tr1::shared_ptr<Enemy> >::iterator li;
     list<Spawn*>::iterator spawnLi;
     //On check les ennemis
     for(; lit != Projectile_manager::getInstance()->getPlayerProjectiles()->end(); lit++)

@@ -4,6 +4,7 @@
 #include "timer.h"
 #include <iostream>
 #include "const.h"
+#include <tr1/memory>
 
 using namespace std;
 using namespace sf;
@@ -24,7 +25,6 @@ TODO LIST
 
 int main()
 {
-
     const int SCREEN_WIDTH(1366), SCREEN_HEIGHT(768), MAX_MENU(3);
     app.UseVerticalSync(true);
     app.SetFramerateLimit(60);

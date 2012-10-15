@@ -2,6 +2,8 @@
 #define COLLISION_H_INCLUDED
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <tr1/memory>
+
 #include "player.h"
 #include "population.h"
 #include "tirs/projectile_manager.h"
