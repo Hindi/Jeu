@@ -217,7 +217,7 @@ void Missile_manager::kill ()
       }
   }
 
-void Missile_manager::setPlayer(std::tr1::shared_ptr<Player> externPlayer)
+void Missile_manager::setPlayer(Player *externPlayer)
 {
     player = externPlayer;
 }

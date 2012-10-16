@@ -39,39 +39,39 @@ void Jeu::start()
     //Variables player :
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
 
-    std::tr1::shared_ptr<Player> player (new Player(1, positionPlayer));
+    Player player(1, positionPlayer);
     Drop_manager *drop_manager;
     drop_manager = Drop_manager::getInstance();
 
     //Variable population
     Population *population;
     population = Population::getInstance();
-    population->setPlayer(player);
+    population->setPlayer(&player);
 
     //gestionnaires de missiles
     Missile_manager *missile_manager;
     missile_manager = Missile_manager::getInstance();
-    missile_manager->setPlayer(player);
+    missile_manager->setPlayer(&player);
 
     //Activateur d'armes
     Weapon_manager *weapon_manager;
     weapon_manager = Weapon_manager::getInstance();
-    weapon_manager->setParams(player);
+    weapon_manager->setParams(&player);
 
     //pannel
     const string filepathPanel = "images/pannel.png";
     Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
-    Pannel pannel(filepathPanel, positionPannel, *player);
+    Pannel pannel(filepathPanel, positionPannel, player);
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, *player);
+    Collision collision(windowSize, player);
 
     //Background
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
 
-    population->createFlyingSaucer(Vector2f(100, 100), "don't move",true);
+    population->createShip(Vector2f(100, 100), "don't move",true);
 
     while (app.IsOpened() )
     {
@@ -90,27 +90,27 @@ void Jeu::start()
         //Déplacements :
         if(input.IsKeyDown(Key::Up))
         {
-            player->moveUp();
+            player.moveUp();
             collision.manageCollisionsY();
         }
         else if(input.IsKeyDown(Key::Down))
         {
-            player->moveDown();
+            player.moveDown();
             collision.manageCollisionsY();
         }
         if(input.IsKeyDown(Key::Right))
         {
-            player->moveRight();
+            player.moveRight();
             collision.manageCollisionsX();
         }
         else if(input.IsKeyDown(Key::Left))
         {
-            player->moveLeft();
+            player.moveLeft();
             collision.manageCollisionsX();
         }
         if(!(input.IsKeyDown(Key::Down))&&!(input.IsKeyDown(Key::Up))&&!(input.IsKeyDown(Key::Left))&&!(input.IsKeyDown(Key::Right)))
         {
-            player->dontMove();
+            player.dontMove();
             collision.manageCollisionsX();
             collision.manageCollisionsY();
         }
@@ -120,12 +120,12 @@ void Jeu::start()
         }
         if(input.IsKeyDown(Key::Space))
         {
-            player->fire();
+            player.fire();
         }
         if(input.IsKeyDown(Key::Escape))
         {
             population->stop();
-            this->pause(Event, pannel, *player);
+            this->pause(Event, pannel, player);
             population->unStop();
         }
         if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
@@ -133,7 +133,7 @@ void Jeu::start()
             collision.manageProjectileCollision();
         }
 
-        if(player->getLostlife())
+        if(player.getLostlife())
         {
             if(!invincible)
             {
@@ -143,13 +143,13 @@ void Jeu::start()
             }
             else if(timer.getTime() - invincibleStart > 4 )
             {
-                player->resetLostLife();
+                player.resetLostLife();
                 invincible = false;
             }
         }
         weapon_manager->manage();
         drop_manager->manage();
-        player->draw();
+        player.draw();
         population->manage();
         missile_manager->manage();
         pannel.checkPannel();

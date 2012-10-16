@@ -34,7 +34,7 @@ void Weapon_manager::manage()
 }
 
 
-void Weapon_manager::setParams(std::tr1::shared_ptr<Player> externPlayer)
+void Weapon_manager::setParams(Player *externPlayer)
 {
     player = externPlayer;
 }

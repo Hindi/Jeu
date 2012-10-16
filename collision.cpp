@@ -102,7 +102,7 @@ void Collision::manageProjectileCollision()
     //*****************************
     IntRect projectileRect, enemyRect;
     Vector2f projectilePosition;
-    list<std::tr1::shared_ptr<Projectile> >::iterator lit(Projectile_manager::getInstance()->getPlayerProjectiles()->begin());
+    list<Projectile*>::iterator lit(Projectile_manager::getInstance()->getPlayerProjectiles()->begin());
     list<tr1::shared_ptr<Enemy> >::iterator li;
     list<Spawn*>::iterator spawnLi;
     //On check les ennemis

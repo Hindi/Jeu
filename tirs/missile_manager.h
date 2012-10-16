@@ -27,13 +27,13 @@ class Missile_manager
         void followPlayer();
         void revenir(Missile &missile);
         void setPositionLibre(int position, bool mode);
-        void setPlayer(std::tr1::shared_ptr<Player> externPlayer);
+        void setPlayer(Player *externPlayer);
 
         static void kill();
         static Missile_manager* getInstance();
 
     private:
-        std::tr1::shared_ptr<Player> player;
+        Player *player;
         std::list<Missile*> m_missiles;
         Timer timerCreate;
         Missile *missile;
