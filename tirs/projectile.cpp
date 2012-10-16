@@ -88,6 +88,12 @@ short Projectile::getSpeed(int axis) const
         return m_speed.y;
 }
 
+
+void Projectile::setSpeed(sf::Vector2f speed)
+{
+    m_speed = speed;
+}
+
 const short Projectile::getCoefSpeed() const
 {
     return m_coefSpeed;

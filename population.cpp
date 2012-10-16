@@ -8,7 +8,6 @@ Population *Population::_singleton= NULL;
 Population::Population()
 {
     m_coefSpeed = 10;
-    player = NULL;
     Population* _singleton= NULL;
 }
 
@@ -220,7 +219,7 @@ void Population::kill ()
       }
   }
 
-void Population::setPlayer(Player *externPlayer)
+void Population::setPlayer(std::tr1::shared_ptr<Player> externPlayer)
 {
     player = externPlayer;
 }

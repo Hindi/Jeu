@@ -24,6 +24,8 @@ class Projectile
         //Accesseur sur la vitesse
         short getSpeed(int axis) const;
 
+        void setSpeed(sf::Vector2f speed);
+
         //Accesseur sur le coeficient de vitesse
         const short getCoefSpeed() const;
 

@@ -93,7 +93,7 @@ void Player::fire()
         positionProjectile.x += 39;
         positionProjectile.y -= 30;
         const string filepath = "images/projectile.png";
-        projectile = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
+        std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
         projectile->setPosition(positionProjectile);
         Projectile_manager::getInstance()->addPlayerProjectile(projectile);
         if(secondary)//Si les armes secondaires sont activées
@@ -103,16 +103,14 @@ void Player::fire()
             //*******************************
             positionProjectile.x += 19;
             positionProjectile.y += 25;
-            projectileDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
-            projectileDroite->setPosition(positionProjectile);
-            Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
+            projectile->setPosition(positionProjectile);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectile);
             //*******************************
             //On créé le projectile de gauche
             //*******************************
             positionProjectile.x -= 38;
-            projectileDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
-            projectileDroite->setPosition(positionProjectile);
-            Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
+            projectile->setPosition(positionProjectile);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectile);
         }
         if(third)
         {
@@ -121,16 +119,14 @@ void Player::fire()
             //***************************************
             positionProjectile.x += 68;
             positionProjectile.y += 5;
-            projectileExtremeGauche = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
-            projectileExtremeGauche->setPosition(positionProjectile);
-            Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeGauche);
+            projectile->setPosition(positionProjectile);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectile);
             //***************************************
             //On créé le projectile de extreme gauche
             //***************************************
             positionProjectile.x -= 90;
-            projectileExtremeDroite = new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed);
-            projectileExtremeDroite->setPosition(positionProjectile);
-            Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeDroite);
+            projectile->setPosition(positionProjectile);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectile);
         }
         lastShot = timer.getTime();
     }

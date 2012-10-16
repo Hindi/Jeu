@@ -12,16 +12,7 @@ Projectile_manager::Projectile_manager()
 
 Projectile_manager::~Projectile_manager()
 {
-    list<Projectile*>::iterator lit(m_enemyProjectiles.begin());
-    for(;lit != m_enemyProjectiles.end(); lit++)
-    {
-        delete *lit;
-    }
-    list<Projectile*>::iterator li(m_playerProjectiles.begin());
-    for(;li != m_playerProjectiles.end(); li++)
-    {
-        delete *li;
-    }
+
 }
 
 bool Projectile_manager::haveEnemyProjectilesInProgress()
@@ -53,7 +44,7 @@ void Projectile_manager::moveProjectile()
     //****************************************
     if(this->haveEnemyProjectilesInProgress())
     {
-        list<Projectile*>::iterator lit(m_enemyProjectiles.begin());
+        list<std::tr1::shared_ptr<Projectile> >::iterator lit(m_enemyProjectiles.begin());
         for(; lit!=m_enemyProjectiles.end(); )//On parcours la liste des projectiles ennemi
         {
             Vector2f speed((*lit)->getSpeed(0)*elapsedTime*(*lit)->getCoefSpeed(),((*lit)->getSpeed(2))*elapsedTime*(*lit)->getCoefSpeed());//On calcule le vecteur vitesse
@@ -75,7 +66,7 @@ void Projectile_manager::moveProjectile()
     //****************************************
     if(this->havePlayerProjectilesInProgress())
     {
-        list<Projectile*>::iterator li(m_playerProjectiles.begin());
+        list<std::tr1::shared_ptr<Projectile> >::iterator li(m_playerProjectiles.begin());
         for(; li!=m_playerProjectiles.end(); )//On parcours la liste des projectiles joueur
         {
             //cout << (*li)->getSpeed(0) << " " << (*li)->getSpeed(1) << endl;
@@ -99,7 +90,7 @@ void Projectile_manager::drawProjectile()
     //Dessine les projectiles pour qu'ils soient affichés à l'écran
     if(this->haveEnemyProjectilesInProgress())
     {
-        list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
+        list<std::tr1::shared_ptr<Projectile> >::const_iterator lit(m_enemyProjectiles.begin());
         for(; lit!=m_enemyProjectiles.end(); lit++)
         {
             (*lit)->draw();//Dessine les projectiles ennemi
@@ -107,7 +98,7 @@ void Projectile_manager::drawProjectile()
     }
     if(this->havePlayerProjectilesInProgress())
     {
-        list<Projectile*>::const_iterator li(m_playerProjectiles.begin());
+        list<std::tr1::shared_ptr<Projectile> >::const_iterator li(m_playerProjectiles.begin());
         for(; li!=m_playerProjectiles.end(); li++)
         {
             (*li)->draw();//Dessine les projectiles du joueur
@@ -117,23 +108,23 @@ void Projectile_manager::drawProjectile()
 
 }
 
-void Projectile_manager::addEnemyProjectile(Projectile* projectile)
+void Projectile_manager::addEnemyProjectile(std::tr1::shared_ptr<Projectile>  projectile)
 {
     m_enemyProjectiles.push_back(projectile);
 }
 
-void Projectile_manager::addPlayerProjectile(Projectile* projectile)
+void Projectile_manager::addPlayerProjectile(std::tr1::shared_ptr<Projectile>  projectile)
 {
     m_playerProjectiles.push_back(projectile);
 }
 
 
-list<Projectile*>* Projectile_manager::getEnemyProjectiles()
+list<std::tr1::shared_ptr<Projectile> >* Projectile_manager::getEnemyProjectiles()
 {
     return &m_enemyProjectiles;
 }
 
-list<Projectile*>* Projectile_manager::getPlayerProjectiles()
+list<std::tr1::shared_ptr<Projectile> >* Projectile_manager::getPlayerProjectiles()
 {
     return &m_playerProjectiles;
 }
@@ -161,7 +152,7 @@ void Projectile_manager::kill ()
 
 void Projectile_manager::freeze()
 {
-    list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
+    list<std::tr1::shared_ptr<Projectile> >::const_iterator lit(m_enemyProjectiles.begin());
     for(; lit!=m_enemyProjectiles.end(); lit++)
     {
         (*lit)->freeze();//Dessine les projectiles ennemi
@@ -170,7 +161,7 @@ void Projectile_manager::freeze()
 
 void Projectile_manager::unfreeze()
 {
-    list<Projectile*>::const_iterator lit(m_enemyProjectiles.begin());
+    list<std::tr1::shared_ptr<Projectile> >::const_iterator lit(m_enemyProjectiles.begin());
     for(; lit!=m_enemyProjectiles.end(); lit++)
     {
         (*lit)->unfreeze();//Dessine les projectiles ennemi
