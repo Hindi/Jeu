@@ -16,6 +16,10 @@ Population::Population()
 Population::~Population()
 {
     m_enemies.clear();
+    m_deadEnemies.clear();
+    m_spawns.clear();
+
+    delete player;
 }
 
 void Population::drawPopulation()
