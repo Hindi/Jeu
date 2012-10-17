@@ -2120,7 +2120,7 @@
 
 1349626587 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1350461894 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1350462610 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1350386093 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2209,10 +2209,11 @@
 	"math.h"
 	"projectile_manager.h"
 
-1349626555 c:\users\shalafi\documents\github\jeu\drop_manager.h
+1350462631 c:\users\shalafi\documents\github\jeu\drop_manager.h
 	<SFML/Graphics.hpp>
 	<list>
 	<iostream>
+	<tr1/memory>
 	"drop.h"
 	"image_manager.h"
 	"const.h"
@@ -2233,13 +2234,13 @@
 	"../image_manager.h"
 	"../const.h"
 
-1349622699 source:c:\users\shalafi\documents\github\jeu\drop.cpp
+1350462492 source:c:\users\shalafi\documents\github\jeu\drop.cpp
 	"drop.h"
 
 1349627208 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1349622699 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1350462405 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
 1350462342 c:\users\shalafi\documents\github\jeu\enemies\boss.h

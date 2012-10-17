@@ -18,11 +18,11 @@ Drop_manager::~Drop_manager()
 //Créé un objet drop et l'ajoute dansl al iste des drops
 void Drop_manager::createDrop(int score, sf::Vector2f position)
 {
-    drop = new Drop(score, position);
+    std::tr1::shared_ptr<Drop> drop(new Drop(score, position));
     m_droplist.push_back(drop);
 }
 
-std::list <Drop*>* Drop_manager::getDrop()
+std::list <std::tr1::shared_ptr<Drop> >* Drop_manager::getDrop()
 {
     return &m_droplist;
 }
@@ -35,7 +35,7 @@ void Drop_manager::manage()
 
 void Drop_manager::move()
 {
-    list<Drop*>::const_iterator lit(m_droplist.begin());
+    list<std::tr1::shared_ptr<Drop> >::const_iterator lit(m_droplist.begin());
     for(; lit!= m_droplist.end(); lit++)
     {
         //Calcul de la nouvelle position pour chaque drop
@@ -50,7 +50,7 @@ void Drop_manager::move()
 //Dessine l'objet
 void Drop_manager::draw()
 {
-    list<Drop*>::const_iterator lit(m_droplist.begin());
+    list<std::tr1::shared_ptr<Drop> >::const_iterator lit(m_droplist.begin());
     for(; lit!= m_droplist.end(); lit++)
     {
         app.Draw((*lit)->getSprite());

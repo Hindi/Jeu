@@ -158,7 +158,7 @@ void Collision::manageProjectileCollision()
 void Collision::dropCollision()
 {
     IntRect playerRect = m_player.GetBoundingBox(), dropRect;
-    list<Drop*>::iterator lit(Drop_manager::getInstance()->getDrop()->begin());
+    list<std::tr1::shared_ptr<Drop> >::iterator lit(Drop_manager::getInstance()->getDrop()->begin());
     for(; lit!=Drop_manager::getInstance()->getDrop()->end();)
     {
         dropRect = (*lit)->getBoundingBox();
