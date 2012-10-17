@@ -3,9 +3,10 @@
 using namespace std;
 using namespace sf;
 
-Pannel::Pannel(const string &filepath, Vector2f position, Player &player):
+Pannel::Pannel(const string &filepath, Vector2f position, Player &player, Player &player2):
             m_scale(1,1),
-            m_player(player)
+            m_player(player),
+            m_player2(player2)
 {
     imagePannel = new Image;
     *imagePannel = image_manager::getInstance()->getImage(filepath);
@@ -139,7 +140,7 @@ void Pannel::drawScore()
     {
         Vector2f position(50, 50);
         std::ostringstream oss;
-        oss << m_player.getScore();
+        oss << (m_player.getScore()+m_player2.getScore());
         string result = oss.str();
         String text;
         text.SetText(result);

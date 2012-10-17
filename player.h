@@ -14,7 +14,7 @@
 class Player : public Unit
 {
     public:
-        Player(int life, sf::Vector2f position);
+        Player(short id, int life, sf::Vector2f position);
         //Destructeur
         ~Player();
 

@@ -39,7 +39,9 @@ void Jeu::start()
     //Variables player :
     Vector2f positionPlayer(m_SCREEN_WIDTH/2 -50, m_SCREEN_HEIGHT - 100);
 
-    Player player(1, positionPlayer);
+    Player player(0, 1, positionPlayer);
+    Player player2(1, 1,positionPlayer);
+
     Drop_manager *drop_manager;
     drop_manager = Drop_manager::getInstance();
 
@@ -61,11 +63,11 @@ void Jeu::start()
     //pannel
     const string filepathPanel = "images/pannel.png";
     Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
-    Pannel pannel(filepathPanel, positionPannel, player);
+    Pannel pannel(filepathPanel, positionPannel, player, player2);
 
     //Collision
     Vector2f windowSize(m_SCREEN_WIDTH-PANNEL_WIDTH, m_SCREEN_HEIGHT);
-    Collision collision(windowSize, player);
+    Collision collision(windowSize, player, player2);
 
     //Background
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
@@ -114,13 +116,43 @@ void Jeu::start()
             collision.manageCollisionsX();
             collision.manageCollisionsY();
         }
-        if(input.IsKeyDown(Key::S))
+        if(input.IsKeyDown(Key::Z))
+        {
+            player2.moveUp();
+            collision.manageCollisionsY2();
+        }
+        else if(input.IsKeyDown(Key::S))
+        {
+            player2.moveDown();
+            collision.manageCollisionsY2();
+        }
+        if(input.IsKeyDown(Key::D))
+        {
+            player2.moveRight();
+            collision.manageCollisionsX2();
+        }
+        else if(input.IsKeyDown(Key::Q))
+        {
+            player2.moveLeft();
+            collision.manageCollisionsX2();
+        }
+        if(!(input.IsKeyDown(Key::S))&&!(input.IsKeyDown(Key::Z))&&!(input.IsKeyDown(Key::Q))&&!(input.IsKeyDown(Key::D)))
+        {
+            player2.dontMove();
+            collision.manageCollisionsX2();
+            collision.manageCollisionsY2();
+        }
+        if(input.IsKeyDown(Key::A))
         {
             population->freeze();
         }
         if(input.IsKeyDown(Key::Space))
         {
             player.fire();
+        }
+        if(input.IsKeyDown(Key::E))
+        {
+            player2.fire();
         }
         if(input.IsKeyDown(Key::Escape))
         {
@@ -150,6 +182,7 @@ void Jeu::start()
         weapon_manager->manage();
         drop_manager->manage();
         player.draw();
+        player2.draw();
         population->manage();
         missile_manager->manage();
         pannel.checkPannel();

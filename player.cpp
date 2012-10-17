@@ -3,7 +3,7 @@
 using namespace std;
 using namespace sf;
 
-Player::Player(int life, Vector2f position):
+Player::Player(short id, int life, Vector2f position):
             Unit(life, 10, 10, position),
             max_lives(3),
             m_frameWidth(118),
@@ -21,14 +21,20 @@ Player::Player(int life, Vector2f position):
 {
     timer.start();
     image = new Image;
+    int start = 0;
     *image = image_manager::getInstance()->getImage("images/player.png");
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0,m_frameWidth,m_frameHeight)));
+    if(id == 1)
+    {
+        start = m_frameHeight;
+        m_position.x += -100;
+    }
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, start,m_frameWidth,m_frameHeight+start)));
 
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth,0,m_frameWidth*2,m_frameHeight)));
-    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3,0,m_frameWidth*4,m_frameHeight)));
+    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth,start,m_frameWidth*2,m_frameHeight+start)));
+    goRight.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*3,start,m_frameWidth*4,m_frameHeight+start)));
 
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2,0,m_frameWidth*3,m_frameHeight)));
-    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4,0,m_frameWidth*5,m_frameHeight)));
+    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*2,start,m_frameWidth*3,m_frameHeight+start)));
+    goLeft.PushFrame(Frame(image, sf::Rect<int>(m_frameWidth*4,start,m_frameWidth*5,m_frameHeight+start)));
 
     m_animated = new Animated(&m_anim, false, false, 0.4);
     m_animated->SetPosition(m_position.x, m_position.y);
@@ -108,8 +114,8 @@ void Player::fire()
             //*******************************
             positionProjectile.x -= 38;
             std::tr1::shared_ptr<Projectile> projectileGauche(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
-            projectileDroite->setPosition(positionProjectile);
-            Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
+            projectileGauche->setPosition(positionProjectile);
+            Projectile_manager::getInstance()->addPlayerProjectile(projectileGauche);
         }
         if(third)
         {

@@ -17,8 +17,9 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player):
+Collision::Collision(Vector2f windowSize, Player &player, Player &player2):
             m_player(player),
+            m_player2(player2),
             m_windowSize(windowSize)
 {
 
@@ -55,7 +56,34 @@ void Collision::manageCollisionsX()
     }
 
     this->dropCollision();
+}
 
+void Collision::manageCollisionsX2()
+{
+    IntRect playerRect = m_player2.GetBoundingBox(), enemyRect;
+    if(playerRect.Left < 0)
+    {
+        m_player2.setPosition(1, 0);
+    }
+    else if(playerRect.Right > m_windowSize.x )
+    {
+        m_player2.setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
+    }
+
+    if(!m_player2.getLostlife())
+    {
+        list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
+        for(; li!=Population::getInstance()->getPopulation()->end(); li++)
+        {
+            enemyRect = (*li)->getBoundingBox();
+            if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
+            {
+                m_player2.loseLive();
+            }
+        }
+    }
+
+    this->dropCollision();
 }
 
 void Collision::manageCollisionsY()
@@ -80,6 +108,43 @@ void Collision::manageCollisionsY()
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
                 m_player.loseLive();
+            }
+            if(enemyRect.Top > 1500)
+            {
+               li = Population::getInstance()->getPopulation()->erase(li);
+            }
+            else
+            {
+                li++;
+            }
+        }
+    }
+
+    this->dropCollision();
+}
+
+void Collision::manageCollisionsY2()
+{
+    IntRect playerRect = m_player2.GetBoundingBox(), enemyRect;
+    if(playerRect.Top < 0)
+    {
+        m_player2.setPosition(2, 0);
+    }
+    else if(playerRect.Bottom > m_windowSize.y)
+    {
+        m_player2.setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
+    }
+
+
+    if(!m_player2.getLostlife())
+    {
+        list<tr1::shared_ptr<Enemy> >::iterator li;
+        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end();)
+        {
+            enemyRect = (*li)->getBoundingBox();
+            if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
+            {
+                m_player2.loseLive();
             }
             if(enemyRect.Top > 1500)
             {
@@ -170,6 +235,24 @@ void Collision::dropCollision()
         else
         {
             lit++;
+        }
+
+    }
+
+
+    playerRect = m_player2.GetBoundingBox(), dropRect;
+    list<std::tr1::shared_ptr<Drop> >::iterator li(Drop_manager::getInstance()->getDrop()->begin());
+    for(; li!=Drop_manager::getInstance()->getDrop()->end();)
+    {
+        dropRect = (*li)->getBoundingBox();
+        if((playerRect.Right > dropRect.Left && playerRect.Left < dropRect.Right && playerRect.Top > dropRect.Top && playerRect.Top < dropRect.Bottom) || dropRect.Bottom > 2000)
+        {
+            m_player2.addScore(100);
+            li = Drop_manager::getInstance()->getDrop()->erase(li);
+        }
+        else
+        {
+            li++;
         }
 
     }
