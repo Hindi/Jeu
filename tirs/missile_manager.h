@@ -22,8 +22,8 @@ class Missile_manager
         void drawMissile();//Dessine tous les projectiles
         void manage();//On bouge et dessine
 
-        void addMissile(Missile *missible);//Rajoute un missile dans la liste des missiles du joueur
-        std::list<Missile*>* getMissile();//Retourne les missiles
+        void addMissile(std::tr1::shared_ptr<Missile> missible);//Rajoute un missile dans la liste des missiles du joueur
+        std::list<std::tr1::shared_ptr<Missile> >* getMissile();//Retourne les missiles
         void followPlayer();
         void revenir(Missile &missile);
         void setPositionLibre(int position, bool mode);
@@ -34,9 +34,8 @@ class Missile_manager
 
     private:
         Player *player;
-        std::list<Missile*> m_missiles;
+        std::list<std::tr1::shared_ptr<Missile> > m_missiles;
         Timer timerCreate;
-        Missile *missile;
         int nombreMissiles, fireDelay;
         sf::Vector2f positionsLibres[7];
         bool boolPositionLibres[7];

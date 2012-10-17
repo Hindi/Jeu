@@ -51,9 +51,6 @@ class Projectile_manager
         //Liste des projectiles du joueur
         std::list<std::tr1::shared_ptr<Projectile> > m_playerProjectiles;
 
-        //Liste des missiles
-        std::list<Missile*> m_missiles;
-
 
         Projectile_manager();
 

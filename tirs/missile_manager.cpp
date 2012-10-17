@@ -26,12 +26,7 @@ Missile_manager::Missile_manager():
 
 Missile_manager::~Missile_manager()
 {
-    list<Missile*>::iterator lit(m_missiles.begin());
-    for(;lit != m_missiles.end(); lit++)
-    {
-        delete *lit;
-    }
-
+    delete player;
 }
 
 
@@ -60,7 +55,7 @@ void Missile_manager::createMissile()
             }
         }
         Vector2f missilePosition(player->getPosition(0)+adapt.x, player->getPosition(1)+adapt.y);
-        missile = new Missile("images/projectile2.png", missilePosition, 10, 50, i);
+        std::tr1::shared_ptr<Missile> missile(new Missile("images/projectile2.png", missilePosition, 10, 50, i));
         missile->SetPosition(missilePosition);
 
         this->addMissile(missile);
@@ -71,7 +66,7 @@ void Missile_manager::createMissile()
 void Missile_manager::moveMissile()
 {
     double elapsedTime = app.GetFrameTime();
-    list<Missile*>::iterator lit(m_missiles.begin());
+    list<std::tr1::shared_ptr<Missile> >::iterator lit(m_missiles.begin());
 
      list<tr1::shared_ptr<Enemy> >::const_iterator li(Population::getInstance()->getPopulation()->begin());
     //***********************************************
@@ -133,7 +128,7 @@ void Missile_manager::drawMissile()
 {
     if(this->haveMissilesInProgress())
     {
-        list<Missile*>::const_iterator lit(m_missiles.begin());
+        list<std::tr1::shared_ptr<Missile> >::const_iterator lit(m_missiles.begin());
         for(; lit!=m_missiles.end(); lit++)
         {
             app.Draw(**lit);//Dessine les projectiles ennemi
@@ -150,20 +145,20 @@ void Missile_manager::manage()
     this->drawMissile();
 }
 
-void Missile_manager::addMissile(Missile *missile)
+void Missile_manager::addMissile(std::tr1::shared_ptr<Missile> missile)
 {
     m_missiles.push_back(missile);
 }
 
 
-list<Missile*>* Missile_manager::getMissile()
+list<std::tr1::shared_ptr<Missile> >* Missile_manager::getMissile()
 {
     return &m_missiles;
 }
 
 void Missile_manager::followPlayer()
 {
-    list<Missile*>::iterator lit(m_missiles.begin());
+    list<std::tr1::shared_ptr<Missile> >::iterator lit(m_missiles.begin());
     for(; lit != m_missiles.end(); lit++)
     {
         double elapsedTime = app.GetFrameTime();

@@ -130,7 +130,7 @@ void Collision::manageProjectileCollision()
     //**************************
     // Collisions classe missile
     //**************************
-    list<Missile*>::iterator litt(Missile_manager::getInstance()->getMissile()->begin());
+    list<std::tr1::shared_ptr<Missile> >::iterator litt(Missile_manager::getInstance()->getMissile()->begin());
     for(; litt != Missile_manager::getInstance()->getMissile()->end(); litt++)
     {
         //On check les ennemis
