@@ -73,7 +73,7 @@ class Enemy : public Unit
          void fireCircle();//en cercle
 
         //Accesseur sur les projectiles en cours
-         std::list<Projectile*>* getProjectiles();
+         std::list<std::tr1::shared_ptr<Projectile> >* getProjectiles();
 
 
         //Défini si l'ennemi peut tirer ou non
@@ -109,13 +109,12 @@ class Enemy : public Unit
         Player &player;
 
         //listes des projectils et de leurs vitesse (en cas de visée)
-        std::list<Projectile*> m_projectiles;
+        std::list<std::tr1::shared_ptr<Projectile> > m_projectiles;
         std::list<sf::Vector2f> m_vitesses;
 
         //Direction de déplacememnt pour certains mouvements particuliers
         char* direction;
 
-        Projectile *projectile;
         sf::Image *image;
 
         //Temps au dernier tir

@@ -48,6 +48,9 @@ Enemy::~Enemy()
     {
         delete image;
     }
+    delete direction;
+    delete m_type;
+    delete m_moveMethod;
 }
 
 Sprite* Enemy::getSprite()
@@ -387,7 +390,7 @@ void Enemy::fireCircle()
     lastShot = timer.getTime();
 }
 
-list<Projectile*>* Enemy::getProjectiles()
+list<std::tr1::shared_ptr<Projectile> >* Enemy::getProjectiles()
 {
     //Retourne la référence de la liste des projectiles
     return &m_projectiles;

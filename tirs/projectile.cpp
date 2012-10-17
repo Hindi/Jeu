@@ -72,7 +72,14 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
 
 Projectile::~Projectile()
 {
-
+    delete firstProj;
+    if(m_followAnim)
+    {
+        delete secondProj;
+        delete thirdProj;
+        delete fourthProj;
+        delete fifthProj;
+    }
 }
 
 Sprite Projectile::getSprite()
