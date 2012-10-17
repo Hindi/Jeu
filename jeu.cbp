@@ -82,8 +82,6 @@
 		<Unit filename="enemies\boss.h" />
 		<Unit filename="enemies\enemy.cpp" />
 		<Unit filename="enemies\enemy.h" />
-		<Unit filename="guard.cpp" />
-		<Unit filename="guard.h" />
 		<Unit filename="image_manager.cpp" />
 		<Unit filename="image_manager.h" />
 		<Unit filename="jeu.cpp" />
