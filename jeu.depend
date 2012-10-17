@@ -2134,7 +2134,7 @@
 	"drop.h"
 	"enemies/spawn.h"
 
-1350390267 c:\users\shalafi\documents\github\jeu\player.h
+1350462875 c:\users\shalafi\documents\github\jeu\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<list>
@@ -2237,7 +2237,7 @@
 1350462492 source:c:\users\shalafi\documents\github\jeu\drop.cpp
 	"drop.h"
 
-1349627208 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
+1350462645 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
 1350462405 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp

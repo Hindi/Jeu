@@ -30,9 +30,6 @@ class Player : public Unit
         //Fait tirer le joueur
         void fire();
 
-        //accesseur sur les projectiles du joueur
-        std::list<Projectile*>* getProjectiles();
-
         //Déplace les projectiles
         void moveProjectile();
 
@@ -83,17 +80,8 @@ class Player : public Unit
         void setThird(bool mode);
 
     protected:
-        //Liste des projectiles du joueur
-        std::list<Projectile*> m_projectiles;
-
         //Vitesse du joueur
         sf::Vector2f m_speed;
-
-        //Tous les projectiles (main, et secondaires)
-        Projectile *projectile, *projectileDroite, *projectileGauche, *projectileExtremeDroite, *projectileExtremeGauche;
-
-        //Le missile
-        Missile *missile;
 
         //Dommages infligés et nombre de vies
         short const m_damages;

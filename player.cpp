@@ -47,13 +47,10 @@ Player::Player(int life, Vector2f position):
 
 Player::~Player()
 {
-    list<Projectile*>::const_iterator lit(m_projectiles.begin());
-    for(; lit!=m_projectiles.end(); lit++)
-    {
-        delete *lit;
-    }
-    m_projectiles.clear();
     delete image;
+    delete imageReactor;
+    delete m_animatedReactor;
+    delete m_animated;
 }
 
 
@@ -134,12 +131,6 @@ void Player::fire()
         }
         lastShot = timer.getTime();
     }
-}
-
-list<Projectile*>* Player::getProjectiles()
-{
-    //Retourne la référence de la liste des projectiles
-    return &m_projectiles;
 }
 
 bool canFire(float lastShot, Timer &timer, float const fireRate)
