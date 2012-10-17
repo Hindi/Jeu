@@ -26,10 +26,10 @@
 		<Cursor position="449" topLine="6" />
 	</File>
 	<File name="collision.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="6079" topLine="148" />
+		<Cursor position="8951" topLine="219" />
 	</File>
-	<File name="collision.h" open="0" top="0" tabpos="16">
-		<Cursor position="429" topLine="15" />
+	<File name="collision.h" open="1" top="0" tabpos="7">
+		<Cursor position="698" topLine="8" />
 	</File>
 	<File name="const.h" open="0" top="0" tabpos="2">
 		<Cursor position="80" topLine="0" />
@@ -40,11 +40,11 @@
 	<File name="drop.h" open="0" top="0" tabpos="5">
 		<Cursor position="591" topLine="16" />
 	</File>
-	<File name="drop_manager.cpp" open="1" top="0" tabpos="9">
+	<File name="drop_manager.cpp" open="1" top="0" tabpos="10">
 		<Cursor position="221" topLine="5" />
 	</File>
-	<File name="drop_manager.h" open="1" top="0" tabpos="10">
-		<Cursor position="568" topLine="16" />
+	<File name="drop_manager.h" open="1" top="0" tabpos="11">
+		<Cursor position="568" topLine="3" />
 	</File>
 	<File name="enemies\adds.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="308" topLine="0" />
@@ -71,13 +71,13 @@
 		<Cursor position="510" topLine="0" />
 	</File>
 	<File name="jeu.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1918" topLine="59" />
+		<Cursor position="1714" topLine="45" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="3">
-		<Cursor position="512" topLine="22" />
+		<Cursor position="512" topLine="9" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="495" topLine="30" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="318" topLine="0" />
 	</File>
 	<File name="menu.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="2530" topLine="33" />
@@ -85,20 +85,20 @@
 	<File name="menu.h" open="0" top="0" tabpos="10">
 		<Cursor position="393" topLine="7" />
 	</File>
-	<File name="pannel.cpp" open="0" top="0" tabpos="17">
-		<Cursor position="134" topLine="56" />
+	<File name="pannel.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="240" topLine="0" />
 	</File>
-	<File name="pannel.h" open="0" top="0" tabpos="11">
-		<Cursor position="781" topLine="19" />
+	<File name="pannel.h" open="1" top="0" tabpos="14">
+		<Cursor position="1181" topLine="12" />
 	</File>
-	<File name="player.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="2048" topLine="42" />
+	<File name="player.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="601" topLine="9" />
 	</File>
-	<File name="player.h" open="1" top="0" tabpos="8">
-		<Cursor position="3147" topLine="108" />
+	<File name="player.h" open="1" top="0" tabpos="9">
+		<Cursor position="379" topLine="80" />
 	</File>
-	<File name="population.cpp" open="1" top="1" tabpos="11">
-		<Cursor position="165" topLine="1" />
+	<File name="population.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="165" topLine="0" />
 	</File>
 	<File name="population.h" open="0" top="0" tabpos="10">
 		<Cursor position="2383" topLine="80" />

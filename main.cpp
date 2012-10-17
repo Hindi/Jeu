@@ -17,10 +17,8 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 TODO LIST
 
 - Plusieurs planètes
-- Commencer la classe pour la traînée de missiles
 - Missiles qui n'atteignent jamais les enemy
 - Problèmes de threads : voir missiles
-- Deux Joueurs
 */
 
 int main()
