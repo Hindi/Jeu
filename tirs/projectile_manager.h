@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <list>
+#include <tr1/memory>
+
 #include "projectile.h"
 #include "missile.h"
 #include <vector>
@@ -23,16 +25,16 @@ class Projectile_manager
         void drawProjectile();
 
         //Rajoute un projectile dans la liste des projectiles ennemi
-        void addEnemyProjectile(Projectile* projectile);
+        void addEnemyProjectile(std::tr1::shared_ptr<Projectile>  projectile);
 
         //Rajoute un projectile dans la liste des projectiles joueur
-        void addPlayerProjectile(Projectile* projectile);
+        void addPlayerProjectile(std::tr1::shared_ptr<Projectile>  projectile);
 
         //Retourne les projectiles ennemi
-        std::list<Projectile*>* getEnemyProjectiles();
+        std::list<std::tr1::shared_ptr<Projectile> >* getEnemyProjectiles();
 
         //Retourne les projectiles joueur
-        std::list<Projectile*>* getPlayerProjectiles();
+        std::list<std::tr1::shared_ptr<Projectile> >* getPlayerProjectiles();
 
         void animationFollow();
 
@@ -44,10 +46,10 @@ class Projectile_manager
 
     private:
         //Liste des projectiles ennemis
-        std::list<Projectile*> m_enemyProjectiles;
+        std::list<std::tr1::shared_ptr<Projectile> > m_enemyProjectiles;
 
         //Liste des projectiles du joueur
-        std::list<Projectile*> m_playerProjectiles;
+        std::list<std::tr1::shared_ptr<Projectile> > m_playerProjectiles;
 
         //Liste des missiles
         std::list<Missile*> m_missiles;
