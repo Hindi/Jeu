@@ -12,7 +12,8 @@ Projectile_manager::Projectile_manager()
 
 Projectile_manager::~Projectile_manager()
 {
-
+    m_playerProjectiles.clear();
+    m_enemyProjectiles.clear();
 }
 
 bool Projectile_manager::haveEnemyProjectilesInProgress()

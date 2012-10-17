@@ -71,6 +71,7 @@ class Enemy : public Unit
         //Différents types de tirs
          void fireFocus();//Avec visée
          void fireCircle();//en cercle
+         void VFire();//Tir en V à l'avant
 
         //Accesseur sur les projectiles en cours
          std::list<std::tr1::shared_ptr<Projectile> >* getProjectiles();

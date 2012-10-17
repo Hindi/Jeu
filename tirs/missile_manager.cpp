@@ -27,6 +27,7 @@ Missile_manager::Missile_manager():
 Missile_manager::~Missile_manager()
 {
     delete player;
+    m_missiles.clear();
 }
 
 

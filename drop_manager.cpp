@@ -12,7 +12,7 @@ Drop_manager::Drop_manager()
 
 Drop_manager::~Drop_manager()
 {
-
+    m_droplist.clear();
 }
 
 //Créé un objet drop et l'ajoute dansl al iste des drops
