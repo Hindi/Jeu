@@ -4,6 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <list>
+#include "tr1/memory"
+
 #include "score.h"
 #include "../const.h"
 
@@ -23,9 +25,7 @@ class Score_manager
         static Score_manager* getInstance();
 
     private:
-        Score *m_score;
-
-        std::list<Score*> m_scores;
+        std::list<std::tr1::shared_ptr<Score> > m_scores;
 
         Score_manager();
 

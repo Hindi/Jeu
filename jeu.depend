@@ -2487,10 +2487,11 @@
 	"../timer.h"
 	"../const.h"
 
-1349626734 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
+1350462197 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
+	"tr1/memory"
 	"score.h"
 	"../const.h"
 

@@ -14,7 +14,7 @@ Weapon_manager::Weapon_manager():
 
 Weapon_manager::~Weapon_manager()
 {
-
+    delete player;
 }
 
 void Weapon_manager::manage()
