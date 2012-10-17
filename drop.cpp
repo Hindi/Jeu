@@ -32,7 +32,7 @@ Drop::Drop(int score, sf::Vector2f position):
 
 Drop::~Drop()
 {
-
+    delete m_image;
 }
 
 unsigned short Drop::getScore()

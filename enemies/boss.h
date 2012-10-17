@@ -30,7 +30,7 @@ class Boss : public Enemy
         void createAdd();
 
     private:
-    std::list<Adds*> m_adds;
+    std::list<std::tr1::shared_ptr<Adds> > m_adds;
     const char* m_name;
 
 };

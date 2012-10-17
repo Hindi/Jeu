@@ -2242,7 +2242,7 @@
 1349622699 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1349622699 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1350462342 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
@@ -2452,7 +2452,7 @@
 1350461364 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
-1350390272 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
+1350462285 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
 	"weapon_manager.h"
 
 1350390272 c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.h
@@ -2495,7 +2495,7 @@
 	"score.h"
 	"../const.h"
 
-1349631075 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
+1350462230 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
 	"score_manager.h"
 
 1349626100 c:\users\shalafi\documents\github\jeu\const.h

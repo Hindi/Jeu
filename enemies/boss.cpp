@@ -24,6 +24,7 @@ Boss::~Boss()
     {
         delete image;
     }
+    delete m_name;
 }
 
 void Boss::createAdd()
