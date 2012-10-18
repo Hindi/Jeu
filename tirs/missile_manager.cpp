@@ -42,7 +42,7 @@ bool Missile_manager::haveMissilesInProgress()
 
 void Missile_manager::createMissile()
 {
-    if(m_missiles.size() < nombreMissiles && timerCreate.getTime() > fireDelay)//On vérifie le nombre de missile et le délais de respawn
+    if(m_missiles.size() < nombreMissiles && timerCreate.getTime() > fireDelay && player->getMissile())//On vérifie le nombre de missile et le délais de respawn
     {
         Vector2f adapt;
         int i=0;
