@@ -28,7 +28,8 @@ class Player : public Unit
         sf::IntRect GetBoundingBox();
 
         //Fait tirer le joueur
-        void fire();
+        void fire0();
+        void fire1();
 
         //Déplace les projectiles
         void moveProjectile();

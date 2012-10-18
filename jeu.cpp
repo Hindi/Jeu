@@ -148,11 +148,11 @@ void Jeu::start()
         }
         if(input.IsKeyDown(Key::Space))
         {
-            player.fire();
+            player.fire0();
         }
         if(input.IsKeyDown(Key::E))
         {
-            player2.fire();
+            player2.fire1();
         }
         if(input.IsKeyDown(Key::Escape))
         {
