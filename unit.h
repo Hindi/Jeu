@@ -41,8 +41,6 @@ class Unit
         //Accesseur sur le coeficient de vitesse
          short getCoefSpeed() const;
 
-         void startAnimTimer();
-
     protected:
         //Variables d'animation
         Anim m_animExplosion;

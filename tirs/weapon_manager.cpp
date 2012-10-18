@@ -6,37 +6,51 @@ using namespace sf;
 Weapon_manager* Weapon_manager::_singleton = NULL;
 
 Weapon_manager::Weapon_manager():
-            secondaryScore(1000),
+            secondaryScore(0),
             missileScore(10000),
-            thirdScore(500000)
+            thirdScore(0)
 {
 }
 
 Weapon_manager::~Weapon_manager()
 {
-    delete player;
+    delete player0;
+    delete player1;
 }
 
 void Weapon_manager::manage()
 {
-    if(player->getScore() > missileScore)
+    if(player0->getScore() > missileScore)
     {
-        player->setMissile(true);
+        player0->setMissile(true);
     }
-    if(player->getScore() > secondaryScore)
+    if(player0->getScore() > secondaryScore)
     {
-        player->setSecondary(true);
+        player0->setSecondary(true);
     }
-    if(player->getScore() > thirdScore)
+    if(player0->getScore() > thirdScore)
     {
-        player->setThird(true);
+        player0->setThird(true);
+    }
+    if(player1->getScore() > missileScore)
+    {
+        player1->setMissile(true);
+    }
+    if(player1->getScore() > secondaryScore)
+    {
+        player1->setSecondary(true);
+    }
+    if(player1->getScore() > thirdScore)
+    {
+        player1->setThird(true);
     }
 }
 
 
-void Weapon_manager::setParams(Player *externPlayer)
+void Weapon_manager::setParams(Player *externPlayer0, Player *externPlayer1)
 {
-    player = externPlayer;
+    player0 = externPlayer0;
+    player1 = externPlayer1;
 }
 
 void Weapon_manager::kill()

@@ -58,7 +58,7 @@ void Jeu::start()
     //Activateur d'armes
     Weapon_manager *weapon_manager;
     weapon_manager = Weapon_manager::getInstance();
-    weapon_manager->setParams(&player);
+    weapon_manager->setParams(&player, &player2);
 
     //pannel
     const string filepathPanel = "images/pannel.png";

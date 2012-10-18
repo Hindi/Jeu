@@ -10,7 +10,7 @@ class Weapon_manager
         //Met à jour l'état des armes
         void manage();
 
-        void setParams(Player *externPlayer);
+        void setParams(Player *externPlayer0, Player *externPlayer1);
 
         static void kill();
         static Weapon_manager* getInstance();
@@ -19,7 +19,7 @@ class Weapon_manager
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
 
-        Player *player;
+        Player *player0, *player1;
 
         Weapon_manager();
 

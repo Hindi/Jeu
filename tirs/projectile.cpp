@@ -87,6 +87,11 @@ Sprite Projectile::getSprite()
     return spriteFirst;
 }
 
+void Projectile::rotate(short angle)
+{
+    spriteFirst.Rotate(angle);
+}
+
 short Projectile::getSpeed(int axis) const
 {
     if(axis==0)

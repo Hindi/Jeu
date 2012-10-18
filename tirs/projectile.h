@@ -50,6 +50,8 @@ class Projectile
         void freeze();
         void unfreeze();
 
+        void rotate(short angle);
+
     protected:
 
         //Le sprite

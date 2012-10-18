@@ -63,9 +63,8 @@ bool Unit::isDead()
 
 void Unit::drawExplosion()
 {
-    m_animatedExplosion->anim(animExplosion.getTime());
+    m_animatedExplosion->anim(app.GetFrameTime());
     app.Draw(*m_animatedExplosion);
-    animExplosion.reinitialize();
 }
 
 int Unit::getExploWidth() const
@@ -80,9 +79,4 @@ int Unit::getExploHeight() const
 short Unit::getCoefSpeed() const
 {
     return coefSpeed;
-}
-
-void Unit::startAnimTimer()
-{
-    animExplosion.start();
 }

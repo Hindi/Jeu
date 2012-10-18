@@ -119,8 +119,7 @@ void Population::manageExplosion()
             //On positionne l'animation sur l'ennemi qui a explose
             (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);
              //On dessine l'explosion
-            (*lit)->startAnimTimer();
-            (*lit)->drawExplosion();
+            //(*lit)->drawExplosion();
             //Si l'image actuelle correspond à la dernière image de l'animation
             if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
             {
