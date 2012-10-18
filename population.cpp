@@ -91,8 +91,7 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
     m_deadEnemies.push_back(enemy);
 
     Vector2f position;
-    int score;
-    score = enemy->getScoreExplosion();
+    int score = enemy->getScoreExplosion();
     position.x = enemy->getPositionAxis(0);
     position.y = enemy->getPositionAxis(1);
     Drop_manager::getInstance()->createDrop(score, position);
@@ -120,6 +119,7 @@ void Population::manageExplosion()
             //On positionne l'animation sur l'ennemi qui a explose
             (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);
              //On dessine l'explosion
+            (*lit)->startAnimTimer();
             (*lit)->drawExplosion();
             //Si l'image actuelle correspond à la dernière image de l'animation
             if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)

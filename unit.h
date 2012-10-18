@@ -7,6 +7,7 @@
 #include "Animated.hpp"
 #include "image_manager.h"
 #include "const.h"
+#include "timer.h"
 
 //class mère des unités de jeu (player, enemy)
 
@@ -40,6 +41,8 @@ class Unit
         //Accesseur sur le coeficient de vitesse
          short getCoefSpeed() const;
 
+         void startAnimTimer();
+
     protected:
         //Variables d'animation
         Anim m_animExplosion;
@@ -71,6 +74,8 @@ class Unit
 
         //Le frame courant
         short currentFrameX, currentFrameY;
+
+        Timer animExplosion;
 };
 
 #endif // UNIT_H_INCLUDED
