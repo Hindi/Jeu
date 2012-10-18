@@ -15,9 +15,7 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
-
 - Plusieurs planètes
-- Missiles qui n'atteignent jamais les enemy
 - Problèmes de threads : voir missiles
 */
 

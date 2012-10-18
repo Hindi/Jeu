@@ -55,9 +55,10 @@ void Weapon_manager::setParams(Player *externPlayer0, Player *externPlayer1)
 
 void Weapon_manager::kill()
 {
-    if (NULL != _singleton)
+    if(NULL != _singleton)
       {
-        delete _singleton;
+         delete _singleton;
+         cout << "huk" << endl;
         _singleton = NULL;
       }
 }

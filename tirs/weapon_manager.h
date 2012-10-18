@@ -14,6 +14,8 @@ class Weapon_manager
 
         static void kill();
         static Weapon_manager* getInstance();
+        //Destructeur
+        ~Weapon_manager();
 
     private:
         //Score limite pour activer les armes
@@ -22,9 +24,6 @@ class Weapon_manager
         Player *player0, *player1;
 
         Weapon_manager();
-
-        //Destructeur
-        ~Weapon_manager();
 
         static Weapon_manager* _singleton;
 };
