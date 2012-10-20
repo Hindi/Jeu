@@ -8,9 +8,10 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             scale(1,1),
             m_coefSpeed(coefSpeed),
             m_position(position),
-            m_followAnim(followAnim),
-            followRate(0.1)
+            m_followAnim(followAnim)
 {
+    float speedNorm = sqrt(pow(speed.x*coefSpeed, 2) + pow(speed.y*coefSpeed, 2));
+    followRate = 30/speedNorm;
     this->setPosition(position);
     if(!m_followAnim)
     {
