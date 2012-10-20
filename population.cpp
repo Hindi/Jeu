@@ -115,11 +115,13 @@ void Population::manageExplosion()
                 (*lit)->getAnimationExplosion()->Play();//On relance l'animation
             //On récupère le numéro de l'image qui est affichée
             currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();
-
+            Vector2f position(0,0);
+            position.x = (*lit)->getPositionAxis(0) + (*lit)->getSize().x/2 - ((*lit)->getExploWidth()/2);
+            position.y = (*lit)->getPositionAxis(1) + (*lit)->getSize().y/2 - ((*lit)->getExploHeight()/2);
             //On positionne l'animation sur l'ennemi qui a explose
-            (*lit)->getAnimationExplosion()->SetPosition((*lit)->getPositionAxis(0)-((*lit)->getExploWidth()/2), (*lit)->getPositionAxis(2)-((*lit)->getExploHeight()/2)+30);
+            (*lit)->getAnimationExplosion()->SetPosition(position);
              //On dessine l'explosion
-            //(*lit)->drawExplosion();
+            (*lit)->drawExplosion();
             //Si l'image actuelle correspond à la dernière image de l'animation
             if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
             {
