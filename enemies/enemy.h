@@ -105,6 +105,8 @@ class Enemy : public Unit
         void freeze();
         void unfreeze();
 
+        sf::Vector2f getSize();
+
 
     protected:
         Player &player;

@@ -489,3 +489,8 @@ void Enemy::unfreeze()
 {
     m_coefSpeed *= 3;
 }
+
+Vector2f Enemy::getSize()
+{
+    return Vector2f(image->GetWidth(), image->GetHeight());
+}
