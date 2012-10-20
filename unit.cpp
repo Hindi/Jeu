@@ -5,17 +5,20 @@ using namespace sf;
 
 Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position):
             m_scale(1,1),
-            EXPLOS_WIDTH(400),
-            EXPLOS_HEIGHT(400),
             m_position(position),
             m_life(life),
             m_xSpeed(xSpeed),
             m_ySpeed(ySpeed),
             coefSpeed(50)
 {
+
     m_animatedExplosion = new Animated();
     imageExplosion = new Image();
-   *imageExplosion = image_manager::getInstance()->getImage("images/explosion1.png");
+   *imageExplosion = image_manager::getInstance()->getImage("images/Explosion.png");
+
+
+    EXPLOS_WIDTH = imageExplosion->GetWidth()/7;
+    EXPLOS_HEIGHT = imageExplosion->GetHeight();
 
     m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(0, 0, EXPLOS_WIDTH, EXPLOS_HEIGHT) ));
     m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(EXPLOS_WIDTH, 0, EXPLOS_WIDTH*2, EXPLOS_HEIGHT) ));
@@ -67,11 +70,11 @@ void Unit::drawExplosion()
     app.Draw(*m_animatedExplosion);
 }
 
-int Unit::getExploWidth() const
+int Unit::getExploWidth()
 {
     return EXPLOS_WIDTH;
 }
-int Unit::getExploHeight() const
+int Unit::getExploHeight()
 {
     return EXPLOS_HEIGHT;
 }

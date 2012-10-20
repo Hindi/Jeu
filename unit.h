@@ -32,8 +32,8 @@ class Unit
          void drawExplosion();
 
         //Accsseur sur la taille de l'explosion
-         int getExploWidth() const;
-         int getExploHeight() const;
+         int getExploWidth();
+         int getExploHeight();
 
         //Accesseur sur la vitesse
          sf::Vector2f getSpeed();
@@ -50,7 +50,7 @@ class Unit
         const sf::Vector2f m_scale;
 
         //Taille de l'explosion
-        int const EXPLOS_WIDTH, EXPLOS_HEIGHT;
+        int EXPLOS_WIDTH, EXPLOS_HEIGHT;
 
         //La position courante
         sf::Vector2f m_position;
