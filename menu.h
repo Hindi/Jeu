@@ -18,6 +18,10 @@ class Menu
         //menu de pause
         void drawPauseMenu(int select);
 
+        void setLevel(short nextLevel);
+
+        short getLevel();
+
     protected:
         //Les imagesde tous les menus
         sf::Image *imagePlay;
@@ -32,6 +36,8 @@ class Menu
         sf::Image *imageFadePause;
         sf::Image *imageFadeReprendre;
         sf::Image *imageFadeArreter;
+        //sf::Image *imageContinuer;
+        //sf::Image *imageFadeContinuer;
 
         //Les sprites de tous les menus
         sf::Sprite spritePlay;
@@ -42,6 +48,8 @@ class Menu
         sf::Sprite spriteArreter;
         sf::Vector2f position;
         sf::Vector2f m_scale;
+
+        short currentLevel;
 };
 
 #endif // MENU_H_INCLUDED

@@ -4,7 +4,9 @@ using namespace std;
 using namespace sf;
 
 Script::Script(short const id):
-            id(id)
+            id(id),
+            finished(false),
+            currentLevel(1)
 {
     timer.start();
 }
@@ -21,16 +23,27 @@ Liste des boss :
 */
 
 void Script::Run()
-{/*
-    while(1)
+{
+        cout << m_launchLevel << endl;
+    switch(m_launchLevel)
     {
-        niveau1();
-        timer.sleep(1000);
-    }*/
+        case 1:
+        {
+            niveau1();
+            break;
+        }
+        case 2:
+        {
+            niveau2();
+            break;
+        }
+    }
 }
 
 void Script::niveau1()
 {
+    finished = false;
+    currentLevel = 1;
     //Variables enemy :
     Vector2f positionEnemy(50, 50);
 
@@ -53,5 +66,36 @@ void Script::niveau1()
     positionEnemy.x +=100;
     //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
     m_population.createBoss(positionEnemy, "roundtrip", "lily");*/
+    timer.sleep(10000);
+    finished = true;
+}
 
+void Script::niveau2()
+{
+     finished = false;
+    currentLevel = 1;
+    //Variables enemy :
+    Vector2f positionEnemy(500, 50);
+
+    Population::getInstance()->createShip(positionEnemy, "Down",true);
+    timer.sleep(10000);
+    finished = true;
+}
+
+bool Script::isFinished()
+{
+    if(finished)
+        return true;
+    else
+        return false;
+}
+
+short Script::nextLevel()
+{
+    return currentLevel + 1;
+}
+
+void Script::setLaunchLevel(short launchLevel)
+{
+    m_launchLevel = launchLevel;
 }

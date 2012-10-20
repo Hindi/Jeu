@@ -29,7 +29,7 @@ class Jeu
         ~Jeu();
 
         //Démarre la partie
-        void start();
+        void start(short niveau);
 
         //Met en pause la partie
         void pause(sf::Event event, Pannel &pannel, Player &player);

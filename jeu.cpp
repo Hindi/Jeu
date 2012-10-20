@@ -18,7 +18,7 @@ Jeu::~Jeu()
 
 }
 
-void Jeu::start()
+void Jeu::start(short niveau)
 {
     bool invincible(false);
     int invincibleStart;
@@ -73,12 +73,17 @@ void Jeu::start()
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
 
-    population->createShip(Vector2f(100, 100), "don't move",true);
-
+    //population->createShip(Vector2f(100, 100), "don't move",true);
+    Script s1(1);
+    s1.setLaunchLevel(niveau);
+    s1.Launch();
     while (app.IsOpened() )
     {
-        if(m_quit)
+        if(m_quit or s1.isFinished())
+        {
+            m_menu.setLevel(s1.nextLevel());
             break;
+        }
 
         app.Clear();
         background.manage();

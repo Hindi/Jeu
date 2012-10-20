@@ -53,7 +53,7 @@ const sf::Image& image_manager::getImage( const std::string& filename )
 
 	}
 
-	//std::cout << "GAME_ERROR: Image was not found. It is filled with an empty image.\n";
+	std::cout << "GAME_ERROR: Image was not found. It is filled with an empty image.\n";
 	m_images[filename] = image;
 	return m_images[filename];
 }

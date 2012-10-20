@@ -15,7 +15,6 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
     this->setPosition(position);
     if(!m_followAnim)
     {
-
         firstProj = new Image();
         *firstProj = image_manager::getInstance()->getImage(filepath);
         spriteFirst.SetImage(*firstProj);
@@ -66,8 +65,6 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             sprites[i]->SetPosition(m_position);
         }
     }
-
-
     timerFollow.start();
 }
 

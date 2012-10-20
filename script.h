@@ -17,12 +17,22 @@ class Script:public sf::Thread
         void niveau1();
         void niveau2();
 
+        bool isFinished();
+
+        short nextLevel();
+
+        void setLaunchLevel(short launchLevel);
+
+
     private:
         // Run() est une fonctione virtuelle de sf::Thread
         void Run();
 
         short const id;
         Timer timer;
+
+        bool finished;
+        short currentLevel, m_launchLevel;
 };
 
 #endif // SCRIPT_H_INCLUDED

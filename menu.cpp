@@ -5,7 +5,8 @@ using namespace sf;
 
 Menu::Menu():
             position(250, 200),
-            m_scale(1,1)
+            m_scale(1,1),
+            currentLevel(1)
 {
     //Image "nouvelle partie" fade
     imageFadePlay = new Image;
@@ -68,6 +69,11 @@ Menu::Menu():
     spriteArreter.SetPosition(position);
     spriteArreter.Scale(m_scale);
 
+    /*
+    imageContinuer = new Image;
+    imageFadeContinuer = new Image;
+    *imageContinuer = image_manager::getInstance()->getImage(filepath);
+    *imageFadeContinuer = image_manager::getInstance()->getImage(filepath);*/
 }
 
 Menu::~Menu()
@@ -83,11 +89,18 @@ Menu::~Menu()
     delete imageArreter;
     delete imageFadeReprendre;
     delete imageFadeArreter;
+    //delete imageContinuer;
+    //delete imageFadeContinuer;
 }
 
 //Le menu principal avec gestion du highlight avec un système de points
 void Menu::drawMainMenu(int select)
 {
+    if(currentLevel > 1)
+    {
+        //spritePlay.SetImage(*imageContinuer);
+    }
+
     switch(select)
     {
         case 1:
@@ -138,4 +151,14 @@ void Menu::drawPauseMenu(int select)
      app.Draw(spritePause);
      app.Draw(spriteReprendre);
      app.Draw(spriteArreter);
+}
+
+void Menu::setLevel(short nextLevel)
+{
+    currentLevel = nextLevel;
+}
+
+short Menu::getLevel()
+{
+    return currentLevel;
 }
