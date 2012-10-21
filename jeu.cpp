@@ -9,8 +9,8 @@ Jeu::Jeu(int const SCREEN_WIDTH, int const SCREEN_HEIGHT, Menu &menu):
             m_SCREEN_HEIGHT(SCREEN_HEIGHT),
             m_menu(menu),
             m_quit(false),
-            scorePlayer1(0),
-            scorePlayer2(0)
+            scorePlayer1(1),
+            scorePlayer2(1)
 {
 
 }
@@ -45,10 +45,6 @@ void Jeu::start(short niveau)
     std::tr1::shared_ptr<Player> player2(new Player(1, 1,positionPlayer));
     player->addScore(scorePlayer1);
     player2->addScore(scorePlayer2);
-
-    cout << scorePlayer1 << endl;
-    cout << scorePlayer2 << endl;
-
 
     Drop_manager *drop_manager;
     drop_manager = Drop_manager::getInstance();
@@ -214,6 +210,7 @@ void Jeu::start(short niveau)
         app.Display();
         timer.sleep(1);
     }
+
 }
 
 void Jeu::pause(Event Event, Pannel &pannel, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2)

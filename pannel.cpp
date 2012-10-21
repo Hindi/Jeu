@@ -140,10 +140,20 @@ void Pannel::drawScore()
     {
         Vector2f position(50, 50);
         std::ostringstream oss;
-        oss << (m_player->getScore()+m_player2->getScore());
+        oss << (m_player->getScore());
         string result = oss.str();
         String text;
         text.SetText(result);
+        text.SetFont(font);
+        text.SetSize(20);
+        text.SetColor(Color(255, 255, 255));
+        text.SetPosition(position);
+        app.Draw(text);
+
+        position.y += 20;
+        oss << (m_player2->getScore());
+        result = oss.str();
+         text.SetText(result);
         text.SetFont(font);
         text.SetSize(20);
         text.SetColor(Color(255, 255, 255));

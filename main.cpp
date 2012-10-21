@@ -9,8 +9,6 @@
 using namespace std;
 using namespace sf;
 
-void startGame(Jeu jeu, short level);
-
 RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
@@ -72,7 +70,7 @@ int main()
                 {
                     case 1:
                     {
-                        startGame(jeu, menu.getLevel());
+                        jeu.start(menu.getLevel());
                         break;
                     }
                     case 2:
@@ -93,9 +91,4 @@ int main()
     timer.sleep(1);
     }
     return 0;
-}
-
-void startGame(Jeu jeu, short level)
-{
-    jeu.start(level);
 }
