@@ -67,7 +67,7 @@ class Population
 
         static void kill();
         static Population* getInstance();
-        void setPlayer(std::tr1::shared_ptr<Player> externPlayer);
+        void setPlayer(std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
 
         void freeze();
         void unfreeze();
@@ -84,6 +84,7 @@ class Population
         std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;
 
         std::tr1::shared_ptr<Player> player;
+        std::tr1::shared_ptr<Player> player2;
 
     private:
         //Constructeur privé pour singleton

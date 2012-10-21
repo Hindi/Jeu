@@ -51,7 +51,7 @@ void Jeu::start(short niveau)
     //Variable population
     Population *population;
     population = Population::getInstance();
-    population->setPlayer(player);
+    population->setPlayer(player, player2);
 
     //gestionnaires de missiles
     Missile_manager *missile_manager;

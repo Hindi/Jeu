@@ -330,6 +330,11 @@ int Player::getPosition(int axis)
 
 }
 
+Vector2f Player::getPosition()
+{
+    return m_position;
+}
+
 void Player::setPosition(int axis, int value)
 {
     if(axis == 1)

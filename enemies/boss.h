@@ -23,7 +23,7 @@ class Boss : public Enemy
 {
     public:
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
-             int moveValue, const int coefSpeed, const int firerate, const char* name, std::tr1::shared_ptr<Player> player);
+             int moveValue, const int coefSpeed, const int firerate, const char* name, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
         //Destruteur
         ~Boss();
 

@@ -4,7 +4,8 @@ using namespace std;
 using namespace sf;
 
 
-Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer):
+Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed,
+             const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
             lastShot(0),
@@ -20,7 +21,7 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_spawner(spawner),
             lastSpawn(0),
             m_spawnRate(3),
-            player(externPlayer)
+            player(externPlayer), player2(externPlayer2)
 {
     m_animated = new Animated;
     timer.start();
@@ -262,24 +263,43 @@ Animated* Enemy::getAnimationExplosion()
 
 void Enemy::fireFocus()
 {
-    Vector2f distance;
+    Vector2f distance1, distance2, position1, position2;
     int indistinctness = rand() % 100 + 1;
-    //On récupère les coordonnées du joueur
-    playerPosition.x = player->getPosition(0);
-    playerPosition.y = player->getPosition(1);
-    distance.x = (playerPosition.x - m_position.x);
-    distance.y = (playerPosition.y - m_position.y);
-    int norm = sqrt(distance.x*distance.x + distance.y*distance.y);
+    int norm;
+
+    //On récupère les positions des deux joueurs
+    position1 = player->getPosition();
+    position2 = player2->getPosition();
+
+    //On calcule leur deux normes
+    distance1.x = (position1.x - m_position.x);
+    distance1.y = (position1.y - m_position.y);
+    int norm1 = sqrt(distance1.x*distance1.x + distance1.y*distance1.y);
+
+    distance2.x = (position2.x - m_position.x);
+    distance2.y = (position2.y - m_position.y);
+    int norm2 = sqrt(distance2.x*distance2.x + distance2.y*distance2.y);
+
+    if(norm1 > norm2)
+    {
+        distance1 = distance2;
+        norm = norm2;
+    }
+    else
+        norm = norm1;
+
     //On calcule la vitesse du projectile
-    distance.x = ((distance.x+indistinctness)/norm)*projectileSpeed;
-    distance.y = ((distance.y+indistinctness)/norm)*projectileSpeed;
+    distance1.x = ((distance1.x+indistinctness)/norm)*projectileSpeed;
+    distance1.y = ((distance1.y+indistinctness)/norm)*projectileSpeed;
+
     //La position de départ du projectile
     Vector2f positionProjectile(m_position);
     positionProjectile.x += (image->GetWidth()/2)-18;
     positionProjectile.y += image->GetHeight()-20;
     const string filepath = "images/projectile3.png";
-    std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(distance.x, distance.y), m_coefSpeed, true));
+    std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, distance1, m_coefSpeed, true));
     projectile->setPosition(positionProjectile);
+
     //On le rajoute à la liste des projectiles gérée par le projectile manager.
     Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     lastShot = timer.getTime();

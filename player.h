@@ -64,6 +64,7 @@ class Player : public Unit
 
         //accesseur sur la position
         int getPosition(int axis);
+        sf::Vector2f getPosition();
         void setPosition(int axis, int value);
 
         //accesseur sur le nombre de dommages
