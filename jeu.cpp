@@ -86,16 +86,21 @@ void Jeu::start(short niveau)
     s1.Launch();
     while (app.IsOpened() )
     {
-        if(m_quit or s1.isFinished())
+        if(m_quit || s1.isFinished())
         {
-            m_menu.setLevel(s1.nextLevel());
+            if(s1.isFinished())
+            {
+                this->saveDatas(player, player2);
+                m_menu.setLevel(s1.nextLevel());
+            }
+            else
+                m_menu.setLevel(1);
             drop_manager->reset();
             population->reset();
             weapon_manager->reset();
             missile_manager->reset();
             scoreManager->reset();
             projectile_manager->reset();
-            this->saveDatas(player, player2);
             break;
         }
 
