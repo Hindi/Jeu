@@ -46,6 +46,9 @@ void Jeu::start(short niveau)
     player->addScore(scorePlayer1);
     player2->addScore(scorePlayer2);
 
+    cout << scorePlayer1 << endl;
+    cout << scorePlayer2 << endl;
+
 
     Drop_manager *drop_manager;
     drop_manager = Drop_manager::getInstance();
@@ -173,7 +176,7 @@ void Jeu::start(short niveau)
         if(input.IsKeyDown(Key::Escape))
         {
             population->stop();
-            this->pause(Event, pannel);
+            this->pause(Event, pannel, player, player2);
             population->unStop();
         }
         if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
@@ -208,7 +211,7 @@ void Jeu::start(short niveau)
     }
 }
 
-void Jeu::pause(Event Event, Pannel &pannel)
+void Jeu::pause(Event Event, Pannel &pannel, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2)
 {
     Timer timer;
     bool resume(false);
@@ -262,8 +265,9 @@ void Jeu::pause(Event Event, Pannel &pannel)
         }
         Population::getInstance()->drawPopulation();
         Population::getInstance()->manageExplosion();
-//        app.Draw(player->getSprite());
-  //      app.Draw(pannel->getSprite());
+        player->draw();
+        player2->draw();
+        pannel.checkPannel();
         m_menu.drawPauseMenu(select);
         app.Display();
     }
