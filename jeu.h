@@ -32,7 +32,9 @@ class Jeu
         void start(short niveau);
 
         //Met en pause la partie
-        void pause(sf::Event event, Pannel &pannel, Player &player);
+        void pause(sf::Event event, Pannel &pannel);
+
+        void saveDatas(std::tr1::shared_ptr<Player> player1, std::tr1::shared_ptr<Player> player2);
 
     protected:
         //Taille de la fenêtre
@@ -43,6 +45,8 @@ class Jeu
 
         //Pour quitter la partie en cours
         bool m_quit;
+
+        int scorePlayer1, scorePlayer2;
 
 };
 

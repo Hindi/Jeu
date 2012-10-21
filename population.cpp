@@ -8,18 +8,13 @@ Population *Population::_singleton= NULL;
 Population::Population()
 {
     m_coefSpeed = 30;
-    player = NULL;
     Population* _singleton= NULL;
 }
 
 
 Population::~Population()
 {
-    m_enemies.clear();
-    m_deadEnemies.clear();
-    m_spawns.clear();
-
-    delete player;
+    this->reset();
 }
 
 void Population::drawPopulation()
@@ -164,7 +159,7 @@ void Population::unStop()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, *player));
+    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, player));
     m_enemies.push_back(a);
 }
 
@@ -172,7 +167,7 @@ void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     m_coefSpeed = 20;
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, spawner, *player));
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, spawner, player));
     m_enemies.push_back(a);
 }
 
@@ -182,7 +177,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
     {
         Vector2f position = enemy->getPosition();
         m_coefSpeed = 10;
-        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, *player));
+        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/etoile1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player));
         m_enemies.push_back(a);
         enemy->upDateLastSpawnTime();
     }
@@ -190,7 +185,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 
 void Population::createBoss(Vector2f position, char* move, char* name)
 {
-    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, *player));
+    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, player));
     m_enemies.push_back(a);
 }
 
@@ -229,7 +224,7 @@ void Population::kill ()
       }
   }
 
-void Population::setPlayer(Player *externPlayer)
+void Population::setPlayer(std::tr1::shared_ptr<Player> externPlayer)
 {
     player = externPlayer;
 }
@@ -272,4 +267,11 @@ void Population::unfreeze()
 bool Population::isFreezed()
 {
     return freezed;
+}
+
+void Population::reset()
+{
+    m_enemies.clear();
+    m_deadEnemies.clear();
+    m_spawns.clear();
 }

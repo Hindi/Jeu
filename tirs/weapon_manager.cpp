@@ -14,8 +14,7 @@ Weapon_manager::Weapon_manager():
 
 Weapon_manager::~Weapon_manager()
 {
-    delete player0;
-    delete player1;
+    this->reset();
 }
 
 void Weapon_manager::manage()
@@ -47,7 +46,7 @@ void Weapon_manager::manage()
 }
 
 
-void Weapon_manager::setParams(Player *externPlayer0, Player *externPlayer1)
+void Weapon_manager::setParams(std::tr1::shared_ptr<Player> externPlayer0, std::tr1::shared_ptr<Player> externPlayer1)
 {
     player0 = externPlayer0;
     player1 = externPlayer1;
@@ -58,7 +57,6 @@ void Weapon_manager::kill()
     if(NULL != _singleton)
       {
          delete _singleton;
-         cout << "huk" << endl;
         _singleton = NULL;
       }
 }
@@ -72,4 +70,9 @@ Weapon_manager* Weapon_manager::getInstance()
       }
 
     return _singleton;
+}
+
+void Weapon_manager::reset()
+{
+
 }

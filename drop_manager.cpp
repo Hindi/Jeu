@@ -12,7 +12,7 @@ Drop_manager::Drop_manager()
 
 Drop_manager::~Drop_manager()
 {
-    m_droplist.clear();
+    this->reset();
 }
 
 //Créé un objet drop et l'ajoute dansl al iste des drops
@@ -76,3 +76,8 @@ void Drop_manager::kill ()
         _singleton = NULL;
       }
   }
+
+void Drop_manager::reset()
+{
+    m_droplist.clear();
+}

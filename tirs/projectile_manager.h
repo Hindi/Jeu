@@ -44,6 +44,8 @@ class Projectile_manager
         void freeze();
         void unfreeze();
 
+        void reset();
+
     private:
         //Liste des projectiles ennemis
         std::list<std::tr1::shared_ptr<Projectile> > m_enemyProjectiles;

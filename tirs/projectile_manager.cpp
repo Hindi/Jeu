@@ -12,8 +12,7 @@ Projectile_manager::Projectile_manager()
 
 Projectile_manager::~Projectile_manager()
 {
-    m_playerProjectiles.clear();
-    m_enemyProjectiles.clear();
+    this->reset();
 }
 
 bool Projectile_manager::haveEnemyProjectilesInProgress()
@@ -167,4 +166,10 @@ void Projectile_manager::unfreeze()
     {
         (*lit)->unfreeze();//Dessine les projectiles ennemi
     }
+}
+
+void Projectile_manager::reset()
+{
+    m_playerProjectiles.clear();
+    m_enemyProjectiles.clear();
 }

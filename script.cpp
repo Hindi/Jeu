@@ -42,32 +42,38 @@ void Script::Run()
 
 void Script::niveau1()
 {
-    finished = false;
-    currentLevel = 1;
-    //Variables enemy :
-    Vector2f positionEnemy(50, 50);
+    int i(0);
+    while(i < 5)
+    {
+        finished = false;
+        currentLevel = 1;
+        //Variables enemy :
+        Vector2f positionEnemy(50, 50);
 
-    Population::getInstance()->createShip(positionEnemy, "roundtrip",true);/*
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    m_population.createFlyingSaucer(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
+        Population::getInstance()->createShip(positionEnemy, "roundtrip",true);/*
+        positionEnemy.x +=100;
+        m_population.createShip(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
+        m_population.createShip(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
+        m_population.createFlyingSaucer(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
+        m_population.createShip(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
+        m_population.createShip(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
 
-    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    positionEnemy.x +=100;
-    m_population.createShip(positionEnemy, "roundtrip");
-    positionEnemy.x +=100;
-    //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
-    m_population.createBoss(positionEnemy, "roundtrip", "lily");*/
-    timer.sleep(10000);
+        //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
+        positionEnemy.x +=100;
+        m_population.createShip(positionEnemy, "roundtrip");
+        positionEnemy.x +=100;
+        //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
+        m_population.createBoss(positionEnemy, "roundtrip", "lily");*/
+        timer.sleep(1000);
+        i++;
+    }
     finished = true;
+    timer.sleep(1000);
 }
 
 void Script::niveau2()

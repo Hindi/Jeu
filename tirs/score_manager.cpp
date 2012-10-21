@@ -12,7 +12,7 @@ Score_manager::Score_manager()
 
 Score_manager::~Score_manager()
 {
-
+    this->reset();
 }
 
 void Score_manager::addScore(int score, Vector2f position)
@@ -76,3 +76,8 @@ void Score_manager::kill ()
         _singleton = NULL;
       }
   }
+
+void Score_manager::reset()
+{
+
+}

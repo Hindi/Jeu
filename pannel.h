@@ -10,7 +10,7 @@
 class Pannel
 {
     public:
-        Pannel(const std::string &filepath, sf::Vector2f position, Player &player, Player &player2);
+        Pannel(const std::string &filepath, sf::Vector2f position, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
 
         //Destructeur
         virtual ~Pannel();
@@ -46,7 +46,7 @@ class Pannel
         const sf::Vector2f m_scale;
 
         //Variable du joueur
-        Player &m_player, &m_player2;
+        std::tr1::shared_ptr<Player> m_player, m_player2;
 };
 
 #endif // PANNEL_H_INCLUDED

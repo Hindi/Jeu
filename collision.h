@@ -16,7 +16,7 @@
 class Collision
 {
     public:
-        Collision(sf::Vector2f windowSize, Player &player, Player &player2);
+        Collision(sf::Vector2f windowSize, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
 
         //Destructeur
         virtual ~Collision();
@@ -36,7 +36,7 @@ class Collision
 
     protected:
     //Objet joueur
-        Player &m_player, &m_player2;
+        std::tr1::shared_ptr<Player> m_player, m_player2;
 
         //Taille de la fenêtre
         const sf::Vector2f m_windowSize;

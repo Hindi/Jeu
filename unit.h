@@ -46,14 +46,15 @@ class Unit
         Anim m_animExplosion;
         Animated *m_animatedExplosion;
 
+        //La position courante
+        sf::Vector2f m_position;
+
+
         //Echelle d'affichage
         const sf::Vector2f m_scale;
 
         //Taille de l'explosion
         int EXPLOS_WIDTH, EXPLOS_HEIGHT;
-
-        //La position courante
-        sf::Vector2f m_position;
 
         //Le sprite
         sf::Sprite sprite;

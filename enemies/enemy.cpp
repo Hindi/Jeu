@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 
-Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, Player &externPlayer):
+Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
             lastShot(0),
@@ -43,16 +43,7 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
 
 Enemy::~Enemy()
 {
-    m_projectiles.clear();
-    m_vitesses.clear();
-    delete m_animated;
-    if (image!= NULL )
-    {
-        delete image;
-    }
-    delete direction;
-    delete m_type;
-    delete m_moveMethod;
+    this->reset();
 }
 
 Sprite* Enemy::getSprite()
@@ -274,8 +265,8 @@ void Enemy::fireFocus()
     Vector2f distance;
     int indistinctness = rand() % 100 + 1;
     //On récupère les coordonnées du joueur
-    playerPosition.x = player.getPosition(0);
-    playerPosition.y = player.getPosition(1);
+    playerPosition.x = player->getPosition(0);
+    playerPosition.y = player->getPosition(1);
     distance.x = (playerPosition.x - m_position.x);
     distance.y = (playerPosition.y - m_position.y);
     int norm = sqrt(distance.x*distance.x + distance.y*distance.y);
@@ -493,4 +484,19 @@ void Enemy::unfreeze()
 Vector2f Enemy::getSize()
 {
     return Vector2f(image->GetWidth(), image->GetHeight());
+}
+
+void Enemy::reset()
+{
+
+    m_projectiles.clear();
+    m_vitesses.clear();
+    delete m_animated;
+    if (image!= NULL )
+    {
+        delete image;
+    }
+    delete direction;
+    delete m_type;
+    delete m_moveMethod;
 }

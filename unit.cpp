@@ -31,7 +31,7 @@ Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position):
     m_animatedExplosion->SetAnim(&m_animExplosion);
     m_animatedExplosion->SetLoop(false);
     m_animatedExplosion->SetFrameTime(0.07f);
-    m_animatedExplosion->SetPosition(m_position.x, m_position.y);
+    m_animatedExplosion->SetPosition(position.x, position.y);
 
 }
 

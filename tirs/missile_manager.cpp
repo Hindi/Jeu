@@ -26,8 +26,7 @@ Missile_manager::Missile_manager():
 
 Missile_manager::~Missile_manager()
 {
-    delete player;
-    m_missiles.clear();
+    this->reset();
 }
 
 
@@ -213,7 +212,12 @@ void Missile_manager::kill ()
       }
   }
 
-void Missile_manager::setPlayer(Player *externPlayer)
+void Missile_manager::setPlayer(std::tr1::shared_ptr<Player> externPlayer)
 {
     player = externPlayer;
+}
+
+void Missile_manager::reset()
+{
+    m_missiles.clear();
 }

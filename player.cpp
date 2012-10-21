@@ -327,6 +327,7 @@ int Player::getPosition(int axis)
         return m_position.x;
     else
         return m_position.y;
+
 }
 
 void Player::setPosition(int axis, int value)

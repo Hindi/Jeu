@@ -17,7 +17,7 @@ bool checkCollision(const IntRect & a, const IntRect & b)
     return true;
 }
 
-Collision::Collision(Vector2f windowSize, Player &player, Player &player2):
+Collision::Collision(Vector2f windowSize, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
             m_player(player),
             m_player2(player2),
             m_windowSize(windowSize)
@@ -32,17 +32,17 @@ Collision::~Collision()
 
 void Collision::manageCollisionsX()
 {
-    IntRect playerRect = m_player.GetBoundingBox(), enemyRect;
+    IntRect playerRect = m_player->GetBoundingBox(), enemyRect;
     if(playerRect.Left < 0)
     {
-        m_player.setPosition(1, 0);
+        m_player->setPosition(1, 0);
     }
     else if(playerRect.Right > m_windowSize.x )
     {
-        m_player.setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
+        m_player->setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
     }
 
-    if(!m_player.getLostlife())
+    if(!m_player->getLostlife())
     {
         list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
         for(; li!=Population::getInstance()->getPopulation()->end(); li++)
@@ -50,7 +50,7 @@ void Collision::manageCollisionsX()
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
-                m_player.loseLive();
+                m_player->loseLive();
             }
         }
     }
@@ -60,17 +60,17 @@ void Collision::manageCollisionsX()
 
 void Collision::manageCollisionsX2()
 {
-    IntRect playerRect = m_player2.GetBoundingBox(), enemyRect;
+    IntRect playerRect = m_player2->GetBoundingBox(), enemyRect;
     if(playerRect.Left < 0)
     {
-        m_player2.setPosition(1, 0);
+        m_player2->setPosition(1, 0);
     }
     else if(playerRect.Right > m_windowSize.x )
     {
-        m_player2.setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
+        m_player2->setPosition(1, m_windowSize.x-(-playerRect.Left+playerRect.Right));
     }
 
-    if(!m_player2.getLostlife())
+    if(!m_player2->getLostlife())
     {
         list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
         for(; li!=Population::getInstance()->getPopulation()->end(); li++)
@@ -78,7 +78,7 @@ void Collision::manageCollisionsX2()
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
-                m_player2.loseLive();
+                m_player2->loseLive();
             }
         }
     }
@@ -88,18 +88,18 @@ void Collision::manageCollisionsX2()
 
 void Collision::manageCollisionsY()
 {
-    IntRect playerRect = m_player.GetBoundingBox(), enemyRect;
+    IntRect playerRect = m_player->GetBoundingBox(), enemyRect;
     if(playerRect.Top < 0)
     {
-        m_player.setPosition(2, 0);
+        m_player->setPosition(2, 0);
     }
     else if(playerRect.Bottom > m_windowSize.y)
     {
-        m_player.setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
+        m_player->setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
     }
 
 
-    if(!m_player.getLostlife())
+    if(!m_player->getLostlife())
     {
         list<tr1::shared_ptr<Enemy> >::iterator li;
         for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end();)
@@ -107,7 +107,7 @@ void Collision::manageCollisionsY()
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
-                m_player.loseLive();
+                m_player->loseLive();
             }
             if(enemyRect.Top > 1500)
             {
@@ -125,18 +125,18 @@ void Collision::manageCollisionsY()
 
 void Collision::manageCollisionsY2()
 {
-    IntRect playerRect = m_player2.GetBoundingBox(), enemyRect;
+    IntRect playerRect = m_player2->GetBoundingBox(), enemyRect;
     if(playerRect.Top < 0)
     {
-        m_player2.setPosition(2, 0);
+        m_player2->setPosition(2, 0);
     }
     else if(playerRect.Bottom > m_windowSize.y)
     {
-        m_player2.setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
+        m_player2->setPosition(2, (m_windowSize.y-(-playerRect.Top+playerRect.Bottom)));
     }
 
 
-    if(!m_player2.getLostlife())
+    if(!m_player2->getLostlife())
     {
         list<tr1::shared_ptr<Enemy> >::iterator li;
         for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end();)
@@ -144,7 +144,7 @@ void Collision::manageCollisionsY2()
             enemyRect = (*li)->getBoundingBox();
             if(playerRect.Right > enemyRect.Left+20 && playerRect.Left < enemyRect.Right-20 && playerRect.Top > enemyRect.Top && playerRect.Top < enemyRect.Bottom)
             {
-                m_player2.loseLive();
+                m_player2->loseLive();
             }
             if(enemyRect.Top > 1500)
             {
@@ -184,8 +184,8 @@ void Collision::manageProjectileCollision()
                 enemyRect = (*li)->getBoundingBox();
                 if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
                 {
-                    (*li)->recieveDamages(m_player.getDamages());
-                    m_player.addScore((*li)->getScoreHit());
+                    (*li)->recieveDamages(m_player->getDamages());
+                    m_player->addScore((*li)->getScoreHit());
                     (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
                 }
             }
@@ -211,7 +211,7 @@ void Collision::manageProjectileCollision()
                 if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left+5 && projectileRect.Left < enemyRect.Right-5)
                 {
                     (*li)->recieveDamages((*litt)->getDamage());
-                    m_player.addScore((*li)->getScoreHit());
+                    m_player->addScore((*li)->getScoreHit());
                     Missile_manager::getInstance()->setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
                     (litt) = Missile_manager::getInstance()->getMissile()->erase(litt);
                 }
@@ -222,14 +222,14 @@ void Collision::manageProjectileCollision()
 
 void Collision::dropCollision()
 {
-    IntRect playerRect = m_player.GetBoundingBox(), dropRect;
+    IntRect playerRect = m_player->GetBoundingBox(), dropRect;
     list<std::tr1::shared_ptr<Drop> >::iterator lit(Drop_manager::getInstance()->getDrop()->begin());
     for(; lit!=Drop_manager::getInstance()->getDrop()->end();)
     {
         dropRect = (*lit)->getBoundingBox();
         if((playerRect.Right > dropRect.Left && playerRect.Left < dropRect.Right && playerRect.Top > dropRect.Top && playerRect.Top < dropRect.Bottom) || dropRect.Bottom > 2000)
         {
-            m_player.addScore(100);
+            m_player->addScore(100);
             lit = Drop_manager::getInstance()->getDrop()->erase(lit);
         }
         else
@@ -240,14 +240,14 @@ void Collision::dropCollision()
     }
 
 
-    playerRect = m_player2.GetBoundingBox(), dropRect;
+    playerRect = m_player2->GetBoundingBox(), dropRect;
     list<std::tr1::shared_ptr<Drop> >::iterator li(Drop_manager::getInstance()->getDrop()->begin());
     for(; li!=Drop_manager::getInstance()->getDrop()->end();)
     {
         dropRect = (*li)->getBoundingBox();
         if((playerRect.Right > dropRect.Left && playerRect.Left < dropRect.Right && playerRect.Top > dropRect.Top && playerRect.Top < dropRect.Bottom) || dropRect.Bottom > 2000)
         {
-            m_player2.addScore(100);
+            m_player2->addScore(100);
             li = Drop_manager::getInstance()->getDrop()->erase(li);
         }
         else

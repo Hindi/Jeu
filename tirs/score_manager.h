@@ -21,6 +21,8 @@ class Score_manager
 
         bool haveScoreInProgress();
 
+        void reset();
+
         static void kill();
         static Score_manager* getInstance();
 

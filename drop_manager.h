@@ -26,6 +26,8 @@ class Drop_manager
         static void kill();
         static Drop_manager* getInstance();
 
+        void reset();
+
     private:
         //Liste des drops
         std::list <std::tr1::shared_ptr<Drop> > m_droplist;

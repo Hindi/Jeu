@@ -10,18 +10,20 @@ class Weapon_manager
         //Met à jour l'état des armes
         void manage();
 
-        void setParams(Player *externPlayer0, Player *externPlayer1);
+        void setParams(std::tr1::shared_ptr<Player> externPlayer0, std::tr1::shared_ptr<Player> externPlayer1);
 
         static void kill();
         static Weapon_manager* getInstance();
         //Destructeur
         ~Weapon_manager();
 
+        void reset();
+
     private:
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
 
-        Player *player0, *player1;
+        std::tr1::shared_ptr<Player> player0, player1;
 
         Weapon_manager();
 
