@@ -97,6 +97,7 @@ void Jeu::start(short niveau)
             missile_manager->reset();
             scoreManager->reset();
             projectile_manager->reset();
+            m_quit = false;
             break;
         }
 

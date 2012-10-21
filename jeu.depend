@@ -2120,7 +2120,7 @@
 
 1350814508 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1350841657 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1350842959 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1350822526 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2275,7 +2275,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1350841522 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1350861407 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1350824486 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2327,7 +2327,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1350841522 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1350861323 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
