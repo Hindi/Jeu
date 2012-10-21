@@ -185,8 +185,22 @@ void Collision::manageProjectileCollision()
                 if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
                 {
                     (*li)->recieveDamages(m_player->getDamages());
-                    m_player->addScore((*li)->getScoreHit());
+                    m_player->addScore((*li)->getScoreHit()/2);
+                    m_player2->addScore((*li)->getScoreHit()/2);
                     (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
+
+                    if(!(*li)->isDead())
+                    {
+                        Vector2f position;
+                        position.x = (*li)->getPositionAxis(0);
+                        position.y = (*li)->getPositionAxis(1);
+                        int currentFrame = (*li)->getAnimation()->GetCurrentFrame();
+                        Anim *m_anim = (*li)->getAnimation()->GetAnim();
+                        Image *currentImage = (*m_anim)[currentFrame].Image;
+                        position.x += currentImage->GetWidth();
+                        Score_manager::getInstance()->addScore((*li)->getScoreHit()/2, position);
+                    }
+
                 }
             }
         }

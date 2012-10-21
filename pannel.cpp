@@ -150,10 +150,11 @@ void Pannel::drawScore()
         text.SetPosition(position);
         app.Draw(text);
 
+        std::ostringstream os;
         position.y += 20;
-        oss << (m_player2->getScore());
-        result = oss.str();
-         text.SetText(result);
+        os << (m_player2->getScore());
+        result = os.str();
+        text.SetText(result);
         text.SetFont(font);
         text.SetSize(20);
         text.SetColor(Color(255, 255, 255));

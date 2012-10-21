@@ -41,7 +41,7 @@ class Player : public Unit
         void addScore(int score);
 
         //accesseur sur le score
-        long double getScore();
+        int getScore();
 
         //Fait perdre une vie
         void loseLive();

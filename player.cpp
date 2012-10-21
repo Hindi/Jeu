@@ -215,7 +215,7 @@ void Player::addScore(int score)
     m_score += score;
 }
 
-long double Player::getScore()
+int Player::getScore()
 {
     return m_score;
 }
