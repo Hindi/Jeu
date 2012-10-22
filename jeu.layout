@@ -58,8 +58,8 @@
 	<File name="enemies\boss.h" open="1" top="0" tabpos="18">
 		<Cursor position="872" topLine="0" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="7859" topLine="279" />
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="7859" topLine="0" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="5">
 		<Cursor position="3471" topLine="113" />
@@ -76,7 +76,7 @@
 	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="842" topLine="12" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
+	<File name="main.cpp" open="1" top="1" tabpos="1">
 		<Cursor position="1327" topLine="36" />
 	</File>
 	<File name="menu.cpp" open="1" top="0" tabpos="14">
