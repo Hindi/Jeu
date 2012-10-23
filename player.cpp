@@ -17,7 +17,8 @@ Player::Player(short id, int life, Vector2f position):
             secondary(false),
             m_coefSpeed(40),
             m_damages(5),
-            m_lives(4)
+            m_lives(3),
+            m_armor(3)
 {
     timer.start();
     image = new Image;
@@ -222,10 +223,18 @@ int Player::getScore()
 
 void Player::loseLive()
 {
-    Vector2f position(500, 1000);
-    m_position = position;
-    m_lives -= 1;
-    lostLife = true;
+    if(m_armor > 0)
+    {
+        m_armor--;
+    }
+    else
+    {
+        Vector2f position(500, 1000);
+        m_position = position;
+        m_lives -= 1;
+        lostLife = true;
+        m_armor = 3;
+    }
 }
 
 bool Player::getLostlife()
@@ -371,4 +380,9 @@ void Player::setSecondary(bool mode)
 void Player::setThird(bool mode)
 {
     third = mode;
+}
+
+short Player::getArmor()
+{
+    return m_armor;
 }
