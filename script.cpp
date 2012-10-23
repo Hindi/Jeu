@@ -69,7 +69,7 @@ void Script::niveau1()
         positionEnemy.x +=100;
         //population.createFlyingSaucer(positionEnemy, player, m_imageManager);
         m_population.createBoss(positionEnemy, "roundtrip", "lily");*/
-        timer.sleep(1000);
+        timer.sleep(10000);
         i++;
     }
     finished = true;

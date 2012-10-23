@@ -25,7 +25,8 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     *imageLifeFade = image_manager::getInstance()->getImage("images/Vie-fade.png");
 
     //Placement des sprite de vie
-    position.y += 20;
+    position.x += 100;
+    position.y += 550;
     spriteLife1.SetPosition(position);
     position.x += 50;
     spriteLife2.SetPosition(position);
@@ -138,26 +139,45 @@ void Pannel::drawScore()
     }
     else
     {
-        Vector2f position(50, 50);
+        Vector2f position(1180, 130);
         std::ostringstream oss;
         oss << (m_player->getScore());
-        string result = oss.str();
+        string result = "player 1 : " + oss.str();
         String text;
         text.SetText(result);
         text.SetFont(font);
         text.SetSize(20);
-        text.SetColor(Color(255, 255, 255));
+        text.SetColor(Color(0, 0, 0));
         text.SetPosition(position);
         app.Draw(text);
 
         std::ostringstream os;
-        position.y += 20;
+        position.y += 15;
         os << (m_player2->getScore());
-        result = os.str();
+        result = "player 2 : " + os.str();
         text.SetText(result);
         text.SetFont(font);
         text.SetSize(20);
-        text.SetColor(Color(255, 255, 255));
+        text.SetColor(Color(0, 0, 0));
+        text.SetPosition(position);
+        app.Draw(text);
+
+        result = "Total :";
+        position.y += 30;
+        text.SetText(result);
+        text.SetSize(25);
+        text.SetColor(Color(0, 0, 0));
+        text.SetPosition(position);
+        app.Draw(text);
+
+        position.y += 30;
+        std::ostringstream o;
+        o << (m_player->getScore() + m_player2->getScore());
+        result = o.str();
+        text.SetText(result);
+        text.SetFont(font);
+        text.SetSize(20);
+        text.SetColor(Color(0, 0, 0));
         text.SetPosition(position);
         app.Draw(text);
     }
