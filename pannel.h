@@ -6,6 +6,7 @@
 #include "player.h"
 #import "const.h"
 #include "image_manager.h"
+#include "population.h"
 
 class Pannel
 {
@@ -22,6 +23,7 @@ class Pannel
         void checkPannel();
         void drawLife();
         void drawScore();
+        void drawEnemyStats();
 
     protected:
         //L'image sur le pannel

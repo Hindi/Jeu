@@ -87,6 +87,7 @@ void Pannel::checkPannel()
     app.Draw(sprite);
     this->drawLife();
     this->drawScore();
+    this->drawEnemyStats();
 }
 
 //Gestion des icones de vie (transparent ou non)
@@ -133,7 +134,7 @@ void Pannel::drawLife()
 void Pannel::drawScore()
 {
     Font font;
-    if(!font.LoadFromFile("Omegav2.ttf"))
+    if(!font.LoadFromFile("font/cubos.ttf"))
     {
         cout << "Erreur lors du chargement de la font pannel" << endl;
     }
@@ -181,4 +182,37 @@ void Pannel::drawScore()
         text.SetPosition(position);
         app.Draw(text);
     }
+}
+
+void Pannel::drawEnemyStats()
+{
+    Font font;
+    if(!font.LoadFromFile("font/cubos.ttf"))
+    {
+        cout << "Erreur lors du chargement de la font pannel" << endl;
+    }
+    else
+    {
+        std::ostringstream oss;
+        oss << Population::getInstance()->getKilledEnemies();
+        string result = oss.str();
+        String text;
+        text.SetText(result);
+        text.SetFont(font);
+        text.SetSize(20);
+        text.SetColor(Color(0, 0, 0));
+        text.SetPosition(Vector2f(1250,365));
+        app.Draw(text);
+
+        std::ostringstream os;
+        os << Population::getInstance()->getCombo();
+        result = os.str();
+        text.SetText(result);
+        text.SetFont(font);
+        text.SetSize(20);
+        text.SetColor(Color(0, 0, 0));
+        text.SetPosition(Vector2f(1250,440));
+        app.Draw(text);
+    }
+
 }

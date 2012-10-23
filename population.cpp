@@ -5,10 +5,14 @@ using namespace sf;
 
 Population *Population::_singleton= NULL;
 
-Population::Population()
+Population::Population(): killRate(1)
 {
     m_coefSpeed = 30;
     Population* _singleton= NULL;
+    killedEnemies = 0;
+    timerCombo.start();
+    combo = 1;
+    maxCombo = 0;
 }
 
 
@@ -49,6 +53,7 @@ void Population::checkPopulation()
             {
                 this->explode(*lit);
                 lit = m_enemies.erase(lit);
+
             }
             else
             {
@@ -95,6 +100,18 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
     Image *currentImage = (*m_anim)[currentFrame].Image;
     position.x += currentImage->GetWidth();
     Score_manager::getInstance()->addScore(score, position);
+
+    killedEnemies++;
+    if(timerCombo.getTime() <= killRate)
+    {
+        combo++;
+        if(combo > maxCombo)
+            maxCombo = combo;
+    }
+    else
+        combo = 1;
+    timerCombo.reinitialize();
+
 }
 
 void Population::manageExplosion()
@@ -275,4 +292,14 @@ void Population::reset()
     m_enemies.clear();
     m_deadEnemies.clear();
     m_spawns.clear();
+}
+
+int Population::getKilledEnemies()
+{
+    return killedEnemies;
+}
+
+unsigned short Population::getCombo()
+{
+    return maxCombo;
 }

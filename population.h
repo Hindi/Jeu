@@ -75,6 +75,9 @@ class Population
 
         void reset();
 
+        int getKilledEnemies();
+        unsigned short getCombo();
+
     protected:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> > m_enemies;
@@ -90,6 +93,8 @@ class Population
         //Constructeur privé pour singleton
         Population();
 
+        Timer timerCombo;
+
         //Destructeur
         virtual ~Population();
 
@@ -98,6 +103,9 @@ class Population
         bool freezed;
 
         short m_coefSpeed;
+        int killedEnemies;
+        unsigned short combo, maxCombo;
+        short const killRate;
 
         Timer timerFreeze;
 
