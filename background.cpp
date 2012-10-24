@@ -11,7 +11,7 @@ Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::Rende
 {
     //Sprite des étoiles
     imageStar = new Image;
-    *imageStar = image_manager::getInstance()->getImage("images/projectile.png");
+    *imageStar = image_manager::getInstance()->getImage("images/etoile4.png");
     spriteStar.SetImage(*imageStar);
 
     //Sprite planètes

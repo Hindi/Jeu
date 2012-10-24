@@ -109,7 +109,7 @@ void Collision::manageCollisionsY()
             {
                 m_player->loseLive();
             }
-            if(enemyRect.Top > 1500)
+            if(enemyRect.Top > 1000)
             {
                li = Population::getInstance()->getPopulation()->erase(li);
             }

@@ -21,6 +21,7 @@ Player::Player(short id, int life, Vector2f position):
             m_armor(3)
 {
     timer.start();
+    timerArmor.start();
     image = new Image;
     int start = 0;
     *image = image_manager::getInstance()->getImage("images/player.png");
@@ -225,7 +226,11 @@ void Player::loseLive()
 {
     if(m_armor > 0)
     {
-        m_armor--;
+        if(timerArmor.getTime() > 2)
+        {
+            m_armor--;
+            timerArmor.reinitialize();
+        }
     }
     else
     {

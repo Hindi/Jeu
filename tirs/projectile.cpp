@@ -11,7 +11,7 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             m_followAnim(followAnim)
 {
     float speedNorm = sqrt(pow(speed.x*coefSpeed, 2) + pow(speed.y*coefSpeed, 2));
-    followRate = 30/speedNorm;
+    followRate = 20/speedNorm;
     this->setPosition(position);
     if(!m_followAnim)
     {

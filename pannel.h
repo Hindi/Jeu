@@ -29,9 +29,13 @@ class Pannel
     protected:
         //L'image sur le pannel
         sf::Image *imagePannel;
+        sf::Image *imageTopPannel;
+        sf::Image *imageTopPannel2;
 
         //Le sprite du pannel
         sf::Sprite sprite;
+        sf::Sprite topPannel;
+        sf::Sprite topPannel2;
 
         //Les images des icones de vie
         sf::Image *imageLife;
@@ -45,11 +49,18 @@ class Pannel
         sf::Sprite spriteLife1;
         sf::Sprite spriteLife2;
         sf::Sprite spriteLife3;
+        sf::Sprite spriteLife21;
+        sf::Sprite spriteLife22;
+        sf::Sprite spriteLife23;
 
         //LEs sprites des icones de l'armure
         sf::Sprite spriteArmor1;
         sf::Sprite spriteArmor2;
         sf::Sprite spriteArmor3;
+        sf::Sprite spriteArmor21;
+        sf::Sprite spriteArmor22;
+        sf::Sprite spriteArmor23;
+
 
         //Position du pannel
         sf::Vector2f m_position;

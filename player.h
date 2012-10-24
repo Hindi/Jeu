@@ -104,6 +104,7 @@ class Player : public Unit
 
         //Timer sur les tirs
         Timer timer;
+        Timer timerArmor;
 
         //Score courant du joueur
         long double m_score;
