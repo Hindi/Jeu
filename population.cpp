@@ -194,7 +194,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
     {
         Vector2f position = enemy->getPosition();
         m_coefSpeed = 10;
-        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/etoile3.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player, player2));
+        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/enemySpawn1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player, player2));
         m_enemies.push_back(a);
         enemy->upDateLastSpawnTime();
     }

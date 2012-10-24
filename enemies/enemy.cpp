@@ -32,10 +32,16 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     }
     image = new Image();
     *image = image_manager::getInstance()->getImage(filepath);
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
+    if(strcmp(m_type, "spawn") == 0)
+       {
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/2, 0, image->GetWidth(), image->GetHeight()) ));
+       }
+    else
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
 
     m_animated->SetAnim(&m_anim);
-    m_animated->Pause();
+    m_animated->Play();
     m_animated->SetLoop(true);
     m_animated->SetFrameTime(0.2f);
     m_animated->SetPosition(m_position.x, m_position.y);
