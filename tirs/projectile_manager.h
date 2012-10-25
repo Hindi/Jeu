@@ -46,6 +46,8 @@ class Projectile_manager
 
         void reset();
 
+        void killThemAll();
+
     private:
         //Liste des projectiles ennemis
         std::list<std::tr1::shared_ptr<Projectile> > m_enemyProjectiles;

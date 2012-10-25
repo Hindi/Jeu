@@ -303,3 +303,13 @@ unsigned short Population::getCombo()
 {
     return maxCombo;
 }
+
+void Population::killThemAll()
+{
+    list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
+    for(; lit!=m_enemies.end();)
+        {
+            this->explode(*lit);
+            lit = m_enemies.erase(lit);
+        }
+}

@@ -173,3 +173,13 @@ void Projectile_manager::reset()
     m_playerProjectiles.clear();
     m_enemyProjectiles.clear();
 }
+
+void Projectile_manager::killThemAll()
+{
+    list<std::tr1::shared_ptr<Projectile> >::iterator lit(m_enemyProjectiles.begin());
+    for(; lit!=m_enemyProjectiles.end();)
+    {
+        lit = m_enemyProjectiles.erase(lit);//Dessine les projectiles ennemi
+    }
+
+}

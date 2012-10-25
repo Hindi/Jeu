@@ -18,10 +18,12 @@ Player::Player(short id, int life, Vector2f position):
             m_coefSpeed(40),
             m_damages(5),
             m_lives(3),
-            m_armor(3)
+            m_armor(3),
+            killThemAll(true)
 {
     timer.start();
     timerArmor.start();
+    timerKillThemAll.start();
     image = new Image;
     int start = 0;
     *image = image_manager::getInstance()->getImage("images/player.png");
@@ -326,6 +328,7 @@ void Player::dontMove()
 
 void Player::draw()
 {
+    this->checkKTA();
     m_animatedReactor->SetPosition(m_animated->GetPosition().x + m_frameWidth/2.8, m_animated->GetPosition().y + m_frameHeight/1.35);
     m_animatedReactor->anim(app.GetFrameTime());
     app.Draw(*m_animatedReactor);
@@ -390,4 +393,24 @@ void Player::setThird(bool mode)
 short Player::getArmor()
 {
     return m_armor;
+}
+
+bool Player::getPlayerKTA()
+{
+    return killThemAll;
+}
+
+void Player::setPlayerKTA(bool state)
+{
+    killThemAll = state;
+}
+
+void Player::checkKTA()
+{
+    if(!killThemAll && timerKillThemAll.getTime() > 120)
+    {
+        killThemAll = true;
+        timerKillThemAll.reinitialize();
+    }
+
 }

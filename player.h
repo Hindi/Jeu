@@ -83,6 +83,11 @@ class Player : public Unit
 
         short getArmor();
 
+        bool getPlayerKTA();
+        void setPlayerKTA(bool state);
+
+        void checkKTA();
+
     protected:
         //Vitesse du joueur
         sf::Vector2f m_speed;
@@ -105,6 +110,7 @@ class Player : public Unit
         //Timer sur les tirs
         Timer timer;
         Timer timerArmor;
+        Timer timerKillThemAll;
 
         //Score courant du joueur
         long double m_score;
@@ -129,6 +135,8 @@ class Player : public Unit
 
         //Image du réacteur
         sf::Image *imageReactor;
+
+        bool killThemAll;
 
 };
 

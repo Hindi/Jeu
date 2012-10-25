@@ -52,6 +52,8 @@ class Projectile
 
         void rotate(short angle);
 
+        void killThemAll();
+
     protected:
 
         //Le sprite

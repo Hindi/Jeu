@@ -78,6 +78,8 @@ class Population
         int getKilledEnemies();
         unsigned short getCombo();
 
+        void killThemAll();
+
     protected:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> > m_enemies;

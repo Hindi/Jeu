@@ -181,6 +181,20 @@ void Jeu::start(short niveau)
             this->pause(Event, pannel, player, player2);
             population->unStop();
         }
+        if(input.IsKeyDown(Key::H))
+        {
+            if(player->getPlayerKTA())
+            {
+                population->killThemAll();
+                Projectile_manager::getInstance()->killThemAll();
+                player->setPlayerKTA(false);
+            }
+        }
+        if(input.IsKeyDown(Key::J))
+        {
+            population->killThemAll();
+            Projectile_manager::getInstance()->killThemAll();
+        }
         if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
         {
             collision.manageProjectileCollision();
