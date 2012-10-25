@@ -34,16 +34,16 @@
 	<File name="const.h" open="0" top="0" tabpos="2">
 		<Cursor position="80" topLine="0" />
 	</File>
-	<File name="drop.cpp" open="0" top="0" tabpos="16">
-		<Cursor position="910" topLine="15" />
+	<File name="drop.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="913" topLine="31" />
 	</File>
-	<File name="drop.h" open="0" top="0" tabpos="5">
-		<Cursor position="591" topLine="16" />
+	<File name="drop.h" open="1" top="0" tabpos="21">
+		<Cursor position="591" topLine="0" />
 	</File>
-	<File name="drop_manager.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="1806" topLine="43" />
+	<File name="drop_manager.cpp" open="1" top="1" tabpos="22">
+		<Cursor position="551" topLine="7" />
 	</File>
-	<File name="drop_manager.h" open="0" top="0" tabpos="11">
+	<File name="drop_manager.h" open="1" top="0" tabpos="23">
 		<Cursor position="667" topLine="3" />
 	</File>
 	<File name="enemies\adds.cpp" open="0" top="0" tabpos="15">
@@ -58,8 +58,8 @@
 	<File name="enemies\boss.h" open="0" top="0" tabpos="18">
 		<Cursor position="872" topLine="0" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="1470" topLine="24" />
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1825" topLine="24" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="5">
 		<Cursor position="3471" topLine="113" />
@@ -89,7 +89,7 @@
 		<Cursor position="2521" topLine="64" />
 	</File>
 	<File name="pannel.h" open="1" top="0" tabpos="13">
-		<Cursor position="1704" topLine="41" />
+		<Cursor position="1704" topLine="35" />
 	</File>
 	<File name="player.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="584" topLine="9" />
@@ -101,13 +101,13 @@
 		<Cursor position="6152" topLine="175" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="11">
-		<Cursor position="2188" topLine="88" />
+		<Cursor position="2188" topLine="75" />
 	</File>
 	<File name="script.cpp" open="1" top="0" tabpos="19">
 		<Cursor position="899" topLine="23" />
 	</File>
 	<File name="script.h" open="1" top="0" tabpos="14">
-		<Cursor position="518" topLine="4" />
+		<Cursor position="518" topLine="0" />
 	</File>
 	<File name="timer.cpp" open="0" top="0" tabpos="22">
 		<Cursor position="205" topLine="0" />
