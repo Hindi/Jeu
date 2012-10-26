@@ -39,25 +39,31 @@ void Level_manager::checkLevel(short level)
     if(fichier)  // si l'ouverture a réussi
     {
         string ligne;
+        char* t="t";
         vector<string> tokens;
 
-        if(timer.getTime() > spawnTime)
+        if(timer.getTime() > spawnTime && !fichier.eof())
         {
+
             fichier.seekg(m_position, ios::beg);
+
+            while ( getline(fichier, ligne) )
+               {
+                    split(ligne, tokens);
+                    cout << "tokenize :" << tokens[0] << tokens[1] << endl;
+               }
+
             /*On récupère la ligne*/
-            getline(fichier, ligne);
+
 
             /*On découpe la string entokens*/
-            tokenize(ligne, tokens);
+            //split(ligne, tokens, *t);
+
 
             /*On convertit le string en char * pour comparer */
             // créer le buffer pour copier la chaîne
-            size_t size = tokens[0].size() + 1;
-            char * buffer = new char[ size ];
-            // copier la chaîne
-            strncpy( buffer, tokens[0].c_str(), size );
+            const char* buffer = tokens[0].c_str();
 
-            cout << tokens[0] << endl;
 
             /*On compare ce qu'il lfaut*/
             //On gère d'abord le timer
@@ -104,20 +110,59 @@ void Level_manager::checkLevel(short level)
 
 void tokenize(const string& str, vector<string>& tokens)
 {
-    // Skip delimiters at beginning.
     string::size_type lastPos = str.find_first_not_of(" ", 0);
-    // Find first "non-delimiter".
+    //Le premier "non délimiteur"
     string::size_type pos = str.find_first_of(" ", lastPos);
 
     while (string::npos != pos || string::npos != lastPos)
     {
-        // Found a token, add it to the vector.
+        // On trouve un token, on l'ajoute au vecteur
         tokens.push_back(str.substr(lastPos, pos - lastPos));
-        // Skip delimiters.  Note the "not_of"
+        // On passe le délimiteur
         lastPos = str.find_first_not_of(" ", pos);
-        // Find next "non-delimiter"
+        // On repère le prochain token
         pos = str.find_first_of(" ", lastPos);
     }
     if(tokens.empty())
         tokens.push_back("empty");
+}
+/*
+unsigned int split(const std::string &txt, std::vector<std::string> &strs, char ch)
+{
+    unsigned int pos = txt.find( ch );
+    unsigned int initialPos = 0;
+    strs.clear();
+
+    // Decompose statement
+    while( pos != std::string::npos )
+    {
+        strs.push_back( txt.substr( initialPos, pos - initialPos + 1 ) );
+        initialPos = pos + 1;
+        pos = txt.find( ch, initialPos );
+    }
+
+    // Add the last one
+    strs.push_back( txt.substr( initialPos, std::min( pos, txt.size() ) - initialPos + 1 ) );
+
+    return strs.size();
+}*/
+
+unsigned int Level_manager::split(const std::string &txt, std::vector<std::string> &strs)
+{
+    unsigned int pos = m_position;
+    unsigned int initialPos = 0;
+    strs.clear();
+
+    // Decompose statement
+    while( pos != std::string::npos )
+    {
+        strs.push_back( txt.substr( initialPos, pos - initialPos + 1 ) );
+        initialPos = pos + 1;
+        pos = txt.find( m_position, initialPos );
+    }
+
+    // Add the last one
+    strs.push_back( txt.substr( initialPos, std::min( pos, txt.size() ) - initialPos + 1 ) );
+
+    return strs.size();
 }

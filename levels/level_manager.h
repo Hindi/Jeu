@@ -15,6 +15,8 @@ class Level_manager
         static Level_manager* getInstance();
 
         void checkLevel(short niveau);
+        unsigned int split(const std::string &txt, std::vector<std::string> &strs);
+
 
     private:
         Level_manager();
@@ -26,6 +28,8 @@ class Level_manager
         short spawnTime;
         int m_position;
         bool level1Over;
+
+        std::ifstream fichier;
 
 
 };
