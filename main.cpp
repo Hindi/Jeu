@@ -16,8 +16,6 @@ TODO LIST
 - Plusieurs planètes
 - Problèmes de threads : voir missiles
 - random stars
-- bombes
-- adds
 */
 
 int main()

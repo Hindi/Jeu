@@ -11,7 +11,9 @@ Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::Rende
 {
     //Sprite des étoiles
     imageStar = new Image;
+    imageStar2 = new Image;
     *imageStar = image_manager::getInstance()->getImage("images/etoile4.png");
+    *imageStar2 = image_manager::getInstance()->getImage("images/etoile3.png");
     spriteStar.SetImage(*imageStar);
 
     //Sprite planètes
@@ -62,11 +64,16 @@ void Background::init()
     //On recopie l'étoile de base
     Sprite starCopy(spriteStar);
     Sprite starCopy1(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy2(spriteStar);
+    spriteStar.SetImage(*imageStar);
     Sprite starCopy3(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy4(spriteStar);
+    spriteStar.SetImage(*imageStar);
     Sprite starCopy5(spriteStar);
     Sprite starCopy6(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy7(spriteStar);
     Sprite starCopy8(spriteStar);
     Sprite starCopy9(spriteStar);

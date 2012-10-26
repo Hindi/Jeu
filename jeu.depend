@@ -2111,7 +2111,7 @@
 1351121450 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
-1350814508 c:\users\shalafi\documents\github\jeu\background.h
+1351213454 c:\users\shalafi\documents\github\jeu\background.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<stdlib.h>
@@ -2328,7 +2328,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1351121450 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1351213394 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2412,7 +2412,7 @@
 1350861917 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1351121450 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1351213334 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
 1350861891 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
