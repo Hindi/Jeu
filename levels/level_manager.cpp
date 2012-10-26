@@ -7,7 +7,8 @@ Level_manager *Level_manager::_singleton= NULL;
 
 Level_manager::Level_manager():
             spawnTime(0),
-            m_position(0)
+            m_position(0),
+            level1Over(false)
 {
     timer.start();
 
@@ -31,28 +32,15 @@ Level_manager* Level_manager::getInstance()
 
 void Level_manager::checkLevel(short level)
 {
-    /*
-    std::ostringstream oss;
-    oss << ("level");
-    oss << (level);
-    string filename = oss.str();*/
+    if(!level1Over)
+    {
 
-    ifstream fichier("levels/level1.txt", ios::in);  // on ouvre le fichier en lecture
-    //std::string str((std::istreambuf_iterator<char>(fichier)), std::istreambuf_iterator<char>());
+    ifstream fichier("levels/level1.txt", ios::out);  // on ouvre le fichier en lecture
     if(fichier)  // si l'ouverture a réussi
     {
         string ligne;
         vector<string> tokens;
-        /*char c;
-        while(!fichier.eof())
-        {
-            fichier.get(c);
-            if(strcmp(&c, "$")==0)
-            {
-                fichier.get(c);
-                break;
-            }
-        }*/
+
         if(timer.getTime() > spawnTime)
         {
             fichier.seekg(m_position, ios::beg);
@@ -90,23 +78,27 @@ void Level_manager::checkLevel(short level)
                 timer.reinitialize();
                 cout << "Les spawns sont terminés pour cette vague !" << endl;
             }
+            else if(strcmp(buffer, "OVER")==0)
+            {
+                //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
+                timer.reinitialize();
+                cout << "Fin du niveau !" << endl;
+                level1Over = true;
+            }
             else if(strcmp(buffer, "spawn")==0)
-                cout << "Je spawn un " << tokens[1] << " qui a comme déplacement " << tokens[2] << " comme position [" << tokenize[3] << "," << "]" << endl;
+                cout << "Je spawn un " << tokens[1] << " qui a comme déplacement " << endl;
 
             /*On libère la mémoire*/
             delete [] buffer;
 
         }
         m_position = fichier.tellg();
-        cout << m_position << endl;
         fichier.close();  // on ferme le fichier
-        /*std::ofstream fichier("level1.txt", ios::trunc);
-        fichier.write(str.c_str(), str.size());
-        fichier.close();*/
 
     }
     else  // sinon
         cerr << "Impossible d'ouvrir le fichier level" << level << " !" << endl;
+    }
 }
 
 
@@ -126,4 +118,6 @@ void tokenize(const string& str, vector<string>& tokens)
         // Find next "non-delimiter"
         pos = str.find_first_of(" ", lastPos);
     }
+    if(tokens.empty())
+        tokens.push_back("empty");
 }

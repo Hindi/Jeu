@@ -25,6 +25,7 @@ class Level_manager
         Timer timer;
         short spawnTime;
         int m_position;
+        bool level1Over;
 
 
 };

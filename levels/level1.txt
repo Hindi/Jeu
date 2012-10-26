@@ -1,7 +1,9 @@
 timer 1
 spawn ship blabla 500 500 true
-spawn ship blabla 500 510 true
+spawn grou blabla 500 510 true
 END
 
+timer 2
 spawn ship blabla 500 500 true
 END
+OVER
