@@ -35,11 +35,10 @@ void Level_manager::checkLevel(short level)
     if(!level1Over)
     {
 
-    ifstream fichier("levels/level1.txt", ios::out);  // on ouvre le fichier en lecture
+    ifstream fichier("levels/level1.txt", ios::in);  // on ouvre le fichier en lecture
     if(fichier)  // si l'ouverture a réussi
     {
         string ligne;
-        char* t="t";
         vector<string> tokens;
 
         if(timer.getTime() > spawnTime && !fichier.eof())
@@ -47,11 +46,11 @@ void Level_manager::checkLevel(short level)
 
             fichier.seekg(m_position, ios::beg);
 
-            while ( getline(fichier, ligne) )
-               {
-                    split(ligne, tokens);
-                    cout << "tokenize :" << tokens[0] << tokens[1] << endl;
-               }
+            getline(fichier, ligne);
+
+
+            tokenize(ligne, tokens);
+            cout << ligne << endl;
 
             /*On récupère la ligne*/
 
@@ -62,12 +61,12 @@ void Level_manager::checkLevel(short level)
 
             /*On convertit le string en char * pour comparer */
             // créer le buffer pour copier la chaîne
-            const char* buffer = tokens[0].c_str();
+            //const char* buffer = tokens[0].c_str();
 
 
             /*On compare ce qu'il lfaut*/
             //On gère d'abord le timer
-            if(strcmp(buffer, "timer") == 0)
+            /*if(strcmp(buffer, "timer") == 0)
             {
                 std::istringstream iss( tokens[1] );
                 // convertir en un int
@@ -76,9 +75,9 @@ void Level_manager::checkLevel(short level)
                 //On remet à zéro le timer et on fixe le début de la prochaine vague
                 spawnTime = nombre;
                 cout << "La prochaine vague arrive dans " << nombre << endl;
-            }
+            }*/
             //On regarde si on est pas à la fin de la vague
-            else if(strcmp(buffer, "END")==0)
+            /*else if(strcmp(buffer, "END")==0)
             {
                 //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
                 timer.reinitialize();
@@ -93,9 +92,9 @@ void Level_manager::checkLevel(short level)
             }
             else if(strcmp(buffer, "spawn")==0)
                 cout << "Je spawn un " << tokens[1] << " qui a comme déplacement " << endl;
-
+*/
             /*On libère la mémoire*/
-            delete [] buffer;
+            //delete [] buffer;
 
         }
         m_position = fichier.tellg();

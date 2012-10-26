@@ -86,6 +86,8 @@
 		<Unit filename="image_manager.h" />
 		<Unit filename="jeu.cpp" />
 		<Unit filename="jeu.h" />
+		<Unit filename="levels\level_manager.cpp" />
+		<Unit filename="levels\level_manager.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h">

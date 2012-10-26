@@ -2508,7 +2508,7 @@
 1349626092 source:c:\users\shalafi\documents\github\jeu\const.cpp
 	"const.h"
 
-1351239469 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
+1351247515 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
 	<sstream>
 	<iostream>
 	<string>
@@ -2516,6 +2516,34 @@
 	"../population.h"
 	"../timer.h"
 
-1351238097 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1351246211 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
+
+1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp
+	<boost/algorithm/string/std_containers_traits.hpp>
+	<boost/algorithm/string/trim.hpp>
+	<boost/algorithm/string/case_conv.hpp>
+	<boost/algorithm/string/predicate.hpp>
+	<boost/algorithm/string/find.hpp>
+	<boost/algorithm/string/split.hpp>
+	<boost/algorithm/string/join.hpp>
+	<boost/algorithm/string/replace.hpp>
+	<boost/algorithm/string/erase.hpp>
+	<boost/algorithm/string/classification.hpp>
+	<boost/algorithm/string/find_iterator.hpp>
+
+1213844844 c:\users\shalafi\documents\github\jeu\libs\boost\string.hpp
+	<boost/algorithm/string/std_containers_traits.hpp>
+	<boost/algorithm/string/trim.hpp>
+	<boost/algorithm/string/case_conv.hpp>
+	<boost/algorithm/string/predicate.hpp>
+	<boost/algorithm/string/find.hpp>
+	<boost/algorithm/string/split.hpp>
+	<boost/algorithm/string/join.hpp>
+	<boost/algorithm/string/replace.hpp>
+	<boost/algorithm/string/erase.hpp>
+	<boost/algorithm/string/classification.hpp>
+	<boost/algorithm/string/find_iterator.hpp>
+
+1351247322 e:\utilitaires\codeblocks\mingw\include\string
 
