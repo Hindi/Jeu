@@ -43,6 +43,17 @@ void Level_manager::checkLevel(short level)
         string ligne;
         vector<string> tokens;
 
+        char c;
+        while(!fichier.eof())
+        {
+            fichier.get(c);
+            if(strcmp(&c, "$")==0)
+            {
+                fichier.get(c);
+                break;
+            }
+        }
+        cout << c << endl;
         if(timer.getTime() > spawnTime)
         {
             /*On récupère la ligne*/
@@ -50,6 +61,7 @@ void Level_manager::checkLevel(short level)
 
             /*On découpe la string entokens*/
             tokenize(ligne, tokens);
+            cout << tokens[0] << endl;
 
             /*On convertit le string en char * pour comparer */
             // créer le buffer pour copier la chaîne
@@ -63,20 +75,22 @@ void Level_manager::checkLevel(short level)
             //On gère d'abord le timer
             if(strcmp(buffer, "timer") == 0)
             {
-                std::istringstream iss( tokens[2] );
+                std::istringstream iss( tokens[1] );
                 // convertir en un int
                 int nombre;
                 iss >> nombre;
                 //On remet à zéro le timer et on fixe le début de la prochaine vague
                 spawnTime = nombre;
+                cout << "La prochaine vague arrive dans " << nombre << endl;
             }
             //On regarde si on est pas à la fin de la vague
-            else if(strcmp(buffer, "END"))
+            else if(strcmp(buffer, "END")==0)
             {
                 //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
                 timer.reinitialize();
+                cout << "Les spawns sont terminés pour cette vague !" << endl;
             }
-            else if(strcmp(buffer, "spawn"))
+            else if(strcmp(buffer, "spawn")==0)
                 cout << "Je spawn un " << tokens[1] << " qui a comme déplacement " << tokens[2] << " comme position [" << tokenize[3] << "," << "]" << endl;
 
             /*On libère la mémoire*/
