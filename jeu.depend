@@ -2508,13 +2508,14 @@
 1349626092 source:c:\users\shalafi\documents\github\jeu\const.cpp
 	"const.h"
 
-1351215024 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
+1351217919 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
 	<iostream>
 	<string>
 	<fstream>
+	<boost/algorithm/string.hpp>
 	"../population.h"
 	"../timer.h"
 
-1351215553 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1351216696 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 

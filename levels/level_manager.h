@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <boost/algorithm/string.hpp>
 
 #include "../population.h"
 #include "../timer.h"
@@ -21,6 +22,9 @@ class Level_manager
         virtual ~Level_manager();
 
         static Level_manager* _singleton;
+
+        Timer timer;
+        short spawnTime;
 
 
 };
