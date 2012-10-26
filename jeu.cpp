@@ -55,7 +55,6 @@ void Jeu::start(short niveau)
 
     Level_manager *level_manager;
     level_manager = Level_manager::getInstance();
-    Level_manager::getInstance()->checkLevel(1);
 
     //gestionnaires de missiles
     Missile_manager *missile_manager;
@@ -218,6 +217,7 @@ void Jeu::start(short niveau)
                 invincible = false;
             }
         }
+        Level_manager::getInstance()->checkLevel(1);
         weapon_manager->manage();
         drop_manager->manage();
         player->draw();

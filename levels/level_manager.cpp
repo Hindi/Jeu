@@ -6,7 +6,8 @@ using namespace sf;
 Level_manager *Level_manager::_singleton= NULL;
 
 Level_manager::Level_manager():
-            spawnTime(0)
+            spawnTime(0),
+            m_position(0)
 {
     timer.start();
 
@@ -30,7 +31,6 @@ Level_manager* Level_manager::getInstance()
 
 void Level_manager::checkLevel(short level)
 {
-    timer.reinitialize();
     /*
     std::ostringstream oss;
     oss << ("level");
@@ -38,12 +38,12 @@ void Level_manager::checkLevel(short level)
     string filename = oss.str();*/
 
     ifstream fichier("levels/level1.txt", ios::in);  // on ouvre le fichier en lecture
+    //std::string str((std::istreambuf_iterator<char>(fichier)), std::istreambuf_iterator<char>());
     if(fichier)  // si l'ouverture a réussi
     {
         string ligne;
         vector<string> tokens;
-
-        char c;
+        /*char c;
         while(!fichier.eof())
         {
             fichier.get(c);
@@ -52,16 +52,15 @@ void Level_manager::checkLevel(short level)
                 fichier.get(c);
                 break;
             }
-        }
-        cout << c << endl;
+        }*/
         if(timer.getTime() > spawnTime)
         {
+            fichier.seekg(m_position, ios::beg);
             /*On récupère la ligne*/
             getline(fichier, ligne);
 
             /*On découpe la string entokens*/
             tokenize(ligne, tokens);
-            cout << tokens[0] << endl;
 
             /*On convertit le string en char * pour comparer */
             // créer le buffer pour copier la chaîne
@@ -70,6 +69,7 @@ void Level_manager::checkLevel(short level)
             // copier la chaîne
             strncpy( buffer, tokens[0].c_str(), size );
 
+            cout << tokens[0] << endl;
 
             /*On compare ce qu'il lfaut*/
             //On gère d'abord le timer
@@ -97,7 +97,13 @@ void Level_manager::checkLevel(short level)
             delete [] buffer;
 
         }
+        m_position = fichier.tellg();
+        cout << m_position << endl;
         fichier.close();  // on ferme le fichier
+        /*std::ofstream fichier("level1.txt", ios::trunc);
+        fichier.write(str.c_str(), str.size());
+        fichier.close();*/
+
     }
     else  // sinon
         cerr << "Impossible d'ouvrir le fichier level" << level << " !" << endl;
