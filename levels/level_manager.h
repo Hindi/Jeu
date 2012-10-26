@@ -1,9 +1,9 @@
 #ifndef LEVEL_MANAGER_H_INCLUDED
 #define LEVEL_MANAGER_H_INCLUDED
+#include <sstream>
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <boost/algorithm/string.hpp>
 
 #include "../population.h"
 #include "../timer.h"
@@ -14,8 +14,7 @@ class Level_manager
 
         static Level_manager* getInstance();
 
-        void startLevel(short niveau);
-
+        void checkLevel(short niveau);
 
     private:
         Level_manager();
@@ -29,5 +28,5 @@ class Level_manager
 
 };
 
-
+void tokenize(const std::string& str, std::vector<std::string>& tokens);
 #endif // LEVEL_MANAGER_H_INCLUDED

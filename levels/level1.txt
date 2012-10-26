@@ -1,2 +1,7 @@
-ship blabla 500 500 true
-ship blabla 500 510 true
+current
+timer 5
+spawn ship blabla 500 500 true
+spawn ship blabla 500 510 true
+END
+
+spawn ship blabla 500 500 true

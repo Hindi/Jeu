@@ -55,7 +55,7 @@ void Jeu::start(short niveau)
 
     Level_manager *level_manager;
     level_manager = Level_manager::getInstance();
-    Level_manager::getInstance()->startLevel(1);
+    Level_manager::getInstance()->checkLevel(1);
 
     //gestionnaires de missiles
     Missile_manager *missile_manager;
