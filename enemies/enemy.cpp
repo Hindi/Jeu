@@ -34,16 +34,18 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     *image = image_manager::getInstance()->getImage(filepath);
     if(strcmp(m_type, "spawn") == 0)
        {
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
             m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/2, 0, image->GetWidth(), image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
        }
     else
         m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
 
     m_animated->SetAnim(&m_anim);
-    m_animated->Play();
     m_animated->SetLoop(true);
-    m_animated->SetFrameTime(0.2f);
+    m_animated->SetFrameTime(0.5);
+    m_animated->Play();
     m_animated->SetPosition(m_position.x, m_position.y);
 
 }
@@ -240,7 +242,7 @@ void Enemy::setPosition(int axis, int value)
 
 void Enemy::draw()
 {
-    //animation->draw(app);
+    m_animated->anim(app.GetFrameTime());
     app.Draw(*m_animated);
 }
 
