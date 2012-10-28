@@ -14,7 +14,12 @@ class Level_manager
 
         static Level_manager* getInstance();
 
-        void checkLevel(short niveau);
+        void checkLevel();
+        void startLevel(short level);
+        short getLevelNumber();
+
+        bool  isFinished();
+
         unsigned int split(const std::string &txt, std::vector<std::string> &strs);
 
 
@@ -26,11 +31,14 @@ class Level_manager
 
         Timer timer;
         short spawnTime;
+        short levelNumber;
         int m_position;
-        bool level1Over;
+        bool levelOver;
+        std::vector<std::string> currentLevel;
 
         std::ifstream fichier;
 
+        int vectorPosition;
 
 };
 

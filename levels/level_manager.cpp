@@ -8,7 +8,7 @@ Level_manager *Level_manager::_singleton= NULL;
 Level_manager::Level_manager():
             spawnTime(0),
             m_position(0),
-            level1Over(false)
+            levelOver(false)
 {
     timer.start();
 
@@ -30,7 +30,95 @@ Level_manager* Level_manager::getInstance()
     return _singleton;
 }
 
-void Level_manager::checkLevel(short level)
+void Level_manager::startLevel(short level)
+{
+    levelNumber = level;
+    vectorPosition = 0;
+    const char* filepath;
+        cout << level << endl;
+    switch(level)
+    {
+        case 1:
+            filepath = "levels/level1.txt";
+            break;
+        case 2:
+            filepath = "levels/level2.txt";
+            break;
+    }
+    ifstream fichier(filepath, ios::in);
+    if(fichier)  // si l'ouverture a réussi
+    {
+        string ligne;
+        while(!strcmp(ligne.data(), "OVER")==0)
+        {
+            getline(fichier, ligne);
+            currentLevel.push_back(ligne);
+        }
+        fichier.close();
+    }
+    else
+        cout << "impossible d'ouvrir : " << filepath  << endl;
+}
+
+void Level_manager::checkLevel()
+{
+    if(vectorPosition < currentLevel.size())
+    {
+         if(timer.getTime() > spawnTime)
+        {
+            vector<string> tokens;
+            tokenize(currentLevel[vectorPosition], tokens);
+
+            const char* buffer = tokens[0].c_str();
+
+
+                //On compare ce qu'il lfaut
+                //On gère d'abord le timer
+                if(strcmp(buffer, "timer") == 0)
+                {
+                    std::istringstream iss( tokens[1] );
+                    // convertir en un int
+                    int nombre;
+                    iss >> nombre;
+                    //On remet à zéro le timer et on fixe le début de la prochaine vague
+                    spawnTime = nombre;
+                    cout << "La prochaine vague arrive dans " << nombre << endl;
+                }
+                //On regarde si on est pas à la fin de la vague
+                else if(strcmp(buffer, "END")==0)
+                {
+                    //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
+                    timer.reinitialize();
+                    cout << "Les spawns sont terminés pour cette vague !" << endl;
+                }
+                else if(strcmp(buffer, "OVER")==0)
+                {
+                    //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
+                    timer.reinitialize();
+                    cout << "Fin du niveau !" << endl;
+                    levelOver = true;
+                }
+                else if(strcmp(buffer, "spawn")==0)
+                {
+                    Vector2f position(400, 200);
+                    //char* move =  tokens[2].data();
+                    if(strcmp(tokens[1].data(),"ship")==0)
+                        Population::getInstance()->createShip(position, "down", true);
+
+                }
+
+                //On libère la mémoire
+                delete [] buffer;
+
+            vectorPosition++;
+        }
+    }
+    else
+        levelOver = true;
+}
+
+/*
+void Level_manager::checkLevel()
 {
     if(!level1Over)
     {
@@ -52,21 +140,21 @@ void Level_manager::checkLevel(short level)
             tokenize(ligne, tokens);
             cout << ligne << endl;
 
-            /*On récupère la ligne*/
+            //On récupère la ligne
 
 
-            /*On découpe la string entokens*/
+            //On découpe la string entokens
             //split(ligne, tokens, *t);
 
 
-            /*On convertit le string en char * pour comparer */
+            //On convertit le string en char * pour comparer
             // créer le buffer pour copier la chaîne
             //const char* buffer = tokens[0].c_str();
 
 
-            /*On compare ce qu'il lfaut*/
+            //On compare ce qu'il lfaut
             //On gère d'abord le timer
-            /*if(strcmp(buffer, "timer") == 0)
+            //if(strcmp(buffer, "timer") == 0)
             {
                 std::istringstream iss( tokens[1] );
                 // convertir en un int
@@ -75,9 +163,9 @@ void Level_manager::checkLevel(short level)
                 //On remet à zéro le timer et on fixe le début de la prochaine vague
                 spawnTime = nombre;
                 cout << "La prochaine vague arrive dans " << nombre << endl;
-            }*/
+            }
             //On regarde si on est pas à la fin de la vague
-            /*else if(strcmp(buffer, "END")==0)
+            //else if(strcmp(buffer, "END")==0)
             {
                 //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
                 timer.reinitialize();
@@ -92,8 +180,8 @@ void Level_manager::checkLevel(short level)
             }
             else if(strcmp(buffer, "spawn")==0)
                 cout << "Je spawn un " << tokens[1] << " qui a comme déplacement " << endl;
-*/
-            /*On libère la mémoire*/
+
+            //On libère la mémoire
             //delete [] buffer;
 
         }
@@ -101,11 +189,11 @@ void Level_manager::checkLevel(short level)
         fichier.close();  // on ferme le fichier
 
     }
-    else  // sinon
-        cerr << "Impossible d'ouvrir le fichier level" << level << " !" << endl;
+ //   else  // sinon
+//        cerr << "Impossible d'ouvrir le fichier level" << level << " !" << endl;
     }
 }
-
+*/
 
 void tokenize(const string& str, vector<string>& tokens)
 {
@@ -125,6 +213,7 @@ void tokenize(const string& str, vector<string>& tokens)
     if(tokens.empty())
         tokens.push_back("empty");
 }
+
 /*
 unsigned int split(const std::string &txt, std::vector<std::string> &strs, char ch)
 {
@@ -164,4 +253,14 @@ unsigned int Level_manager::split(const std::string &txt, std::vector<std::strin
     strs.push_back( txt.substr( initialPos, std::min( pos, txt.size() ) - initialPos + 1 ) );
 
     return strs.size();
+}
+
+short Level_manager::getLevelNumber()
+{
+    return levelNumber;
+}
+
+bool Level_manager::isFinished()
+{
+    return levelOver;
 }

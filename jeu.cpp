@@ -78,19 +78,15 @@ void Jeu::start(short niveau)
     //Background
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
-
-    //population->createShip(Vector2f(100, 100), "don't move",true);
-    Script s1(1);
-    s1.setLaunchLevel(niveau);
-    s1.Launch();
+    Level_manager::getInstance()->startLevel(niveau);
     while (app.IsOpened() )
     {
-        if(m_quit || s1.isFinished())
+        if(m_quit || level_manager->isFinished())
         {
-            if(s1.isFinished())
+            if(level_manager->isFinished())
             {
                 this->saveDatas(player, player2);
-                m_menu.setLevel(s1.nextLevel());
+                m_menu.setLevel(level_manager->getLevelNumber() + 1);
             }
             else
                 m_menu.setLevel(1);
@@ -217,7 +213,7 @@ void Jeu::start(short niveau)
                 invincible = false;
             }
         }
-        Level_manager::getInstance()->checkLevel(1);
+        Level_manager::getInstance()->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
         player->draw();
