@@ -14,6 +14,7 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 /*
 TODO LIST
 - Plusieurs planètes
+- crash avec flying saucer + ship
 */
 
 int main()

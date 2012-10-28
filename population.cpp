@@ -47,13 +47,13 @@ void Population::checkPopulation()
     {
         //On check les ennemis
         list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
+        cout << m_enemies.size() << endl;
         for(; lit!=m_enemies.end();)
         {
             if((*lit)->isDead())
             {
                 this->explode(*lit);
                 lit = m_enemies.erase(lit);
-
             }
             else
             {
