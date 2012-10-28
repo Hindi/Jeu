@@ -209,7 +209,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 
 void Population::createBoss(Vector2f position, char* move, short level)
 {
-    string filepath = "images/enemy2.png";
+    string filepath = "images/enemy.png";
     tr1::shared_ptr<Boss> a(new Boss(500, 10, 10000, 5, 5, filepath, position, "boss", move, 1, 20, 2, player, player2, level));
     m_boss.push_back(a);
 }
