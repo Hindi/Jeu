@@ -1,6 +1,6 @@
 timer 2
 spawn ship down 500 500 true
-spawn ship down 200 500 true
+spawn flyingSaucer down 200 500 true
 END
 
 timer 1 
