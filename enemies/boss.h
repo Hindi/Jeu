@@ -11,6 +11,7 @@
 #include "../image_manager.h"
 #include "../tirs/projectile_manager.h"
 #include "adds.h"
+#include "../const.h"
 #include "enemy.h"
 
 /*

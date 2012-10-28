@@ -2244,7 +2244,7 @@
 1351446883 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1351446884 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1351449339 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
@@ -2256,6 +2256,7 @@
 	"../image_manager.h"
 	"../tirs/projectile_manager.h"
 	"adds.h"
+	"../const.h"
 	"enemy.h"
 
 1348518742 source:c:\users\shalafi\documents\github\jeu\enemy.cpp
@@ -2347,7 +2348,7 @@
 1351329036 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1351446884 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1351447190 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
