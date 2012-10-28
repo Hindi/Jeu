@@ -32,7 +32,7 @@ class Boss : public Enemy
         sf::IntRect getWeakBox();
 
         void createAdd();
-        void draww();
+        void draw();
 
     private:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

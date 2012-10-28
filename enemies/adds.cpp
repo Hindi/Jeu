@@ -8,7 +8,11 @@ Adds::Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, player, player2),
             m_maxLife(5)
 {
-
+    m_animated = new Animated;
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
+    m_animated->SetAnim(&m_anim);
+    m_animated->Play();
+    m_animated->SetPosition(position.x, position.y);
 }
 
 Adds::~Adds()

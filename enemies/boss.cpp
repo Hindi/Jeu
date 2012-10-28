@@ -68,7 +68,12 @@ IntRect Boss::getWeakBox()
     return boundingBox;
 }
 
-void Boss::draww()
+void Boss::draw()
 {
     app.Draw(*m_animated);
+    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
+    for(; li!= m_adds.end(); li++)
+    {
+        (*li)->draw();
+    }
 }

@@ -36,7 +36,7 @@ void Population::drawPopulation()
         list<tr1::shared_ptr<Boss> >::const_iterator li(m_boss.begin());
         for(; li!= m_boss.end(); li++)
         {
-            (*li)->draww();
+            (*li)->draw();
         }
     }
     Projectile_manager::getInstance()->drawProjectile();//On les dessine
