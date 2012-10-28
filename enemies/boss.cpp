@@ -14,6 +14,10 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     timerMove.start();
 
     m_animated = new Animated;
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
+    m_animated->SetAnim(&m_anim);
+    m_animated->Play();
+    m_animated->SetPosition(position.x, position.y);
 
     this->createAdd();
 }
