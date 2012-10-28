@@ -31,6 +31,14 @@ void Population::drawPopulation()
             (*lit)->draw();//On les dessine
         }
     }
+    if(this->haveBossInProgress())
+    {
+        list<tr1::shared_ptr<Boss> >::const_iterator li(m_boss.begin());
+        for(; li!= m_boss.end(); li++)
+        {
+            (*li)->draww();
+        }
+    }
     Projectile_manager::getInstance()->drawProjectile();//On les dessine
 
 }
@@ -47,7 +55,6 @@ void Population::checkPopulation()
     {
         //On check les ennemis
         list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
-        cout << m_enemies.size() << endl;
         for(; lit!=m_enemies.end();)
         {
             if((*lit)->isDead())
@@ -158,19 +165,19 @@ bool Population::haveEnnemyInProgress()
 void Population::stop()
 {
     list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
-        for(; lit!=m_enemies.end();lit++)
-        {
-            (*lit)->pauseTimer();
-        }
+    for(; lit!=m_enemies.end();lit++)
+    {
+        (*lit)->pauseTimer();
+    }
 }
 
 void Population::unStop()
 {
     list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
     for(; lit!=m_enemies.end();lit++)
-            {
-                (*lit)->startTimer();
-            }
+    {
+        (*lit)->startTimer();
+    }
 }
 
 void Population::createShip(Vector2f position, char* move, bool spawner)
@@ -202,8 +209,9 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 
 void Population::createBoss(Vector2f position, char* move, short level)
 {
-    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, "images/flyingSaucer.png", position, "boss", move, 1, 20, 2, "lilith", player, player2, level));
-    m_enemies.push_back(a);
+    string filepath = "images/enemy2.png";
+    tr1::shared_ptr<Boss> a(new Boss(500, 10, 10000, 5, 5, filepath, position, "boss", move, 1, 20, 2, player, player2, level));
+    m_boss.push_back(a);
 }
 
 void Population::manage()
@@ -308,8 +316,18 @@ void Population::killThemAll()
 {
     list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
     for(; lit!=m_enemies.end();)
-        {
-            this->explode(*lit);
-            lit = m_enemies.erase(lit);
-        }
+    {
+        this->explode(*lit);
+        lit = m_enemies.erase(lit);
+    }
+}
+
+bool Population::haveBossInProgress()
+{
+    if(m_boss.empty())
+    {
+        return false;
+    }
+    else
+        return true;
 }

@@ -63,3 +63,8 @@ IntRect Boss::getWeakBox()
 
     return boundingBox;
 }
+
+void Boss::draww()
+{
+    app.Draw(*m_animated);
+}

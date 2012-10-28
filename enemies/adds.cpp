@@ -22,3 +22,8 @@ Sprite* Adds::getSprite()
 {
     return &sprite;
 }
+
+void Adds::follow(sf::Vector2f speed)
+{
+    m_animated->Move(speed);
+}

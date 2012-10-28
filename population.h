@@ -63,6 +63,8 @@ class Population
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();
 
+        bool haveBossInProgress();
+
         void spawn(std::tr1::shared_ptr<Enemy> enemy);
 
         static void kill();
@@ -84,6 +86,7 @@ class Population
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> > m_enemies;
         std::list<std::tr1::shared_ptr<Enemy> > m_spawns;
+        std::list<std::tr1::shared_ptr<Boss> > m_boss;
 
         //Liste des ennemis morts
         std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;

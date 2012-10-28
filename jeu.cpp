@@ -79,6 +79,9 @@ void Jeu::start(short niveau)
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
     Level_manager::getInstance()->startLevel(niveau);
+
+    population->createBoss(Vector2f(500, 500), "boss", 1);
+
     while (app.IsOpened() )
     {
         if(m_quit ||(level_manager->isFinished() && !population->haveEnnemyInProgress()))

@@ -31,7 +31,7 @@ class Adds : public Enemy
         ~Adds();
 
         //Suivre le boss
-        void follow();
+        void follow(sf::Vector2f speed);
 
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
@@ -47,15 +47,6 @@ class Adds : public Enemy
         //Direction de déplacement
         char* direction;
 
-        //Porjectile
-        Projectile *projectile;
-
-        //Li'mage du boss
-        sf::Image *image;
-
-        //Sprite du boss
-        sf::Sprite sprite;
-
         //Le moment du dernier tir
         float lastShot;
 
@@ -64,10 +55,6 @@ class Adds : public Enemy
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;
-
-        //Variables d'animation
-        Animated *m_animated;
-        Anim m_anim;
 
         //Position du joueur
         sf::Vector2f playerPosition;
