@@ -200,9 +200,9 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
     }
 }
 
-void Population::createBoss(Vector2f position, char* move, char* name)
+void Population::createBoss(Vector2f position, char* move, short level)
 {
-    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, name, position, "boss", move, 1, 20, 2, name, player, player2));
+    tr1::shared_ptr<Enemy> a(new Boss(500, 10, 10000, 5, 5, "images/flyingSaucer.png", position, "boss", move, 1, 20, 2, "lilith", player, player2, level));
     m_enemies.push_back(a);
 }
 

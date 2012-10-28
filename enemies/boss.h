@@ -23,15 +23,20 @@ class Boss : public Enemy
 {
     public:
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
-             int moveValue, const int coefSpeed, const int firerate, const char* name, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
+             int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, short level);
         //Destruteur
         ~Boss();
+
+        sf::IntRect getBoundingBox();
+        sf::IntRect getWeakBox();
 
         void createAdd();
 
     private:
-    std::list<std::tr1::shared_ptr<Adds> > m_adds;
-    const char* m_name;
+        std::list<std::tr1::shared_ptr<Adds> > m_adds;
+        const char* m_name;
+        short m_level;
+
 
 };
 #endif // BOSS_H_INCLUDED
