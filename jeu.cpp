@@ -213,7 +213,7 @@ void Jeu::start(short niveau)
                 invincible = false;
             }
         }
-        Level_manager::getInstance()->checkLevel();
+        level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
         player->draw();

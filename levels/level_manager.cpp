@@ -32,10 +32,11 @@ Level_manager* Level_manager::getInstance()
 
 void Level_manager::startLevel(short level)
 {
+    currentLevel.clear();
     levelNumber = level;
+    levelOver = false;
     vectorPosition = 0;
     const char* filepath;
-        cout << level << endl;
     switch(level)
     {
         case 1:
