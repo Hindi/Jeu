@@ -36,6 +36,8 @@ class Adds : public Enemy
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
 
+        void follow();
+
 
     private:
         //Liste des projectiles du boss

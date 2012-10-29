@@ -33,6 +33,7 @@ class Boss : public Enemy
 
         void createAdd();
         void draw();
+        void move();
 
     private:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

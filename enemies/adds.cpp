@@ -31,3 +31,8 @@ void Adds::follow(sf::Vector2f speed)
 {
     m_animated->Move(speed);
 }
+
+void Adds::follow()
+{
+
+}

@@ -274,7 +274,6 @@ void Enemy::fireFocus()
     Vector2f distance1, distance2, position1, position2;
     int indistinctness = rand() % 100 + 1;
     int norm;
-
     //On récupère les positions des deux joueurs
     position1 = player->getPosition();
     position2 = player2->getPosition();

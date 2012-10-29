@@ -37,9 +37,9 @@ void Boss::createAdd()
     switch(m_level)
     {
         case 1:
-            tr1::shared_ptr<Adds> add(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(200, 200), "add", "follow", 1, 5, 5, false, player, player2));
+            tr1::shared_ptr<Adds> add(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(m_position.x, m_position.y + image->GetHeight()), "add", "follow", 1, 5, 5, false, player, player2));
             m_adds.push_back(add);
-            tr1::shared_ptr<Adds> add2(add);
+            tr1::shared_ptr<Adds> add2(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(m_position.x + image->GetWidth() /1.5, m_position.y + image->GetHeight()), "add", "follow", 1, 5, 5, false, player, player2));
             m_adds.push_back(add2);
             break;
     }
@@ -75,5 +75,14 @@ void Boss::draw()
     for(; li!= m_adds.end(); li++)
     {
         (*li)->draw();
+    }
+}
+
+void Boss::move()
+{
+    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
+    for(; li!= m_adds.end(); li++)
+    {
+        (*li)->follow();
     }
 }
