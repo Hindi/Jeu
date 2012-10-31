@@ -4,11 +4,11 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(1000, 5, 10000, 5, 5, "images/enemy2.png", Vector2f(500, 500), "boss", "don't move", 1, 50, 2, player, player2, 1),
-            m_level(level)
+            Boss(1000, 5, 10000, 5, 5, "images/enemy2.png", Vector2f(500, 500), "boss", "don't move", 1, 50, 2, player, player2),
+            m_level(1)
 {
     image = new Image();
-    *image = image_manager::getInstance()->getImage(filepath);
+    *image = image_manager::getInstance()->getImage("images/enemy2.png");
     timer.start();
     timerMove.start();
 
@@ -16,7 +16,7 @@ Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player>
     m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
     m_animated->SetAnim(&m_anim);
     m_animated->Play();
-    m_animated->SetPosition(position.x, position.y);
+    m_animated->SetPosition(500, 500);
 
     this->createAdd();
 }
@@ -41,39 +41,6 @@ void Lilith::createAdd()
             tr1::shared_ptr<Adds> add2(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(m_position.x + image->GetWidth() /1.5, m_position.y + image->GetHeight()), "add", "follow", 1, 5, 5, false, player, player2));
             m_adds.push_back(add2);
             break;
-    }
-}
-
-IntRect Lilith::getBoundingBox()
-{
-    IntRect boundingBox;
-    boundingBox.Left = m_position.x + image->GetWidth()/4;
-    boundingBox.Right = boundingBox.Left + image->GetWidth()-image->GetWidth()/2;
-    boundingBox.Top = m_position.y;
-    boundingBox.Bottom = boundingBox.Top + image->GetHeight();
-
-    return boundingBox;
-}
-
-
-IntRect Lilith::getWeakBox()
-{
-    IntRect boundingBox;
-    boundingBox.Left = m_position.x + image->GetWidth()/2;
-    boundingBox.Right = boundingBox.Left + image->GetWidth()/2;
-    boundingBox.Top = m_position.y;
-    boundingBox.Bottom = boundingBox.Top + image->GetHeight()/2;
-
-    return boundingBox;
-}
-
-void Lilith::draw()
-{
-    app.Draw(*m_animated);
-    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
-    for(; li!= m_adds.end(); li++)
-    {
-        (*li)->draw();
     }
 }
 

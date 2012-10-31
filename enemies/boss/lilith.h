@@ -1,12 +1,11 @@
-#ifndef BOSS_H_INCLUDED
-#define BOSS_H_INCLUDED
+#ifndef Lilith_H_INCLUDED
+#define Lilith_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
 
 #include "../boss.h"
 #include "../adds.h"
 #include "../../player.h"
-#include "../../timer.h"
 #include "../../tirs/projectile.h"
 #include "../../animation.h"
 #include "../../Animated.hpp"
@@ -17,7 +16,7 @@
 class Lilith : public Boss
 {
     public:
-        Lilith((std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
+        Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
         //Destruteur
         ~Lilith();
 
@@ -31,4 +30,4 @@ class Lilith : public Boss
 
 
 };
-#endif // BOSS_H_INCLUDED
+#endif // Lilith_H_INCLUDED

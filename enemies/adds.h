@@ -6,13 +6,12 @@
 
 #include "../player.h"
 #include "../timer.h"
-#include "../unit.h"
 #include "../tirs/projectile.h"
 #include "../animation.h"
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "../tirs/projectile_manager.h"
-#include "Enemy.h"
+#include "enemy.h"
 
 /*
 ****************************************

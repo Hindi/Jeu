@@ -17,6 +17,7 @@
 #include "Anim.hpp"
 #include "const.h"
 #include "timer.h"
+#include "enemies/boss/lilith.h"
 
 //Permet de stocker et gérer les ennemis
 

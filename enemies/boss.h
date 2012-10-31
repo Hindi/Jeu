@@ -4,8 +4,6 @@
 #include <SFML/Graphics.hpp>
 
 #include "../player.h"
-#include "../timer.h"
-#include "../unit.h"
 #include "enemy.h"
 #include "adds.h"
 
@@ -19,7 +17,7 @@ class Boss : public Enemy
 {
     public:
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
-             int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, short level);
+             int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
         //Destruteur
         ~Boss();
 
@@ -28,7 +26,7 @@ class Boss : public Enemy
 
         void draw();
 
-    private:
+    protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         short m_level;
