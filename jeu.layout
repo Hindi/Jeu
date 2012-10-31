@@ -25,8 +25,8 @@
 	<File name="background.h" open="0" top="0" tabpos="2">
 		<Cursor position="675" topLine="5" />
 	</File>
-	<File name="collision.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="3342" topLine="96" />
+	<File name="collision.cpp" open="1" top="1" tabpos="13">
+		<Cursor position="3567" topLine="101" />
 	</File>
 	<File name="collision.h" open="0" top="0" tabpos="7">
 		<Cursor position="976" topLine="8" />
@@ -52,7 +52,7 @@
 	<File name="enemies\adds.h" open="1" top="0" tabpos="11">
 		<Cursor position="1105" topLine="29" />
 	</File>
-	<File name="enemies\boss.cpp" open="1" top="1" tabpos="8">
+	<File name="enemies\boss.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="2364" topLine="63" />
 	</File>
 	<File name="enemies\boss.h" open="1" top="0" tabpos="9">

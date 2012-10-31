@@ -96,13 +96,14 @@ bool Enemy::isDead()
 //********************************
 void Enemy::roundTrip()
 {
-    if(strcmp(direction, "left") == 0)
+
+    if(strcmp(direction.data(), "left") == 0)
         moveLeft();
     else
         moveRight();
     if(savedTimerMove > m_moveValue)
     {
-        if(strcmp(direction, "left") == 0)
+        if(strcmp(direction.data(), "left") == 0)
         {
             direction = "right";
             timerMove.reinitialize();
@@ -515,7 +516,6 @@ Vector2f Enemy::getSize()
 
 void Enemy::reset()
 {
-
     m_projectiles.clear();
     m_vitesses.clear();
     delete m_animated;
@@ -523,7 +523,6 @@ void Enemy::reset()
     {
         delete image;
     }
-    delete direction;
     delete m_type;
     delete m_moveMethod;
 }

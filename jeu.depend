@@ -2082,48 +2082,48 @@
 1335705299 source:g:\projets\cours\jeu\animation.cpp
 	"animation.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\anim.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\anim.cpp
 	"Anim.hpp"
 
-1351032402 c:\users\shalafi\documents\github\jeu\anim.hpp
+1351619387 c:\users\shalafi\documents\github\jeu\anim.hpp
 	<vector>
 	"Frame.hpp"
 
-1351032402 c:\users\shalafi\documents\github\jeu\frame.hpp
+1351619387 c:\users\shalafi\documents\github\jeu\frame.hpp
 	<SFML/Graphics.hpp>
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\animated.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\animated.cpp
 	"Animated.hpp"
 
-1351032402 c:\users\shalafi\documents\github\jeu\animated.hpp
+1351619387 c:\users\shalafi\documents\github\jeu\animated.hpp
 	"Anim.hpp"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\frame.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\frame.cpp
 	"Frame.hpp"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\animation.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\animation.cpp
 	"animation.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\animation.h
+1351619387 c:\users\shalafi\documents\github\jeu\animation.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1351329036 source:c:\users\shalafi\documents\github\jeu\background.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
-1351329036 c:\users\shalafi\documents\github\jeu\background.h
+1351619387 c:\users\shalafi\documents\github\jeu\background.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<stdlib.h>
 	<time.h>
 	"image_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\image_manager.h
+1351619387 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1351034858 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1351676847 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\collision.h
+1351619387 c:\users\shalafi\documents\github\jeu\collision.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<tr1/memory>
@@ -2134,7 +2134,7 @@
 	"drop.h"
 	"enemies/spawn.h"
 
-1351329036 c:\users\shalafi\documents\github\jeu\player.h
+1351619388 c:\users\shalafi\documents\github\jeu\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<list>
@@ -2152,7 +2152,7 @@
 	"image_manager.h"
 	<iostream>
 
-1351032402 c:\users\shalafi\documents\github\jeu\unit.h
+1351619388 c:\users\shalafi\documents\github\jeu\unit.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2169,16 +2169,16 @@
 	"projectile.h"
 	"tirs/missile.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\tirs\missile.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\missile.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"../image_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\timer.h
+1351619388 c:\users\shalafi\documents\github\jeu\timer.h
 	<SFML/System.hpp>
 	<iostream>
 
-1351444998 c:\users\shalafi\documents\github\jeu\population.h
+1351619388 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2210,7 +2210,7 @@
 	"math.h"
 	"projectile_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\drop_manager.h
+1351619387 c:\users\shalafi\documents\github\jeu\drop_manager.h
 	<SFML/Graphics.hpp>
 	<list>
 	<iostream>
@@ -2219,11 +2219,11 @@
 	"image_manager.h"
 	"const.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\drop.h
+1351619387 c:\users\shalafi\documents\github\jeu\drop.h
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
 	<list>
 	<SFML/Graphics.hpp>
 	<tr1/memory>
@@ -2235,16 +2235,16 @@
 	"../image_manager.h"
 	"../const.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\drop.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\drop.cpp
 	"drop.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1351524273 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1351524192 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1351619387 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
@@ -2265,21 +2265,21 @@
 1348603269 source:c:\users\shalafi\documents\github\jeu\guard.cpp
 	"guard.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\guard.h
+1351619387 c:\users\shalafi\documents\github\jeu\guard.h
 	<SFML/System.hpp>
 	<string>
 	<iostream>
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\image_manager.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\image_manager.cpp
 	<map>
 	<iostream>
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1351524943 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1351329036 c:\users\shalafi\documents\github\jeu\jeu.h
+1351619388 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
 	<list>
 	"player.h"
@@ -2301,7 +2301,7 @@
 	"const.h"
 	"levels/level_manager.h"
 
-1351035015 c:\users\shalafi\documents\github\jeu\pannel.h
+1351619388 c:\users\shalafi\documents\github\jeu\pannel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
@@ -2309,13 +2309,13 @@
 	"image_manager.h"
 	"population.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\menu.h
+1351619388 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
 	"const.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\script.h
+1351619388 c:\users\shalafi\documents\github\jeu\script.h
 	<SFML/Graphics.hpp>
 	"population.h"
 	"timer.h"
@@ -2330,7 +2330,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1351405613 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2339,16 +2339,16 @@
 	"const.h"
 	<tr1/memory>
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\menu.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
-1351035322 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
 	"pannel.h"
 
-1351329036 source:c:\users\shalafi\documents\github\jeu\player.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1351524649 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2357,21 +2357,21 @@
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile_manager.cpp
 	"projectile_manager.h"
 
-1351035586 source:c:\users\shalafi\documents\github\jeu\script.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\script.cpp
 	"script.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\timer.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\timer.cpp
 	"timer.h"
 	<windows.h>
 	<unistd.h>
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
 	"missile.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
 	"missile_manager.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\unit.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\unit.cpp
 	"unit.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\weapon_manager.cpp
@@ -2398,7 +2398,7 @@
 1250305076 c:\program files (x86)\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1351524274 c:\users\shalafi\documents\github\jeu\enemies\adds.h
+1351619387 c:\users\shalafi\documents\github\jeu\enemies\adds.h
 	<SFML/Graphics.hpp>
 	<list>
 	"../player.h"
@@ -2411,13 +2411,13 @@
 	"../tirs/projectile_manager.h"
 	"Enemy.h"
 
-1351524274 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
+1351619387 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1351524669 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1351677107 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1351677058 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2432,10 +2432,10 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 
-1351034604 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
 	"projectile.h"
 
-1351329036 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
 	<SFML/Graphics.hpp>
 	"../animation.h"
 	<iostream>
@@ -2444,7 +2444,7 @@
 	"../image_manager.h"
 	"../const.h"
 
-1351329036 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2454,17 +2454,17 @@
 	<vector>
 	"../const.h"
 
-1351329036 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
-1351033070 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
 	"weapon_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.h
 	<SFML/Graphics.hpp>
 	"../player.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
+1351619387 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2482,17 +2482,17 @@
 1349786078 source:c:\users\shalafi\documents\github\jeu\enemies\spawn.cpp
 	"spawn.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\tirs\score.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\score.cpp
 	"score.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\tirs\score.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\score.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
 	"../timer.h"
 	"../const.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
+1351619388 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2500,16 +2500,16 @@
 	"score.h"
 	"../const.h"
 
-1351032402 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
 	"score_manager.h"
 
-1351032402 c:\users\shalafi\documents\github\jeu\const.h
+1351619387 c:\users\shalafi\documents\github\jeu\const.h
 	<SFML/Graphics.hpp>
 
 1349626092 source:c:\users\shalafi\documents\github\jeu\const.cpp
 	"const.h"
 
-1351403519 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
+1351619388 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
 	<sstream>
 	<iostream>
 	<string>
@@ -2517,7 +2517,7 @@
 	"../population.h"
 	"../timer.h"
 
-1351524893 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1351619388 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 
 1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp

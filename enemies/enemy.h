@@ -119,7 +119,7 @@ class Enemy : public Unit
         std::list<sf::Vector2f> m_vitesses;
 
         //Direction de déplacememnt pour certains mouvements particuliers
-        char* direction;
+        std::string direction;
 
         sf::Image *image;
 
