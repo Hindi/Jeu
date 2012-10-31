@@ -80,6 +80,15 @@ void Population::checkPopulation()
         }
     }
 
+    if(this->haveBossInProgress())
+    {
+        list<tr1::shared_ptr<Boss> >::const_iterator li(m_boss.begin());
+        for(; li!= m_boss.end(); li++)
+        {
+            (*li)->move();
+            (*li)->addsMove();
+        }
+    }
     Projectile_manager::getInstance()->moveProjectile();
 
 
@@ -207,7 +216,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
     }
 }
 
-void Population::createBoss(Vector2f position, char* move, short level)
+void Population::createLilith()
 {
     string filepath = "images/enemy2.png";
     tr1::shared_ptr<Boss> a(new Lilith(player, player2));

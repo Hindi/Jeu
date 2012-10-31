@@ -21,7 +21,7 @@ class Lilith : public Boss
         ~Lilith();
 
         void createAdd();
-        void move();
+        void addsMove();
 
     protected:
         const char* m_name;

@@ -59,7 +59,7 @@ class Population
         void manage();
 
         //Création d'un boos
-        void createBoss(sf::Vector2f position, char* move, short level);
+        void createLilith();
 
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();

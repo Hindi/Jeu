@@ -42,6 +42,10 @@ IntRect Boss::getWeakBox()
     return boundingBox;
 }
 
+void Boss::addsMove()
+{
+}
+
 void Boss::drawAdds()
 {
     list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
@@ -55,4 +59,15 @@ void Boss::draw()
 {
     app.Draw(*m_animated);
     this->drawAdds();
+}
+
+void Boss::follow()
+{
+    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
+    unsigned short i = 0;
+    for(; li!= m_adds.end(); li++)
+    {
+        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
+        i = image->GetWidth() /1.5;
+    }
 }

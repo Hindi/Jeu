@@ -80,7 +80,7 @@ void Jeu::start(short niveau)
 
     Level_manager::getInstance()->startLevel(niveau);
 
-    population->createBoss(Vector2f(500, 500), "boss", 1);
+    population->createLilith();
 
     while (app.IsOpened() )
     {

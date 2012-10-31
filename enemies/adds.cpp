@@ -30,17 +30,12 @@ Sprite* Adds::getSprite()
     return &sprite;
 }
 
-void Adds::follow(sf::Vector2f speed)
-{
-    m_animated->Move(speed);
-}
-
-void Adds::follow()
-{
-
-}
-
 void Adds::draw()
 {
     app.Draw(*m_animated);
+}
+
+Animated* Adds::getAnimation()
+{
+    return m_animated;
 }

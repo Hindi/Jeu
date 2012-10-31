@@ -36,9 +36,8 @@ class Adds : public Enemy
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
 
-        void follow();
         void draw();
-
+        Animated* getAnimation();
 
     private:
         sf::Image *image;

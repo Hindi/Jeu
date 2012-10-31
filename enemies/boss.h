@@ -24,8 +24,12 @@ class Boss : public Enemy
         sf::IntRect getBoundingBox();
         sf::IntRect getWeakBox();
 
+
+
         void drawAdds();
         virtual void draw();
+        void follow();
+        virtual void addsMove();
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
