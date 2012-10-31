@@ -156,6 +156,34 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
 
 }
 
+void Population::explode(std::tr1::shared_ptr<Boss> boss)
+{
+    m_deadBoss.push_back(boss);
+
+    Vector2f position;
+    int score = boss->getScoreExplosion();
+    position.x = boss->getPositionAxis(0);
+    position.y = boss->getPositionAxis(1);
+    Drop_manager::getInstance()->createDrop(score, position);
+    int currentFrame = boss->getAnimation()->GetCurrentFrame();
+    Anim *m_anim = boss->getAnimation()->GetAnim();
+    Image *currentImage = (*m_anim)[currentFrame].Image;
+    position.x += currentImage->GetWidth();
+    Score_manager::getInstance()->addScore(score, position);
+
+    killedEnemies++;
+    if(timerCombo.getTime() <= killRate)
+    {
+        combo++;
+        if(combo > maxCombo)
+            maxCombo = combo;
+    }
+    else
+        combo = 1;
+    timerCombo.reinitialize();
+
+}
+
 void Population::manageExplosion()
 {
     if(!m_deadEnemies.empty())

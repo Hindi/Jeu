@@ -49,9 +49,7 @@ class Population
 
         //Fait exploser un ennemi
         void explode(std::tr1::shared_ptr<Enemy> enemy);
-
-        //Fait exploser un spawn
-        void explode(Spawn *spawn);
+        void explode(std::tr1::shared_ptr<Boss> boss);
 
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();
@@ -92,6 +90,7 @@ class Population
 
         //Liste des ennemis morts
         std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;
+        std::list<std::tr1::shared_ptr<Boss> > m_deadBoss;
 
         std::tr1::shared_ptr<Player> player;
         std::tr1::shared_ptr<Player> player2;
