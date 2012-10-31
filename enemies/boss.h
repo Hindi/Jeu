@@ -19,12 +19,13 @@ class Boss : public Enemy
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
              int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
         //Destruteur
-        ~Boss();
+        virtual ~Boss();
 
         sf::IntRect getBoundingBox();
         sf::IntRect getWeakBox();
 
-        void draw();
+        void drawAdds();
+        virtual void draw();
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

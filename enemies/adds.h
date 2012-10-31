@@ -11,6 +11,7 @@
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "../tirs/projectile_manager.h"
+#include "../const.h"
 #include "enemy.h"
 
 /*
@@ -36,9 +37,11 @@ class Adds : public Enemy
         sf::Sprite* getSprite();
 
         void follow();
+        void draw();
 
 
     private:
+        sf::Image *image;
         //Liste des projectiles du boss
         std::list<Projectile*> m_projectiles;
 
@@ -59,6 +62,10 @@ class Adds : public Enemy
 
         //Position du joueur
         sf::Vector2f playerPosition;
+
+        //Variables d'animation
+        Animated *m_animated;
+        Anim m_anim;
 
         short const m_maxLife;
 

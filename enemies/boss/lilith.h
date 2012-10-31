@@ -23,10 +23,10 @@ class Lilith : public Boss
         void createAdd();
         void move();
 
-    private:
-        std::list<std::tr1::shared_ptr<Adds> > m_adds;
+    protected:
         const char* m_name;
         short m_level;
+        sf::Vector2f m_position;
 
 
 };

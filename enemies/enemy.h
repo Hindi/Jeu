@@ -23,7 +23,7 @@ class Enemy : public Unit
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
 
         //Destructeur
-        ~Enemy();
+        virtual ~Enemy();
 
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
@@ -55,7 +55,7 @@ class Enemy : public Unit
          void spawnMove();
 
         //Dessin de l'ennemi
-         void draw();
+         virtual void draw();
 
         //Accesseur sur la position de l'ennemis sur un axe
          int getPositionAxis(int axis);

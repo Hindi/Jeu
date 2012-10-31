@@ -7,18 +7,7 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
            std::tr1::shared_ptr<Player> player2) :
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2)
 {
-   /* image = new Image();
-    *image = image_manager::getInstance()->getImage(filepath);
-    timer.start();
-    timerMove.start();
 
-    m_animated = new Animated;
-    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
-    m_animated->SetAnim(&m_anim);
-    m_animated->Play();
-    m_animated->SetPosition(position.x, position.y);
-
-    this->createAdd();*/
 }
 
 Boss::~Boss()
@@ -53,12 +42,17 @@ IntRect Boss::getWeakBox()
     return boundingBox;
 }
 
-void Boss::draw()
+void Boss::drawAdds()
 {
-    app.Draw(*m_animated);
     list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
     for(; li!= m_adds.end(); li++)
     {
         (*li)->draw();
     }
+}
+
+void Boss::draw()
+{
+    app.Draw(*m_animated);
+    this->drawAdds();
 }
