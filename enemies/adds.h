@@ -41,26 +41,12 @@ class Adds : public Enemy
 
     private:
         sf::Image *image;
-        //Liste des projectiles du boss
-        std::list<Projectile*> m_projectiles;
-
-        //Liste des vitesses de tous les projectiles
-        std::list<sf::Vector2f> m_vitesses;
-
-        //Direction de déplacement
-        char* direction;
-
-        //Le moment du dernier tir
-        float lastShot;
 
         //Timers de tir et de déplacement
         Timer timer, timerMove;
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;
-
-        //Position du joueur
-        sf::Vector2f playerPosition;
 
         //Variables d'animation
         Animated *m_animated;

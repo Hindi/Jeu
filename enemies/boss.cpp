@@ -44,6 +44,7 @@ IntRect Boss::getWeakBox()
 
 void Boss::addsMove()
 {
+
 }
 
 void Boss::drawAdds()

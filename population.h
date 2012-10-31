@@ -26,6 +26,7 @@ class Population
     public:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> >* getPopulation();
+        std::list<std::tr1::shared_ptr<Boss> >* getBossPopulation();
 
         //Vérifie si des ennemis sont en vie
         bool haveEnnemyInProgress();

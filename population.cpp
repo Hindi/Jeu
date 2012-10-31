@@ -49,6 +49,12 @@ list<tr1::shared_ptr<Enemy> >* Population::getPopulation()
     return &m_enemies;
 }
 
+std::list<std::tr1::shared_ptr<Boss> >* Population::getBossPopulation()
+{
+    return &m_boss;
+}
+
+
 void Population::checkPopulation()
 {
     if(this->haveEnnemyInProgress())
@@ -79,16 +85,36 @@ void Population::checkPopulation()
             }
         }
     }
-
     if(this->haveBossInProgress())
     {
-        list<tr1::shared_ptr<Boss> >::const_iterator li(m_boss.begin());
-        for(; li!= m_boss.end(); li++)
+        //On check les ennemis
+        list<tr1::shared_ptr<Boss> >::iterator lit(m_boss.begin());
+        for(; lit!=m_boss.end();)
         {
-            (*li)->move();
-            (*li)->addsMove();
+            if((*lit)->isDead())
+            {
+                this->explode(*lit);
+                lit = m_boss.erase(lit);
+            }
+            else
+            {
+                (*lit)->move();
+                (*lit)->addsMove();
+                this->spawn((*lit));
+                if((*lit)->canFire())
+                {
+                    if(strcmp((*lit)->getType(), "ship") == 0)
+                        (*lit)->fireFocus();
+                    if( strcmp((*lit)->getType(), "spawn") == 0 )
+                        (*lit)->fireFocus();
+                    if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
+                        (*lit)->fireCircle();
+                }
+                lit++;
+            }
         }
     }
+
     Projectile_manager::getInstance()->moveProjectile();
 
 
