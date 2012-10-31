@@ -18,8 +18,11 @@ Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::Rende
 
     //Sprite planètes
     imagePlanet = new Image;
-    *imagePlanet = image_manager::getInstance()->getImage("images/planete2.png");;
+    *imagePlanet = image_manager::getInstance()->getImage("images/planete1.png");;
     spritePlanet.SetImage(*imagePlanet);
+    imagePlanet2 = new Image;
+    *imagePlanet2 = image_manager::getInstance()->getImage("images/planete2.png");;
+    spritePlanet2.SetImage(*imagePlanet);
 
     this->init();
 }
@@ -54,7 +57,13 @@ void Background::manage()
     //Si une planète sort on la replace de manière aléatoire
     if(spritePlanet.GetPosition().y > m_height)
     {
+        spritePlanet2.SetPosition((rand()%980)+1, -500);
+        spritePlanet.SetPosition(0,-1000);
+    }
+    if(spritePlanet2.GetPosition().y > m_height)
+    {
         spritePlanet.SetPosition((rand()%980)+1, -500);
+        spritePlanet2.SetPosition(0,-1000);
     }
 }
 
