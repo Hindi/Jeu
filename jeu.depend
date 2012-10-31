@@ -2120,7 +2120,7 @@
 
 1351619387 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1351676847 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1351677166 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1351619387 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2244,20 +2244,14 @@
 1351619387 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1351678497 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
 	"../timer.h"
 	"../unit.h"
-	"../tirs/projectile.h"
-	"../animation.h"
-	"../Animated.hpp"
-	"../image_manager.h"
-	"../tirs/projectile_manager.h"
-	"adds.h"
-	"../const.h"
 	"enemy.h"
+	"adds.h"
 
 1348518742 source:c:\users\shalafi\documents\github\jeu\enemy.cpp
 	"enemy.h"

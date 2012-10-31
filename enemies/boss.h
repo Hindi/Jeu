@@ -2,17 +2,12 @@
 #define BOSS_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
+
 #include "../player.h"
 #include "../timer.h"
 #include "../unit.h"
-#include "../tirs/projectile.h"
-#include "../animation.h"
-#include "../Animated.hpp"
-#include "../image_manager.h"
-#include "../tirs/projectile_manager.h"
-#include "adds.h"
-#include "../const.h"
 #include "enemy.h"
+#include "adds.h"
 
 /*
 ****************************************
@@ -31,9 +26,7 @@ class Boss : public Enemy
         sf::IntRect getBoundingBox();
         sf::IntRect getWeakBox();
 
-        void createAdd();
         void draw();
-        void move();
 
     private:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
