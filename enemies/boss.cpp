@@ -103,10 +103,6 @@ void Boss::setTeleporting(bool state)
         teleportTimer.reinitialize();
 }
 
-/*int Boss::getTeleportTime()
-{
-    return teleportTimer.getTime();
-}*/
 
 bool Boss::readyToTeleport()
 {
