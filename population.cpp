@@ -87,10 +87,22 @@ void Population::checkPopulation()
     }
     if(this->haveBossInProgress())
     {
-        //On check les ennemis
         list<tr1::shared_ptr<Boss> >::iterator lit(m_boss.begin());
+
+        //On check les boss
         for(; lit!=m_boss.end();)
         {
+            //On regarde s'ils peuvent se téléporter
+            if((*lit)->canTeleport())
+            {
+                (*lit)->setTeleporting(true);
+                if((*lit)->readyToTeleport())
+                {
+                    (*lit)->teleport();
+                    (*lit)->setTeleporting(false);
+                }
+
+            }
             if((*lit)->isDead())
             {
                 this->explode(*lit);
@@ -258,6 +270,13 @@ void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
     m_enemies.push_back(a);
 }
 
+void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
+              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
+{
+    tr1::shared_ptr<Enemy> a(new Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2));
+    m_enemies.push_back(a);
+}
+
 void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 {
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
@@ -275,6 +294,10 @@ void Population::createLilith()
     string filepath = "images/enemy2.png";
     tr1::shared_ptr<Boss> a(new Lilith(player, player2));
     m_boss.push_back(a);
+    Vector2f position(a->getPosition().x, a->getPosition().y + 100);
+    this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    position.x +=100;
+    this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
 }
 
 void Population::manage()

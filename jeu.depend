@@ -2108,7 +2108,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\background.cpp
+1351704064 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
 1351703747 c:\users\shalafi\documents\github\jeu\background.h
@@ -2178,7 +2178,7 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1351703405 c:\users\shalafi\documents\github\jeu\population.h
+1351842062 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2242,14 +2242,15 @@
 1351619387 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1351698597 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1351844706 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1351693595 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1351845051 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
 	"enemy.h"
+	"../timer.h"
 	"adds.h"
 
 1348518742 source:c:\users\shalafi\documents\github\jeu\enemy.cpp
@@ -2341,7 +2342,7 @@
 1351619388 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1351703482 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1351845235 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2407,10 +2408,10 @@
 1351698505 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1351677107 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1351843045 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1351686404 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1351842639 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2570,6 +2571,6 @@
 	"../../tirs/projectile_manager.h"
 	"../../const.h"
 
-1351703505 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
+1351843709 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
 	"lilith.h"
 

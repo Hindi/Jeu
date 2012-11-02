@@ -53,6 +53,7 @@ class Enemy : public Unit
          void dontMove();
          void move();
          void spawnMove();
+         void follow();
 
         //Dessin de l'ennemi
          virtual void draw();

@@ -197,6 +197,8 @@ void Enemy::move()
         this->dontMove();
     else if(strcmp(m_moveMethod, "spawnMove") == 0)
         this->spawnMove();
+    else if(strcmp(m_moveMethod, "follow") == 0)
+        this->follow();
     else
         this->moveDown();
 }
@@ -213,6 +215,13 @@ void Enemy::spawnMove()
     speed.y = app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
     m_position += speed;
     m_animated->SetPosition(m_position);
+}
+
+void Enemy::follow()
+{
+/*
+        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
+        i = image->GetWidth() /1.5;*/
 }
 
 int Enemy::getPositionAxis(int axis)

@@ -4,16 +4,18 @@ using namespace std;
 using namespace sf;
 
 Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player,
-           std::tr1::shared_ptr<Player> player2) :
-            Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2)
-{
+           std::tr1::shared_ptr<Player> player2, bool allowTeleport) :
+            Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2),
+            allowTeleport(allowTeleport)
 
+{
+    teleportTimer.start();
 }
 
 Boss::~Boss()
 {
     delete m_animated;
-    if (image!= NULL )
+    if(image!= NULL )
     {
         delete image;
     }
@@ -58,7 +60,14 @@ void Boss::drawAdds()
 
 void Boss::draw()
 {
-    app.Draw(*m_animated);
+    if(teleporting)
+    {
+        if(teleportFrame % 2 == 1)
+            app.Draw(*m_animated);
+        teleportFrame++;
+    }
+    else
+        app.Draw(*m_animated);
     this->drawAdds();
 }
 
@@ -71,4 +80,42 @@ void Boss::follow()
         (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
         i = image->GetWidth() /1.5;
     }
+}
+
+Vector2f Boss::getPosition()
+{
+    return m_position;
+}
+
+bool Boss::canTeleport()
+{
+    if(allowTeleport && teleportTimer.getTime() > 3)
+    {
+        return true;
+    }
+    return false;
+}
+
+void Boss::setTeleporting(bool state)
+{
+    teleporting = state;
+    if(state == false)
+        teleportTimer.reinitialize();
+}
+
+/*int Boss::getTeleportTime()
+{
+    return teleportTimer.getTime();
+}*/
+
+bool Boss::readyToTeleport()
+{
+    if(teleportTimer.getTime() > 4)
+        return true;
+    return false;
+}
+
+void Boss::teleport()
+{
+    m_animated->SetPosition(Vector2f(rand()%800+1, 200 + rand()%300+1));
 }
