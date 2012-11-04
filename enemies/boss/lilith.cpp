@@ -18,24 +18,11 @@ Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player>
     m_animated->SetAnim(&m_anim);
     m_animated->Play();
     m_animated->SetPosition(500, 500);
-
-    this->createAdd();
 }
 
 Lilith::~Lilith()
 {
 
-}
-
-
-void Lilith::createAdd()
-{
-
-    /*
-    tr1::shared_ptr<Adds> add(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(m_position.x, m_position.y + image->GetHeight()), "add", "follow", 1, 5, 5, false, player, player2));
-    m_adds.push_back(add);
-    tr1::shared_ptr<Adds> add2(new Adds(200, 5, 1000, 5, 5, "images/enemy.png", Vector2f(m_position.x + image->GetWidth() /1.5, m_position.y + image->GetHeight()), "add", "follow", 1, 5, 5, false, player, player2));
-    m_adds.push_back(add2);*/
 }
 
 void Lilith::addsMove()

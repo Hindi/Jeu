@@ -46,6 +46,7 @@ void Boss::addsMove()
 
 void Boss::drawAdds()
 {
+    this->addsMove();
     list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
     for(; li!= m_adds.end(); li++)
     {
@@ -82,4 +83,7 @@ Vector2f Boss::getPosition()
     return m_position;
 }
 
-
+void Boss::pushAdds(std::tr1::shared_ptr<Adds> add)
+{
+    m_adds.push_back(add);
+}

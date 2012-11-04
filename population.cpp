@@ -202,8 +202,9 @@ void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
 {
-    tr1::shared_ptr<Adds> a(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, true));
-    m_enemies.push_back(a);
+    tr1::shared_ptr<Adds> add(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, true));
+    currentBoss->pushAdds(add);
+    m_enemies.push_back(add);
 }
 
 void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
@@ -221,12 +222,13 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 void Population::createLilith()
 {
     string filepath = "images/enemy2.png";
-    tr1::shared_ptr<Boss> a(new Lilith(player, player2));
-    m_enemies.push_back(a);
-    Vector2f position(a->getPosition().x, a->getPosition().y + 100);
+    tr1::shared_ptr<Boss> lilith(new Lilith(player, player2));
+    currentBoss = lilith;
+    Vector2f position(lilith->getPosition().x, lilith->getPosition().y + 100);
     this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=100;
     this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    m_enemies.push_back(lilith);
 }
 
 void Population::manage()

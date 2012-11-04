@@ -23,6 +23,7 @@ class Lilith : public Boss
         void createAdd();
         void addsMove();
 
+
     protected:
         const char* m_name;
         short m_level;

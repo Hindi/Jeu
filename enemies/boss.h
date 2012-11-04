@@ -32,6 +32,7 @@ class Boss : public Enemy
         void follow();
         virtual void addsMove();
         sf::Vector2f getPosition();
+        void pushAdds(std::tr1::shared_ptr<Adds> add);
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
