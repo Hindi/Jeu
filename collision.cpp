@@ -219,10 +219,10 @@ void Collision::manageProjectileCollision()
     // Collisions classe missile
     //**************************
     list<std::tr1::shared_ptr<Missile> >::iterator litt(Missile_manager::getInstance()->getMissile()->begin());
-    for(; litt != Missile_manager::getInstance()->getMissile()->end(); litt++)
+    //On check les ennemis
+    for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
     {
-        //On check les ennemis
-        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
+        while(litt != Missile_manager::getInstance()->getMissile()->end())
         {
             if(Missile_manager::getInstance()->getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
@@ -238,8 +238,11 @@ void Collision::manageProjectileCollision()
                     Missile_manager::getInstance()->setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
                     (litt) = Missile_manager::getInstance()->getMissile()->erase(litt);
                 }
+                else
+                    litt++;
             }
         }
+        litt = Missile_manager::getInstance()->getMissile()->begin();
     }
 }
 
