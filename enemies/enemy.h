@@ -64,6 +64,7 @@ class Enemy : public Unit
         //Accesseur sur la position de l'ennemi
          sf::Vector2f getPosition();
          void setPosition(int axis, int value);
+         void setPosition(sf::Vector2f position);
 
         //Accesseur sur l'animation de l'ennemi (anim explosion dans Unit)
          Animated *getAnimationExplosion();
@@ -112,9 +113,9 @@ class Enemy : public Unit
 
 
         bool canTeleport();
-        void setTeleporting(bool state);
+        virtual void setTeleporting(bool state);
         bool readyToTeleport();
-        virtual void teleport();
+        void teleport();
 
     protected:
         std::tr1::shared_ptr<Player> player;

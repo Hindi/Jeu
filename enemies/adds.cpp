@@ -32,7 +32,14 @@ Sprite* Adds::getSprite()
 
 void Adds::draw()
 {
-    app.Draw(*m_animated);
+    if(teleporting)
+    {
+        if(teleportFrame % 2 == 1)
+            app.Draw(*m_animated);
+        teleportFrame++;
+    }
+    else
+        app.Draw(*m_animated);
 }
 
 Animated* Adds::getAnimation()
@@ -42,5 +49,7 @@ Animated* Adds::getAnimation()
 
 void Adds::teleport()
 {
-
+    teleporting = false;
+    teleportTimer.reinitialize();
+    teleportFrame = 0;
 }

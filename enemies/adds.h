@@ -36,7 +36,7 @@ class Adds : public Enemy
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
 
-        void draw();
+        virtual void draw();
         Animated* getAnimation();
         virtual void teleport();
 

@@ -33,6 +33,7 @@ class Boss : public Enemy
         virtual void addsMove();
         sf::Vector2f getPosition();
         void pushAdds(std::tr1::shared_ptr<Adds> add);
+        virtual void setTeleporting(bool state);
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

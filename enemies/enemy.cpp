@@ -251,6 +251,11 @@ void Enemy::setPosition(int axis, int value)
         m_position.y = value;
 }
 
+void Enemy::setPosition(Vector2f position)
+{
+    m_position = position;
+}
+
 //********************************
 //**Fin fonctions de déplacement**
 //********************************

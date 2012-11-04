@@ -74,6 +74,7 @@ void Boss::follow()
     for(; li!= m_adds.end(); li++)
     {
         (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
+        (*li)->setPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
         i = image->GetWidth() /1.5;
     }
 }
@@ -86,4 +87,14 @@ Vector2f Boss::getPosition()
 void Boss::pushAdds(std::tr1::shared_ptr<Adds> add)
 {
     m_adds.push_back(add);
+}
+
+void Boss::setTeleporting(bool state)
+{
+    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
+    teleporting = state;
+    for(; li!= m_adds.end(); li++)
+    {
+        (*li)->setTeleporting(true);
+    }
 }
