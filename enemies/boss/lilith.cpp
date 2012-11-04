@@ -46,3 +46,4 @@ void Lilith::addsMove()
 {
     this->follow();
 }
+

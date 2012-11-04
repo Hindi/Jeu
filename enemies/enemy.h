@@ -82,7 +82,7 @@ class Enemy : public Unit
          bool canFire();
 
         //Accesseur sur le type de tir
-         const char* const getType();
+         const char* getType();
 
         //Timer pour les tirs
          void startTimer();

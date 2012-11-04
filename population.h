@@ -51,8 +51,9 @@ class Population
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
 
         //Fait exploser un ennemi
-        void explode(std::tr1::shared_ptr<Enemy> enemy);
-        void explode(std::tr1::shared_ptr<Boss> boss);
+        /*void explode(std::tr1::shared_ptr<Enemy> enemy);
+        void explode(std::tr1::shared_ptr<Boss> boss);*/
+        template<typename Type> void explode(Type operande);
 
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();

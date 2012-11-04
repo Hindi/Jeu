@@ -450,7 +450,7 @@ bool Enemy::canFire()
 //*********Fin projectiles********
 //********************************
 
-const char* const  Enemy::getType()
+const char* Enemy::getType()
 {
     return m_type;
 }

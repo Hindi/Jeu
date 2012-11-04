@@ -19,6 +19,8 @@ Boss::~Boss()
     {
         delete image;
     }
+    delete m_name;
+    delete m_type;
 }
 
 IntRect Boss::getBoundingBox()
@@ -113,5 +115,13 @@ bool Boss::readyToTeleport()
 
 void Boss::teleport()
 {
-    m_animated->SetPosition(Vector2f(rand()%800+1, 200 + rand()%300+1));
+    Vector2f position(rand()%800+1, 200 + rand()%300+1);
+    m_animated->SetPosition(Vector2f(position));
+    m_position = position;
+
+}
+
+const char* Boss::getType()
+{
+    return m_type;
 }

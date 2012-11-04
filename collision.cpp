@@ -223,18 +223,17 @@ void Collision::manageProjectileCollision()
                     m_player2->addScore((*lii)->getScoreHit()/2);
                     (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
 
-                    if(!(*li)->isDead())
+                    if(!(*lii)->isDead())
                     {
                         Vector2f position;
                         position.x = (*lii)->getPositionAxis(0);
                         position.y = (*lii)->getPositionAxis(1);
-                        int currentFrame = (*li)->getAnimation()->GetCurrentFrame();
+                        int currentFrame = (*lii)->getAnimation()->GetCurrentFrame();
                         Anim *m_anim = (*lii)->getAnimation()->GetAnim();
                         Image *currentImage = (*m_anim)[currentFrame].Image;
                         position.x += currentImage->GetWidth();
                         Score_manager::getInstance()->addScore((*lii)->getScoreHit()/2, position);
                     }
-
                 }
             }
         }

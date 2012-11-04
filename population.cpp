@@ -105,6 +105,7 @@ void Population::checkPopulation()
             }
             if((*lit)->isDead())
             {
+                cout << "huk" << endl;
                 this->explode(*lit);
                 lit = m_boss.erase(lit);
             }
@@ -140,35 +141,49 @@ void Population::checkPopulation()
 
 }
 
-void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
+template<typename Type> void Population::explode(Type operande)
 {
-    m_deadEnemies.push_back(enemy);
-
-    Vector2f position;
-    int score = enemy->getScoreExplosion();
-    position.x = enemy->getPositionAxis(0);
-    position.y = enemy->getPositionAxis(1);
-    Drop_manager::getInstance()->createDrop(score, position);
-    int currentFrame = enemy->getAnimation()->GetCurrentFrame();
-    Anim *m_anim = enemy->getAnimation()->GetAnim();
-    Image *currentImage = (*m_anim)[currentFrame].Image;
-    position.x += currentImage->GetWidth();
-    Score_manager::getInstance()->addScore(score, position);
-
-    killedEnemies++;
-    if(timerCombo.getTime() <= killRate)
+    if(strcmp(operande->getType(), "boss") == 0)
     {
-        combo++;
-        if(combo > maxCombo)
-            maxCombo = combo;
+
     }
     else
-        combo = 1;
-    timerCombo.reinitialize();
+    {
+        std::tr1::shared_ptr<Enemy> enemy = operande;
+        m_deadEnemies.push_back(enemy);
 
+        Vector2f position;
+        int score = enemy->getScoreExplosion();
+        position.x = enemy->getPositionAxis(0);
+        position.y = enemy->getPositionAxis(1);
+        Drop_manager::getInstance()->createDrop(score, position);
+        int currentFrame = enemy->getAnimation()->GetCurrentFrame();
+        Anim *m_anim = enemy->getAnimation()->GetAnim();
+        Image *currentImage = (*m_anim)[currentFrame].Image;
+        position.x += currentImage->GetWidth();
+        Score_manager::getInstance()->addScore(score, position);
+
+        killedEnemies++;
+        if(timerCombo.getTime() <= killRate)
+        {
+            combo++;
+            if(combo > maxCombo)
+                maxCombo = combo;
+        }
+        else
+            combo = 1;
+        timerCombo.reinitialize();
+    }
 }
 
-void Population::explode(std::tr1::shared_ptr<Boss> boss)
+/*
+void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
+{
+
+
+}*/
+
+/*void Population::explode(std::tr1::shared_ptr<Boss> boss)
 {
     m_deadBoss.push_back(boss);
 
@@ -194,7 +209,7 @@ void Population::explode(std::tr1::shared_ptr<Boss> boss)
         combo = 1;
     timerCombo.reinitialize();
 
-}
+}*/
 
 void Population::manageExplosion()
 {

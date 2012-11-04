@@ -7,7 +7,7 @@
 
 1335606061 
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Font.hpp>
@@ -22,7 +22,7 @@
 
 1264604042 hics/View.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/Event.hpp>
@@ -35,7 +35,7 @@
 
 1264604042 ow/OpenGL.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Clock.hpp>
 	<SFML/System/Lock.hpp>
@@ -49,36 +49,36 @@
 
 1264604042 em/Vector3.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\config.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\config.hpp
 	<climits>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\clock.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\clock.hpp
 	<SFML/Config.hpp>
 
 1264604034 ig.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\lock.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\lock.hpp
 	<SFML/System/NonCopyable.hpp>
 
 1264604036 em/NonCopyable.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\noncopyable.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\noncopyable.hpp
 	<SFML/Config.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\mutex.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\mutex.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Win32/Mutex.hpp>
 	<SFML/System/Unix/Mutex.hpp>
 
 1264604036 em/Unix/Mutex.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
 1264604034 >
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\windows.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\windows.h
 	<winresrc.h>
 	<stdarg.h>
 	<windef.h>
@@ -108,7 +108,7 @@
 	<winsock.h>
 	<ole2.h>
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winresrc.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winresrc.h
 	<winuser.h>
 	<winnt.h>
 	<winver.h>
@@ -118,70 +118,70 @@
 
 1228530724 h>
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\winuser.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\winuser.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winnt.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winnt.h
 	<winerror.h>
 	<string.h>
 	<basetsd.h>
 	<pshpack4.h>
 	<poppack.h>
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winerror.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winerror.h
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\string.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
-1250308674 e:\utilitaires\codeblocks\mingw\include\_mingw.h
+1250305074 e:\utilitaires\codeblocks\mingw\include\_mingw.h
 
-1228534312 e:\utilitaires\codeblocks\mingw\include\basetsd.h
+1228530712 e:\utilitaires\codeblocks\mingw\include\basetsd.h
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\pshpack4.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\pshpack4.h
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\poppack.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\poppack.h
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\winver.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\winver.h
 
-1228534314 e:\utilitaires\codeblocks\mingw\include\dde.h
+1228530714 e:\utilitaires\codeblocks\mingw\include\dde.h
 
-1228534314 e:\utilitaires\codeblocks\mingw\include\dlgs.h
+1228530714 e:\utilitaires\codeblocks\mingw\include\dlgs.h
 
-1228534314 e:\utilitaires\codeblocks\mingw\include\commctrl.h
+1228530714 e:\utilitaires\codeblocks\mingw\include\commctrl.h
 	<prsht.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\prsht.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\prsht.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\windef.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\windef.h
 	<winnt.h>
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\wincon.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\wincon.h
 
-1228534330 e:\utilitaires\codeblocks\mingw\include\winbase.h
+1228530730 e:\utilitaires\codeblocks\mingw\include\winbase.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\wingdi.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\wingdi.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winnls.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winnls.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winnetwk.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winnetwk.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winreg.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winreg.h
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\winsvc.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\winsvc.h
 
-1228534312 e:\utilitaires\codeblocks\mingw\include\cderr.h
+1228530712 e:\utilitaires\codeblocks\mingw\include\cderr.h
 
-1228534314 e:\utilitaires\codeblocks\mingw\include\ddeml.h
+1228530714 e:\utilitaires\codeblocks\mingw\include\ddeml.h
 
-1228534316 e:\utilitaires\codeblocks\mingw\include\imm.h
+1228530716 e:\utilitaires\codeblocks\mingw\include\imm.h
 
-1228534320 e:\utilitaires\codeblocks\mingw\include\lzexpand.h
+1228530720 e:\utilitaires\codeblocks\mingw\include\lzexpand.h
 
-1228534322 e:\utilitaires\codeblocks\mingw\include\mmsystem.h
+1228530722 e:\utilitaires\codeblocks\mingw\include\mmsystem.h
 
-1228534322 e:\utilitaires\codeblocks\mingw\include\nb30.h
+1228530722 e:\utilitaires\codeblocks\mingw\include\nb30.h
 
-1228534326 e:\utilitaires\codeblocks\mingw\include\rpc.h
+1228530726 e:\utilitaires\codeblocks\mingw\include\rpc.h
 	<windows.h>
 	<rpcdce.h>
 	<rpcnsi.h>
@@ -189,71 +189,71 @@
 	<winerror.h>
 	<excpt.h>
 
-1228534326 e:\utilitaires\codeblocks\mingw\include\rpcdce.h
+1228530726 e:\utilitaires\codeblocks\mingw\include\rpcdce.h
 	<basetyps.h>
 	<rpcdcep.h>
 
-1228534312 e:\utilitaires\codeblocks\mingw\include\basetyps.h
+1228530712 e:\utilitaires\codeblocks\mingw\include\basetyps.h
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\rpcdcep.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\rpcdcep.h
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnsi.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\rpcnsi.h
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnterr.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\rpcnterr.h
 
-1250308676 e:\utilitaires\codeblocks\mingw\include\excpt.h
+1250305076 e:\utilitaires\codeblocks\mingw\include\excpt.h
 	<_mingw.h>
 	<windef.h>
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\shellapi.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\shellapi.h
 	<pshpack2.h>
 	<poppack.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\pshpack2.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\pshpack2.h
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winperf.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winperf.h
 
-1228534314 e:\utilitaires\codeblocks\mingw\include\commdlg.h
+1228530714 e:\utilitaires\codeblocks\mingw\include\commdlg.h
 	<unknwn.h>
 	<prsht.h>
 
-1228534330 e:\utilitaires\codeblocks\mingw\include\unknwn.h
+1228530730 e:\utilitaires\codeblocks\mingw\include\unknwn.h
 	<windows.h>
 	<objfwd.h>
 	<wtypes.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\objfwd.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\objfwd.h
 	<basetyps.h>
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\wtypes.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\wtypes.h
 	<rpc.h>
 	<rpcndr.h>
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\rpcndr.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\rpcndr.h
 	<rpcnsip.h>
 	<objfwd.h>
 
-1228534328 e:\utilitaires\codeblocks\mingw\include\rpcnsip.h
+1228530728 e:\utilitaires\codeblocks\mingw\include\rpcnsip.h
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\winspool.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\winspool.h
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\winsock2.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\winsock2.h
 	<windows.h>
 
-1228534332 e:\utilitaires\codeblocks\mingw\include\winsock.h
+1228530732 e:\utilitaires\codeblocks\mingw\include\winsock.h
 	<windows.h>
 	<mswsock.h>
 
-1228534322 e:\utilitaires\codeblocks\mingw\include\mswsock.h
+1228530722 e:\utilitaires\codeblocks\mingw\include\mswsock.h
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\ole2.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\ole2.h
 	<winerror.h>
 	<objbase.h>
 	<olectlid.h>
 	<oleauto.h>
 	<oleidl.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\objbase.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\objbase.h
 	<rpc.h>
 	<rpcndr.h>
 	<stdlib.h>
@@ -263,32 +263,32 @@
 	<objidl.h>
 	<cguid.h>
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\stdlib.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\objidl.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\objidl.h
 	<objfwd.h>
 
-1228534312 e:\utilitaires\codeblocks\mingw\include\cguid.h
+1228530712 e:\utilitaires\codeblocks\mingw\include\cguid.h
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\olectlid.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\olectlid.h
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\oleauto.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\oleauto.h
 	<oaidl.h>
 
-1228534322 e:\utilitaires\codeblocks\mingw\include\oaidl.h
+1228530722 e:\utilitaires\codeblocks\mingw\include\oaidl.h
 	<windows.h>
 	<ole2.h>
 
-1228534324 e:\utilitaires\codeblocks\mingw\include\oleidl.h
+1228530724 e:\utilitaires\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1166633728 e:\utilitaires\codeblocks\mingw\include\pthread.h
+1166630128 e:\utilitaires\codeblocks\mingw\include\pthread.h
 	<windows.h>
 	"config.h"
 	<time.h>
@@ -302,54 +302,54 @@
 
 989761648 s.h>
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\time.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\signal.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\signal.h
 	<_mingw.h>
 
-1250308678 e:\utilitaires\codeblocks\mingw\include\setjmp.h
+1250305078 e:\utilitaires\codeblocks\mingw\include\setjmp.h
 	<_mingw.h>
 
-1250308678 e:\utilitaires\codeblocks\mingw\include\limits.h
+1250305078 e:\utilitaires\codeblocks\mingw\include\limits.h
 	<_mingw.h>
 
-1250308676 e:\utilitaires\codeblocks\mingw\include\errno.h
+1250305076 e:\utilitaires\codeblocks\mingw\include\errno.h
 	<_mingw.h>
 
-1166633728 e:\utilitaires\codeblocks\mingw\include\sched.h
+1166630128 e:\utilitaires\codeblocks\mingw\include\sched.h
 	"need_errno.h"
 	<errno.h>
 	<sys/types.h>
 	<time.h>
 
-1250308682 e:\utilitaires\codeblocks\mingw\include\sys\types.h
+1250305082 e:\utilitaires\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\randomizer.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\randomizer.hpp
 	<SFML/Config.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\sleep.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\sleep.hpp
 	<SFML/Config.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\thread.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\thread.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Win32/Thread.hpp>
 	<SFML/System/Unix/Thread.hpp>
 
 1264604036 em/Unix/Thread.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\thread.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\win32\thread.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\thread.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\unix\thread.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.hpp
 	<SFML/Config.hpp>
 	<iterator>
 	<locale>
@@ -359,30 +359,30 @@
 
 1264604036 em/Unicode.inl>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\unicode.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.hpp
 	<SFML/System/Vector2.inl>
 
 1264604036 em/Vector2.inl>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector2.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
 
 1264604036 em/Vector3.inl>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\vector3.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\context.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\window\context.hpp
 	<SFML/Config.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\event.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\window\event.hpp
 	<SFML/Config.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\input.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\window\input.hpp
 	<SFML/Config.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<SFML/Window/Event.hpp>
@@ -390,14 +390,14 @@
 
 1264604036 ow/WindowListener.hpp>
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowlistener.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowlistener.hpp
 	<SFML/Config.hpp>
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\videomode.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\videomode.hpp
 	<SFML/Config.hpp>
 	<cstdlib>
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\window.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\window.hpp
 	<SFML/Window/Event.hpp>
 	<SFML/Window/Input.hpp>
 	<SFML/Window/VideoMode.hpp>
@@ -410,14 +410,14 @@
 	<queue>
 	<string>
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowhandle.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowhandle.hpp
 	<SFML/Config.hpp>
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowsettings.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowsettings.hpp
 
-1335297606 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowstyle.hpp
+1335294006 e:\utilitaires\codeblocks\mingw\include\sfml\window\windowstyle.hpp
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\window\opengl.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\window\opengl.hpp
 	<SFML/Config.hpp>
 	<windows.h>
 	<GL/gl.h>
@@ -429,16 +429,16 @@
 
 1264604036 u.h>
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\gl\gl.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\gl\gl.h
 
-1228534334 e:\utilitaires\codeblocks\mingw\include\gl\glu.h
+1228530734 e:\utilitaires\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\color.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\color.hpp
 	<SFML/Config.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\font.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\font.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Unicode.hpp>
@@ -448,53 +448,53 @@
 	<map>
 	<string>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.hpp
 	<set>
 	<SFML/System/Resource.inl>
 	<SFML/System/ResourcePtr.inl>
 
 1264604036 em/ResourcePtr.inl>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\resource.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\system\resourceptr.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\system\resourceptr.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\glyph.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\glyph.hpp
 	<SFML/Config.hpp>
 	<SFML/Graphics/Rect.hpp>
 
 1268921652 hics/Rect.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.hpp
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
 1264604034 hics/Rect.inl>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rect.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\image.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\image.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<string>
 	<vector>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\postfx.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\postfx.hpp
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Image.hpp>
 	<istream>
 	<map>
 	<string>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\drawable.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\drawable.hpp
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Matrix3.hpp>
 
 1264604034 hics/Matrix3.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Vector2.hpp>
 	<math.h>
@@ -502,23 +502,23 @@
 
 1264604034 hics/Matrix3.inl>
 
-1250308678 e:\utilitaires\codeblocks\mingw\include\math.h
+1250305078 e:\utilitaires\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.inl
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\matrix3.inl
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
 	<SFML/Graphics/Image.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Window/Window.hpp>
 	<string>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/View.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\view.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\view.hpp
 	<SFML/Config.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Matrix3.hpp>
@@ -526,17 +526,17 @@
 
 1264604034 em/Vector2.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\shape.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\shape.hpp
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/System/Vector2.hpp>
 	<vector>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\sprite.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\sprite.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1335297605 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\string.hpp
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\graphics\string.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/System/Unicode.hpp>
 	<SFML/Graphics/Drawable.hpp>
@@ -577,7 +577,7 @@
 
 1335603537 .h"
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\unistd.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\unistd.h
 	<io.h>
 	<process.h>
 	<getopt.h>
@@ -585,19 +585,19 @@
 
 1250308676 .h>
 
-1250308676 e:\utilitaires\codeblocks\mingw\include\io.h
+1250305076 e:\utilitaires\codeblocks\mingw\include\io.h
 	<_mingw.h>
 	<sys/types.h>
 
-1250308678 e:\utilitaires\codeblocks\mingw\include\process.h
+1250305078 e:\utilitaires\codeblocks\mingw\include\process.h
 	<_mingw.h>
 	<sys/types.h>
 	<stdint.h>
 
-1250308680 e:\utilitaires\codeblocks\mingw\include\stdint.h
+1250305080 e:\utilitaires\codeblocks\mingw\include\stdint.h
 	<stddef.h>
 
-1250308676 e:\utilitaires\codeblocks\mingw\include\getopt.h
+1250305076 e:\utilitaires\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
 1335705005 g:\projets\cours\jeu\unit.h
@@ -2082,48 +2082,48 @@
 1335705299 source:g:\projets\cours\jeu\animation.cpp
 	"animation.h"
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\anim.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\anim.cpp
 	"Anim.hpp"
 
-1351619387 c:\users\shalafi\documents\github\jeu\anim.hpp
+1350810908 c:\users\shalafi\documents\github\jeu\anim.hpp
 	<vector>
 	"Frame.hpp"
 
-1351619387 c:\users\shalafi\documents\github\jeu\frame.hpp
+1350810908 c:\users\shalafi\documents\github\jeu\frame.hpp
 	<SFML/Graphics.hpp>
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\animated.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\animated.cpp
 	"Animated.hpp"
 
-1351619387 c:\users\shalafi\documents\github\jeu\animated.hpp
+1350810908 c:\users\shalafi\documents\github\jeu\animated.hpp
 	"Anim.hpp"
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\frame.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\frame.cpp
 	"Frame.hpp"
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\animation.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\animation.cpp
 	"animation.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\animation.h
+1350810908 c:\users\shalafi\documents\github\jeu\animation.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1351704064 source:c:\users\shalafi\documents\github\jeu\background.cpp
+1352018432 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
-1351703747 c:\users\shalafi\documents\github\jeu\background.h
+1352018432 c:\users\shalafi\documents\github\jeu\background.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<stdlib.h>
 	<time.h>
 	"image_manager.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\image_manager.h
+1350810908 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1351699493 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1352020865 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\collision.h
+1350818926 c:\users\shalafi\documents\github\jeu\collision.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<tr1/memory>
@@ -2134,7 +2134,7 @@
 	"drop.h"
 	"enemies/spawn.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\player.h
+1351162471 c:\users\shalafi\documents\github\jeu\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<list>
@@ -2152,7 +2152,7 @@
 	"image_manager.h"
 	<iostream>
 
-1351619388 c:\users\shalafi\documents\github\jeu\unit.h
+1350815700 c:\users\shalafi\documents\github\jeu\unit.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2169,16 +2169,16 @@
 	"projectile.h"
 	"tirs/missile.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\missile.h
+1350810908 c:\users\shalafi\documents\github\jeu\tirs\missile.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"../image_manager.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\timer.h
+1350810908 c:\users\shalafi\documents\github\jeu\timer.h
 	<SFML/System.hpp>
 	<iostream>
 
-1351842062 c:\users\shalafi\documents\github\jeu\population.h
+1352020159 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2211,7 +2211,7 @@
 	"math.h"
 	"projectile_manager.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\drop_manager.h
+1350813514 c:\users\shalafi\documents\github\jeu\drop_manager.h
 	<SFML/Graphics.hpp>
 	<list>
 	<iostream>
@@ -2220,11 +2220,11 @@
 	"image_manager.h"
 	"const.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\drop.h
+1350810908 c:\users\shalafi\documents\github\jeu\drop.h
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
+1350820287 c:\users\shalafi\documents\github\jeu\tirs\missile_manager.h
 	<list>
 	<SFML/Graphics.hpp>
 	<tr1/memory>
@@ -2236,16 +2236,16 @@
 	"../image_manager.h"
 	"../const.h"
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\drop.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\drop.cpp
 	"drop.h"
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
+1350813530 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1351845337 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1352020833 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1351845051 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1352020329 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
@@ -2259,21 +2259,21 @@
 1348603269 source:c:\users\shalafi\documents\github\jeu\guard.cpp
 	"guard.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\guard.h
+1350810908 c:\users\shalafi\documents\github\jeu\guard.h
 	<SFML/System.hpp>
 	<string>
 	<iostream>
 
-1351619387 source:c:\users\shalafi\documents\github\jeu\image_manager.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\image_manager.cpp
 	<map>
 	<iostream>
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1351699165 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1352018432 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\jeu.h
+1351210485 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
 	<list>
 	"player.h"
@@ -2295,7 +2295,7 @@
 	"const.h"
 	"levels/level_manager.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\pannel.h
+1351117850 c:\users\shalafi\documents\github\jeu\pannel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
@@ -2303,13 +2303,13 @@
 	"image_manager.h"
 	"population.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\menu.h
+1350810908 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
 	"const.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\script.h
+1350810908 c:\users\shalafi\documents\github\jeu\script.h
 	<SFML/Graphics.hpp>
 	"population.h"
 	"timer.h"
@@ -2324,7 +2324,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1351703646 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1352018432 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2333,16 +2333,16 @@
 	"const.h"
 	<tr1/memory>
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\menu.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
+1351117850 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
 	"pannel.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\player.cpp
+1351162446 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1351845235 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1352020519 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2351,21 +2351,21 @@
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile_manager.cpp
 	"projectile_manager.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\script.cpp
+1351117850 source:c:\users\shalafi\documents\github\jeu\script.cpp
 	"script.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\timer.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\timer.cpp
 	"timer.h"
 	<windows.h>
 	<unistd.h>
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\tirs\missile.cpp
 	"missile.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
+1350820311 source:c:\users\shalafi\documents\github\jeu\tirs\missile_manager.cpp
 	"missile_manager.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\unit.cpp
+1350815710 source:c:\users\shalafi\documents\github\jeu\unit.cpp
 	"unit.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\weapon_manager.cpp
@@ -2392,7 +2392,7 @@
 1250305076 c:\program files (x86)\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1351698530 c:\users\shalafi\documents\github\jeu\enemies\adds.h
+1352018432 c:\users\shalafi\documents\github\jeu\enemies\adds.h
 	<SFML/Graphics.hpp>
 	<list>
 	"../player.h"
@@ -2405,13 +2405,13 @@
 	"../const.h"
 	"enemy.h"
 
-1351698505 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
+1352018432 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1351843045 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1352020355 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1351842639 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1352020395 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2426,10 +2426,10 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
+1351117850 source:c:\users\shalafi\documents\github\jeu\tirs\projectile.cpp
 	"projectile.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
+1351161897 c:\users\shalafi\documents\github\jeu\tirs\projectile.h
 	<SFML/Graphics.hpp>
 	"../animation.h"
 	<iostream>
@@ -2438,7 +2438,7 @@
 	"../image_manager.h"
 	"../const.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
+1351161915 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2448,17 +2448,17 @@
 	<vector>
 	"../const.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1351162017 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
+1350814742 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
 	"weapon_manager.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.h
+1350814334 c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.h
 	<SFML/Graphics.hpp>
 	"../player.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
+1350810908 c:\users\shalafi\documents\github\jeu\enemies\spawn.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2476,17 +2476,17 @@
 1349786078 source:c:\users\shalafi\documents\github\jeu\enemies\spawn.cpp
 	"spawn.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\score.cpp
+1350810908 source:c:\users\shalafi\documents\github\jeu\tirs\score.cpp
 	"score.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\score.h
+1350810908 c:\users\shalafi\documents\github\jeu\tirs\score.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
 	"../timer.h"
 	"../const.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
+1350820184 c:\users\shalafi\documents\github\jeu\tirs\score_manager.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<list>
@@ -2494,16 +2494,16 @@
 	"score.h"
 	"../const.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
+1350820195 source:c:\users\shalafi\documents\github\jeu\tirs\score_manager.cpp
 	"score_manager.h"
 
-1351619387 c:\users\shalafi\documents\github\jeu\const.h
+1350810908 c:\users\shalafi\documents\github\jeu\const.h
 	<SFML/Graphics.hpp>
 
 1349626092 source:c:\users\shalafi\documents\github\jeu\const.cpp
 	"const.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
+1352018432 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
 	<sstream>
 	<iostream>
 	<string>
@@ -2511,7 +2511,7 @@
 	"../population.h"
 	"../timer.h"
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1352018432 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 
 1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp
@@ -2540,7 +2540,7 @@
 	<boost/algorithm/string/classification.hpp>
 	<boost/algorithm/string/find_iterator.hpp>
 
-1351247322 e:\utilitaires\codeblocks\mingw\include\string
+1351243722 e:\utilitaires\codeblocks\mingw\include\string
 
 1351679808 source:c:\users\shalafi\documents\github\jeu\enemies\lilith.cpp
 	"lilith.h"
@@ -2558,7 +2558,7 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 
-1351693596 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
+1352020884 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../boss.h"
@@ -2571,6 +2571,6 @@
 	"../../tirs/projectile_manager.h"
 	"../../const.h"
 
-1351843709 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
+1352020884 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
 	"lilith.h"
 
