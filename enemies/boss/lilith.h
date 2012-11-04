@@ -18,7 +18,7 @@ class Lilith : public Boss
     public:
         Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
         //Destruteur
-        ~Lilith();
+        virtual ~Lilith();
 
         void createAdd();
         void addsMove();

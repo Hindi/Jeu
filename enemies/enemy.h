@@ -20,7 +20,7 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
-              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
+              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport);
 
         //Destructeur
         virtual ~Enemy();
@@ -111,6 +111,11 @@ class Enemy : public Unit
         void reset();
 
 
+        bool canTeleport();
+        void setTeleporting(bool state);
+        bool readyToTeleport();
+        void teleport();
+
     protected:
         std::tr1::shared_ptr<Player> player;
         std::tr1::shared_ptr<Player> player2;
@@ -160,6 +165,11 @@ class Enemy : public Unit
         short const m_spawnRate;
 
         unsigned short m_angleMove;
+
+
+        bool teleporting, allowTeleport;
+        int teleportFrame;
+        Timer teleportTimer;
 };
 
 

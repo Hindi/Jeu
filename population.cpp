@@ -81,6 +81,15 @@ void Population::checkPopulation()
                     if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
                         (*lit)->fireCircle();
                 }
+                if((*lit)->canTeleport())
+                {
+                    (*lit)->setTeleporting(true);
+                    if((*lit)->readyToTeleport())
+                    {
+                        (*lit)->teleport();
+                        (*lit)->setTeleporting(false);
+                    }
+                }
                 lit++;
             }
         }
@@ -93,16 +102,7 @@ void Population::checkPopulation()
         for(; lit!=m_boss.end();)
         {
             //On regarde s'ils peuvent se téléporter
-            if((*lit)->canTeleport())
-            {
-                (*lit)->setTeleporting(true);
-                if((*lit)->readyToTeleport())
-                {
-                    (*lit)->teleport();
-                    (*lit)->setTeleporting(false);
-                }
 
-            }
             if((*lit)->isDead())
             {
                 this->explode(*lit);
@@ -280,7 +280,7 @@ void Population::unStop()
 void Population::createShip(Vector2f position, char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, player, player2));
+    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, player, player2, false));
     m_enemies.push_back(a);
 }
 
@@ -288,14 +288,14 @@ void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
 {
     m_coefSpeed = 20;
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, spawner, player, player2));
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 0, 0, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, spawner, player, player2, false));
     m_enemies.push_back(a);
 }
 
 void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
 {
-    tr1::shared_ptr<Enemy> a(new Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2));
+    tr1::shared_ptr<Enemy> a(new Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, false));
     m_enemies.push_back(a);
 }
 
@@ -305,7 +305,7 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
     {
         Vector2f position = enemy->getPosition();
         m_coefSpeed = 10;
-        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/enemySpawn1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player, player2));
+        tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/enemySpawn1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player, player2, false));
         m_enemies.push_back(a);
         enemy->upDateLastSpawnTime();
     }
@@ -315,7 +315,7 @@ void Population::createLilith()
 {
     string filepath = "images/enemy2.png";
     tr1::shared_ptr<Boss> a(new Lilith(player, player2));
-    m_boss.push_back(a);
+    m_enemies.push_back(a);
     Vector2f position(a->getPosition().x, a->getPosition().y + 100);
     this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=100;
@@ -408,6 +408,8 @@ void Population::reset()
     m_enemies.clear();
     m_deadEnemies.clear();
     m_spawns.clear();
+    m_boss.clear();
+    m_deadBoss.clear();
 }
 
 int Population::getKilledEnemies()

@@ -5,7 +5,7 @@ using namespace sf;
 
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed,
-             const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2):
+             const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
             lastShot(0),
@@ -21,7 +21,8 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_spawner(spawner),
             lastSpawn(0),
             m_spawnRate(3),
-            player(externPlayer), player2(externPlayer2)
+            player(externPlayer), player2(externPlayer2),
+            allowTeleport(allowTeleport)
 {
     m_animated = new Animated;
     timer.start();
@@ -47,6 +48,8 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     m_animated->SetFrameTime(0.5);
     m_animated->Play();
     m_animated->SetPosition(m_position.x, m_position.y);
+
+    teleportTimer.start();
 
 }
 
@@ -535,3 +538,34 @@ void Enemy::reset()
     delete m_moveMethod;
 }
 
+bool Enemy::canTeleport()
+{
+    if(allowTeleport && teleportTimer.getTime() > 3)
+    {
+        return true;
+    }
+    return false;
+}
+
+void Enemy::setTeleporting(bool state)
+{
+    teleporting = state;
+    if(state == false)
+        teleportTimer.reinitialize();
+}
+
+
+bool Enemy::readyToTeleport()
+{
+    if(teleportTimer.getTime() > 4)
+        return true;
+    return false;
+}
+
+void Enemy::teleport()
+{
+    Vector2f position(rand()%800+1, 200 + rand()%300+1);
+    m_animated->SetPosition(Vector2f(position));
+    m_position = position;
+
+}

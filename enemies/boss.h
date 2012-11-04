@@ -32,19 +32,12 @@ class Boss : public Enemy
         void follow();
         virtual void addsMove();
         sf::Vector2f getPosition();
-        bool canTeleport();
-        void setTeleporting(bool state);
-        bool readyToTeleport();
-        void teleport();
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         const char* m_type;
         short m_level;
-        bool teleporting, allowTeleport;
-        int teleportFrame;
-        Timer teleportTimer;
 
 
 };

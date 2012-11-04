@@ -5,11 +5,10 @@ using namespace sf;
 
 Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player,
            std::tr1::shared_ptr<Player> player2, bool allowTeleport) :
-            Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2),
-            allowTeleport(allowTeleport)
+            Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2, allowTeleport)
+
 
 {
-    teleportTimer.start();
 }
 
 Boss::~Boss()
@@ -83,34 +82,4 @@ Vector2f Boss::getPosition()
     return m_position;
 }
 
-bool Boss::canTeleport()
-{
-    if(allowTeleport && teleportTimer.getTime() > 3)
-    {
-        return true;
-    }
-    return false;
-}
 
-void Boss::setTeleporting(bool state)
-{
-    teleporting = state;
-    if(state == false)
-        teleportTimer.reinitialize();
-}
-
-
-bool Boss::readyToTeleport()
-{
-    if(teleportTimer.getTime() > 4)
-        return true;
-    return false;
-}
-
-void Boss::teleport()
-{
-    Vector2f position(rand()%800+1, 200 + rand()%300+1);
-    m_animated->SetPosition(Vector2f(position));
-    m_position = position;
-
-}
