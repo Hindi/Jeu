@@ -22,9 +22,9 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             lastSpawn(0),
             m_spawnRate(3),
             player(externPlayer), player2(externPlayer2),
-            allowTeleport(allowTeleport)
+            allowTeleport(allowTeleport),
+            teleporting(false)
 {
-    cout << allowTeleport<< endl;
     m_animated = new Animated;
     timer.start();
     timerMove.start();

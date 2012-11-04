@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include "player.h"
-#import "const.h"
+#include "const.h"
 #include "image_manager.h"
 #include "population.h"
 

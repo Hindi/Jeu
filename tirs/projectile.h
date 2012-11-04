@@ -28,7 +28,7 @@ class Projectile
         const short getCoefSpeed() const;
 
         //Accesseur sur le rectangle du sprite
-        sf::IntRect getBoundingBox() const;
+        sf::IntRect getBoundingBox();
 
         //Setter de position
         void setPosition(sf::Vector2f position);

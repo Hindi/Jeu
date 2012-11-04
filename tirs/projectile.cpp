@@ -114,13 +114,13 @@ Vector2f Projectile::getPosition()
     return m_position;
 }
 
-IntRect Projectile::getBoundingBox() const
+IntRect Projectile::getBoundingBox()
 {
     //Rectangle de collision pour chaque projectile
     IntRect boundingBox;
-    boundingBox.Left = m_position.x;
+    boundingBox.Left = spriteFirst.GetPosition().x;
     boundingBox.Right = boundingBox.Left + spriteFirst.GetSize().x;
-    boundingBox.Top = m_position.y;
+    boundingBox.Top = spriteFirst.GetPosition().y;
     boundingBox.Bottom = boundingBox.Top + spriteFirst.GetSize().y;
 
     return boundingBox;

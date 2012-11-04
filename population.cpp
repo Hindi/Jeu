@@ -129,7 +129,7 @@ void Population::manageExplosion()
     {
         short currentFrame;
         list<tr1::shared_ptr<Enemy> >::iterator lit(m_deadEnemies.begin());
-        for(; lit!=m_deadEnemies.end();lit++)
+        for(; lit!=m_deadEnemies.end();)
         {
             //Si l'animation est en pause
             if((*lit)->getAnimationExplosion()->IsPaused())
@@ -148,6 +148,8 @@ void Population::manageExplosion()
             {
                 lit = m_deadEnemies.erase(lit);//On détruit l'objet ennemi
             }
+            else
+                lit++;
         }
     }
 }

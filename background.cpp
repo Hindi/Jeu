@@ -4,10 +4,10 @@ using namespace std;
 using namespace sf;
 
 Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::RenderWindow &app):
+            app(app),
             m_speed(speed),
             m_width(SCREEN_WIDTH),
-            m_height(SCREEN_HEIGHT),
-            app(app)
+            m_height(SCREEN_HEIGHT)
 {
     //Sprite des étoiles
     imageStar = new Image;
