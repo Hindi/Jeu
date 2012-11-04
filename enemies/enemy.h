@@ -114,7 +114,7 @@ class Enemy : public Unit
         bool canTeleport();
         void setTeleporting(bool state);
         bool readyToTeleport();
-        void teleport();
+        virtual void teleport();
 
     protected:
         std::tr1::shared_ptr<Player> player;

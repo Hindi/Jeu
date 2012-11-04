@@ -24,6 +24,7 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             player(externPlayer), player2(externPlayer2),
             allowTeleport(allowTeleport)
 {
+    cout << allowTeleport<< endl;
     m_animated = new Animated;
     timer.start();
     timerMove.start();
@@ -49,7 +50,8 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     m_animated->Play();
     m_animated->SetPosition(m_position.x, m_position.y);
 
-    teleportTimer.start();
+    if(allowTeleport)
+        teleportTimer.start();
 
 }
 
@@ -256,7 +258,16 @@ void Enemy::setPosition(int axis, int value)
 void Enemy::draw()
 {
     m_animated->anim(app.GetFrameTime());
-    app.Draw(*m_animated);
+    if(teleporting)
+    {
+        if(teleportFrame % 2 == 1)
+            app.Draw(*m_animated);
+        teleportFrame++;
+    }
+    else
+    {
+        app.Draw(*m_animated);
+    }
 }
 
 
@@ -550,8 +561,6 @@ bool Enemy::canTeleport()
 void Enemy::setTeleporting(bool state)
 {
     teleporting = state;
-    if(state == false)
-        teleportTimer.reinitialize();
 }
 
 
@@ -564,8 +573,10 @@ bool Enemy::readyToTeleport()
 
 void Enemy::teleport()
 {
+    teleporting = false;
+    teleportTimer.reinitialize();
+    teleportFrame = 0;
     Vector2f position(rand()%800+1, 200 + rand()%300+1);
     m_animated->SetPosition(Vector2f(position));
     m_position = position;
-
 }

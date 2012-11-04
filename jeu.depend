@@ -2120,7 +2120,7 @@
 
 1350810908 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1352021052 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1352032697 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1350818926 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2178,7 +2178,7 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1352031097 c:\users\shalafi\documents\github\jeu\population.h
+1352034560 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2196,6 +2196,7 @@
 	"const.h"
 	"timer.h"
 	"enemies/boss/lilith.h"
+	"enemies/adds.h"
 
 1348518742 c:\users\shalafi\documents\github\jeu\enemy.h
 	<list>
@@ -2236,13 +2237,13 @@
 	"../image_manager.h"
 	"../const.h"
 
-1350810908 source:c:\users\shalafi\documents\github\jeu\drop.cpp
+1352033066 source:c:\users\shalafi\documents\github\jeu\drop.cpp
 	"drop.h"
 
 1350813530 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1352032547 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1352033638 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
 1352032418 c:\users\shalafi\documents\github\jeu\enemies\boss.h
@@ -2270,7 +2271,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1352018432 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1352032707 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1351210485 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2342,7 +2343,7 @@
 1351162446 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1352031401 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1352035179 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2392,7 +2393,7 @@
 1250305076 c:\program files (x86)\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1352032536 c:\users\shalafi\documents\github\jeu\enemies\adds.h
+1352034711 c:\users\shalafi\documents\github\jeu\enemies\adds.h
 	<SFML/Graphics.hpp>
 	<list>
 	"../player.h"
@@ -2405,13 +2406,13 @@
 	"../const.h"
 	"enemy.h"
 
-1352032531 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
+1352034764 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1352032558 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1352035118 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1352032474 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1352033976 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>

@@ -18,6 +18,7 @@
 #include "const.h"
 #include "timer.h"
 #include "enemies/boss/lilith.h"
+#include "enemies/adds.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -51,10 +52,7 @@ class Population
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
 
         //Fait exploser un ennemi
-        /*void explode(std::tr1::shared_ptr<Enemy> enemy);
-        void explode(std::tr1::shared_ptr<Boss> boss);*/
         void explode(std::tr1::shared_ptr<Enemy> enemy);
-        void explode(std::tr1::shared_ptr<Boss> boss);
 
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();
@@ -90,12 +88,9 @@ class Population
     protected:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> > m_enemies;
-        std::list<std::tr1::shared_ptr<Enemy> > m_spawns;
-        std::list<std::tr1::shared_ptr<Boss> > m_boss;
 
         //Liste des ennemis morts
         std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;
-        std::list<std::tr1::shared_ptr<Boss> > m_deadBoss;
 
         std::tr1::shared_ptr<Player> player;
         std::tr1::shared_ptr<Player> player2;

@@ -84,7 +84,7 @@ void Jeu::start(short niveau)
 
     while (app.IsOpened() )
     {
-        if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() && !population->haveBossInProgress() )))
+        if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() )))
         {
             if(level_manager->isFinished())
             {

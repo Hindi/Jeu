@@ -31,14 +31,6 @@ void Population::drawPopulation()
             (*lit)->draw();//On les dessine
         }
     }
-    if(this->haveBossInProgress())
-    {
-        list<tr1::shared_ptr<Boss> >::const_iterator li(m_boss.begin());
-        for(; li!= m_boss.end(); li++)
-        {
-            (*li)->draw();
-        }
-    }
     Projectile_manager::getInstance()->drawProjectile();//On les dessine
 
 }
@@ -47,11 +39,6 @@ list<tr1::shared_ptr<Enemy> >* Population::getPopulation()
 {
     //Retourne la liste des ennemis
     return &m_enemies;
-}
-
-std::list<std::tr1::shared_ptr<Boss> >* Population::getBossPopulation()
-{
-    return &m_boss;
 }
 
 
@@ -87,36 +74,7 @@ void Population::checkPopulation()
                     if((*lit)->readyToTeleport())
                     {
                         (*lit)->teleport();
-                        (*lit)->setTeleporting(false);
                     }
-                }
-                lit++;
-            }
-        }
-    }
-    if(this->haveBossInProgress())
-    {
-        list<tr1::shared_ptr<Boss> >::iterator lit(m_boss.begin());
-
-        //On check les boss
-        for(; lit!=m_boss.end();)
-        {
-            //On regarde s'ils peuvent se téléporter
-
-            if((*lit)->isDead())
-            {
-                this->explode(*lit);
-                lit = m_boss.erase(lit);
-            }
-            else
-            {
-                (*lit)->move();
-                (*lit)->addsMove();
-                this->spawn((*lit));
-                if((*lit)->canFire())
-                {
-                    (*lit)->fireFocus();
-                    (*lit)->fireCircle();
                 }
                 lit++;
             }
@@ -165,34 +123,6 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
 
 }
 
-void Population::explode(std::tr1::shared_ptr<Boss> boss)
-{
-    m_deadBoss.push_back(boss);
-
-    Vector2f position;
-    int score = boss->getScoreExplosion();
-    position.x = boss->getPositionAxis(0);
-    position.y = boss->getPositionAxis(1);
-    Drop_manager::getInstance()->createDrop(score, position);
-    int currentFrame = boss->getAnimation()->GetCurrentFrame();
-    Anim *m_anim = boss->getAnimation()->GetAnim();
-    Image *currentImage = (*m_anim)[currentFrame].Image;
-    position.x += currentImage->GetWidth();
-    Score_manager::getInstance()->addScore(score, position);
-
-    killedEnemies++;
-    if(timerCombo.getTime() <= killRate)
-    {
-        combo++;
-        if(combo > maxCombo)
-            maxCombo = combo;
-    }
-    else
-        combo = 1;
-    timerCombo.reinitialize();
-
-}
-
 void Population::manageExplosion()
 {
     if(!m_deadEnemies.empty())
@@ -217,31 +147,6 @@ void Population::manageExplosion()
             if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
             {
                 lit = m_deadEnemies.erase(lit);//On détruit l'objet ennemi
-            }
-        }
-    }
-    if(!m_deadBoss.empty())
-    {
-        short currentFrame;
-        list<tr1::shared_ptr<Boss> >::iterator lit(m_deadBoss.begin());
-        for(; lit!=m_deadBoss.end();lit++)
-        {
-            //Si l'animation est en pause
-            if((*lit)->getAnimationExplosion()->IsPaused())
-                (*lit)->getAnimationExplosion()->Play();//On relance l'animation
-            //On récupère le numéro de l'image qui est affichée
-            currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();
-            Vector2f position(0,0);
-            position.x = (*lit)->getPositionAxis(0) + (*lit)->getSize().x/2 - ((*lit)->getExploWidth()/2);
-            position.y = (*lit)->getPositionAxis(1) + (*lit)->getSize().y/2 - ((*lit)->getExploHeight()/2);
-            //On positionne l'animation sur l'ennemi qui a explose
-            (*lit)->getAnimationExplosion()->SetPosition(position);
-             //On dessine l'explosion
-            (*lit)->drawExplosion();
-            //Si l'image actuelle correspond à la dernière image de l'animation
-            if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
-            {
-                lit = m_deadBoss.erase(lit);//On détruit l'objet ennemi
             }
         }
     }
@@ -292,10 +197,10 @@ void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
     m_enemies.push_back(a);
 }
 
-void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
+void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
 {
-    tr1::shared_ptr<Enemy> a(new Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, false));
+    tr1::shared_ptr<Adds> a(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, true));
     m_enemies.push_back(a);
 }
 
@@ -328,7 +233,7 @@ void Population::manage()
     this->manageExplosion();
     this->drawPopulation();
 }
-
+/*
 bool Population::haveSpawnInProgress()
 {
     if(m_spawns.empty())
@@ -336,7 +241,7 @@ bool Population::haveSpawnInProgress()
     else
         return true;
 }
-
+*/
 Population* Population::getInstance()
   {
     if (NULL == _singleton)
@@ -407,9 +312,7 @@ void Population::reset()
 {
     m_enemies.clear();
     m_deadEnemies.clear();
-    m_spawns.clear();
-    m_boss.clear();
-    m_deadBoss.clear();
+    //m_spawns.clear();
 }
 
 int Population::getKilledEnemies()
@@ -430,14 +333,4 @@ void Population::killThemAll()
         this->explode(*lit);
         lit = m_enemies.erase(lit);
     }
-}
-
-bool Population::haveBossInProgress()
-{
-    if(m_boss.empty())
-    {
-        return false;
-    }
-    else
-        return true;
 }

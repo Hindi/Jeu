@@ -205,38 +205,6 @@ void Collision::manageProjectileCollision()
             }
         }
 
-        //Pour les boss !
-        list<tr1::shared_ptr<Boss> >::iterator lii;
-        for(lii = Population::getInstance()->getBossPopulation()->begin(); lii!=Population::getInstance()->getBossPopulation()->end(); lii++)
-        {
-            if(Projectile_manager::getInstance()->getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
-            {
-                projectileRect = (*lit)->getBoundingBox();
-                projectilePosition.y = (*lit)->getPosition().y;
-                projectileRect.Top  = projectilePosition.y;
-                projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
-                enemyRect = (*lii)->getBoundingBox();
-                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
-                {
-                    (*lii)->recieveDamages(m_player->getDamages());
-                    m_player->addScore((*lii)->getScoreHit()/2);
-                    m_player2->addScore((*lii)->getScoreHit()/2);
-                    (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
-
-                    if(!(*lii)->isDead())
-                    {
-                        Vector2f position;
-                        position.x = (*lii)->getPositionAxis(0);
-                        position.y = (*lii)->getPositionAxis(1);
-                        int currentFrame = (*lii)->getAnimation()->GetCurrentFrame();
-                        Anim *m_anim = (*lii)->getAnimation()->GetAnim();
-                        Image *currentImage = (*m_anim)[currentFrame].Image;
-                        position.x += currentImage->GetWidth();
-                        Score_manager::getInstance()->addScore((*lii)->getScoreHit()/2, position);
-                    }
-                }
-            }
-        }
     }
 
     //**************************

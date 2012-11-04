@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Adds::Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position,
-            char* type, char* moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport):
+            const char* type, const char* moveMethod, int moveValue, const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport):
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, player, player2, allowTeleport),
             m_maxLife(5)
 {
@@ -38,4 +38,9 @@ void Adds::draw()
 Animated* Adds::getAnimation()
 {
     return m_animated;
+}
+
+void Adds::teleport()
+{
+
 }
