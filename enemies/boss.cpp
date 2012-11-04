@@ -14,13 +14,7 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
 
 Boss::~Boss()
 {
-    delete m_animated;
-    if(image!= NULL )
-    {
-        delete image;
-    }
     delete m_name;
-    delete m_type;
 }
 
 IntRect Boss::getBoundingBox()
@@ -119,9 +113,4 @@ void Boss::teleport()
     m_animated->SetPosition(Vector2f(position));
     m_position = position;
 
-}
-
-const char* Boss::getType()
-{
-    return m_type;
 }

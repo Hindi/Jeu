@@ -527,11 +527,11 @@ void Enemy::reset()
 {
     m_projectiles.clear();
     m_vitesses.clear();
-    delete m_animated;
+    if(m_animated != NULL)
+        delete m_animated;
     if (image!= NULL )
-    {
         delete image;
-    }
     delete m_type;
     delete m_moveMethod;
 }
+

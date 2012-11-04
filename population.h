@@ -53,7 +53,8 @@ class Population
         //Fait exploser un ennemi
         /*void explode(std::tr1::shared_ptr<Enemy> enemy);
         void explode(std::tr1::shared_ptr<Boss> boss);*/
-        template<typename Type> void explode(Type operande);
+        void explode(std::tr1::shared_ptr<Enemy> enemy);
+        void explode(std::tr1::shared_ptr<Boss> boss);
 
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();

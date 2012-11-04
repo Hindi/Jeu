@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(1000, 5, 10000, 5, 5, "images/enemy2.png", Vector2f(500, 500), "boss", "don't move", 1, 50, 2, player, player2, true),
+            Boss(10, 5, 10000, 5, 5, "images/enemy2.png", Vector2f(500, 500), "boss", "don't move", 1, 50, 2, player, player2, true),
             m_level(1),
             m_position(Vector2f(500,500))
 {
@@ -24,13 +24,9 @@ Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player>
 
 Lilith::~Lilith()
 {
-    delete m_animated;
-    if (image!= NULL )
-    {
-        delete image;
-    }
-    delete m_name;
+
 }
+
 
 void Lilith::createAdd()
 {

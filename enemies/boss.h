@@ -36,7 +36,6 @@ class Boss : public Enemy
         void setTeleporting(bool state);
         bool readyToTeleport();
         void teleport();
-        const char* getType();
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

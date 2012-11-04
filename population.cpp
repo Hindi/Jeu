@@ -105,7 +105,6 @@ void Population::checkPopulation()
             }
             if((*lit)->isDead())
             {
-                cout << "huk" << endl;
                 this->explode(*lit);
                 lit = m_boss.erase(lit);
             }
@@ -116,12 +115,8 @@ void Population::checkPopulation()
                 this->spawn((*lit));
                 if((*lit)->canFire())
                 {
-                    if(strcmp((*lit)->getType(), "ship") == 0)
-                        (*lit)->fireFocus();
-                    if( strcmp((*lit)->getType(), "spawn") == 0 )
-                        (*lit)->fireFocus();
-                    if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
-                        (*lit)->fireCircle();
+                    (*lit)->fireFocus();
+                    (*lit)->fireCircle();
                 }
                 lit++;
             }
@@ -141,49 +136,36 @@ void Population::checkPopulation()
 
 }
 
-template<typename Type> void Population::explode(Type operande)
-{
-    if(strcmp(operande->getType(), "boss") == 0)
-    {
 
-    }
-    else
-    {
-        std::tr1::shared_ptr<Enemy> enemy = operande;
-        m_deadEnemies.push_back(enemy);
-
-        Vector2f position;
-        int score = enemy->getScoreExplosion();
-        position.x = enemy->getPositionAxis(0);
-        position.y = enemy->getPositionAxis(1);
-        Drop_manager::getInstance()->createDrop(score, position);
-        int currentFrame = enemy->getAnimation()->GetCurrentFrame();
-        Anim *m_anim = enemy->getAnimation()->GetAnim();
-        Image *currentImage = (*m_anim)[currentFrame].Image;
-        position.x += currentImage->GetWidth();
-        Score_manager::getInstance()->addScore(score, position);
-
-        killedEnemies++;
-        if(timerCombo.getTime() <= killRate)
-        {
-            combo++;
-            if(combo > maxCombo)
-                maxCombo = combo;
-        }
-        else
-            combo = 1;
-        timerCombo.reinitialize();
-    }
-}
-
-/*
 void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
 {
+    m_deadEnemies.push_back(enemy);
 
+    Vector2f position;
+    int score = enemy->getScoreExplosion();
+    position.x = enemy->getPositionAxis(0);
+    position.y = enemy->getPositionAxis(1);
+    Drop_manager::getInstance()->createDrop(score, position);
+    int currentFrame = enemy->getAnimation()->GetCurrentFrame();
+    Anim *m_anim = enemy->getAnimation()->GetAnim();
+    Image *currentImage = (*m_anim)[currentFrame].Image;
+    position.x += currentImage->GetWidth();
+    Score_manager::getInstance()->addScore(score, position);
 
-}*/
+    killedEnemies++;
+    if(timerCombo.getTime() <= killRate)
+    {
+        combo++;
+        if(combo > maxCombo)
+            maxCombo = combo;
+    }
+    else
+        combo = 1;
+    timerCombo.reinitialize();
 
-/*void Population::explode(std::tr1::shared_ptr<Boss> boss)
+}
+
+void Population::explode(std::tr1::shared_ptr<Boss> boss)
 {
     m_deadBoss.push_back(boss);
 
@@ -209,7 +191,7 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
         combo = 1;
     timerCombo.reinitialize();
 
-}*/
+}
 
 void Population::manageExplosion()
 {
@@ -235,6 +217,31 @@ void Population::manageExplosion()
             if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
             {
                 lit = m_deadEnemies.erase(lit);//On détruit l'objet ennemi
+            }
+        }
+    }
+    if(!m_deadBoss.empty())
+    {
+        short currentFrame;
+        list<tr1::shared_ptr<Boss> >::iterator lit(m_deadBoss.begin());
+        for(; lit!=m_deadBoss.end();lit++)
+        {
+            //Si l'animation est en pause
+            if((*lit)->getAnimationExplosion()->IsPaused())
+                (*lit)->getAnimationExplosion()->Play();//On relance l'animation
+            //On récupère le numéro de l'image qui est affichée
+            currentFrame = (*lit)->getAnimationExplosion()->GetCurrentFrame();
+            Vector2f position(0,0);
+            position.x = (*lit)->getPositionAxis(0) + (*lit)->getSize().x/2 - ((*lit)->getExploWidth()/2);
+            position.y = (*lit)->getPositionAxis(1) + (*lit)->getSize().y/2 - ((*lit)->getExploHeight()/2);
+            //On positionne l'animation sur l'ennemi qui a explose
+            (*lit)->getAnimationExplosion()->SetPosition(position);
+             //On dessine l'explosion
+            (*lit)->drawExplosion();
+            //Si l'image actuelle correspond à la dernière image de l'animation
+            if(currentFrame == (*lit)->getAnimationExplosion()->GetAnim()->Size()-1)
+            {
+                lit = m_deadBoss.erase(lit);//On détruit l'objet ennemi
             }
         }
     }
