@@ -13,6 +13,8 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-pedantic-errors" />
+					<Add option="-Wall" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -64,8 +66,6 @@
 		<Unit filename="Animated.hpp" />
 		<Unit filename="Frame.cpp" />
 		<Unit filename="Frame.hpp" />
-		<Unit filename="animation.cpp" />
-		<Unit filename="animation.h" />
 		<Unit filename="background.cpp" />
 		<Unit filename="background.h" />
 		<Unit filename="cb.bmp" />

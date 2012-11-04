@@ -2243,7 +2243,7 @@
 1350813530 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1352071879 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1352072453 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
 1352072011 c:\users\shalafi\documents\github\jeu\enemies\boss.h
@@ -2394,7 +2394,7 @@
 1250305076 c:\program files (x86)\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1352072010 c:\users\shalafi\documents\github\jeu\enemies\adds.h
+1352072710 c:\users\shalafi\documents\github\jeu\enemies\adds.h
 	<SFML/Graphics.hpp>
 	<list>
 	"../player.h"
@@ -2407,10 +2407,10 @@
 	"../const.h"
 	"enemy.h"
 
-1352072119 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
+1352072715 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1352035999 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1352072445 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
 1352072481 c:\users\shalafi\documents\github\jeu\enemies\enemy.h

@@ -25,11 +25,6 @@ Adds::~Adds()
 }
 
 
-Sprite* Adds::getSprite()
-{
-    return &sprite;
-}
-
 void Adds::draw()
 {
     if(teleporting)
@@ -40,11 +35,6 @@ void Adds::draw()
     }
     else
         app.Draw(*m_animated);
-}
-
-Animated* Adds::getAnimation()
-{
-    return m_animated;
 }
 
 void Adds::teleport()

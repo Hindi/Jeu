@@ -33,25 +33,16 @@ class Adds : public Enemy
         //Suivre le boss
         void follow(sf::Vector2f speed);
 
-        //Accesseur sur le sprite
-        sf::Sprite* getSprite();
-
         virtual void draw();
-        Animated* getAnimation();
         virtual void teleport();
 
     private:
-        sf::Image *image;
-
         //Timers de tir et de déplacement
         Timer timer, timerMove;
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;
 
-        //Variables d'animation
-        Animated *m_animated;
-        Anim m_anim;
 
         short const m_maxLife;
 
