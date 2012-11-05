@@ -76,7 +76,7 @@ class Animated : public sf::Sprite
         bool Paused;
         bool myLoop;
         Anim* myAnim;
-        int myCurrentFrame;
+        unsigned int myCurrentFrame;
 };
 
 #endif

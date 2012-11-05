@@ -5,10 +5,10 @@ using namespace std;
 
 Drop::Drop(int score, sf::Vector2f position):
             m_speed(200),
-            m_score(score),
             m_frameWidth(50),
-            m_position(position),
-            m_frameHeight(50)
+            m_score(score),
+            m_frameHeight(50),
+            m_position(position)
 {
     m_image = new Image();
     //Choix de l'image en fonction du score
@@ -24,6 +24,8 @@ Drop::Drop(int score, sf::Vector2f position):
             *m_image = image_manager::getInstance()->getImage("images/Vie-fade.png");
             break;
     }
+    if(score > 500)
+        *m_image = image_manager::getInstance()->getImage("images/Vie-fade.png");
 
     m_image->CreateMaskFromColor(Color(255, 0, 255));
     sprite.SetImage(*m_image);

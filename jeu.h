@@ -19,6 +19,7 @@
 #include "drop_manager.h"
 #include "tirs/score_manager.h"
 #include "const.h"
+#include "levels/level_manager.h"
 
 class Jeu
 {

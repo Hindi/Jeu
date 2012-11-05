@@ -2,16 +2,11 @@
 #define BOSS_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
+
 #include "../player.h"
-#include "../timer.h"
-#include "../unit.h"
-#include "../tirs/projectile.h"
-#include "../animation.h"
-#include "../Animated.hpp"
-#include "../image_manager.h"
-#include "../tirs/projectile_manager.h"
-#include "adds.h"
 #include "enemy.h"
+#include "../timer.h"
+#include "adds.h"
 
 /*
 ****************************************
@@ -23,15 +18,29 @@ class Boss : public Enemy
 {
     public:
         Boss(int life, int scoreHit, int scoreExplosion,  int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod,
-             int moveValue, const int coefSpeed, const int firerate, const char* name, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
+             int moveValue, const int coefSpeed, const int firerate, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport);
         //Destruteur
-        ~Boss();
+        virtual ~Boss();
 
-        void createAdd();
+        sf::IntRect getBoundingBox();
+        sf::IntRect getWeakBox();
 
-    private:
-    std::list<std::tr1::shared_ptr<Adds> > m_adds;
-    const char* m_name;
+
+
+        void drawAdds();
+        virtual void draw();
+        void follow();
+        virtual void addsMove();
+        sf::Vector2f getPosition();
+        void pushAdds(std::tr1::shared_ptr<Adds> add);
+        virtual void setTeleporting(bool state);
+
+    protected:
+        std::list<std::tr1::shared_ptr<Adds> > m_adds;
+        const char* m_name;
+        const char* m_type;
+        short m_level;
+
 
 };
 #endif // BOSS_H_INCLUDED

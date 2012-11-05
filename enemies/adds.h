@@ -6,13 +6,13 @@
 
 #include "../player.h"
 #include "../timer.h"
-#include "../unit.h"
 #include "../tirs/projectile.h"
 #include "../animation.h"
 #include "../Animated.hpp"
 #include "../image_manager.h"
 #include "../tirs/projectile_manager.h"
-#include "Enemy.h"
+#include "../const.h"
+#include "enemy.h"
 
 /*
 ****************************************
@@ -26,51 +26,23 @@ TODO :
 class Adds : public Enemy
 {
     public:
-        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, char* type, char* moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
+        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
+              const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport);
         ~Adds();
 
         //Suivre le boss
-        void follow();
+        void follow(sf::Vector2f speed);
 
-        //Accesseur sur le sprite
-        sf::Sprite* getSprite();
-
+        virtual void draw();
+        virtual void teleport();
 
     private:
-        //Liste des projectiles du boss
-        std::list<Projectile*> m_projectiles;
-
-        //Liste des vitesses de tous les projectiles
-        std::list<sf::Vector2f> m_vitesses;
-
-        //Direction de déplacement
-        char* direction;
-
-        //Porjectile
-        Projectile *projectile;
-
-        //Li'mage du boss
-        sf::Image *image;
-
-        //Sprite du boss
-        sf::Sprite sprite;
-
-        //Le moment du dernier tir
-        float lastShot;
-
         //Timers de tir et de déplacement
         Timer timer, timerMove;
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;
 
-        //Variables d'animation
-        Animated *m_animated;
-        Anim m_anim;
-
-        //Position du joueur
-        sf::Vector2f playerPosition;
 
         short const m_maxLife;
 

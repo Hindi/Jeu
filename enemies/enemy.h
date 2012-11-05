@@ -20,10 +20,10 @@ class Enemy : public Unit
 {
     public:
         Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
-              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
+              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport);
 
         //Destructeur
-        ~Enemy();
+        virtual ~Enemy();
 
         //Accesseur sur le sprite
         sf::Sprite* getSprite();
@@ -53,9 +53,10 @@ class Enemy : public Unit
          void dontMove();
          void move();
          void spawnMove();
+         void follow();
 
         //Dessin de l'ennemi
-         void draw();
+         virtual void draw();
 
         //Accesseur sur la position de l'ennemis sur un axe
          int getPositionAxis(int axis);
@@ -63,6 +64,7 @@ class Enemy : public Unit
         //Accesseur sur la position de l'ennemi
          sf::Vector2f getPosition();
          void setPosition(int axis, int value);
+         void setPosition(sf::Vector2f position);
 
         //Accesseur sur l'animation de l'ennemi (anim explosion dans Unit)
          Animated *getAnimationExplosion();
@@ -72,6 +74,7 @@ class Enemy : public Unit
          void fireFocus();//Avec visée
          void fireCircle();//en cercle
          void VFire();//Tir en V à l'avant
+         virtual void fire();
 
         //Accesseur sur les projectiles en cours
          std::list<std::tr1::shared_ptr<Projectile> >* getProjectiles();
@@ -81,7 +84,7 @@ class Enemy : public Unit
          bool canFire();
 
         //Accesseur sur le type de tir
-         const char* const getType();
+         const char* getType();
 
         //Timer pour les tirs
          void startTimer();
@@ -110,6 +113,11 @@ class Enemy : public Unit
         void reset();
 
 
+        bool canTeleport();
+        virtual void setTeleporting(bool state);
+        bool readyToTeleport();
+        void teleport();
+
     protected:
         std::tr1::shared_ptr<Player> player;
         std::tr1::shared_ptr<Player> player2;
@@ -119,7 +127,7 @@ class Enemy : public Unit
         std::list<sf::Vector2f> m_vitesses;
 
         //Direction de déplacememnt pour certains mouvements particuliers
-        char* direction;
+        std::string direction;
 
         sf::Image *image;
 
@@ -159,6 +167,11 @@ class Enemy : public Unit
         short const m_spawnRate;
 
         unsigned short m_angleMove;
+
+
+        bool teleporting, allowTeleport;
+        int teleportFrame;
+        Timer teleportTimer;
 };
 
 

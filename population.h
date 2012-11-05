@@ -17,6 +17,8 @@
 #include "Anim.hpp"
 #include "const.h"
 #include "timer.h"
+#include "enemies/boss/lilith.h"
+#include "enemies/adds.h"
 
 //Permet de stocker et gérer les ennemis
 
@@ -25,6 +27,7 @@ class Population
     public:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> >* getPopulation();
+        std::list<std::tr1::shared_ptr<Boss> >* getBossPopulation();
 
         //Vérifie si des ennemis sont en vie
         bool haveEnnemyInProgress();
@@ -42,14 +45,14 @@ class Population
         void unStop();
 
         //Créateurs d'ennemis
-        void createShip(sf::Vector2f position, char* move, bool spawner = false);
-        void createFlyingSaucer(sf::Vector2f position, char* move, bool spawner = false);
+        void createShip(sf::Vector2f position, const char* move, bool spawner = false);
+        void createFlyingSaucer(sf::Vector2f position, const char* move, bool spawner = false);
+
+        void createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
+              const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
 
         //Fait exploser un ennemi
         void explode(std::tr1::shared_ptr<Enemy> enemy);
-
-        //Fait exploser un spawn
-        void explode(Spawn *spawn);
 
         //Fait evoluer l'animaton de l'explosion
         void manageExplosion();
@@ -58,10 +61,12 @@ class Population
         void manage();
 
         //Création d'un boos
-        void createBoss(sf::Vector2f position, char* move, char* name);
+        void createLilith();
 
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();
+
+        bool haveBossInProgress();
 
         void spawn(std::tr1::shared_ptr<Enemy> enemy);
 
@@ -83,13 +88,15 @@ class Population
     protected:
         //Liste des ennemis
         std::list<std::tr1::shared_ptr<Enemy> > m_enemies;
-        std::list<std::tr1::shared_ptr<Enemy> > m_spawns;
 
         //Liste des ennemis morts
         std::list<std::tr1::shared_ptr<Enemy> > m_deadEnemies;
 
         std::tr1::shared_ptr<Player> player;
         std::tr1::shared_ptr<Player> player2;
+
+        std::tr1::shared_ptr<Boss> currentBoss;
+        bool bossSpawned;
 
     private:
         //Constructeur privé pour singleton

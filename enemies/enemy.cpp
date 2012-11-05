@@ -5,7 +5,7 @@ using namespace sf;
 
 
 Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed,
-             const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2):
+             const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
             lastShot(0),
@@ -21,7 +21,9 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_spawner(spawner),
             lastSpawn(0),
             m_spawnRate(3),
-            player(externPlayer), player2(externPlayer2)
+            player(externPlayer), player2(externPlayer2),
+            allowTeleport(allowTeleport),
+            teleporting(false)
 {
     m_animated = new Animated;
     timer.start();
@@ -34,17 +36,22 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     *image = image_manager::getInstance()->getImage(filepath);
     if(strcmp(m_type, "spawn") == 0)
        {
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
             m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/2, 0, image->GetWidth(), image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
        }
     else
         m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
 
     m_animated->SetAnim(&m_anim);
-    m_animated->Play();
     m_animated->SetLoop(true);
-    m_animated->SetFrameTime(0.2f);
+    m_animated->SetFrameTime(0.5);
+    m_animated->Play();
     m_animated->SetPosition(m_position.x, m_position.y);
+
+    if(allowTeleport)
+        teleportTimer.start();
 
 }
 
@@ -94,13 +101,14 @@ bool Enemy::isDead()
 //********************************
 void Enemy::roundTrip()
 {
-    if(strcmp(direction, "left") == 0)
+
+    if(strcmp(direction.data(), "left") == 0)
         moveLeft();
     else
         moveRight();
     if(savedTimerMove > m_moveValue)
     {
-        if(strcmp(direction, "left") == 0)
+        if(strcmp(direction.data(), "left") == 0)
         {
             direction = "right";
             timerMove.reinitialize();
@@ -194,6 +202,8 @@ void Enemy::move()
         this->dontMove();
     else if(strcmp(m_moveMethod, "spawnMove") == 0)
         this->spawnMove();
+    else if(strcmp(m_moveMethod, "follow") == 0)
+        this->follow();
     else
         this->moveDown();
 }
@@ -210,6 +220,13 @@ void Enemy::spawnMove()
     speed.y = app.GetFrameTime() * m_ySpeed * m_coefSpeed * sin(m_angleMove);
     m_position += speed;
     m_animated->SetPosition(m_position);
+}
+
+void Enemy::follow()
+{
+/*
+        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
+        i = image->GetWidth() /1.5;*/
 }
 
 int Enemy::getPositionAxis(int axis)
@@ -234,14 +251,28 @@ void Enemy::setPosition(int axis, int value)
         m_position.y = value;
 }
 
+void Enemy::setPosition(Vector2f position)
+{
+    m_position = position;
+}
+
 //********************************
 //**Fin fonctions de déplacement**
 //********************************
 
 void Enemy::draw()
 {
-    //animation->draw(app);
-    app.Draw(*m_animated);
+    m_animated->anim(app.GetFrameTime());
+    if(teleporting)
+    {
+        if(teleportFrame % 2 == 1)
+            app.Draw(*m_animated);
+        teleportFrame++;
+    }
+    else
+    {
+        app.Draw(*m_animated);
+    }
 }
 
 
@@ -266,13 +297,16 @@ Animated* Enemy::getAnimationExplosion()
 //********************************
 //**********Projectiles***********
 //********************************
+void Enemy::fire()
+{
+
+}
 
 void Enemy::fireFocus()
 {
     Vector2f distance1, distance2, position1, position2;
     int indistinctness = rand() % 100 + 1;
     int norm;
-
     //On récupère les positions des deux joueurs
     position1 = player->getPosition();
     position2 = player2->getPosition();
@@ -439,7 +473,7 @@ bool Enemy::canFire()
 //*********Fin projectiles********
 //********************************
 
-const char* const  Enemy::getType()
+const char* Enemy::getType()
 {
     return m_type;
 }
@@ -514,15 +548,44 @@ Vector2f Enemy::getSize()
 
 void Enemy::reset()
 {
-
     m_projectiles.clear();
     m_vitesses.clear();
-    delete m_animated;
+    if(m_animated != NULL)
+        delete m_animated;
     if (image!= NULL )
-    {
         delete image;
-    }
-    delete direction;
     delete m_type;
     delete m_moveMethod;
+}
+
+bool Enemy::canTeleport()
+{
+    if(allowTeleport && teleportTimer.getTime() > 3)
+    {
+        return true;
+    }
+    return false;
+}
+
+void Enemy::setTeleporting(bool state)
+{
+    teleporting = state;
+}
+
+
+bool Enemy::readyToTeleport()
+{
+    if(teleportTimer.getTime() > 4)
+        return true;
+    return false;
+}
+
+void Enemy::teleport()
+{
+    teleporting = false;
+    teleportTimer.reinitialize();
+    teleportFrame = 0;
+    Vector2f position(rand()%800+1, 200 + rand()%300+1);
+    m_animated->SetPosition(Vector2f(position));
+    m_position = position;
 }

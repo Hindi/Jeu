@@ -4,20 +4,25 @@ using namespace std;
 using namespace sf;
 
 Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::RenderWindow &app):
+            app(app),
             m_speed(speed),
             m_width(SCREEN_WIDTH),
-            m_height(SCREEN_HEIGHT),
-            app(app)
+            m_height(SCREEN_HEIGHT)
 {
     //Sprite des étoiles
     imageStar = new Image;
+    imageStar2 = new Image;
     *imageStar = image_manager::getInstance()->getImage("images/etoile4.png");
+    *imageStar2 = image_manager::getInstance()->getImage("images/etoile3.png");
     spriteStar.SetImage(*imageStar);
 
     //Sprite planètes
     imagePlanet = new Image;
-    *imagePlanet = image_manager::getInstance()->getImage("images/planete2.png");;
+    *imagePlanet = image_manager::getInstance()->getImage("images/planete1.png");;
     spritePlanet.SetImage(*imagePlanet);
+    imagePlanet2 = new Image;
+    *imagePlanet2 = image_manager::getInstance()->getImage("images/planete2.png");;
+    spritePlanet2.SetImage(*imagePlanet);
 
     this->init();
 }
@@ -52,7 +57,13 @@ void Background::manage()
     //Si une planète sort on la replace de manière aléatoire
     if(spritePlanet.GetPosition().y > m_height)
     {
+        spritePlanet2.SetPosition((rand()%980)+1, -500);
+        spritePlanet.SetPosition(0,-1000);
+    }
+    if(spritePlanet2.GetPosition().y > m_height)
+    {
         spritePlanet.SetPosition((rand()%980)+1, -500);
+        spritePlanet2.SetPosition(0,-1000);
     }
 }
 
@@ -62,11 +73,16 @@ void Background::init()
     //On recopie l'étoile de base
     Sprite starCopy(spriteStar);
     Sprite starCopy1(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy2(spriteStar);
+    spriteStar.SetImage(*imageStar);
     Sprite starCopy3(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy4(spriteStar);
+    spriteStar.SetImage(*imageStar);
     Sprite starCopy5(spriteStar);
     Sprite starCopy6(spriteStar);
+    spriteStar.SetImage(*imageStar2);
     Sprite starCopy7(spriteStar);
     Sprite starCopy8(spriteStar);
     Sprite starCopy9(spriteStar);

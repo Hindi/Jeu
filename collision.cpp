@@ -21,6 +21,7 @@ Collision::Collision(Vector2f windowSize, std::tr1::shared_ptr<Player> player, s
             m_player(player),
             m_player2(player2),
             m_windowSize(windowSize)
+
 {
 
 }
@@ -109,9 +110,9 @@ void Collision::manageCollisionsY()
             {
                 m_player->loseLive();
             }
-            if(enemyRect.Top > 1000)
+            if(enemyRect.Top > 800)
             {
-               li = Population::getInstance()->getPopulation()->erase(li);
+                li = Population::getInstance()->getPopulation()->erase(li);
             }
             else
             {
@@ -167,27 +168,33 @@ void Collision::manageProjectileCollision()
     //*****************************
     IntRect projectileRect, enemyRect;
     Vector2f projectilePosition;
-    list<std::tr1::shared_ptr<Projectile> >::iterator lit(Projectile_manager::getInstance()->getPlayerProjectiles()->begin());
-    list<tr1::shared_ptr<Enemy> >::iterator li;
-    list<Spawn*>::iterator spawnLi;
-    //On check les ennemis
-    for(; lit != Projectile_manager::getInstance()->getPlayerProjectiles()->end(); lit++)
+    list<std::tr1::shared_ptr<Projectile> >* playerProjectile = Projectile_manager::getInstance()->getPlayerProjectiles();
+    list<std::tr1::shared_ptr<Projectile> >::iterator lit(playerProjectile->begin());
+    list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
+    //Si il y a des projectiles en jeu
+    int i(0);
+    if(!playerProjectile->empty())
     {
-        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
+        //Pour chaque ennemi
+        for(; li!=Population::getInstance()->getPopulation()->end(); li++)
         {
-            if(Projectile_manager::getInstance()->getPlayerProjectiles()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
+            //Pour chaque projectile
+            while(lit != playerProjectile->end())
             {
+                //On récupère les coordonnées du carré occupé par le projectile à l'écran
                 projectileRect = (*lit)->getBoundingBox();
-                projectilePosition.y = (*lit)->getPosition().y;
-                projectileRect.Top  = projectilePosition.y;
-                projectileRect.Bottom = projectileRect.Top+(*lit)->getSprite().GetSize().y;
+                //On récupère les coordonnées du carré occupé par l'ennemi à l'écran
                 enemyRect = (*li)->getBoundingBox();
+                //On regarde si ils se superposent
                 if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
                 {
+                    //Si oui l'ennemis perd de la vie
                     (*li)->recieveDamages(m_player->getDamages());
+                    //Et le score des deux joueurs augmente
                     m_player->addScore((*li)->getScoreHit()/2);
                     m_player2->addScore((*li)->getScoreHit()/2);
-                    (lit) = Projectile_manager::getInstance()->getPlayerProjectiles()->erase(lit);
+                    //On supprime le projectile
+                    (lit) = playerProjectile->erase(lit);
 
                     if(!(*li)->isDead())
                     {
@@ -200,9 +207,11 @@ void Collision::manageProjectileCollision()
                         position.x += currentImage->GetWidth();
                         Score_manager::getInstance()->addScore((*li)->getScoreHit()/2, position);
                     }
-
                 }
+                else
+                    lit++;
             }
+            lit = playerProjectile->begin();
         }
     }
 
@@ -210,10 +219,10 @@ void Collision::manageProjectileCollision()
     // Collisions classe missile
     //**************************
     list<std::tr1::shared_ptr<Missile> >::iterator litt(Missile_manager::getInstance()->getMissile()->begin());
-    for(; litt != Missile_manager::getInstance()->getMissile()->end(); litt++)
+    //On check les ennemis
+    for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
     {
-        //On check les ennemis
-        for(li = Population::getInstance()->getPopulation()->begin(); li!=Population::getInstance()->getPopulation()->end(); li++)
+        while(litt != Missile_manager::getInstance()->getMissile()->end())
         {
             if(Missile_manager::getInstance()->getMissile()->size()>0)//Sans cette vérification, la destruction d'un projectile dans une liste de taille = 1 entraine un crash
             {
@@ -229,8 +238,11 @@ void Collision::manageProjectileCollision()
                     Missile_manager::getInstance()->setPositionLibre((*litt)->getListPosition(),true);//La place est de nouveau libre pour créer un nouveau missile
                     (litt) = Missile_manager::getInstance()->getMissile()->erase(litt);
                 }
+                else
+                    litt++;
             }
         }
+        litt = Missile_manager::getInstance()->getMissile()->begin();
     }
 }
 
@@ -250,9 +262,7 @@ void Collision::dropCollision()
         {
             lit++;
         }
-
     }
-
 
     playerRect = m_player2->GetBoundingBox(), dropRect;
     list<std::tr1::shared_ptr<Drop> >::iterator li(Drop_manager::getInstance()->getDrop()->begin());

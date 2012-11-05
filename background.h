@@ -27,10 +27,10 @@ class Background
         short LIST_SIZE;
 
         //Images étoiles et planète
-        sf::Image *imageStar, *imagePlanet;
+        sf::Image *imageStar, *imageStar2,*imagePlanet, *imagePlanet2;
 
         //Sprites étoiles et planètes
-        sf::Sprite spriteStar, spritePlanet;
+        sf::Sprite spriteStar, spritePlanet, spritePlanet2;
 
         //Liste d'étoiles
         std::vector<sf::Sprite> listStar;

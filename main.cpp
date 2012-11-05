@@ -13,11 +13,7 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
-- Plusieurs planètes
-- Problèmes de threads : voir missiles
-- random stars
-- bombes
-- adds
+- Collision des adds ?
 */
 
 int main()
