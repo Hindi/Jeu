@@ -13,6 +13,7 @@ Population::Population(): killRate(1)
     timerCombo.start();
     combo = 1;
     maxCombo = 0;
+    bossSpawned = false;
 }
 
 
@@ -46,39 +47,49 @@ void Population::checkPopulation()
 {
     if(this->haveEnnemyInProgress())
     {
-        //On check les ennemis
-        list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
-        for(; lit!=m_enemies.end();)
+        if(bossSpawned && currentBoss->isDead())
         {
-            if((*lit)->isDead())
-            {
-                this->explode(*lit);
-                lit = m_enemies.erase(lit);
-            }
-            else
-            {
-                (*lit)->move();
-                this->spawn((*lit));
-                if((*lit)->canFire())
-                {
-                    if(strcmp((*lit)->getType(), "ship") == 0)
-                        (*lit)->fireFocus();
-                    if( strcmp((*lit)->getType(), "spawn") == 0 )
-                        (*lit)->fireFocus();
-                    if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
-                        (*lit)->fireCircle();
-                }
-                if((*lit)->canTeleport())
-                {
-                    (*lit)->setTeleporting(true);
-                    if((*lit)->readyToTeleport())
-                    {
-                        (*lit)->teleport();
-                    }
-                }
-                lit++;
-            }
+            this->killThemAll();
+            bossSpawned = false;
         }
+        else
+        {
+                //On check les ennemis
+            list<tr1::shared_ptr<Enemy> >::iterator lit(m_enemies.begin());
+            for(; lit!=m_enemies.end();)
+            {
+                if((*lit)->isDead())
+                {
+                    this->explode(*lit);
+                    lit = m_enemies.erase(lit);
+                }
+                else
+                {
+                    (*lit)->move();
+                    this->spawn((*lit));
+                    if((*lit)->canFire())
+                    {
+                        if(strcmp((*lit)->getType(), "ship") == 0)
+                            (*lit)->fireFocus();
+                        if( strcmp((*lit)->getType(), "spawn") == 0 )
+                            (*lit)->fireFocus();
+                        if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
+                            (*lit)->fireCircle();
+                    }
+                    if((*lit)->canTeleport())
+                    {
+                        (*lit)->setTeleporting(true);
+                        if((*lit)->readyToTeleport())
+                        {
+                            (*lit)->teleport();
+                        }
+                    }
+                    lit++;
+                }
+            }
+
+        }
+
     }
 
     Projectile_manager::getInstance()->moveProjectile();
@@ -229,6 +240,7 @@ void Population::createLilith()
     position.x +=100;
     this->createAdd(500, 5, 50, 5, 5, "images/enemy.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     m_enemies.push_back(lilith);
+    bossSpawned = true;
 }
 
 void Population::manage()

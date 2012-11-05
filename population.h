@@ -96,6 +96,7 @@ class Population
         std::tr1::shared_ptr<Player> player2;
 
         std::tr1::shared_ptr<Boss> currentBoss;
+        bool bossSpawned;
 
     private:
         //Constructeur privé pour singleton
