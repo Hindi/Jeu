@@ -42,5 +42,6 @@ class Level_manager
 
 };
 
+bool stringToBool(std::string s);
 void tokenize(const std::string& str, std::vector<std::string>& tokens);
 #endif // LEVEL_MANAGER_H_INCLUDED

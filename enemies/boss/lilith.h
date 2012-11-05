@@ -22,6 +22,7 @@ class Lilith : public Boss
 
         void createAdd();
         void addsMove();
+        void fire();
 
 
     protected:

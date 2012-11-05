@@ -4,5 +4,9 @@ END
 
 timer 1 
 spawn ship down 100 500 false
+
+
+timer 2 
+boss lilith
 END 
 OVER

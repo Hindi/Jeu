@@ -15,7 +15,7 @@ Level_manager::Level_manager():
 
 Level_manager::~Level_manager()
 {
-
+    currentLevel.clear();
 }
 
 Level_manager* Level_manager::getInstance()
@@ -82,30 +82,35 @@ void Level_manager::checkLevel()
                     iss >> nombre;
                     //On remet à zéro le timer et on fixe le début de la prochaine vague
                     spawnTime = nombre;
-                    cout << "La prochaine vague arrive dans " << nombre << endl;
+                    //cout << "La prochaine vague arrive dans " << nombre << endl;
                 }
                 //On regarde si on est pas à la fin de la vague
                 else if(strcmp(buffer, "END")==0)
                 {
                     //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
                     timer.reinitialize();
-                    cout << "Les spawns sont terminés pour cette vague !" << endl;
+                    //cout << "Les spawns sont terminés pour cette vague !" << endl;
                 }
                 else if(strcmp(buffer, "OVER")==0)
                 {
                     //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
                     timer.reinitialize();
-                    cout << "Fin du niveau !" << endl;
-                    levelOver = true;
+                    //cout << "Fin du niveau !" << endl;
                 }
                 else if(strcmp(buffer, "spawn")==0)
                 {
-                    Vector2f position(400, 200);
-                    //char* move =  tokens[2].data();
+                    Vector2f position(atoi(tokens[3].c_str()),atoi(tokens[4].c_str()));
+                    bool b = stringToBool(tokens[5]);
+
                     if(strcmp(tokens[1].data(),"ship")==0)
-                        Population::getInstance()->createShip(position, "down", true);
+                        Population::getInstance()->createShip(position, tokens[2].data(), b);
                     else if(strcmp(tokens[1].data(),"flyingSaucer")==0)
-                        Population::getInstance()->createFlyingSaucer(position, "down", true);
+                        Population::getInstance()->createFlyingSaucer(position, tokens[2].data(), b);
+                }
+                else if(strcmp(buffer, "boss")==0)
+                {
+                    if(strcmp(tokens[1].data(),"lilith")==0)
+                        Population::getInstance()->createLilith();
                 }
 
                 //On libère la mémoire
@@ -115,7 +120,10 @@ void Level_manager::checkLevel()
         }
     }
     else
-        levelOver = true;
+    {
+        if(timer.getTime() > 4)
+            levelOver = true;
+    }
 }
 
 
@@ -146,4 +154,13 @@ short Level_manager::getLevelNumber()
 bool Level_manager::isFinished()
 {
     return levelOver;
+}
+
+
+bool stringToBool(std::string s)
+{
+    std::istringstream is(s);
+    bool b;
+    is >> std::boolalpha >> b;
+    return b;
 }

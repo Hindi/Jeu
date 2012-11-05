@@ -80,8 +80,6 @@ void Jeu::start(short niveau)
 
     Level_manager::getInstance()->startLevel(niveau);
 
-    population->createLilith();
-
     while (app.IsOpened() )
     {
         if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() )))

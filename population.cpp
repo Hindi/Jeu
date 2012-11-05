@@ -75,6 +75,8 @@ void Population::checkPopulation()
                             (*lit)->fireFocus();
                         if(strcmp((*lit)->getType(), "flyingSaucer") == 0)
                             (*lit)->fireCircle();
+                        if(strcmp((*lit)->getType(), "boss") == 0)
+                            (*lit)->fire();
                     }
                     if((*lit)->canTeleport())
                     {
@@ -195,14 +197,14 @@ void Population::unStop()
     }
 }
 
-void Population::createShip(Vector2f position, char* move, bool spawner)
+void Population::createShip(Vector2f position, const char* move, bool spawner)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
     tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, player, player2, false));
     m_enemies.push_back(a);
 }
 
-void Population::createFlyingSaucer(Vector2f position, char* move, bool spawner)
+void Population::createFlyingSaucer(Vector2f position, const char* move, bool spawner)
 {
     m_coefSpeed = 20;
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager

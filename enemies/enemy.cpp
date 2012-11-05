@@ -297,6 +297,10 @@ Animated* Enemy::getAnimationExplosion()
 //********************************
 //**********Projectiles***********
 //********************************
+void Enemy::fire()
+{
+
+}
 
 void Enemy::fireFocus()
 {

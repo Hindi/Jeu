@@ -30,3 +30,8 @@ void Lilith::addsMove()
     this->follow();
 }
 
+void Lilith::fire()
+{
+
+}
+
