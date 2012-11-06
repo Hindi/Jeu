@@ -237,9 +237,9 @@ void Population::createLilith()
     tr1::shared_ptr<Boss> lilith(new Lilith(player, player2));
     currentBoss = lilith;
     Vector2f position(lilith->getPosition().x, lilith->getPosition().y);
-    this->createAdd(500, 5, 50, 5, 5, "images/lilith/bouclier.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith/bouclier.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=100;
-    this->createAdd(500, 5, 50, 5, 5, "images/lilith/bouclier2.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith/bouclier2.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     m_enemies.push_back(lilith);
     bossSpawned = true;
 }

@@ -23,7 +23,7 @@ void Lilith::addsMove()
 
 void Lilith::fire()
 {
-
+    this->VFire();
 }
 
 /*
