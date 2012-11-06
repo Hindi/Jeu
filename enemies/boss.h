@@ -2,6 +2,7 @@
 #define BOSS_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
+#include <math.h>
 
 #include "../player.h"
 #include "enemy.h"

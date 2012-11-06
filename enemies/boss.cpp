@@ -46,6 +46,18 @@ void Boss::firinhMahLasor()
     if(!startedLasor && timerLaser.getTime() > laserRate)
     {
         timerAddMove.start();
+        startedLasor = true;
+    }
+    if(startedLasor && timerAddMove.getTime() < 2)
+    {
+        int speed, sign;
+        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+        for(; lit != m_adds.end(); lit++)
+        {
+            sign = (image->GetWidth()/3 + m_position.x - (*lit)->getPosition().x);
+            speed = (sign / fabs(sign))*15;
+            (*lit)->horizontalMove(speed);
+        }
     }
 }
 

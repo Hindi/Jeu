@@ -33,6 +33,7 @@ class Adds : public Enemy
         //Suivre le boss
         virtual void teleport();
         sf::Vector2f getRelativePosition();
+        void horizontalMove(int speed);
 
     private:
         //Timers de tir et de déplacement

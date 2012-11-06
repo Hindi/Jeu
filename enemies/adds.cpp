@@ -29,3 +29,9 @@ Vector2f Adds::getRelativePosition()
 {
     return relativePosition;
 }
+
+void Adds::horizontalMove(int speed)
+{
+    cout << speed << endl;
+    m_animated->Move(Vector2f(0,speed*app.GetFrameTime()));
+}
