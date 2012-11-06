@@ -45,8 +45,8 @@ class Population
         void unStop();
 
         //Créateurs d'ennemis
-        void createShip(sf::Vector2f position, const char* move, bool spawner = false);
-        void createFlyingSaucer(sf::Vector2f position, const char* move, bool spawner = false);
+        void createShip(sf::Vector2f position, const std::string &filepath, bool spawner = false);
+        void createFlyingSaucer(sf::Vector2f position, const std::string &filepath, bool spawner = false);
 
         void createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2);
