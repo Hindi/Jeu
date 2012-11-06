@@ -40,5 +40,8 @@ void Boss::setTeleporting(bool state)
 
 void firinhMahLAsor()
 {
-
+    if(!startingLasor)
+    {
+        timerAddMove.start();
+    }
 }
