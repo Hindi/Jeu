@@ -5,10 +5,8 @@ using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
             Boss(10, 5, 10000, 5, 5, "images/lilith/corps.png", Vector2f(500, 500), "boss", "don'tmove", 1, 50, 2, player, player2, true),
-            m_level(1),
-            laserRate(1)
+            m_level(1)
 {
-    timerLaser.start();
 
 }
 
@@ -20,10 +18,7 @@ Lilith::~Lilith()
 void Lilith::fire()
 {
     this->VFire();
-    if(timerLaser.getTime() > laserRate)
-    {
-        this->firinhMahLasor
-    }
+    this->firinhMahLasor();
 }
 
 IntRect Lilith::getBoundingBox()
@@ -47,4 +42,9 @@ IntRect Lilith::getWeakBox()
     boundingBox.Bottom = boundingBox.Top + 10;
 
     return boundingBox;
+}
+
+void Lilith::move()
+{
+    this->follow();
 }

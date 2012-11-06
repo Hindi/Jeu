@@ -6,6 +6,7 @@
 #include "../player.h"
 #include "enemy.h"
 #include "../timer.h"
+#include "adds.h"
 
 /*
 ****************************************
@@ -25,15 +26,21 @@ class Boss : public Enemy
         sf::Vector2f getPosition();
         virtual void setTeleporting(bool state);
         void firinhMahLasor();
+        void pushAdd(std::tr1::shared_ptr<Adds> add);
+        void follow();
 
         //Variables laser
         bool startingLasor;
         Timer timerAddMove;
 
     protected:
+    std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         const char* m_type;
         short m_level;
+        bool startedLasor;
+        Timer timerLaser;
+        int laserRate;
 
 
 };

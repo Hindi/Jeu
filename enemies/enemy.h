@@ -52,7 +52,7 @@ class Enemy : public Unit
          void moveDown();
          void moveRight();
          void dontMove();
-         void move();
+         virtual void move();
          void spawnMove();
          virtual void follow();
 

@@ -25,13 +25,12 @@ class Lilith : public Boss
         //void follow();
         sf::IntRect getBoundingBox();
         sf::IntRect getWeakBox();
+        void move();
 
 
     protected:
         const char* m_name;
         short m_level;
-        Timer timerLaser;
-        int laserRate;
 
 
 };
