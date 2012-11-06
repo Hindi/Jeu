@@ -639,7 +639,7 @@
 	<SFML/Graphics.hpp>
 	"enemy.h"
 
-1264600442 c:\program files (x86)\codeblocks\mingw\include\sfml\system.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\system.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Clock.hpp>
 	<SFML/System/Lock.hpp>
@@ -651,24 +651,24 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Vector3.hpp>
 
-1264600442 c:\program files (x86)\codeblocks\mingw\include\sfml\config.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\config.hpp
 	<climits>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\clock.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\clock.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\lock.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\lock.hpp
 	<SFML/System/NonCopyable.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\noncopyable.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\noncopyable.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\mutex.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\mutex.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Win32/Mutex.hpp>
 	<SFML/System/Unix/Mutex.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\mutex.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
@@ -876,7 +876,7 @@
 1228530724 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\mutex.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
@@ -918,26 +918,26 @@
 	<_mingw.h>
 	<stddef.h>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\randomizer.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\randomizer.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\sleep.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\sleep.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\thread.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\thread.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Win32/Thread.hpp>
 	<SFML/System/Unix/Thread.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\thread.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\win32\thread.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\thread.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unix\thread.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.hpp
 	<SFML/Config.hpp>
 	<iterator>
 	<locale>
@@ -945,19 +945,19 @@
 	<stdlib.h>
 	<SFML/System/Unicode.inl>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\unicode.inl
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.hpp
 	<SFML/System/Vector2.inl>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector2.inl
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\vector3.inl
 
-1264600442 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Font.hpp>
@@ -970,7 +970,7 @@
 	<SFML/Graphics/String.hpp>
 	<SFML/Graphics/View.hpp>
 
-1264600442 c:\program files (x86)\codeblocks\mingw\include\sfml\window.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/Event.hpp>
@@ -981,27 +981,27 @@
 	<SFML/Window/WindowStyle.hpp>
 	<SFML/Window/OpenGL.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\context.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\window\context.hpp
 	<SFML/Config.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\event.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\window\event.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\input.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\window\input.hpp
 	<SFML/Config.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<SFML/Window/Event.hpp>
 	<SFML/Window/WindowListener.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowlistener.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowlistener.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\videomode.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\videomode.hpp
 	<SFML/Config.hpp>
 	<cstdlib>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\window.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\window.hpp
 	<SFML/Window/Event.hpp>
 	<SFML/Window/Input.hpp>
 	<SFML/Window/VideoMode.hpp>
@@ -1014,14 +1014,14 @@
 	<queue>
 	<string>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowhandle.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowhandle.hpp
 	<SFML/Config.hpp>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowsettings.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowsettings.hpp
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowstyle.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\windowstyle.hpp
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\window\opengl.hpp
+1352217813 c:\program files (x86)\codeblocks\mingw\include\sfml\window\opengl.hpp
 	<SFML/Config.hpp>
 	<windows.h>
 	<GL/gl.h>
@@ -1037,10 +1037,10 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\color.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\color.hpp
 	<SFML/Config.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\font.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\font.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Unicode.hpp>
@@ -1050,45 +1050,45 @@
 	<map>
 	<string>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.hpp
 	<set>
 	<SFML/System/Resource.inl>
 	<SFML/System/ResourcePtr.inl>
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resource.inl
 
-1264600436 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resourceptr.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\system\resourceptr.inl
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\glyph.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\glyph.hpp
 	<SFML/Config.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.hpp
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rect.inl
 
-1268918054 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\image.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\image.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<string>
 	<vector>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\postfx.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\postfx.hpp
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Image.hpp>
 	<istream>
 	<map>
 	<string>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\drawable.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\drawable.hpp
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Matrix3.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Vector2.hpp>
 	<math.h>
@@ -1097,36 +1097,36 @@
 1250305078 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1268918056 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.inl
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\matrix3.inl
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\renderwindow.hpp
 	<SFML/Graphics/Image.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Window/Window.hpp>
 	<string>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\rendertarget.hpp
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/View.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\view.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\view.hpp
 	<SFML/Config.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Matrix3.hpp>
 	<SFML/System/Vector2.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\shape.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\shape.hpp
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/System/Vector2.hpp>
 	<vector>
 
-1268918052 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\sprite.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\sprite.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1264600434 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\string.hpp
+1352217812 c:\program files (x86)\codeblocks\mingw\include\sfml\graphics\string.hpp
 	<SFML/System/Resource.hpp>
 	<SFML/System/Unicode.hpp>
 	<SFML/Graphics/Drawable.hpp>
@@ -2577,4 +2577,380 @@
 
 1352206680 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
 	"lilith.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\anim.cpp
+	"Anim.hpp"
+
+1352216832 c:\users\nicolas\documents\github\jeu\anim.hpp
+	<vector>
+	"Frame.hpp"
+
+1352216832 c:\users\nicolas\documents\github\jeu\frame.hpp
+	<SFML/Graphics.hpp>
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\animated.cpp
+	"Animated.hpp"
+
+1352216832 c:\users\nicolas\documents\github\jeu\animated.hpp
+	"Anim.hpp"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\frame.cpp
+	"Frame.hpp"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\background.cpp
+	"background.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\background.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"image_manager.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\image_manager.h
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\collision.cpp
+	"collision.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\collision.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<tr1/memory>
+	"player.h"
+	"population.h"
+	"tirs/projectile_manager.h"
+	"tirs/missile_manager.h"
+	"drop.h"
+	"enemies/spawn.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\player.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<list>
+	"tirs/projectile.h"
+	"unit.h"
+	"timer.h"
+	"animation.h"
+	"tirs/missile.h"
+	"image_manager.h"
+	"tirs/projectile_manager.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\projectile.h
+	<SFML/Graphics.hpp>
+	"../animation.h"
+	<iostream>
+	<deque>
+	"../timer.h"
+	"../image_manager.h"
+	"../const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1352216832 c:\users\nicolas\documents\github\jeu\timer.h
+	<SFML/System.hpp>
+	<iostream>
+
+1352216832 c:\users\nicolas\documents\github\jeu\const.h
+	<SFML/Graphics.hpp>
+
+1352216832 c:\users\nicolas\documents\github\jeu\unit.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+	"animation.h"
+	"Animated.hpp"
+	"image_manager.h"
+	"const.h"
+	"timer.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\missile.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"../image_manager.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\projectile_manager.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+	<tr1/memory>
+	"projectile.h"
+	"missile.h"
+	<vector>
+	"../const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\population.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	<tr1/memory>
+	"enemies/enemy.h"
+	"tirs/projectile.h"
+	"tirs/projectile_manager.h"
+	"drop_manager.h"
+	"enemies/boss.h"
+	"player.h"
+	"image_manager.h"
+	"enemies/spawn.h"
+	"tirs/score_manager.h"
+	"Anim.hpp"
+	"const.h"
+	"timer.h"
+	"enemies/boss/lilith.h"
+	"enemies/adds.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\enemies\enemy.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"../player.h"
+	"../timer.h"
+	"../unit.h"
+	"../tirs/projectile.h"
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"math.h"
+	"../tirs/projectile_manager.h"
+	"../const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\drop_manager.h
+	<SFML/Graphics.hpp>
+	<list>
+	<iostream>
+	<tr1/memory>
+	"drop.h"
+	"image_manager.h"
+	"const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\drop.h
+	<SFML/Graphics.hpp>
+	"image_manager.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\enemies\boss.h
+	<list>
+	<SFML/Graphics.hpp>
+	<math.h>
+	"../player.h"
+	"enemy.h"
+	"../timer.h"
+	"adds.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\enemies\adds.h
+	<SFML/Graphics.hpp>
+	<list>
+	"../player.h"
+	"../timer.h"
+	"../tirs/projectile.h"
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"../tirs/projectile_manager.h"
+	"../const.h"
+	"enemy.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\enemies\spawn.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"../tirs/projectile_manager.h"
+	"../tirs/projectile.h"
+	"math.h"
+	"../unit.h"
+	"../timer.h"
+	"../player.h"
+	"enemy.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\score_manager.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+	"tr1/memory"
+	"score.h"
+	"../const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\score.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"../timer.h"
+	"../const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\enemies\boss\lilith.h
+	<list>
+	<SFML/Graphics.hpp>
+	"../boss.h"
+	"../adds.h"
+	"../../player.h"
+	"../../tirs/projectile.h"
+	"../../animation.h"
+	"../../Animated.hpp"
+	"../../image_manager.h"
+	"../../tirs/projectile_manager.h"
+	"../../const.h"
+	"../../timer.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\missile_manager.h
+	<list>
+	<SFML/Graphics.hpp>
+	<tr1/memory>
+	"missile.h"
+	"../population.h"
+	"math.h"
+	"../timer.h"
+	"../player.h"
+	"../image_manager.h"
+	"../const.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\drop.cpp
+	"drop.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\drop_manager.cpp
+	"drop_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\enemies\adds.cpp
+	"adds.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\enemies\boss.cpp
+	"boss.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\enemies\boss\lilith.cpp
+	"lilith.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\enemies\enemy.cpp
+	"enemy.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\image_manager.cpp
+	<map>
+	<iostream>
+	<SFML/Graphics.hpp>
+	"image_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\jeu.cpp
+	"jeu.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\jeu.h
+	<SFML/Graphics.hpp>
+	<list>
+	"player.h"
+	"enemies/enemy.h"
+	"collision.h"
+	"population.h"
+	"pannel.h"
+	"timer.h"
+	"menu.h"
+	"script.h"
+	"background.h"
+	"image_manager.h"
+	"tirs/projectile_manager.h"
+	"guard.h"
+	"tirs/missile_manager.h"
+	"tirs/weapon_manager.h"
+	"drop_manager.h"
+	"tirs/score_manager.h"
+	"const.h"
+	"levels/level_manager.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\pannel.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"player.h"
+	"const.h"
+	"image_manager.h"
+	"population.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\menu.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"image_manager.h"
+	"const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\script.h
+	<SFML/Graphics.hpp>
+	"population.h"
+	"timer.h"
+	"enemies/enemy.h"
+	"image_manager.h"
+	"player.h"
+	"population.h"
+	"tirs/projectile_manager.h"
+	"const.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\guard.h
+	<SFML/System.hpp>
+	<string>
+	<iostream>
+
+1352216832 c:\users\nicolas\documents\github\jeu\tirs\weapon_manager.h
+	<SFML/Graphics.hpp>
+	"../player.h"
+
+1352216832 c:\users\nicolas\documents\github\jeu\levels\level_manager.h
+	<sstream>
+	<iostream>
+	<string>
+	<fstream>
+	"../population.h"
+	"../timer.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\levels\level_manager.cpp
+	"level_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\main.cpp
+	"SFML/Graphics.hpp"
+	"jeu.h"
+	"menu.h"
+	"timer.h"
+	<iostream>
+	"const.h"
+	<tr1/memory>
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\menu.cpp
+	"menu.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\pannel.cpp
+	"pannel.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\player.cpp
+	"player.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\population.cpp
+	"population.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\script.cpp
+	"script.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\timer.cpp
+	"timer.h"
+	<windows.h>
+	<unistd.h>
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\missile.cpp
+	"missile.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\missile_manager.cpp
+	"missile_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\projectile.cpp
+	"projectile.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\projectile_manager.cpp
+	"projectile_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\score.cpp
+	"score.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\score_manager.cpp
+	"score_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\tirs\weapon_manager.cpp
+	"weapon_manager.h"
+
+1352216832 source:c:\users\nicolas\documents\github\jeu\unit.cpp
+	"unit.h"
 
