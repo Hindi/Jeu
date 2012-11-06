@@ -1,14 +1,14 @@
 timer 2
-spawn ship down 500 500 true
-spawn ship down 200 500 true
+spawn ship down 200 100 true
+spawn ship down 200 100 true
 END
 
 timer 1 
-spawn ship down 100 500 false
+spawn ship down 100 100 false
 END 
 
 timer 3 
-spawn ship down 100 500 false
+spawn ship down 100 100 false
 END 
 
 OVER

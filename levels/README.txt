@@ -22,9 +22,14 @@ down : le type de déplacement qu'il va effectuer
 200 500 : le vecteur position où il va apparaitre (origine placée en haut à gauche de l'écran)
 true : booleen qui définit si l'ennnemis peut spawn des adds ou non
 
+le mot clé boss précède le nom du boss à spawn.
+
 types d'ennemis possibles :
 - ship
 - flyingSaucer
+
+boss :
+- lilith
 
 type de mouvements possibles :
 - up

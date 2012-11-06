@@ -1,9 +1,9 @@
 timer 2
-spawn ship roundtrip 500 500 true
+spawn ship roundtrip 100 100 true
 END
 
 timer 1 
-spawn ship down 100 500 false
+spawn ship down 100 100 false
 
 
 timer 2 
