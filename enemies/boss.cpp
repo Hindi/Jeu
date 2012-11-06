@@ -38,3 +38,7 @@ void Boss::setTeleporting(bool state)
     teleporting = state;
 }
 
+void firinhMahLAsor()
+{
+
+}

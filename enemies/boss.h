@@ -26,6 +26,10 @@ class Boss : public Enemy
         virtual void setTeleporting(bool state);
         void firinhMahLasor();
 
+        //Variables laser
+        bool startingLasor;
+        Timer timerAddMove;
+
     protected:
         const char* m_name;
         const char* m_type;
