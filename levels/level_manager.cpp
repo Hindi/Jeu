@@ -109,8 +109,15 @@ void Level_manager::checkLevel()
                 }
                 else if(strcmp(buffer, "boss")==0)
                 {
-                    if(strcmp(tokens[1].data(),"lilith")==0)
+                    if(Population::getInstance()->haveEnnemyInProgress())
+                    {
+                        vectorPosition--;
+                    }
+                    else
+                    {
+                        if(strcmp(tokens[1].data(),"lilith")==0)
                         Population::getInstance()->createLilith();
+                    }
                 }
 
                 //On libère la mémoire
