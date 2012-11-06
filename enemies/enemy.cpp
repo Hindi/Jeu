@@ -224,9 +224,7 @@ void Enemy::spawnMove()
 
 void Enemy::follow()
 {
-/*
-        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
-        i = image->GetWidth() /1.5;*/
+
 }
 
 int Enemy::getPositionAxis(int axis)

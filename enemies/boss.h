@@ -29,11 +29,11 @@ class Boss : public Enemy
 
         void drawAdds();
         virtual void draw();
-        void follow();
         virtual void addsMove();
         sf::Vector2f getPosition();
         void pushAdds(std::tr1::shared_ptr<Adds> add);
         virtual void setTeleporting(bool state);
+        virtual void follow();
 
     protected:
         std::list<std::tr1::shared_ptr<Adds> > m_adds;

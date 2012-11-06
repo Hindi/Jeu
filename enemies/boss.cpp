@@ -56,6 +56,7 @@ void Boss::drawAdds()
 
 void Boss::draw()
 {
+    this->drawAdds();
     if(teleporting)
     {
         if(teleportFrame % 2 == 1)
@@ -64,20 +65,8 @@ void Boss::draw()
     }
     else
         app.Draw(*m_animated);
-    this->drawAdds();
 }
 
-void Boss::follow()
-{
-    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
-    unsigned short i = 0;
-    for(; li!= m_adds.end(); li++)
-    {
-        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
-        (*li)->setPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()));
-        i = image->GetWidth() /1.5;
-    }
-}
 
 Vector2f Boss::getPosition()
 {
@@ -97,4 +86,17 @@ void Boss::setTeleporting(bool state)
     {
         (*li)->setTeleporting(true);
     }
+}
+
+void Boss::follow()
+{
+    list<tr1::shared_ptr<Adds> >::const_iterator li(m_adds.begin());
+    unsigned short i = 0;
+    for(; li!= m_adds.end(); li++)
+    {
+        (*li)->getAnimation()->SetPosition(Vector2f(m_position.x + 45 + i, m_position.y + image->GetHeight()/1.65));
+        (*li)->setPosition(Vector2f(m_position.x + i, m_position.y + image->GetHeight()/1.65));
+        i = image->GetWidth()/3.5;
+    }
+
 }
