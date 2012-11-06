@@ -36,6 +36,6 @@ type de mouvements possibles :
 - down
 - left
 - right
-- don't move
+- don'tmove (sans espace entre les deux mots)
 - spawnMove (déplacement aléatoire)
 - roundtrip (aller-retour)

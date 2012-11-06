@@ -29,7 +29,8 @@ class Enemy : public Unit
         sf::Sprite* getSprite();
 
         //Accesseur sur le rectangle occupé par le sprite
-         sf::IntRect getBoundingBox();
+         virtual sf::IntRect getBoundingBox();
+         virtual sf::IntRect getWeakBox();
 
         //Inflige des dommages à l'ennemi
          void recieveDamages(int dmg);
@@ -53,7 +54,7 @@ class Enemy : public Unit
          void dontMove();
          void move();
          void spawnMove();
-         void follow();
+         virtual void follow();
 
         //Dessin de l'ennemi
          virtual void draw();
@@ -116,7 +117,7 @@ class Enemy : public Unit
         bool canTeleport();
         virtual void setTeleporting(bool state);
         bool readyToTeleport();
-        void teleport();
+        virtual void teleport();
 
     protected:
         std::tr1::shared_ptr<Player> player;

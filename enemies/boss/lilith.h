@@ -12,6 +12,7 @@
 #include "../../image_manager.h"
 #include "../../tirs/projectile_manager.h"
 #include "../../const.h"
+#include "../../timer.h"
 
 class Lilith : public Boss
 {
@@ -20,16 +21,17 @@ class Lilith : public Boss
         //Destruteur
         virtual ~Lilith();
 
-        void createAdd();
-        void addsMove();
         void fire();
         //void follow();
+        sf::IntRect getBoundingBox();
+        sf::IntRect getWeakBox();
 
 
     protected:
         const char* m_name;
         short m_level;
-        sf::Vector2f m_position;
+        Timer timerLaser;
+        int laserRate;
 
 
 };

@@ -166,13 +166,14 @@ void Collision::manageProjectileCollision()
     //*****************************
     // Collisions classe projectile
     //*****************************
-    IntRect projectileRect, enemyRect;
+    IntRect projectileRect, enemyRect, bossWeakRecy;
     Vector2f projectilePosition;
     list<std::tr1::shared_ptr<Projectile> >* playerProjectile = Projectile_manager::getInstance()->getPlayerProjectiles();
     list<std::tr1::shared_ptr<Projectile> >::iterator lit(playerProjectile->begin());
     list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
     //Si il y a des projectiles en jeu
     int i(0);
+
     if(!playerProjectile->empty())
     {
         //Pour chaque ennemi
@@ -186,30 +187,67 @@ void Collision::manageProjectileCollision()
                 //On récupère les coordonnées du carré occupé par l'ennemi à l'écran
                 enemyRect = (*li)->getBoundingBox();
                 //On regarde si ils se superposent
-                if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
-                {
-                    //Si oui l'ennemis perd de la vie
-                    (*li)->recieveDamages(m_player->getDamages());
-                    //Et le score des deux joueurs augmente
-                    m_player->addScore((*li)->getScoreHit()/2);
-                    m_player2->addScore((*li)->getScoreHit()/2);
-                    //On supprime le projectile
-                    (lit) = playerProjectile->erase(lit);
-
-                    if(!(*li)->isDead())
+                if(strcmp((*li)->getType(), "boss")==0)
                     {
-                        Vector2f position;
-                        position.x = (*li)->getPositionAxis(0);
-                        position.y = (*li)->getPositionAxis(1);
-                        int currentFrame = (*li)->getAnimation()->GetCurrentFrame();
-                        Anim *m_anim = (*li)->getAnimation()->GetAnim();
-                        Image *currentImage = (*m_anim)[currentFrame].Image;
-                        position.x += currentImage->GetWidth();
-                        Score_manager::getInstance()->addScore((*li)->getScoreHit()/2, position);
+                        bossWeakRecy = (*li)->getWeakBox();
+                        if(projectileRect.Top > bossWeakRecy.Top && projectileRect.Top < bossWeakRecy.Bottom && projectileRect.Right > bossWeakRecy.Left && projectileRect.Left < bossWeakRecy.Right)
+                        {
+                            //Si oui l'ennemis perd de la vie
+                            (*li)->recieveDamages(m_player->getDamages());
+                            //Et le score des deux joueurs augmente
+                            m_player->addScore((*li)->getScoreHit()/2);
+                            m_player2->addScore((*li)->getScoreHit()/2);
+                            //On supprime le projectile
+                            (lit) = playerProjectile->erase(lit);
+
+                            if(!(*li)->isDead())
+                            {
+                                Vector2f position;
+                                position.x = (*li)->getPositionAxis(0);
+                                position.y = (*li)->getPositionAxis(1);
+                                int currentFrame = (*li)->getAnimation()->GetCurrentFrame();
+                                Anim *m_anim = (*li)->getAnimation()->GetAnim();
+                                Image *currentImage = (*m_anim)[currentFrame].Image;
+                                position.x += currentImage->GetWidth();
+                                Score_manager::getInstance()->addScore((*li)->getScoreHit()/2, position);
+                            }
+                        }
+                        else if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
+                        {
+                            //On supprime le projectile
+                            (lit) = playerProjectile->erase(lit);
+                        }
+                        else
+                            lit++;
                     }
-                }
-                else
-                    lit++;
+                    else
+                    {
+                        if(projectileRect.Top > enemyRect.Top && projectileRect.Top < enemyRect.Bottom && projectileRect.Right > enemyRect.Left && projectileRect.Left < enemyRect.Right)
+                        {
+
+                            //Si oui l'ennemis perd de la vie
+                            (*li)->recieveDamages(m_player->getDamages());
+                            //Et le score des deux joueurs augmente
+                            m_player->addScore((*li)->getScoreHit()/2);
+                            m_player2->addScore((*li)->getScoreHit()/2);
+                            //On supprime le projectile
+                            (lit) = playerProjectile->erase(lit);
+
+                            if(!(*li)->isDead())
+                            {
+                                Vector2f position;
+                                position.x = (*li)->getPositionAxis(0);
+                                position.y = (*li)->getPositionAxis(1);
+                                int currentFrame = (*li)->getAnimation()->GetCurrentFrame();
+                                Anim *m_anim = (*li)->getAnimation()->GetAnim();
+                                Image *currentImage = (*m_anim)[currentFrame].Image;
+                                position.x += currentImage->GetWidth();
+                                Score_manager::getInstance()->addScore((*li)->getScoreHit()/2, position);
+                            }
+                        }
+                        else
+                            lit++;
+                    }
             }
             lit = playerProjectile->begin();
         }

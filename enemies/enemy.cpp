@@ -198,7 +198,7 @@ void Enemy::move()
         this->moveDown();
     else if(strcmp(m_moveMethod, "up") == 0)
         this->moveUp();
-    else if(strcmp(m_moveMethod, "don't move") == 0)
+    else if(strcmp(m_moveMethod, "don'tmove") == 0)
         this->dontMove();
     else if(strcmp(m_moveMethod, "spawnMove") == 0)
         this->spawnMove();
@@ -498,6 +498,11 @@ IntRect Enemy::getBoundingBox()
     boundingBox.Bottom = boundingBox.Top + image->GetHeight();
 
     return boundingBox;
+}
+
+IntRect Enemy::getWeakBox()
+{
+
 }
 
 bool Enemy::isSpawner()

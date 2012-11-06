@@ -13,6 +13,7 @@
 #include "../tirs/projectile_manager.h"
 #include "../const.h"
 #include "enemy.h"
+#include "boss.h"
 
 /*
 ****************************************
@@ -26,19 +27,20 @@ TODO :
 class Adds : public Enemy
 {
     public:
-        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
-              const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport);
+        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f relativePosition, const char* type, const char* moveMethod, int moveValue,
+              const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport, std::tr1::shared_ptr<Boss> boss);
         ~Adds();
 
         //Suivre le boss
-        void follow(sf::Vector2f speed);
-
-        virtual void draw();
+        void follow();
         virtual void teleport();
 
     private:
+        std::tr1::shared_ptr<Boss> m_boss;
         //Timers de tir et de déplacement
         Timer timer, timerMove;
+
+        sf::Vector2f relativePosition;
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;

@@ -2120,7 +2120,7 @@
 
 1350810908 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1352070755 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1352195724 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1352070196 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2243,16 +2243,15 @@
 1350813530 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1352165973 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1352194685 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1352165390 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1352194756 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../player.h"
 	"enemy.h"
 	"../timer.h"
-	"adds.h"
 
 1348518742 source:c:\users\shalafi\documents\github\jeu\enemy.cpp
 	"enemy.h"
@@ -2271,7 +2270,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1352164549 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1352195771 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1351210485 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2326,7 +2325,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1352070796 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1352191729 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2344,7 +2343,7 @@
 1351162446 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1352165788 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1352196391 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2394,7 +2393,7 @@
 1250305076 c:\program files (x86)\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
-1352072710 c:\users\shalafi\documents\github\jeu\enemies\adds.h
+1352196419 c:\users\shalafi\documents\github\jeu\enemies\adds.h
 	<SFML/Graphics.hpp>
 	<list>
 	"../player.h"
@@ -2406,14 +2405,15 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 	"enemy.h"
+	"boss.h"
 
-1352165128 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
+1352195802 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1352165205 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1352195290 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1352129026 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1352196226 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2560,7 +2560,7 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 
-1352165461 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
+1352195290 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../boss.h"
@@ -2573,6 +2573,6 @@
 	"../../tirs/projectile_manager.h"
 	"../../const.h"
 
-1352166115 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
+1352196051 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
 	"lilith.h"
 

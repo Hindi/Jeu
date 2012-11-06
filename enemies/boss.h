@@ -6,7 +6,6 @@
 #include "../player.h"
 #include "enemy.h"
 #include "../timer.h"
-#include "adds.h"
 
 /*
 ****************************************
@@ -22,21 +21,12 @@ class Boss : public Enemy
         //Destruteur
         virtual ~Boss();
 
-        sf::IntRect getBoundingBox();
-        sf::IntRect getWeakBox();
-
-
-
-        void drawAdds();
         virtual void draw();
-        virtual void addsMove();
         sf::Vector2f getPosition();
-        void pushAdds(std::tr1::shared_ptr<Adds> add);
         virtual void setTeleporting(bool state);
-        virtual void follow();
+        void firinhMahLasor();
 
     protected:
-        std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         const char* m_type;
         short m_level;
