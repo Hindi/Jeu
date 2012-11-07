@@ -2246,7 +2246,7 @@
 1352289727 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
-1352289254 c:\users\shalafi\documents\github\jeu\enemies\boss.h
+1352295063 c:\users\shalafi\documents\github\jeu\enemies\boss.h
 	<list>
 	<SFML/Graphics.hpp>
 	<math.h>
@@ -2575,7 +2575,7 @@
 	"../../const.h"
 	"../../timer.h"
 
-1352289516 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
+1352295063 source:c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.cpp
 	"lilith.h"
 
 1352216832 source:c:\users\nicolas\documents\github\jeu\anim.cpp

@@ -12,16 +12,16 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     timerLaser.start();
     imageFocus = new Image();
     *imageFocus = image_manager::getInstance()->getImage("images/concentrateurEnergie.png");
-    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(0, 0, imageFocus->GetWidth()/5, imageFocus->GetHeight()) ));
-    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()/5, 0, imageFocus->GetWidth()*2/5, imageFocus->GetHeight()) ));
-    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*2/5, 0, imageFocus->GetWidth()*3/5, imageFocus->GetHeight()) ));
-    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*3/5, 0, imageFocus->GetWidth()*4/5, imageFocus->GetHeight()) ));
-    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*4/5, 0, imageFocus->GetWidth(), imageFocus->GetHeight()) ));
+    int i=0;
+    for(; i < 10; i++)
+    {
+        m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*i/10, 0, imageFocus->GetWidth()*(i+1)/10, imageFocus->GetHeight()) ));
+    }
     m_animatedFocus = new Animated;
     m_animatedFocus->SetAnim(&m_animFocus);
     m_animatedFocus->SetLoop(true);
-    m_animatedFocus->SetFrameTime(0.05f);
-    m_animatedFocus->Scale(3,3);
+    m_animatedFocus->SetFrameTime(0.1f);
+    m_animatedFocus->Scale(2,2);
     m_animatedFocus->Pause();
     m_animatedFocus->SetPosition(m_position.x, m_position.y);
 }
@@ -95,7 +95,7 @@ void Boss::firinhMahLasor()
         //On récupère le numéro de l'image qui est affichée
         int currentFrame = m_animatedFocus->GetCurrentFrame();
         int nombreFrame = m_animFocus.Size();
-        Vector2f position(m_position.x + image->GetWidth()/2 - imageFocus->GetWidth()/(nombreFrame*2)-30 ,m_position.y+ image->GetHeight()/2 + imageFocus->GetHeight()/2);
+        Vector2f position(m_position.x + image->GetWidth()/2 - imageFocus->GetWidth()/(nombreFrame*2)-50 ,m_position.y+ image->GetHeight()/2 + imageFocus->GetHeight()/2-90);
         //On positionne l'animation sur l'ennemi qui a explose
         m_animatedFocus->SetPosition(position);
         //Si l'image actuelle correspond à la dernière image de l'animation
@@ -110,8 +110,8 @@ void Boss::firinhMahLasor()
         }
         if(firinh)
         {
-            position.x += 25;
-            position.y += 20;
+            position.x = m_position.x + 93;
+            position.y = m_position.y + 115;
             std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
             projectile->setPosition(position);
             Projectile_manager::getInstance()->addEnemyProjectile(projectile);
