@@ -31,6 +31,7 @@ class Lilith : public Boss
     protected:
         const char* m_name;
         short m_level;
+        Timer timerRandomShot;
 
 
 };
