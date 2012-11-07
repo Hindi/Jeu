@@ -11,7 +11,6 @@ Unit::Unit(int life, int xSpeed, int ySpeed,Vector2f position):
             m_ySpeed(ySpeed),
             coefSpeed(50)
 {
-
     m_animatedExplosion = new Animated();
     imageExplosion = new Image();
    *imageExplosion = image_manager::getInstance()->getImage("images/Explosion.png");

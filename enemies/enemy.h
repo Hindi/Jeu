@@ -82,7 +82,7 @@ class Enemy : public Unit
 
 
         //Défini si l'ennemi peut tirer ou non
-         bool canFire();
+         virtual bool canFire();
 
         //Accesseur sur le type de tir
          const char* getType();
@@ -114,7 +114,7 @@ class Enemy : public Unit
         void reset();
 
 
-        bool canTeleport();
+        virtual bool canTeleport();
         virtual void setTeleporting(bool state);
         bool readyToTeleport();
         virtual void teleport();

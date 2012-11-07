@@ -63,7 +63,7 @@ class Unit
         sf::Image *imageExplosion;
 
         //Les hp qui restent
-        short m_life;
+        int m_life;
 
         // Vitesses sur chaque axe
         short m_xSpeed, m_ySpeed;

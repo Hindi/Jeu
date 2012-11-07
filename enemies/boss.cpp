@@ -39,6 +39,11 @@ Vector2f Boss::getPosition()
 void Boss::setTeleporting(bool state)
 {
     teleporting = state;
+    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+    for(; lit != m_adds.end(); lit++)
+    {
+        (*lit)->setTeleporting(true);
+    }
 }
 
 void Boss::firinhMahLasor()
@@ -48,14 +53,14 @@ void Boss::firinhMahLasor()
         timerAddMove.start();
         startedLasor = true;
     }
-    if(startedLasor && timerAddMove.getTime() < 2)
+    if(startedLasor && timerAddMove.getTime() < 5)
     {
         int speed, sign;
         list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
         for(; lit != m_adds.end(); lit++)
         {
-            sign = (image->GetWidth()/3 + m_position.x - (*lit)->getPosition().x);
-            speed = (sign / fabs(sign))*15;
+            sign = ((*lit)->getPosition().x - image->GetWidth()/3 - m_position.x);
+            speed = (sign / fabs(sign))*21;
             (*lit)->horizontalMove(speed);
         }
     }
@@ -75,4 +80,33 @@ void Boss::follow()
         (*lit)->getAnimation()->SetPosition(position);
         (*lit)->setPosition(position);
     }
+}
+
+bool Boss::canFire()
+{
+    return true;
+}
+
+bool Boss::canTeleport()
+{
+    if(allowTeleport && teleportTimer.getTime() > 3  && !startedLasor)
+    {
+        return true;
+    }
+    return false;
+}
+
+void Boss::teleport()
+{
+    teleporting = false;
+    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+    for(; lit != m_adds.end(); lit++)
+    {
+        (*lit)->setTeleporting(false);
+    }
+    teleportTimer.reinitialize();
+    teleportFrame = 0;
+    Vector2f position(rand()%800+1, 200 + rand()%300+1);
+    m_animated->SetPosition(Vector2f(position));
+    m_position = position;
 }

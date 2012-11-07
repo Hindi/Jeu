@@ -29,6 +29,9 @@ class Boss : public Enemy
         void firinhMahLasor();
         void pushAdd(std::tr1::shared_ptr<Adds> add);
         void follow();
+        bool canFire();
+        bool canTeleport();
+        void teleport();
 
         //Variables laser
         bool startingLasor;

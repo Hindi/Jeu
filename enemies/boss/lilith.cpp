@@ -17,7 +17,11 @@ Lilith::~Lilith()
 
 void Lilith::fire()
 {
-    this->VFire();
+    if(timer.getTime() - lastShot > m_fireRate)
+    {
+        timer.reinitialize();
+        this->VFire();
+    }
     this->firinhMahLasor();
 }
 

@@ -215,7 +215,7 @@ void Population::createFlyingSaucer(Vector2f position, const std::string &move, 
 void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
 {
-    tr1::shared_ptr<Adds> add(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, true));
+    tr1::shared_ptr<Adds> add(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, false));
     m_enemies.push_front(add);
     currentBoss->pushAdd(add);
 }
