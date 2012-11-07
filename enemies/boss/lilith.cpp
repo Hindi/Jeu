@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(10, 5, 10000, 5, 5, "images/lilith/corps.png", Vector2f(500, 500), "boss", "don'tmove", 1, 50, 2, player, player2, true),
+            Boss(10, 5, 10000, 5, 5, "images/lilith/corps.png", Vector2f(500, 100), "boss", "don'tmove", 1, 50, 2, player, player2, true),
             m_level(1)
 {
 

@@ -44,11 +44,12 @@ class Boss : public Enemy
         int laserRate, currentFrame;
 
         //Variables laser
-        bool startingLasor, laserFocusing;
+        bool startingLasor, laserFocusing, firinh;
         Timer timerAddMove;
         Animated *m_animatedFocus;
         Anim m_animFocus;
         sf::Image* imageFocus;
+        short loop;
 
 };
 #endif // BOSS_H_INCLUDED

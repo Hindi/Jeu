@@ -20,7 +20,8 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     m_animatedFocus = new Animated;
     m_animatedFocus->SetAnim(&m_animFocus);
     m_animatedFocus->SetLoop(true);
-    m_animatedFocus->SetFrameTime(0.3);
+    m_animatedFocus->SetFrameTime(0.05f);
+    m_animatedFocus->Scale(3,3);
     m_animatedFocus->Pause();
     m_animatedFocus->SetPosition(m_position.x, m_position.y);
 }
@@ -72,6 +73,8 @@ void Boss::firinhMahLasor()
     {
         timerAddMove.start();
         startedLasor = true;
+        loop = 0;
+        firinh = false;
     }
     if(startedLasor && timerAddMove.getTime() < 5)
     {
@@ -89,17 +92,30 @@ void Boss::firinhMahLasor()
     {
         if(m_animatedFocus->IsPaused())
                 m_animatedFocus->Play();//On relance l'animation
-            //On récupère le numéro de l'image qui est affichée
-            int currentFrame = m_animatedFocus->GetCurrentFrame();
-            int nombreFrame = m_animFocus.Size();
-            Vector2f position(m_position.x + image->GetWidth()/2 - imageFocus->GetWidth()/(nombreFrame*2) ,m_position.y+ image->GetHeight()/2 + imageFocus->GetHeight()/2);
-            //On positionne l'animation sur l'ennemi qui a explose
-            m_animatedFocus->SetPosition(position);
-            //Si l'image actuelle correspond à la dernière image de l'animation
-            if(currentFrame == m_animatedFocus->GetAnim()->Size()-1)
+        //On récupère le numéro de l'image qui est affichée
+        int currentFrame = m_animatedFocus->GetCurrentFrame();
+        int nombreFrame = m_animFocus.Size();
+        Vector2f position(m_position.x + image->GetWidth()/2 - imageFocus->GetWidth()/(nombreFrame*2)-30 ,m_position.y+ image->GetHeight()/2 + imageFocus->GetHeight()/2);
+        //On positionne l'animation sur l'ennemi qui a explose
+        m_animatedFocus->SetPosition(position);
+        //Si l'image actuelle correspond à la dernière image de l'animation
+        if(currentFrame == m_animatedFocus->GetAnim()->Size()-1)
+        {
+            loop++;
+            if(loop > 20)
             {
                 laserFocusing = false;//On arrête le focus
+                firinh = true;
             }
+        }
+        if(firinh)
+        {
+            position.x += 25;
+            position.y += 20;
+            std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
+            projectile->setPosition(position);
+            Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+        }
     }
 }
 
