@@ -10,12 +10,26 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
             laserRate(1)
 {
     timerLaser.start();
-
+    imageFocus = new Image();
+    *imageFocus = image_manager::getInstance()->getImage("images/concentrateurEnergie.png");
+    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(0, 0, imageFocus->GetWidth()/5, imageFocus->GetHeight()) ));
+    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()/5, 0, imageFocus->GetWidth()*2/5, imageFocus->GetHeight()) ));
+    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*2/5, 0, imageFocus->GetWidth()*3/5, imageFocus->GetHeight()) ));
+    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*3/5, 0, imageFocus->GetWidth()*4/5, imageFocus->GetHeight()) ));
+    m_animFocus.PushFrame(Frame(imageFocus, sf::Rect<int>(imageFocus->GetWidth()*4/5, 0, imageFocus->GetWidth(), imageFocus->GetHeight()) ));
+    m_animatedFocus = new Animated;
+    m_animatedFocus->SetAnim(&m_animFocus);
+    m_animatedFocus->SetLoop(true);
+    m_animatedFocus->SetFrameTime(0.3);
+    m_animatedFocus->Pause();
+    m_animatedFocus->SetPosition(m_position.x, m_position.y);
 }
 
 Boss::~Boss()
 {
     delete m_name;
+    delete m_animatedFocus;
+    delete imageFocus;
 }
 
 void Boss::draw()
@@ -28,6 +42,12 @@ void Boss::draw()
     }
     else
         app.Draw(*m_animated);
+    if(laserFocusing)
+    {
+        //On dessine le focus
+        m_animatedFocus->anim(app.GetFrameTime());
+        app.Draw(*m_animatedFocus);
+    }
 }
 
 
@@ -63,6 +83,23 @@ void Boss::firinhMahLasor()
             speed = (sign / fabs(sign))*21;
             (*lit)->horizontalMove(speed);
         }
+        laserFocusing = true;
+    }
+    if(laserFocusing)
+    {
+        if(m_animatedFocus->IsPaused())
+                m_animatedFocus->Play();//On relance l'animation
+            //On récupère le numéro de l'image qui est affichée
+            int currentFrame = m_animatedFocus->GetCurrentFrame();
+            int nombreFrame = m_animFocus.Size();
+            Vector2f position(m_position.x + image->GetWidth()/2 - imageFocus->GetWidth()/(nombreFrame*2) ,m_position.y+ image->GetHeight()/2 + imageFocus->GetHeight()/2);
+            //On positionne l'animation sur l'ennemi qui a explose
+            m_animatedFocus->SetPosition(position);
+            //Si l'image actuelle correspond à la dernière image de l'animation
+            if(currentFrame == m_animatedFocus->GetAnim()->Size()-1)
+            {
+                laserFocusing = false;//On arrête le focus
+            }
     }
 }
 

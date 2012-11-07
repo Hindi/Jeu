@@ -2,10 +2,10 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="Anim.hpp" open="0" top="0" tabpos="10">
-		<Cursor position="493" topLine="14" />
+		<Cursor position="493" topLine="0" />
 	</File>
 	<File name="Animated.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="3048" topLine="117" />
+		<Cursor position="888" topLine="25" />
 	</File>
 	<File name="Animated.hpp" open="0" top="0" tabpos="11">
 		<Cursor position="1929" topLine="42" />
@@ -41,28 +41,28 @@
 		<Cursor position="667" topLine="3" />
 	</File>
 	<File name="enemies\adds.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="985" topLine="11" />
+		<Cursor position="841" topLine="0" />
 	</File>
 	<File name="enemies\adds.h" open="1" top="0" tabpos="15">
-		<Cursor position="1118" topLine="25" />
+		<Cursor position="1130" topLine="13" />
 	</File>
-	<File name="enemies\boss.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="1544" topLine="36" />
+	<File name="enemies\boss.cpp" open="1" top="1" tabpos="12">
+		<Cursor position="2066" topLine="15" />
 	</File>
 	<File name="enemies\boss.h" open="1" top="0" tabpos="13">
-		<Cursor position="107" topLine="0" />
+		<Cursor position="1323" topLine="0" />
 	</File>
 	<File name="enemies\boss\lilith.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="357" topLine="6" />
+		<Cursor position="497" topLine="0" />
 	</File>
 	<File name="enemies\boss\lilith.h" open="1" top="0" tabpos="11">
-		<Cursor position="733" topLine="11" />
+		<Cursor position="733" topLine="0" />
 	</File>
 	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="5511" topLine="554" />
+		<Cursor position="6607" topLine="18" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="9">
-		<Cursor position="1881" topLine="46" />
+		<Cursor position="3595" topLine="115" />
 	</File>
 	<File name="image_manager.cpp" open="0" top="0" tabpos="15">
 		<Cursor position="3058" topLine="22" />
@@ -77,7 +77,7 @@
 		<Cursor position="567" topLine="12" />
 	</File>
 	<File name="levels\level_manager.cpp" open="1" top="0" tabpos="16">
-		<Cursor position="3744" topLine="95" />
+		<Cursor position="3676" topLine="83" />
 	</File>
 	<File name="levels\level_manager.h" open="0" top="0" tabpos="16">
 		<Cursor position="879" topLine="6" />
@@ -104,9 +104,9 @@
 		<Cursor position="240" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="6147" topLine="190" />
+		<Cursor position="4310" topLine="132" />
 	</File>
-	<File name="population.h" open="1" top="1" tabpos="5">
+	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="1385" topLine="41" />
 	</File>
 	<File name="script.cpp" open="0" top="0" tabpos="19">
@@ -164,9 +164,9 @@
 		<Cursor position="666" topLine="0" />
 	</File>
 	<File name="unit.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="2042" topLine="59" />
+		<Cursor position="2040" topLine="41" />
 	</File>
 	<File name="unit.h" open="0" top="0" tabpos="11">
-		<Cursor position="302" topLine="0" />
+		<Cursor position="1492" topLine="37" />
 	</File>
 </CodeBlocks_layout_file>

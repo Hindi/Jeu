@@ -33,19 +33,22 @@ class Boss : public Enemy
         bool canTeleport();
         void teleport();
 
-        //Variables laser
-        bool startingLasor;
-        Timer timerAddMove;
 
     protected:
-    std::list<std::tr1::shared_ptr<Adds> > m_adds;
+        std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         const char* m_type;
         short m_level;
         bool startedLasor;
         Timer timerLaser;
-        int laserRate;
+        int laserRate, currentFrame;
 
+        //Variables laser
+        bool startingLasor, laserFocusing;
+        Timer timerAddMove;
+        Animated *m_animatedFocus;
+        Anim m_animFocus;
+        sf::Image* imageFocus;
 
 };
 #endif // BOSS_H_INCLUDED
