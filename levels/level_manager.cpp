@@ -99,7 +99,7 @@ void Level_manager::checkLevel()
                 }
                 else if(strcmp(buffer, "spawn")==0)
                 {
-                    Vector2f position(atoi(tokens[3].c_str()),atoi(tokens[4].c_str()));
+                    Vector2f position((1366 / 100) * atoi(tokens[3].c_str()), (768 / 100) * atoi(tokens[4].c_str()));
                     bool b = stringToBool(tokens[5]);
                     if(strcmp(tokens[1].data(),"ship")==0)
                         Population::getInstance()->createShip(position, tokens[2].data(), b);
