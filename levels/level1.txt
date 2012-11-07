@@ -1,4 +1,5 @@
 timer 1 
 boss lilith
+spawn ship down 50 50 false
 END 
 OVER

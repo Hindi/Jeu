@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(10, 5, 10000, 5, 5, "images/lilith/corps.png", Vector2f(500, 100), "boss", "don'tmove", 1, 50, 2, player, player2, true),
+            Boss(500, 5, 10000, 5, 5, "images/lilith/corps.png", Vector2f(500, 100), "boss", "don'tmove", 1, 50, 2, player, player2, true),
             m_level(1)
 {
 
@@ -40,9 +40,9 @@ IntRect Lilith::getBoundingBox()
 IntRect Lilith::getWeakBox()
 {
     IntRect boundingBox;
-    boundingBox.Left = m_position.x  + image->GetWidth()/2 - 3;
-    boundingBox.Right = boundingBox.Left + 3;
-    boundingBox.Top = m_position.y + image->GetHeight()-20;
+    boundingBox.Left = m_position.x  + image->GetWidth()/2 - 8;
+    boundingBox.Right = boundingBox.Left + 15;
+    boundingBox.Top = m_position.y + image->GetHeight()-10;
     boundingBox.Bottom = boundingBox.Top + 10;
 
     return boundingBox;
