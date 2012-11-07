@@ -87,7 +87,7 @@ void Boss::firinhMahLasor()
             speed = (sign / fabs(sign))*21;
             (*lit)->horizontalMove(speed);
         }
-        if(timerAddMove.getTime() > 4)
+        if(timerAddMove.getTime() > 2)
             laserFocusing = true;
     }
     if(laserFocusing)
@@ -110,14 +110,13 @@ void Boss::firinhMahLasor()
                 firinh = true;
             }
         }
-        if(firinh)
+        if(firinh && timerAddMove.getTime() > 6)
         {
             position.x = m_position.x + 93;
             position.y = m_position.y + 115;
             std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
             projectile->setPosition(position);
             Projectile_manager::getInstance()->addEnemyProjectile(projectile);
-            firinh = false;
             laserFocusing = false;
             startedLasor = false;
             timerLaser.reinitialize();
@@ -148,7 +147,7 @@ bool Boss::canFire()
 
 bool Boss::canTeleport()
 {
-    if(allowTeleport && teleportTimer.getTime() > 6  && !startedLasor)
+    if(allowTeleport && teleportTimer.getTime() > 18  && !startedLasor)
     {
         return true;
     }
@@ -165,7 +164,7 @@ void Boss::teleport()
     }
     teleportTimer.reinitialize();
     teleportFrame = 0;
-    Vector2f position(100+rand()%700+1, 200 + rand()%300+1);
+    Vector2f position(100+rand()%700+1, 200 + rand()%150+1);
     m_animated->SetPosition(Vector2f(position));
     m_position = position;
 }
