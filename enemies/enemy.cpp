@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 
-Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const char* const moveMethod, int moveValue, const int coefSpeed,
+Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const string &filepath, Vector2f position, const char* const type, const std::string &moveMethod, int moveValue, const int coefSpeed,
              const int firerate, bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport):
             Unit(life, xSpeed,ySpeed, position),
             direction("null"),
@@ -188,24 +188,27 @@ void Enemy::dontMove()
 
 void Enemy::move()
 {
-    if(strcmp(m_moveMethod, "roundtrip") == 0)
+    const char* buffer = m_moveMethod.data();
+    if(strcmp(buffer, "roundtrip") == 0)
         this->roundTrip();
-    else if(strcmp(m_moveMethod, "left") == 0)
+    else if(strcmp(buffer, "left") == 0)
         this->moveLeft();
-    else if(strcmp(m_moveMethod, "right") == 0)
+    else if(strcmp(buffer, "right") == 0)
         this->moveRight();
-    else if(strcmp(m_moveMethod, "down") == 0)
+    else if(strcmp(buffer, "down") == 0)
         this->moveDown();
-    else if(strcmp(m_moveMethod, "up") == 0)
+    else if(strcmp(buffer, "up") == 0)
         this->moveUp();
-    else if(strcmp(m_moveMethod, "don'tmove") == 0)
+    else if(strcmp(buffer, "don'tmove") == 0)
         this->dontMove();
-    else if(strcmp(m_moveMethod, "spawnMove") == 0)
+    else if(strcmp(buffer, "spawnMove") == 0)
         this->spawnMove();
-    else if(strcmp(m_moveMethod, "follow") == 0)
+    else if(strcmp(buffer, "follow") == 0)
         this->follow();
     else
         this->moveDown();
+
+    delete buffer;
 }
 
 void Enemy::spawnMove()
@@ -558,7 +561,6 @@ void Enemy::reset()
     if (image!= NULL )
         delete image;
     delete m_type;
-    delete m_moveMethod;
 }
 
 bool Enemy::canTeleport()

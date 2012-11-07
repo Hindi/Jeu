@@ -19,7 +19,7 @@
 class Enemy : public Unit
 {
     public:
-        Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,
+        Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const std::string &moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2, bool allowTeleport);
 
         //Destructeur
@@ -155,7 +155,7 @@ class Enemy : public Unit
         const char* const m_type;
 
         //type de déplacement
-        const char* const m_moveMethod;
+        const std::string m_moveMethod;
 
         //Etat du déplacement
         short  m_moveValue, m_coefSpeed;

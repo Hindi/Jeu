@@ -1,5 +1,5 @@
 timer 1 
-spawn ship down 100 100 false
+spawn ship right 100 100 false
 
 
 timer 2 

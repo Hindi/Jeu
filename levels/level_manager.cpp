@@ -101,7 +101,6 @@ void Level_manager::checkLevel()
                 {
                     Vector2f position(atoi(tokens[3].c_str()),atoi(tokens[4].c_str()));
                     bool b = stringToBool(tokens[5]);
-
                     if(strcmp(tokens[1].data(),"ship")==0)
                         Population::getInstance()->createShip(position, tokens[2].data(), b);
                     else if(strcmp(tokens[1].data(),"flyingSaucer")==0)
