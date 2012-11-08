@@ -47,22 +47,22 @@
 		<Cursor position="1130" topLine="13" />
 	</File>
 	<File name="enemies\boss.cpp" open="1" top="1" tabpos="12">
-		<Cursor position="4854" topLine="130" />
+		<Cursor position="1387" topLine="0" />
 	</File>
 	<File name="enemies\boss.h" open="1" top="0" tabpos="13">
-		<Cursor position="1259" topLine="15" />
+		<Cursor position="560" topLine="15" />
 	</File>
 	<File name="enemies\boss\lilith.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="1125" topLine="12" />
+		<Cursor position="814" topLine="0" />
 	</File>
 	<File name="enemies\boss\lilith.h" open="1" top="0" tabpos="11">
 		<Cursor position="806" topLine="0" />
 	</File>
 	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="2751" topLine="61" />
+		<Cursor position="9382" topLine="423" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="9">
-		<Cursor position="3595" topLine="115" />
+		<Cursor position="4862" topLine="118" />
 	</File>
 	<File name="image_manager.cpp" open="0" top="0" tabpos="15">
 		<Cursor position="3058" topLine="22" />

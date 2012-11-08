@@ -7,7 +7,8 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
            std::tr1::shared_ptr<Player> player2, bool allowTeleport) :
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2, allowTeleport),
             startedLasor(false),
-            laserRate(5)
+            laserRate(5),
+            laserFocusing(false)
 {
     timerLaser.start();
     timerAddMove.start();
