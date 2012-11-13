@@ -40,6 +40,7 @@ class Adds : public Enemy
         Timer timer, timerMove;
 
         sf::Vector2f relativePosition;
+        sf::IntRect getBoundingBox();
 
         //Sauvegarde sur un timer de déplacement
         float savedTimerMove;

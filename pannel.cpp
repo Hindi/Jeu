@@ -46,41 +46,35 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     position.x = 170;
     position.y = 0;
     spriteLife1.SetPosition(position);
-    spriteLife1.Scale(0.75,0.75);
     position.x += 30;
     spriteLife2.SetPosition(position);
-    spriteLife2.Scale(0.75,0.75);
     position.x += 30;
     spriteLife3.SetPosition(position);
-    spriteLife3.Scale(0.75,0.75);
 
     position.x = 770;
     position.y = 0;
     spriteLife21.SetPosition(position);
-    spriteLife21.Scale(0.75,0.75);
     position.x += 30;
     spriteLife22.SetPosition(position);
-    spriteLife22.Scale(0.75,0.75);
     position.x += 30;
     spriteLife23.SetPosition(position);
-    spriteLife23.Scale(0.75,0.75);
 
     //Sprite pour les armures
 
     position.x = 170;
-    position.y = 20;
+    position.y = 35;
     spriteArmor1.SetPosition(position);
-    position.x += 50;
+    position.x += 30;
     spriteArmor2.SetPosition(position);
-    position.x += 50;
+    position.x += 30;
     spriteArmor3.SetPosition(position);
 
     position.x = 770;
-    position.y = 20;
+    position.y = 35;
     spriteArmor21.SetPosition(position);
-    position.x += 50;
+    position.x += 30;
     spriteArmor22.SetPosition(position);
-    position.x += 50;
+    position.x += 30;
     spriteArmor23.SetPosition(position);
 }
 

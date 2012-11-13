@@ -499,8 +499,8 @@ void Enemy::pauseTimer()
 IntRect Enemy::getBoundingBox()
 {
     IntRect boundingBox;
-    boundingBox.Left = m_position.x + image->GetWidth()/4;
-    boundingBox.Right = boundingBox.Left + image->GetWidth()-image->GetWidth()/2;
+    boundingBox.Left = m_position.x;
+    boundingBox.Right = boundingBox.Left + image->GetWidth()/m_anim.Size();
     boundingBox.Top = m_position.y;
     boundingBox.Bottom = boundingBox.Top + image->GetHeight();
 

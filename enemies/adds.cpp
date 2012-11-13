@@ -36,3 +36,13 @@ void Adds::horizontalMove(int speed)
     m_animated->SetPosition(m_position);
 }
 
+IntRect Adds::getBoundingBox()
+{
+    IntRect boundingBox;
+    boundingBox.Left = m_position.x+20;
+    boundingBox.Right = boundingBox.Left + image->GetWidth()/m_anim.Size()-40;
+    boundingBox.Top = m_position.y;
+    boundingBox.Bottom = boundingBox.Top + image->GetHeight();
+
+    return boundingBox;
+}

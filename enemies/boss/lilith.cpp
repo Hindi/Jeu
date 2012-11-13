@@ -68,7 +68,7 @@ IntRect Lilith::getBoundingBox()
     IntRect boundingBox;
     boundingBox.Left = m_position.x;
     boundingBox.Right = boundingBox.Left + image->GetWidth();
-    boundingBox.Top = m_position.y;
+    boundingBox.Top = m_position.y ;
     boundingBox.Bottom = boundingBox.Top + image->GetHeight()/1.5;
 
     return boundingBox;
@@ -78,10 +78,10 @@ IntRect Lilith::getBoundingBox()
 IntRect Lilith::getWeakBox()
 {
     IntRect boundingBox;
-    boundingBox.Left = m_position.x  + image->GetWidth()/2 - 8;
-    boundingBox.Right = boundingBox.Left + 15;
-    boundingBox.Top = m_position.y + image->GetHeight()-10;
-    boundingBox.Bottom = boundingBox.Top + 10;
+    boundingBox.Left = m_position.x  + image->GetWidth()/2 - 40;
+    boundingBox.Right = boundingBox.Left + 70;
+    boundingBox.Top = m_position.y + image->GetHeight()-20;
+    boundingBox.Bottom = boundingBox.Top + 20;
 
     return boundingBox;
 }
