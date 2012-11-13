@@ -77,6 +77,8 @@ void Population::checkPopulation()
                             (*lit)->fireCircle();
                         if(strcmp((*lit)->getType(), "boss") == 0)
                             (*lit)->fire();
+                        if(strcmp((*lit)->getType(), "spawner") == 0)
+                            (*lit)->fireSpawner();
                     }
                     if((*lit)->canTeleport())
                     {
@@ -197,18 +199,18 @@ void Population::unStop()
     }
 }
 
-void Population::createShip(Vector2f position, const std::string &move, bool spawner)
+void Population::createShip(Vector2f position, const std::string &move)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, spawner, player, player2, false));
+    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, false, player, player2, false));
     m_enemies.push_back(a);
 }
 
-void Population::createFlyingSaucer(Vector2f position, const std::string &move, bool spawner)
+void Population::createFlyingSaucer(Vector2f position, const std::string &move)
 {
     m_coefSpeed = 20;
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 2, 2, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, spawner, player, player2, false));
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 2, 2, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, false, player, player2, false));
     m_enemies.push_back(a);
 }
 
@@ -220,11 +222,21 @@ void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpee
     currentBoss->pushAdd(add);
 }
 
+void Population::createSpawner(Vector2f position, const std::string &move)
+{
+    m_coefSpeed = 20;
+    //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 2, 2, "images/Spawner.png", position, "spawner", move, 1, m_coefSpeed, 2, true, player, player2, false));
+    m_enemies.push_back(a);
+}
+
 void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 {
     if(enemy->isSpawner() && (enemy->getSpawnTime() - enemy->getLastSpawnTime() > enemy->getSpawnRate()))
     {
         Vector2f position = enemy->getPosition();
+        position.x += 10;
+        position.y += 40;
         m_coefSpeed = 10;
         tr1::shared_ptr<Enemy> a(new Enemy(5, 5, 50, 5, 5, "images/enemySpawn1.png", position, "spawn", "spawnMove" ,1, m_coefSpeed, 1, false, player, player2, false));
         m_enemies.push_back(a);

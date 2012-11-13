@@ -1,5 +1,6 @@
 timer 1 
 boss lilith
-spawn flyingSaucer right 50 50 false
+spawn flyingSaucer right 50 50
+spawn spawner don'tmove 50 50
 END 
 OVER

@@ -49,8 +49,8 @@ void Script::niveau1()
         currentLevel = 1;
         //Variables enemy :
         Vector2f positionEnemy(50, 150);
-
-        Population::getInstance()->createShip(positionEnemy, "roundtrip",true);/*
+/*
+        Population::getInstance()->createShip(positionEnemy, "roundtrip",true);
         positionEnemy.x +=100;
         m_population.createShip(positionEnemy, "roundtrip");
         positionEnemy.x +=100;
@@ -83,7 +83,7 @@ void Script::niveau2()
     //Variables enemy :
     Vector2f positionEnemy(500, 300);
 
-    Population::getInstance()->createShip(positionEnemy, "Down",true);
+//    Population::getInstance()->createShip(positionEnemy, "Down",true);
     timer.sleep(10000);
     finished = true;
 }

@@ -100,11 +100,12 @@ void Level_manager::checkLevel()
                 else if(strcmp(buffer, "spawn")==0)
                 {
                     Vector2f position((1366 / 100) * atoi(tokens[3].c_str()), (768 / 100) * atoi(tokens[4].c_str()));
-                    bool b = stringToBool(tokens[5]);
                     if(strcmp(tokens[1].data(),"ship")==0)
-                        Population::getInstance()->createShip(position, tokens[2].data(), b);
+                        Population::getInstance()->createShip(position, tokens[2].data());
                     else if(strcmp(tokens[1].data(),"flyingSaucer")==0)
-                        Population::getInstance()->createFlyingSaucer(position, tokens[2].data(), b);
+                        Population::getInstance()->createFlyingSaucer(position, tokens[2].data());
+                    else if(strcmp(tokens[1].data(),"spawner")==0)
+                        Population::getInstance()->createSpawner(position, tokens[2].data());
                 }
                 else if(strcmp(buffer, "boss")==0)
                 {

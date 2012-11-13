@@ -40,6 +40,7 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
             m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
             m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+            m_animated->Scale(0.75, 0.75);
        }
     else
         m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
@@ -454,6 +455,22 @@ void Enemy::VFire()
         projectile1->setPosition(positionProjectile);
         Projectile_manager::getInstance()->addEnemyProjectile(projectile1);
     }
+}
+
+void Enemy::fireSpawner()
+{
+    const string filepath = "images/projectile.png";
+    Vector2f positionProjectile(m_position);
+    positionProjectile.x += -10;
+    positionProjectile.y += 65;
+    std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, 10), m_coefSpeed));
+    projectile->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+
+    positionProjectile.x += 50;
+    std::tr1::shared_ptr<Projectile> projectile2(new Projectile(filepath, positionProjectile, Vector2f(0, 10), m_coefSpeed));
+    projectile2->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile2);
 }
 
 list<std::tr1::shared_ptr<Projectile> >* Enemy::getProjectiles()

@@ -190,8 +190,6 @@ void Collision::manageProjectileCollision()
                 if(strcmp((*li)->getType(), "boss")==0)
                     {
                         bossWeakRecy = (*li)->getWeakBox();
-                        cout << "top : "  << projectileRect.Top << " " << bossWeakRecy.Top << endl;
-                        cout << projectileRect.Top << " " << bossWeakRecy.Bottom << endl;
                         if(projectileRect.Top > bossWeakRecy.Top && projectileRect.Top < bossWeakRecy.Bottom && projectileRect.Left > bossWeakRecy.Left && projectileRect.Right < bossWeakRecy.Right)
                         {
                             //Si oui l'ennemis perd de la vie

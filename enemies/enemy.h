@@ -76,6 +76,7 @@ class Enemy : public Unit
          void fireCircle();//en cercle
          void VFire();//Tir en V à l'avant
          virtual void fire();
+         void fireSpawner();
 
         //Accesseur sur les projectiles en cours
          std::list<std::tr1::shared_ptr<Projectile> >* getProjectiles();
