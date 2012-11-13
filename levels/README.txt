@@ -15,18 +15,18 @@ La fin du niveau est précisée par le mot clé "OVER".
 
 Le mot clé "spawn" précise que la ligne concerne une créatio, d'ennemi. Exemple :
 
-spawn ship down 200 500 true
+spawn ship down 200 500
 
 ship : le type d'ennemis
 down : le type de déplacement qu'il va effectuer
 200 500 : le vecteur position où il va apparaitre (origine placée en haut à gauche de l'écran)
-true : booleen qui définit si l'ennnemis peut spawn des adds ou non
 
 le mot clé boss précède le nom du boss à spawn.
 
 types d'ennemis possibles :
 - ship
 - flyingSaucer
+- spawner
 
 boss :
 - lilith
