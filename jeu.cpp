@@ -84,7 +84,7 @@ void Jeu::start(short niveau)
     {
         if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() )))
         {
-            if(level_manager->isFinished())
+            if(level_manager->isFinished() && !population->haveEnnemyInProgress())
             {
                 this->saveDatas(player, player2);
                 m_menu.setLevel(level_manager->getLevelNumber() + 1);
