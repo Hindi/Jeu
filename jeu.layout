@@ -22,7 +22,7 @@
 	<File name="background.h" open="0" top="0" tabpos="13">
 		<Cursor position="591" topLine="3" />
 	</File>
-	<File name="collision.cpp" open="1" top="0" tabpos="10">
+	<File name="collision.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="6087" topLine="179" />
 	</File>
 	<File name="collision.h" open="0" top="0" tabpos="6">
@@ -61,7 +61,7 @@
 	<File name="enemies\boss\lilith.h" open="0" top="0" tabpos="11">
 		<Cursor position="806" topLine="13" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="6">
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="16659" topLine="453" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="7">
@@ -74,31 +74,31 @@
 		<Cursor position="510" topLine="0" />
 	</File>
 	<File name="jeu.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="5854" topLine="0" />
+		<Cursor position="9023" topLine="281" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="3">
-		<Cursor position="567" topLine="12" />
+		<Cursor position="1078" topLine="30" />
 	</File>
-	<File name="levels\level_manager.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="3608" topLine="90" />
+	<File name="levels\level_manager.cpp" open="0" top="0" tabpos="11">
+		<Cursor position="3608" topLine="99" />
 	</File>
 	<File name="levels\level_manager.h" open="0" top="0" tabpos="16">
 		<Cursor position="879" topLine="6" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="322" topLine="0" />
+		<Cursor position="488" topLine="10" />
 	</File>
-	<File name="menu.cpp" open="0" top="0" tabpos="14">
-		<Cursor position="4957" topLine="141" />
+	<File name="menu.cpp" open="1" top="1" tabpos="10">
+		<Cursor position="5399" topLine="129" />
 	</File>
-	<File name="menu.h" open="0" top="0" tabpos="10">
-		<Cursor position="393" topLine="7" />
+	<File name="menu.h" open="1" top="0" tabpos="11">
+		<Cursor position="166" topLine="0" />
 	</File>
-	<File name="pannel.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="2309" topLine="54" />
+	<File name="pannel.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="5987" topLine="204" />
 	</File>
-	<File name="pannel.h" open="0" top="0" tabpos="13">
-		<Cursor position="154" topLine="0" />
+	<File name="pannel.h" open="1" top="0" tabpos="13">
+		<Cursor position="1803" topLine="50" />
 	</File>
 	<File name="player.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="12798" topLine="376" />
@@ -112,7 +112,7 @@
 	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="1384" topLine="37" />
 	</File>
-	<File name="script.cpp" open="1" top="0" tabpos="12">
+	<File name="script.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="2104" topLine="73" />
 	</File>
 	<File name="script.h" open="0" top="0" tabpos="14">
