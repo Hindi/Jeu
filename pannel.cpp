@@ -214,6 +214,7 @@ void Pannel::drawScore()
         text.SetPosition(position);
         app.Draw(text);
 
+        playerScore = m_player->getScore() + m_player2->getScore();
         position.y += 40;
         std::ostringstream o;
         o << (m_player->getScore() + m_player2->getScore());

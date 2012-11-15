@@ -26,6 +26,7 @@ class Pannel
         void drawEnemyStats();
         void drawArmor();
 
+
     protected:
         //L'image sur le pannel
         sf::Image *imagePannel;
@@ -61,9 +62,10 @@ class Pannel
         sf::Sprite spriteArmor22;
         sf::Sprite spriteArmor23;
 
-
         //Position du pannel
         sf::Vector2f m_position;
+
+        int playerScore;
 
         //Echelle d'affichage
         const sf::Vector2f m_scale;

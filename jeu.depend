@@ -2272,10 +2272,10 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1353012253 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1353016675 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\jeu.h
+1353016246 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
 	<list>
 	"player.h"
@@ -2297,7 +2297,7 @@
 	"const.h"
 	"levels/level_manager.h"
 
-1352203726 c:\users\shalafi\documents\github\jeu\pannel.h
+1353016857 c:\users\shalafi\documents\github\jeu\pannel.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
@@ -2306,11 +2306,12 @@
 	"image_manager.h"
 	"population.h"
 
-1351619388 c:\users\shalafi\documents\github\jeu\menu.h
+1353016796 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
 	"const.h"
+	<sstream>
 
 1351619388 c:\users\shalafi\documents\github\jeu\script.h
 	<SFML/Graphics.hpp>
@@ -2327,7 +2328,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1352218967 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1353016709 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2336,10 +2337,10 @@
 	"const.h"
 	<tr1/memory>
 
-1351619388 source:c:\users\shalafi\documents\github\jeu\menu.cpp
+1353016820 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
-1352808364 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
+1353016050 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
 	"pannel.h"
 
 1351619388 source:c:\users\shalafi\documents\github\jeu\player.cpp

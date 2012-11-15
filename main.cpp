@@ -22,6 +22,7 @@ int main()
     app.UseVerticalSync(true);
     app.SetFramerateLimit(60);
 
+    int stateLevel, score(0);
 
     //Gestionnaire d'images
     image_manager *imageManager;
@@ -69,7 +70,7 @@ int main()
                 {
                     case 1:
                     {
-                        jeu.start(menu.getLevel());
+                        stateLevel = jeu.start(menu.getLevel());
                         break;
                     }
                     case 2:
@@ -83,9 +84,8 @@ int main()
                 }
             }
         }
-
-
-    menu.drawMainMenu(select);
+    score = jeu.getTotalScore();
+    menu.drawMainMenu(select, score);
     app.Display();
     timer.sleep(1);
     }

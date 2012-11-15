@@ -39,6 +39,22 @@ Menu::Menu():
     *imageHow = image_manager::getInstance()->getImage("images/CommentJouer.png");
     *imageCredit = image_manager::getInstance()->getImage("images/Credits.png");
 
+    //Fin de niveau
+    imageSuivant = new Image;
+    imageSuivantFade = new Image;
+    imageRecommencer = new Image;
+    imageRecommencerFade = new Image;
+    imageEndLevel = new Image;
+    *imageSuivant = image_manager::getInstance()->getImage("images/suivant.png");
+    *imageSuivantFade = image_manager::getInstance()->getImage("images/suivant_fade.png");
+    *imageRecommencer = image_manager::getInstance()->getImage("images/recommencer.png");
+    *imageRecommencerFade = image_manager::getInstance()->getImage("images/recommencer_fade.png");
+    *imageEndLevel = image_manager::getInstance()->getImage("images/MenuNiveauFini.png");
+
+    spriteEndLevel.SetImage(*imageEndLevel);
+    spriteSuivant.SetPosition(Vector2f(400, 500));
+    spriteRecommencer.SetPosition(Vector2f(800, 500));
+
     //Image de mise en pause
     position.y = 0;
     position.x = 0;
@@ -94,41 +110,81 @@ Menu::~Menu()
 }
 
 //Le menu principal avec gestion du highlight avec un système de points
-void Menu::drawMainMenu(int select)
+void Menu::drawMainMenu(int select, int score)
 {
     if(currentLevel > 1)
     {
-        //spritePlay.SetImage(*imageContinuer);
-    }
+        switch(select)
+        {
+            case 1:
+            {
+                spriteSuivant.SetImage(*imageSuivant);
+                spriteRecommencer.SetImage(*imageRecommencerFade);
+                break;
+            }
+            case 2:
+            {
+                spriteSuivant.SetImage(*imageSuivantFade);
+                spriteRecommencer.SetImage(*imageRecommencer);
+                break;
+            }
+        }
+        app.Draw(spriteEndLevel);
+        app.Draw(spriteSuivant);
+        app.Draw(spriteRecommencer);
+        Font font;
+        if(!font.LoadFromFile("font/cubos.ttf"))
+        {
+            cout << "Erreur lors du chargement de la font pannel" << endl;
+        }
+        else
+        {
+            string result;
+            std::ostringstream o;
+            o << (score);
+            result = o.str();
+            String text;
+            text.SetText(result);
+            text.SetFont(font);
+            text.SetSize(50);
+            text.SetColor(Color(255, 255, 255));
+            text.SetPosition(Vector2f(600, 382));
+            app.Draw(text);
+        }
 
-    switch(select)
-    {
-        case 1:
-        {
-            spritePlay.SetImage(*imagePlay);
-            spriteHow.SetImage(*imageFadeHow);
-            spriteCredit.SetImage(*imageFadeCredit);
-            break;
-        }
-        case 2:
-        {
-            spritePlay.SetImage(*imageFadePlay);
-            spriteHow.SetImage(*imageHow);
-            spriteCredit.SetImage(*imageFadeCredit);
-            break;
-        }
-        case 3:
-        {
-            spritePlay.SetImage(*imageFadePlay);
-            spriteHow.SetImage(*imageFadeHow);
-            spriteCredit.SetImage(*imageCredit);
-            break;
-        }
     }
-    app.Draw(spritePlay);
-    app.Draw(spriteCredit);
-    app.Draw(spriteHow);
+    else
+    {
+        switch(select)
+        {
+            case 1:
+            {
+                spritePlay.SetImage(*imagePlay);
+                spriteHow.SetImage(*imageFadeHow);
+                spriteCredit.SetImage(*imageFadeCredit);
+                break;
+            }
+            case 2:
+            {
+                spritePlay.SetImage(*imageFadePlay);
+                spriteHow.SetImage(*imageHow);
+                spriteCredit.SetImage(*imageFadeCredit);
+                break;
+            }
+            case 3:
+            {
+                spritePlay.SetImage(*imageFadePlay);
+                spriteHow.SetImage(*imageFadeHow);
+                spriteCredit.SetImage(*imageCredit);
+                break;
+            }
+        }
+        app.Draw(spritePlay);
+        app.Draw(spriteCredit);
+        app.Draw(spriteHow);
+    }
 }
+
 
 //Le menu de pause avec gestion du highlight avec un système de points
 void Menu::drawPauseMenu(int select)

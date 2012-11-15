@@ -20,7 +20,7 @@ Jeu::~Jeu()
 
 }
 
-void Jeu::start(short niveau)
+int Jeu::start(short niveau)
 {
     bool invincible(false);
     int invincibleStart;
@@ -84,10 +84,12 @@ void Jeu::start(short niveau)
     {
         if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() )))
         {
+            int state = 0;
             if(level_manager->isFinished() && !population->haveEnnemyInProgress())
             {
                 this->saveDatas(player, player2);
                 m_menu.setLevel(level_manager->getLevelNumber() + 1);
+                state = 1;
             }
             else
                 m_menu.setLevel(1);
@@ -98,7 +100,7 @@ void Jeu::start(short niveau)
             scoreManager->reset();
             projectile_manager->reset();
             m_quit = false;
-            break;
+            return state;
         }
 
         app.Clear();
@@ -296,4 +298,9 @@ void Jeu::saveDatas(std::tr1::shared_ptr<Player> player1, std::tr1::shared_ptr<P
 {
     scorePlayer1 = player1->getScore();
     scorePlayer2 = player2->getScore();
+}
+
+int Jeu::getTotalScore()
+{
+    return scorePlayer1 + scorePlayer2;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "image_manager.h"
 #include "const.h"
+#include <sstream>
 
 class Menu
 {
@@ -13,7 +14,9 @@ class Menu
         ~Menu();
 
         //Menu de démarrage
-        void drawMainMenu(int select);
+        void drawMainMenu(int select, int score);
+
+        void drawEndLevel(int select);
 
         //menu de pause
         void drawPauseMenu(int select);
@@ -36,6 +39,11 @@ class Menu
         sf::Image *imageFadePause;
         sf::Image *imageFadeReprendre;
         sf::Image *imageFadeArreter;
+        sf::Image *imageSuivant;
+        sf::Image *imageSuivantFade;
+        sf::Image *imageRecommencer;
+        sf::Image *imageRecommencerFade;
+        sf::Image *imageEndLevel;
         //sf::Image *imageContinuer;
         //sf::Image *imageFadeContinuer;
 
@@ -48,6 +56,9 @@ class Menu
         sf::Sprite spriteArreter;
         sf::Vector2f position;
         sf::Vector2f m_scale;
+        sf::Sprite spriteSuivant;
+        sf::Sprite spriteRecommencer;
+        sf::Sprite spriteEndLevel;
 
         short currentLevel;
 };

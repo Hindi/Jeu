@@ -30,12 +30,14 @@ class Jeu
         ~Jeu();
 
         //Démarre la partie
-        void start(short niveau);
+        int start(short niveau);
 
         //Met en pause la partie
         void pause(sf::Event event, Pannel &pannel,std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
 
         void saveDatas(std::tr1::shared_ptr<Player> player1, std::tr1::shared_ptr<Player> player2);
+
+        int getTotalScore();
 
     protected:
         //Taille de la fenêtre
