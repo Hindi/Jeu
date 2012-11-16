@@ -55,15 +55,14 @@ void Level_manager::startLevel(short level)
         while(!strcmp(ligne.data(), "OVER")==0)
         {
             getline(fichier, ligne);
-            tokenize(ligne, tokens);
             currentLevel.push_back(ligne);
-            if(strcmp(tokens[0].c_str(), "timer"))
+
+            tokenize(ligne, tokens);
+            if(strcmp(tokens[0].c_str(), "timer") ==0)
             {
                 istringstream buffer(tokens[1]);
-                int value(0);
-                buffer >> value;
+                int value = atoi(tokens[1].c_str());
                 totalTime += value;
-                cout << value << endl;
             }
         }
         fichier.close();
@@ -82,7 +81,6 @@ void Level_manager::checkLevel()
             tokenize(currentLevel[vectorPosition], tokens);
 
             const char* buffer = tokens[0].c_str();
-
 
                 //On compare ce qu'il lfaut
                 //On gère d'abord le timer
