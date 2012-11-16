@@ -105,8 +105,11 @@ Menu::~Menu()
     delete imageArreter;
     delete imageFadeReprendre;
     delete imageFadeArreter;
-    //delete imageContinuer;
-    //delete imageFadeContinuer;
+    delete imageSuivant;
+    delete imageSuivantFade;
+    delete imageRecommencer;
+    delete imageRecommencerFade;
+    delete imageEndLevel;
 }
 
 //Le menu principal avec gestion du highlight avec un système de points

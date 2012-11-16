@@ -86,10 +86,10 @@ int main()
                 }
             }
         }
-    score = jeu.getTotalScore();
-    menu.drawMainMenu(select, score);
-    app.Display();
-    timer.sleep(1);
+        score = jeu.getTotalScore();
+        menu.drawMainMenu(select, score);
+        app.Display();
+        timer.sleep(1);
     }
     return 0;
 }

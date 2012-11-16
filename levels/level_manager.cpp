@@ -171,3 +171,13 @@ bool stringToBool(std::string s)
     is >> std::boolalpha >> b;
     return b;
 }
+
+int Level_manager::getLevelSize()
+{
+    return currentLevel.size();
+}
+
+int Level_manager::getLevelPosition()
+{
+    return vectorPosition;
+}

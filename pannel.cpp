@@ -33,7 +33,15 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     imageArmor = new Image;
     imageArmorFade = new Image;
 
-    //TODO : CHANGER L'INIT DES COEURS
+    imageProgressBar = new Image;
+    *imageProgressBar = image_manager::getInstance()->getImage("images/progression-barre.png");
+    imageProgressBackground = new Image;
+    spriteProgressBar.SetImage(*imageProgressBar);
+    spriteProgressBar.SetPosition(1300, 740);
+
+    *imageProgressBackground = image_manager::getInstance()->getImage("images/progression-barre-fade.png");
+    spriteProgressBackground.SetImage(*imageProgressBackground);
+    spriteProgressBackground.SetPosition(1300, 600);
 
     //Chargment des images de vie
     *imageLife = image_manager::getInstance()->getImage("images/Vie.png");
@@ -86,6 +94,8 @@ Pannel::~Pannel()
     delete imageArmor;
     delete imageArmorFade;
     delete imageTopPannel;
+    delete imageProgressBar;
+    delete imageProgressBackground;
 }
 
 Sprite* Pannel::getSprite()
@@ -103,6 +113,7 @@ void Pannel::checkPannel()
     this->drawScore();
     this->drawEnemyStats();
     this->drawArmor();
+    this->drawProgress();
 }
 
 //Gestion des icones de vie (transparent ou non)
@@ -333,4 +344,14 @@ void Pannel::drawArmor()
     app.Draw(spriteArmor21);
     app.Draw(spriteArmor22);
     app.Draw(spriteArmor23);
+}
+
+void Pannel::drawProgress()
+{
+    float position = Level_manager::getInstance()->getLevelPosition();
+    float size = Level_manager::getInstance()->getLevelSize();
+    spriteProgressBar.SetSubRect(IntRect(0, imageProgressBar->GetHeight(), imageProgressBar->GetWidth(), imageProgressBar->GetHeight() - imageProgressBar->GetHeight()*(position/size)));
+
+    app.Draw(spriteProgressBackground);
+    app.Draw(spriteProgressBar);
 }

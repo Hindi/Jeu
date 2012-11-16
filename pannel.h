@@ -7,6 +7,7 @@
 #include "const.h"
 #include "image_manager.h"
 #include "population.h"
+#include "levels/level_manager.h"
 
 class Pannel
 {
@@ -25,6 +26,7 @@ class Pannel
         void drawScore();
         void drawEnemyStats();
         void drawArmor();
+        void drawProgress();
 
 
     protected:
@@ -61,6 +63,14 @@ class Pannel
         sf::Sprite spriteArmor21;
         sf::Sprite spriteArmor22;
         sf::Sprite spriteArmor23;
+
+        //Images de l'avancement
+        sf::Image *imageProgressBar;
+        sf::Image *imageProgressBackground;
+
+        //Sprites de l'avancement
+        sf::Sprite spriteProgressBar;
+        sf::Sprite spriteProgressBackground;
 
         //Position du pannel
         sf::Vector2f m_position;
