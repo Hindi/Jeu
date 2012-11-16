@@ -49,14 +49,14 @@ int main()
             {
                 app.Close();
             }
-            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down || Event.Key.Code == sf::Key::Right))
             {
                 if(select == MAX_MENU)
                     select +=0;
                 else
                     select +=1;
             }
-            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up || Event.Key.Code == sf::Key::Left))
             {
                 if(select == 1)
                     select -=0;
@@ -75,6 +75,8 @@ int main()
                     }
                     case 2:
                     {
+                        if(menu.getLevel() > 1)
+                            stateLevel = jeu.start(menu.getLevel()-1);
                         break;
                     }
                     case 3:
