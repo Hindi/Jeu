@@ -17,9 +17,8 @@ class Level_manager
         void checkLevel();
         void startLevel(short level);
         short getLevelNumber();
-        int getLevelSize();
-        int getLevelPosition();
         bool  isFinished();
+        float getLevelProgress();
 
         unsigned int split(const std::string &txt, std::vector<std::string> &strs);
 
@@ -29,7 +28,7 @@ class Level_manager
         virtual ~Level_manager();
         static Level_manager* _singleton;
 
-        Timer timer;
+        Timer timer, timerProgression;
         short spawnTime;
         short levelNumber;
         int m_position;
@@ -39,6 +38,7 @@ class Level_manager
         std::ifstream fichier;
 
         int vectorPosition;
+        int totalTime;
 
 };
 

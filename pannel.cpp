@@ -37,7 +37,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     *imageProgressBar = image_manager::getInstance()->getImage("images/progression-barre.png");
     imageProgressBackground = new Image;
     spriteProgressBar.SetImage(*imageProgressBar);
-    spriteProgressBar.SetPosition(1300, 740);
+    spriteProgressBar.SetPosition(1300, 600);
 
     *imageProgressBackground = image_manager::getInstance()->getImage("images/progression-barre-fade.png");
     spriteProgressBackground.SetImage(*imageProgressBackground);
@@ -348,9 +348,10 @@ void Pannel::drawArmor()
 
 void Pannel::drawProgress()
 {
-    float position = Level_manager::getInstance()->getLevelPosition();
-    float size = Level_manager::getInstance()->getLevelSize();
-    spriteProgressBar.SetSubRect(IntRect(0, imageProgressBar->GetHeight(), imageProgressBar->GetWidth(), imageProgressBar->GetHeight() - imageProgressBar->GetHeight()*(position/size)));
+/*    float position = Level_manager::getInstance()->getLevelPosition();
+    float size = Level_manager::getInstance()->getLevelSize();*/
+    float progress = Level_manager::getInstance()->getLevelProgress();
+    spriteProgressBar.SetSubRect(IntRect(0, imageProgressBar->GetHeight(), imageProgressBar->GetWidth(), imageProgressBar->GetHeight() - imageProgressBar->GetHeight()*progress));
 
     app.Draw(spriteProgressBackground);
     app.Draw(spriteProgressBar);

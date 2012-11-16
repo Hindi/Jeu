@@ -8,9 +8,11 @@ Level_manager *Level_manager::_singleton= NULL;
 Level_manager::Level_manager():
             spawnTime(0),
             m_position(0),
-            levelOver(false)
+            levelOver(false),
+            totalTime(0)
 {
     timer.start();
+    timerProgression.start();
 }
 
 Level_manager::~Level_manager()
@@ -48,11 +50,21 @@ void Level_manager::startLevel(short level)
     ifstream fichier(filepath, ios::in);
     if(fichier)  // si l'ouverture a réussi
     {
+        vector<string> tokens;
         string ligne;
         while(!strcmp(ligne.data(), "OVER")==0)
         {
             getline(fichier, ligne);
+            tokenize(ligne, tokens);
             currentLevel.push_back(ligne);
+            if(strcmp(tokens[0].c_str(), "timer"))
+            {
+                istringstream buffer(tokens[1]);
+                int value(0);
+                buffer >> value;
+                totalTime += value;
+                cout << value << endl;
+            }
         }
         fichier.close();
     }
@@ -172,12 +184,7 @@ bool stringToBool(std::string s)
     return b;
 }
 
-int Level_manager::getLevelSize()
+float Level_manager::getLevelProgress()
 {
-    return currentLevel.size();
-}
-
-int Level_manager::getLevelPosition()
-{
-    return vectorPosition;
+    return timerProgression.getTime() / totalTime;
 }
