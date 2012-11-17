@@ -61,8 +61,8 @@
 	<File name="enemies\boss\lilith.h" open="0" top="0" tabpos="11">
 		<Cursor position="806" topLine="13" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="16659" topLine="453" />
+	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="3475" topLine="113" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="7">
 		<Cursor position="2696" topLine="64" />
@@ -79,14 +79,14 @@
 	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="1078" topLine="16" />
 	</File>
-	<File name="levels\level_manager.cpp" open="1" top="1" tabpos="14">
-		<Cursor position="1773" topLine="51" />
+	<File name="levels\level_manager.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="1400" topLine="0" />
 	</File>
 	<File name="levels\level_manager.h" open="1" top="0" tabpos="15">
 		<Cursor position="702" topLine="6" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2591" topLine="55" />
+		<Cursor position="267" topLine="1" />
 	</File>
 	<File name="menu.cpp" open="1" top="0" tabpos="10">
 		<Cursor position="4231" topLine="89" />
@@ -95,7 +95,7 @@
 		<Cursor position="166" topLine="18" />
 	</File>
 	<File name="pannel.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="1419" topLine="35" />
+		<Cursor position="1419" topLine="0" />
 	</File>
 	<File name="pannel.h" open="1" top="0" tabpos="13">
 		<Cursor position="1862" topLine="39" />
@@ -107,7 +107,7 @@
 		<Cursor position="240" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2282" topLine="57" />
+		<Cursor position="2282" topLine="196" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="1384" topLine="37" />
