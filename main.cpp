@@ -13,7 +13,7 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
-- boss qui ne reçoit plus de dégats
+
 */
 
 int main()
