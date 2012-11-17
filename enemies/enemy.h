@@ -83,7 +83,7 @@ class Enemy : public Unit
 
 
         //Défini si l'ennemi peut tirer ou non
-         virtual bool canFire();
+         bool canFire();
 
         //Accesseur sur le type de tir
          const char* getType();

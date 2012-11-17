@@ -84,6 +84,10 @@
 		<Unit filename="enemies\boss\lilith.h" />
 		<Unit filename="enemies\enemy.cpp" />
 		<Unit filename="enemies\enemy.h" />
+		<Unit filename="enemies\flying_saucer.cpp" />
+		<Unit filename="enemies\flying_saucer.h" />
+		<Unit filename="enemies\ship.cpp" />
+		<Unit filename="enemies\ship.h" />
 		<Unit filename="image_manager.cpp" />
 		<Unit filename="image_manager.h" />
 		<Unit filename="jeu.cpp" />

@@ -19,6 +19,8 @@
 #include "timer.h"
 #include "enemies/boss/lilith.h"
 #include "enemies/adds.h"
+#include "enemies/ship.h"
+#include "enemies/flying_saucer.h"
 
 //Permet de stocker et gérer les ennemis
 

@@ -2178,7 +2178,7 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1353066387 c:\users\shalafi\documents\github\jeu\population.h
+1353177163 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2197,6 +2197,8 @@
 	"timer.h"
 	"enemies/boss/lilith.h"
 	"enemies/adds.h"
+	"enemies/ship.h"
+	"enemies/flying_saucer.h"
 
 1348518742 c:\users\shalafi\documents\github\jeu\enemy.h
 	<list>
@@ -2347,7 +2349,7 @@
 1352721813 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1353066387 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1353178109 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2413,10 +2415,10 @@
 1353066387 source:c:\users\shalafi\documents\github\jeu\enemies\adds.cpp
 	"adds.h"
 
-1353066387 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
+1353110975 source:c:\users\shalafi\documents\github\jeu\enemies\enemy.cpp
 	"enemy.h"
 
-1353066387 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
+1353178282 c:\users\shalafi\documents\github\jeu\enemies\enemy.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2453,7 +2455,7 @@
 	<vector>
 	"../const.h"
 
-1352721813 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1353177631 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
 1352721813 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
@@ -2955,4 +2957,23 @@
 
 1352216832 source:c:\users\nicolas\documents\github\jeu\unit.cpp
 	"unit.h"
+
+1353176919 source:c:\users\shalafi\documents\github\jeu\enemies\ship.cpp
+	"ship.h"
+
+1353178367 c:\users\shalafi\documents\github\jeu\enemies\ship.h
+	<SFML/Graphics.hpp>
+	"enemy.h"
+	"../player.h"
+
+1353178240 c:\users\shalafi\documents\github\jeu\enemies\flying_saucer.h
+	<SFML/Graphics.hpp>
+	"enemy.h"
+	"../player.h"
+
+1352721813 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+	"projectile_manager.h"
+
+1353177906 source:c:\users\shalafi\documents\github\jeu\enemies\flying_saucer.cpp
+	"flying_saucer.h"
 
