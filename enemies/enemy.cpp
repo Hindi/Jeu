@@ -340,9 +340,11 @@ void Enemy::fireFocus()
 
     //La position de départ du projectile
     Vector2f positionProjectile(m_position);
-    positionProjectile.x += (image->GetWidth()/2)-60;
+    positionProjectile.x += image->GetWidth()/2;
     positionProjectile.y += image->GetHeight()-20;
     const string filepath = "images/projectile4.png";
+
+    cout << positionProjectile.x  << endl;
     std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, distance1, m_coefSpeed, true));
     projectile->setPosition(positionProjectile);
 
@@ -466,7 +468,6 @@ void Enemy::fireSpawner()
     std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, 10), m_coefSpeed));
     projectile->setPosition(positionProjectile);
     Projectile_manager::getInstance()->addEnemyProjectile(projectile);
-
     positionProjectile.x += 50;
     std::tr1::shared_ptr<Projectile> projectile2(new Projectile(filepath, positionProjectile, Vector2f(0, 10), m_coefSpeed));
     projectile2->setPosition(positionProjectile);

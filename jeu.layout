@@ -61,10 +61,10 @@
 	<File name="enemies\boss\lilith.h" open="0" top="0" tabpos="11">
 		<Cursor position="806" topLine="13" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="17256" topLine="455" />
+	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="8801" topLine="315" />
 	</File>
-	<File name="enemies\enemy.h" open="1" top="1" tabpos="7">
+	<File name="enemies\enemy.h" open="1" top="0" tabpos="7">
 		<Cursor position="5310" topLine="140" />
 	</File>
 	<File name="enemies\flying_saucer.cpp" open="1" top="0" tabpos="10">
@@ -74,7 +74,7 @@
 		<Cursor position="407" topLine="0" />
 	</File>
 	<File name="enemies\ship.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="66" topLine="18" />
+		<Cursor position="64" topLine="0" />
 	</File>
 	<File name="enemies\ship.h" open="1" top="0" tabpos="9">
 		<Cursor position="365" topLine="0" />
@@ -119,7 +119,7 @@
 		<Cursor position="240" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="1798" topLine="61" />
+		<Cursor position="1798" topLine="190" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="580" topLine="2" />
@@ -148,14 +148,14 @@
 	<File name="tirs\missile_manager.h" open="0" top="0" tabpos="18">
 		<Cursor position="1149" topLine="9" />
 	</File>
-	<File name="tirs\projectile.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="3743" topLine="113" />
+	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="4531" topLine="140" />
 	</File>
 	<File name="tirs\projectile.h" open="0" top="0" tabpos="7">
 		<Cursor position="836" topLine="16" />
 	</File>
-	<File name="tirs\projectile_manager.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="3752" topLine="92" />
+	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="3760" topLine="92" />
 	</File>
 	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="17">
 		<Cursor position="1353" topLine="19" />
@@ -179,7 +179,7 @@
 		<Cursor position="666" topLine="0" />
 	</File>
 	<File name="unit.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="2040" topLine="41" />
+		<Cursor position="127" topLine="0" />
 	</File>
 	<File name="unit.h" open="0" top="0" tabpos="11">
 		<Cursor position="1492" topLine="37" />

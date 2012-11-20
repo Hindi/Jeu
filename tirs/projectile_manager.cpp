@@ -110,6 +110,7 @@ void Projectile_manager::drawProjectile()
 
 void Projectile_manager::addEnemyProjectile(std::tr1::shared_ptr<Projectile>  projectile)
 {
+    //cout << projectile->getPosition().x << endl;
     m_enemyProjectiles.push_back(projectile);
 }
 
