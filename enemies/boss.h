@@ -32,9 +32,16 @@ class Boss : public Enemy
         bool canFire();
         bool canTeleport();
         void teleport();
+        void drawHealthBar();
 
 
     protected:
+        sf::Sprite spriteHealthBackground;
+        sf::Sprite spriteHealthBar;
+
+        sf::Image *imageHealthBackground;
+        sf::Image *imageHealthBar;
+
         std::list<std::tr1::shared_ptr<Adds> > m_adds;
         const char* m_name;
         const char* m_type;
@@ -42,6 +49,7 @@ class Boss : public Enemy
         bool startedLasor;
         Timer timerLaser;
         int laserRate, currentFrame;
+        int startLife;
 
         //Variables laser
         bool startingLasor, laserFocusing, firinh;

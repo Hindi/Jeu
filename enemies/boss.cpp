@@ -8,7 +8,8 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
             Enemy(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, false, player, player2, allowTeleport),
             startedLasor(false),
             laserRate(5),
-            laserFocusing(false)
+            laserFocusing(false),
+            startLife(life)
 {
     timerLaser.start();
     timerAddMove.start();
@@ -26,6 +27,16 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     m_animatedFocus->Scale(2,2);
     m_animatedFocus->Pause();
     m_animatedFocus->SetPosition(m_position.x, m_position.y);
+
+    imageHealthBackground = new Image;
+    *imageHealthBackground = image_manager::getInstance()->getImage("images/lilith/barre_vie_fade.png");
+    imageHealthBar = new Image;
+    *imageHealthBar = image_manager::getInstance()->getImage("images/lilith/barre_vie.png");
+
+    spriteHealthBackground.SetImage(*imageHealthBackground);
+    spriteHealthBackground.SetPosition(400, 50);
+    spriteHealthBar.SetImage(*imageHealthBar);
+    spriteHealthBar.SetPosition(400, 50);
 }
 
 Boss::~Boss()
@@ -51,6 +62,7 @@ void Boss::draw()
         m_animatedFocus->anim(app.GetFrameTime());
         app.Draw(*m_animatedFocus);
     }
+    this->drawHealthBar();
 }
 
 
@@ -168,4 +180,12 @@ void Boss::teleport()
     Vector2f position(100+rand()%700+1, 200 + rand()%150+1);
     m_animated->SetPosition(Vector2f(position));
     m_position = position;
+}
+
+void Boss::drawHealthBar()
+{
+    float health = (float)m_life/(float)startLife;
+    spriteHealthBar.SetSubRect(IntRect(0, 0, imageHealthBar->GetWidth()*(health), imageHealthBar->GetHeight()));
+    app.Draw(spriteHealthBackground);
+    app.Draw(spriteHealthBar);
 }

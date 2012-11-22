@@ -1,27 +1,3 @@
-timer 2
-spawn ship right 50 50
-spawn ship don'tmove 50 50
-END 
-
-timer 4
-spawn flyingSaucer right 50 50
-spawn spawner don'tmove 50 50
-END 
-OVER
-timer 1 
-spawn flyingSaucer right 50 50
-spawn spawner don'tmove 50 50
-END 
-
-timer 2
-spawn flyingSaucer right 50 50
-spawn spawner don'tmove 50 50
-END 
-
-timer 4
-spawn flyingSaucer right 50 50
-spawn spawner don'tmove 50 50
-END 
-OVER
+boss lilith 500 500
 
 OVER
