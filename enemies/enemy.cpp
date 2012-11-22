@@ -340,11 +340,9 @@ void Enemy::fireFocus()
 
     //La position de départ du projectile
     Vector2f positionProjectile(m_position);
-    positionProjectile.x += image->GetWidth()/2;
-    positionProjectile.y += image->GetHeight()-20;
+    positionProjectile.y += image->GetHeight()-10;
     const string filepath = "images/projectile4.png";
 
-    cout << positionProjectile.x  << endl;
     std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, distance1, m_coefSpeed, true));
     projectile->setPosition(positionProjectile);
 
