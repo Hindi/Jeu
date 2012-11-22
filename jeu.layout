@@ -49,34 +49,34 @@
 	<File name="enemies\adds.h" open="0" top="0" tabpos="9">
 		<Cursor position="558" topLine="14" />
 	</File>
-	<File name="enemies\boss.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="846" topLine="3" />
+	<File name="enemies\boss.cpp" open="1" top="1" tabpos="12">
+		<Cursor position="5687" topLine="151" />
 	</File>
-	<File name="enemies\boss.h" open="0" top="0" tabpos="13">
-		<Cursor position="560" topLine="15" />
+	<File name="enemies\boss.h" open="1" top="0" tabpos="13">
+		<Cursor position="1116" topLine="17" />
 	</File>
-	<File name="enemies\boss\lilith.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="2429" topLine="63" />
+	<File name="enemies\boss\lilith.cpp" open="1" top="0" tabpos="15">
+		<Cursor position="179" topLine="0" />
 	</File>
 	<File name="enemies\boss\lilith.h" open="0" top="0" tabpos="11">
 		<Cursor position="806" topLine="13" />
 	</File>
-	<File name="enemies\enemy.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="8801" topLine="315" />
+	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="312" topLine="0" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="7">
-		<Cursor position="5310" topLine="140" />
+		<Cursor position="2894" topLine="65" />
 	</File>
-	<File name="enemies\flying_saucer.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="697" topLine="0" />
+	<File name="enemies\flying_saucer.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="361" topLine="0" />
 	</File>
-	<File name="enemies\flying_saucer.h" open="1" top="0" tabpos="11">
+	<File name="enemies\flying_saucer.h" open="0" top="0" tabpos="11">
 		<Cursor position="407" topLine="0" />
 	</File>
-	<File name="enemies\ship.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="64" topLine="0" />
+	<File name="enemies\ship.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="327" topLine="0" />
 	</File>
-	<File name="enemies\ship.h" open="1" top="0" tabpos="9">
+	<File name="enemies\ship.h" open="0" top="0" tabpos="9">
 		<Cursor position="365" topLine="0" />
 	</File>
 	<File name="image_manager.cpp" open="0" top="0" tabpos="15">
@@ -106,11 +106,11 @@
 	<File name="menu.h" open="0" top="0" tabpos="11">
 		<Cursor position="166" topLine="18" />
 	</File>
-	<File name="pannel.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="1419" topLine="0" />
+	<File name="pannel.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="1424" topLine="22" />
 	</File>
-	<File name="pannel.h" open="0" top="0" tabpos="13">
-		<Cursor position="52" topLine="0" />
+	<File name="pannel.h" open="1" top="0" tabpos="11">
+		<Cursor position="52" topLine="42" />
 	</File>
 	<File name="player.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="12798" topLine="376" />
@@ -119,7 +119,7 @@
 		<Cursor position="240" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="1798" topLine="190" />
+		<Cursor position="2159" topLine="47" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="580" topLine="2" />
@@ -148,13 +148,13 @@
 	<File name="tirs\missile_manager.h" open="0" top="0" tabpos="18">
 		<Cursor position="1149" topLine="9" />
 	</File>
-	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="13">
+	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="4531" topLine="140" />
 	</File>
 	<File name="tirs\projectile.h" open="0" top="0" tabpos="7">
 		<Cursor position="836" topLine="16" />
 	</File>
-	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="12">
+	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="3760" topLine="92" />
 	</File>
 	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="17">
@@ -181,7 +181,7 @@
 	<File name="unit.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="127" topLine="0" />
 	</File>
-	<File name="unit.h" open="0" top="0" tabpos="11">
+	<File name="unit.h" open="1" top="0" tabpos="14">
 		<Cursor position="1492" topLine="37" />
 	</File>
 </CodeBlocks_layout_file>
