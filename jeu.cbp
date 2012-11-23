@@ -64,6 +64,8 @@
 		<Unit filename="Anim.hpp" />
 		<Unit filename="Animated.cpp" />
 		<Unit filename="Animated.hpp" />
+		<Unit filename="Cheat_manager.cpp" />
+		<Unit filename="Cheat_manager.h" />
 		<Unit filename="Frame.cpp" />
 		<Unit filename="Frame.hpp" />
 		<Unit filename="background.cpp" />
