@@ -20,6 +20,7 @@
 #include "tirs/score_manager.h"
 #include "const.h"
 #include "levels/level_manager.h"
+#include "Cheat_manager.h"
 
 class Jeu
 {

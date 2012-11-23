@@ -34,6 +34,8 @@ int Jeu::start(short niveau)
     Projectile_manager *projectile_manager;
     projectile_manager = Projectile_manager::getInstance();
 
+    Cheat_manager cheatManager;
+
     //Affichage onscreen des scores
     Score_manager *scoreManager;
     scoreManager = Score_manager::getInstance();
@@ -216,6 +218,7 @@ int Jeu::start(short niveau)
                 invincible = false;
             }
         }
+        cheatManager.checkKonami();
         level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
