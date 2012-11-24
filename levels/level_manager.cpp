@@ -46,6 +46,9 @@ void Level_manager::startLevel(short level)
         case 2:
             filepath = "levels/level2.txt";
             break;
+        case 3:
+            filepath = "levels/level3.txt";
+            break;
     }
     ifstream fichier(filepath, ios::in);
     if(fichier)  // si l'ouverture a réussi

@@ -23,7 +23,7 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     m_animatedFocus = new Animated;
     m_animatedFocus->SetAnim(&m_animFocus);
     m_animatedFocus->SetLoop(true);
-    m_animatedFocus->SetFrameTime(0.1f);
+    m_animatedFocus->SetFrameTime(0.05f);
     m_animatedFocus->Scale(2,2);
     m_animatedFocus->Pause();
     m_animatedFocus->SetPosition(m_position.x, m_position.y);

@@ -36,7 +36,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     imageProgressBar = new Image;
     *imageProgressBar = image_manager::getInstance()->getImage("images/progression-barre.png");
     spriteProgressBar.SetImage(*imageProgressBar);
-    spriteProgressBar.SetPosition(1300, 740);
+    spriteProgressBar.SetPosition(1300, 600);
 
     imageProgressBackground = new Image;
     *imageProgressBackground = image_manager::getInstance()->getImage("images/progression-barre-fade.png");

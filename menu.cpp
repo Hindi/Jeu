@@ -6,7 +6,8 @@ using namespace sf;
 Menu::Menu():
             position(250, 200),
             m_scale(1,1),
-            currentLevel(1)
+            currentLevel(1),
+            levelMax(4)
 {
     //Image "nouvelle partie" fade
     imageFadePlay = new Image;
@@ -115,7 +116,7 @@ Menu::~Menu()
 //Le menu principal avec gestion du highlight avec un système de points
 void Menu::drawMainMenu(int select, int score)
 {
-    if(currentLevel > 1)
+    if(currentLevel > 1 && currentLevel < levelMax)
     {
         switch(select)
         {
@@ -155,6 +156,28 @@ void Menu::drawMainMenu(int select, int score)
             app.Draw(text);
         }
 
+    }
+    else if(currentLevel == levelMax)
+    {
+        Font font;
+        if(!font.LoadFromFile("font/cubos.ttf"))
+        {
+            cout << "Erreur lors du chargement de la font pannel" << endl;
+        }
+        else
+        {
+            string result;
+            std::ostringstream o;
+            o << (score);
+            result = o.str();
+            String text;
+            text.SetText(result);
+            text.SetFont(font);
+            text.SetSize(50);
+            text.SetColor(Color(255, 255, 255));
+            text.SetPosition(Vector2f(600, 382));
+            app.Draw(text);
+        }
     }
     else
     {

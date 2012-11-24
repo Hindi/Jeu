@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(500, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(250, 100), "boss", "roundtrip", 1, 30, 2, player, player2, true),
+            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(250, 100), "boss", "roundtrip", 1, 30, 2, player, player2, true),
             m_level(1)
 {
     timerRandomShot.start();

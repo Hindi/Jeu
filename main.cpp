@@ -79,10 +79,6 @@ int main()
                             stateLevel = jeu.start(menu.getLevel()-1);
                         break;
                     }
-                    case 3:
-                    {
-                        break;
-                    }
                 }
             }
         }

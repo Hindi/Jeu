@@ -26,6 +26,7 @@ class Menu
         short getLevel();
 
     protected:
+        short levelMax;
         //Les imagesde tous les menus
         sf::Image *imagePlay;
         sf::Image *imageCredit;
