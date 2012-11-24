@@ -9,7 +9,8 @@ Level_manager::Level_manager():
             spawnTime(0),
             m_position(0),
             levelOver(false),
-            totalTime(0)
+            totalTime(0),
+            levelMax(2)
 {
     timer.start();
     timerProgression.start();
@@ -171,6 +172,11 @@ short Level_manager::getLevelNumber()
     return levelNumber;
 }
 
+void Level_manager::setLevelNumber(short number)
+{
+    levelNumber = number;
+}
+
 bool Level_manager::isFinished()
 {
     return levelOver;
@@ -188,4 +194,11 @@ bool stringToBool(std::string s)
 float Level_manager::getLevelProgress()
 {
     return timerProgression.getTime() / totalTime;
+}
+
+bool Level_manager::endOfGame()
+{
+    if(levelNumber == levelMax)
+        return true;
+    return false;
 }

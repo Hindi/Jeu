@@ -2310,12 +2310,13 @@
 	"population.h"
 	"levels/level_manager.h"
 
-1353771480 c:\users\shalafi\documents\github\jeu\menu.h
+1353777515 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
 	"const.h"
 	<sstream>
+	"levels/level_manager.h"
 
 1353620354 c:\users\shalafi\documents\github\jeu\script.h
 	<SFML/Graphics.hpp>
@@ -2332,7 +2333,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1353771119 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1353777535 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2341,7 +2342,7 @@
 	"const.h"
 	<tr1/memory>
 
-1353771534 source:c:\users\shalafi\documents\github\jeu\menu.cpp
+1353776709 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
 1353770886 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
@@ -2511,7 +2512,7 @@
 1349626092 source:c:\users\shalafi\documents\github\jeu\const.cpp
 	"const.h"
 
-1353620354 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
+1353777423 c:\users\shalafi\documents\github\jeu\levels\level_manager.h
 	<sstream>
 	<iostream>
 	<string>
@@ -2519,7 +2520,7 @@
 	"../population.h"
 	"../timer.h"
 
-1353771297 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1353777473 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 
 1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp

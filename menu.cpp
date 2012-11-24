@@ -6,8 +6,7 @@ using namespace sf;
 Menu::Menu():
             position(250, 200),
             m_scale(1,1),
-            currentLevel(1),
-            levelMax(4)
+            currentLevel(1)
 {
     //Image "nouvelle partie" fade
     imageFadePlay = new Image;
@@ -86,11 +85,11 @@ Menu::Menu():
     spriteArreter.SetPosition(position);
     spriteArreter.Scale(m_scale);
 
-    /*
-    imageContinuer = new Image;
-    imageFadeContinuer = new Image;
-    *imageContinuer = image_manager::getInstance()->getImage(filepath);
-    *imageFadeContinuer = image_manager::getInstance()->getImage(filepath);*/
+    imageCreditContent = new Image;
+    *imageCreditContent = image_manager::getInstance()->getImage("images/credits2.png");
+    spriteCreditContent.SetImage(*imageCreditContent);
+    spriteCreditContent.SetPosition(Vector2f(300, 400));
+    spriteCreditContent.Scale(m_scale);
 }
 
 Menu::~Menu()
@@ -111,12 +110,13 @@ Menu::~Menu()
     delete imageRecommencer;
     delete imageRecommencerFade;
     delete imageEndLevel;
+    delete imageCreditContent;
 }
 
 //Le menu principal avec gestion du highlight avec un système de points
 void Menu::drawMainMenu(int select, int score)
 {
-    if(currentLevel > 1 && currentLevel < levelMax)
+    if(currentLevel > 1 && !Level_manager::getInstance()->endOfGame())
     {
         switch(select)
         {
@@ -157,7 +157,7 @@ void Menu::drawMainMenu(int select, int score)
         }
 
     }
-    else if(currentLevel == levelMax)
+    else if(Level_manager::getInstance()->endOfGame())
     {
         Font font;
         if(!font.LoadFromFile("font/cubos.ttf"))
@@ -168,6 +168,7 @@ void Menu::drawMainMenu(int select, int score)
         {
             string result;
             std::ostringstream o;
+            o << "Score final : ";
             o << (score);
             result = o.str();
             String text;
@@ -175,8 +176,23 @@ void Menu::drawMainMenu(int select, int score)
             text.SetFont(font);
             text.SetSize(50);
             text.SetColor(Color(255, 255, 255));
-            text.SetPosition(Vector2f(600, 382));
+            text.SetPosition(Vector2f(400, 200));
             app.Draw(text);
+
+            String start;
+            start.SetText("Appuyez sur start pour recommencer");
+            start.SetFont(font);
+            start.SetSize(50);
+            start.SetColor(Color(255, 255, 255));
+            start.SetPosition(Vector2f(100, 100));
+            app.Draw(start);
+
+            app.Draw(spriteCreditContent);
+
+            Event Event;
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
+            {
+            }
         }
     }
     else

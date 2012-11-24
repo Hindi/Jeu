@@ -5,6 +5,7 @@
 #include "image_manager.h"
 #include "const.h"
 #include <sstream>
+#include "levels/level_manager.h"
 
 class Menu
 {
@@ -25,8 +26,8 @@ class Menu
 
         short getLevel();
 
+
     protected:
-        short levelMax;
         //Les imagesde tous les menus
         sf::Image *imagePlay;
         sf::Image *imageCredit;
@@ -45,8 +46,7 @@ class Menu
         sf::Image *imageRecommencer;
         sf::Image *imageRecommencerFade;
         sf::Image *imageEndLevel;
-        //sf::Image *imageContinuer;
-        //sf::Image *imageFadeContinuer;
+        sf::Image *imageCreditContent;
 
         //Les sprites de tous les menus
         sf::Sprite spritePlay;
@@ -60,6 +60,7 @@ class Menu
         sf::Sprite spriteSuivant;
         sf::Sprite spriteRecommencer;
         sf::Sprite spriteEndLevel;
+        sf::Sprite spriteCreditContent;
 
         short currentLevel;
 };

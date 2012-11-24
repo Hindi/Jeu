@@ -17,13 +17,17 @@ class Level_manager
         void checkLevel();
         void startLevel(short level);
         short getLevelNumber();
+        void setLevelNumber(short number);
         bool  isFinished();
         float getLevelProgress();
+
+        bool endOfGame();
 
         unsigned int split(const std::string &txt, std::vector<std::string> &strs);
 
 
     private:
+        short levelMax;
         Level_manager();
         virtual ~Level_manager();
         static Level_manager* _singleton;

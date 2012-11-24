@@ -70,6 +70,11 @@ int main()
                 {
                     case 1:
                     {
+                        if(Level_manager::getInstance()->endOfGame())
+                        {
+                            Level_manager::getInstance()->setLevelNumber(1);
+                            menu.setLevel(1);
+                        }
                         stateLevel = jeu.start(menu.getLevel());
                         break;
                     }
@@ -77,6 +82,10 @@ int main()
                     {
                         if(menu.getLevel() > 1)
                             stateLevel = jeu.start(menu.getLevel()-1);
+                        break;
+                    }
+                    case 3:
+                    {
                         break;
                     }
                 }

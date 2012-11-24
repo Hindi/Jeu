@@ -1,6 +1,2 @@
-timer 2
-spawn ship down 50 50
-spawn ship down 50 50
-END
 
 OVER
