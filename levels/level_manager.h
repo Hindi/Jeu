@@ -21,6 +21,7 @@ class Level_manager
         bool  isFinished();
         float getLevelProgress();
 
+        void setGameOver();
         bool endOfGame();
 
         unsigned int split(const std::string &txt, std::vector<std::string> &strs);

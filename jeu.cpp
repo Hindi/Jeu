@@ -104,7 +104,11 @@ int Jeu::start(short niveau)
             m_quit = false;
             return state;
         }
-
+        if(player->isDead() && player2->isDead())
+        {
+            Level_manager::getInstance()->setGameOver();
+            m_quit = true;
+        }
         app.Clear();
         background.manage();
         //Entrées touches :
@@ -115,69 +119,84 @@ int Jeu::start(short niveau)
                 app.Close();
         }
         //Déplacements :
-        if(input.IsKeyDown(Key::Up))
+        if(!player->isDead())
         {
-            player->moveUp();
-            collision.manageCollisionsY();
+            if(input.IsKeyDown(Key::Up))
+            {
+                player->moveUp();
+                collision.manageCollisionsY();
+            }
+            else if(input.IsKeyDown(Key::Down))
+            {
+                player->moveDown();
+                collision.manageCollisionsY();
+            }
+            if(input.IsKeyDown(Key::Right))
+            {
+                player->moveRight();
+                collision.manageCollisionsX();
+            }
+            else if(input.IsKeyDown(Key::Left))
+            {
+                player->moveLeft();
+                collision.manageCollisionsX();
+            }
+            if(!(input.IsKeyDown(Key::Down))&&!(input.IsKeyDown(Key::Up))&&!(input.IsKeyDown(Key::Left))&&!(input.IsKeyDown(Key::Right)))
+            {
+                player->dontMove();
+                collision.manageCollisionsX();
+                collision.manageCollisionsY();
+            }
+            if(input.IsKeyDown(Key::A))
+            {
+                population->freeze();
+            }
+            if(input.IsKeyDown(Key::Space))
+            {
+                player->fire0();
+            }
         }
-        else if(input.IsKeyDown(Key::Down))
+        if(!player2->isDead())
         {
-            player->moveDown();
-            collision.manageCollisionsY();
-        }
-        if(input.IsKeyDown(Key::Right))
-        {
-            player->moveRight();
-            collision.manageCollisionsX();
-        }
-        else if(input.IsKeyDown(Key::Left))
-        {
-            player->moveLeft();
-            collision.manageCollisionsX();
-        }
-        if(!(input.IsKeyDown(Key::Down))&&!(input.IsKeyDown(Key::Up))&&!(input.IsKeyDown(Key::Left))&&!(input.IsKeyDown(Key::Right)))
-        {
-            player->dontMove();
-            collision.manageCollisionsX();
-            collision.manageCollisionsY();
-        }
-        if(input.IsKeyDown(Key::Z))
-        {
-            player2->moveUp();
-            collision.manageCollisionsY2();
-        }
-        else if(input.IsKeyDown(Key::S))
-        {
-            player2->moveDown();
-            collision.manageCollisionsY2();
-        }
-        if(input.IsKeyDown(Key::D))
-        {
-            player2->moveRight();
-            collision.manageCollisionsX2();
-        }
-        else if(input.IsKeyDown(Key::Q))
-        {
-            player2->moveLeft();
-            collision.manageCollisionsX2();
-        }
-        if(!(input.IsKeyDown(Key::S))&&!(input.IsKeyDown(Key::Z))&&!(input.IsKeyDown(Key::Q))&&!(input.IsKeyDown(Key::D)))
-        {
-            player2->dontMove();
-            collision.manageCollisionsX2();
-            collision.manageCollisionsY2();
-        }
-        if(input.IsKeyDown(Key::A))
-        {
-            population->freeze();
-        }
-        if(input.IsKeyDown(Key::Space))
-        {
-            player->fire0();
-        }
-        if(input.IsKeyDown(Key::E))
-        {
-            player2->fire1();
+            if(input.IsKeyDown(Key::Z))
+            {
+                player2->moveUp();
+                collision.manageCollisionsY2();
+            }
+            else if(input.IsKeyDown(Key::S))
+            {
+                player2->moveDown();
+                collision.manageCollisionsY2();
+            }
+            if(input.IsKeyDown(Key::D))
+            {
+                player2->moveRight();
+                collision.manageCollisionsX2();
+            }
+            else if(input.IsKeyDown(Key::Q))
+            {
+                player2->moveLeft();
+                collision.manageCollisionsX2();
+            }
+            if(!(input.IsKeyDown(Key::S))&&!(input.IsKeyDown(Key::Z))&&!(input.IsKeyDown(Key::Q))&&!(input.IsKeyDown(Key::D)))
+            {
+                player2->dontMove();
+                collision.manageCollisionsX2();
+                collision.manageCollisionsY2();
+            }
+            if(input.IsKeyDown(Key::E))
+            {
+                player2->fire1();
+            }
+            if(input.IsKeyDown(Key::H))
+            {
+                if(player2->getPlayerKTA())
+                {
+                    population->killThemAll();
+                    Projectile_manager::getInstance()->killThemAll();
+                    player2->setPlayerKTA(false);
+                }
+            }
         }
         if(input.IsKeyDown(Key::Escape))
         {
@@ -185,26 +204,12 @@ int Jeu::start(short niveau)
             this->pause(Event, pannel, player, player2);
             population->unStop();
         }
-        if(input.IsKeyDown(Key::H))
-        {
-            if(player->getPlayerKTA())
-            {
-                population->killThemAll();
-                Projectile_manager::getInstance()->killThemAll();
-                player->setPlayerKTA(false);
-            }
-        }
-        if(input.IsKeyDown(Key::J))
-        {
-            population->killThemAll();
-            Projectile_manager::getInstance()->killThemAll();
-        }
         if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
         {
             collision.manageProjectileCollision();
         }
 
-        if(player->getLostlife())
+        if(player->getLostlife() ||player2->getLostlife())
         {
             if(!invincible)
             {
@@ -215,6 +220,7 @@ int Jeu::start(short niveau)
             else if(timer.getTime() - invincibleStart > 4 )
             {
                 player->resetLostLife();
+                player2->resetLostLife();
                 invincible = false;
             }
         }
@@ -222,8 +228,10 @@ int Jeu::start(short niveau)
         level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
-        player->draw();
-        player2->draw();
+        if(!player->isDead())
+            player->draw();
+        if(!player2->isDead())
+            player2->draw();
         population->manage();
         missile_manager->manage();
         pannel.checkPannel();

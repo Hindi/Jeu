@@ -202,3 +202,8 @@ bool Level_manager::endOfGame()
         return true;
     return false;
 }
+
+void Level_manager::setGameOver()
+{
+    levelNumber = levelMax;
+}
