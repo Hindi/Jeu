@@ -1,6 +1,8 @@
 #ifndef PROJECTILE_MANAGER_H_INCLUDED
 #define PROJECTILE_MANAGER_H_INCLUDED
 #include <SFML/Graphics.hpp>
+#include "../son/sound_manager.h"
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <list>
 #include <tr1/memory>
@@ -49,6 +51,9 @@ class Projectile_manager
         void killThemAll();
 
     private:
+        sf::SoundBuffer piouBuffer;
+        sf::Sound piouSound;
+
         //Liste des projectiles ennemis
         std::list<std::tr1::shared_ptr<Projectile> > m_enemyProjectiles;
 

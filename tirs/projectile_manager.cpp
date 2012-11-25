@@ -7,7 +7,11 @@ Projectile_manager* Projectile_manager::_singleton=NULL;
 
 Projectile_manager::Projectile_manager()
 {
-
+    piouBuffer = sound_manager::getInstance()->getBuffer("son/piou1.ogg");
+    piouSound.SetBuffer(piouBuffer);
+    piouSound.SetLoop(false);
+    piouSound.SetPitch(1.f);
+    piouSound.SetVolume(50.f);
 }
 
 Projectile_manager::~Projectile_manager()
@@ -117,6 +121,7 @@ void Projectile_manager::addEnemyProjectile(std::tr1::shared_ptr<Projectile>  pr
 void Projectile_manager::addPlayerProjectile(std::tr1::shared_ptr<Projectile>  projectile)
 {
     m_playerProjectiles.push_back(projectile);
+    piouSound.Play();
 }
 
 

@@ -22,16 +22,12 @@ Jeu::~Jeu()
 
 int Jeu::start(short niveau)
 {
-    sf::SoundBuffer buffer;
-    //SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/Acronis.mp3");
-    if( buffer.LoadFromFile( "son/boom.ogg" ) )
-	{
-    musicSound.SetBuffer(buffer);
+    SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/Acronis.ogg");
+    musicSound.SetBuffer(musicBuffer);
     musicSound.SetLoop(true);
-    musicSound.SetPitch(1.5f);
+    musicSound.SetPitch(1.f);
     musicSound.SetVolume(50.f);
     musicSound.Play();
-	}
 
     bool invincible(false);
     int invincibleStart;

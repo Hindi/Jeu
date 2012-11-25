@@ -4,7 +4,11 @@ sound_manager* sound_manager::_singleton = NULL;
 
 sound_manager::sound_manager()
 {
-
+	sf::SoundBuffer buffer;
+    if( buffer.LoadFromFile( "Acronis.ogg" ) )
+	{
+		m_buffer["Acronis.ogg"] = buffer;
+	}
 }
 
 sound_manager::~sound_manager()
@@ -25,7 +29,7 @@ sound_manager* sound_manager::getInstance()
 
 const sf::SoundBuffer& sound_manager::getBuffer( const std::string& filename )
 {
-	//On vérifie que l'image n'existe pas déjà
+	//On vérifie que Le son n'existe pas déjà
 	for( std::map<std::string, sf::SoundBuffer>::const_iterator it = m_buffer.begin(); it != m_buffer.end(); ++it)
 	{
 		if( filename == it->first )
@@ -35,7 +39,7 @@ const sf::SoundBuffer& sound_manager::getBuffer( const std::string& filename )
 		}
 	}
 
-	//L'image n'existe pas, on la créé et on la sauvegarde
+	//Le son n'existe pas, on la créé et on la sauvegarde
 	sf::SoundBuffer buffer;
 
 	//On cherche dans le dossier principal du projet
