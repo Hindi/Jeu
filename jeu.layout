@@ -13,8 +13,8 @@
 	<File name="Animated.hpp" open="0" top="0" tabpos="11">
 		<Cursor position="1929" topLine="42" />
 	</File>
-	<File name="Cheat_manager.cpp" open="1" top="1" tabpos="11">
-		<Cursor position="690" topLine="20" />
+	<File name="Cheat_manager.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="690" topLine="0" />
 	</File>
 	<File name="Cheat_manager.h" open="1" top="0" tabpos="12">
 		<Cursor position="131" topLine="0" />
@@ -56,13 +56,13 @@
 		<Cursor position="558" topLine="14" />
 	</File>
 	<File name="enemies\boss.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="5518" topLine="151" />
+		<Cursor position="1375" topLine="0" />
 	</File>
 	<File name="enemies\boss.h" open="0" top="0" tabpos="13">
 		<Cursor position="1116" topLine="17" />
 	</File>
 	<File name="enemies\boss\lilith.cpp" open="0" top="0" tabpos="15">
-		<Cursor position="179" topLine="0" />
+		<Cursor position="603" topLine="0" />
 	</File>
 	<File name="enemies\boss\lilith.h" open="0" top="0" tabpos="11">
 		<Cursor position="806" topLine="13" />
@@ -91,41 +91,41 @@
 	<File name="image_manager.h" open="0" top="0" tabpos="8">
 		<Cursor position="510" topLine="0" />
 	</File>
-	<File name="jeu.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="533" topLine="13" />
+	<File name="jeu.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="3261" topLine="75" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="580" topLine="16" />
 	</File>
-	<File name="levels\level_manager.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="1400" topLine="2" />
+	<File name="levels\level_manager.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="6086" topLine="167" />
 	</File>
-	<File name="levels\level_manager.h" open="1" top="0" tabpos="13">
-		<Cursor position="583" topLine="3" />
+	<File name="levels\level_manager.h" open="1" top="0" tabpos="14">
+		<Cursor position="527" topLine="7" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="267" topLine="1" />
+		<Cursor position="2236" topLine="55" />
 	</File>
-	<File name="menu.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="4231" topLine="89" />
+	<File name="menu.cpp" open="1" top="0" tabpos="15">
+		<Cursor position="4445" topLine="99" />
 	</File>
-	<File name="menu.h" open="0" top="0" tabpos="11">
-		<Cursor position="166" topLine="18" />
+	<File name="menu.h" open="1" top="0" tabpos="16">
+		<Cursor position="575" topLine="5" />
 	</File>
 	<File name="pannel.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="1424" topLine="22" />
+		<Cursor position="1377" topLine="7" />
 	</File>
 	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="52" topLine="0" />
 	</File>
 	<File name="player.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="12798" topLine="376" />
+		<Cursor position="12798" topLine="306" />
 	</File>
 	<File name="player.h" open="0" top="0" tabpos="7">
-		<Cursor position="240" topLine="0" />
+		<Cursor position="699" topLine="0" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2159" topLine="47" />
+		<Cursor position="2159" topLine="50" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="5">
 		<Cursor position="580" topLine="2" />
@@ -188,6 +188,6 @@
 		<Cursor position="127" topLine="0" />
 	</File>
 	<File name="unit.h" open="0" top="0" tabpos="14">
-		<Cursor position="1492" topLine="0" />
+		<Cursor position="708" topLine="6" />
 	</File>
 </CodeBlocks_layout_file>
