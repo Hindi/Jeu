@@ -1,3 +1,12 @@
-timer 90
+spawn ship don'tmove 50 50
+timer 1
+spawn ship don'tmove 50 50
+timer 1
+spawn ship don'tmove 50 50
+timer 1
+spawn ship don'tmove 50 50
+timer 1
+spawn ship don'tmove 50 50
+timer 1
 
 OVER

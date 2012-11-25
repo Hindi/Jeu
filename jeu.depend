@@ -2178,7 +2178,7 @@
 	<SFML/System.hpp>
 	<iostream>
 
-1353620354 c:\users\shalafi\documents\github\jeu\population.h
+1353887190 c:\users\shalafi\documents\github\jeu\population.h
 	<list>
 	<string>
 	<SFML/Graphics.hpp>
@@ -2274,10 +2274,10 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1353885488 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1353886612 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1353885044 c:\users\shalafi\documents\github\jeu\jeu.h
+1353887748 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
 	<SFML/audio.hpp>
 	<list>
@@ -2312,7 +2312,7 @@
 	"population.h"
 	"levels/level_manager.h"
 
-1353777515 c:\users\shalafi\documents\github\jeu\menu.h
+1353887554 c:\users\shalafi\documents\github\jeu\menu.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	"image_manager.h"
@@ -2335,7 +2335,7 @@
 	<SFML/Graphics.hpp>
 	"player.h"
 
-1353777535 source:c:\users\shalafi\documents\github\jeu\main.cpp
+1353887598 source:c:\users\shalafi\documents\github\jeu\main.cpp
 	"SFML/Graphics.hpp"
 	"jeu.h"
 	"menu.h"
@@ -2343,8 +2343,10 @@
 	<iostream>
 	"const.h"
 	<tr1/memory>
+	"son/sound_manager.h"
+	<SFML/Audio.hpp>
 
-1353777597 source:c:\users\shalafi\documents\github\jeu\menu.cpp
+1353887554 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
 1353770886 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
@@ -2353,7 +2355,7 @@
 1353620354 source:c:\users\shalafi\documents\github\jeu\player.cpp
 	"player.h"
 
-1353620610 source:c:\users\shalafi\documents\github\jeu\population.cpp
+1353887347 source:c:\users\shalafi\documents\github\jeu\population.cpp
 	"population.h"
 
 1347832533 source:c:\users\shalafi\documents\github\jeu\projectile.cpp
@@ -2449,7 +2451,7 @@
 	"../image_manager.h"
 	"../const.h"
 
-1353885982 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
+1353886483 c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.h
 	<SFML/Graphics.hpp>
 	"../son/sound_manager.h"
 	<SFML/Audio.hpp>
@@ -2461,7 +2463,7 @@
 	<vector>
 	"../const.h"
 
-1353885991 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1353886537 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
 1353620354 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp
@@ -2992,10 +2994,10 @@
 	<iostream>
 	"timer.h"
 
-1353885143 source:c:\users\shalafi\documents\github\jeu\son\sound_manager.cpp
+1353886562 source:c:\users\shalafi\documents\github\jeu\son\sound_manager.cpp
 	"sound_manager.h"
 
-1353884797 c:\users\shalafi\documents\github\jeu\son\sound_manager.h
+1353886327 c:\users\shalafi\documents\github\jeu\son\sound_manager.h
 	<SFML/audio.hpp>
 	<map>
 	<iostream>

@@ -102,6 +102,10 @@ class Population
         bool bossSpawned;
 
     private:
+        sf::SoundBuffer boomBuffer;
+        sf::Sound boomSound;
+        sf::SoundBuffer boom2Buffer;
+        sf::Sound boom2Sound;
         //Constructeur privé pour singleton
         Population();
 

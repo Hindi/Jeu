@@ -12,6 +12,12 @@ Projectile_manager::Projectile_manager()
     piouSound.SetLoop(false);
     piouSound.SetPitch(1.f);
     piouSound.SetVolume(50.f);
+
+    piou2Buffer = sound_manager::getInstance()->getBuffer("son/piou2.ogg");
+    piou2Sound.SetBuffer(piou2Buffer);
+    piou2Sound.SetLoop(false);
+    piou2Sound.SetPitch(1.f);
+    piou2Sound.SetVolume(50.f);
 }
 
 Projectile_manager::~Projectile_manager()
@@ -116,12 +122,13 @@ void Projectile_manager::addEnemyProjectile(std::tr1::shared_ptr<Projectile>  pr
 {
     //cout << projectile->getPosition().x << endl;
     m_enemyProjectiles.push_back(projectile);
+    piouSound.Play();
 }
 
 void Projectile_manager::addPlayerProjectile(std::tr1::shared_ptr<Projectile>  projectile)
 {
     m_playerProjectiles.push_back(projectile);
-    piouSound.Play();
+    piou2Sound.Play();
 }
 
 

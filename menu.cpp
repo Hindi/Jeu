@@ -90,6 +90,8 @@ Menu::Menu():
     spriteCreditContent.SetImage(*imageCreditContent);
     spriteCreditContent.SetPosition(Vector2f(300, 400));
     spriteCreditContent.Scale(m_scale);
+
+
 }
 
 Menu::~Menu()

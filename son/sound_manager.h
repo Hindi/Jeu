@@ -11,7 +11,7 @@ class sound_manager
         static sound_manager* getInstance();
 
     private:
-        sf::SoundBuffer bufferMusic;
+        sf::SoundBuffer buffer;
 
         std::map< std::string, sf::SoundBuffer > m_buffer;
 

@@ -44,6 +44,8 @@ class Jeu
 
     protected:
         sf::Sound musicSound;
+        sf::SoundBuffer clicBuffer;
+        sf:: Sound clicSound;
 
         //Taille de la fenêtre
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;

@@ -22,12 +22,19 @@ Jeu::~Jeu()
 
 int Jeu::start(short niveau)
 {
-    SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/Acronis.ogg");
+    SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/acronis.ogg");
     musicSound.SetBuffer(musicBuffer);
     musicSound.SetLoop(true);
     musicSound.SetPitch(1.f);
     musicSound.SetVolume(50.f);
     musicSound.Play();
+
+
+    clicBuffer = sound_manager::getInstance()->getBuffer("son/clic.ogg");
+    clicSound.SetBuffer(clicBuffer);
+    clicSound.SetLoop(false);
+    clicSound.SetPitch(1.f);
+    clicSound.SetVolume(50.f);
 
     bool invincible(false);
     int invincibleStart;
@@ -264,6 +271,7 @@ void Jeu::pause(Event Event, Pannel &pannel, std::tr1::shared_ptr<Player> player
             app.Clear();
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
             {
+                clicSound.Play();
                 if(select == 2)
                     select +=0;
                 else
@@ -271,6 +279,7 @@ void Jeu::pause(Event Event, Pannel &pannel, std::tr1::shared_ptr<Player> player
             }
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up))
             {
+                clicSound.Play();
                 if(select == 1)
                     select -=0;
                 else

@@ -5,6 +5,8 @@
 #include <iostream>
 #include "const.h"
 #include <tr1/memory>
+#include "son/sound_manager.h"
+#include <SFML/Audio.hpp>
 
 using namespace std;
 using namespace sf;
@@ -36,6 +38,13 @@ int main()
     int select(1);
     Event Event;
 
+    sf::SoundBuffer buffer;
+    sf:: Sound sound;
+    buffer = sound_manager::getInstance()->getBuffer("son/clic.ogg");
+    sound.SetBuffer(buffer);
+    sound.SetLoop(false);
+    sound.SetPitch(1.f);
+    sound.SetVolume(50.f);
 
     //Gestion du highlight du menu avec un système de points
     while (app.IsOpened())
@@ -51,6 +60,7 @@ int main()
             }
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down || Event.Key.Code == sf::Key::Right))
             {
+                sound.Play();
                 if(select == MAX_MENU)
                     select +=0;
                 else
@@ -58,6 +68,7 @@ int main()
             }
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up || Event.Key.Code == sf::Key::Left))
             {
+                sound.Play();
                 if(select == 1)
                     select -=0;
                 else
@@ -66,6 +77,7 @@ int main()
             //Action à effectuer quand on appuie ur entrée : dépend du nombre de points
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
             {
+                sound.Play();
                 switch(select)
                 {
                     case 1:

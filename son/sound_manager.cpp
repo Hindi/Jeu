@@ -3,12 +3,11 @@
 sound_manager* sound_manager::_singleton = NULL;
 
 sound_manager::sound_manager()
-{
-	sf::SoundBuffer buffer;
-    if( buffer.LoadFromFile( "Acronis.ogg" ) )
+{/*
+    if( buffer.LoadFromFile( "son/Acronis.ogg" ) )
 	{
-		m_buffer["Acronis.ogg"] = buffer;
-	}
+		m_buffer["son/Acronis.ogg"] = buffer;
+	}*/
 }
 
 sound_manager::~sound_manager()
@@ -49,7 +48,6 @@ const sf::SoundBuffer& sound_manager::getBuffer( const std::string& filename )
 		//std::cout << "DEBUG_MESSAGE: " << filename << " | loading image from main or specified directory.\n";
 		return m_buffer[filename];
 	}
-    std::cout << filename << std::endl;
 	std::cout << "GAME_ERROR: Buffer was not found. It is filled with an empty buffer.\n";
 	m_buffer[filename] = buffer;
 	return m_buffer[filename];

@@ -53,6 +53,8 @@ class Projectile_manager
     private:
         sf::SoundBuffer piouBuffer;
         sf::Sound piouSound;
+        sf::SoundBuffer piou2Buffer;
+        sf::Sound piou2Sound;
 
         //Liste des projectiles ennemis
         std::list<std::tr1::shared_ptr<Projectile> > m_enemyProjectiles;

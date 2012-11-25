@@ -14,6 +14,18 @@ Population::Population(): killRate(1)
     combo = 1;
     maxCombo = 0;
     bossSpawned = false;
+
+    boomBuffer = sound_manager::getInstance()->getBuffer("son/boom.ogg");
+    boomSound.SetBuffer(boomBuffer);
+    boomSound.SetLoop(false);
+    boomSound.SetPitch(1.f);
+    boomSound.SetVolume(50.f);
+
+    boom2Buffer = sound_manager::getInstance()->getBuffer("son/boom2.ogg");
+    boom2Sound.SetBuffer(boom2Buffer);
+    boom2Sound.SetLoop(false);
+    boom2Sound.SetPitch(1.f);
+    boom2Sound.SetVolume(50.f);
 }
 
 
@@ -61,6 +73,11 @@ void Population::checkPopulation()
                 if((*lit)->isDead())
                 {
                     this->explode(*lit);
+                    if(rand() % 2 > 0)
+                        boomSound.Play();
+                    else
+                        boom2Sound.Play();
+
                     lit = m_enemies.erase(lit);
                 }
                 else
