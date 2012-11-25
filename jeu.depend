@@ -2274,11 +2274,12 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1353778521 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1353885097 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
-1353674380 c:\users\shalafi\documents\github\jeu\jeu.h
+1353885044 c:\users\shalafi\documents\github\jeu\jeu.h
 	<SFML/Graphics.hpp>
+	<SFML/audio.hpp>
 	<list>
 	"player.h"
 	"enemies/enemy.h"
@@ -2299,6 +2300,7 @@
 	"const.h"
 	"levels/level_manager.h"
 	"Cheat_manager.h"
+	"son/sound_manager.h"
 
 1353620354 c:\users\shalafi\documents\github\jeu\pannel.h
 	<SFML/Graphics.hpp>
@@ -2520,7 +2522,7 @@
 	"../population.h"
 	"../timer.h"
 
-1353777473 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1353778604 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 
 1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp
@@ -2987,4 +2989,61 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 	"timer.h"
+
+1353885143 source:c:\users\shalafi\documents\github\jeu\son\sound_manager.cpp
+	"sound_manager.h"
+
+1353884797 c:\users\shalafi\documents\github\jeu\son\sound_manager.h
+	<SFML/audio.hpp>
+	<map>
+	<iostream>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\listener.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Vector3.hpp>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\music.hpp
+	<SFML/Audio/SoundStream.hpp>
+	<string>
+	<vector>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Sound.hpp>
+	<SFML/System/Thread.hpp>
+	<cstdlib>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\sound.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/Audio/AudioResource.hpp>
+	<cstdlib>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\audioresource.hpp
+	<SFML/Config.hpp>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\soundbuffer.hpp
+	<SFML/System/Resource.hpp>
+	<SFML/Audio/AudioResource.hpp>
+	<string>
+	<vector>
+	<set>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1335294005 e:\utilitaires\codeblocks\mingw\include\sfml\audio\soundrecorder.hpp
+	<SFML/System/Thread.hpp>
+	<vector>
 

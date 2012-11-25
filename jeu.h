@@ -1,6 +1,7 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 #include <SFML/Graphics.hpp>
+#include <SFML/audio.hpp>
 #include <list>
 #include "player.h"
 #include "enemies/enemy.h"
@@ -21,6 +22,7 @@
 #include "const.h"
 #include "levels/level_manager.h"
 #include "Cheat_manager.h"
+#include "son/sound_manager.h"
 
 class Jeu
 {
@@ -41,6 +43,8 @@ class Jeu
         int getTotalScore();
 
     protected:
+        sf::Sound musicSound;
+
         //Taille de la fenêtre
         int const m_SCREEN_WIDTH, m_SCREEN_HEIGHT;
 
