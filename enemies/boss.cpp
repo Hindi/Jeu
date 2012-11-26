@@ -37,6 +37,13 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     spriteHealthBackground.SetPosition(400, 50);
     spriteHealthBar.SetImage(*imageHealthBar);
     spriteHealthBar.SetPosition(400, 50);
+
+
+    vuuuBuffer = sound_manager::getInstance()->getBuffer("son/vuuuu.ogg");
+    vuuuSound.SetBuffer(vuuuBuffer);
+    vuuuSound.SetLoop(false);
+    vuuuSound.SetPitch(0.53f);
+    vuuuSound.SetVolume(100.f);
 }
 
 Boss::~Boss()
@@ -92,6 +99,8 @@ void Boss::firinhMahLasor()
     }
     if(startedLasor && timerAddMove.getTime() < 10)
     {
+        if(vuuuSound.GetStatus() != sf::Sound::Playing)
+            vuuuSound.Play();
         int speed, sign;
         list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
         for(; lit != m_adds.end(); lit++)

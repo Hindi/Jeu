@@ -2,12 +2,14 @@
 #define BOSS_H_INCLUDED
 #include <list>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <math.h>
 
 #include "../player.h"
 #include "enemy.h"
 #include "../timer.h"
 #include "adds.h"
+#include "../son/sound_manager.h"
 
 /*
 ****************************************
@@ -36,6 +38,9 @@ class Boss : public Enemy
 
 
     protected:
+        sf::SoundBuffer vuuuBuffer;
+        sf::Sound vuuuSound;
+
         sf::Sprite spriteHealthBackground;
         sf::Sprite spriteHealthBar;
 

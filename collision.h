@@ -38,6 +38,9 @@ class Collision
     //Objet joueur
         std::tr1::shared_ptr<Player> m_player, m_player2;
 
+        sf::SoundBuffer clingBuffer;
+        sf::Sound clingSound;
+
         //Taille de la fenêtre
         const sf::Vector2f m_windowSize;
 };

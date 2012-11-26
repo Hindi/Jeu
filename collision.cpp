@@ -23,7 +23,11 @@ Collision::Collision(Vector2f windowSize, std::tr1::shared_ptr<Player> player, s
             m_windowSize(windowSize)
 
 {
-
+    clingBuffer = sound_manager::getInstance()->getBuffer("son/cling.ogg");
+    clingSound.SetBuffer(clingBuffer);
+    clingSound.SetLoop(false);
+    clingSound.SetPitch(1.f);
+    clingSound.SetVolume(50.f);
 }
 
 Collision::~Collision()
@@ -295,6 +299,7 @@ void Collision::dropCollision()
         {
             m_player->addScore(100);
             lit = Drop_manager::getInstance()->getDrop()->erase(lit);
+            clingSound.Play();
         }
         else
         {
@@ -311,6 +316,7 @@ void Collision::dropCollision()
         {
             m_player2->addScore(100);
             li = Drop_manager::getInstance()->getDrop()->erase(li);
+            clingSound.Play();
         }
         else
         {
