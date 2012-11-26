@@ -109,6 +109,8 @@
 		<Unit filename="population.h" />
 		<Unit filename="script.cpp" />
 		<Unit filename="script.h" />
+		<Unit filename="son\sound_manager.cpp" />
+		<Unit filename="son\sound_manager.h" />
 		<Unit filename="timer.cpp" />
 		<Unit filename="timer.h" />
 		<Unit filename="tirs\missile.cpp" />
