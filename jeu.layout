@@ -29,10 +29,10 @@
 		<Cursor position="591" topLine="3" />
 	</File>
 	<File name="collision.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="586" topLine="10" />
+		<Cursor position="12458" topLine="291" />
 	</File>
 	<File name="collision.h" open="1" top="0" tabpos="13">
-		<Cursor position="988" topLine="8" />
+		<Cursor position="820" topLine="8" />
 	</File>
 	<File name="const.h" open="0" top="0" tabpos="2">
 		<Cursor position="80" topLine="0" />
@@ -55,10 +55,10 @@
 	<File name="enemies\adds.h" open="0" top="0" tabpos="9">
 		<Cursor position="558" topLine="14" />
 	</File>
-	<File name="enemies\boss.cpp" open="1" top="1" tabpos="14">
-		<Cursor position="2033" topLine="18" />
+	<File name="enemies\boss.cpp" open="0" top="0" tabpos="14">
+		<Cursor position="5208" topLine="55" />
 	</File>
-	<File name="enemies\boss.h" open="1" top="0" tabpos="15">
+	<File name="enemies\boss.h" open="0" top="0" tabpos="15">
 		<Cursor position="1228" topLine="12" />
 	</File>
 	<File name="enemies\boss\lilith.cpp" open="0" top="0" tabpos="15">
@@ -92,7 +92,7 @@
 		<Cursor position="661" topLine="0" />
 	</File>
 	<File name="jeu.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="8925" topLine="258" />
+		<Cursor position="7069" topLine="200" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="1216" topLine="0" />
@@ -118,14 +118,14 @@
 	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="52" topLine="0" />
 	</File>
-	<File name="player.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="12798" topLine="306" />
+	<File name="player.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="11891" topLine="316" />
 	</File>
-	<File name="player.h" open="0" top="0" tabpos="7">
-		<Cursor position="699" topLine="0" />
+	<File name="player.h" open="1" top="0" tabpos="17">
+		<Cursor position="694" topLine="0" />
 	</File>
-	<File name="population.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="535" topLine="27" />
+	<File name="population.cpp" open="1" top="1" tabpos="10">
+		<Cursor position="4368" topLine="88" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="11">
 		<Cursor position="3175" topLine="75" />
@@ -166,11 +166,11 @@
 	<File name="tirs\projectile.h" open="0" top="0" tabpos="7">
 		<Cursor position="1344" topLine="0" />
 	</File>
-	<File name="tirs\projectile_manager.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="392" topLine="3" />
+	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="743" topLine="6" />
 	</File>
-	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="17">
-		<Cursor position="106" topLine="0" />
+	<File name="tirs\projectile_manager.h" open="1" top="0" tabpos="15">
+		<Cursor position="1092" topLine="6" />
 	</File>
 	<File name="tirs\score.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="349" topLine="0" />
@@ -190,8 +190,8 @@
 	<File name="tirs\weapon_manager.h" open="0" top="0" tabpos="14">
 		<Cursor position="666" topLine="0" />
 	</File>
-	<File name="unit.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="127" topLine="0" />
+	<File name="unit.cpp" open="1" top="0" tabpos="18">
+		<Cursor position="1860" topLine="26" />
 	</File>
 	<File name="unit.h" open="0" top="0" tabpos="14">
 		<Cursor position="708" topLine="6" />
