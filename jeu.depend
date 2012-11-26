@@ -2120,7 +2120,7 @@
 
 1353620354 c:\users\shalafi\documents\github\jeu\image_manager.h
 
-1353887937 source:c:\users\shalafi\documents\github\jeu\collision.cpp
+1353941123 source:c:\users\shalafi\documents\github\jeu\collision.cpp
 	"collision.h"
 
 1353887886 c:\users\shalafi\documents\github\jeu\collision.h
@@ -2245,7 +2245,7 @@
 1353620354 source:c:\users\shalafi\documents\github\jeu\drop_manager.cpp
 	"drop_manager.h"
 
-1353888504 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
+1353939702 source:c:\users\shalafi\documents\github\jeu\enemies\boss.cpp
 	"boss.h"
 
 1353888158 c:\users\shalafi\documents\github\jeu\enemies\boss.h
@@ -2276,7 +2276,7 @@
 	<SFML/Graphics.hpp>
 	"image_manager.h"
 
-1353887748 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
+1353941267 source:c:\users\shalafi\documents\github\jeu\jeu.cpp
 	"jeu.h"
 
 1353887748 c:\users\shalafi\documents\github\jeu\jeu.h
@@ -2465,7 +2465,7 @@
 	<vector>
 	"../const.h"
 
-1353886537 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
+1353941008 source:c:\users\shalafi\documents\github\jeu\tirs\projectile_manager.cpp
 	"projectile_manager.h"
 
 1353620354 source:c:\users\shalafi\documents\github\jeu\tirs\weapon_manager.cpp

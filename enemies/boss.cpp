@@ -51,6 +51,8 @@ Boss::~Boss()
     delete m_name;
     delete m_animatedFocus;
     delete imageFocus;
+    if(vuuuSound.GetStatus() == sf::Sound::Playing)
+        vuuuSound.Stop();
 }
 
 void Boss::draw()
@@ -142,6 +144,8 @@ void Boss::firinhMahLasor()
             laserFocusing = false;
             startedLasor = false;
             timerLaser.reinitialize();
+            if(vuuuSound.GetStatus() == sf::Sound::Playing)
+                vuuuSound.Stop();
         }
     }
 }

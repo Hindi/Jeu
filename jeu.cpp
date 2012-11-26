@@ -218,7 +218,7 @@ int Jeu::start(short niveau)
             this->pause(Event, pannel, player, player2);
             population->unStop();
         }
-        if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress())
+        if(Projectile_manager::getInstance()->havePlayerProjectilesInProgress() || Missile_manager::getInstance()->haveMissilesInProgress() || Projectile_manager::getInstance()->haveEnemyProjectilesInProgress())
         {
             collision.manageProjectileCollision();
         }

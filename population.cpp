@@ -152,7 +152,6 @@ void Population::explode(std::tr1::shared_ptr<Enemy> enemy)
     else
         combo = 1;
     timerCombo.reinitialize();
-
 }
 
 void Population::manageExplosion()

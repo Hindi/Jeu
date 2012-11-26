@@ -170,16 +170,17 @@ void Collision::manageProjectileCollision()
     //*****************************
     // Collisions classe projectile
     //*****************************
-    IntRect projectileRect, enemyRect, bossWeakRecy;
+    IntRect projectileRect, enemyRect, bossWeakRecy, player1Rect, player2Rect;
     Vector2f projectilePosition;
     list<std::tr1::shared_ptr<Projectile> >* playerProjectile = Projectile_manager::getInstance()->getPlayerProjectiles();
-    list<std::tr1::shared_ptr<Projectile> >::iterator lit(playerProjectile->begin());
+    list<std::tr1::shared_ptr<Projectile> >* enemyProjectile = Projectile_manager::getInstance()->getEnemyProjectiles();
     list<tr1::shared_ptr<Enemy> >::iterator li(Population::getInstance()->getPopulation()->begin());
     //Si il y a des projectiles en jeu
     int i(0);
 
     if(!playerProjectile->empty())
     {
+        list<std::tr1::shared_ptr<Projectile> >::iterator lit(playerProjectile->begin());
         //Pour chaque ennemi
         for(; li!=Population::getInstance()->getPopulation()->end(); li++)
         {
@@ -286,6 +287,37 @@ void Collision::manageProjectileCollision()
         }
         litt = Missile_manager::getInstance()->getMissile()->begin();
     }
+
+    if(Projectile_manager::getInstance()->haveEnemyProjectilesInProgress())
+    {
+        list<std::tr1::shared_ptr<Projectile> >::iterator lit(enemyProjectile->begin());
+        while(lit != enemyProjectile->end())
+        {
+            projectileRect = (*lit)->getBoundingBox();
+            player1Rect = m_player->GetBoundingBox();
+            player2Rect = m_player2->GetBoundingBox();
+
+            if(projectileRect.Bottom > player1Rect.Top+40 && projectileRect.Top < player1Rect.Bottom-40 && projectileRect.Right > player1Rect.Left+70 && projectileRect.Left < player1Rect.Right-70)
+            {
+                //Si oui l'ennemis perd de la vie
+                m_player->loseLive();
+
+                //On supprime le projectile
+                (lit) = enemyProjectile->erase(lit);
+            }
+            else if(projectileRect.Bottom > player2Rect.Top+40 && projectileRect.Top < player2Rect.Bottom-40 && projectileRect.Right > player2Rect.Left+70 && projectileRect.Left < player2Rect.Right-70)
+            {
+                //Si oui l'ennemis perd de la vie
+                m_player2->loseLive();
+
+                //On supprime le projectile
+                (lit) = enemyProjectile->erase(lit);
+            }
+            else
+                lit++;
+        }
+    }
+
 }
 
 void Collision::dropCollision()
