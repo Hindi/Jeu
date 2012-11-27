@@ -329,12 +329,15 @@ void Player::dontMove()
 void Player::draw()
 {
     this->checkKTA();
-    m_animatedReactor->SetPosition(m_animated->GetPosition().x + m_frameWidth/2.8, m_animated->GetPosition().y + m_frameHeight/1.35);
-    m_animatedReactor->anim(app.GetFrameTime());
-    app.Draw(*m_animatedReactor);
+    if(!this->isDead())
+    {
+        m_animatedReactor->SetPosition(m_animated->GetPosition().x + m_frameWidth/2.8, m_animated->GetPosition().y + m_frameHeight/1.35);
+        m_animatedReactor->anim(app.GetFrameTime());
+        app.Draw(*m_animatedReactor);
 
-    m_animated->anim(app.GetFrameTime());
-    app.Draw(*m_animated);
+        m_animated->anim(app.GetFrameTime());
+        app.Draw(*m_animated);
+    }
 
 }
 
@@ -413,4 +416,11 @@ void Player::checkKTA()
         timerKillThemAll.reinitialize();
     }
 
+}
+
+bool Player::isDead()
+{
+    if(m_lives == 0)
+        return true;
+    return false;
 }

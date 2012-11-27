@@ -88,6 +88,8 @@ class Player : public Unit
 
         void checkKTA();
 
+        bool isDead();
+
     protected:
         //Vitesse du joueur
         sf::Vector2f m_speed;

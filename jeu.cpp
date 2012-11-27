@@ -237,15 +237,13 @@ int Jeu::start(short niveau)
                 player2->resetLostLife();
                 invincible = false;
             }
-        }
+        }/
         cheatManager.checkKonami();
         level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
-        if(!player->isDead())
-            player->draw();
-        if(!player2->isDead())
-            player2->draw();
+        player->draw();
+        player2->draw();
         population->manage();
         missile_manager->manage();
         pannel.checkPannel();

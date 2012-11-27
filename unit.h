@@ -26,7 +26,7 @@ class Unit
          void recieveDamages(int dmg);
 
         //Définit s'i lest mort ou non
-         bool isDead();
+         virtual bool isDead();
 
         //Dessine l'explosion
          void drawExplosion();
