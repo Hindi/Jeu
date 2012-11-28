@@ -42,6 +42,7 @@ class Jeu
 
         int getTotalScore();
 
+
     protected:
         sf::Sound musicSound;
         sf::SoundBuffer clicBuffer;
@@ -59,5 +60,7 @@ class Jeu
         int scorePlayer1, scorePlayer2;
 
 };
+
+bool hasQuitCondition(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool quit);
 
 #endif // JEU_H_INCLUDED

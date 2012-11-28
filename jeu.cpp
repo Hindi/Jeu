@@ -98,7 +98,7 @@ int Jeu::start(short niveau)
 
     while (app.IsOpened() )
     {
-        if(m_quit || (level_manager->isFinished() && (!population->haveEnnemyInProgress() )))
+        if(hasQuitCondition(player, player2, m_quit))
         {
             int state = 0;
             if(level_manager->isFinished() && !population->haveEnnemyInProgress())
@@ -108,7 +108,7 @@ int Jeu::start(short niveau)
                 state = 1;
             }
             else
-                m_menu.setLevel(1);
+                Level_manager::getInstance()->setGameOver();
             drop_manager->reset();
             population->reset();
             weapon_manager->reset();
@@ -237,7 +237,7 @@ int Jeu::start(short niveau)
                 player2->resetLostLife();
                 invincible = false;
             }
-        }/
+        }
         cheatManager.checkKonami();
         level_manager->checkLevel();
         weapon_manager->manage();
@@ -328,4 +328,14 @@ void Jeu::saveDatas(std::tr1::shared_ptr<Player> player1, std::tr1::shared_ptr<P
 int Jeu::getTotalScore()
 {
     return scorePlayer1 + scorePlayer2;
+}
+
+bool hasQuitCondition(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool m_quit)
+{
+    if(m_quit)
+        return true;
+    if(Level_manager::getInstance()->isFinished() && (!Population::getInstance()->haveEnnemyInProgress()))
+        return true;
+    if(player->isDead() && player2->isDead())
+        return true;
 }

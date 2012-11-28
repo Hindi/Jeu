@@ -190,11 +190,6 @@ void Menu::drawMainMenu(int select, int score)
             app.Draw(start);
 
             app.Draw(spriteCreditContent);
-
-            Event Event;
-            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
-            {
-            }
         }
     }
     else
