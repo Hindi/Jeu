@@ -77,6 +77,7 @@ void Level_manager::startLevel(short level)
 
 void Level_manager::checkLevel()
 {
+    cout << "huk4" << endl;
     if(vectorPosition < currentLevel.size())
     {
          if(timer.getTime() > spawnTime)
@@ -130,7 +131,10 @@ void Level_manager::checkLevel()
                     else
                     {
                         if(strcmp(tokens[1].data(),"lilith")==0)
+                        {
                         Population::getInstance()->createLilith();
+
+                        }
                     }
                 }
 

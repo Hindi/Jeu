@@ -95,7 +95,6 @@ int Jeu::start(short niveau)
     Background background(1, m_SCREEN_WIDTH, m_SCREEN_HEIGHT, app);
 
     Level_manager::getInstance()->startLevel(niveau);
-
     while (app.IsOpened() )
     {
         if(hasQuitCondition(player, player2, m_quit))
