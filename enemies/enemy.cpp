@@ -91,7 +91,7 @@ bool Enemy::isDead()
     {
         return true;
     }
-    else if(m_position.x < -50 || m_position.x > 1366 || m_position.y < -100 || m_position.y > 900)
+    else if(m_position.x < -50 || m_position.x > 1366 || m_position.y < -250|| m_position.y > 900)
     {
         return true;
     }

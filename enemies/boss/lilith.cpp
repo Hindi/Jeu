@@ -4,11 +4,11 @@ using namespace std;
 using namespace sf;
 
 Lilith::Lilith(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2) :
-            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(250, 100), "boss", "roundtrip", 1, 30, 2, player, player2, true),
+            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(500, -230), "boss", "roundtrip", 1, 30, 2, player, player2, false),
             m_level(1)
 {
     timerRandomShot.start();
-
+    timerMove.start();
 }
 
 Lilith::~Lilith()
@@ -88,7 +88,9 @@ IntRect Lilith::getWeakBox()
 
 void Lilith::move()
 {
-    if(!startedLasor && !teleporting)
+    if(timerMove.getTime() < 1.5)
+        this->moveDown();
+    else
         this->roundTrip();
     this->follow();
 }

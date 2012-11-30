@@ -21,13 +21,13 @@ Jeu::~Jeu()
 }
 
 int Jeu::start(short niveau)
-{
+{/*
     SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/acronis.ogg");
     musicSound.SetBuffer(musicBuffer);
     musicSound.SetLoop(true);
     musicSound.SetPitch(1.f);
     musicSound.SetVolume(50.f);
-    musicSound.Play();
+    musicSound.Play();*/
 
 
     clicBuffer = sound_manager::getInstance()->getBuffer("son/clic.ogg");
