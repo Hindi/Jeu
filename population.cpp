@@ -236,7 +236,15 @@ void Population::createFlyingSaucer(Vector2f position, const std::string &move)
 {
     m_coefSpeed = 20;
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 2, 2, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, false, player, player2, false));
+    tr1::shared_ptr<Enemy> a(new Enemy(60, 10, 500, 1, 1, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 2, false, player, player2, false));
+    m_enemies.push_back(a);
+}
+
+void Population::createFlyingSaucer2(Vector2f position, const std::string &move)
+{
+    m_coefSpeed = 20;
+    //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
+    tr1::shared_ptr<Enemy> a(new Enemy(30, 10, 500, 2, 2, "images/enemy2.png", position, "flyingSaucer", move, 1, m_coefSpeed, 1, false, player, player2, false));
     m_enemies.push_back(a);
 }
 

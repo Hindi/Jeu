@@ -50,6 +50,7 @@ class Population
         void createShip(sf::Vector2f position, const std::string &filepath);
         void createShip2(const std::string &filepath);
         void createFlyingSaucer(sf::Vector2f position, const std::string &filepath);
+        void createFlyingSaucer2(sf::Vector2f position, const std::string &move);
         void createSpawner(sf::Vector2f position, const std::string &filepath);
 
         void createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* const type, const char* const moveMethod, int moveValue,

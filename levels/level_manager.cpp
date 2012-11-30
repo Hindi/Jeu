@@ -121,6 +121,8 @@ void Level_manager::checkLevel()
                         Population::getInstance()->createShip2(tokens[2].data());
                     else if(strcmp(tokens[1].data(),"flyingSaucer")==0)
                         Population::getInstance()->createFlyingSaucer(position, tokens[2].data());
+                    else if(strcmp(tokens[1].data(),"flyingSaucer2")==0)
+                        Population::getInstance()->createFlyingSaucer2(position, tokens[2].data());
                     else if(strcmp(tokens[1].data(),"spawner")==0)
                         Population::getInstance()->createSpawner(position, tokens[2].data());
                 }
