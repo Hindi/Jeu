@@ -614,3 +614,8 @@ void Enemy::teleport()
     m_animated->SetPosition(Vector2f(position));
     m_position = position;
 }
+
+void Enemy::changeMoveMethod(std::string method)
+{
+    m_moveMethod = method;
+}

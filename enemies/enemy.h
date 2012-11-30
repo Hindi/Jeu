@@ -119,6 +119,7 @@ class Enemy : public Unit
         virtual void setTeleporting(bool state);
         bool readyToTeleport();
         virtual void teleport();
+        void changeMoveMethod(std::string method);
 
     protected:
         std::tr1::shared_ptr<Player> player;
@@ -156,7 +157,7 @@ class Enemy : public Unit
         const char* const m_type;
 
         //type de déplacement
-        const std::string m_moveMethod;
+        std::string m_moveMethod;
 
         //Etat du déplacement
         short  m_moveValue, m_coefSpeed;

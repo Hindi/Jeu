@@ -60,7 +60,7 @@ void Lilith::fire()
         Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     }
 
-    this->firinhMahLasor(1);
+    this->firinhMahLasor(5);
 }
 
 IntRect Lilith::getBoundingBox()
@@ -90,6 +90,8 @@ void Lilith::move()
 {
     if(timerMove.getTime() < 1.5)
         this->moveDown();
+    else if(laserFocusing ||firinh)
+        this->dontMove();
     else
         this->roundTrip();
     this->follow();

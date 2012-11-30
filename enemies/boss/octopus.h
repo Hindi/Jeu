@@ -12,7 +12,7 @@
 #include "../../const.h"
 #include "../../timer.h"
 
-class octopus
+class octopus : public Boss
 {
     public:
         octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);

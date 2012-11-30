@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 octopus::octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false),
+            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false)
 {
     timerMove.start();
 }
@@ -14,9 +14,9 @@ octopus::~octopus()
     //dtor
 }
 
-void Octopus::fire()
+void octopus::fire()
 {
-    this->firinhMahLasor();
+    this->firinhMahLasor(5);
 }
 
 IntRect octopus::getBoundingBox()
@@ -40,7 +40,7 @@ IntRect octopus::getWeakBox()
 
     return boundingBox;
 }
-void Octopus::move()
+void octopus::move()
 {
     if(timerMove.getTime() < 1.5)
     {

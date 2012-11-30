@@ -133,7 +133,8 @@ void Boss::firinhMahLasor(int fireTime)
             {
                 laserFocusing = false;//On arrête le focus
                 firinh = true;
-                fireTime.reinitialize();
+                timerFireTime.reinitialize();
+                loop = 0;
             }
         }
         if(firinh && timerAddMove.getTime() > 6)
@@ -143,13 +144,15 @@ void Boss::firinhMahLasor(int fireTime)
             std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
             projectile->setPosition(position);
             Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+            laserFocusing = false;
             if(vuuuSound.GetStatus() == sf::Sound::Playing)
                 vuuuSound.Stop();
-            if(timerFreTime > fireTime)
+            if(timerFireTime.getTime() > fireTime)
             {
-                laserFocusing = false;
+                cout << "huk" << endl;
                 startedLasor = false;
                 timerLaser.reinitialize();
+                firinh = false;
             }
         }
     }
