@@ -378,6 +378,11 @@ bool Player::getSecondary()
     return secondary;
 }
 
+bool Player::getThird()
+{
+    return third;
+}
+
 void Player::setMissile(bool mode)
 {
     missiles = mode;

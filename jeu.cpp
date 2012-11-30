@@ -168,6 +168,10 @@ int Jeu::start(short niveau)
             {
                 player->fire0();
             }
+            if(input.IsKeyDown(Key::P))
+            {
+                Weapon_manager::getInstance()->changeWeapon(player);
+            }
         }
         if(!player2->isDead())
         {
@@ -200,6 +204,10 @@ int Jeu::start(short niveau)
             if(input.IsKeyDown(Key::E))
             {
                 player2->fire1();
+            }
+            if(input.IsKeyDown(Key::M))
+            {
+                Weapon_manager::getInstance()->changeWeapon(player2);
             }
             if(input.IsKeyDown(Key::H))
             {

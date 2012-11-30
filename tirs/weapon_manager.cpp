@@ -76,3 +76,26 @@ void Weapon_manager::reset()
 {
 
 }
+
+void Weapon_manager::changeWeapon(std::tr1::shared_ptr<Player> player)
+{
+    if(player->getThird())
+    {
+        player->setSecondary(false);
+        player->setMissile(false);
+        player->setThird(false);
+    }
+    else if(player->getMissile())
+    {
+        player->setThird(true);
+    }
+    else if(player->getSecondary())
+    {
+        player->setMissile(true);
+    }
+    else
+    {
+        player->setSecondary(true);
+    }
+
+}

@@ -76,6 +76,8 @@ class Player : public Unit
         //accesseur sur l'arme secondaire
         bool getSecondary();
 
+        bool getThird();
+
         //Setters
         void setMissile(bool mode);
         void setSecondary(bool mode);

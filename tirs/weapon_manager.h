@@ -19,6 +19,8 @@ class Weapon_manager
 
         void reset();
 
+        void changeWeapon(std::tr1::shared_ptr<Player> player);
+
     private:
         //Score limite pour activer les armes
         int secondaryScore, missileScore, thirdScore;
