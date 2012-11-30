@@ -60,7 +60,7 @@ void Lilith::fire()
         Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     }
 
-    this->firinhMahLasor();
+    this->firinhMahLasor(1);
 }
 
 IntRect Lilith::getBoundingBox()

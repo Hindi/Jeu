@@ -2575,15 +2575,13 @@
 	"../tirs/projectile_manager.h"
 	"../const.h"
 
-1354268217 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
+1354270003 c:\users\shalafi\documents\github\jeu\enemies\boss\lilith.h
 	<list>
 	<SFML/Graphics.hpp>
 	"../boss.h"
 	"../adds.h"
 	"../../player.h"
 	"../../tirs/projectile.h"
-	"../../animation.h"
-	"../../Animated.hpp"
 	"../../image_manager.h"
 	"../../tirs/projectile_manager.h"
 	"../../const.h"

@@ -12,6 +12,7 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
             startLife(life)
 {
     timerLaser.start();
+    timerFireTime.start();
     timerAddMove.start();
     imageFocus = new Image();
     *imageFocus = image_manager::getInstance()->getImage("images/concentrateurEnergie.png");
@@ -90,7 +91,7 @@ void Boss::setTeleporting(bool state)
     }
 }
 
-void Boss::firinhMahLasor()
+void Boss::firinhMahLasor(int fireTime)
 {
     if(!startedLasor && timerLaser.getTime() > laserRate && !teleporting)
     {
@@ -132,6 +133,7 @@ void Boss::firinhMahLasor()
             {
                 laserFocusing = false;//On arrête le focus
                 firinh = true;
+                fireTime.reinitialize();
             }
         }
         if(firinh && timerAddMove.getTime() > 6)
@@ -141,11 +143,14 @@ void Boss::firinhMahLasor()
             std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
             projectile->setPosition(position);
             Projectile_manager::getInstance()->addEnemyProjectile(projectile);
-            laserFocusing = false;
-            startedLasor = false;
-            timerLaser.reinitialize();
             if(vuuuSound.GetStatus() == sf::Sound::Playing)
                 vuuuSound.Stop();
+            if(timerFreTime > fireTime)
+            {
+                laserFocusing = false;
+                startedLasor = false;
+                timerLaser.reinitialize();
+            }
         }
     }
 }

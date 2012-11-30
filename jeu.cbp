@@ -84,6 +84,8 @@
 		<Unit filename="enemies\boss.h" />
 		<Unit filename="enemies\boss\lilith.cpp" />
 		<Unit filename="enemies\boss\lilith.h" />
+		<Unit filename="enemies\boss\octopus.cpp" />
+		<Unit filename="enemies\boss\octopus.h" />
 		<Unit filename="enemies\enemy.cpp" />
 		<Unit filename="enemies\enemy.h" />
 		<Unit filename="enemies\flying_saucer.cpp" />

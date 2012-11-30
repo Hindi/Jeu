@@ -28,7 +28,7 @@ class Boss : public Enemy
         virtual void draw();
         sf::Vector2f getPosition();
         virtual void setTeleporting(bool state);
-        void firinhMahLasor();
+        void firinhMahLasor(int fireTime);
         void pushAdd(std::tr1::shared_ptr<Adds> add);
         void follow();
         bool canFire();
@@ -52,7 +52,7 @@ class Boss : public Enemy
         const char* m_type;
         short m_level;
         bool startedLasor;
-        Timer timerLaser;
+        Timer timerLaser, timerFireTime;
         int laserRate, currentFrame;
         int startLife;
 
