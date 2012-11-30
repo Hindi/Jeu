@@ -1,3 +1,17 @@
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+spawn ship2 down 0 0
+
+
 boss lilith 50 50
 
 OVER

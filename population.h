@@ -48,6 +48,7 @@ class Population
 
         //Créateurs d'ennemis
         void createShip(sf::Vector2f position, const std::string &filepath);
+        void createShip2(const std::string &filepath);
         void createFlyingSaucer(sf::Vector2f position, const std::string &filepath);
         void createSpawner(sf::Vector2f position, const std::string &filepath);
 

@@ -222,6 +222,16 @@ void Population::createShip(Vector2f position, const std::string &move)
     m_enemies.push_back(a);
 }
 
+void Population::createShip2(const std::string &move)
+{
+    Vector2f randPosition;
+    randPosition.x = rand() % 768 + 10;
+    randPosition.y = -100;
+    //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
+    tr1::shared_ptr<Enemy> a(new Enemy(1, 15, 100, 7, 7, "images/enemy.png", randPosition, "ship", move, 1, m_coefSpeed, 1, false, player, player2, false));
+    m_enemies.push_back(a);
+}
+
 void Population::createFlyingSaucer(Vector2f position, const std::string &move)
 {
     m_coefSpeed = 20;

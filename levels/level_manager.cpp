@@ -117,6 +117,8 @@ void Level_manager::checkLevel()
                     Vector2f position((1366 / 100) * atoi(tokens[3].c_str()), (768 / 100) * atoi(tokens[4].c_str()));
                     if(strcmp(tokens[1].data(),"ship")==0)
                         Population::getInstance()->createShip(position, tokens[2].data());
+                    else if(strcmp(tokens[1].data(),"ship2")==0)
+                        Population::getInstance()->createShip2(tokens[2].data());
                     else if(strcmp(tokens[1].data(),"flyingSaucer")==0)
                         Population::getInstance()->createFlyingSaucer(position, tokens[2].data());
                     else if(strcmp(tokens[1].data(),"spawner")==0)
