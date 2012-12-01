@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(50, 5, 10000, 3, 3, "images/octopus/Oeil.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false)
+            Boss(50, 5, 10000, 3, 3, "images/octopus/Oeil.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
 }
@@ -56,6 +56,22 @@ void Octopus::move()
     {
         this->moveDown();
         this->follow();
+    }
+    else if(timerMove.getTime() - lastTentaMove > 0.2)
+    {
+        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+        Vector2f position;
+        for(; lit != m_adds.end(); lit++)
+        {
+            position.y = (*lit)->getPosition().y;
+            float t = timerMove.getTime();
+            position.x = pow(2,-position.y) * ( 0.6*sin(position.y-t) + 0.5*sin(1.7*(position.y-t)) + 0.3*sin(2.4*(position.y-t)) + 0.4*sin(4.1*(position.y-t)));
+            cout << position.y << " " << endl;
+            (*lit)->getAnimation()->SetPosition(position);
+            (*lit)->setPosition(position);
+        }
+
+        lastTentaMove = timerMove.getTime();
     }
 }
 

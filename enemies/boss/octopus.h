@@ -27,6 +27,7 @@ class Octopus : public Boss
 
     private:
         Timer timerMove;
+        int lastTentaMove;
 
 };
 

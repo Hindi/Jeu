@@ -28,7 +28,6 @@ class Lilith : public Boss
 
     protected:
         Timer timerMove;
-        const char* m_name;
         short m_level;
         Timer timerRandomShot;
 
