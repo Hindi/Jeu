@@ -30,7 +30,7 @@ class Boss : public Enemy
         virtual void setTeleporting(bool state);
         void firinhMahLasor(int fireTime);
         void pushAdd(std::tr1::shared_ptr<Adds> add);
-        void follow();
+        virtual void follow();
         bool canFire();
         bool canTeleport();
         void teleport();

@@ -23,6 +23,7 @@ class Octopus : public Boss
         sf::IntRect getBoundingBox();
         sf::IntRect getWeakBox();
         void move();
+        void follow();
 
     private:
         Timer timerMove;

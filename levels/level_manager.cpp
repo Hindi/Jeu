@@ -77,7 +77,6 @@ void Level_manager::startLevel(short level)
 
 void Level_manager::checkLevel()
 {
-    cout << "huk4" << endl;
     if(vectorPosition < currentLevel.size())
     {
          if(timer.getTime() > spawnTime)

@@ -58,3 +58,14 @@ void Octopus::move()
         this->follow();
     }
 }
+
+void Octopus::follow()
+{
+    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+    for(; lit != m_adds.end(); lit++)
+    {
+        Vector2f position(m_position.x +(*lit)->getRelativePosition().x, m_position.y + (*lit)->getRelativePosition().y);
+        (*lit)->getAnimation()->SetPosition(position);
+        (*lit)->setPosition(position);
+    }
+}

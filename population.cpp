@@ -280,23 +280,14 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
 
 void Population::createLilith()
 {
-    cout << "huk" << endl;
     tr1::shared_ptr<Boss> lilith(new Lilith(player, player2));
-    try
-    {
-        currentBoss = lilith;
-    }
-    catch(int e)
-    {
-        cout << "exception sur current boss" << endl;
-    }
-    cout << "huk2" << endl;
+    m_enemies.push_back(lilith);
+    currentBoss = lilith;
     Vector2f position(0, 0);
     //bossSpawned = true;
     this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=23;
     this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier2.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
-    m_enemies.push_back(lilith);
 }
 
 void Population::createOctopus()
