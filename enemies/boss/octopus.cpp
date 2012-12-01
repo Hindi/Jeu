@@ -7,6 +7,7 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
             Boss(50, 5, 10000, 3, 3, "images/octopus/Oeil.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
+    lastTentaMove = 0;
 }
 
 Octopus::~Octopus()
@@ -57,16 +58,17 @@ void Octopus::move()
         this->moveDown();
         this->follow();
     }
-    else if(timerMove.getTime() - lastTentaMove > 0.2)
+    else if(timerMove.getTime() - lastTentaMove > 0.1)
     {
         list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
         Vector2f position;
+        float y=0;
         for(; lit != m_adds.end(); lit++)
         {
             position.y = (*lit)->getPosition().y;
-            float t = timerMove.getTime();
-            position.x = pow(2,-position.y) * ( 0.6*sin(position.y-t) + 0.5*sin(1.7*(position.y-t)) + 0.3*sin(2.4*(position.y-t)) + 0.4*sin(4.1*(position.y-t)));
-            cout << position.y << " " << endl;
+            y = position.y / 100;
+            float t = timerMove.getTime() + (*lit)->getRelativePosition().x;
+            position.x = m_position.x + (*lit)->getRelativePosition().x + pow(2,position.y/70) * ( 0.6*sin(y-t) + 0.5*sin(1.7*(y-t)) + 0.3*sin(2.4*(y-t)) + 0.4*sin(4.1*(y-t)));
             (*lit)->getAnimation()->SetPosition(position);
             (*lit)->setPosition(position);
         }
