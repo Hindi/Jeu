@@ -12,11 +12,11 @@
 #include "../../const.h"
 #include "../../timer.h"
 
-class octopus : public Boss
+class Octopus : public Boss
 {
     public:
-        octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
-        virtual ~octopus();
+        Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2);
+        virtual ~Octopus();
 
         void fire();
         //void follow();

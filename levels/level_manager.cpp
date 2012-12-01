@@ -139,6 +139,11 @@ void Level_manager::checkLevel()
                         Population::getInstance()->createLilith();
 
                         }
+                        if(strcmp(tokens[1].data(),"octopus")==0)
+                        {
+                        Population::getInstance()->createOctopus();
+
+                        }
                     }
                 }
 

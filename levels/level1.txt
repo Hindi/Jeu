@@ -1,6 +1,3 @@
-spawn flyingSaucer2 roundTrip 50 50
-
-
-boss lilith 50 50
+boss octopus 50 50
 
 OVER

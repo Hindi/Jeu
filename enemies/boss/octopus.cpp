@@ -3,23 +3,33 @@
 using namespace std;
 using namespace sf;
 
-octopus::octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(50, 5, 10000, 3, 3, "images/lilith/corps.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false)
+Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
+            Boss(50, 5, 10000, 3, 3, "images/octopus/Oeil.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false)
 {
     timerMove.start();
 }
 
-octopus::~octopus()
+Octopus::~Octopus()
 {
     //dtor
 }
 
-void octopus::fire()
+void Octopus::fire()
 {
-    this->firinhMahLasor(5);
+    if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 7)
+    {
+        Vector2f position(m_position.x+100, m_position.y+200);
+        std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
+        projectile->setPosition(position);
+        Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+    }
+    else if(timerFireTime.getTime() > 7)
+    {
+        timerFireTime.reinitialize();
+    }
 }
 
-IntRect octopus::getBoundingBox()
+IntRect Octopus::getBoundingBox()
 {
     IntRect boundingBox;
     boundingBox.Left = m_position.x;
@@ -30,7 +40,7 @@ IntRect octopus::getBoundingBox()
     return boundingBox;
 }
 
-IntRect octopus::getWeakBox()
+IntRect Octopus::getWeakBox()
 {
     IntRect boundingBox;
     boundingBox.Left = m_position.x  + image->GetWidth()/2 - 40;
@@ -40,9 +50,9 @@ IntRect octopus::getWeakBox()
 
     return boundingBox;
 }
-void octopus::move()
+void Octopus::move()
 {
-    if(timerMove.getTime() < 1.5)
+    if(timerMove.getTime() < 0.5)
     {
         this->moveDown();
         this->follow();

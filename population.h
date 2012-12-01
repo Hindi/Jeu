@@ -18,6 +18,7 @@
 #include "const.h"
 #include "timer.h"
 #include "enemies/boss/lilith.h"
+#include "enemies/boss/octopus.h"
 #include "enemies/adds.h"
 #include "enemies/ship.h"
 #include "enemies/flying_saucer.h"
@@ -65,8 +66,9 @@ class Population
         //Gère les fonctions de mise à jour
         void manage();
 
-        //Création d'un boos
+        //Création d'un boss
         void createLilith();
+        void createOctopus();
 
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();
