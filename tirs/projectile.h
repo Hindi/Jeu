@@ -38,6 +38,8 @@ class Projectile
 
         void setProjPosition(sf::Vector2f speed);
 
+        void setSpeed(sf::Vector2f speef);
+
         bool hasAnimationFollow();
 
 

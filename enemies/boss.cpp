@@ -140,8 +140,8 @@ void Boss::firinhMahLasor(int fireTime)
         }
         if(firinh && timerAddMove.getTime() > 6)
         {
-            position.x = m_position.x + 93;
-            position.y = m_position.y + 115;
+            position.x = m_position.x + image->GetWidth()/2 - 20;
+            position.y = m_position.y + image->GetHeight()/2 + 40;
             std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
             projectile->setPosition(position);
             Projectile_manager::getInstance()->addEnemyProjectile(projectile);

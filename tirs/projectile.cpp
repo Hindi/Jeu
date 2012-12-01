@@ -198,3 +198,9 @@ void Projectile::unfreeze()
     m_speed.x *=3;
     m_speed.y *=3;
 }
+
+void Projectile::setSpeed(Vector2f speed)
+{
+    m_speed.x = speed.x;
+    m_speed.y = speed.y;
+}
