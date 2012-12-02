@@ -9,7 +9,30 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
     timerMove.start();
     lastTentaMove = 0;
 
+    short numberFrame(5);
+    image = new Image();
+    *image = image_manager::getInstance()->getImage("images/octopus/lasor.png");
 
+    for(int i=0; i<numberFrame; i++)
+    {
+        anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*i/numberFrame, 0, image->GetWidth()*(i+1)/numberFrame, image->GetHeight())));
+    }
+    animated = new Animated(&anim, true, true, 0.01);
+    animated2 = new Animated(&anim, true, true, 0.01);
+    animated3 = new Animated(&anim, true, true, 0.01);
+    animated4 = new Animated(&anim, true, true, 0.01);
+    animated5 = new Animated(&anim, true, true, 0.01);
+    animated6 = new Animated(&anim, true, true, 0.01);
+    animated7 = new Animated(&anim, true, true, 0.01);
+
+    Vector2f position(-100, -100);
+    animated->SetPosition(position);
+    animated2->SetPosition(position);
+    animated3->SetPosition(position);
+    animated4->SetPosition(position);
+    animated5->SetPosition(position);
+    animated6->SetPosition(position);
+    animated7->SetPosition(position);
 }
 
 Octopus::~Octopus()
@@ -19,16 +42,53 @@ Octopus::~Octopus()
 
 void Octopus::fire()
 {
-    if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 7)
+    if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 2.05 && !lasorUp)
     {
         Vector2f position(m_position.x+100, m_position.y+200);
-        std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/octopus/lasor.png", position, Vector2f(0, 0), m_coefSpeed));
-        projectile->setPosition(position);
-        Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+        animated->SetPosition(position);
+        lasorUp = true;
+    }
+    else if(timerFireTime.getTime() > 2.05 && timerFireTime.getTime() < 2.1)
+    {
+        Vector2f position(m_position.x+100, m_position.y+298);
+        animated2->SetPosition(position);
+    }
+    else if(timerFireTime.getTime() > 2.1 && timerFireTime.getTime() < 2.15)
+    {
+        cout << "huk" << endl;
+        Vector2f position(m_position.x+100, m_position.y+298+98);
+        animated3->SetPosition(position);
+    }
+    else if(timerFireTime.getTime() > 2.15 && timerFireTime.getTime() < 2.2)
+    {
+        Vector2f position(m_position.x+100, m_position.y+298+196);
+        animated4->SetPosition(position);
+    }
+    else if(timerFireTime.getTime() > 2.2 && timerFireTime.getTime() < 2.25)
+    {
+        Vector2f position(m_position.x+100, m_position.y+298+196+98);
+        animated5->SetPosition(position);
+    }
+    else if(timerFireTime.getTime() > 2.25 && timerFireTime.getTime() < 2.3)
+    {
+        Vector2f position(m_position.x+100, m_position.y+298+2*196);
+        animated6->SetPosition(position);
+    }
+    else if(timerFireTime.getTime() > 2.3 && timerFireTime.getTime() < 2.35)
+    {
+        Vector2f position(m_position.x+100, m_position.y+298+2*196+98);
+        animated7->SetPosition(position);
     }
     else if(timerFireTime.getTime() > 7)
     {
+        Vector2f position(-100, -100);
+        animated->SetPosition(position);
+        animated2->SetPosition(position);
+        animated3->SetPosition(position);
+        animated4->SetPosition(position);
+        animated5->SetPosition(position);
         timerFireTime.reinitialize();
+        lasorUp = false;
     }
 }
 
@@ -98,6 +158,24 @@ void Octopus::move()
     }
     (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
     (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
+
+    if(lasorUp)
+    {
+        animated->anim(app.GetFrameTime());
+        animated2->anim(app.GetFrameTime());
+        animated3->anim(app.GetFrameTime());
+        animated4->anim(app.GetFrameTime());
+        animated5->anim(app.GetFrameTime());
+        animated6->anim(app.GetFrameTime());
+        animated7->anim(app.GetFrameTime());
+        app.Draw(*animated7);
+        app.Draw(*animated6);
+        app.Draw(*animated5);
+        app.Draw(*animated4);
+        app.Draw(*animated3);
+        app.Draw(*animated2);
+        app.Draw(*animated);
+    }
 }
 
 void Octopus::follow()

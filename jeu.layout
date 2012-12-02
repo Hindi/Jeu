@@ -7,8 +7,8 @@
 	<File name="Anim.hpp" open="0" top="0" tabpos="10">
 		<Cursor position="540" topLine="0" />
 	</File>
-	<File name="Animated.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="888" topLine="42" />
+	<File name="Animated.cpp" open="1" top="0" tabpos="17">
+		<Cursor position="888" topLine="7" />
 	</File>
 	<File name="Animated.hpp" open="0" top="0" tabpos="11">
 		<Cursor position="1929" topLine="42" />
@@ -28,8 +28,8 @@
 	<File name="background.h" open="0" top="0" tabpos="13">
 		<Cursor position="591" topLine="3" />
 	</File>
-	<File name="collision.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="13126" topLine="284" />
+	<File name="collision.cpp" open="1" top="0" tabpos="18">
+		<Cursor position="13038" topLine="284" />
 	</File>
 	<File name="collision.h" open="0" top="0" tabpos="13">
 		<Cursor position="820" topLine="8" />
@@ -49,17 +49,17 @@
 	<File name="drop_manager.h" open="0" top="0" tabpos="15">
 		<Cursor position="667" topLine="3" />
 	</File>
-	<File name="enemies\adds.cpp" open="1" top="0" tabpos="16">
+	<File name="enemies\adds.cpp" open="0" top="0" tabpos="16">
 		<Cursor position="814" topLine="0" />
 	</File>
-	<File name="enemies\adds.h" open="1" top="0" tabpos="17">
+	<File name="enemies\adds.h" open="0" top="0" tabpos="17">
 		<Cursor position="179" topLine="9" />
 	</File>
 	<File name="enemies\boss.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="2880" topLine="42" />
+		<Cursor position="2880" topLine="93" />
 	</File>
 	<File name="enemies\boss.h" open="1" top="0" tabpos="15">
-		<Cursor position="1469" topLine="19" />
+		<Cursor position="1469" topLine="25" />
 	</File>
 	<File name="enemies\boss\lilith.cpp" open="1" top="0" tabpos="12">
 		<Cursor position="901" topLine="15" />
@@ -68,16 +68,16 @@
 		<Cursor position="718" topLine="0" />
 	</File>
 	<File name="enemies\boss\octopus.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="580" topLine="9" />
+		<Cursor position="1052" topLine="5" />
 	</File>
-	<File name="enemies\boss\octopus.h" open="1" top="0" tabpos="11">
-		<Cursor position="679" topLine="0" />
+	<File name="enemies\boss\octopus.h" open="1" top="1" tabpos="11">
+		<Cursor position="872" topLine="4" />
 	</File>
 	<File name="enemies\enemy.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="7109" topLine="259" />
+		<Cursor position="7134" topLine="255" />
 	</File>
 	<File name="enemies\enemy.h" open="1" top="0" tabpos="9">
-		<Cursor position="245" topLine="0" />
+		<Cursor position="245" topLine="123" />
 	</File>
 	<File name="enemies\flying_saucer.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="361" topLine="0" />
@@ -125,13 +125,13 @@
 		<Cursor position="52" topLine="0" />
 	</File>
 	<File name="player.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2919" topLine="149" />
+		<Cursor position="1429" topLine="18" />
 	</File>
 	<File name="player.h" open="1" top="0" tabpos="5">
-		<Cursor position="1976" topLine="66" />
+		<Cursor position="1976" topLine="96" />
 	</File>
 	<File name="population.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="833" topLine="16" />
+		<Cursor position="10560" topLine="253" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="7">
 		<Cursor position="3288" topLine="84" />
@@ -166,14 +166,14 @@
 	<File name="tirs\missile_manager.h" open="0" top="0" tabpos="18">
 		<Cursor position="1149" topLine="9" />
 	</File>
-	<File name="tirs\projectile.cpp" open="1" top="1" tabpos="18">
-		<Cursor position="3345" topLine="67" />
+	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="5021" topLine="165" />
 	</File>
-	<File name="tirs\projectile.h" open="1" top="0" tabpos="19">
-		<Cursor position="285" topLine="0" />
+	<File name="tirs\projectile.h" open="0" top="0" tabpos="19">
+		<Cursor position="233" topLine="0" />
 	</File>
-	<File name="tirs\projectile_manager.cpp" open="1" top="0" tabpos="20">
-		<Cursor position="1131" topLine="53" />
+	<File name="tirs\projectile_manager.cpp" open="0" top="0" tabpos="20">
+		<Cursor position="2044" topLine="53" />
 	</File>
 	<File name="tirs\projectile_manager.h" open="0" top="0" tabpos="15">
 		<Cursor position="1092" topLine="6" />

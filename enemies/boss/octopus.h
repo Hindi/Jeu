@@ -12,6 +12,9 @@
 #include "../../image_manager.h"
 #include "../../const.h"
 #include "../../timer.h"
+#include "../../Animated.hpp"
+#include "../../Anim.hpp"
+
 
 class Octopus : public Boss
 {
@@ -27,8 +30,14 @@ class Octopus : public Boss
         void follow();
 
     private:
+        //Variables d'animation
+        Animated *animated, *animated2, *animated3, *animated4, *animated5, *animated6, *animated7;
+        Anim anim;
+        sf::Image *image;
+
         Timer timerMove;
         int lastTentaMove;
+        bool lasorUp;
 
 };
 

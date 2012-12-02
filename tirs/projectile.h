@@ -7,8 +7,6 @@
 #include "../timer.h"
 #include "../image_manager.h"
 #include "../const.h"
-#include "../Animated.hpp"
-#include "../Anim.hpp"
 
 //Type projectile géré par player et enemy
 
@@ -62,13 +60,6 @@ class Projectile
         void killThemAll();
 
     protected:
-
-        //Variables d'animation
-        Animated *m_animated;
-        Anim m_anim;
-
-        Timer lasorLive;
-
         //Le sprite
         sf::Sprite spriteFirst;
         sf::Sprite spriteSecond;
@@ -89,7 +80,7 @@ class Projectile
         sf::Vector2f m_position;
 
         //Animation de poursuite ou non
-        bool m_followAnim, lasor;
+        bool m_followAnim;
 
         sf::Image *firstProj;
         sf::Image *secondProj;

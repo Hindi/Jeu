@@ -8,15 +8,12 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             scale(1,1),
             m_coefSpeed(coefSpeed),
             m_position(position),
-            m_followAnim(followAnim),
-            lasor(false)
+            m_followAnim(followAnim)
 {
-    if(strcmp((filepath).data(), "images/octopus/lasor.png")==0)
-        lasor = true;
     float speedNorm = sqrt(pow(speed.x*coefSpeed, 2) + pow(speed.y*coefSpeed, 2));
     followRate = 20/speedNorm;
     this->setPosition(position);
-    if(!m_followAnim && !lasor)
+    if(!m_followAnim)
     {
         firstProj = new Image();
         *firstProj = image_manager::getInstance()->getImage(filepath);
@@ -68,33 +65,11 @@ Projectile::Projectile(const string &filepath, Vector2f position, Vector2f speed
             sprites[i]->SetPosition(m_position);
         }
     }
-    if(lasor)
-    {
-        lasor = true;
-        short numberFrame(5);
-        firstProj = new Image();
-        *firstProj = image_manager::getInstance()->getImage(filepath);
-        for(int i=0; i<numberFrame; i++)
-        {
-            m_anim.PushFrame(Frame(firstProj, sf::Rect<int>(firstProj->GetWidth()*i/numberFrame, 0, firstProj->GetWidth()*(i+1)/numberFrame, firstProj->GetHeight())));
-        }
-        cout << "huk" << endl;
-        m_animated->SetAnim(&m_anim);
-        cout << "huk1" << endl;
-        m_animated->SetLoop(true);
-        m_animated->SetFrameTime(0.5);
-        m_animated->Play();
-        m_animated->SetPosition(m_position.x, m_position.y);
-        lasorLive.start();
-    }
-    timerFollow.start();
 }
 
 Projectile::~Projectile()
 {
     delete firstProj;
-    if(lasor)
-        delete m_animated;
     if(m_followAnim)
     {
         delete secondProj;
@@ -209,11 +184,6 @@ void Projectile::draw()
         app.Draw(spriteFourth);
         app.Draw(spriteFifth);
     }
-    else if(lasor)
-    {
-        m_animated->anim(app.GetFrameTime());
-        app.Draw(*m_animated);
-    }
 }
 
 void Projectile::freeze()
@@ -232,18 +202,4 @@ void Projectile::setSpeed(Vector2f speed)
 {
     m_speed.x = speed.x;
     m_speed.y = speed.y;
-}
-
-//Réservé aux lasors
-bool Projectile::isLasor()
-{
-    return lasor;
-}
-
-//Réservé aux lasors
-bool Projectile::isAlive()
-{
-    if(lasorLive.getTime() > 4)
-        return false;
-    return true;
 }

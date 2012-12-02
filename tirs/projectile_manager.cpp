@@ -59,7 +59,7 @@ void Projectile_manager::moveProjectile()
         {
             Vector2f speed((*lit)->getSpeed(0)*elapsedTime*(*lit)->getCoefSpeed(),((*lit)->getSpeed(2))*elapsedTime*(*lit)->getCoefSpeed());//On calcule le vecteur vitesse
             (*lit)->move(speed);
-            if(((*lit)->getPosition().y  > 1500 || (*lit)->getPosition().y  < -50 || (*lit)->getPosition().x  < -50 || (*lit)->getPosition().x > 1300) || (*lit)->isLasor() && !(*lit)->isAlive() )//On vérifie sa position
+            if((*lit)->getPosition().y  > 1500 || (*lit)->getPosition().y  < -50 || (*lit)->getPosition().x  < -50 || (*lit)->getPosition().x > 1300)//On vérifie sa position
             {
                 lit = m_enemyProjectiles.erase(lit);//S'il est sorti de l'écran on le supprime
             }
