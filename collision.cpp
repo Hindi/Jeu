@@ -303,7 +303,8 @@ void Collision::manageProjectileCollision()
                 m_player->loseLive();
 
                 //On supprime le projectile
-                (lit) = enemyProjectile->erase(lit);
+                if(!(*lit)->isLasor())
+                    (lit) = enemyProjectile->erase(lit);
             }
             else if(projectileRect.Bottom > player2Rect.Top+40 && projectileRect.Top < player2Rect.Bottom-40 && projectileRect.Right > player2Rect.Left+70 && projectileRect.Left < player2Rect.Right-70)
             {
@@ -311,7 +312,8 @@ void Collision::manageProjectileCollision()
                 m_player2->loseLive();
 
                 //On supprime le projectile
-                (lit) = enemyProjectile->erase(lit);
+                if(!(*lit)->isLasor())
+                    (lit) = enemyProjectile->erase(lit);
             }
             else
                 lit++;

@@ -22,7 +22,7 @@ void Octopus::fire()
     if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 7)
     {
         Vector2f position(m_position.x+100, m_position.y+200);
-        std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/projectile.png", position, Vector2f(0, 15), m_coefSpeed));
+        std::tr1::shared_ptr<Projectile> projectile(new Projectile("images/octopus/lasor.png", position, Vector2f(0, 0), m_coefSpeed));
         projectile->setPosition(position);
         Projectile_manager::getInstance()->addEnemyProjectile(projectile);
     }
