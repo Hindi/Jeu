@@ -25,8 +25,7 @@ class Enemy : public Unit
         //Destructeur
         virtual ~Enemy();
 
-        //Accesseur sur le sprite
-        sf::Sprite* getSprite();
+        void changeImage(const std::string &filepath, int frameNumber);
 
         //Accesseur sur le rectangle occupé par le sprite
          virtual sf::IntRect getBoundingBox();

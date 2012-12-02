@@ -74,6 +74,18 @@ void Boss::draw()
         app.Draw(*m_animatedFocus);
     }
     this->drawHealthBar();
+
+    list<tr1::shared_ptr<Adds> >::iterator lit(m_adds.begin());
+    for(; lit != m_adds.end();)
+    {
+        if((*lit)->isDead())
+        {
+            lit = m_adds.erase(lit);
+        }
+        else
+            lit++;
+    }
+
 }
 
 

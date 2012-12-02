@@ -8,6 +8,8 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
 {
     timerMove.start();
     lastTentaMove = 0;
+
+
 }
 
 Octopus::~Octopus()
@@ -75,6 +77,27 @@ void Octopus::move()
 
         lastTentaMove = timerMove.getTime();
     }
+
+    //On change l'image du bout de tentacule
+    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+    list<tr1::shared_ptr<Adds> >::const_iterator litref1(m_adds.begin());
+    list<tr1::shared_ptr<Adds> >::const_iterator litref2(m_adds.begin());
+    int yref1(0), yref2(0);
+    for(; lit != m_adds.end(); lit++)
+    {
+        if((*lit)->getPosition().y > yref1 && (*lit)->getPosition().x < 600)
+        {
+            yref1 = (*lit)->getPosition().y;
+            litref1 = lit;
+        }
+        if((*lit)->getPosition().y > yref2 && (*lit)->getPosition().x > 600)
+        {
+            yref2 = (*lit)->getPosition().y;
+            litref2 = lit;
+        }
+    }
+    (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
+    (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
 }
 
 void Octopus::follow()

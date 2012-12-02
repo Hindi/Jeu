@@ -61,9 +61,16 @@ Enemy::~Enemy()
     this->reset();
 }
 
-Sprite* Enemy::getSprite()
+
+void Enemy::changeImage(const string &filepath, int frameNumber)
 {
-    return &sprite;
+    m_anim.reset();
+    *image = image_manager::getInstance()->getImage(filepath);
+    for(int i=0; i < frameNumber; i++)
+    {
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*i/frameNumber, 0, image->GetWidth()*(i+1)/frameNumber, image->GetHeight())));
+    }
+    m_animated->SetAnim(&m_anim);
 }
 
 short Enemy::getScoreHit() const

@@ -295,7 +295,6 @@ void Population::createOctopus()
     currentBoss = octopus;
     m_enemies.push_back(octopus);;
     Vector2f position(-50, 0);
-    Vector2f position2(50, 0);
     for(int i=0; i < 15; i++)
     {
         this->createAdd(50, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);

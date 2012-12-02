@@ -35,3 +35,8 @@ Frame& Anim::operator [] (size_t N)
 {
     return myFrame[N];
 }
+
+void Anim::reset()
+{
+    myFrame.clear();
+}

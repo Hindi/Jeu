@@ -9,6 +9,7 @@
 #include "../../player.h"
 #include "../../tirs/projectile.h"
 #include "../../tirs/projectile_manager.h"
+#include "../../image_manager.h"
 #include "../../const.h"
 #include "../../timer.h"
 

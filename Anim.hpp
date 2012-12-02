@@ -28,6 +28,9 @@ class Anim
     // Accès a la frame numéro N
     Frame& operator [] (size_t N);
 
+    //Libérer les frame
+    void reset();
+
     // Plus tard, nous pourrons ajouter différentes fonctions liées au fait qu'une 'Anim' est une ressource
     // Par exemple : LoadFromFile, SaveToFile etc...
 
