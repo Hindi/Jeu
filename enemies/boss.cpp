@@ -224,3 +224,8 @@ void Boss::drawHealthBar()
     app.Draw(spriteHealthBackground);
     app.Draw(spriteHealthBar);
 }
+
+const char* Boss::getName()
+{
+    return m_name;
+}

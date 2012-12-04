@@ -112,7 +112,7 @@ class Enemy : public Unit
         sf::Vector2f getSize();
 
         void reset();
-
+        virtual const char* getName();
 
         virtual bool canTeleport();
         virtual void setTeleporting(bool state);

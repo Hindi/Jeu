@@ -42,6 +42,15 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
             m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
             m_animated->Scale(0.75, 0.75);
        }
+    if(strcmp(m_type, "boss") == 0)
+       {
+           if(strcmp(this->getName(), "octopus"));
+           {
+                m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/3, image->GetHeight()) ));
+                m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/3, 0, image->GetWidth()*2/3, image->GetHeight()) ));
+                m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*2/3, 0, image->GetWidth(), image->GetHeight()) ));
+           }
+       }
     else
         m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
 
@@ -625,4 +634,9 @@ void Enemy::teleport()
 void Enemy::changeMoveMethod(std::string method)
 {
     m_moveMethod = method;
+}
+
+const char* Enemy::getName()
+{
+    return "basicEnemy";
 }

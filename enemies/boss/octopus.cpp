@@ -33,6 +33,8 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
     animated5->SetPosition(position);
     animated6->SetPosition(position);
     animated7->SetPosition(position);
+
+
 }
 
 Octopus::~Octopus()
@@ -106,10 +108,20 @@ IntRect Octopus::getBoundingBox()
 IntRect Octopus::getWeakBox()
 {
     IntRect boundingBox;
-    boundingBox.Left = m_position.x  + image->GetWidth()/2 - 40;
-    boundingBox.Right = boundingBox.Left + 70;
-    boundingBox.Top = m_position.y + image->GetHeight()-20;
-    boundingBox.Bottom = boundingBox.Top + 20;
+    if(m_adds.empty())
+    {
+        boundingBox.Left = m_position.x  + image->GetWidth()/2 - 40;
+        boundingBox.Right = boundingBox.Left + 70;
+        boundingBox.Top = m_position.y + image->GetHeight()-20;
+        boundingBox.Bottom = boundingBox.Top + 20;
+    }
+    else
+    {
+        boundingBox.Left = 0;
+        boundingBox.Right = 0;
+        boundingBox.Top = 0;
+        boundingBox.Bottom = 0;
+    }
 
     return boundingBox;
 }

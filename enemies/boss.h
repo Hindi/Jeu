@@ -35,6 +35,7 @@ class Boss : public Enemy
         bool canTeleport();
         void teleport();
         void drawHealthBar();
+        const char* getName();
 
 
     protected:
@@ -59,8 +60,8 @@ class Boss : public Enemy
         //Variables laser
         bool startingLasor, laserFocusing, firinh;
         Timer timerAddMove;
-        Animated *m_animatedFocus;
-        Anim m_animFocus;
+        Animated *m_animatedFocus, *mainAnimated;
+        Anim m_animFocus, mainAnim;
         sf::Image* imageFocus;
         short loop;
 
