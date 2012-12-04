@@ -76,15 +76,18 @@ void Boss::draw()
     }
     this->drawHealthBar();
 
-    list<tr1::shared_ptr<Adds> >::iterator lit(m_adds.begin());
-    for(; lit != m_adds.end();)
+    if(!m_adds.empty())
     {
-        if((*lit)->isDead())
+        list<tr1::shared_ptr<Adds> >::iterator lit(m_adds.begin());
+        for(; lit != m_adds.end();)
         {
-            lit = m_adds.erase(lit);
+            if((*lit)->isDead())
+            {
+                lit = m_adds.erase(lit);
+            }
+            else
+                lit++;
         }
-        else
-            lit++;
     }
 
 }
@@ -98,10 +101,14 @@ Vector2f Boss::getPosition()
 void Boss::setTeleporting(bool state)
 {
     teleporting = state;
-    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
-    for(; lit != m_adds.end(); lit++)
+
+    if(!m_adds.empty())
     {
-        (*lit)->setTeleporting(true);
+        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+        for(; lit != m_adds.end(); lit++)
+        {
+            (*lit)->setTeleporting(true);
+        }
     }
 }
 
@@ -119,15 +126,19 @@ void Boss::firinhMahLasor(int fireTime)
         if(vuuuSound.GetStatus() != sf::Sound::Playing)
             vuuuSound.Play();
         int speed, sign;
-        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
-        for(; lit != m_adds.end(); lit++)
+
+        if(!m_adds.empty())
         {
-            sign = ((*lit)->getPosition().x - image->GetWidth()/3 - m_position.x);
-            speed = (sign / fabs(sign))*21;
-            (*lit)->horizontalMove(speed);
+            list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+            for(; lit != m_adds.end(); lit++)
+            {
+                sign = ((*lit)->getPosition().x - image->GetWidth()/3 - m_position.x);
+                speed = (sign / fabs(sign))*21;
+                (*lit)->horizontalMove(speed);
+            }
+            if(timerAddMove.getTime() > 2)
+                laserFocusing = true;
         }
-        if(timerAddMove.getTime() > 2)
-            laserFocusing = true;
     }
     if(laserFocusing)
     {
@@ -205,10 +216,14 @@ bool Boss::canTeleport()
 void Boss::teleport()
 {
     teleporting = false;
-    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
-    for(; lit != m_adds.end(); lit++)
+
+    if(!m_adds.empty())
     {
-        (*lit)->setTeleporting(false);
+        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+        for(; lit != m_adds.end(); lit++)
+        {
+            (*lit)->setTeleporting(false);
+        }
     }
     teleportTimer.reinitialize();
     teleportFrame = 0;

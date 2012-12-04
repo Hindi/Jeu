@@ -4,18 +4,18 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(50, 5, 10000, 3, 3, "images/octopus/Oeil.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
+            Boss(50, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
     lastTentaMove = 0;
 
     short numberFrame(5);
-    image = new Image();
-    *image = image_manager::getInstance()->getImage("images/octopus/lasor.png");
+    imageLaser = new Image();
+    *imageLaser = image_manager::getInstance()->getImage("images/octopus/lasor.png");
 
     for(int i=0; i<numberFrame; i++)
     {
-        anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*i/numberFrame, 0, image->GetWidth()*(i+1)/numberFrame, image->GetHeight())));
+        anim.PushFrame(Frame(imageLaser, sf::Rect<int>(imageLaser->GetWidth()*i/numberFrame, 0, imageLaser->GetWidth()*(i+1)/numberFrame, imageLaser->GetHeight())));
     }
     animated = new Animated(&anim, true, true, 0.01);
     animated2 = new Animated(&anim, true, true, 0.01);
@@ -35,6 +35,22 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
     animated7->SetPosition(position);
 
 
+    imageTentacle = new Image();
+    *imageTentacle = image_manager::getInstance()->getImage("images/octopus/Protections.png");
+    animTentacle.PushFrame(Frame(imageTentacle,sf::Rect<int>(0, 0, imageTentacle->GetWidth()/2, imageTentacle->GetHeight())));
+    animTentacle.PushFrame(Frame(imageTentacle,sf::Rect<int>(imageTentacle->GetWidth()/2, 0, imageTentacle->GetWidth(), imageTentacle->GetHeight())));
+    animatedTentacle = new Animated(&animTentacle, true, true, 0.01);
+    animatedTentacle->SetPosition(m_position);
+
+
+    *image = image_manager::getInstance()->getImage("images/octopus/Yeux.png");
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/3, image->GetHeight()) ));
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/3, 0, image->GetWidth()*2/3, image->GetHeight()) ));
+    m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*2/3, 0, image->GetWidth(), image->GetHeight()) ));
+    m_animated->SetFrame(0);
+
+    m_animated->SetAnim(&m_anim);
+    m_animated->SetPosition(m_position.x, m_position.y);
 }
 
 Octopus::~Octopus()
@@ -97,8 +113,8 @@ void Octopus::fire()
 IntRect Octopus::getBoundingBox()
 {
     IntRect boundingBox;
-    boundingBox.Left = m_position.x;
-    boundingBox.Right = boundingBox.Left + image->GetWidth();
+    boundingBox.Left = m_position.x+50;
+    boundingBox.Right = boundingBox.Left + image->GetWidth()-100;
     boundingBox.Top = m_position.y ;
     boundingBox.Bottom = boundingBox.Top + image->GetHeight()/1.5;
 
@@ -132,7 +148,7 @@ void Octopus::move()
         this->moveDown();
         this->follow();
     }
-    else if(timerMove.getTime() - lastTentaMove > 0.1)
+    else if(timerMove.getTime() - lastTentaMove > 0.1 && !m_adds.empty())
     {
         list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
         Vector2f position;
@@ -155,24 +171,28 @@ void Octopus::move()
     list<tr1::shared_ptr<Adds> >::const_iterator litref1(m_adds.begin());
     list<tr1::shared_ptr<Adds> >::const_iterator litref2(m_adds.begin());
     int yref1(0), yref2(0);
-    for(; lit != m_adds.end(); lit++)
+    if(!m_adds.empty())
     {
-        if((*lit)->getPosition().y > yref1 && (*lit)->getPosition().x < 600)
+        for(; lit != m_adds.end(); lit++)
         {
-            yref1 = (*lit)->getPosition().y;
-            litref1 = lit;
+            if((*lit)->getPosition().y > yref1 && (*lit)->getPosition().x < 600)
+            {
+                yref1 = (*lit)->getPosition().y;
+                litref1 = lit;
+            }
+            if((*lit)->getPosition().y > yref2 && (*lit)->getPosition().x > 600)
+            {
+                yref2 = (*lit)->getPosition().y;
+                litref2 = lit;
+            }
         }
-        if((*lit)->getPosition().y > yref2 && (*lit)->getPosition().x > 600)
-        {
-            yref2 = (*lit)->getPosition().y;
-            litref2 = lit;
-        }
+        (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
+        (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
     }
-    (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
-    (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
 
-    if(lasorUp)
+    if(lasorUp && !m_adds.empty())
     {
+        m_animated->SetFrame(1);
         animated->anim(app.GetFrameTime());
         animated2->anim(app.GetFrameTime());
         animated3->anim(app.GetFrameTime());
@@ -188,15 +208,47 @@ void Octopus::move()
         app.Draw(*animated2);
         app.Draw(*animated);
     }
+    else if(m_adds.empty())
+        m_animated->SetFrame(3);
+    else
+        m_animated->SetFrame(2);
+
 }
 
 void Octopus::follow()
 {
-    list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
-    for(; lit != m_adds.end(); lit++)
+    if(!m_adds.empty())
     {
-        Vector2f position(m_position.x +(*lit)->getRelativePosition().x, m_position.y + (*lit)->getRelativePosition().y);
-        (*lit)->getAnimation()->SetPosition(position);
-        (*lit)->setPosition(position);
+        list<tr1::shared_ptr<Adds> >::const_iterator lit(m_adds.begin());
+        for(; lit != m_adds.end(); lit++)
+        {
+            Vector2f position(m_position.x +(*lit)->getRelativePosition().x, m_position.y + (*lit)->getRelativePosition().y);
+            (*lit)->getAnimation()->SetPosition(position);
+            (*lit)->setPosition(position);
+        }
+    }
+}
+
+void Octopus::draw()
+{
+    app.Draw(*m_animated);
+    app.Draw(*animatedTentacle);
+    if(laserFocusing)
+    {
+        //On dessine le focus
+        m_animatedFocus->anim(app.GetFrameTime());
+        app.Draw(*m_animatedFocus);
+    }
+    this->drawHealthBar();
+
+    list<tr1::shared_ptr<Adds> >::iterator lit(m_adds.begin());
+    for(; lit != m_adds.end();)
+    {
+        if((*lit)->isDead())
+        {
+            lit = m_adds.erase(lit);
+        }
+        else
+            lit++;
     }
 }

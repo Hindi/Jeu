@@ -35,29 +35,20 @@ Enemy::Enemy(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed,
     image = new Image();
     *image = image_manager::getInstance()->getImage(filepath);
     if(strcmp(m_type, "spawn") == 0)
-       {
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/2, 0, image->GetWidth(), image->GetHeight()) ));
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
-            m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
-            m_animated->Scale(0.75, 0.75);
-       }
-    if(strcmp(m_type, "boss") == 0)
-       {
-           if(strcmp(this->getName(), "octopus"));
-           {
-                m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/3, image->GetHeight()) ));
-                m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/3, 0, image->GetWidth()*2/3, image->GetHeight()) ));
-                m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()*2/3, 0, image->GetWidth(), image->GetHeight()) ));
-           }
-       }
+    {
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(image->GetWidth()/2, 0, image->GetWidth(), image->GetHeight()) ));
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+        m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth()/2, image->GetHeight()) ));
+        m_animated->Scale(0.75, 0.75);
+        m_animated->SetLoop(true);
+    }
     else
         m_anim.PushFrame(Frame(image, sf::Rect<int>(0, 0, image->GetWidth(), image->GetHeight()) ));
 
-    m_animated->SetAnim(&m_anim);
-    m_animated->SetLoop(true);
-    m_animated->SetFrameTime(0.5);
     m_animated->Play();
+    m_animated->SetAnim(&m_anim);
+    m_animated->SetFrameTime(0.5);
     m_animated->SetPosition(m_position.x, m_position.y);
 
     if(allowTeleport)
@@ -634,9 +625,4 @@ void Enemy::teleport()
 void Enemy::changeMoveMethod(std::string method)
 {
     m_moveMethod = method;
-}
-
-const char* Enemy::getName()
-{
-    return "basicEnemy";
 }
