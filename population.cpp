@@ -61,6 +61,7 @@ void Population::checkPopulation()
     {
         if(bossSpawned && currentBoss->isDead())
         {
+            cout << "huk" << endl;
             this->killThemAll();
             bossSpawned = false;
         }
@@ -287,6 +288,7 @@ void Population::createLilith()
     this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=65;
     this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier2.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    bossSpawned = true;
 }
 
 void Population::createOctopus()
@@ -307,6 +309,7 @@ void Population::createOctopus()
         this->createAdd(50, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
+    bossSpawned = true;
 }
 
 void Population::manage()

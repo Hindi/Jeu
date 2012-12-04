@@ -55,6 +55,7 @@ Boss::~Boss()
     delete imageFocus;
     if(vuuuSound.GetStatus() == sf::Sound::Playing)
         vuuuSound.Stop();
+    m_adds.clear();
 }
 
 void Boss::draw()
