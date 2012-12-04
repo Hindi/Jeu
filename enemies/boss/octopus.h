@@ -28,12 +28,14 @@ class Octopus : public Boss
         sf::IntRect getWeakBox();
         void move();
         void follow();
+        void draw();
 
     private:
         //Variables d'animation
         Animated *animated, *animated2, *animated3, *animated4, *animated5, *animated6, *animated7;
-        Anim anim;
-        sf::Image *image;
+        Animated *animatedTentacle;
+        Anim anim, animTentacle;
+        sf::Image *imageLaser, *imageTentacle;
 
         Timer timerMove;
         int lastTentaMove;
