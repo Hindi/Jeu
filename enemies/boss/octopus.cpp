@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(50, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
+            Boss(3000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
     lastTentaMove = 0;
@@ -60,53 +60,56 @@ Octopus::~Octopus()
 
 void Octopus::fire()
 {
-    if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 2.05 && !lasorUp)
+    if(!m_adds.empty())
     {
-        Vector2f position(m_position.x+100, m_position.y+200);
-        animated->SetPosition(position);
-        lasorUp = true;
-    }
-    else if(timerFireTime.getTime() > 2.05 && timerFireTime.getTime() < 2.1)
-    {
-        Vector2f position(m_position.x+100, m_position.y+298);
-        animated2->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 2.1 && timerFireTime.getTime() < 2.15)
-    {
-        cout << "huk" << endl;
-        Vector2f position(m_position.x+100, m_position.y+298+98);
-        animated3->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 2.15 && timerFireTime.getTime() < 2.2)
-    {
-        Vector2f position(m_position.x+100, m_position.y+298+196);
-        animated4->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 2.2 && timerFireTime.getTime() < 2.25)
-    {
-        Vector2f position(m_position.x+100, m_position.y+298+196+98);
-        animated5->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 2.25 && timerFireTime.getTime() < 2.3)
-    {
-        Vector2f position(m_position.x+100, m_position.y+298+2*196);
-        animated6->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 2.3 && timerFireTime.getTime() < 2.35)
-    {
-        Vector2f position(m_position.x+100, m_position.y+298+2*196+98);
-        animated7->SetPosition(position);
-    }
-    else if(timerFireTime.getTime() > 7)
-    {
-        Vector2f position(-100, -100);
-        animated->SetPosition(position);
-        animated2->SetPosition(position);
-        animated3->SetPosition(position);
-        animated4->SetPosition(position);
-        animated5->SetPosition(position);
-        timerFireTime.reinitialize();
-        lasorUp = false;
+        if(timerFireTime.getTime() > 2 && timerFireTime.getTime() < 2.05 && !lasorUp)
+        {
+            Vector2f position(m_position.x+100, m_position.y+200);
+            animated->SetPosition(position);
+            lasorUp = true;
+        }
+        else if(timerFireTime.getTime() > 2.05 && timerFireTime.getTime() < 2.1)
+        {
+            Vector2f position(m_position.x+100, m_position.y+298);
+            animated2->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 2.1 && timerFireTime.getTime() < 2.15)
+        {
+            cout << "huk" << endl;
+            Vector2f position(m_position.x+100, m_position.y+298+98);
+            animated3->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 2.15 && timerFireTime.getTime() < 2.2)
+        {
+            Vector2f position(m_position.x+100, m_position.y+298+196);
+            animated4->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 2.2 && timerFireTime.getTime() < 2.25)
+        {
+            Vector2f position(m_position.x+100, m_position.y+298+196+98);
+            animated5->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 2.25 && timerFireTime.getTime() < 2.3)
+        {
+            Vector2f position(m_position.x+100, m_position.y+298+2*196);
+            animated6->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 2.3 && timerFireTime.getTime() < 2.35)
+        {
+            Vector2f position(m_position.x+100, m_position.y+298+2*196+98);
+            animated7->SetPosition(position);
+        }
+        else if(timerFireTime.getTime() > 7)
+        {
+            Vector2f position(-100, -100);
+            animated->SetPosition(position);
+            animated2->SetPosition(position);
+            animated3->SetPosition(position);
+            animated4->SetPosition(position);
+            animated5->SetPosition(position);
+            timerFireTime.reinitialize();
+            lasorUp = false;
+        }
     }
 }
 
@@ -274,7 +277,7 @@ void Octopus::draw()
 
 bool Octopus::needRespawn()
 {
-    if(timerTentacles.getTime() > 3)
+    if(timerTentacles.getTime() > 5)
     {
         timerTentacles.reinitialize();
         timerTentacles.pause();

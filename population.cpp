@@ -299,14 +299,14 @@ void Population::createOctopus()
     Vector2f position(-50, 90);
     for(int i=0; i < 15; i++)
     {
-        this->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+        this->createAdd(25, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
     position.x = 350;
     position.y = 90;
     for(int i=0; i < 15; i++)
     {
-        this->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+        this->createAdd(25, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
     bossSpawned = true;
