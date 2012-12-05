@@ -2,6 +2,8 @@
 
 using namespace sf;
 
+Cheat_manager *Cheat_manager::_singleton= NULL;
+
 Cheat_manager::Cheat_manager()
 {
     konamiCode.push_back("u");
@@ -16,48 +18,85 @@ Cheat_manager::Cheat_manager()
     konamiCode.push_back("a");
 
     sopalintMode = false;
+
+    timerPress.start();
+    timerSopalint.start();
 }
 
 Cheat_manager::~Cheat_manager()
 {
     konamiCode.clear();
+    playerOneKonami.clear();
+    playerTwoKonami.clear();
 }
 
 void Cheat_manager::checkKonami()
 {
     Event Event;
-    while (app.GetEvent(Event))
+    const Input & input = app.GetInput();
+    if(timerPress.getTime() > 0.2 && !sopalintMode)
     {
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down))
+        if((input.IsKeyDown(Key::Down)))
+        {
             playerOneKonami.push_back("d");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Up))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::Up)))
+        {
             playerOneKonami.push_back("u");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Left))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::Left)))
+        {
             playerOneKonami.push_back("l");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Right))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::Right)))
+        {
             playerOneKonami.push_back("r");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::B))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::B)))
+        {
             playerOneKonami.push_back("b");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::A))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::A)))
+        {
             playerOneKonami.push_back("a");
+            timerPress.reinitialize();
+        }
 
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Z))
+        if((input.IsKeyDown(Key::Z)))
+        {
             playerTwoKonami.push_back("d");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::S))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::S)))
+        {
             playerTwoKonami.push_back("u");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Q))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::Q)))
+        {
             playerTwoKonami.push_back("l");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::D))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::D)))
+        {
             playerTwoKonami.push_back("r");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::N))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::N)))
+        {
             playerTwoKonami.push_back("b");
-        if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::E))
+            timerPress.reinitialize();
+        }
+        if((input.IsKeyDown(Key::E)))
+        {
             playerTwoKonami.push_back("a");
-    }
-
-    for(int i(0); i<playerOneKonami.size(); i++)
-    {
-        std::cout << playerOneKonami[i] << std::endl;
+            timerPress.reinitialize();
+        }
     }
     if(playerOneKonami.size() == 10)
     {
@@ -67,12 +106,28 @@ void Cheat_manager::checkKonami()
             if(strcmp(konamiCode[i], playerOneKonami[i]) == 0)
                 result++;
         }
-
         if(result == 10 && !sopalintMode)
         {
             sopalintMode = true;
-            std::cout << "SOPALINT MODE" << std::endl;
         }
     }
 
+    if(sopalintMode && timerSopalint.getTime() > 10)
+        sopalintMode = false;
 }
+
+bool Cheat_manager::getSopalintMode()
+{
+    return sopalintMode;
+}
+
+Cheat_manager* Cheat_manager::getInstance()
+  {
+    if (NULL == _singleton)
+      {
+        std::cout << "population : creating singleton." << std::endl;
+        _singleton =  new Cheat_manager;
+      }
+
+    return _singleton;
+  }

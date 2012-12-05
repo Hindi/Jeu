@@ -10,6 +10,7 @@
 #include "tirs/missile.h"
 #include "image_manager.h"
 #include "tirs/projectile_manager.h"
+#include "Cheat_manager.h"
 
 class Player : public Unit
 {

@@ -328,6 +328,11 @@ void Player::dontMove()
 
 void Player::draw()
 {
+    if(Cheat_manager::getInstance()->getSopalintMode())
+    {
+        m_lives = 3;
+        m_armor = 3;
+    }
     this->checkKTA();
     if(!this->isDead())
     {

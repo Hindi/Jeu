@@ -9,10 +9,11 @@
 class Cheat_manager
 {
     public:
-        Cheat_manager();
         virtual ~Cheat_manager();
         void checkKonami();
-        bool canPress();
+        bool getSopalintMode();
+
+        static Cheat_manager* getInstance();
 
     private:
         std::vector<char* > konamiCode;
@@ -20,6 +21,11 @@ class Cheat_manager
         std::vector<char* > playerTwoKonami;
         bool sopalintMode;
         Timer timerPress;
+        Timer timerSopalint;
+
+
+        Cheat_manager();
+        static Cheat_manager* _singleton;
 };
 
 #endif // CHEAT_MANAGER_H
