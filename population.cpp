@@ -296,14 +296,14 @@ void Population::createOctopus()
     tr1::shared_ptr<Boss> octopus(new Octopus(player, player2));
     currentBoss = octopus;
     m_enemies.push_back(octopus);;
-    Vector2f position(-50, 200);
+    Vector2f position(-50, 90);
     for(int i=0; i < 15; i++)
     {
         this->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
-    position.x = 300;
-    position.y = 200;
+    position.x = 350;
+    position.y = 90;
     for(int i=0; i < 15; i++)
     {
         this->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);

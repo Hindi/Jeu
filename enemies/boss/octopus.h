@@ -14,6 +14,7 @@
 #include "../../timer.h"
 #include "../../Animated.hpp"
 #include "../../Anim.hpp"
+#include "../../population.h"
 
 
 class Octopus : public Boss
@@ -29,6 +30,7 @@ class Octopus : public Boss
         void move();
         void follow();
         void draw();
+        bool needRespawn();
 
     private:
         //Variables d'animation
@@ -37,7 +39,7 @@ class Octopus : public Boss
         Anim anim, animTentacle;
         sf::Image *imageLaser, *imageTentacle;
 
-        Timer timerMove;
+        Timer timerMove, timerTentacles;
         int lastTentaMove;
         bool lasorUp;
 

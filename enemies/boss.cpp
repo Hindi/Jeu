@@ -244,3 +244,8 @@ const char* Boss::getName()
 {
     return m_name;
 }
+
+bool Boss::needRespawn()
+{
+    return false;
+}

@@ -118,6 +118,8 @@ class Enemy : public Unit
         bool readyToTeleport();
         virtual void teleport();
         void changeMoveMethod(std::string method);
+        virtual bool needRespawn();
+
 
     protected:
         std::tr1::shared_ptr<Player> player;

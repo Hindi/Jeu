@@ -114,7 +114,7 @@ IntRect Octopus::getBoundingBox()
 {
     IntRect boundingBox;
     boundingBox.Left = m_position.x+50;
-    boundingBox.Right = boundingBox.Left + image->GetWidth()-100;
+    boundingBox.Right = boundingBox.Left + image->GetWidth()/3;
     boundingBox.Top = m_position.y ;
     boundingBox.Bottom = boundingBox.Top + image->GetHeight()/1.5;
 
@@ -126,10 +126,10 @@ IntRect Octopus::getWeakBox()
     IntRect boundingBox;
     if(m_adds.empty())
     {
-        boundingBox.Left = m_position.x  + image->GetWidth()/2 - 40;
-        boundingBox.Right = boundingBox.Left + 70;
-        boundingBox.Top = m_position.y + image->GetHeight()-20;
-        boundingBox.Bottom = boundingBox.Top + 20;
+        boundingBox.Left = m_position.x;
+        boundingBox.Right = boundingBox.Left + image->GetWidth()/3;
+        boundingBox.Top = m_position.y + image->GetHeight();
+        boundingBox.Bottom = m_position.y + image->GetHeight()+20;
     }
     else
     {
@@ -209,10 +209,29 @@ void Octopus::move()
         app.Draw(*animated);
     }
     else if(m_adds.empty())
+    {
         m_animated->SetFrame(3);
+        timerTentacles.start();
+    }
     else
         m_animated->SetFrame(2);
 
+    if(this->needRespawn())
+    {
+        Vector2f position(-50, 20);
+        for(int i=0; i < 15; i++)
+        {
+            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+            position.y += 30;
+        }
+        position.x = 350;
+        position.y = 20;
+        for(int i=0; i < 15; i++)
+        {
+            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+            position.y += 30;
+        }
+    }
 }
 
 void Octopus::follow()
@@ -250,5 +269,14 @@ void Octopus::draw()
         }
         else
             lit++;
+    }
+}
+
+bool Octopus::needRespawn()
+{
+    if(timerTentacles.getTime() > 3)
+    {
+        timerTentacles.reinitialize();
+        timerTentacles.pause();
     }
 }

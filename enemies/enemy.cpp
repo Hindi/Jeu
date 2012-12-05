@@ -626,3 +626,8 @@ void Enemy::changeMoveMethod(std::string method)
 {
     m_moveMethod = method;
 }
+
+bool Enemy::needRespawn()
+{
+    return false;
+}

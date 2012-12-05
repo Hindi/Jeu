@@ -36,6 +36,7 @@ class Boss : public Enemy
         void teleport();
         void drawHealthBar();
         const char* getName();
+        virtual bool needRespawn();
 
 
     protected:
