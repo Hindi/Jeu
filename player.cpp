@@ -159,7 +159,7 @@ void Player::fire1()
         if(Cheat_manager::getInstance()->getSopalintMode())
         {
             filepath = "images/projectile5.png";
-            vitesse.x = -15;
+            vitesse.y = -15;
             vitesse21.x = -5;
             vitesse21.y = -15;
             vitesse31.x = 10;
@@ -173,7 +173,7 @@ void Player::fire1()
         {
             filepath = "images/projectile.png";
         }
-        std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
+        std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, vitesse, m_coefSpeed));
         projectile->setPosition(positionProjectile);
         Projectile_manager::getInstance()->addPlayerProjectile(projectile);
 
@@ -184,7 +184,7 @@ void Player::fire1()
             //*******************************
             positionProjectile.x += 19;
             positionProjectile.y += 25;
-            std::tr1::shared_ptr<Projectile> projectileDroite(new Projectile(filepath, positionProjectile, Vector2f(10, -30), m_coefSpeed));
+            std::tr1::shared_ptr<Projectile> projectileDroite(new Projectile(filepath, positionProjectile, vitesse21, m_coefSpeed));
             projectileDroite->rotate(-15);
             projectileDroite->setPosition(positionProjectile);
             Projectile_manager::getInstance()->addPlayerProjectile(projectileDroite);
@@ -192,7 +192,7 @@ void Player::fire1()
             //On créé le projectile de gauche
             //*******************************
             positionProjectile.x -= 38;
-            std::tr1::shared_ptr<Projectile> projectileGauche(new Projectile(filepath, positionProjectile, Vector2f(-10, -30), m_coefSpeed));
+            std::tr1::shared_ptr<Projectile> projectileGauche(new Projectile(filepath, positionProjectile, vitesse22, m_coefSpeed));
             projectileGauche->setPosition(positionProjectile);
             projectileGauche->rotate(15);
             Projectile_manager::getInstance()->addPlayerProjectile(projectileGauche);
@@ -205,7 +205,7 @@ void Player::fire1()
             //***************************************
             positionProjectile.x += 80;
             positionProjectile.y += 5;
-            std::tr1::shared_ptr<Projectile> projectileExtremeGauche(new Projectile(filepath, positionProjectile, Vector2f(30, -30), m_coefSpeed));
+            std::tr1::shared_ptr<Projectile> projectileExtremeGauche(new Projectile(filepath, positionProjectile, vitesse32, m_coefSpeed));
             projectileExtremeGauche->setPosition(positionProjectile);
             projectileExtremeGauche->rotate(-45);
             Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeGauche);
@@ -214,14 +214,13 @@ void Player::fire1()
             //***************************************
             positionProjectile.y += 25;
             positionProjectile.x -= 115;
-            std::tr1::shared_ptr<Projectile> projectileExtremeDroite(new Projectile(filepath, positionProjectile, Vector2f(-30, -30), m_coefSpeed));
+            std::tr1::shared_ptr<Projectile> projectileExtremeDroite(new Projectile(filepath, positionProjectile, vitesse31, m_coefSpeed));
             projectileExtremeDroite->setPosition(positionProjectile);
             projectileExtremeDroite->rotate(45);
             Projectile_manager::getInstance()->addPlayerProjectile(projectileExtremeDroite);
         }
         lastShot = timer.getTime();
     }
-
 }
 
 bool canFire(float lastShot, Timer &timer, float const fireRate)

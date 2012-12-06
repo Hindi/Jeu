@@ -32,9 +32,8 @@ Cheat_manager::~Cheat_manager()
 
 void Cheat_manager::checkKonami()
 {
-    Event Event;
     const Input & input = app.GetInput();
-    if(timerPress.getTime() > 0.2 && !sopalintMode)
+    if(timerPress.getTime() > 0.2)
     {
         if((input.IsKeyDown(Key::Down)))
         {
@@ -92,28 +91,47 @@ void Cheat_manager::checkKonami()
             playerTwoKonami.push_back("b");
             timerPress.reinitialize();
         }
-        if((input.IsKeyDown(Key::E)))
+        if((input.IsKeyDown(Key::R)))
         {
             playerTwoKonami.push_back("a");
             timerPress.reinitialize();
         }
     }
-    if(playerOneKonami.size() == 10)
+
+    this->checkVector(playerOneKonami);
+    this->checkVector(playerTwoKonami);
+
+    if(playerOneKonami.size() > konamiCode.size())
+    {
+        playerOneKonami.pop_front();
+    }
+    if(playerTwoKonami.size() > konamiCode.size())
+    {
+        playerOneKonami.pop_front();
+    }
+
+    if(sopalintMode && timerSopalint.getTime() > 10)
+    {
+        sopalintMode = false;
+        timerSopalint.reinitialize();
+    }
+}
+
+void Cheat_manager::checkVector(std::deque<char* > konami)
+{
+    if(konami.size() == konamiCode.size() && !sopalintMode)
     {
         int result(0);
-        for(int i(0); i<10; i++)
+        for(int i(0); i<konami.size(); i++)
         {
-            if(strcmp(konamiCode[i], playerOneKonami[i]) == 0)
+            if(strcmp(konamiCode[i], konami[i]) == 0)
                 result++;
         }
-        if(result == 10 && !sopalintMode)
+        if(result == konamiCode.size())
         {
             sopalintMode = true;
         }
     }
-
-    if(sopalintMode && timerSopalint.getTime() > 10)
-        sopalintMode = false;
 }
 
 bool Cheat_manager::getSopalintMode()

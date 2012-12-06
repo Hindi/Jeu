@@ -11,14 +11,15 @@ class Cheat_manager
     public:
         virtual ~Cheat_manager();
         void checkKonami();
+        void checkVector(std::deque<char* > konami);
         bool getSopalintMode();
 
         static Cheat_manager* getInstance();
 
     private:
-        std::vector<char* > konamiCode;
-        std::vector<char* > playerOneKonami;
-        std::vector<char* > playerTwoKonami;
+        std::deque<char* > konamiCode;
+        std::deque<char* > playerOneKonami;
+        std::deque<char* > playerTwoKonami;
         bool sopalintMode;
         Timer timerPress;
         Timer timerSopalint;
