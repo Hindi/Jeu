@@ -102,6 +102,7 @@ void Level_manager::checkLevel()
                 else if(strcmp(buffer, "END")==0)
                 {
                     //On remet le timer à zéro pour sortir du if et attendre le bon moment pour continuer la lecture du fichier
+                    spawnTime = 1;
                     timer.reinitialize();
                     //cout << "Les spawns sont terminés pour cette vague !" << endl;
                 }

@@ -100,8 +100,12 @@ void Player::fire0()
         positionProjectile.x += 39;
         positionProjectile.y -= 30;
         string filepath;
+        Vector2f vitesse(0, -30);
         if(Cheat_manager::getInstance()->getSopalintMode())
+        {
             filepath = "images/projectile5.png";
+            vitesse.x = -15;
+        }
         else
             filepath = "images/projectile.png";
         std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
@@ -364,7 +368,10 @@ void Player::draw()
         m_animated->anim(app.GetFrameTime());
         app.Draw(*m_animated);
     }
-
+    if(Cheat_manager::getInstance()->getSopalintMode() && m_score < 10000)
+    {
+        m_score = 100000;
+    }
 }
 
 int Player::getPosition(int axis)

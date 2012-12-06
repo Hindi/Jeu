@@ -243,7 +243,7 @@ int Jeu::start(short niveau)
                 invincible = false;
             }
         }
-        Cheat_manager::getInstance()->checkKonami();
+        //Cheat_manager::getInstance()->checkKonami();
         level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();

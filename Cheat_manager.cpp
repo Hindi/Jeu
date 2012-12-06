@@ -98,7 +98,9 @@ void Cheat_manager::checkKonami()
         }
     }
 
+    std::cout << "huk1" << std::endl;
     this->checkVector(playerOneKonami);
+    std::cout << "huk2" << std::endl;
     this->checkVector(playerTwoKonami);
 
     if(playerOneKonami.size() > konamiCode.size())
@@ -110,7 +112,7 @@ void Cheat_manager::checkKonami()
         playerOneKonami.pop_front();
     }
 
-    if(sopalintMode && timerSopalint.getTime() > 10)
+    if(sopalintMode && timerSopalint.getTime() > 15)
     {
         sopalintMode = false;
         timerSopalint.reinitialize();
