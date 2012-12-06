@@ -6,9 +6,9 @@ using namespace sf;
 Weapon_manager* Weapon_manager::_singleton = NULL;
 
 Weapon_manager::Weapon_manager():
-            secondaryScore(1000),
-            missileScore(10000),
-            thirdScore(100000)
+            secondaryScore(1),
+            missileScore(1),
+            thirdScore(1)
 {
 }
 

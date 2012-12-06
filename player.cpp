@@ -99,7 +99,11 @@ void Player::fire0()
         Vector2f positionProjectile = m_position;
         positionProjectile.x += 39;
         positionProjectile.y -= 30;
-        const string filepath = "images/projectile.png";
+        string filepath;
+        if(Cheat_manager::getInstance()->getSopalintMode())
+            filepath = "images/projectile5.png";
+        else
+            filepath = "images/projectile.png";
         std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
         projectile->setPosition(positionProjectile);
         Projectile_manager::getInstance()->addPlayerProjectile(projectile);
@@ -150,7 +154,25 @@ void Player::fire1()
         Vector2f positionProjectile = m_position;
         positionProjectile.x += 39;
         positionProjectile.y -= 30;
-        const string filepath = "images/projectile.png";
+        string filepath;
+        Vector2f vitesse(0, -30), vitesse21(10, -30), vitesse22(-10, -30), vitesse31(-30, -30), vitesse32(30, -30);
+        if(Cheat_manager::getInstance()->getSopalintMode())
+        {
+            filepath = "images/projectile5.png";
+            vitesse.x = -15;
+            vitesse21.x = -5;
+            vitesse21.y = -15;
+            vitesse31.x = 10;
+            vitesse31.y = -15;
+            vitesse22.x =  5;
+            vitesse22.y = -15;
+            vitesse32.x = -10;
+            vitesse32.y = -15;
+        }
+        else
+        {
+            filepath = "images/projectile.png";
+        }
         std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(0, -30), m_coefSpeed));
         projectile->setPosition(positionProjectile);
         Projectile_manager::getInstance()->addPlayerProjectile(projectile);

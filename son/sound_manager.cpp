@@ -3,11 +3,11 @@
 sound_manager* sound_manager::_singleton = NULL;
 
 sound_manager::sound_manager()
-{/*
+{
     if( buffer.LoadFromFile( "son/Acronis.ogg" ) )
 	{
 		m_buffer["son/Acronis.ogg"] = buffer;
-	}*/
+	}
 }
 
 sound_manager::~sound_manager()

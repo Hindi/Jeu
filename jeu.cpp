@@ -21,13 +21,13 @@ Jeu::~Jeu()
 }
 
 int Jeu::start(short niveau)
-{/*
+{
     SoundBuffer musicBuffer = sound_manager::getInstance()->getBuffer("son/acronis.ogg");
     musicSound.SetBuffer(musicBuffer);
     musicSound.SetLoop(true);
     musicSound.SetPitch(1.f);
     musicSound.SetVolume(50.f);
-    musicSound.Play();*/
+    musicSound.Play();
 
 
     clicBuffer = sound_manager::getInstance()->getBuffer("son/clic.ogg");
@@ -47,8 +47,6 @@ int Jeu::start(short niveau)
     //gestionnaires de projectiles
     Projectile_manager *projectile_manager;
     projectile_manager = Projectile_manager::getInstance();
-
-    Cheat_manager cheatManager;
 
     //Affichage onscreen des scores
     Score_manager *scoreManager;
@@ -245,7 +243,7 @@ int Jeu::start(short niveau)
                 invincible = false;
             }
         }
-        cheatManager.checkKonami();
+        Cheat_manager::getInstance()->checkKonami();
         level_manager->checkLevel();
         weapon_manager->manage();
         drop_manager->manage();
