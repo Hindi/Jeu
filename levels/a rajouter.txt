@@ -1,0 +1,3 @@
+- timer entre les vagues
+- déplacement droite/gauche/roudtrinp
+- mouvement diagonal + tir ?
