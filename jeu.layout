@@ -13,11 +13,11 @@
 	<File name="Animated.hpp" open="0" top="0" tabpos="11">
 		<Cursor position="1588" topLine="27" />
 	</File>
-	<File name="Cheat_manager.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="690" topLine="0" />
+	<File name="Cheat_manager.cpp" open="1" top="0" tabpos="19">
+		<Cursor position="2907" topLine="87" />
 	</File>
-	<File name="Cheat_manager.h" open="0" top="0" tabpos="12">
-		<Cursor position="131" topLine="0" />
+	<File name="Cheat_manager.h" open="1" top="0" tabpos="20">
+		<Cursor position="565" topLine="0" />
 	</File>
 	<File name="Frame.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="657" topLine="0" />
@@ -98,7 +98,7 @@
 		<Cursor position="661" topLine="0" />
 	</File>
 	<File name="jeu.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="3552" topLine="86" />
+		<Cursor position="655" topLine="0" />
 	</File>
 	<File name="jeu.h" open="1" top="0" tabpos="3">
 		<Cursor position="1577" topLine="23" />
@@ -124,13 +124,13 @@
 	<File name="pannel.h" open="0" top="0" tabpos="11">
 		<Cursor position="52" topLine="0" />
 	</File>
-	<File name="player.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="1429" topLine="18" />
+	<File name="player.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="6659" topLine="127" />
 	</File>
 	<File name="player.h" open="1" top="0" tabpos="5">
 		<Cursor position="1976" topLine="96" />
 	</File>
-	<File name="population.cpp" open="1" top="1" tabpos="6">
+	<File name="population.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="11110" topLine="268" />
 	</File>
 	<File name="population.h" open="1" top="0" tabpos="7">
@@ -143,7 +143,7 @@
 		<Cursor position="518" topLine="0" />
 	</File>
 	<File name="son\sound_manager.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="220" topLine="0" />
+		<Cursor position="167" topLine="0" />
 	</File>
 	<File name="son\sound_manager.h" open="0" top="0" tabpos="7">
 		<Cursor position="319" topLine="0" />
@@ -167,7 +167,7 @@
 		<Cursor position="1149" topLine="9" />
 	</File>
 	<File name="tirs\projectile.cpp" open="1" top="0" tabpos="16">
-		<Cursor position="5021" topLine="165" />
+		<Cursor position="5021" topLine="0" />
 	</File>
 	<File name="tirs\projectile.h" open="0" top="0" tabpos="19">
 		<Cursor position="233" topLine="0" />
@@ -190,8 +190,8 @@
 	<File name="tirs\score_manager.h" open="0" top="0" tabpos="10">
 		<Cursor position="409" topLine="0" />
 	</File>
-	<File name="tirs\weapon_manager.cpp" open="0" top="0" tabpos="16">
-		<Cursor position="1814" topLine="61" />
+	<File name="tirs\weapon_manager.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="251" topLine="0" />
 	</File>
 	<File name="tirs\weapon_manager.h" open="0" top="0" tabpos="14">
 		<Cursor position="816" topLine="10" />
