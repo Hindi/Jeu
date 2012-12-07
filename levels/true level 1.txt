@@ -1,6 +1,4 @@
-timer 3
-timer 3
-timer 3
+
 spawn ship down 50 0
 timer 3
 timer 3
