@@ -15,8 +15,8 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
-- Roundtrip
 - Projectiles
+-menu recommencer
 */
 
 int main()

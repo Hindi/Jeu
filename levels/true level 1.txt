@@ -1,4 +1,5 @@
 timer 3
+spawn ship roundtripLeft 80 50
 spawn ship down 50 0
 timer 1.5
 spawn ship down 50 0
