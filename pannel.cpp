@@ -24,7 +24,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     imageTopPannel2 = new Image;
     *imageTopPannel2 = image_manager::getInstance()->getImage("images/pannelHaut2.png");
     topPannel2.SetImage(*imageTopPannel2);
-    topPannel2.SetPosition(Vector2f(600, 0));
+    topPannel2.SetPosition(Vector2f(750, 0));
     topPannel2.Scale(0.75,0.75);
 
     imageLife = new Image;
@@ -59,7 +59,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     position.x += 30;
     spriteLife3.SetPosition(position);
 
-    position.x = 770;
+    position.x = 920;
     position.y = 0;
     spriteLife21.SetPosition(position);
     position.x += 30;
@@ -77,7 +77,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     position.x += 30;
     spriteArmor3.SetPosition(position);
 
-    position.x = 770;
+    position.x = 920;
     position.y = 35;
     spriteArmor21.SetPosition(position);
     position.x += 30;
