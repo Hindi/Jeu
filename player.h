@@ -92,6 +92,7 @@ class Player : public Unit
         void checkKTA();
 
         bool isDead();
+        void explosion();
 
     protected:
         //Vitesse du joueur
@@ -101,6 +102,8 @@ class Player : public Unit
         short const m_damages;
         short m_lives;
         short m_armor;
+
+        bool exploding;
 
         //Nombre max de vie du joueur, taille du sprite et coef de déplacememnt
         short const max_lives, m_coefSpeed;

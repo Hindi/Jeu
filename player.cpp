@@ -19,7 +19,8 @@ Player::Player(short id, int life, Vector2f position):
             m_damages(5),
             m_lives(99),
             m_armor(3),
-            killThemAll(true)
+            killThemAll(true),
+            exploding(false)
 {
     timer.start();
     timerArmor.start();
@@ -53,6 +54,24 @@ Player::Player(short id, int life, Vector2f position):
 
     m_animatedReactor = new Animated(&m_animReactor, true, true, 0.1);
     m_animatedReactor->SetPosition(m_position.x, m_position.y);
+
+   *imageExplosion = image_manager::getInstance()->getImage("images/prendretarif.png");
+
+    int explo_width = imageExplosion->GetWidth()/5;
+    int explo_height= imageExplosion->GetHeight();
+
+    m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(0, 0, explo_width, explo_height) ));
+    m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(explo_width, 0, explo_width*2, explo_height) ));
+    m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(explo_width*2, 0, explo_width*3, explo_height) ));
+    m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(explo_width*3, 0, explo_width*4, explo_height) ));
+    m_animExplosion.PushFrame(Frame(imageExplosion, sf::Rect<int>(explo_width*4, 0, explo_width*5, explo_height) ));
+
+    m_animatedExplosion->SetAnim(&m_animExplosion);
+    m_animatedExplosion->Pause();
+    m_animatedExplosion->SetLoop(true);
+    m_animatedExplosion->SetFrameTime(0.5f);
+    m_animatedExplosion->SetPosition(position.x, position.y);
+
 }
 
 Player::~Player()
@@ -266,6 +285,7 @@ void Player::loseLive()
         m_lives -= 1;
         lostLife = true;
         m_armor = 3;
+        exploding = true;
     }
 }
 
@@ -461,4 +481,18 @@ bool Player::isDead()
     if(m_lives == 0)
         return true;
     return false;
+}
+
+void Player::explosion()
+{
+    if(exploding)
+    {
+        m_animatedExplosion->SetPosition(m_position);
+        m_animatedExplosion->anim(app.GetFrameTime());
+        m_animatedExplosion->Play();
+        int currentFrame = m_animatedExplosion->GetCurrentFrame();
+        app.Draw(*m_animatedExplosion);
+        if(currentFrame > 4)
+            exploding = false;
+    }
 }
