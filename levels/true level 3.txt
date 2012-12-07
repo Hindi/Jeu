@@ -73,7 +73,7 @@ spawn ship2 down 80 0
 spawn ship2 down 20 0
 timer 3
 timer 3
-spawn flyingSaucer3 roundtrip 0 20
+spawn flyingSaucer3 roundtripRight 0 20
 timer 3
 spawn ship2 down 60 0
 spawn ship2 down 40 0

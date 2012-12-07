@@ -87,17 +87,17 @@ spawn ship roundtrip 0 30
 spawn ship roundtrip 100 30
 timer 3
 spawn flyingSaucer don'tmove 50 0
-spawn ship roundtrip 0 30
-spawn ship roundtrip 100 30
+spawn ship roundtripRight 0 30
+spawn ship roundtripLeft 100 30
 timer 3
-spawn ship roundtrip 0 30
-spawn ship roundtrip 100 30
+spawn ship roundtripRight 0 30
+spawn ship roundtripLeft 100 30
 timer 3
-spawn ship roundtrip 0 30
-spawn ship roundtrip 100 30
+spawn ship roundtripRight 0 30
+spawn ship roundtripLeft 100 30
 timer 3
-spawn ship roundtrip 0 30
-spawn ship roundtrip 100 30
+spawn ship roundtripRight 0 30
+spawn ship roundtripLeft 100 30
 END
 timer 3
 timer 3

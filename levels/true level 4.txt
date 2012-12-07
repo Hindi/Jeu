@@ -51,12 +51,12 @@ spawn ship3 down 60 0
 END
 timer 3
 timer 3
-spawn mine roundtrip 0 25
-spawn mine roundtrip 0 45
+spawn mine roundtripRight 0 25
+spawn mine roundtripRight 0 45
 timer 3
-spawn mine roundtrip 0 20
-spawn mine roundtrip 100 30
-spawn mine roundtrip 100 10
+spawn mine roundtripLeft 0 20
+spawn mine roundtripRight 100 30
+spawn mine roundtripRight 100 10
 timer 3
 timer 3
 spawn flyingSaucer3 down 30 0
@@ -84,7 +84,7 @@ spawn mine spawnMove 90 5
 spawn mine spawnMove 65 40
 timer 3
 timer 3
-spawn spawnerFlying roundtrip 100 35
+spawn spawnerFlying roundtripLeft 100 35
 timer 3
 spawn flyingSaucer4 up 60 100
 END
