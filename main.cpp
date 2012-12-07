@@ -15,7 +15,11 @@ RenderWindow app(sf::VideoMode(1366, 768), "jeu");
 
 /*
 TODO LIST
-
+- Roundtrip
+- Projectiles
+- Tir tentacules
+- score à 0 quand on recommence
+- score neg quand touché
 */
 
 int main()

@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(3000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -180), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
+            Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -250), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
     lastTentaMove = 0;
@@ -161,7 +161,7 @@ void Octopus::move()
             position.y = (*lit)->getPosition().y;
             y = position.y / 100;
             float t = timerMove.getTime() + (*lit)->getRelativePosition().x;
-            position.x = m_position.x + (*lit)->getRelativePosition().x + pow(2,position.y/70) * ( 0.6*sin(y-t) + 0.5*sin(1.7*(y-t)) + 0.3*sin(2.4*(y-t)) + 0.4*sin(4.1*(y-t)));
+            position.x = m_position.x + (*lit)->getRelativePosition().x + (pow(2,position.y/95) + 20) * ( 0.6*sin(y-t) + 0.5*sin(1.7*(y-t)) + 0.3*sin(2.4*(y-t)) + 0.4*sin(4.1*(y-t)));
             (*lit)->getAnimation()->SetPosition(position);
             (*lit)->setPosition(position);
         }
@@ -222,16 +222,20 @@ void Octopus::move()
     if(this->needRespawn())
     {
         Vector2f position(-50, 20);
+        Vector2f absolutePosition(m_position.x + position.x, m_position.y + position.y);
         for(int i=0; i < 15; i++)
         {
-            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
             position.y += 30;
         }
         position.x = 350;
         position.y = 20;
+        absolutePosition.x = m_position.x + position.x;
+        absolutePosition.y = m_position.y + position.y;
+
         for(int i=0; i < 15; i++)
         {
-            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+            Population::getInstance()->createAdd(1, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
             position.y += 30;
         }
     }

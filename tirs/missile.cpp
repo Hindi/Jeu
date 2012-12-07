@@ -8,7 +8,8 @@ Missile::Missile(const string &filepath, Vector2f position, int speed, const int
             m_coefSpeed(coefSpeed),
             m_position(position),
             focusing(false),
-            listPosition(listPosition)
+            listPosition(listPosition),
+            m_damage(5)
 {
     image = new Image();
     *image = image_manager::getInstance()->getImage(filepath);
@@ -66,7 +67,7 @@ IntRect Missile::getBoundingBox() const
 
 short Missile::getDamage() const
 {
-    return 10;
+    return m_damage;
 }
 
 bool Missile::isInScreen()

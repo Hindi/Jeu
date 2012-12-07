@@ -219,7 +219,7 @@ void Population::unStop()
 void Population::createShip(Vector2f position, const std::string &move)
 {
     //parameters : life, score, xSpeed, ySpeed, filepath for image, position, enemy type, move type, move value, coefspeed, firerate, render window,player object, image manager, projectile manager
-    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 5, 5, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, false, player, player2, false));
+    tr1::shared_ptr<Enemy> a(new Enemy(10, 10, 100, 3, 3, "images/enemy.png", position, "ship", move, 1, m_coefSpeed, 1, false, player, player2, false));
     m_enemies.push_back(a);
 }
 
@@ -249,10 +249,10 @@ void Population::createFlyingSaucer2(Vector2f position, const std::string &move)
     m_enemies.push_back(a);
 }
 
-void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, const char* type, const char* moveMethod, int moveValue,
+void Population::createAdd(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f position, sf::Vector2f absolutePosition, const char* type, const char* moveMethod, int moveValue,
               const int coefSpeed, const int firerate,bool spawner, std::tr1::shared_ptr<Player> externPlayer, std::tr1::shared_ptr<Player> externPlayer2)
 {
-    tr1::shared_ptr<Adds> add(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, false));
+    tr1::shared_ptr<Adds> add(new Adds(life, scoreHit, scoreExplosion, xSpeed, ySpeed, filepath, position, absolutePosition, type, moveMethod, moveValue, coefSpeed, firerate, spawner, externPlayer, externPlayer2, false));
     m_enemies.push_front(add);
     currentBoss->pushAdd(add);
 }
@@ -285,9 +285,10 @@ void Population::createLilith()
     m_enemies.push_back(lilith);
     currentBoss = lilith;
     Vector2f position(130, 96);
-    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    Vector2f absolutePosition(lilith->getPosition().x + position.x, lilith->getPosition().y + position.y);
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     position.x +=65;
-    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier2.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier2.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
     bossSpawned = true;
 }
 
@@ -295,18 +296,19 @@ void Population::createOctopus()
 {
     tr1::shared_ptr<Boss> octopus(new Octopus(player, player2));
     currentBoss = octopus;
-    m_enemies.push_back(octopus);;
-    Vector2f position(-50, 90);
+    m_enemies.push_back(octopus);
+    Vector2f position(-150, 90);
+    Vector2f absolutePosition(octopus->getPosition().x + position.x, octopus->getPosition().y + position.y);
     for(int i=0; i < 15; i++)
     {
-        this->createAdd(25, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+        this->createAdd(100, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
     position.x = 350;
     position.y = 90;
     for(int i=0; i < 15; i++)
     {
-        this->createAdd(25, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+        this->createAdd(100, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
     bossSpawned = true;

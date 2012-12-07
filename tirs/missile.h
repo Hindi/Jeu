@@ -30,6 +30,7 @@ class Missile : public sf::Drawable
         short const m_coefSpeed;
         sf::Vector2f m_position;
         bool focusing;
+        short m_damage;
 };
 
 #endif // MISSILE_H_INCLUDED

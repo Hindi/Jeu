@@ -26,7 +26,7 @@ TODO :
 class Adds : public Enemy
 {
     public:
-        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f relativePosition, const char* type, const char* moveMethod, int moveValue,
+        Adds(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, const std::string &filepath, sf::Vector2f relativePosition, sf::Vector2f absolutePosition,const char* type, const char* moveMethod, int moveValue,
               const int coefSpeed, const int firerate, bool spawner, std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2, bool allowTeleport);
         ~Adds();
 
