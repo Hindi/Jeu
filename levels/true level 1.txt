@@ -1,4 +1,3 @@
-boss octopus don'tmove 50 50
 spawn ship down 50 0
 timer 3
 timer 3

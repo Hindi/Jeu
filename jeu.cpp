@@ -100,7 +100,8 @@ int Jeu::start(short niveau)
             int state = 0;
             if(level_manager->isFinished() && !population->haveEnnemyInProgress())
             {
-                this->saveDatas(player, player2);
+                if(!Level_manager::getInstance()->endOfGame())
+                    this->saveDatas(player, player2);
                 m_menu.setLevel(level_manager->getLevelNumber() + 1);
                 state = 1;
             }
