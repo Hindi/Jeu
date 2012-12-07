@@ -111,14 +111,16 @@ bool Enemy::isDead()
 //********************************
 //****Fonctions de déplacement****
 //********************************
-void Enemy::roundTrip()
+void Enemy::roundtripLeft()
 {
-
+    int distance(1200);
+    int tempo;
+    tempo = distance/m_xSpeed;
     if(strcmp(direction.data(), "left") == 0)
         moveLeft();
     else
         moveRight();
-    if(savedTimerMove > m_moveValue)
+    if(savedTimerMove > tempo)
     {
         if(strcmp(direction.data(), "left") == 0)
         {
@@ -128,6 +130,31 @@ void Enemy::roundTrip()
         else
         {
             direction = "left";
+            timerMove.reinitialize();
+        }
+    }
+    savedTimerMove = timerMove.getTime();
+}
+
+void Enemy::roundtripRight()
+{
+    int distance(1200);
+    int tempo;
+    tempo = distance/m_xSpeed;
+    if(strcmp(direction.data(), "right") == 0)
+        moveRight();
+    else
+        moveLeft();
+    if(savedTimerMove > tempo)
+    {
+        if(strcmp(direction.data(), "right") == 0)
+        {
+            direction = "left";
+            timerMove.reinitialize();
+        }
+        else
+        {
+            direction = "right";
             timerMove.reinitialize();
         }
     }
@@ -201,8 +228,10 @@ void Enemy::dontMove()
 void Enemy::move()
 {
     const char* buffer = m_moveMethod.data();
-    if(strcmp(buffer, "roundtrip") == 0)
-        this->roundTrip();
+    if(strcmp(buffer, "roundtripLeft") == 0)
+        this->roundtripLeft();
+    if(strcmp(buffer, "roundtripRight") == 0)
+        this->roundtripRight();
     else if(strcmp(buffer, "left") == 0)
         this->moveLeft();
     else if(strcmp(buffer, "right") == 0)

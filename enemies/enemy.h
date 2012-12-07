@@ -43,7 +43,8 @@ class Enemy : public Unit
          bool isDead();
 
         // Aller retour horizontal sur valeur indiqué (commence de gauche à droite)
-         void roundTrip();
+         void roundtripLeft();
+         void roundtripRight();
 
         //Déplacements
          void moveLeft();
