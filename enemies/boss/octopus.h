@@ -39,7 +39,7 @@ class Octopus : public Boss
         Anim anim, animTentacle;
         sf::Image *imageLaser, *imageTentacle;
 
-        Timer timerMove, timerTentacles;
+        Timer timerMove, timerTentacles, timerFire;
         int lastTentaMove;
         bool lasorUp;
 

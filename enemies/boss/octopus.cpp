@@ -4,9 +4,10 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -250), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
+            Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -200), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
+    timerFire.start();
     lastTentaMove = 0;
 
     short numberFrame(10);
@@ -40,7 +41,8 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
     animTentacle.PushFrame(Frame(imageTentacle,sf::Rect<int>(0, 0, imageTentacle->GetWidth()/2, imageTentacle->GetHeight())));
     animTentacle.PushFrame(Frame(imageTentacle,sf::Rect<int>(imageTentacle->GetWidth()/2, 0, imageTentacle->GetWidth(), imageTentacle->GetHeight())));
     animatedTentacle = new Animated(&animTentacle, true, true, 0.01);
-    animatedTentacle->SetPosition(m_position);
+    Vector2f positionProtection(m_position.x -100, m_position.y + 120);
+    animatedTentacle->SetPosition(positionProtection);
 
 
     *image = image_manager::getInstance()->getImage("images/octopus/Yeux.png");
@@ -189,8 +191,25 @@ void Octopus::move()
                 litref2 = lit;
             }
         }
-        (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
-        (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
+        if(!yref1 == 0)
+        {
+            (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
+            if(timerFire.getTime() > 2)
+            {
+                timerFire.reinitialize();
+                (*litref1)->fireCircle();
+            }
+        }
+        if(!yref2 == 0)
+        {
+            (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
+            if(timerFire.getTime() > 2)
+            {
+                timerFire.reinitialize();
+                (*litref2)->fireCircle();
+            }
+
+        }
     }
 
     if(lasorUp && !m_adds.empty())
