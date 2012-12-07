@@ -9,7 +9,7 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
     timerMove.start();
     lastTentaMove = 0;
 
-    short numberFrame(5);
+    short numberFrame(10);
     imageLaser = new Image();
     *imageLaser = image_manager::getInstance()->getImage("images/octopus/lasor.png");
 

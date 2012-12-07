@@ -42,13 +42,13 @@ void Level_manager::startLevel(short level)
     switch(level)
     {
         case 1:
-            filepath = "levels/level1.txt";
+            filepath = "levels/true level 1.txt";
             break;
         case 2:
-            filepath = "levels/level2.txt";
+            filepath = "levels/true level 2.txt";
             break;
         case 3:
-            filepath = "levels/level3.txt";
+            filepath = "levels/true level 3.txt";
             break;
     }
     ifstream fichier(filepath, ios::in);
@@ -97,6 +97,7 @@ void Level_manager::checkLevel()
                     //On remet à zéro le timer et on fixe le début de la prochaine vague
                     spawnTime = nombre;
                     //cout << "La prochaine vague arrive dans " << nombre << endl;
+                    timer.reinitialize();
                 }
                 //On regarde si on est pas à la fin de la vague
                 else if(strcmp(buffer, "END")==0)
