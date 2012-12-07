@@ -27,7 +27,7 @@ class Background
         short LIST_SIZE;
 
         //Images étoiles et planète
-        sf::Image *imageStar, *imageStar2,*imagePlanet, *imagePlanet2;
+        sf::Image *imageStar, *imageStar2,*imagePlanet, *imagePlanet2, *imagePlanet3, *imagePlanet4;
 
         //Sprites étoiles et planètes
         sf::Sprite spriteStar, spritePlanet, spritePlanet2;

@@ -18,11 +18,17 @@ Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::Rende
 
     //Sprite planètes
     imagePlanet = new Image;
-    *imagePlanet = image_manager::getInstance()->getImage("images/planete1.png");;
+    *imagePlanet = image_manager::getInstance()->getImage("images/planete1.png");
     spritePlanet.SetImage(*imagePlanet);
     imagePlanet2 = new Image;
-    *imagePlanet2 = image_manager::getInstance()->getImage("images/planete2.png");;
+    *imagePlanet2 = image_manager::getInstance()->getImage("images/planete2.png");
     spritePlanet2.SetImage(*imagePlanet);
+    imagePlanet3 = new Image;
+    *imagePlanet3 = image_manager::getInstance()->getImage("images/planete3.png");
+    spritePlanet3.SetImage(*imagePlanet);
+    imagePlanet4 = new Image;
+    *imagePlanet4 = image_manager::getInstance()->getImage("images/planete4.png");
+    spritePlanet4.SetImage(*imagePlanet);
 
     this->init();
 }
