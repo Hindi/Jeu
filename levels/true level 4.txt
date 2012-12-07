@@ -1,0 +1,102 @@
+timer 3
+timer 3
+spawn ship3 down 20 0
+spawn ship3 down 30 0
+spawn ship3 down 40 0
+timer 3
+timer 3
+spawn ship3 down 80 0
+spawn ship3 down 70 0
+spawn ship3 down 60 0
+END
+timer 3
+timer 3
+spawn flyingSaucer 4 down 30 0
+spawn flyingSaucer 4 down 70 0
+timer 3
+timer 3
+timer 3
+timer 3
+timer 3
+spawn mine down 10 0
+spawn mine down 60 0
+timer 3
+spawn mine down 30 0
+spawn mine down 40 0
+timer 3
+spawn mine down 50 0
+spawn mine down 80 0
+spawn mine down 70 0
+timer 3
+spawn mine down 20 0
+spawn mine down 90 0
+timer 3
+timer 3
+spawn ship3 down 70 0
+spawn ship3 down 30 0
+timer 3
+spawn ship3 down 80 0
+spawn ship3 down 20 0
+timer 3
+spawn mine down 25 0
+spawn mine down 35 0
+timer 3
+spawn flyingSaucer4 down 10 0
+spawn spawnerFlying left 100 20
+timer 3
+timer 3
+spawn ship3 down 80 0
+spawn ship3 down 70 0
+spawn ship3 down 60 0
+END
+timer 3
+timer 3
+spawn mine roundtrip 0 25
+spawn mine roundtrip 0 45
+timer 3
+spawn mine roundtrip 0 20
+spawn mine roundtrip 100 30
+spawn mine roundtrip 100 10
+timer 3
+timer 3
+spawn flyingSaucer3 down 30 0
+timer 3
+spawn ship3 down 85 0
+spawn ship3 down 75 0
+spawn ship3 down 65 0
+END
+timer 3
+timer 3
+spawn ship3 left 100 60
+spawn ship3 right 0 60
+spawn ship3 left 100 40
+spawn ship3 right 0 40
+spawn ship3 left 100 20
+spawn ship3 right 0 20
+timer 3
+spawn spawnerShip don'tmove 10 20
+spawn spawnerShip don't move 30 20
+timer 3
+timer 3
+spawn mine spawnMove 10 10
+spawn mine spawnMove 25 30
+spawn mine spawnMove 90 5
+spawn mine spawnMove 65 40
+timer 3
+timer 3
+spawn spawnerFlying roundtrip 100 35
+timer 3
+spawn flyingSaucer4 up 60 100
+END
+timer 3
+timer 3
+timer 3
+timer 3
+boss dreadnought 50 20
+END
+timer 3
+timer 3
+timer 3
+timer 3
+boss evilPlayer 50 20
+OVER

@@ -1,0 +1,114 @@
+timer 3
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 20 0
+spawn flyingSaucer3 down 50 0
+timer 3
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 20 0
+timer 3
+timer 3
+timer 3
+spawn ship2 down 20 0
+spawn ship2 down 30 0
+spawn ship2 down 40 0
+timer 3
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 70 0
+spawn ship2 down 60 0
+END
+timer 3
+timer 3
+spawn ship2 down 50 0
+timer 3
+timer 3
+spawn spawnerShip down 50 0
+timer 3
+spawn ship2 down 20 0
+spawn ship2 down 80 0
+timer 3
+timer 3
+spawn spawnerShip down 20 0
+spawn ship2 down 80 0
+timer 3
+timer 3
+spawn spawnerShip down 80 0
+END
+timer 3
+timer 3
+spawn ship2 left 100 60
+spawn ship2 right 0 60
+spawn ship2 left 100 40
+spawn ship2 right 0 40
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+spawn ship2 left 100 5
+spawn ship2 right 0 5
+timer 3
+timer 3
+spawn spawnerShip don'tmove 30 20
+spawn spawnerShip don'tmove 50 20
+spawn spawnerShip don'tmove 70 20
+END
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 20 0
+spawn flyingSaucer3 down 50 0
+timer 3
+spawn spawnerFlying down 50 0
+timer 3
+timer 3
+spawn ship2 down 70 0
+spawn ship2 down 30 0
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 20 0
+timer 3
+timer 3
+spawn spawnerShip right 0 20
+spawn spawnerShip left 100 20
+spawn ship2 down 80 0
+spawn ship2 down 20 0
+timer 3
+timer 3
+spawn flyingSaucer3 roundtrip 0 20
+timer 3
+spawn ship2 down 60 0
+spawn ship2 down 40 0
+END
+timer 3
+timer 3
+spawn flyingSaucer3 down 30 0
+spawn flyingSaucer3 down 70 0
+timer 3
+timer 3
+spawn ship2 down 10 0
+spawn ship2 down 20 0
+spawn ship2 down 30 0
+spawn ship2 down 40 0
+spawn ship2 down 50 0
+spawn ship2 down 60 0
+spawn ship2 down 70 0
+spawn ship2 down 80 0
+spawn ship2 down 90 0
+timer 3
+timer 3
+spawn spawnerFlying don'tmove 30 0
+spawn spawnerflying don'tmove 70 0
+timer 3
+spawn ship2 down 20 0
+spawn ship2 down 30 0
+spawn ship2 down 40 0
+timer 3
+timer 3
+spawn ship2 down 80 0
+spawn ship2 down 70 0
+spawn ship2 down 60 0
+END
+timer 3
+timer 3
+timer 3
+boss megaspawner 50 20
+OVER

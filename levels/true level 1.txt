@@ -1,0 +1,110 @@
+timer 3
+timer 3
+timer 3
+spawn ship down 50 0
+timer 3
+timer 3
+spawn ship down 50 0
+timer 3
+spawn ship down 40 0
+spawn ship down 60 0
+timer 3
+timer 3
+spawn ship down 30 0
+spawn ship down 70 0
+timer 3
+timer 3
+spawn ship down 20 0
+spawn ship down 80 0
+timer 3
+timer 3
+spawn ship down 10 0
+spawn ship down 90 0
+timer 3
+timer 3
+spawn ship down 10 0
+spawn ship down 90 0
+timer 3
+timer 3
+spawn ship down 10 0
+spawn ship down 90 0
+timer 3
+timer 3
+spawn ship down 10 0
+spawn ship down 90 0
+END
+timer 3
+timer 3
+timer 3
+spawn flyingSaucer don'tmove 30 0
+spawn flyingSaucer don'tmove 70 0
+END
+timer 3
+timer 3
+spawn ship left 0 20
+spawn ship right 100 20
+timer 3
+timer 3
+spawn ship left 0 20
+spawn ship right 100 20
+timer 3
+timer 3
+spawn ship left 0 20
+spawn ship right 100 20
+timer 3
+timer 3
+spawn ship left 0 20
+spawn ship right 100 20
+timer 3
+timer 3
+spawn ship left 0 20
+spawn ship right 100 20
+timer 3
+timer 3
+timer 3
+timer 3
+spawn ship down 20 0
+spawn ship down 80 0
+timer 3
+spawn ship down 25 0
+spawn ship down 75 0
+timer 3
+spawn ship down 30 0
+spawn ship down 70 0
+timer 3
+spawn ship down 35 0
+spawn ship down 65 0
+timer 3
+spawn ship down 40 0
+spawn ship down 60 0
+timer 3
+spawn flyingSaucer down 35 0
+spawn flyingSaucer down 65 0
+spawn flyingSaucer down 30 0
+spawn flyingSaucer down 70 0
+END
+timer 3
+timer 3
+spawn ship roundtrip 0 30
+spawn ship roundtrip 100 30
+timer 3
+spawn flyingSaucer don'tmove 50 0
+spawn ship roundtrip 0 30
+spawn ship roundtrip 100 30
+timer 3
+spawn ship roundtrip 0 30
+spawn ship roundtrip 100 30
+timer 3
+spawn ship roundtrip 0 30
+spawn ship roundtrip 100 30
+timer 3
+spawn ship roundtrip 0 30
+spawn ship roundtrip 100 30
+END
+timer 3
+timer 3
+timer 3
+boss lilith2 50 20
+timer 3
+OVER
+

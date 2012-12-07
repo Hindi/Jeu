@@ -1,0 +1,114 @@
+timer 3
+timer 3
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+timer 3
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+spawn flyingSaucer2 down 50 0
+END
+timer 3
+timer 3
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+timer 2
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+timer 3
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+timer 2
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+timer 3
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+timer 2
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+timer 3
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+timer 2
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+spawn flyingSaucer2 50 0
+END
+timer 3
+timer 3
+spawn flyingSaucer2 roundtrip 0 20
+spawn ship2 down 30 0
+spawn ship2 down 70 0
+timer 3
+spawn ship2 right 0 20
+spawn ship2 left 100 20
+timer 3
+spawn flyingSaucer2 down 35 0
+spawn ship2 spawnMove 10 20
+spawn ship2 spawnMove 90 20
+timer 3
+timer 3
+timer 3
+spawn ship2 spawnMove 10 20
+spawn ship2 spawnMove 90 20
+timer 3
+timer 3
+spawn ship2 spawnMove 10 20
+spawn ship2 spawnMove 90 20
+spawn flyingsaucer2 down 65 0
+timer 3
+timer 3
+spawn ship2 spawnMove 10 20
+spawn ship2 spawnMove 90 20
+timer 3
+timer 3
+spawn ship2 spawnMove 10 20
+spawn ship2 spawnMove 90 20
+spawn flyingSaucer roundtrip 100 20
+END
+timer 3
+timer 3
+spawn ship2 down 10 0
+spawn ship2 down 20 0
+spawn ship2 down 30 0
+spawn ship2 down 40 0
+spawn ship2 down 50 0
+spawn ship2 down 60 0
+spawn ship2 down 70 0
+spawn ship2 down 80 0
+spawn ship2 down 90 0
+timer 3
+timer 3
+spawn flyingSaucer2 don'tmove 30 10
+spawn flyingSaucer2 don'tmove 50 10
+spawn flyingSaucer2 don'tmove 70 10
+timer 3
+timer 3
+spawn ship2 up 30 100
+spawn ship2 up 50 100
+spawn ship2 up 70 100
+timer 3
+spawn ship2 left 100 80
+spawn ship2 right 0 80
+timer 3
+spawn flyingSaucer2 roundtrip 0 20
+spawn flyingSaucer2 roundtrip 100 20
+spawn ship2 left 100 60
+spawn ship2 right 0 60
+timer 3
+spawn ship2 left 100 40
+spawn ship2 right 0 40
+timer 3
+spawn ship2 left 100 20
+spawn ship2 right 0 20
+timer 3
+spawn ship2 left 100 5
+spawn ship2 right 0 5
+END
+timer 3
+timer 3
+timer 3
+boss octopus 50 20
+timer 3
+timer 3
+OVER
