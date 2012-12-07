@@ -5,11 +5,11 @@ spawn flyingSaucer3 down 50 0
 timer 2
 spawn ship2 down 80 0
 spawn ship2 down 20 0
-timer 3
+timer 1.5
 spawn ship2 down 20 0
 spawn ship2 down 30 0
 spawn ship2 down 40 0
-timer 2
+timer 1
 spawn ship2 down 80 0
 spawn ship2 down 70 0
 spawn ship2 down 60 0
@@ -21,10 +21,10 @@ spawn spawnerShip down 50 0
 timer 1.5
 spawn ship2 down 20 0
 spawn ship2 down 80 0
-timer 3
+timer 2
 spawn spawnerShip down 20 0
 spawn ship2 down 80 0
-timer 2
+timer 1.5
 spawn spawnerShip down 80 0
 END
 timer 3
@@ -77,10 +77,10 @@ spawn ship2 down 60 0
 spawn ship2 down 70 0
 spawn ship2 down 80 0
 spawn ship2 down 90 0
-timer 2
+timer 1.5
 spawn spawnerFlying don'tmove 30 0
 spawn spawnerflying don'tmove 70 0
-timer 1.5
+timer 1
 spawn ship2 down 20 0
 spawn ship2 down 30 0
 spawn ship2 down 40 0

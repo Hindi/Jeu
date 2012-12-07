@@ -12,25 +12,25 @@ spawn ship2 right 0 20
 timer 1
 spawn ship2 down 30 0
 spawn ship2 down 70 0
-timer 2
+timer 1.5
 spawn ship2 left 100 20
 spawn ship2 right 0 20
 timer 1
 spawn ship2 down 30 0
 spawn ship2 down 70 0
-timer 2
+timer 1.5
 spawn ship2 left 100 20
 spawn ship2 right 0 20
 timer 1
 spawn ship2 down 30 0
 spawn ship2 down 70 0
-timer 2
+timer 1.5
 spawn ship2 left 100 20
 spawn ship2 right 0 20
 timer 1
 spawn ship2 down 30 0
 spawn ship2 down 70 0
-spawn flyingSaucer2 50 0
+spawn flyingSaucer2 down 50 0
 END
 timer 3
 spawn flyingSaucer2 roundtripRight 0 20
@@ -43,7 +43,7 @@ timer 1.5
 spawn flyingSaucer2 down 35 0
 spawn ship2 spawnMove 10 20
 spawn ship2 spawnMove 90 20
-timer 4
+timer 2
 spawn ship2 spawnMove 10 20
 spawn ship2 spawnMove 90 20
 timer 1.5
@@ -79,7 +79,7 @@ spawn ship2 up 70 100
 timer 2
 spawn ship2 left 100 80
 spawn ship2 right 0 80
-timer 3
+timer 2
 spawn flyingSaucer2 roundtripRight 0 20
 spawn flyingSaucer2 roundtripLeft 100 20
 spawn ship2 left 100 60
@@ -87,7 +87,7 @@ spawn ship2 right 0 60
 timer 1.5
 spawn ship2 left 100 40
 spawn ship2 right 0 40
-timer 1.5
+timer 1
 spawn ship2 left 100 20
 spawn ship2 right 0 20
 timer 1.5
