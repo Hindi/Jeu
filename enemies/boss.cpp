@@ -36,9 +36,9 @@ Boss::Boss(int life, int scoreHit, int scoreExplosion, int xSpeed, int ySpeed, c
     *imageHealthBar = image_manager::getInstance()->getImage("images/lilith/barre_vie.png");
 
     spriteHealthBackground.SetImage(*imageHealthBackground);
-    spriteHealthBackground.SetPosition(400, 50);
+    spriteHealthBackground.SetPosition(300, 50);
     spriteHealthBar.SetImage(*imageHealthBar);
-    spriteHealthBar.SetPosition(400, 50);
+    spriteHealthBar.SetPosition(300, 50);
 
 
     vuuuBuffer = sound_manager::getInstance()->getBuffer("son/vuuuu.ogg");

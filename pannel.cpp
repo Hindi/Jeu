@@ -202,7 +202,7 @@ void Pannel::drawScore()
     }
     else
     {
-        Vector2f position(1000, 200);
+        Vector2f position(920, 230);
         std::ostringstream oss;
         oss << (m_player->getScore());
         string result = oss.str();
@@ -256,7 +256,7 @@ void Pannel::drawEnemyStats()
         text.SetFont(font);
         text.SetSize(35);
         text.SetColor(Color(0, 0, 0));
-        text.SetPosition(Vector2f(1000,350));
+        text.SetPosition(Vector2f(900,450));
         app.Draw(text);
 
         std::ostringstream os;
@@ -266,7 +266,7 @@ void Pannel::drawEnemyStats()
         text.SetFont(font);
         text.SetSize(35);
         text.SetColor(Color(0, 0, 0));
-        text.SetPosition(Vector2f(1000,420));
+        text.SetPosition(Vector2f(900,517));
         app.Draw(text);
     }
 }

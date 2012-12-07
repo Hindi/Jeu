@@ -116,7 +116,6 @@ void Enemy::roundtripLeft()
     int distance(100);
     int tempo;
     tempo = distance/(m_xSpeed*coefSpeed*0.1);
-    cout << tempo << endl;
     if(strcmp(direction.data(), "left") == 0)
         moveRight();
     else

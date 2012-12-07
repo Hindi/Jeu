@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Menu::Menu():
-            position(250, 200),
+            position(100, 200),
             m_scale(1,1),
             currentLevel(1)
 {
@@ -74,7 +74,7 @@ Menu::Menu():
     imageFadeReprendre = new Image;
     imageFadeArreter = new Image;
     position.y += 400;
-    position.x = 250;
+    position.x = 100;
     *imageFadeReprendre = image_manager::getInstance()->getImage("images/ReprendreLaPartie_fade.png");
     spriteReprendre.SetImage(*imageFadeReprendre);
     spriteReprendre.SetPosition(position);
@@ -88,7 +88,7 @@ Menu::Menu():
     imageCreditContent = new Image;
     *imageCreditContent = image_manager::getInstance()->getImage("images/credits2.png");
     spriteCreditContent.SetImage(*imageCreditContent);
-    spriteCreditContent.SetPosition(Vector2f(300, 400));
+    spriteCreditContent.SetPosition(Vector2f(80, 400));
     spriteCreditContent.Scale(m_scale);
 
 
@@ -154,7 +154,7 @@ void Menu::drawMainMenu(int select, int score)
             text.SetFont(font);
             text.SetSize(50);
             text.SetColor(Color(255, 255, 255));
-            text.SetPosition(Vector2f(600, 382));
+            text.SetPosition(Vector2f(450, 382));
             app.Draw(text);
         }
 
@@ -178,15 +178,15 @@ void Menu::drawMainMenu(int select, int score)
             text.SetFont(font);
             text.SetSize(50);
             text.SetColor(Color(255, 255, 255));
-            text.SetPosition(Vector2f(400, 200));
+            text.SetPosition(Vector2f(200, 200));
             app.Draw(text);
 
             String start;
             start.SetText("Appuyez sur start pour recommencer");
             start.SetFont(font);
-            start.SetSize(50);
+            start.SetSize(40);
             start.SetColor(Color(255, 255, 255));
-            start.SetPosition(Vector2f(100, 100));
+            start.SetPosition(Vector2f(50, 100));
             app.Draw(start);
 
             app.Draw(spriteCreditContent);

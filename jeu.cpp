@@ -82,7 +82,7 @@ int Jeu::start(short niveau)
 
     //pannel
     const string filepathPanel = "images/pannel.png";
-    Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 100);
+    Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH-30, 100);
     Pannel pannel(filepathPanel, positionPannel, player, player2);
 
     //Collision
