@@ -7,7 +7,8 @@ Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Playe
             Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -200), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
 {
     timerMove.start();
-    timerFire.start();
+    timerFire1.start();
+    timerFire2.start();
     lastTentaMove = 0;
 
     short numberFrame(10);
@@ -194,18 +195,18 @@ void Octopus::move()
         if(!yref1 == 0)
         {
             (*litref1)->changeImage("images/octopus/TentaculeBout.png", 1);
-            if(timerFire.getTime() > 2)
+            if(timerFire1.getTime() > 2)
             {
-                timerFire.reinitialize();
+                timerFire1.reinitialize();
                 (*litref1)->fireCircle();
             }
         }
         if(!yref2 == 0)
         {
             (*litref2)->changeImage("images/octopus/TentaculeBout.png", 1);
-            if(timerFire.getTime() > 2)
+            if(timerFire2.getTime() > 2)
             {
-                timerFire.reinitialize();
+                timerFire2.reinitialize();
                 (*litref2)->fireCircle();
             }
 
