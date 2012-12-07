@@ -298,9 +298,11 @@ void Population::createOctopus()
     currentBoss = octopus;
     m_enemies.push_back(octopus);
     Vector2f position(-140, 90);
-    Vector2f absolutePosition(octopus->getPosition().x + position.x, octopus->getPosition().y + position.y);
+    Vector2f absolutePosition;
     for(int i=0; i < 15; i++)
     {
+        absolutePosition.x = octopus->getPosition().x + position.x;
+        absolutePosition.y = octopus->getPosition().y + position.y;
         this->createAdd(100, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
@@ -308,6 +310,8 @@ void Population::createOctopus()
     position.y = 90;
     for(int i=0; i < 15; i++)
     {
+        absolutePosition.x = octopus->getPosition().x + position.x;
+        absolutePosition.y = octopus->getPosition().y + position.y;
         this->createAdd(100, 5, 50, 5, 5, "images/octopus/Tentacule.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
         position.y += 30;
     }
