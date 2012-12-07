@@ -297,7 +297,7 @@ void Population::createOctopus()
     tr1::shared_ptr<Boss> octopus(new Octopus(player, player2));
     currentBoss = octopus;
     m_enemies.push_back(octopus);
-    Vector2f position(-150, 90);
+    Vector2f position(-140, 90);
     Vector2f absolutePosition(octopus->getPosition().x + position.x, octopus->getPosition().y + position.y);
     for(int i=0; i < 15; i++)
     {
