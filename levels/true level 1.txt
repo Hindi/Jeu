@@ -1,5 +1,3 @@
-
-boss lilith2 50 20timer 3
 spawn ship down 50 0
 timer 1.5
 spawn ship down 50 0

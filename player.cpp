@@ -17,7 +17,7 @@ Player::Player(short id, int life, Vector2f position):
             secondary(false),
             m_coefSpeed(40),
             m_damages(5),
-            m_lives(99),
+            m_lives(3),
             m_armor(3),
             killThemAll(true),
             exploding(false)

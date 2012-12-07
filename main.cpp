@@ -11,7 +11,7 @@
 using namespace std;
 using namespace sf;
 
-RenderWindow app(sf::VideoMode(1366, 768), "jeu");
+RenderWindow app(sf::VideoMode(1024 , 768), "jeu");
 
 /*
 TODO LIST
@@ -21,7 +21,7 @@ TODO LIST
 
 int main()
 {
-    const int SCREEN_WIDTH(1366), SCREEN_HEIGHT(768), MAX_MENU(3);
+    const int SCREEN_WIDTH(1024), SCREEN_HEIGHT(768), MAX_MENU(3);
     app.UseVerticalSync(true);
     app.SetFramerateLimit(60);
 
@@ -54,11 +54,11 @@ int main()
         while(app.GetEvent(Event))
         {
             if (Event.Type == sf::Event::Closed)
-                app.Close();
+                app.Close();/*
              if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Escape))
             {
                 app.Close();
-            }
+            }*/
             if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Down || Event.Key.Code == sf::Key::Right))
             {
                 sound.Play();
@@ -76,7 +76,7 @@ int main()
                     select -=1;
             }
             //Action à effectuer quand on appuie ur entrée : dépend du nombre de points
-            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Num1))
             {
                 sound.Play();
                 switch(select)

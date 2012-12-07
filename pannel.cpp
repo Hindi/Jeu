@@ -24,7 +24,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     imageTopPannel2 = new Image;
     *imageTopPannel2 = image_manager::getInstance()->getImage("images/pannelHaut2.png");
     topPannel2.SetImage(*imageTopPannel2);
-    topPannel2.SetPosition(Vector2f(750, 0));
+    topPannel2.SetPosition(Vector2f(500, 0));
     topPannel2.Scale(0.75,0.75);
 
     imageLife = new Image;
@@ -36,12 +36,12 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     imageProgressBar = new Image;
     *imageProgressBar = image_manager::getInstance()->getImage("images/progression-barre.png");
     spriteProgressBar.SetImage(*imageProgressBar);
-    spriteProgressBar.SetPosition(1300, 600);
+    spriteProgressBar.SetPosition(1000, 600);
 
     imageProgressBackground = new Image;
     *imageProgressBackground = image_manager::getInstance()->getImage("images/progression-barre-fade.png");
     spriteProgressBackground.SetImage(*imageProgressBackground);
-    spriteProgressBackground.SetPosition(1300, 600);
+    spriteProgressBackground.SetPosition(1000, 600);
 
     //Chargment des images de vie
     *imageLife = image_manager::getInstance()->getImage("images/Vie.png");
@@ -59,7 +59,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     position.x += 30;
     spriteLife3.SetPosition(position);
 
-    position.x = 920;
+    position.x = 660;
     position.y = 0;
     spriteLife21.SetPosition(position);
     position.x += 30;
@@ -77,7 +77,7 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     position.x += 30;
     spriteArmor3.SetPosition(position);
 
-    position.x = 920;
+    position.x = 660;
     position.y = 35;
     spriteArmor21.SetPosition(position);
     position.x += 30;
@@ -202,7 +202,7 @@ void Pannel::drawScore()
     }
     else
     {
-        Vector2f position(1300, 130);
+        Vector2f position(1000, 200);
         std::ostringstream oss;
         oss << (m_player->getScore());
         string result = oss.str();
@@ -256,7 +256,7 @@ void Pannel::drawEnemyStats()
         text.SetFont(font);
         text.SetSize(35);
         text.SetColor(Color(0, 0, 0));
-        text.SetPosition(Vector2f(1250,350));
+        text.SetPosition(Vector2f(1000,350));
         app.Draw(text);
 
         std::ostringstream os;
@@ -266,7 +266,7 @@ void Pannel::drawEnemyStats()
         text.SetFont(font);
         text.SetSize(35);
         text.SetColor(Color(0, 0, 0));
-        text.SetPosition(Vector2f(1250,420));
+        text.SetPosition(Vector2f(1000,420));
         app.Draw(text);
     }
 }

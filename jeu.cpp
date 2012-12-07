@@ -82,7 +82,7 @@ int Jeu::start(short niveau)
 
     //pannel
     const string filepathPanel = "images/pannel.png";
-    Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 0);
+    Vector2f positionPannel(m_SCREEN_WIDTH-PANNEL_WIDTH, 100);
     Pannel pannel(filepathPanel, positionPannel, player, player2);
 
     //Collision
@@ -133,27 +133,27 @@ int Jeu::start(short niveau)
         //Déplacements :
         if(!player->isDead())
         {
-            if(input.IsKeyDown(Key::Up))
+            if(input.IsKeyDown(Key::R))
             {
                 player->moveUp();
                 collision.manageCollisionsY();
             }
-            else if(input.IsKeyDown(Key::Down))
+            else if(input.IsKeyDown(Key::F))
             {
                 player->moveDown();
                 collision.manageCollisionsY();
             }
-            if(input.IsKeyDown(Key::Right))
+            if(input.IsKeyDown(Key::D))
             {
                 player->moveRight();
                 collision.manageCollisionsX();
             }
-            else if(input.IsKeyDown(Key::Left))
+            else if(input.IsKeyDown(Key::G))
             {
                 player->moveLeft();
                 collision.manageCollisionsX();
             }
-            if(!(input.IsKeyDown(Key::Down))&&!(input.IsKeyDown(Key::Up))&&!(input.IsKeyDown(Key::Left))&&!(input.IsKeyDown(Key::Right)))
+            if(!(input.IsKeyDown(Key::R))&&!(input.IsKeyDown(Key::F))&&!(input.IsKeyDown(Key::D))&&!(input.IsKeyDown(Key::G)))
             {
                 player->dontMove();
                 collision.manageCollisionsX();
@@ -161,9 +161,9 @@ int Jeu::start(short niveau)
             }
             if(input.IsKeyDown(Key::A))
             {
-                population->freeze();
+                //population->freeze();
             }
-            if(input.IsKeyDown(Key::Space))
+            if(input.IsKeyDown(Key::Z))
             {
                 player->fire0();
             }
@@ -174,51 +174,51 @@ int Jeu::start(short niveau)
         }
         if(!player2->isDead())
         {
-            if(input.IsKeyDown(Key::Z))
+            if(input.IsKeyDown(Key::Up))
             {
                 player2->moveUp();
                 collision.manageCollisionsY2();
             }
-            else if(input.IsKeyDown(Key::S))
+            else if(input.IsKeyDown(Key::Down))
             {
                 player2->moveDown();
                 collision.manageCollisionsY2();
             }
-            if(input.IsKeyDown(Key::D))
+            if(input.IsKeyDown(Key::Right))
             {
                 player2->moveRight();
                 collision.manageCollisionsX2();
             }
-            else if(input.IsKeyDown(Key::Q))
+            else if(input.IsKeyDown(Key::Left))
             {
                 player2->moveLeft();
                 collision.manageCollisionsX2();
             }
-            if(!(input.IsKeyDown(Key::S))&&!(input.IsKeyDown(Key::Z))&&!(input.IsKeyDown(Key::Q))&&!(input.IsKeyDown(Key::D)))
+            if(!(input.IsKeyDown(Key::R))&&!(input.IsKeyDown(Key::D))&&!(input.IsKeyDown(Key::F))&&!(input.IsKeyDown(Key::G)))
             {
                 player2->dontMove();
                 collision.manageCollisionsX2();
                 collision.manageCollisionsY2();
             }
-            if(input.IsKeyDown(Key::E))
+            if(input.IsKeyDown(Key::LShift))
             {
                 player2->fire1();
             }
             if(input.IsKeyDown(Key::M))
             {
-                Weapon_manager::getInstance()->changeWeapon(player2);
+                //Weapon_manager::getInstance()->changeWeapon(player2);
             }
             if(input.IsKeyDown(Key::H))
-            {
+            {/*
                 if(player2->getPlayerKTA())
                 {
                     population->killThemAll();
                     Projectile_manager::getInstance()->killThemAll();
                     player2->setPlayerKTA(false);
-                }
+                }*/
             }
         }
-        if(input.IsKeyDown(Key::Escape))
+        if(input.IsKeyDown(Key::Num2))
         {
             population->stop();
             this->pause(Event, pannel, player, player2);
@@ -294,7 +294,7 @@ void Jeu::pause(Event Event, Pannel &pannel, std::tr1::shared_ptr<Player> player
                 timer.sleep(70);
                 resume = true;
             }
-            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Return))
+            if((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Key::Num1))
             {
                 switch(select)
                 {
