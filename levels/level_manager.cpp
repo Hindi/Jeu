@@ -92,7 +92,7 @@ void Level_manager::checkLevel()
                 {
                     std::istringstream iss( tokens[1] );
                     // convertir en un int
-                    int nombre;
+                    float nombre;
                     iss >> nombre;
                     //On remet à zéro le timer et on fixe le début de la prochaine vague
                     spawnTime = nombre;

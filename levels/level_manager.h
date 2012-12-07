@@ -34,7 +34,7 @@ class Level_manager
         static Level_manager* _singleton;
 
         Timer timer, timerProgression;
-        short spawnTime;
+        float spawnTime;
         short levelNumber;
         int m_position;
         bool levelOver;
