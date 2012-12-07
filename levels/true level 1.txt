@@ -15,55 +15,45 @@ spawn ship down 80 0
 timer 1.5
 spawn ship down 10 0
 spawn ship down 90 0
-timer 1.5
+timer 1
 spawn ship down 10 0
 spawn ship down 90 0
-timer 1.5
-spawn ship down 10 0
-spawn ship down 90 0
-timer 1.5
-spawn ship down 10 0
-spawn ship down 90 0
+timer 0.5
+spawn ship down 5 0
+spawn ship down 95 0
+timer 0.5
+spawn ship down 20 0
+spawn ship down 80 0
 END
 timer 5
 spawn flyingSaucer don'tmove 30 0
 spawn flyingSaucer don'tmove 70 0
 END
 timer 5
-spawn ship left 0 20
-spawn ship right 100 20
-timer 1.5
-spawn ship left 0 20
-spawn ship right 100 20
-timer 1.5
-spawn ship left 0 20
-spawn ship right 100 20
-timer 1.5
-spawn ship left 0 20
-spawn ship right 100 20
-timer 1.5
-spawn ship left 0 20
-spawn ship right 100 20
+spawn ship down 10 0
+spawn ship down 20 0
+spawn ship down 30 0
+spawn ship down 40 0
+spawn ship down 50 0
 timer 3
 spawn ship down 20 0
 spawn ship down 80 0
 timer 1.5
 spawn ship down 25 0
 spawn ship down 75 0
-timer 1.5
+timer 1
 spawn ship down 30 0
 spawn ship down 70 0
-timer 1.5
+timer 0.5
 spawn ship down 35 0
 spawn ship down 65 0
-timer 1.5
 spawn ship down 40 0
 spawn ship down 60 0
-timer 1.5
+timer 1
 spawn flyingSaucer down 35 0
 spawn flyingSaucer down 65 0
-spawn flyingSaucer down 30 0
-spawn flyingSaucer down 70 0
+spawn flyingSaucer down 20 0
+spawn flyingSaucer down 80 0
 END
 timer 3
 spawn ship roundtrip 0 30
@@ -73,6 +63,8 @@ spawn flyingSaucer don'tmove 50 0
 spawn ship roundtripRight 0 30
 spawn ship roundtripLeft 100 30
 timer 1.5
+spawn flyingSaucer down 20 0
+spawn flyingSaucer down 80 0
 spawn ship roundtripRight 0 30
 spawn ship roundtripLeft 100 30
 timer 1.5
@@ -81,6 +73,20 @@ spawn ship roundtripLeft 100 30
 timer 1.5
 spawn ship roundtripRight 0 30
 spawn ship roundtripLeft 100 30
+END
+timer 3
+spawn ship down 30 0
+spawn ship down 40 0
+spawn ship down 50 0
+timer 1
+spawn ship down 70 0
+spawn ship down 80 0
+spawn ship down 90 0
+spawn flyingSaucer roundtripLeft 100 60
+timer 1
+spawn ship up 20 100
+spawn ship up 60 100
+spawn ship up 35 100
 END
 timer 5
 boss lilith2 50 20
