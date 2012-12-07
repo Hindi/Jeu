@@ -19,6 +19,7 @@
 #include "timer.h"
 #include "enemies/boss/lilith.h"
 #include "enemies/boss/octopus.h"
+#include "enemies/boss/megaspawner.h"
 #include "enemies/adds.h"
 #include "enemies/ship.h"
 #include "enemies/flying_saucer.h"
@@ -68,8 +69,10 @@ class Population
         void manage();
 
         //Création d'un boss
-        void createLilith();
+        void createLilith1();
+        void createLilith2();
         void createOctopus();
+        void createMegaspawner();
 
         //Vérifient qu'il y a des spawn en jeu
         bool haveSpawnInProgress();

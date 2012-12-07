@@ -288,8 +288,20 @@ void Population::spawn(std::tr1::shared_ptr<Enemy> enemy)
         enemy->upDateLastSpawnTime();
     }
 }
+void Population::createLilith1()
+{
+    tr1::shared_ptr<Boss> lilith(new Lilith(player, player2));
+    m_enemies.push_back(lilith);
+    currentBoss = lilith;
+    Vector2f position(130, 96);
+    Vector2f absolutePosition(lilith->getPosition().x + position.x, lilith->getPosition().y + position.y);
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    position.x +=65;
+    this->createAdd(50000, 0, 50, 5, 5, "images/lilith2.0/bouclier2.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    bossSpawned = true;
+}
 
-void Population::createLilith()
+void Population::createLilith2()
 {
     tr1::shared_ptr<Boss> lilith(new Lilith(player, player2));
     m_enemies.push_back(lilith);
@@ -326,6 +338,24 @@ void Population::createOctopus()
         position.y += 30;
     }
     bossSpawned = true;
+}
+
+
+void Population::createMegaspawner()
+{
+    tr1::shared_ptr<Boss> megaspawner(new Megaspawner(player, player2));
+    m_enemies.push_back(megaspawner);
+    currentBoss = megaspawner;
+    Vector2f position(300, 0);
+    Vector2f absolutePosition(megaspawner->getPosition().x + position.x, megaspawner->getPosition().y + position.y);
+    this->createAdd(1000, 5, 50, 5, 5, "images/megaspawner/little.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    position.x = -100;
+    this->createAdd(1000, 5, 50, 5, 5, "images/megaspawner/little.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    position.x = -100;
+    position.y = 200;
+    this->createAdd(1000, 5, 50, 5, 5, "images/megaspawner/little.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
+    position.x = 300;
+    this->createAdd(1000, 5, 50, 5, 5, "images/megaspawner/little.png", position, absolutePosition, "add", "follow" ,1, m_coefSpeed, 1, false, player, player2);
 }
 
 void Population::manage()

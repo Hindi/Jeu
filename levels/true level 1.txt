@@ -1,4 +1,4 @@
-timer 3
+boss megaspawner 50 20
 spawn flyingSaucer3 down 50 0
 timer 3
 spawn ship down 50 0

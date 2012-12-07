@@ -137,15 +137,21 @@ void Level_manager::checkLevel()
                     }
                     else
                     {
-                        if(strcmp(tokens[1].data(),"lilith")==0)
+                        if(strcmp(tokens[1].data(),"lilith1")==0)
                         {
-                        Population::getInstance()->createLilith();
-
+                            Population::getInstance()->createLilith1();
+                        }
+                        if(strcmp(tokens[1].data(),"lilith2")==0)
+                        {
+                            Population::getInstance()->createLilith2();
                         }
                         if(strcmp(tokens[1].data(),"octopus")==0)
                         {
-                        Population::getInstance()->createOctopus();
-
+                            Population::getInstance()->createOctopus();
+                        }
+                        if(strcmp(tokens[1].data(),"megaspawner")==0)
+                        {
+                            Population::getInstance()->createMegaspawner();
                         }
                     }
                 }
