@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "image_manager.h"
+#include "levels/level_manager.h"
 
 class Background
 {
@@ -30,7 +31,7 @@ class Background
         sf::Image *imageStar, *imageStar2,*imagePlanet, *imagePlanet2, *imagePlanet3, *imagePlanet4;
 
         //Sprites étoiles et planètes
-        sf::Sprite spriteStar, spritePlanet, spritePlanet2;
+        sf::Sprite spriteStar, spritePlanet;
 
         //Liste d'étoiles
         std::vector<sf::Sprite> listStar;

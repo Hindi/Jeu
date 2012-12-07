@@ -2111,12 +2111,13 @@
 1354758743 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
-1354758743 c:\users\shalafi\documents\github\jeu\background.h
+1354846576 c:\users\shalafi\documents\github\jeu\background.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<stdlib.h>
 	<time.h>
 	"image_manager.h"
+	"levels/level_manager.h"
 
 1354758743 c:\users\shalafi\documents\github\jeu\image_manager.h
 
@@ -2353,7 +2354,7 @@
 1354758743 source:c:\users\shalafi\documents\github\jeu\menu.cpp
 	"menu.h"
 
-1354758743 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
+1354846385 source:c:\users\shalafi\documents\github\jeu\pannel.cpp
 	"pannel.h"
 
 1354781155 source:c:\users\shalafi\documents\github\jeu\player.cpp
@@ -2530,7 +2531,7 @@
 	"../population.h"
 	"../timer.h"
 
-1354844380 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
+1354845644 source:c:\users\shalafi\documents\github\jeu\levels\level_manager.cpp
 	"level_manager.h"
 
 1213844844 c:\users\shalafi\documents\github\jeu\libs\string.hpp

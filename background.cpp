@@ -19,16 +19,29 @@ Background::Background(int speed, int SCREEN_WIDTH, int SCREEN_HEIGHT, sf::Rende
     //Sprite planètes
     imagePlanet = new Image;
     *imagePlanet = image_manager::getInstance()->getImage("images/planete1.png");
-    spritePlanet.SetImage(*imagePlanet);
     imagePlanet2 = new Image;
     *imagePlanet2 = image_manager::getInstance()->getImage("images/planete2.png");
-    spritePlanet2.SetImage(*imagePlanet);
     imagePlanet3 = new Image;
     *imagePlanet3 = image_manager::getInstance()->getImage("images/planete3.png");
-    spritePlanet3.SetImage(*imagePlanet);
     imagePlanet4 = new Image;
     *imagePlanet4 = image_manager::getInstance()->getImage("images/planete4.png");
-    spritePlanet4.SetImage(*imagePlanet);
+
+    short level = Level_manager::getInstance()->getLevelNumber();
+    switch(level)
+    {
+        case 12:
+            spritePlanet.SetImage(*imagePlanet);
+            break;
+        case 2:
+            spritePlanet.SetImage(*imagePlanet2);
+            break;
+        case 3:
+            spritePlanet.SetImage(*imagePlanet3);
+            break;
+        case 1:
+            spritePlanet.SetImage(*imagePlanet4);
+            break;
+    }
 
     this->init();
 }
@@ -63,14 +76,14 @@ void Background::manage()
     //Si une planète sort on la replace de manière aléatoire
     if(spritePlanet.GetPosition().y > m_height)
     {
-        spritePlanet2.SetPosition((rand()%980)+1, -500);
+        //spritePlanet2.SetPosition((rand()%980)+1, -500);
         spritePlanet.SetPosition(0,-1000);
     }
-    if(spritePlanet2.GetPosition().y > m_height)
+    /*if(spritePlanet2.GetPosition().y > m_height)
     {
         spritePlanet.SetPosition((rand()%980)+1, -500);
         spritePlanet2.SetPosition(0,-1000);
-    }
+    }*/
 }
 
 void Background::init()
