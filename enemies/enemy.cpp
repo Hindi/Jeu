@@ -475,6 +475,164 @@ void Enemy::fireCircle()
     lastShot = timer.getTime();
 }
 
+void Enemy::fireCircle2()
+{
+    //La position de départ du projectile
+    Vector2f positionProjectile(m_position);
+    positionProjectile.x += (image->GetWidth()/2)-20;
+    positionProjectile.y += image->GetHeight()/2-20;
+    const string filepath = "images/projectile2.png";
+
+    std::tr1::shared_ptr<Projectile> projectile(new Projectile(filepath, positionProjectile, Vector2f(16, 0), m_coefSpeed));
+    projectile->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile);
+    std::tr1::shared_ptr<Projectile> projectile1(new Projectile(filepath, positionProjectile, Vector2f(-16, 0), m_coefSpeed));
+    projectile1->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile1);
+    std::tr1::shared_ptr<Projectile> projectile2(new Projectile(filepath, positionProjectile, Vector2f(0, 16), m_coefSpeed));
+    projectile2->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile2);
+    std::tr1::shared_ptr<Projectile> projectile3(new Projectile(filepath, positionProjectile, Vector2f(0, -16), m_coefSpeed));
+    projectile3->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile3);
+    std::tr1::shared_ptr<Projectile> projectile4(new Projectile(filepath, positionProjectile, Vector2f(11, 11), m_coefSpeed));
+    projectile4->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile4);
+    std::tr1::shared_ptr<Projectile> projectile5(new Projectile(filepath, positionProjectile, Vector2f(-11, 11), m_coefSpeed));
+    projectile5->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile5);
+    std::tr1::shared_ptr<Projectile> projectile6(new Projectile(filepath, positionProjectile, Vector2f(11, -11), m_coefSpeed));
+    projectile6->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile6);
+    std::tr1::shared_ptr<Projectile> projectile7(new Projectile(filepath, positionProjectile, Vector2f(-11, -11), m_coefSpeed));
+    projectile7->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile7);
+
+    std::tr1::shared_ptr<Projectile> projectile8(new Projectile(filepath, positionProjectile, Vector2f(-7, -14), m_coefSpeed));
+    projectile8->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile8);
+    std::tr1::shared_ptr<Projectile> projectile9(new Projectile(filepath, positionProjectile, Vector2f(-5, -15), m_coefSpeed));
+    projectile9->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile9);
+    std::tr1::shared_ptr<Projectile> projectile10(new Projectile(filepath, positionProjectile, Vector2f(7, -14), m_coefSpeed));
+    projectile10->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile10);
+    std::tr1::shared_ptr<Projectile> projectile11(new Projectile(filepath, positionProjectile, Vector2f(5, -15), m_coefSpeed));
+    projectile11->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile11);
+    std::tr1::shared_ptr<Projectile> projectile12(new Projectile(filepath, positionProjectile, Vector2f(7, 14), m_coefSpeed));
+    projectile12->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile12);
+    std::tr1::shared_ptr<Projectile> projectile13(new Projectile(filepath, positionProjectile, Vector2f(5, 15), m_coefSpeed));
+    projectile13->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile13);
+    std::tr1::shared_ptr<Projectile> projectile14(new Projectile(filepath, positionProjectile, Vector2f(-7, 14), m_coefSpeed));
+    projectile14->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile14);
+    std::tr1::shared_ptr<Projectile> projectile15(new Projectile(filepath, positionProjectile, Vector2f(-5, 15), m_coefSpeed));
+    projectile15->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile15);
+
+    std::tr1::shared_ptr<Projectile> projectile16(new Projectile(filepath, positionProjectile, Vector2f(-14, -7), m_coefSpeed));
+    projectile16->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile16);
+    std::tr1::shared_ptr<Projectile> projectile17(new Projectile(filepath, positionProjectile, Vector2f(-15, -5), m_coefSpeed));
+    projectile17->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile17);
+    std::tr1::shared_ptr<Projectile> projectile18(new Projectile(filepath, positionProjectile, Vector2f(14, -7), m_coefSpeed));
+    projectile18->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile18);
+    std::tr1::shared_ptr<Projectile> projectile19(new Projectile(filepath, positionProjectile, Vector2f(15, -5), m_coefSpeed));
+    projectile19->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile19);
+    std::tr1::shared_ptr<Projectile> projectile20(new Projectile(filepath, positionProjectile, Vector2f(14, 7), m_coefSpeed));
+    projectile20->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile20);
+    std::tr1::shared_ptr<Projectile> projectile21(new Projectile(filepath, positionProjectile, Vector2f(15, 5), m_coefSpeed));
+    projectile21->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile21);
+    std::tr1::shared_ptr<Projectile> projectile22(new Projectile(filepath, positionProjectile, Vector2f(-14, 7), m_coefSpeed));
+    projectile22->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile22);
+    std::tr1::shared_ptr<Projectile> projectile23(new Projectile(filepath, positionProjectile, Vector2f(-15, 5), m_coefSpeed));
+    projectile23->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile23);
+
+    std::tr1::shared_ptr<Projectile> projectile24(new Projectile(filepath, positionProjectile, Vector2f(16, 2), m_coefSpeed));
+    projectile24->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile24);
+    std::tr1::shared_ptr<Projectile> projectile25(new Projectile(filepath, positionProjectile, Vector2f(-16, 2), m_coefSpeed));
+    projectile25->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile25);
+    std::tr1::shared_ptr<Projectile> projectile26(new Projectile(filepath, positionProjectile, Vector2f(2, 16), m_coefSpeed));
+    projectile26->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile26);
+    std::tr1::shared_ptr<Projectile> projectile27(new Projectile(filepath, positionProjectile, Vector2f(8, 13), m_coefSpeed));
+    projectile27->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile27);
+    std::tr1::shared_ptr<Projectile> projectile28(new Projectile(filepath, positionProjectile, Vector2f(-8, 13), m_coefSpeed));
+    projectile28->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile28);
+    std::tr1::shared_ptr<Projectile> projectile29(new Projectile(filepath, positionProjectile, Vector2f(13, -8), m_coefSpeed));
+    projectile29->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile29);
+    std::tr1::shared_ptr<Projectile> projectile30(new Projectile(filepath, positionProjectile, Vector2f(13, 8), m_coefSpeed));
+    projectile30->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile30);
+    std::tr1::shared_ptr<Projectile> projectile31(new Projectile(filepath, positionProjectile, Vector2f(-13, -8), m_coefSpeed));
+    projectile31->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile31);
+
+    std::tr1::shared_ptr<Projectile> projectile32(new Projectile(filepath, positionProjectile, Vector2f(9, 12), m_coefSpeed));
+    projectile32->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile32);
+    std::tr1::shared_ptr<Projectile> projectile33(new Projectile(filepath, positionProjectile, Vector2f(-9, 12), m_coefSpeed));
+    projectile33->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile33);
+    std::tr1::shared_ptr<Projectile> projectile34(new Projectile(filepath, positionProjectile, Vector2f(12, -9), m_coefSpeed));
+    projectile34->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile34);
+    std::tr1::shared_ptr<Projectile> projectile35(new Projectile(filepath, positionProjectile, Vector2f(12, 9), m_coefSpeed));
+    projectile35->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile35);
+
+    std::tr1::shared_ptr<Projectile> projectile36(new Projectile(filepath, positionProjectile, Vector2f(10, 11), m_coefSpeed));
+    projectile36->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile36);
+    std::tr1::shared_ptr<Projectile> projectile37(new Projectile(filepath, positionProjectile, Vector2f(-10, 11), m_coefSpeed));
+    projectile37->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile37);
+    std::tr1::shared_ptr<Projectile> projectile38(new Projectile(filepath, positionProjectile, Vector2f(11, -10), m_coefSpeed));
+    projectile38->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile38);
+    std::tr1::shared_ptr<Projectile> projectile39(new Projectile(filepath, positionProjectile, Vector2f(11, 10), m_coefSpeed));
+    projectile39->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile39);
+    std::tr1::shared_ptr<Projectile> projectile40(new Projectile(filepath, positionProjectile, Vector2f(-11, -10), m_coefSpeed));
+    projectile40->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile40);
+
+    std::tr1::shared_ptr<Projectile> projectile41(new Projectile(filepath, positionProjectile, Vector2f(2, 17), m_coefSpeed));
+    projectile41->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile41);
+    std::tr1::shared_ptr<Projectile> projectile42(new Projectile(filepath, positionProjectile, Vector2f(-2, 17), m_coefSpeed));
+    projectile42->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile42);
+    std::tr1::shared_ptr<Projectile> projectile43(new Projectile(filepath, positionProjectile, Vector2f(17, -2), m_coefSpeed));
+    projectile43->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile43);
+    std::tr1::shared_ptr<Projectile> projectile44(new Projectile(filepath, positionProjectile, Vector2f(17, 2), m_coefSpeed));
+    projectile44->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile44);
+    std::tr1::shared_ptr<Projectile> projectile45(new Projectile(filepath, positionProjectile, Vector2f(-17, -2), m_coefSpeed));
+    projectile45->setPosition(positionProjectile);
+    Projectile_manager::getInstance()->addEnemyProjectile(projectile45);
+
+
+    //On le rajoute à la liste des projectiles gérée par le projectile manager.
+    lastShot = timer.getTime();
+}
+
 void Enemy::VFire()
 {
     Vector2f positionProjectile(m_position);

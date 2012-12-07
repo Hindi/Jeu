@@ -74,6 +74,7 @@ class Enemy : public Unit
         //Différents types de tirs
          void fireFocus();//Avec visée
          void fireCircle();//en cercle
+         void fireCircle2();//en cercle
          void VFire();//Tir en V à l'avant
          virtual void fire();
          void fireSpawner();

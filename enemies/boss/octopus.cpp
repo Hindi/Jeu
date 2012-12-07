@@ -4,7 +4,7 @@ using namespace std;
 using namespace sf;
 
 Octopus::Octopus(std::tr1::shared_ptr<Player> player, std::tr1::shared_ptr<Player> player2):
-            Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -200), "boss", "roundtrip", 1, 30, 2, player, player2, false, "octopus")
+            Boss(1000, 5, 10000, 3, 3, "images/octopus/Yeux.png", Vector2f(500, -200), "boss", "roundtrip", 1, 20, 2, player, player2, false, "octopus")
 {
     timerMove.start();
     timerFire1.start();
@@ -240,6 +240,7 @@ void Octopus::move()
         m_animated->SetFrame(2);
     if(this->needRespawn())
     {
+        m_coefSpeed++;
         Vector2f position(-140, 90);
         Vector2f absolutePosition;
         for(int i=0; i < 15; i++)
