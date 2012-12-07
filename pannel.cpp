@@ -16,13 +16,13 @@ Pannel::Pannel(const string &filepath, Vector2f position, std::tr1::shared_ptr<P
     sprite.Scale(m_scale);
 
     imageTopPannel = new Image;
-    *imageTopPannel = image_manager::getInstance()->getImage("images/pannelHaut.png");
+    *imageTopPannel = image_manager::getInstance()->getImage("images/pannelHaut1.png");
     topPannel.SetImage(*imageTopPannel);
     topPannel.SetPosition(Vector2f(0, 0));
     topPannel.Scale(0.75, 0.75);
 
     imageTopPannel2 = new Image;
-    *imageTopPannel2 = image_manager::getInstance()->getImage("images/pannelHaut.png");
+    *imageTopPannel2 = image_manager::getInstance()->getImage("images/pannelHaut2.png");
     topPannel2.SetImage(*imageTopPannel2);
     topPannel2.SetPosition(Vector2f(600, 0));
     topPannel2.Scale(0.75,0.75);
