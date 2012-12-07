@@ -3121,3 +3121,352 @@
 	"../../Anim.hpp"
 	"../../population.h"
 
+1354422616 source:c:\users\thibaut\documents\github\jeu\anim.cpp
+	"Anim.hpp"
+
+1354422616 c:\users\thibaut\documents\github\jeu\anim.hpp
+	<vector>
+	"Frame.hpp"
+
+1348516107 c:\users\thibaut\documents\github\jeu\frame.hpp
+	<SFML/Graphics.hpp>
+
+1348516107 source:c:\users\thibaut\documents\github\jeu\animated.cpp
+	"Animated.hpp"
+
+1352147201 c:\users\thibaut\documents\github\jeu\animated.hpp
+	"Anim.hpp"
+
+1354821840 source:c:\users\thibaut\documents\github\jeu\cheat_manager.cpp
+	"Cheat_manager.h"
+
+1354821840 c:\users\thibaut\documents\github\jeu\cheat_manager.h
+	"const.h"
+	<SFML/Graphics.hpp>
+	<iostream>
+	"timer.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\const.h
+	<SFML/Graphics.hpp>
+
+1348516107 c:\users\thibaut\documents\github\jeu\timer.h
+	<SFML/System.hpp>
+	<iostream>
+
+1348516107 source:c:\users\thibaut\documents\github\jeu\frame.cpp
+	"Frame.hpp"
+
+1354294536 source:c:\users\thibaut\documents\github\jeu\collision.cpp
+	"collision.h"
+
+1354294536 c:\users\thibaut\documents\github\jeu\collision.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<tr1/memory>
+	"player.h"
+	"population.h"
+	"tirs/projectile_manager.h"
+	"tirs/missile_manager.h"
+	"drop.h"
+	"enemies/spawn.h"
+
+1354752482 c:\users\thibaut\documents\github\jeu\player.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<list>
+	"tirs/projectile.h"
+	"unit.h"
+	"timer.h"
+	"animation.h"
+	"tirs/missile.h"
+	"image_manager.h"
+	"tirs/projectile_manager.h"
+	"Cheat_manager.h"
+
+1354422616 c:\users\thibaut\documents\github\jeu\tirs\projectile.h
+	<SFML/Graphics.hpp>
+	"../animation.h"
+	<iostream>
+	<deque>
+	"../timer.h"
+	"../image_manager.h"
+	"../const.h"
+
+1348516107 c:\users\thibaut\documents\github\jeu\animation.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1350926938 c:\users\thibaut\documents\github\jeu\image_manager.h
+
+1354294537 c:\users\thibaut\documents\github\jeu\unit.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+	"animation.h"
+	"Animated.hpp"
+	"image_manager.h"
+	"const.h"
+	"timer.h"
+
+1354846725 c:\users\thibaut\documents\github\jeu\tirs\missile.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"../image_manager.h"
+
+1354294537 c:\users\thibaut\documents\github\jeu\tirs\projectile_manager.h
+	<SFML/Graphics.hpp>
+	"../son/sound_manager.h"
+	<SFML/Audio.hpp>
+	<iostream>
+	<list>
+	<tr1/memory>
+	"projectile.h"
+	"missile.h"
+	<vector>
+	"../const.h"
+
+1354294537 c:\users\thibaut\documents\github\jeu\son\sound_manager.h
+	<SFML/audio.hpp>
+	<map>
+	<iostream>
+
+1354846725 c:\users\thibaut\documents\github\jeu\population.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	<tr1/memory>
+	"enemies/enemy.h"
+	"tirs/projectile.h"
+	"tirs/projectile_manager.h"
+	"drop_manager.h"
+	"enemies/boss.h"
+	"player.h"
+	"image_manager.h"
+	"enemies/spawn.h"
+	"tirs/score_manager.h"
+	"Anim.hpp"
+	"const.h"
+	"timer.h"
+	"enemies/boss/lilith.h"
+	"enemies/boss/octopus.h"
+	"enemies/adds.h"
+	"enemies/ship.h"
+	"enemies/flying_saucer.h"
+
+1354846725 c:\users\thibaut\documents\github\jeu\enemies\enemy.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"../player.h"
+	"../timer.h"
+	"../unit.h"
+	"../tirs/projectile.h"
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"math.h"
+	"../tirs/projectile_manager.h"
+	"../const.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\drop_manager.h
+	<SFML/Graphics.hpp>
+	<list>
+	<iostream>
+	<tr1/memory>
+	"drop.h"
+	"image_manager.h"
+	"const.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\drop.h
+	<SFML/Graphics.hpp>
+	"image_manager.h"
+
+1354730251 c:\users\thibaut\documents\github\jeu\enemies\boss.h
+	<list>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<math.h>
+	"../player.h"
+	"enemy.h"
+	"../timer.h"
+	"adds.h"
+	"../son/sound_manager.h"
+
+1354846725 c:\users\thibaut\documents\github\jeu\enemies\adds.h
+	<SFML/Graphics.hpp>
+	<list>
+	"../player.h"
+	"../timer.h"
+	"../tirs/projectile.h"
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"../tirs/projectile_manager.h"
+	"../const.h"
+	"enemy.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\enemies\spawn.h
+	<list>
+	<string>
+	<SFML/Graphics.hpp>
+	"../animation.h"
+	"../Animated.hpp"
+	"../image_manager.h"
+	"../tirs/projectile_manager.h"
+	"../tirs/projectile.h"
+	"math.h"
+	"../unit.h"
+	"../timer.h"
+	"../player.h"
+	"enemy.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\tirs\score_manager.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<list>
+	"tr1/memory"
+	"score.h"
+	"../const.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\tirs\score.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	"../timer.h"
+	"../const.h"
+
+1354392129 c:\users\thibaut\documents\github\jeu\enemies\boss\lilith.h
+	<list>
+	<SFML/Graphics.hpp>
+	"../boss.h"
+	"../adds.h"
+	"../../player.h"
+	"../../tirs/projectile.h"
+	"../../image_manager.h"
+	"../../tirs/projectile_manager.h"
+	"../../const.h"
+	"../../timer.h"
+
+1354846725 c:\users\thibaut\documents\github\jeu\enemies\boss\octopus.h
+	<list>
+	<SFML/Graphics.hpp>
+	"../boss.h"
+	"../adds.h"
+	"../../player.h"
+	"../../tirs/projectile.h"
+	"../../tirs/projectile_manager.h"
+	"../../image_manager.h"
+	"../../const.h"
+	"../../timer.h"
+	"../../Animated.hpp"
+	"../../Anim.hpp"
+	"../../population.h"
+
+1353779132 c:\users\thibaut\documents\github\jeu\enemies\ship.h
+	<SFML/Graphics.hpp>
+	"enemy.h"
+	"../player.h"
+
+1353779132 c:\users\thibaut\documents\github\jeu\enemies\flying_saucer.h
+	<SFML/Graphics.hpp>
+	"enemy.h"
+	"../player.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\tirs\missile_manager.h
+	<list>
+	<SFML/Graphics.hpp>
+	<tr1/memory>
+	"missile.h"
+	"../population.h"
+	"math.h"
+	"../timer.h"
+	"../player.h"
+	"../image_manager.h"
+	"../const.h"
+
+1352147201 source:c:\users\thibaut\documents\github\jeu\drop.cpp
+	"drop.h"
+
+1350926938 source:c:\users\thibaut\documents\github\jeu\drop_manager.cpp
+	"drop_manager.h"
+
+1354730251 source:c:\users\thibaut\documents\github\jeu\enemies\boss.cpp
+	"boss.h"
+
+1354730251 source:c:\users\thibaut\documents\github\jeu\enemies\boss\lilith.cpp
+	"lilith.h"
+
+1353779132 source:c:\users\thibaut\documents\github\jeu\enemies\flying_saucer.cpp
+	"flying_saucer.h"
+
+1353779132 source:c:\users\thibaut\documents\github\jeu\enemies\ship.cpp
+	"ship.h"
+
+1350926938 source:c:\users\thibaut\documents\github\jeu\image_manager.cpp
+	<map>
+	<iostream>
+	<SFML/Graphics.hpp>
+	"image_manager.h"
+
+1354294536 source:c:\users\thibaut\documents\github\jeu\menu.cpp
+	"menu.h"
+
+1353779132 c:\users\thibaut\documents\github\jeu\menu.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"image_manager.h"
+	"const.h"
+	<sstream>
+	"levels/level_manager.h"
+
+1354846725 c:\users\thibaut\documents\github\jeu\levels\level_manager.h
+	<sstream>
+	<iostream>
+	<string>
+	<fstream>
+	"../population.h"
+	"../timer.h"
+
+1354821840 source:c:\users\thibaut\documents\github\jeu\player.cpp
+	"player.h"
+
+1352926714 source:c:\users\thibaut\documents\github\jeu\script.cpp
+	"script.h"
+
+1350926938 c:\users\thibaut\documents\github\jeu\script.h
+	<SFML/Graphics.hpp>
+	"population.h"
+	"timer.h"
+	"enemies/enemy.h"
+	"image_manager.h"
+	"player.h"
+	"population.h"
+	"tirs/projectile_manager.h"
+	"const.h"
+
+1354821841 source:c:\users\thibaut\documents\github\jeu\son\sound_manager.cpp
+	"sound_manager.h"
+
+1348516107 source:c:\users\thibaut\documents\github\jeu\timer.cpp
+	"timer.h"
+	<windows.h>
+	<unistd.h>
+
+1350926938 source:c:\users\thibaut\documents\github\jeu\tirs\missile_manager.cpp
+	"missile_manager.h"
+
+1354422616 source:c:\users\thibaut\documents\github\jeu\tirs\projectile.cpp
+	"projectile.h"
+
+1354294537 source:c:\users\thibaut\documents\github\jeu\tirs\projectile_manager.cpp
+	"projectile_manager.h"
+
+1350926938 source:c:\users\thibaut\documents\github\jeu\tirs\score.cpp
+	"score.h"
+
+1350926938 source:c:\users\thibaut\documents\github\jeu\tirs\score_manager.cpp
+	"score_manager.h"
+
+1352294366 source:c:\users\thibaut\documents\github\jeu\unit.cpp
+	"unit.h"
+
