@@ -79,11 +79,6 @@ void Background::manage()
         //spritePlanet2.SetPosition((rand()%980)+1, -500);
         spritePlanet.SetPosition(0,-1000);
     }
-    /*if(spritePlanet2.GetPosition().y > m_height)
-    {
-        spritePlanet.SetPosition((rand()%980)+1, -500);
-        spritePlanet2.SetPosition(0,-1000);
-    }*/
 }
 
 void Background::init()

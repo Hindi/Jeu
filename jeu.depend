@@ -2111,7 +2111,7 @@
 1354758743 source:c:\users\shalafi\documents\github\jeu\background.cpp
 	"background.h"
 
-1354846576 c:\users\shalafi\documents\github\jeu\background.h
+1354846827 c:\users\shalafi\documents\github\jeu\background.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<stdlib.h>
