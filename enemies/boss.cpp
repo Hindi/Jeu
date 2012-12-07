@@ -151,7 +151,7 @@ void Boss::firinhMahLasor(int fireTime)
         //On positionne l'animation sur l'ennemi qui a explose
         m_animatedFocus->SetPosition(position);
         //Si l'image actuelle correspond à la dernière image de l'animation
-        if(currentFrame == m_animatedFocus->GetAnim()->Size()-1)
+        if(currentFrame == m_animatedFocus->GetAnim()->Size()-1 && !firinh)
         {
             loop++;
             if(loop > 15)
